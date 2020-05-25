@@ -1,0 +1,143 @@
+{
+  "enableSearch": true,
+  "pages": [
+    {
+      "src": "README.md",
+      "title": "",
+      "layout": "default",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "title": "About Us",
+      "src": "about.md",
+      "layout": "default",
+      "headings": {
+        "about-us": "About Us",
+        "contact": "Contact",
+        "license": "License",
+        "acknowledgements": "Acknowledgements"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Guides for Software Engineering Students",
+      "pageNav": 2,
+      "src": "index.md",
+      "layout": "default",
+      "headings": {
+        "guides-and-tutorials-for-se-student-projects": "Guides and tutorials for SE student projects",
+        "tutorials": "Tutorials"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "CheckStyle Tutorial",
+      "pageNav": 2,
+      "src": "tutorials/checkstyleTutorial.md",
+      "layout": "default",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "title": "Gradle Tutorial",
+      "pageNav": 2,
+      "src": "tutorials/gradleTutorial.md",
+      "layout": "default",
+      "headings": {
+        "gradle-tutorial": "Gradle Tutorial",
+        "basics": "Basics",
+        "adding-gradle-to-the-project": "Adding Gradle to the project",
+        "using-gradle-in-intellij-idea": "Using Gradle in Intellij IDEA",
+        "running-gradle-tasks": "Running Gradle Tasks",
+        "adding-plugins": "Adding plugins",
+        "using-gradle-to-do-some-common-project-activities": "Using Gradle to do some common project activities",
+        "running-checkstyle": "Running CheckStyle",
+        "running-tests": "Running tests",
+        "creating-a-jar-file": "Creating a JAR file",
+        "managing-dependencies": "Managing dependencies",
+        "further-reading": "Further reading"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "JavaFX Tutorial Part 1 – Introduction",
+      "pageNav": 2,
+      "src": "tutorials/javaFxTutorialPart1.md",
+      "layout": "default",
+      "headings": {
+        "javafx-tutorial-part-1-introduction": "JavaFX Tutorial Part 1 – Introduction",
+        "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX application",
+        "setting-up-java-fx": "Setting up Java FX",
+        "if-you-are-not-using-gradle": "If you are not using Gradle",
+        "if-you-are-using-gradle": "If you are using Gradle",
+        "writing-your-first-program": "Writing your first program",
+        "exercises": "Exercises"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "JavaFX Tutorial Part 2 - Creating a GUI for Duke",
+      "pageNav": 2,
+      "src": "tutorials/javaFxTutorialPart2.md",
+      "layout": "default",
+      "headings": {
+        "javafx-tutorial-part-2-creating-a-gui-for-duke": "JavaFX Tutorial Part 2 - Creating a GUI for Duke",
+        "javafx-controls": "JavaFX controls",
+        "designing-the-layout": "Designing the Layout",
+        "styling-the-controls": "Styling the Controls",
+        "exercises": "Exercises"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "JavaFX Tutorial 3 – Interacting with the user",
+      "pageNav": 2,
+      "src": "tutorials/javaFxTutorialPart3.md",
+      "layout": "default",
+      "headings": {
+        "javafx-tutorial-3-interacting-with-the-user": "JavaFX Tutorial 3 – Interacting with the user",
+        "iteration-1-echoing-the-user": "Iteration 1 – Echoing the user",
+        "iteration-2-adding-dialog-boxes": "Iteration 2 – Adding Dialog Boxes",
+        "iteration-3-adding-custom-behavior-to-dialogbox": "Iteration 3 – Adding custom behavior to DialogBox",
+        "exercises": "Exercises"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "JavaFX Tutorial Part 4 – Using FXML",
+      "pageNav": 2,
+      "src": "tutorials/javaFxTutorialPart4.md",
+      "layout": "default",
+      "headings": {
+        "javafx-tutorial-part-4-using-fxml": "JavaFX Tutorial Part 4 – Using FXML",
+        "rebuilding-the-scene-using-fxml": "Rebuilding the Scene using FXML",
+        "using-controllers": "Using Controllers",
+        "using-fxml-in-our-application": "Using FXML in our application",
+        "exercises": "Exercises"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "JUnit Tutorial",
+      "pageNav": 2,
+      "src": "tutorials/junitTutorial.md",
+      "layout": "default",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "title": "Tutorial: Automated testing of text UIs",
+      "pageNav": 2,
+      "src": "tutorials/textUiTestingTutorial.md",
+      "layout": "default",
+      "headings": {
+        "tutorial-automated-testing-of-text-uis": "Tutorial: Automated testing of text UIs",
+        "setting-up": "Setting up",
+        "updating-tests-as-the-program-evolves": "Updating tests as the program evolves",
+        "troubleshooting": "Troubleshooting"
+      },
+      "headingKeywords": {}
+    }
+  ]
+}

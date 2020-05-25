@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaFX Tutorial 3 – Interacting with the user</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+  <link rel="icon" href="/guides/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <navbar placement="top" type="light" class="temp-navbar">
+        <a slot="brand" href="https://se-edu.github.io" title="More SE-EDU Resources" class="navbar-brand"><img src="https://se-edu.github.io/images/SeEduLogo.png" alt="SE-EDU" width="30"></a>
+        <li><a href="https://se-edu.github.io/addressbook-level3/" class="nav-link"><span>AB-3</span></a></li>
+        <li><a href="https://se-edu.github.io/se-book/" class="nav-link"><span>Book</span></a></li>
+        <div class="nav-link temp-dropdown-placeholder">Tutorials</div>
+        <dropdown class="nav-link temp-dropdown"><template slot="_header">Tutorials</template>
+          <li><a href="/guides/index.html" class="dropdown-item"><span>Home</span></a></li>
+          <li><a href="/guides/about.html" class="dropdown-item"><span>About</span></a></li>
+          <li><a href="https://github.com/se-edu/guides" class="dropdown-item"><span> GitHub</span></a></li>
+        </dropdown>
+        <li slot="right" class="nav-link">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search Learning Resources" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+
+      <div id="content-wrapper">
+        <h1 id="javafx-tutorial-3-interacting-with-the-user">JavaFX Tutorial 3 – Interacting with the user<a class="fa fa-anchor" href="#javafx-tutorial-3-interacting-with-the-user" onclick="event.stopPropagation()"></a></h1>
+        <p>Picking up from where we left off last tutorial, we have successfully achieved the desired layout. Now let’s make the application respond to user input.</p>
+        <p>Rather than to do everything in one try, let’s iterate and build up towards our final goal.</p>
+        <h2 id="iteration-1-echoing-the-user">Iteration 1 – Echoing the user<a class="fa fa-anchor" href="#iteration-1-echoing-the-user" onclick="event.stopPropagation()"></a></h2>
+        <p>JavaFX has an <em>event-driven architecture style</em>. As such, we programmatically define <em>handler</em> methods to execute as a response to certain <em>events</em>. When an event is detected, JavaFX will call the respective handlers.</p>
+        <p>For Duke, there are two events that we want to respond to, namely the user pressing <code>Enter</code> in the <code>TextField</code> and left-clicking the <code>Button</code>. These are the <code>onAction</code> event for the <code>TextField</code> and the <code>onMouseClicked</code> event for the <code>Button</code>.</p>
+        <p>For now, let’s have the application add a new <code>Label</code> with the text from the <code>TextField</code>. Update the <code>Main</code> class as follows. You'll need to add an <code>import javafx.scene.control.Label;</code> too.</p>
+        <pre><code class="hljs java"><span><span class="hljs-meta">@Override</span><br></span><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> </span>{<br></span><span>    <span class="hljs-comment">// Step 1 code here</span><br></span><span><br></span><span>    <span class="hljs-comment">//Step 2 code here</span><br></span><span><br></span><span>    <span class="hljs-comment">//Step 3. Add functionality to handle user input.</span><br></span><span>    sendButton.setOnMouseClicked((event) -&gt; {<br></span><span>        dialogContainer.getChildren().add(getDialogLabel(userInput.getText()));<br></span><span>        userInput.clear();<br></span><span>    });<br></span><span>    <br></span><span>    userInput.setOnAction((event) -&gt; {<br></span><span>        dialogContainer.getChildren().add(getDialogLabel(userInput.getText()));<br></span><span>        userInput.clear();<br></span><span>    });<br></span><span>}<br></span><span><br></span><span><span class="hljs-comment">/**</span><br></span><span><span class="hljs-comment"> * Iteration 1:</span><br></span><span><span class="hljs-comment"> * Creates a label with the specified text and adds it to the dialog container.</span><br></span><span><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> text String containing text to add</span><br></span><span><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> a label with the specified text that has word wrap enabled.</span><br></span><span><span class="hljs-comment"> */</span><br></span><span><span class="hljs-function"><span class="hljs-keyword">private</span> Label <span class="hljs-title">getDialogLabel</span><span class="hljs-params">(String text)</span> </span>{<br></span><span>    <span class="hljs-comment">// You will need to import `javafx.scene.control.Label`.</span><br></span><span>    Label textToAdd = <span class="hljs-keyword">new</span> Label(text);<br></span><span>    textToAdd.setWrapText(<span class="hljs-keyword">true</span>);<br></span><span><br></span><span>    <span class="hljs-keyword">return</span> textToAdd;<br></span><span>}<br></span></code></pre>
+        <p>Run the program and give it a whirl!</p>
+        <p><a href="/guides/tutorials/assets/EchoNotScrolling.png" target="_self"><img src="/guides/tutorials/assets/EchoNotScrolling.png" alt class="img-fluid"></a></p>
+        <p>At first glance everything appears to work perfectly. However, when the <code>VBox</code> stretches beyond the confines of the <code>ScrollPane</code>, the <code>ScrollPane</code> does not scroll down automatically as expected. We can remedy this by attaching a handler on the <code>VBox</code> to react to its own size changing and scrolling the <code>ScrollPane</code> down.</p>
+        <p>Update the <code>start</code> method as shown below.</p>
+        <pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> </span>{<br></span><span>    <span class="hljs-comment">// current code ...</span><br></span><span> <br></span><span>    <span class="hljs-comment">//Scroll down to the end every time dialogContainer's height changes.</span><br></span><span>    dialogContainer.heightProperty().addListener((observable) -&gt; scrollPane.setVvalue(<span class="hljs-number">1.0</span>));<br></span><span>}<br></span></code></pre>
+        <p>Verify that the <code>ScrollPane</code> scrolls as intended.</p>
+        <h2 id="iteration-2-adding-dialog-boxes">Iteration 2 – Adding Dialog Boxes<a class="fa fa-anchor" href="#iteration-2-adding-dialog-boxes" onclick="event.stopPropagation()"></a></h2>
+        <p>In the mockup of the UI, notice that the dialog boxes are composed of two different controls (<code>ImageView</code> and <code>Label</code>) and reused multiple times. In situations like this, it is often beneficial to create our own custom control.</p>
+        <p>Let’s create our custom control <code>DialogBox</code>:</p>
+        <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> javafx.geometry.Pos;<br></span><span><span class="hljs-keyword">import</span> javafx.scene.control.Label;<br></span><span><span class="hljs-keyword">import</span> javafx.scene.image.ImageView;<br></span><span><span class="hljs-keyword">import</span> javafx.scene.layout.HBox;<br></span><span><br></span><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DialogBox</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HBox</span> </span>{<br></span><span><br></span><span>    <span class="hljs-keyword">private</span> Label text;<br></span><span>    <span class="hljs-keyword">private</span> ImageView displayPicture;<br></span><span><br></span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DialogBox</span><span class="hljs-params">(Label l, ImageView iv)</span> </span>{<br></span><span>        text = l;<br></span><span>        displayPicture = iv;<br></span><span><br></span><span>        text.setWrapText(<span class="hljs-keyword">true</span>);<br></span><span>        displayPicture.setFitWidth(<span class="hljs-number">100.0</span>);<br></span><span>        displayPicture.setFitHeight(<span class="hljs-number">100.0</span>);<br></span><span><br></span><span>        <span class="hljs-keyword">this</span>.setAlignment(Pos.TOP_RIGHT);<br></span><span>        <span class="hljs-keyword">this</span>.getChildren().addAll(text, displayPicture);<br></span><span>    }<br></span><span>}<br></span></code></pre>
+        <p>We use the code in our main class just like any other control. Here are the steps to update the code to use the custom control in <code>Main.java</code>.</p>
+        <p>First, add these imports:</p>
+        <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> javafx.scene.image.Image;<br></span><span><span class="hljs-keyword">import</span> javafx.scene.image.ImageView;<br></span></code></pre>
+        <p>Next, add two images to the <code>main/resources/images</code> folder.
+          For this tutorial, we have two images <code>DaUser.png</code> and <code>DaDuke.png</code> to represent the user avatar and Duke's avatar respectively but you can use any image you want.</p>
+        <div class="table-responsive">
+          <table class="markbind-table table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Filename</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="/guides/tutorials/assets/DaUser.png" target="_self"><img src="/guides/tutorials/assets/DaUser.png" alt class="img-fluid"></a></td>
+                <td><code>DaUser.png</code></td>
+              </tr>
+              <tr>
+                <td><a href="/guides/tutorials/assets/DaDuke.png" target="_self"><img src="/guides/tutorials/assets/DaDuke.png" alt class="img-fluid"></a></td>
+                <td><code>DaDuke.png</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <pre><code class="hljs java"><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duke</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Application</span> </span>{<br></span><span>    <span class="hljs-comment">// ...</span><br></span><span>    <span class="hljs-keyword">private</span> Image user = <span class="hljs-keyword">new</span> Image(<span class="hljs-keyword">this</span>.getClass().getResourceAsStream(<span class="hljs-string">"/images/DaUser.png"</span>));<br></span><span>    <span class="hljs-keyword">private</span> Image duke = <span class="hljs-keyword">new</span> Image(<span class="hljs-keyword">this</span>.getClass().getResourceAsStream(<span class="hljs-string">"/images/DaDuke.png"</span>));<br></span><span>    <span class="hljs-comment">// ...</span><br></span><span>}<br></span></code></pre>
+        <p>Add a new method to handle user input:</p>
+        <pre><code class="hljs java"><span><span class="hljs-comment">/**</span><br></span><span><span class="hljs-comment"> * Iteration 2:</span><br></span><span><span class="hljs-comment"> * Creates two dialog boxes, one echoing user input and the other containing Duke's reply and then appends them to</span><br></span><span><span class="hljs-comment"> * the dialog container. Clears the user input after processing.</span><br></span><span><span class="hljs-comment"> */</span><br></span><span><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleUserInput</span><span class="hljs-params">()</span> </span>{<br></span><span>    Label userText = <span class="hljs-keyword">new</span> Label(userInput.getText());<br></span><span>    Label dukeText = <span class="hljs-keyword">new</span> Label(getResponse(userInput.getText()));<br></span><span>    dialogContainer.getChildren().addAll(<br></span><span>            <span class="hljs-keyword">new</span> DialogBox(userText, <span class="hljs-keyword">new</span> ImageView(user)),<br></span><span>            <span class="hljs-keyword">new</span> DialogBox(dukeText, <span class="hljs-keyword">new</span> ImageView(duke))<br></span><span>    );<br></span><span>    userInput.clear();<br></span><span>}<br></span><span><br></span><span><span class="hljs-comment">/**</span><br></span><span><span class="hljs-comment"> * You should have your own function to generate a response to user input.</span><br></span><span><span class="hljs-comment"> * Replace this stub with your completed method.</span><br></span><span><span class="hljs-comment"> */</span><br></span><span><span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">getResponse</span><span class="hljs-params">(String input)</span> </span>{<br></span><span>    <span class="hljs-keyword">return</span> <span class="hljs-string">"Duke heard: "</span> + input;<br></span><span>}<br></span></code></pre>
+        <p>Update the event handler code in the <code>start</code> method to use the new <code>handleUserInput</code> method:</p>
+        <pre><code class="hljs java"><span><br></span><span><span class="hljs-meta">@Override</span><br></span><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> </span>{<br></span><span>    <span class="hljs-comment">//...</span><br></span><span><br></span><span>    <span class="hljs-comment">//Part 3. Add functionality to handle user input.</span><br></span><span>    sendButton.setOnMouseClicked((event) -&gt; {<br></span><span>        handleUserInput();<br></span><span>    });<br></span><span><br></span><span>    userInput.setOnAction((event) -&gt; {<br></span><span>        handleUserInput();<br></span><span>    });<br></span><span>}<br></span></code></pre>
+        <p>Run the program and see how it works.</p>
+        <p><a href="/guides/tutorials/assets/DialogBoxesIteration2.png" target="_self"><img src="/guides/tutorials/assets/DialogBoxesIteration2.png" alt class="img-fluid"></a></p>
+        <h2 id="iteration-3-adding-custom-behavior-to-dialogbox">Iteration 3 – Adding custom behavior to DialogBox<a class="fa fa-anchor" href="#iteration-3-adding-custom-behavior-to-dialogbox" onclick="event.stopPropagation()"></a></h2>
+        <p>One additional benefit of defining a custom control is that we can add behavior specific to our <code>DialogBox</code>. Let’s add a method to flip a dialog box such that the image on the left to differentiate between user input and Duke’s output.</p>
+        <pre><code class="hljs java"><span><span class="hljs-comment">/**</span><br></span><span><span class="hljs-comment"> * Flips the dialog box such that the ImageView is on the left and text on the right.</span><br></span><span><span class="hljs-comment"> */</span><br></span><span><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flip</span><span class="hljs-params">()</span> </span>{<br></span><span>    <span class="hljs-keyword">this</span>.setAlignment(Pos.TOP_LEFT);<br></span><span>    ObservableList&lt;Node&gt; tmp = FXCollections.observableArrayList(<span class="hljs-keyword">this</span>.getChildren());<br></span><span>    FXCollections.reverse(tmp);<br></span><span>    <span class="hljs-keyword">this</span>.getChildren().setAll(tmp);<br></span><span>}<br></span><span><br></span><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DialogBox <span class="hljs-title">getUserDialog</span><span class="hljs-params">(Label l, ImageView iv)</span> </span>{<br></span><span>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> DialogBox(l, iv);<br></span><span>}<br></span><span><br></span><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DialogBox <span class="hljs-title">getDukeDialog</span><span class="hljs-params">(Label l, ImageView iv)</span> </span>{<br></span><span>    <span class="hljs-keyword">var</span> db = <span class="hljs-keyword">new</span> DialogBox(l, iv);<br></span><span>    db.flip();<br></span><span>    <span class="hljs-keyword">return</span> db;<br></span><span>}<br></span></code></pre>
+        <p>You'll need to update the imports as follows:</p>
+        <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> javafx.collections.FXCollections;<br></span><span><span class="hljs-keyword">import</span> javafx.collections.ObservableList;<br></span><span><span class="hljs-keyword">import</span> javafx.geometry.Pos;<br></span><span><span class="hljs-keyword">import</span> javafx.scene.Node;<br></span><span><span class="hljs-keyword">import</span> javafx.scene.control.Label;<br></span><span><span class="hljs-keyword">import</span> javafx.scene.image.ImageView;<br></span><span><span class="hljs-keyword">import</span> javafx.scene.layout.HBox;<br></span></code></pre>
+        <p>Now, we can go back to the <code>Main</code> class and change the event handler to use our new <code>DialogBox</code>.</p>
+        <pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleUserInput</span><span class="hljs-params">()</span> </span>{<br></span><span>    Label userText = <span class="hljs-keyword">new</span> Label(userInput.getText());<br></span><span>    Label dukeText = <span class="hljs-keyword">new</span> Label(getResponse(userInput.getText()));<br></span><span>    dialogContainer.getChildren().addAll(<br></span><span>            DialogBox.getUserDialog(userText, <span class="hljs-keyword">new</span> ImageView(user)),<br></span><span>            DialogBox.getDukeDialog(dukeText, <span class="hljs-keyword">new</span> ImageView(duke))<br></span><span>    );<br></span><span>    userInput.clear();<br></span><span>}<br></span></code></pre>
+        <p>Run the application and play around with it.</p>
+        <p><a href="/guides/tutorials/assets/DialogBoxesIteration3.png" target="_self"><img src="/guides/tutorials/assets/DialogBoxesIteration3.png" alt class="img-fluid"></a></p>
+        <p>Congratulations!
+          You have successfully implemented a fully functional GUI for Duke!</p>
+        <h2 id="exercises">Exercises<a class="fa fa-anchor" href="#exercises" onclick="event.stopPropagation()"></a></h2>
+        <ol>
+          <li>
+            <p>While the GUI looks similar to the mockup, there are still parts that need to be refined. Try your hand at some of these tasks:</p>
+            <ul>
+              <li>Add padding between each DialogBox</li>
+              <li>Add padding between each ImageView and its Label</li>
+              <li>Clip the ImageView into a circle</li>
+              <li>Add background color to each dialog box</li>
+            </ul>
+          </li>
+          <li>
+            <p>After attempting the changes, reflect critically on the following:</p>
+            <ul>
+              <li>What was the development workflow like?</li>
+              <li>Is the code base well-organized?</li>
+            </ul>
+          </li>
+        </ol>
+        <hr>
+        <p><strong>Authors:</strong></p>
+        <ul>
+          <li>Initial Version: Jeffry Lum</li>
+        </ul>
+      </div>
+
+
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#javafx-tutorial-3-interacting-with-the-user">JavaFX Tutorial 3 – Interacting with the user&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#iteration-1-echoing-the-user">Iteration 1 – Echoing the user&#x200E;</a>
+              <a class="nav-link py-1" href="#iteration-2-adding-dialog-boxes">Iteration 2 – Adding Dialog Boxes&#x200E;</a>
+              <a class="nav-link py-1" href="#iteration-3-adding-custom-behavior-to-dialogbox">Iteration 3 – Adding custom behavior to DialogBox&#x200E;</a>
+              <a class="nav-link py-1" href="#exercises">Exercises&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 25 May 2020, 16:52:57 GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/guides'
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
+
+</html>
