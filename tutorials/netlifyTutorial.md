@@ -21,7 +21,7 @@
 
 1. You will then be brought to the setup page. Click `GitHub` to link your repository to Netlify.
    * Depending on whether you are the owner of the repository, you can either grant or request access to Netlify so that it can access your repository and build your documentation.<br>
-    ![Grant or request access](assets/netlify/grant_or_request_access.png)
+    ![Grant or request access](images/netlify/grant_or_request_access.png)
    * After granting or requesting access to your repository, click `Authorize netlify`.
 
 1. Pick your repository from the list.
@@ -34,9 +34,9 @@
 
 1. Once Netlify has completed building your project, you can now:
    * View your main branch’s deployed documentation on the site name given by Netlify (customizable as shown [below](#changing_the_site_name)).<br>
-    ![Temporary site name](assets/netlify/temp_site_name.png)
+    ![Temporary site name](images/netlify/temp_site_name.png)
    * Preview the updated documentation whenever a pull request is made by clicking the `Details` hyperlink next to the Netlify test status.<br>
-     ![Netlify details link](assets/netlify/netlify_details.png)
+     ![Netlify details link](images/netlify/netlify_details.png)
 
 
 ## Changing the site name
@@ -46,4 +46,4 @@ If you don’t like the site name given by Netlify, you can change it as follows
 1.  Click on `Settings`.
 
 2.  Then click `Change site name` and fill in your desired site name.<br>
-    ![Change site name](assets/netlify/change_site_name.png)
+    ![Change site name](images/netlify/change_site_name.png)

@@ -7,7 +7,7 @@
 
 In this tutorial, we will be creating a GUI for Duke from scratch based on the following mockup.
 
-![Mockup for Duke](assets/DukeMockup.png)
+![Mockup for Duke](images/javafx/DukeMockup.png)
 
 ## JavaFX controls
 
@@ -16,11 +16,11 @@ From the mockup above, can you identify the controls that we will need to use?
 
 Mockup | Control 
 ------ | :---: |
-![ImageView](assets/MockupImageView.png) | ImageView
-![Label](assets/MockupLabel.png) | Label
-![Button](assets/MockupButton.png) | Button
-![TextField](assets/MockupTextField.png) | TextField
-![ScrollPane](assets/MockupScrollPane.png) | ScrollPane
+![ImageView](images/javafx/MockupImageView.png) | ImageView
+![Label](images/javafx/MockupLabel.png) | Label
+![Button](images/javafx/MockupButton.png) | Button
+![TextField](images/javafx/MockupTextField.png) | TextField
+![ScrollPane](images/javafx/MockupScrollPane.png) | ScrollPane
 
 ## Designing the Layout
 
@@ -29,7 +29,7 @@ Now that we know what controls we need to implement our UI, let’s start progra
 Each scene is initialized with a root `Node`. In the previous tutorial, our root `Node` was a `Label`.
 What happens when we need to display more than one `Node` on the `Scene`? For that, we need to understand the JavaFX hierarchy. Recall from the previous tutorial:
 
-![Hierarchy of Objects in JavaFX](assets/JavaFxHierarchy.png)
+<puml src="images/javafx/JavaFxHierarchy.puml" />
  
 From the diagram, you see that the root `Node` can contain many other `Nodes` and similarly, each of those `Nodes` can contain many other `Nodes`. This means that if we can find a _container_ to set as our root `Node`, we can place all our other `Nodes` in it.
 
@@ -39,7 +39,32 @@ But how do we get the exact layout we want in the UI? JavaFX provides that funct
 
 One way to obtain the layout in the mockup is as follows. 
 
-![Duke's layout](assets/DukeSceneGraph.png) 
+<puml>
+@startuml
+hide members
+hide circle
+skinparam shadowing false
+skinparam ClassFontSize 16
+skinparam ClassFontName Arial
+
+class Stage
+class AnchorPane
+class ScrollPane
+class VBox
+class ImageView
+class Label
+
+AnchorPane -up-> Stage
+ScrollPane -up-> AnchorPane
+
+TextField -up-> AnchorPane
+Button -up-> AnchorPane
+
+VBox -up-> ScrollPane
+ImageView -up-> VBox
+Label -up-> VBox
+@enduml
+</puml> 
 
 To get that layout, we create a new `AnchorPane` and add our controls to it. Similarly, we create a new `VBox` to hold the contents of the `ScrollPane`. The code should look something like this:
 
@@ -93,7 +118,7 @@ public class Duke extends Application {
 
 Run the application and you should see something like this:
 
-![Duke's raw layout](assets/RawLayout.png)
+![Duke's raw layout](images/javafx/RawLayout.png)
  
 That is not what we were expecting, what did we forget to do?
 
@@ -146,7 +171,7 @@ Add the following code to the bottom of the `start` method. You'll have to add `
 
 Run the application again. It should now look like this:
 
-![Duke's Final layout](assets/FinalLayout.png)
+![Duke's Final layout](images/javafx/FinalLayout.png)
 
 ## Exercises
 

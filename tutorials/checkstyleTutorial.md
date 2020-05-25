@@ -36,7 +36,7 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 
 1. Ensure that the `Checkstyle version` is set to the one used by the project.<br>
 {{ icon_tip }} If your project uses Gradle, you can check the `build.gradle` file to find the correct version.<br>
-   ![checkstyle idea scan scope](assets/checkstyle/checkstyle-idea-scan-scope.png)
+   ![checkstyle idea scan scope](images/checkstyle/checkstyle-idea-scan-scope.png)
 
 1.  Click the plus sign under `Configuration File`
 
@@ -49,12 +49,12 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 1.  Click `Next` \> `Finish`
 
 1. Mark `Active` for the newly imported check configuration<br>
-  ![checkstyle idea configuration](assets/checkstyle/checkstyle-idea-configuration.png)
+  ![checkstyle idea configuration](images/checkstyle/checkstyle-idea-configuration.png)
 
 1. Click `OK`
 
 1. To verify the plugin is set up correctly, temporirily modify the code to violate a style rule (e.g., add an extra space somewhere) and run the Checkstyle check using the plugin.<br>
-   ![run checkstyle plugin](assets/checkstyle/runCheckstyle.png)
+   ![run checkstyle plugin](images/checkstyle/runCheckstyle.png)
 
 #### Troubleshooting
 

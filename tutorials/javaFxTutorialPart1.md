@@ -9,7 +9,7 @@
 
 Imagine yourself as a director of a play. First you provision the props that you will feature in your play. These can be hand props for your actors to interact with or even set dressings just to liven up the background. You then decide where to layout the props for every scene. With a proper script in hand, you can finally approach a theatre and request for a stage. There on, it’s just a matter of pulling the curtains on your masterpiece.
 
-![Hierarchy of Objects in JavaFX](assets/JavaFxHierarchy.png)
+<puml src="images/javafx/JavaFxHierarchy.puml" />
 
 A JavaFX application is like a play you are directing. Instead of creating props, you create `Nodes` (`Nodes` are the fundamental building blocks of a JavaFX application), and place them onto a `Scene` (a scene is a graph of `Node`s). Then, you set your `Scene` on a `Stage` provided by JavaFX. When you call `Stage#show()` method, JavaFX renders a window with your `Stage` on it.
 
@@ -99,7 +99,7 @@ public class Launcher {
 
 Run `Launcher` and you should see something like this:
 
-![Hello World](assets/HelloWorld.png) 
+![Hello World](images/javafx/HelloWorld.png) 
 
 Congratulations! You have created your first GUI application!
 

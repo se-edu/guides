@@ -52,7 +52,7 @@ private Label getDialogLabel(String text) {
 
 Run the program and give it a whirl!
 
-![Echo not scrolling as intended](assets/EchoNotScrolling.png)
+![Echo not scrolling as intended](images/javafx/EchoNotScrolling.png)
 
 At first glance everything appears to work perfectly. However, when the `VBox` stretches beyond the confines of the `ScrollPane`, the `ScrollPane` does not scroll down automatically as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
 
@@ -112,8 +112,8 @@ For this tutorial, we have two images `DaUser.png` and `DaDuke.png` to represent
 
 Image|Filename
 ---|---
-![DaDuke](assets/DaUser.png) | `DaUser.png`
-![DaUser](assets/DaDuke.png) | `DaDuke.png`
+![DaDuke](images/javafx/DaUser.png) | `DaUser.png`
+![DaUser](images/javafx/DaDuke.png) | `DaDuke.png`
 
 
 ```java
@@ -171,7 +171,7 @@ public void start(Stage stage) {
 
 Run the program and see how it works.
 
-![DialogBoxes Iteration 2](assets/DialogBoxesIteration2.png) 
+![DialogBoxes Iteration 2](images/javafx/DialogBoxesIteration2.png) 
 
 ## Iteration 3 – Adding custom behavior to DialogBox
 
@@ -226,7 +226,7 @@ private void handleUserInput() {
 
 Run the application and play around with it. 
 
-![DialogBoxes Iteration 3](assets/DialogBoxesIteration3.png)
+![DialogBoxes Iteration 3](images/javafx/DialogBoxesIteration3.png)
 
 Congratulations! 
 You have successfully implemented a fully functional GUI for Duke!  

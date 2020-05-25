@@ -34,7 +34,7 @@ Tasks can be composed of, or dependent on, other tasks.
 1. When you _import_ the project into IDEA, at the step where you normally select the project root folder, choose the `build.gradle` file inside the root folder instead.
 1. If asked, choose `Open as Project` (not `Open as File`).
 1. After importing is complete, you will see the `Gradle Toolbar` in the IDEA interface.<br>
-   ![Gradle icon](assets/GradleIcon.png)
+   ![Gradle icon](images/gradle/GradleIcon.png)
 
 ****Scenario 2:**** You are adding Gradle support to an ongoing project that is already set up in Intellij IDEA. Gradle wrapper files have been provided.
 
@@ -55,7 +55,7 @@ Tasks can be composed of, or dependent on, other tasks.
 If the Gradle tasks don't appear in the Gradle window, click the 'refresh' button in the tooolbar to reimport the Gradle project.
 
 Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to `File` > `Settings` and change the following settings:<br>
-![change Intellij settings to not use Gradle](assets/intellijRunUsingGradle.png)
+![change Intellij settings to not use Gradle](images/gradle/intellijRunUsingGradle.png)
  
 ---------------------------------------------------------------------------------------------------------
 
