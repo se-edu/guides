@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlantUML Tutorial</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+  <link rel="icon" href="/guides/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <navbar placement="top" type="light" class="temp-navbar">
+        <a slot="brand" href="https://se-edu.github.io" title="More SE-EDU Resources" class="navbar-brand"><img src="https://se-edu.github.io/images/SeEduLogo.png" alt="SE-EDU" width="30"></a>
+        <li><a href="https://se-edu.github.io/addressbook-level3/" class="nav-link"><span>AB-3</span></a></li>
+        <li><a href="https://se-edu.github.io/se-book/" class="nav-link"><span>Book</span></a></li>
+        <div class="nav-link temp-dropdown-placeholder">Tutorials</div>
+        <dropdown class="nav-link temp-dropdown"><template slot="_header">Tutorials</template>
+          <li><a href="/guides/index.html" class="dropdown-item"><span>Home</span></a></li>
+          <li><a href="/guides/about.html" class="dropdown-item"><span>About</span></a></li>
+          <li><a href="https://github.com/se-edu/guides" class="dropdown-item"><span> GitHub</span></a></li>
+        </dropdown>
+        <li slot="right" class="nav-link">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search Learning Resources" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+
+      <div id="content-wrapper">
+        <h1 id="plantuml-tutorial">PlantUML Tutorial<a class="fa fa-anchor" href="#plantuml-tutorial" onclick="event.stopPropagation()"></a></h1>
+        <p>One main advantage of using <a href="http://plantuml.com/">PlantUML</a> for creating diagrams is, as diagrams can be saved in a text format, you can update the diagrams incrementally, as the design evolves over time.</p>
+        <hr>
+        <h2 id="setting-up-plantuml">Setting up PlantUML<a class="fa fa-anchor" href="#setting-up-plantuml" onclick="event.stopPropagation()"></a></h2>
+        <ol>
+          <li>
+            <p><strong>Install Graphviz.</strong> Graphviz is a dependency that PlantUML requires to generate more advanced diagrams. Head over to the <a href="https://www.graphviz.org/download/">downloads page</a> on the official Graphviz website and follow instructions to install Graphviz.</p>
+          </li>
+          <li>
+            <p><strong>Install the <code>PlantUML integration</code> plugin in IntelliJ IDEA.</strong></p>
+            <ol>
+              <li>
+                <p>Go to <code>Settings</code> &gt; <code>Plugins</code> &gt; <code>Marketplace</code> and install the plugin <code>PlantUML integration</code>.</p>
+              </li>
+              <li>
+                <p>Then go to <code>Settings</code> &gt; <code>Other Settings</code> &gt; <code>PlantUML</code> or search for PlantUML. Configure the path to the <code>dot</code> executable. This executable can be found in the <code>/bin</code> directory where you installed GraphViz.<br>
+                  <a href="/guides/tutorials/images/plantuml/ConfiguringGraphviz.png" target="_self"><img src="/guides/tutorials/images/plantuml/ConfiguringGraphviz.png" alt class="img-fluid"></a></p>
+              </li>
+            </ol>
+          </li>
+        </ol>
+        <hr>
+        <h2 id="creating-editing-exporting-diagrams">Creating/editing/exporting diagrams<a class="fa fa-anchor" href="#creating-editing-exporting-diagrams" onclick="event.stopPropagation()"></a></h2>
+        <p>After installing the <code>PlantUML integration</code> plugin, simply create or open any <code>.puml</code> file to start editing it.</p>
+        <p><a href="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" alt class="img-fluid"></a></p>
+        <p>Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes <em>will not</em> be reflected in your actual documentation until you export the diagram.</p>
+        <p>The <code>PlantUML integration</code> plugin allows you to export individual diagrams to a location of your choosing. Click the <code>Save Current Diagram Only</code> button and choose the location to export the image file.</p>
+        <box type="info" light>
+          <p>You will have to <code>git add</code> any new diagrams generated!
+          </p>
+        </box>
+        <hr>
+        <h2 id="tips-and-tricks">Tips and tricks<a class="fa fa-anchor" href="#tips-and-tricks" onclick="event.stopPropagation()"></a></h2>
+        <h3 id="maintaining-consistency-in-formatting">Maintaining consistency in formatting<a class="fa fa-anchor" href="#maintaining-consistency-in-formatting" onclick="event.stopPropagation()"></a></h3>
+        <p>It is highly recommended to consistently color your UML diagrams as an visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.</p>
+        <p>For example, you can create a <code>Style.puml</code> with the contents:</p>
+        <p><strong>Style.puml.</strong></p>
+        <pre><code class="hljs"><span>!define LOGIC_COLOR #3333C4<br></span><span>!define LOGIC_COLOR_T1 #7777DB<br></span><span>!define LOGIC_COLOR_T2 #5252CE<br></span><span>!define LOGIC_COLOR_T3 #1616B0<br></span><span>!define LOGIC_COLOR_T4 #101086<br></span></code></pre>
+        <p>Then you can use it in another PlantUML file like this:</p>
+        <p><strong>UndoSequenceDiagram.puml.</strong></p>
+        <pre><code class="hljs"><span>!include Style.puml<br></span><span><br></span><span>box Logic LOGIC_COLOR_T2<br></span><span>participant &quot;:LogicManager&quot; as LogicManager LOGIC_COLOR<br></span><span>participant &quot;:AddressBookParser&quot; as AddressBookParser LOGIC_COLOR<br></span><span>participant &quot;:UndoCommand&quot; as UndoCommand LOGIC_COLOR<br></span><span>end box<br></span></code></pre>
+        <p>You can fine-tune the formatting of PlantUML diagrams with the <code>skinparam</code> command. For example, <code>skinparam backgroundColor transparent</code> turns the background of the diagram transparent.</p>
+        <box type="tip" light>
+          <p>For a comprehensive list of <code>skinparam</code>s, see <a href="https://plantuml-documentation.readthedocs.io/en/latest/">unofficial PlantUML skinparam documentation</a>.
+          </p>
+        </box>
+        <h3 id="repositioning-elements">Repositioning elements<a class="fa fa-anchor" href="#repositioning-elements" onclick="event.stopPropagation()"></a></h3>
+        <p>While PlantUML’s automatic layout engine usually produces satisfactory results, at times the result can be less than ideal, especially on larger diagrams. Here is an example where the default layout generated by PlantUML has a lot of overlapping lines that are hard to decipher:</p>
+        <p><a href="/guides/tutorials/images/plantuml/RawUiDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/RawUiDiagram.png" alt class="img-fluid"></a></p>
+        <box type="info" light>
+          <p>In most cases, you should consider decomposing the diagram into smaller ones or focusing on a more specific portion of the diagram.</p>
+        </box>
+        <p>Here are some techniques you can use to obtain a more palatable diagram.</p>
+        <h4 id="link-lengths">Link lengths<a class="fa fa-anchor" href="#link-lengths" onclick="event.stopPropagation()"></a></h4>
+        <p>By default, a short link (<code>-&gt;</code>) points to right and a long link (<code>--&gt;</code>) points downwards. you can extend any link to make it longer (<code>---&gt;</code>).</p>
+        <p><a href="/guides/tutorials/images/plantuml/ArrowLength.png" target="_self"><img src="/guides/tutorials/images/plantuml/ArrowLength.png" alt class="img-fluid"></a></p>
+        <h4 id="link-directions">Link directions<a class="fa fa-anchor" href="#link-directions" onclick="event.stopPropagation()"></a></h4>
+        <p>Clever usage of arrow directions will resolve most layout issues. For example, the table below shows how the way in which you specify arrows can results in drastically different layouts for the same diagram.</p>
+        <table>
+          <caption>Table: Link directions</caption>
+          <colgroup>
+            <col style="width: 40%">
+            <col style="width: 60%">
+          </colgroup>
+          <thead>
+            <tr class="header">
+              <th>Source</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd">
+              <td>
+                <pre>
+A --> Z
+B --> Z
+C --> Z
+D --> Z
+<p>A --&gt; 1
+B --&gt; 2
+C --&gt; 3
+D --&gt; 4
+</p></pre>
+              </td>
+              <td>
+                <img src="/guides/tutorials/images/plantuml/AllDown.png"></td>
+            </tr>
+            <tr class="even">
+              <td>
+                <pre>
+'default is down
+A --> Z
+'specify down
+B -down-> Z
+'shorthand for down
+C -d-> Z
+'arrow lengths take priority
+D -down> Z
+
+A -up-> 1
+B -up-> 2
+C -up-> 3
+D -up-> 4
+</pre>
+              </td>
+              <td>
+                <img src="/guides/tutorials/images/plantuml/UpAndDown.png"></td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <pre>
+A -up-> Z
+B -up-> Z
+C -up-> Z
+D -up-> Z
+
+A --> 1
+B --> 2
+C --> 3
+D --> 4
+
+'Force A B C D
+A -right[hidden]- B
+B -right[hidden]- C
+C -right[hidden]- D
+</pre>
+              </td>
+              <td>
+                <img src="/guides/tutorials/images/plantuml/HiddenArrows.png"></td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Another technique you can use to influence the layout is to reorder definitions.</strong> The layout engine will attempt to order objects in the order in which they are defined. If there is no formal definition, the objects is taken to be declared upon its first usage.</p>
+        <table>
+          <caption>Table: Definition ordering and outcomes</caption>
+          <colgroup>
+            <col style="width: 70%">
+            <col style="width: 30%">
+          </colgroup>
+          <thead>
+            <tr class="header">
+              <th>Source</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd">
+              <td>
+                <pre>
+A --> B
+C --> D
+</pre>
+              </td>
+              <td>
+                <img src="/guides/tutorials/images/plantuml/ABeforeC.png"></td>
+            </tr>
+            <tr class="even">
+              <td>
+                <pre>
+'Class C is defined before A
+Class C
+
+A --> B
+C --> D
+</pre>
+              </td>
+              <td>
+                <img src="/guides/tutorials/images/plantuml/CBeforeA.png"></td>
+            </tr>
+            <tr class="odd">
+              <td>
+                <pre>
+package "Rule Of Thumb";{
+    Class C
+    A --> B
+    C --> D
+}
+</pre>
+              </td>
+              <td>
+                <img src="/guides/tutorials/images/plantuml/PackagesAndConsistency.png"></td>
+            </tr>
+          </tbody>
+        </table>
+        <box type="tip" light>
+          <p>Explicitly define all symbols to avoid any potential layout mishaps.
+          </p>
+        </box>
+      </div>
+
+
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#plantuml-tutorial">PlantUML Tutorial&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#setting-up-plantuml">Setting up PlantUML&#x200E;</a>
+              <a class="nav-link py-1" href="#creating-editing-exporting-diagrams">Creating/editing/exporting diagrams&#x200E;</a>
+              <a class="nav-link py-1" href="#tips-and-tricks">Tips and tricks&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#maintaining-consistency-in-formatting">Maintaining consistency in formatting&#x200E;</a>
+                <a class="nav-link py-1" href="#repositioning-elements">Repositioning elements&#x200E;</a>
+              </nav>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 26 May 2020, 0:46:35 GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/guides'
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
+
+</html>

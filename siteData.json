@@ -32,16 +32,21 @@
       "headingKeywords": {}
     },
     {
-      "title": "CheckStyle Tutorial",
+      "title": "Checkstyle Tutorial",
       "pageNav": 2,
       "src": "tutorials/checkstyleTutorial.md",
       "layout": "default",
-      "headings": {},
+      "headings": {
+        "using-checkstyle-with-gradle": "Using Checkstyle with Gradle",
+        "using-checkstyle-idea-plugin": "Using Checkstyle-IDEA plugin",
+        "configuring-checkstyle-rules": "Configuring Checkstyle rules",
+        "resources": "Resources"
+      },
       "headingKeywords": {}
     },
     {
       "title": "Gradle Tutorial",
-      "pageNav": 2,
+      "pageNav": 3,
       "src": "tutorials/gradleTutorial.md",
       "layout": "default",
       "headings": {
@@ -52,11 +57,13 @@
         "running-gradle-tasks": "Running Gradle Tasks",
         "adding-plugins": "Adding plugins",
         "using-gradle-to-do-some-common-project-activities": "Using Gradle to do some common project activities",
-        "running-checkstyle": "Running CheckStyle",
+        "cleaning-the-project": "Cleaning the project",
+        "running-checkstyle": "Running Checkstyle",
         "running-tests": "Running tests",
         "creating-a-jar-file": "Creating a JAR file",
+        "compiling": "Compiling",
         "managing-dependencies": "Managing dependencies",
-        "further-reading": "Further reading"
+        "resources": "Resources"
       },
       "headingKeywords": {}
     },
@@ -123,7 +130,40 @@
       "pageNav": 2,
       "src": "tutorials/junitTutorial.md",
       "layout": "default",
-      "headings": {},
+      "headings": {
+        "junit-tutorial": "JUnit Tutorial",
+        "conventions-to-follow": "Conventions to follow",
+        "adding-junit-support-to-your-project": "Adding JUnit support to your project",
+        "running-tests": "Running tests",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Netlify Tutorial",
+      "pageNav": 3,
+      "src": "tutorials/netlifyTutorial.md",
+      "layout": "default",
+      "headings": {
+        "netlify-tutorial": "Netlify Tutorial",
+        "setting-up": "Setting up",
+        "changing-the-site-name": "Changing the site name"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "PlantUML Tutorial",
+      "pageNav": 3,
+      "src": "tutorials/plantUmlTutorial.md",
+      "layout": "default",
+      "headings": {
+        "plantuml-tutorial": "PlantUML Tutorial",
+        "setting-up-plantuml": "Setting up PlantUML",
+        "creating-editing-exporting-diagrams": "Creating/editing/exporting diagrams",
+        "tips-and-tricks": "Tips and tricks",
+        "maintaining-consistency-in-formatting": "Maintaining consistency in formatting",
+        "repositioning-elements": "Repositioning elements"
+      },
       "headingKeywords": {}
     },
     {

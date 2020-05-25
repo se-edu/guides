@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Netlify Tutorial</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+  <link rel="icon" href="/guides/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <navbar placement="top" type="light" class="temp-navbar">
+        <a slot="brand" href="https://se-edu.github.io" title="More SE-EDU Resources" class="navbar-brand"><img src="https://se-edu.github.io/images/SeEduLogo.png" alt="SE-EDU" width="30"></a>
+        <li><a href="https://se-edu.github.io/addressbook-level3/" class="nav-link"><span>AB-3</span></a></li>
+        <li><a href="https://se-edu.github.io/se-book/" class="nav-link"><span>Book</span></a></li>
+        <div class="nav-link temp-dropdown-placeholder">Tutorials</div>
+        <dropdown class="nav-link temp-dropdown"><template slot="_header">Tutorials</template>
+          <li><a href="/guides/index.html" class="dropdown-item"><span>Home</span></a></li>
+          <li><a href="/guides/about.html" class="dropdown-item"><span>About</span></a></li>
+          <li><a href="https://github.com/se-edu/guides" class="dropdown-item"><span> GitHub</span></a></li>
+        </dropdown>
+        <li slot="right" class="nav-link">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search Learning Resources" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+
+      <div id="content-wrapper">
+        <h1 id="netlify-tutorial">Netlify Tutorial<a class="fa fa-anchor" href="#netlify-tutorial" onclick="event.stopPropagation()"></a></h1>
+        <p><a href="https://www.netlify.com/">Netlify</a> is an automated hosting platform for deploying static websites. It is particularly useful for previewing documentation changes in a PR (i.e., how would the final output of the documentation will change if the PR is merged), which can be done using Netlify’s <a href="https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/">Deploy Previews</a> feature.</p>
+        <box type="important" light>
+          <p><strong>Caution:</strong> Netlify allows only 300 free build minutes per month. They use an unsavory practice of letting you exceed the limit and then sending you an invoice for the extra use. You will not be able to use Netlify again unless you pay (or get them to cancel the charge). Therefore, we caution you to use Netlify (if at all) during times you update documentation and only if you want to use Netlify <em>Deploy Previews</em> to help review such PRs.</p>
+        </box>
+        <h2 id="setting-up">Setting up<a class="fa fa-anchor" href="#setting-up" onclick="event.stopPropagation()"></a></h2>
+        <ol>
+          <li>
+            <p>Go to <a href="https://www.netlify.com/">https://www.netlify.com/</a> and click <code>Sign Up</code>. Next, click <code>GITHUB SIGN IN</code>, enter your GitHub account details and authorize netlify.</p>
+          </li>
+          <li>
+            <p>After logging in, click <code>New site from Git</code>.</p>
+          </li>
+          <li>
+            <p>You will then be brought to the setup page. Click <code>GitHub</code> to link your repository to Netlify.</p>
+            <ul>
+              <li>Depending on whether you are the owner of the repository, you can either grant or request access to Netlify so that it can access your repository and build your documentation.<br>
+                <a href="/guides/tutorials/images/netlify/grant_or_request_access.png" target="_self"><img src="/guides/tutorials/images/netlify/grant_or_request_access.png" alt class="img-fluid"></a></li>
+              <li>After granting or requesting access to your repository, click <code>Authorize netlify</code>.</li>
+            </ul>
+          </li>
+          <li>
+            <p>Pick your repository from the list.</p>
+          </li>
+          <li>
+            <p>Fill out the details as follows and then click <code>Deploy site</code>.</p>
+            <ul>
+              <li>Branch to deploy: select <code>master</code> branch</li>
+              <li>Build command: <code>cd docs &amp;&amp; bundle install &amp;&amp; bundle exec jekyll build</code></li>
+              <li>Publish directory: <code>docs/_site</code></li>
+            </ul>
+          </li>
+          <li>
+            <p>Once Netlify has completed building your project, you can now:</p>
+            <ul>
+              <li>View your main branch’s deployed documentation on the site name given by Netlify (customizable as shown <a href="#changing_the_site_name">below</a>).<br>
+                <a href="/guides/tutorials/images/netlify/temp_site_name.png" target="_self"><img src="/guides/tutorials/images/netlify/temp_site_name.png" alt class="img-fluid"></a></li>
+              <li>Preview the updated documentation whenever a pull request is made by clicking the <code>Details</code> hyperlink next to the Netlify test status.<br>
+                <a href="/guides/tutorials/images/netlify/netlify_details.png" target="_self"><img src="/guides/tutorials/images/netlify/netlify_details.png" alt class="img-fluid"></a></li>
+            </ul>
+          </li>
+        </ol>
+        <h2 id="changing-the-site-name">Changing the site name<a class="fa fa-anchor" href="#changing-the-site-name" onclick="event.stopPropagation()"></a></h2>
+        <p>If you don’t like the site name given by Netlify, you can change it as follows:</p>
+        <ol>
+          <li>
+            <p>Click on <code>Settings</code>.</p>
+          </li>
+          <li>
+            <p>Then click <code>Change site name</code> and fill in your desired site name.<br>
+              <a href="/guides/tutorials/images/netlify/change_site_name.png" target="_self"><img src="/guides/tutorials/images/netlify/change_site_name.png" alt class="img-fluid"></a></p>
+          </li>
+        </ol>
+      </div>
+
+
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#netlify-tutorial">Netlify Tutorial&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#setting-up">Setting up&#x200E;</a>
+              <a class="nav-link py-1" href="#changing-the-site-name">Changing the site name&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 26 May 2020, 0:46:35 GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/guides'
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
+
+</html>

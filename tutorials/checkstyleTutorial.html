@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CheckStyle Tutorial</title>
+  <title>Checkstyle Tutorial</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
   <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
@@ -44,7 +44,83 @@
     <div id="flex-body">
 
       <div id="content-wrapper">
-        <p>TBD</p>
+        <h2 id="using-checkstyle-with-gradle">Using Checkstyle with Gradle<a class="fa fa-anchor" href="#using-checkstyle-with-gradle" onclick="event.stopPropagation()"></a></h2>
+        <p>Here is an example of relevant lines that should be in the <code>build.gradle</code> file.</p>
+        <div class="code-block">
+          <div class="code-block-heading"><span>build.gradle</span></div>
+          <div class="code-block-content">
+            <pre><code heading="build.gradle" class="hljs groovy"><span>plugins {<br></span><span class="highlighted">    id <span class="hljs-string">'checkstyle'</span><br></span><span>    <span class="hljs-comment">// other plugins</span><br></span><span>}<br></span><span><br></span><span class="highlighted">checkstyle {<br></span><span class="highlighted">    toolVersion = <span class="hljs-string">'8.1'</span><br></span><span class="highlighted">}<br></span></code></pre>
+          </div>
+        </div>
+        <p>Some relevant Gradle <em>tasks</em> added by the CheckStyle plugin.</p>
+        <ul>
+          <li><code>checkstyleMain</code>: checks if the main code complies with the style rules</li>
+          <li><code>checkstyleTest</code>: checks if the test code complies with the style rules</li>
+        </ul>
+        <p>For example, you can run <code>gradlew checkstyleMain checkstyleTest</code> to verify that all your code complies with the style rules.</p>
+        <h2 id="using-checkstyle-idea-plugin">Using Checkstyle-IDEA plugin<a class="fa fa-anchor" href="#using-checkstyle-idea-plugin" onclick="event.stopPropagation()"></a></h2>
+        <p>Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij can alert you about code style problems as you write code.</p>
+        <ol>
+          <li>
+            <p>Install the Checkstyle-IDEA plugin by going to <code>File</code> &gt; <code>Settings</code> (Windows/Linux), or <code>IntelliJ IDEA</code> &gt; <code>Preferences…​</code> (macOS). Select <code>Plugins</code>, press <code>Browse Repository</code>, and find the plugin. Restart the IDE to complete the installation.</p>
+          </li>
+          <li>
+            <p>Click <code>File</code> &gt; <code>Settings…​</code> &gt; <code>Other Settings</code> &gt; <code>Checkstyle</code></p>
+          </li>
+          <li>
+            <p>Set <code>Scan Scope</code> to <code>Only Java sources (including tests)</code>, so that the plugin will run checkstyle for our test source codes as well</p>
+          </li>
+          <li>
+            <p>Ensure that the <code>Checkstyle version</code> is set to the one used by the project.<br>
+              <span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If your project uses Gradle, you can check the <code>build.gradle</code> file to find the correct version.<br>
+              <a href="/guides/tutorials/images/checkstyle/checkstyle-idea-scan-scope.png" target="_self"><img src="/guides/tutorials/images/checkstyle/checkstyle-idea-scan-scope.png" alt class="img-fluid"></a></p>
+          </li>
+          <li>
+            <p>Click the plus sign under <code>Configuration File</code></p>
+          </li>
+          <li>
+            <p>Enter an arbitrary description e.g. addressbook</p>
+          </li>
+          <li>
+            <p>Select <code>Use a local Checkstyle file</code></p>
+          </li>
+          <li>
+            <p>Use the checkstyle configuration file found at <code>config/checkstyle/checkstyle.xml</code></p>
+          </li>
+          <li>
+            <p>Click <code>Next</code> &gt; <code>Finish</code></p>
+          </li>
+          <li>
+            <p>Mark <code>Active</code> for the newly imported check configuration<br>
+              <a href="/guides/tutorials/images/checkstyle/checkstyle-idea-configuration.png" target="_self"><img src="/guides/tutorials/images/checkstyle/checkstyle-idea-configuration.png" alt class="img-fluid"></a></p>
+          </li>
+          <li>
+            <p>Click <code>OK</code></p>
+          </li>
+          <li>
+            <p>To verify the plugin is set up correctly, temporirily modify the code to violate a style rule (e.g., add an extra space somewhere) and run the Checkstyle check using the plugin.<br>
+              <a href="/guides/tutorials/images/checkstyle/runCheckstyle.png" target="_self"><img src="/guides/tutorials/images/checkstyle/runCheckstyle.png" alt class="img-fluid"></a></p>
+          </li>
+        </ol>
+        <h4 id="troubleshooting">Troubleshooting<a class="fa fa-anchor" href="#troubleshooting" onclick="event.stopPropagation()"></a></h4>
+        <p><strong>Problem: When importing <code>checkstyle.xml</code>, Checkstyle-IDEA plugin complains that <code>The Checkstyle rules file could not be parsed. …​ The file has been blacklisted for 60s.</code></strong></p>
+        <ul>
+          <li>Reason: <code>checkstyle.xml</code> is written for a particular version, but the plugin was not configured to the correct version.</li>
+          <li>Solution: Ensure that you have selected the correct <code>Checkstyle version</code> that matches the version in <code>build.gradle</code> and have clicked
+            <code>Apply</code>, as <code>checkstyle.xml</code> is written for Gradle’s checkstyle.</li>
+        </ul>
+        <p><strong>Problem: After setting up <code>checkstyle.xml</code>, Checkstyle-IDEA plugin does not seem to highlight the errors / real-time scanning seems broken.</strong></p>
+        <ul>
+          <li>Reason: The plugin may not immediately run after setting it up.</li>
+          <li>Solution: Restart the IDE.</li>
+        </ul>
+        <h2 id="configuring-checkstyle-rules">Configuring Checkstyle rules<a class="fa fa-anchor" href="#configuring-checkstyle-rules" onclick="event.stopPropagation()"></a></h2>
+        <p>Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in <code>./config/checkstyle/</code> by convention.</p>
+        <p>The set of code style rules are put in the <code>config/checkstyle/checkstyle.xml</code>. To enable <em>exceptions</em> to code styles, you can add in the comment <code>//CODESTYLE.OFF: RuleName</code> at the start of the section and <code>//CODESTYLE.ON: RuleName</code> at the end of the section. Alternatively, you can specify which rules to suppress in a config file <code>config/checkstyle/suppressions.xml</code></p>
+        <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><a href="https://checkstyle.sourceforge.io/">Checkstyle home page</a></li>
+        </ul>
       </div>
 
 
@@ -52,6 +128,10 @@
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
           <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#using-checkstyle-with-gradle">Using Checkstyle with Gradle&#x200E;</a>
+            <a class="nav-link py-1" href="#using-checkstyle-idea-plugin">Using Checkstyle-IDEA plugin&#x200E;</a>
+            <a class="nav-link py-1" href="#configuring-checkstyle-rules">Configuring Checkstyle rules&#x200E;</a>
+            <a class="nav-link py-1" href="#resources">Resources&#x200E;</a>
 
           </nav>
         </div>
@@ -60,7 +140,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 25 May 2020, 16:52:57 GMT+8]</small></div>
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 26 May 2020, 0:46:35 GMT+8]</small></div>
     </footer>
   </div>
 </body>
