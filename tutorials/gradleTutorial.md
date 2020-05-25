@@ -1,22 +1,13 @@
 <frontmatter>
   title: "Gradle Tutorial"
-  pageNav: 2
+  pageNav: 3
 </frontmatter>
 
 # Gradle Tutorial
 
 Gradle is a _build automation tool_ used to automate build processes. There are many ways of integrating Gradle into a project. This tutorial uses the _Gradle wrapper_ approach.
 
-* [Basics](#basics)
-* [Adding Gradle to the project](#adding-gradle-to-the-project)
-* [Running Gradle tasks](#running-gradle-tasks)
-* [Adding plugins](#adding-plugins)
-* [Using Gradle to do some common project activities](#using-gradle-to-do-some-common-project-activities)
-  * [Running CheckStyle](#running-checkstyle)
-  * [Running tests](#running-tests)
-  * [Creating a JAR file](#creating-a-jar-file)
-* [Managing dependencies](#managing-dependencies)
-* [Further reading](#further-reading)
+---------------------------------------------------------------------------------------------------------
 
 ## Basics
 
@@ -29,6 +20,7 @@ Tasks can be composed of, or dependent on, other tasks.
 
 * **Properties** change the behavior of tasks. For instance, `mainClassName` of the `application` plugin is a compulsory property which tells Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much to you need to configure if you follow the recommended directory structure.
 
+---------------------------------------------------------------------------------------------------------
 
 ## Adding Gradle to the project
 
@@ -55,9 +47,9 @@ Tasks can be composed of, or dependent on, other tasks.
 
 * You are on you own but [this](https://docs.gradle.org/current/userguide/gradle_wrapper.html) is a good place to start.
 
+---------------------------------------------------------------------------------------------------------
 
 ## Using Gradle in Intellij IDEA
-
 
 
 If the Gradle tasks don't appear in the Gradle window, click the 'refresh' button in the tooolbar to reimport the Gradle project.
@@ -65,6 +57,7 @@ If the Gradle tasks don't appear in the Gradle window, click the 'refresh' butto
 Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to `File` > `Settings` and change the following settings:<br>
 ![change Intellij settings to not use Gradle](assets/intellijRunUsingGradle.png)
  
+---------------------------------------------------------------------------------------------------------
 
 ## Running Gradle Tasks
 
@@ -75,13 +68,14 @@ Alternatively, you can type the command in the terminal.
 * On Windows: `gradlew <task1> <task2> …`​ e.g. `gradlew clean test`
 * On Mac/Linux: `./gradlew <task1> <task2> …`​ e.g. `./gradlew clean test`
 
+---------------------------------------------------------------------------------------------------------
 
 ## Adding plugins
 
-Gradle plugins are reusable units of build logic. Most common build tasks are bundled into core plugins provided by Gradle. Java, CheckStyle, and Shadow are three of plugins commonly used in Java projects.
+Gradle plugins are reusable units of build logic. Most common build tasks are bundled into core plugins provided by Gradle. Java, Checkstyle, and Shadow are three of plugins commonly used in Java projects.
 The relevant lines of the `build.gradle` are given below:
 
-```groovy
+```groovy {highlight-lines="2-5", heading="build.gradle"}
 plugins {
     id 'java'
     id 'application'
@@ -90,22 +84,28 @@ plugins {
 }
 ```
 
+---------------------------------------------------------------------------------------------------------
+
 ## Using Gradle to do some common project activities
 
-### Running CheckStyle
+### Cleaning the project
 
-CheckStyle is a tool for checking if the code complies with certain style rules.
+* **`clean`**: Deletes the files created during the previous build tasks (e.g. files in the `build` folder).<br>
+  e.g. `./gradlew clean`
 
-Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in `./config/checkstyle/` by convention.
+<box>
 
-The plugin adds a few _tasks_ to your project.
-* `checkstyleMain`: checks if the main code complies with the style rules
-* `checkstyleTest`: checks if the test code complies with the style rules
+{{ icon_tip }} **You can use `clean` to prevent Gradle from skipping tasks**: When running a Gradle task, Gradle will try to figure out if the task needs running at all. If Gradle determines that the output of the task will be same as the previous time, it will not run the task. For example, it will not build the JAR file again if the relevant source files have not changed since the last time the JAR file was built. If you want to force Gradle to run a task, you can combine that task with `clean` (e.g., `./gradlew clean shadowJar`). Once the build files have been `clean` ed, Gradle has no way to determine if the output will be same as before, and it will have no choice but to execute the task.
 
-For example, you can run `gradlew checkstyleMain checkstyleTest` to verify that all your code complies with the style rules.
+</box>
+
+### Running Checkstyle
+
+`gradlew checkstyleMain checkstyleTest`: runs main code and test code complies with the Checkstyle rules. <br>
 
 **Resources**:
-* [Gradle documentation for the CheckStyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
+* [Checkstyle Tutorial](checkstyleTutorial.html)
+* [Gradle documentation for the Checkstyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
 
 
 ### Running tests
@@ -119,16 +119,28 @@ Run the `test` task to run the tests in the project.
 
 ### Creating a JAR file
 
-Shadow is a plugin that packages an application into an executable jar file. 
+[Shadow](https://github.com/johnrengelman/shadow) is a plugin that packages an application into an executable _fat_ jar file _if the current file is outdated_.
 
-The plugin can be configured by setting some properties. By default, it produces a jar file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` (the two properties can be set in the `build.gradle` file).
+<box>
 
-You can generate an executable jar by running the command `gradlew shadowJar` which publishes an executable jar to `./build/libs/`.
+{{ icon_info }} **What's a _fat_ JAR? Why do we need one?** If you package only your own class files into the JAR file, it will not work properly unless the user has all the other JAR files (i.e. third-party libraries) your classes depend on, which is rather inconvenient. Therefore, you should package all dependencies into a single JAR files, creating what is also known as a _fat_ JAR file.
+</box>
+
+The task **`shadowJar`** creates the JAR file in the `build/libs` folder. By default, it produces a jar file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and put it in the `builds/libs` folder. These properties can be set in the `build.gradle` file.
 
 **Resources**:
 * [Gradle documentation for the Shadow plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
 * [More about the Shadow plugin](https://imperceptiblethoughts.com/shadow/introduction/)
 
+
+### Compiling
+
+There is no need to run these Gradle tasks manually as they are called automatically by other relevant Gradle tasks.
+
+* **`compileJava`**: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes. See `build.gradle` → `allprojects` → `dependencies` → `compile` for the list of dependencies required.
+* **`compileTestJava`**: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes. See `build.gradle` → `allprojects` → `dependencies` → `testCompile` for the list of dependencies required.
+
+---------------------------------------------------------------------------------------------------------
 
 ## Managing dependencies
 
@@ -146,7 +158,9 @@ compile group: 'com.joestelmach', name: 'natty', version: '0.6'
 
 Tip: Most third-party libararies specify how to add it as a Gradle dependency ([example](https://mvnrepository.com/artifact/com.joestelmach/natty/0.6)).
 
-## Further reading
+---------------------------------------------------------------------------------------------------------
+
+## Resources
 
 * [Official Gradle Documentation](https://docs.gradle.org/current/userguide/userguide.html)
 
