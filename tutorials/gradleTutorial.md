@@ -1,3 +1,8 @@
+<frontmatter>
+  title: "Gradle Tutorial"
+  pageNav: 2
+</frontmatter>
+
 # Gradle Tutorial
 
 Gradle is a _build automation tool_ used to automate build processes. There are many ways of integrating Gradle into a project. This tutorial uses the _Gradle wrapper_ approach.
@@ -27,13 +32,33 @@ Tasks can be composed of, or dependent on, other tasks.
 
 ## Adding Gradle to the project
 
-For simplicity, let us assume that Gradle Wrapper has been added to the project already (if it has been added to the project, you will see a `gradle\wrapper\gradle-wrapper.jar` in your project). If you need to add it yourself, you can learn how to do that from [here](https://docs.gradle.org/current/userguide/gradle_wrapper.html).
+****Scenario 1:**** You are setting up a project in Intellij IDEA. The project already has Gradle support.
+
+<div class="ml-3">
+
+{{ icon_tip }} If the project comes with Gradle support, you will see a `build.gradle` file in your project root.
+</div>
+
+1. When you _import_ the project into IDEA, at the step where you normally select the project root folder, choose the `build.gradle` file inside the root folder instead.
+1. If asked, choose `Open as Project` (not `Open as File`).
+1. After importing is complete, you will see the `Gradle Toolbar` in the IDEA interface.<br>
+   ![Gradle icon](assets/GradleIcon.png)
+
+****Scenario 2:**** You are adding Gradle support to an ongoing project that is already set up in Intellij IDEA. Gradle wrapper files have been provided.
+
+1. Add the Gradle wrapper files to the project. e.g., if they are in a separate branch, merge that branch.
+1. Close the IDEA project if it is open.
+1. Delete the `.idea` folder.
+1. Import the project again (similar to scenario 1 above)
+
+****Scenario 3:**** You are adding Gradle support to an ongoing project from scratch.
+
+* You are on you own but [this](https://docs.gradle.org/current/userguide/gradle_wrapper.html) is a good place to start.
 
 
 ## Using Gradle in Intellij IDEA
 
-When you import a Gradle project into IntelliJ IDEA, you should select the `build.gradle` instead of the project root directory. After importing a Gradle project into Intellij IDEA, you will see the `Gradle Toolbar` in the IDEA interface.<br>
-![Gradle icon](assets/GradleIcon.png)
+
 
 If the Gradle tasks don't appear in the Gradle window, click the 'refresh' button in the tooolbar to reimport the Gradle project.
 

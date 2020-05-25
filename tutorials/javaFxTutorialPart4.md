@@ -1,3 +1,8 @@
+<frontmatter>
+  title: "JavaFX Tutorial Part 4 – Using FXML"
+  pageNav: 2
+</frontmatter>
+
 # JavaFX Tutorial Part 4 – Using FXML
 
 While we have produced a fully functional prototype, there are a few major problems with our application.

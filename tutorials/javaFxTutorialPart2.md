@@ -1,3 +1,8 @@
+<frontmatter>
+  title: "JavaFX Tutorial Part 2 - Creating a GUI for Duke"
+  pageNav: 2
+</frontmatter>
+
 # JavaFX Tutorial Part 2 - Creating a GUI for Duke
 
 In this tutorial, we will be creating a GUI for Duke from scratch based on the following mockup.
