@@ -10,7 +10,7 @@
   </dropdown>
   <li slot="right" class="nav-link">
     <form class="navbar-form">
-      <searchbar :data="searchData" placeholder="Search Learning Resources" :on-hit="searchCallback" menu-align-right ></searchbar>
+      <searchbar :data="searchData" placeholder="Search Guides" :on-hit="searchCallback" menu-align-right ></searchbar>
     </form>
   </li>
 </navbar>
