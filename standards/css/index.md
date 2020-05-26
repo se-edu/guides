@@ -3,20 +3,7 @@ title: "CSS Coding Standard"
 pageNav: 3
 </frontmatter>
 
-{% macro show_example(good_or_bad) %}
-
-<div class="container ml-3">
-<div class="row">
-<div class="col-sm-auto">
-{% if good_or_bad=='good' %}{{ good }}{% else %}{{ bad }}&nbsp;&nbsp;{% endif %}
-</div>
-<div class="col">
-
-{{ caller() }}
-</div>
-</div>
-</div>
-{% endmacro %}
+{% from 'scripts/macros.njk' import show_example with context %}
 
 # CSS Coding Standard
 

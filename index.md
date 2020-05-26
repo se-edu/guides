@@ -22,4 +22,5 @@
 ## Coding Standards
 
 * [CSS](standards/css)
+* [Markdown](standards/markdown)
 * Java: [Basic](standards/java/basic.html) | [Basic + Intermediate](standards/java/intermediate.html) | [All](standards/java/index.html)
