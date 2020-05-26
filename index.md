@@ -21,6 +21,7 @@
 
 ## Coding Standards
 
+* [C#](standards/csharp)
 * [CSS](standards/css)
 * [HTML](standards/html)
 * [Markdown](standards/markdown)
