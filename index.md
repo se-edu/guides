@@ -21,4 +21,5 @@
 
 ## Coding Standards
 
+* [CSS](standards/css)
 * Java: [Basic](standards/java/basic.html) | [Basic + Intermediate](standards/java/intermediate.html) | [All](standards/java/index.html)
