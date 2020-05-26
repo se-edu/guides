@@ -18,3 +18,7 @@
 * [Gradle](tutorials/gradleTutorial.html)
 * [Netlify](tutorials/netlifyTutorial.html)
 * [PlantUML](tutorials/plantUmlTutorial.html)
+
+## Coding Standards
+
+* Java: [Basic](standards/java/basic.html) | [Basic + Intermediate](standards/java/intermediate.html) | [All](standards/java/index.html)
