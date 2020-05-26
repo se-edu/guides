@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Coding Standard</title>
+  <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../../markbind/css/page-nav.css">
+  <link rel="icon" href="/guides/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <navbar placement="top" type="light" class="temp-navbar">
+        <a slot="brand" href="https://se-edu.github.io" title="More SE-EDU Resources" class="navbar-brand"><img src="https://se-edu.github.io/images/SeEduLogo.png" alt="SE-EDU" width="30"></a>
+        <li><a href="/guides/index.html" class="nav-link"><span>Home</span></a></li>
+        <li><a href="/guides/about.html" class="nav-link"><span>About</span></a></li>
+        <li slot="right" class="nav-link">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+
+      <div id="content-wrapper">
+        <h1 id="html-coding-standard">HTML Coding Standard<a class="fa fa-anchor" href="#html-coding-standard" onclick="event.stopPropagation()"></a></h1>
+        <hr>
+        <h2 id="document-properties">Document Properties<a class="fa fa-anchor" href="#document-properties" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><strong>Use the HTML5 Doctype and HTML5 features</strong></li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Do NOT include xml namespace in the document.</strong></li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Character Encoding</strong>: All markup should be delivered via the following HTML element as UTF-8, as it is the most friendly for internationalization.</li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Responsiveness</strong>: The following tag should be added in order to support mobile browsing.</li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li>
+            <p><strong>Indentation</strong>: Indentation should be 2 spaces for html files. Spaces should be used instead of <code>tab</code>.</p>
+          </li>
+          <li>
+            <p><strong>Readability vs Compression</strong>: We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged, along with ASCII art, where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.</p>
+          </li>
+          <li>
+            <p><strong>Markup and inline styling</strong>: Markup defines the structure and outline of a document and offers a structured content. It is not intended to define the look and feel of the content on the page beyond rudimentary concepts such as headers, paragraphs, and lists. The presentation attributes of HTML have all been deprecated and style should be contained in style sheets. Inline styling should not be used, and should be minimized if its usage is really necessary.</p>
+          </li>
+          <li>
+            <p><strong>General structure for HTML document</strong>:</p>
+            <pre><code class="hljs html"><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"Content-Type"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"text/html; charset=UTF-8"</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br></span><span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>CS2103/T (Module website)<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br></span><span><br></span><span>  <span class="hljs-comment">&lt;!-- Sample stylesheet inclusion --&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles/common.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br></span><span>  <span class="hljs-comment">&lt;!-- Body content goes here --&gt;</span><br></span><span><br></span><span>  <span class="hljs-comment">&lt;!-- Sample javascript inclusion --&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></span></code></pre>
+          </li>
+        </ul>
+        <hr>
+        <h2 id="tags">Tags<a class="fa fa-anchor" href="#tags" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><strong>All HTML tags are to be closed properly.</strong></li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Stuff<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Stuff<br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>More Stuff<br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Do not use <code>/&gt;</code> for <em>void</em> elements.</strong><br>
+            Example of void elements are: <code>br</code>, <code>img</code>, <code>link</code>, <code>meta</code>.
+            The full list of HTML void elements can be accessed <a href="http://www.w3.org/TR/html-markup/syntax.html#void-elements">here</a>.</li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"5px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"10px"</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"5px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"10px"</span> /&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Use lowercase for all attributes and tag names.</strong></li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"frame"</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">DIV</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">"frame"</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h2 id="attributes">Attributes<a class="fa fa-anchor" href="#attributes" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><strong>Use <code>attr=&quot;value&quot;</code> for attribute values.</strong></li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"computer"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"some-input"</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">"disabled"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"2"</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-comment">&lt;!-- single/no quotes --&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">computer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'some-input'</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">'disabled'</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">2</span>&gt;</span><br></span><span><br></span><span><span class="hljs-comment">&lt;!-- specify boolean variables in the attributes --&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"computer"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"some-input"</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"2"</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h2 id="naming">Naming<a class="fa fa-anchor" href="#naming" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><strong>Classes: See <a href="/guides/standards/css">CSS Style Guide</a>.</strong></li>
+          <li><strong>IDs: lower-case, join-by-hyphen.</strong> e.g., <code>header-content-week3</code></li>
+        </ul>
+        <hr>
+        <h2 id="indentation">Indentation<a class="fa fa-anchor" href="#indentation" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><strong>Indentation should be <mark>2 spaces</mark> for HTML files (not 4).</strong></li>
+          <li><strong>Spaces should be used instead of <code>tab</code>.</strong></li>
+        </ul>
+        <hr>
+        <h2 id="miscellaneous">Miscellaneous<a class="fa fa-anchor" href="#miscellaneous" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><strong>Follow this format for <code>script</code> tags:</strong></li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">language</span>=<span class="hljs-string">"JavaScript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Do not have trailing whitespaces between opening and closing tags.</strong> However, line breaks and indentation are encouraged if it enhances readability.</li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Student Name<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></span><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></span><span>sed do eiusmod tempor incididunt ut labore<br></span><span>et dolore magna aliqua. Ut enim ad minim veniam,<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Student Name <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li>
+            <p><strong>Include <code>rel=&quot;noopener noreferrer&quot;</code> when using <code>target=&quot;_blank&quot;</code> in links.</strong></p>
+            <box type="info" light>
+              <p>RATIONALE: Leaving this out would enable attackers to get hold of <code>window.opener</code> object, which can be used to redirect to a malicious link. [<a href="https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c">Source</a>]
+              </p>
+            </box>
+          </li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"noopener noreferrer"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://example.com"</span>&gt;</span>Example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://example.com"</span>&gt;</span>Example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#html-coding-standard">HTML Coding Standard&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#document-properties">Document Properties&#x200E;</a>
+              <a class="nav-link py-1" href="#tags">Tags&#x200E;</a>
+              <a class="nav-link py-1" href="#attributes">Attributes&#x200E;</a>
+              <a class="nav-link py-1" href="#naming">Naming&#x200E;</a>
+              <a class="nav-link py-1" href="#indentation">Indentation&#x200E;</a>
+              <a class="nav-link py-1" href="#miscellaneous">Miscellaneous&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Wed, 27 May 2020, 2:03:53 GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../../markbind/js/vue.min.js"></script>
+<script src="../../markbind/js/vue-strap.min.js"></script>
+<script src="../../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../../markbind/js/polyfill.min.js"></script>
+<script src="../../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/guides'
+  const enableSearch = true
+</script>
+<script src="../../markbind/js/setup.js"></script>
+<script src="../../markbind/layouts/default/scripts.js"></script>
+
+</html>

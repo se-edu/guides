@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Coding Standard</title>
+  <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../../markbind/css/page-nav.css">
+  <link rel="icon" href="/guides/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <navbar placement="top" type="light" class="temp-navbar">
+        <a slot="brand" href="https://se-edu.github.io" title="More SE-EDU Resources" class="navbar-brand"><img src="https://se-edu.github.io/images/SeEduLogo.png" alt="SE-EDU" width="30"></a>
+        <li><a href="/guides/index.html" class="nav-link"><span>Home</span></a></li>
+        <li><a href="/guides/about.html" class="nav-link"><span>About</span></a></li>
+        <li slot="right" class="nav-link">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+
+      <div id="content-wrapper">
+        <h1 id="css-coding-standard">CSS Coding Standard<a class="fa fa-anchor" href="#css-coding-standard" onclick="event.stopPropagation()"></a></h1>
+        <h2 id="general">General<a class="fa fa-anchor" href="#general" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li>
+            <p>Use the <a href="https://google.github.io/styleguide/htmlcssguide.xml">Google CSS Style Guide</a>
+              for any topics not covered in this document.</p>
+          </li>
+          <li>
+            <p>If the project is using a framework (e.g. Bootstrap/jQuery UI), use classes from the framework as much as possible.</p>
+          </li>
+          <li>
+            <p>Divide long CSS files into sections.</p>
+            <box type="info" light>
+              By segmenting the file(s) in this logical way, it is easy to locate css rules and to ensure that a new rule being added is not already present.
+            </box>
+          </li>
+        </ul>
+        <hr>
+        <h2 id="css-files">CSS Files<a class="fa fa-anchor" href="#css-files" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li>
+            <p>CSS file includes must be done using <code>&lt;link&gt;</code> tags in the HTML/JSP files and NOT using <code>@import</code> in other css files.</p>
+            <box type="info" light>
+              <p>RATIONALE: <strong><code>@import</code></strong> can be slow and may result in the page being rendered without css for a while before the page magically comes to life. As of now we are using css files as styles of HTML pages and thus the dependency must be clearly visible in the HTML page.
+              </p>
+            </box>
+            <p>
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheets"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../common.css"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span></code><br>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline css"><span class="hljs-keyword">@import</span> <span class="hljs-string">"common.css"</span>;</code>
+            </p>
+          </li>
+          <li>
+            <p>NO inline style sheets or inline styles in the HTML/JSP files.</p>
+            <box type="info" light>
+              RATIONALE: The whole idea is to have Separation of Concerns (SoC). If css rules are specified everywhere, editing them in the future will be a hassle and redundant overriding of css rules may occur. If all are in one place management is also easier.
+            </box>
+          </li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="hljs css"><span><span class="hljs-selector-id">#mainDiv</span> {<br></span><span>   <span class="hljs-attribute">border</span>: thin solid black;<br></span><span>   <span class="hljs-attribute">color</span>: white;<br></span><span>   <span class="hljs-attribute">margin</span>: auto;<br></span><span>}<br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br></span><span><span class="css"><span class="hljs-selector-id">#mainDiv</span> {</span><br></span><span>   color: white;<br></span><span>}<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mainDiv"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: thin solid black; margin: auto"</span>&gt;</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h2 id="selectors">Selectors<a class="fa fa-anchor" href="#selectors" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li>
+            <p>Do not use CSS3 selectors.</p>
+            <box type="info" light>
+              <p>RATIONALE: Although they are powerful, cross-browser compatibility is difficult to achieve and many rules are supported by different browsers starting from different versions (refer: <a href="http://www.w3schools.com/cssref/css3_browsersupport.asp">W3CSchools List</a>). Also, we can stick to more functional names for the css and use classes to achieve our needs → more readable and easier to manage.
+              </p>
+            </box>
+          </li>
+        </ul>
+        <h3 id="selector-formatting">Selector Formatting<a class="fa fa-anchor" href="#selector-formatting" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li>
+            <p>The selector(s) must be specified in separate lines.</p>
+            <box type="info" light>
+              <p>RATIONALE: This eases reading as well as helps in revision control as conflicts reduce.
+              </p>
+            </box>
+          </li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="hljs css"><span><span class="hljs-selector-class">.button-sort-ascending</span><span class="hljs-selector-pseudo">:hover</span>,<br></span><span><span class="hljs-selector-class">.button-sort-none</span><span class="hljs-selector-pseudo">:hover</span> {<br></span><span>   <span class="hljs-attribute">cursor</span>: pointer;<br></span><span>}<br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs css"><span><span class="hljs-selector-class">.button-sort-ascending</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.button-sort-none</span><span class="hljs-selector-pseudo">:hover</span> {<br></span><span>   <span class="hljs-attribute">cursor</span>: pointer;<br></span><span>}<br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li>
+            <p>Group related/hierarchical style specifications (eg :hover, child specifier, etc) and provide an additional indent to the more specific selector. Refer to <a href="http://isobar-idev.github.io/code-standards/#_css_formatting">here</a> for examples.</p>
+            <box type="info" light>
+              <p>RATIONALE: This gives a nice hierarchical structure to the file and helps to visually group css rules by indentation. In addition this gives an immediate idea as to how certain classes are being used in the HTML files (from the hierarchy) without actually reading HTML files.
+              </p>
+            </box>
+          </li>
+        </ul>
+        <h3 id="use-of-efficient-selectors">Use of Efficient Selectors<a class="fa fa-anchor" href="#use-of-efficient-selectors" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li>
+            <p>Do not qualify class/ID selectors using tag names (do not use: <code>div.mainContent</code>, simply use <code>.mainContent</code>). Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS">Writing efficient CSS</a> for examples.</p>
+            <box type="info" light>
+              <p>RATIONALE: This speeds up the css match lookup. If such a qualification is actually required, either use another class on top of this to change the style or use a completely different class to start with. In any case, if this kind of qualification is needed, then probably the class has not been named well enough (see <a href="#naming-classes">naming standards for classes</a>)
+              </p>
+            </box>
+          </li>
+          <li>
+            <p>Use child selector rather than descendant selector (use <code>#container &gt; span</code> rather than <code>#container span</code>). Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS">Writing efficient CSS</a> for examples.</p>
+            <box type="info" light>
+              <p>RATIONALE: This is a strong recommendation as descendant selector is extremely expensive, especially when the specified ancestor has a lot of descendants.
+              </p>
+            </box>
+          </li>
+        </ul>
+        <hr>
+        <h2 id="classes">Classes<a class="fa fa-anchor" href="#classes" onclick="event.stopPropagation()"></a></h2>
+        <h3 id="naming-classes">Naming Classes<a class="fa fa-anchor" href="#naming-classes" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li>Use all lowercase letters.<br>
+            Separate words with hyphens (<code>-</code>) and no other separator.<br>
+            We use 2 kinds of classes: Atomic and Component.
+            <ul>
+              <li><strong><em>Atomic Classes</em></strong> describe atomic attributes like border-gray, align-center that can be used on any element.
+                They have at most 2 rules in them. Start their names with the attribute, followed by the value.<br>
+                (eg: <code>.align-center</code> and not <code>.center-align</code>)</li>
+              <li><strong><em>Component Classes</em></strong> are used for components that have a particular role that (preferably) recurs in multiple pages. To name these classes, describe the function of the element rather than its location.<br>
+                (eg: <code>.panel-details</code> rather than <code>.top-details-box</code>)</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="hljs css"><span><span class="hljs-comment">/* Component Class */</span><br></span><span><span class="hljs-selector-class">.comment-list</span><br></span><span><span class="hljs-selector-class">.sort-icon</span><br></span><span><span class="hljs-comment">/* Atomic Class */</span><br></span><span><span class="hljs-selector-class">.align-center</span><br></span><span><span class="hljs-selector-class">.border-gray</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs css"><span><span class="hljs-selector-class">.commentList</span><br></span><span><span class="hljs-selector-class">.sort_icon</span><br></span><span><span class="hljs-selector-class">.centeralign</span><br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li>When adding classes to style elements in the page, follow the following steps:
+            <ul>
+              <li>Try and style the entire component using Bootstrap.</li>
+              <li>For any additional css, if the component is used in many places create a functional name for the class.</li>
+              <li>If the component does not have any recurring function, utilise the generic classes to achieve the styling.</li>
+              <li><em>Exception:</em> If a particular element requires too many generic classes ( &gt; 5) create a functional class name for it.</li>
+            </ul>
+          </li>
+        </ul>
+        <hr>
+        <h2 id="attributes">Attributes<a class="fa fa-anchor" href="#attributes" onclick="event.stopPropagation()"></a></h2>
+        <h3 id="order-of-attributes">Order of Attributes<a class="fa fa-anchor" href="#order-of-attributes" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li>
+            <p>Alphabetize the attributes, disregarding any browser prefix.<br>
+              All browser-prefixed versions of an attribute must be written together.</p>
+            <box type="info" light>
+              <p>RATIONALE: It makes it easier to locate attributes in a css file.
+              </p>
+            </box>
+          </li>
+        </ul>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
+            </div>
+            <div class="col">
+              <pre><code class="hljs css"><span><span class="hljs-selector-class">.sort-icon</span> {<br></span><span>   <span class="hljs-attribute">display</span>: block;<br></span><span>   <span class="hljs-attribute">float</span>: right;<br></span><span>   <span class="hljs-attribute">height</span>: <span class="hljs-number">17px</span>;<br></span><span>   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1px</span>;<br></span><span>   <span class="hljs-attribute">width</span>: <span class="hljs-number">12px</span>;<br></span><span>}<br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="container ml-3">
+          <div class="row">
+            <div class="col-sm-auto">
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
+            </div>
+            <div class="col">
+              <pre><code class="hljs css"><span><span class="hljs-selector-class">.sort-icon</span> {<br></span><span>   <span class="hljs-attribute">width</span>: <span class="hljs-number">12px</span>;<br></span><span>   <span class="hljs-attribute">height</span>: <span class="hljs-number">17px</span>;<br></span><span>   <span class="hljs-attribute">display</span>: block;<br></span><span>   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1px</span>;<br></span><span>   <span class="hljs-attribute">float</span>: right;<br></span><span>}<br></span></code></pre>
+            </div>
+          </div>
+        </div>
+        <h3 id="attribute-formatting">Attribute Formatting<a class="fa fa-anchor" href="#attribute-formatting" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li>Semicolon after every attribute specification.</li>
+          <li>Space after colon.</li>
+          <li>Drop the units for 0 values (eg: <code>margin: 0</code>).</li>
+          <li>All attribute(s) are to be specified in individual lines.</li>
+          <li>Attributes must have one more indentation than the selector.</li>
+          <li>Indent attributes that require browser specifications so that the actual attribute being declared is in one column. Refer to <a href="http://learn.shayhowe.com/html-css/writing-your-best-code/#css-coding-practices">Writing Your Best Code</a> for examples.</li>
+        </ul>
+        <hr>
+        <h2 id="general-details">General Details<a class="fa fa-anchor" href="#general-details" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li>
+            <p>Use shorthands as much as possible (eg <code>border: 2px 0 1px 4px</code>).</p>
+          </li>
+          <li>
+            <p>DO NOT use <code>!important</code> specifier.</p>
+            <box type="info" light>
+              <p>RATIONALE: Using the <code>!important</code> specifier overrides the natural flow of specificity and cascading hierarchy of css styles. Unless absolutely necessary do not use it. If there is such a situation clearly state the reason with comments (<code>/* */</code>).
+              </p>
+            </box>
+            <p>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline css"><span class="hljs-selector-tag">margin</span>: 10<span class="hljs-selector-tag">px</span> 0 !<span class="hljs-selector-tag">important</span>;</code>
+            </p>
+          </li>
+        </ul>
+        <hr>
+        <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li>
+            <p>Highly Recommended</p>
+            <ul>
+              <li><a href="https://google.github.io/styleguide/htmlcssguide.xml">Google CSS Style Guide</a></li>
+              <li><a href="http://learn.shayhowe.com/html-css/writing-your-best-code/#css-coding-practices">Writing Your Best Code - CSS Coding Practices</a></li>
+            </ul>
+          </li>
+          <li>
+            <p>Other Readings</p>
+            <ul>
+              <li><a href="https://code.tutsplus.com/tutorials/30-css-best-practices-for-beginners--net-6741">30 CSS Best Practices For Beginners</a></li>
+              <li><a href="https://css-tricks.com/css-style-guides">A list of CSS style guides</a></li>
+              <li><a href="http://isobar-idev.github.io/code-standards/">Isobar Coding Standards</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS">Writing efficient CSS (MDN article)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#css-coding-standard">CSS Coding Standard&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#general">General&#x200E;</a>
+              <a class="nav-link py-1" href="#css-files">CSS Files&#x200E;</a>
+              <a class="nav-link py-1" href="#selectors">Selectors&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#selector-formatting">Selector Formatting&#x200E;</a>
+                <a class="nav-link py-1" href="#use-of-efficient-selectors">Use of Efficient Selectors&#x200E;</a>
+              </nav>
+              <a class="nav-link py-1" href="#classes">Classes&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#naming-classes">Naming Classes&#x200E;</a>
+              </nav>
+              <a class="nav-link py-1" href="#attributes">Attributes&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#order-of-attributes">Order of Attributes&#x200E;</a>
+                <a class="nav-link py-1" href="#attribute-formatting">Attribute Formatting&#x200E;</a>
+              </nav>
+              <a class="nav-link py-1" href="#general-details">General Details&#x200E;</a>
+              <a class="nav-link py-1" href="#resources">Resources&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.14.1</a> on Wed, 27 May 2020, 2:03:53 GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../../markbind/js/vue.min.js"></script>
+<script src="../../markbind/js/vue-strap.min.js"></script>
+<script src="../../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../../markbind/js/polyfill.min.js"></script>
+<script src="../../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/guides'
+  const enableSearch = true
+</script>
+<script src="../../markbind/js/setup.js"></script>
+<script src="../../markbind/layouts/default/scripts.js"></script>
+
+</html>

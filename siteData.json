@@ -10,6 +10,7 @@
     },
     {
       "title": "About Us",
+      "pageNav": 2,
       "src": "about.md",
       "layout": "default",
       "headings": {
@@ -27,7 +28,152 @@
       "layout": "default",
       "headings": {
         "guides-and-tutorials-for-se-student-projects": "Guides and tutorials for SE student projects",
-        "tutorials": "Tutorials"
+        "tutorials": "Tutorials",
+        "coding-standards": "Coding Standards"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "C# Coding Standard",
+      "pageNav": 3,
+      "src": "standards/csharp/index.md",
+      "layout": "default",
+      "headings": {
+        "c-coding-standard": "C# Coding Standard",
+        "file-organization": "File Organization",
+        "formatting": "Formatting",
+        "layout": "Layout",
+        "indentation": "Indentation",
+        "white-space": "White Space",
+        "naming": "Naming",
+        "commenting": "Commenting",
+        "language-conventions": "Language Conventions",
+        "references": "References"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "CSS Coding Standard",
+      "pageNav": 3,
+      "src": "standards/css/index.md",
+      "layout": "default",
+      "headings": {
+        "css-coding-standard": "CSS Coding Standard",
+        "general": "General",
+        "css-files": "CSS Files",
+        "selectors": "Selectors",
+        "selector-formatting": "Selector Formatting",
+        "use-of-efficient-selectors": "Use of Efficient Selectors",
+        "classes": "Classes",
+        "naming-classes": "Naming Classes",
+        "attributes": "Attributes",
+        "order-of-attributes": "Order of Attributes",
+        "attribute-formatting": "Attribute Formatting",
+        "general-details": "General Details",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "HTML Coding Standard",
+      "pageNav": 3,
+      "src": "standards/html/index.md",
+      "layout": "default",
+      "headings": {
+        "html-coding-standard": "HTML Coding Standard",
+        "document-properties": "Document Properties",
+        "tags": "Tags",
+        "attributes": "Attributes",
+        "naming": "Naming",
+        "indentation": "Indentation",
+        "miscellaneous": "Miscellaneous"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Java Coding Standard",
+      "pageNav": 3,
+      "tags": [
+        "-level--*",
+        "level--basic",
+        "level--basic-only"
+      ],
+      "src": "standards/java/basic.md",
+      "layout": "default",
+      "headings": {
+        "java-coding-standard-basic": "Java Coding Standard (Basic)",
+        "naming": "Naming",
+        "layout": "Layout",
+        "statements": "Statements",
+        "package-and-import-statements": "Package and Import Statements",
+        "types": "Types",
+        "loops": "Loops",
+        "conditionals": "Conditionals",
+        "comments": "Comments",
+        "references": "References",
+        "contributors": "Contributors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Java Coding Standard",
+      "pageNav": 3,
+      "tags": [
+        "level--*"
+      ],
+      "src": "standards/java/index.md",
+      "layout": "default",
+      "headings": {
+        "java-coding-standard-all": "Java Coding Standard (All)",
+        "naming": "Naming",
+        "layout": "Layout",
+        "statements": "Statements",
+        "package-and-import-statements": "Package and Import Statements",
+        "classes-and-interfaces": "Classes and Interfaces",
+        "methods": "Methods",
+        "types": "Types",
+        "variables": "Variables",
+        "loops": "Loops",
+        "conditionals": "Conditionals",
+        "comments": "Comments",
+        "references": "References",
+        "contributors": "Contributors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Java Coding Standard",
+      "pageNav": 3,
+      "tags": [
+        "-level--*",
+        "level--basic",
+        "level--intermediate",
+        "level--intermediate-only"
+      ],
+      "src": "standards/java/intermediate.md",
+      "layout": "default",
+      "headings": {
+        "java-coding-standard-basic-intermediate": "Java Coding Standard (Basic + Intermediate)",
+        "naming": "Naming",
+        "layout": "Layout",
+        "statements": "Statements",
+        "package-and-import-statements": "Package and Import Statements",
+        "types": "Types",
+        "variables": "Variables",
+        "loops": "Loops",
+        "conditionals": "Conditionals",
+        "comments": "Comments",
+        "references": "References",
+        "contributors": "Contributors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Markdown Coding Standard",
+      "src": "standards/markdown/index.md",
+      "layout": "default",
+      "headings": {
+        "markdown-coding-standard": "Markdown Coding Standard"
       },
       "headingKeywords": {}
     },
