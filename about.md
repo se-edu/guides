@@ -1,5 +1,6 @@
 <frontmatter>
   title: "About Us"
+  pageNav: 2
 </frontmatter>
 
 
