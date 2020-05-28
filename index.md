@@ -5,7 +5,10 @@
 
 {% from 'scripts/macros.njk' import thumbnail with context %}
 
-# Guides for SE student projects
+<div class="lead">
+
+This website contains a collection of tutorials, standards, guides, best practices etc. useful for SE student.
+</div>
 
 ## {{ thumbnail(":fas-chalkboard-teacher:") }} Tutorials
 

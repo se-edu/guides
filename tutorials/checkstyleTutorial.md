@@ -3,6 +3,8 @@
   pageNav: 2
 </frontmatter>
 
+# Checkstyle Tutorial
+
 ## Using Checkstyle with Gradle
 
 Here is an example of relevant lines that should be in the `build.gradle` file.
