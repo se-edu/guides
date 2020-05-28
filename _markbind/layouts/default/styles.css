@@ -7,3 +7,15 @@ th, td {
   border: 1px solid darkgray;
   padding: 15px;
 }
+
+h1, h2 {
+  color: #0073e6;
+  padding: 30px 10px 30px 0px;
+}
+
+hr {
+  height: 3px;
+  border: none;
+  color: #0073e6;
+  background-color: #0073e6;
+}

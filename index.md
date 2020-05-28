@@ -3,9 +3,11 @@
   pageNav: 2
 </frontmatter>
 
-# Guides and tutorials for SE student projects
+{% from 'scripts/macros.njk' import thumbnail with context %}
 
-## Tutorials
+# Guides for SE student projects
+
+## {{ thumbnail(":fas-chalkboard-teacher:") }} Tutorials
 
 * [Automated testing of text UIs](tutorials/textUiTestingTutorial.html)
 * [Checkstyle](tutorials/checkstyleTutorial.html)
@@ -19,7 +21,7 @@
 * [Netlify](tutorials/netlifyTutorial.html)
 * [PlantUML](tutorials/plantUmlTutorial.html)
 
-## Coding Standards
+## {{ thumbnail(":fas-file-code:") }} Coding Standards
 
 * [C#](standards/csharp)
 * [CSS](standards/css)
