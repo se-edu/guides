@@ -18,7 +18,7 @@ for any topics not covered in this document.
   By segmenting the file(s) in this logical way, it is easy to locate css rules and to ensure that a new rule being added is not already present.
   </box>
 
----------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## CSS Files
 
@@ -64,7 +64,7 @@ for any topics not covered in this document.
 ```
 {% endcall %}
 
--------------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Selectors
 
@@ -124,7 +124,7 @@ for any topics not covered in this document.
   RATIONALE: This is a strong recommendation as descendant selector is extremely expensive, especially when the specified ancestor has a lot of descendants.
   </box>
 
-------------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Classes
 
@@ -164,7 +164,7 @@ for any topics not covered in this document.
   * If the component does not have any recurring function, utilise the generic classes to achieve the styling.
   * *Exception:* If a particular element requires too many generic classes ( > 5) create a functional class name for it.
 
-------------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Attributes
 
@@ -211,7 +211,7 @@ for any topics not covered in this document.
 * Attributes must have one more indentation than the selector.
 * Indent attributes that require browser specifications so that the actual attribute being declared is in one column. Refer to [Writing Your Best Code](http://learn.shayhowe.com/html-css/writing-your-best-code/#css-coding-practices) for examples.
 
------------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## General Details
 
@@ -226,7 +226,7 @@ for any topics not covered in this document.
 
   {{ bad }}: `margin: 10px 0 !important;`{.css}
 
-----------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Resources
 

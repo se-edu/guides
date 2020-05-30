@@ -8,7 +8,7 @@
 One main advantage of using  [PlantUML](http://plantuml.com/) for creating diagrams is, as diagrams can be saved in a text format, you can update the diagrams incrementally, as the design evolves over time.
 
 
-------------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Setting up PlantUML
 
@@ -21,7 +21,7 @@ One main advantage of using  [PlantUML](http://plantuml.com/) for creating diagr
    1. Then go to `Settings` \> `Other Settings` \> `PlantUML` or search for PlantUML. Configure the path to the `dot` executable. This executable can be found in the `/bin` directory where you installed GraphViz.<br>
     ![Settings - Other Settings - PlantUML: input the path to your dot executable](images/plantuml/ConfiguringGraphviz.png)
 
-------------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Creating/editing/exporting diagrams
 
@@ -38,7 +38,7 @@ The `PlantUML integration` plugin allows you to export individual diagrams to a 
 You will have to `git add` any new diagrams generated!
 </box>
 
-------------------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Tips and tricks
 

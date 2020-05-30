@@ -7,7 +7,7 @@
 
 Gradle is a _build automation tool_ used to automate build processes. There are many ways of integrating Gradle into a project. This tutorial uses the _Gradle wrapper_ approach.
 
----------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Basics
 
@@ -20,7 +20,7 @@ Tasks can be composed of, or dependent on, other tasks.
 
 * **Properties** change the behavior of tasks. For instance, `mainClassName` of the `application` plugin is a compulsory property which tells Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much to you need to configure if you follow the recommended directory structure.
 
----------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Adding Gradle to the project
 
@@ -47,7 +47,7 @@ Tasks can be composed of, or dependent on, other tasks.
 
 * You are on you own but [this](https://docs.gradle.org/current/userguide/gradle_wrapper.html) is a good place to start.
 
----------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Using Gradle in Intellij IDEA
 
@@ -57,7 +57,7 @@ If the Gradle tasks don't appear in the Gradle window, click the 'refresh' butto
 Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to `File` > `Settings` and change the following settings:<br>
 ![change Intellij settings to not use Gradle](images/gradle/intellijRunUsingGradle.png)
  
----------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Running Gradle Tasks
 
@@ -68,7 +68,7 @@ Alternatively, you can type the command in the terminal.
 * On Windows: `gradlew <task1> <task2> …`​ e.g. `gradlew clean test`
 * On Mac/Linux: `./gradlew <task1> <task2> …`​ e.g. `./gradlew clean test`
 
----------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Adding plugins
 
@@ -84,7 +84,7 @@ plugins {
 }
 ```
 
----------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Using Gradle to do some common project activities
 
@@ -140,7 +140,7 @@ There is no need to run these Gradle tasks manually as they are called automatic
 * **`compileJava`**: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes. See `build.gradle` → `allprojects` → `dependencies` → `compile` for the list of dependencies required.
 * **`compileTestJava`**: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes. See `build.gradle` → `allprojects` → `dependencies` → `testCompile` for the list of dependencies required.
 
----------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Managing dependencies
 
@@ -158,7 +158,7 @@ compile group: 'com.joestelmach', name: 'natty', version: '0.6'
 
 Tip: Most third-party libararies specify how to add it as a Gradle dependency ([example](https://mvnrepository.com/artifact/com.joestelmach/natty/0.6)).
 
----------------------------------------------------------------------------------------------------------
+<!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Resources
 

@@ -13,9 +13,6 @@ h1, h2 {
   padding: 30px 10px 10px 0px;
 }
 
-hr {
-  height: 3px;
-  border: none;
-  color: #0073e6;
-  background-color: #0073e6;
+h2 {
+  border-top: 5px solid #0073e6;
 }
