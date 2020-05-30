@@ -29,5 +29,10 @@ This website contains a collection of tutorials, standards, guides, best practic
 * [C#](standards/csharp)
 * [CSS](standards/css)
 * [HTML](standards/html)
+* [Git](standards/git)
 * [Markdown](standards/markdown)
 * Java: [Basic](standards/java/basic.html) | [Basic + Intermediate](standards/java/intermediate.html) | [All](standards/java/index.html)
+
+## {{ thumbnail(":fas-map-signs:") }} Guidelines
+
+* [Git commits](guidelines/commits.html)
