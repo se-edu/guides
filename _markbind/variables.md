@@ -9,6 +9,9 @@
 <span id="icon_info"><md>:fas-info-circle:</md></span>
 <span id="icon_like"><md>:fas-thumbs-up:</md></span>
 <span id="icon_linux"><md>:fab-linux:</md></span>
+<span id="icon_level_basic"><md><span class="badge badge-pill badge-danger">:far-star:</span></md></span>
+<span id="icon_level_intermediate"><md><span class="badge badge-pill badge-warning text-white">:far-star::far-star:</span></md></span>
+<span id="icon_level_advanced"><md><span class="badge badge-pill badge-success">:far-star::far-star::far-star:</span></md></span>
 <span id="icon_important_big_red"><font color="red"><big>:glyphicon-exclamation-sign:</big></font></span>
 <span id="icon_important"><md>:glyphicon-exclamation-sign:</md></span>
 <span id="icon_new_window"><md>:glyphicon-new-window:</md></span>

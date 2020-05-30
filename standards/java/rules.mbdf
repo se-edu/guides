@@ -5,9 +5,7 @@
 <span tags="level--intermediate">
 <box>
 
-**Basic Rules**: Marked with :star:<br>
-**Intermediate Rules**: Marked with :star::star:<br>
-<span tags="level--advanced"><md>**Advanced Rules**: Marked with :star::star::star:</md></span>
+**Legend**: {{ icon_level_basic }} basic rule | {{ icon_level_intermediate }} intermediate rule | {{ icon_level_advanced }} advanced rule
 </box>
 </span>
 
@@ -23,7 +21,7 @@
 
 ## **Naming**
 
-**:star: Names representing packages should be in all lower case.**
+**{{ icon_level_basic }} Names representing packages should be in all lower case.**
 
 ```java
 com.company.application.ui
@@ -35,25 +33,25 @@ For school projects, the root name of the package should be your group name or p
 
 %%{{ icon_info}} Rationale: Your code is not officially ‘*produced by NUS*’, therefore do not use `edu.nus.comp.*` or anything similar.%%
 
-**:star: Class/enum names must be nouns and written in PascalCase.**
+**{{ icon_level_basic }} Class/enum names must be nouns and written in PascalCase.**
 
 ```java
 Line, AudioSystem
 ```
 
-**:star: Variable names must be in camelCase.**
+**{{ icon_level_basic }} Variable names must be in camelCase.**
 
 ```java
 line, audioSystem
 ```
 
-**:star: Constant names must be all uppercase using underscore to separate words.**
+**{{ icon_level_basic }} Constant names must be all uppercase using underscore to separate words.**
 
 ```java
 MAX_ITERATIONS, COLOR_RED
 ```
 
-**:star: Names representing methods must be verbs and written in camelCase.**
+**{{ icon_level_basic }} Names representing methods must be verbs and written in camelCase.**
 
 ```java
 getName(), computeTotalWidth()
@@ -69,7 +67,7 @@ scenario and the test method `sortList()` will test the `sortList()` method for 
 
 <div tags="level--intermediate">
 
-**:star::star: Abbreviations and acronyms should not be uppercase when used as a part of a name.**
+**{{ icon_level_intermediate }} Abbreviations and acronyms should not be uppercase when used as a part of a name.**
 <div class="row">
   <div class="col">
 
@@ -92,13 +90,13 @@ openDVDPlayer();
 </div>
 <div tags="level--intermediate-only">{{ pagebreak }}</div>
 
-**:star: All names should be written in English.**
+**{{ icon_level_basic }} All names should be written in English.**
 
 %%{{ icon_info}} Rationale: The code is meant for an international audience.%%
 
 <div tags="level--intermediate">
 
-**:star::star: Variables with a large scope should have long names, variables with a small scope can have short names.**
+**{{ icon_level_intermediate }} Variables with a large scope should have long names, variables with a small scope can have short names.**
 
 Scratch variables used for temporary storage or indices can be kept short. A programmer reading such variables should be able to assume that its value is not used outside a few lines of code. Common scratch variables for integers are `i, j, k, m, n` and for characters `c` and `d`.
 
@@ -106,7 +104,7 @@ Scratch variables used for temporary storage or indices can be kept short. A pro
 
 </div>
 
-**:star: Boolean variables/methods should be named to sound like booleans**
+**{{ icon_level_basic }} Boolean variables/methods should be named to sound like booleans**
 
 ```java
 //variables
@@ -129,7 +127,7 @@ void setFound(boolean isFound);
 
 <div tags="level--basic">
 
-**:star: Plural form should be used on names representing a collection of objects.**
+**{{ icon_level_basic }} Plural form should be used on names representing a collection of objects.**
 
 ```java
 Collection<Point> points;
@@ -140,7 +138,7 @@ int[] values;
 
 </div>
 
-**:star: Iterator variables can be called *i*, *j*, *k* etc.**
+**{{ icon_level_basic }} Iterator variables can be called *i*, *j*, *k* etc.**
 
 Variables named *j*, *k* etc. should be used for nested loops only.
 
@@ -158,7 +156,7 @@ for (int i = 0; i < nTables; i++) {
 
 <div tags="level--intermediate">
 
-**:star::star: Associated constants (final variables) should be prefixed by a common type name.**
+**{{ icon_level_intermediate }} Associated constants (final variables) should be prefixed by a common type name.**
 
 ```java
 final int COLOR_RED   = 1;
@@ -172,7 +170,7 @@ final int COLOR_BLUE  = 3;
 
 ## **Layout**
 
-**:star: Basic indentation should be 4 spaces (not tabs).**
+**{{ icon_level_basic }} Basic indentation should be 4 spaces (not tabs).**
 
 ```java
 for (i = 0; i < nElements; i++) {
@@ -182,7 +180,7 @@ for (i = 0; i < nElements; i++) {
 
 %%{{ icon_info }} Rationale: Just follow it :far-grin-tongue-squint:%%
 
-**:star: Line length should be no longer than 120 chars.**
+**{{ icon_level_basic }} Line length should be no longer than 120 chars.**
 
 Try to keep line length shorter than 110 characters (soft limit). But it is OK to exceed the limit slightly (hard limit: 120 chars). If the line exceeds the limit, use line wrapping at appropriate places of the line.
 
@@ -199,7 +197,7 @@ if (isReady) {
 
 <div tags="level--intermediate">
 
-**:star::star: Place line break to improve readability**
+**{{ icon_level_intermediate }} Place line break to improve readability**
 
 When wrapping lines, the main objective is to improve readability. Do not always accept the auto-formatting suggested by the IDE.
 
@@ -297,7 +295,7 @@ alpha = (aLongBooleanExpression)
 
 <div tags="level--intermediate-only">{{ pagebreak }}</div>
 
-**:star: Use K&R style brackets (aka [Egyptian style](https://blog.codinghorror.com/new-programming-jargon/)).**
+**{{ icon_level_basic }} Use K&R style brackets (aka [Egyptian style](https://blog.codinghorror.com/new-programming-jargon/)).**
 
 <div class="row">
   <div class="col">
@@ -326,7 +324,7 @@ while (!done)
 
 %%{{ icon_info }} Rationale: Just follow it. :far-grin-tongue-squint:%%
 
-**:star: Method definitions should have the following form:**
+**{{ icon_level_basic }} Method definitions should have the following form:**
 
 ```java
 public void someMethod() throws SomeException {
@@ -335,7 +333,7 @@ public void someMethod() throws SomeException {
 ```
 <div tags="level--basic-only">{{ pagebreak }}</div>
 
-**:star: The _if-else_ class of statements should have the following form:**
+**{{ icon_level_basic }} The _if-else_ class of statements should have the following form:**
 
 <div class="row">
   <div class="col">
@@ -376,7 +374,7 @@ if (condition) {
   </div>
 </div>
 
-**:star: The _for_ statement should have the following form:**
+**{{ icon_level_basic }} The _for_ statement should have the following form:**
 
 ```java
 for (initialization; condition; update) {
@@ -384,7 +382,7 @@ for (initialization; condition; update) {
 }
 ```
 
-**:star: The _while_ and the _do-while_ statements should have the following form:**
+**{{ icon_level_basic }} The _while_ and the _do-while_ statements should have the following form:**
 
 <div class="row">
   <div class="col">
@@ -406,7 +404,7 @@ do {
 </div>
 
 
-**:star: The _switch_ statement should have the following form:** ==Note there is no indentation for `case` clauses.==<br>
+**{{ icon_level_basic }} The _switch_ statement should have the following form:** ==Note there is no indentation for `case` clauses.==<br>
 {{ icon_tip }} Configure your IDE to follow this style instead.
 
 ```java
@@ -432,7 +430,7 @@ The explicit `//Fallthrough` comment should be included whenever there is a `cas
 
 <div tags="level--intermediate-only">{{ pagebreak }}</div>
 
-**:star: A _try-catch_ statement should have the following form:**
+**{{ icon_level_basic }} A _try-catch_ statement should have the following form:**
 
 <div class="row">
   <div class="col">
@@ -463,7 +461,7 @@ try {
 
 <div tags="level--intermediate">
 
-**:star::star: White space within a statement**
+**{{ icon_level_intermediate }} White space within a statement**
 
 It is difficult to give a complete list of the suggested use of whitespace in Java code. The examples below however should give a general idea of the intentions.
 
@@ -479,7 +477,7 @@ Rule | {{ good }} | {{ bad }}
 </div>
 <div tags="level--intermediate">
 
-**:star::star: Logical units within a block should be separated by one blank line.**
+**{{ icon_level_intermediate }} Logical units within a block should be separated by one blank line.**
 
 ```java
 // Create a new identity matrix
@@ -508,7 +506,7 @@ transformation.multiply(matrix);
 
 ### **Package and Import Statements**
 
-**:star: Put every class in a package.**
+**{{ icon_level_basic }} Put every class in a package.**
 
 Every class should be part of some package.
 
@@ -516,14 +514,14 @@ Every class should be part of some package.
 
 <div tags="level--advanced">
 
-**:star::star::star: Put related classes in a single package.**
+**{{ icon_level_advanced }} Put related classes in a single package.**
 
 Package together the classes that are related. For example in Java, the classes related to file writing is grouped in the package `java.io` and the classes which handle lists, maps etc are grouped in `java.util` package.
 
 </div>
 <div tags="level--intermediate">
 
-**:star::star: The ordering of import statements must be consistent.**
+**{{ icon_level_intermediate }} The ordering of import statements must be consistent.**
 
 %%{{ icon_info }} Rationale: A consistent ordering of import statements makes it easier to browse the list and determine the dependencies when there are many%% imports.
 
@@ -554,7 +552,7 @@ import junit.framework.AssertionFailedError;
 
 </div>
 
-**:star: Imported classes should always be listed explicitly.**
+**{{ icon_level_basic }} Imported classes should always be listed explicitly.**
 
 <div class="row">
   <div class="col">
@@ -586,7 +584,7 @@ import java.util.*;
 </div>
 <div tags="level--advanced">
 
-**:star::star::star: Class and Interface declarations should be organized in the following manner:**
+**{{ icon_level_advanced }} Class and Interface declarations should be organized in the following manner:**
 
   1. Class/Interface documentation (Comments)
   1. **class** or **interface** statement
@@ -605,7 +603,7 @@ import java.util.*;
 </div>
 <div tags="level--advanced">
 
-**:star::star::star: Method modifiers should be given in the following order:**
+**{{ icon_level_advanced }} Method modifiers should be given in the following order:**
 
 `<access> static abstract synchronized <unusual> final native`
 
@@ -640,7 +638,7 @@ static public double square(double a);
 
 ### **Types**
 
-**:star: Array specifiers must be attached to the type not the variable.**
+**{{ icon_level_basic }} Array specifiers must be attached to the type not the variable.**
 
 <div class="row">
   <div class="col">
@@ -668,7 +666,7 @@ int a[] = new int[20];
 </div>
 <div tags="level--intermediate">
 
-**:star::star: Variables should be initialized where they are declared and they should be declared in the smallest scope possible.**
+**{{ icon_level_intermediate }} Variables should be initialized where they are declared and they should be declared in the smallest scope possible.**
 
 <div class="row">
   <div class="col">
@@ -705,7 +703,7 @@ for (i = 0; i < 10; i++) {
 <div tags="level--intermediate-only">{{ pagebreak }}</div>
 <div tags="level--intermediate">
 
-**:star::star: Class variables should never be declared public.**
+**{{ icon_level_intermediate }} Class variables should never be declared public.**
 
 {{ bad }}
 
@@ -722,7 +720,7 @@ public class Foo{
 </div>
 <div tags="level--advanced">
 
-**:star::star::star: Avoid unnecessary use of `this` with fields.**
+**{{ icon_level_advanced }} Avoid unnecessary use of `this` with fields.**
 
 Use the `this` keyword only when a field is shadowed by a method or constructor parameter.
 
@@ -757,7 +755,7 @@ public User(String name) {
 
 ### **Loops**
 
-**:star: The loop body should be wrapped by curly brackets irrespective of how many lines there are in the body.**
+**{{ icon_level_basic }} The loop body should be wrapped by curly brackets irrespective of how many lines there are in the body.**
 
 <div class="row">
   <div class="col">
@@ -784,7 +782,7 @@ for (i = 0, sum = 0; i < 100; i++)
 
 ### **Conditionals**
 
-**:star: The conditional should be put on a separate line.**
+**{{ icon_level_basic }} The conditional should be put on a separate line.**
 
 <div class="row">
   <div class="col">
@@ -811,7 +809,7 @@ if (isDone) doCleanup();
 
 <div tags="level--basic-only">{{ pagebreak }}</div>
 
-**:star: Single statement conditionals should still be wrapped by curly brackets.**
+**{{ icon_level_basic }} Single statement conditionals should still be wrapped by curly brackets.**
 
 <div class="row">
   <div class="col">
@@ -844,7 +842,7 @@ The body of the conditional should be wrapped by curly brackets irrespective of 
 ## **Comments**
 
 
-**:star: All comments should be written in English.**
+**{{ icon_level_basic }} All comments should be written in English.**
 
 Furthermore, use American spelling and avoid local slang.
 
@@ -852,7 +850,7 @@ Furthermore, use American spelling and avoid local slang.
 
 <div tags="level--intermediate">
 
-**:star::star: Write descriptive header comments for all public classes/methods.**
+**{{ icon_level_intermediate }} Write descriptive header comments for all public classes/methods.**
 
 You MUST write header comments for all classes, public methods.
 
@@ -861,7 +859,7 @@ You MUST write header comments for all classes, public methods.
 </div>
 <div tags="level--advanced">
 
-**:star::star::star: All non-trivial private methods should carry header comments.**
+**{{ icon_level_advanced }} All non-trivial private methods should carry header comments.**
 
 %%{{ icon_info }} Rationale: Writing header comments will hep novice programmers to self-detect abstraction problems. e.g. If it is hard to describe the method succinctly, there is something wrong with the method abstraction.%%
 
@@ -869,7 +867,7 @@ You MUST write header comments for all classes, public methods.
 <div tags="level--intermediate-only">{{ pagebreak }}</div>
 <div tags="level--basic">
 
-**:star: Javadoc comments should have the following form:**
+**{{ icon_level_basic }} Javadoc comments should have the following form:**
 
 ```java
 /**
@@ -907,7 +905,7 @@ private int connectionCount;
 
 </div>
 
-**:star: Comments should be indented relative to their position in the code.**
+**{{ icon_level_basic }} Comments should be indented relative to their position in the code.**
 
 <div class="row">
   <div class="col">
