@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guidelines for commit organization</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+  <link rel="icon" href="/guides/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <navbar placement="top" type="dark" class="temp-navbar">
+        <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a>
+        <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li>
+        <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li>
+        <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right" class="nav-link">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+
+      <div id="content-wrapper">
+        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guidelines-for-commit-organization">Guidelines for commit organization<a class="fa fa-anchor" href="#guidelines-for-commit-organization" onclick="event.stopPropagation()"></a></h1>
+        <ul>
+          <li>This guide <strong>does not cover guidelines for commit messages</strong>, as they are covered <a href="/guides/conventions/git.html">here</a>.</li>
+          <li>This guide <strong>applies to commits that will appear in the final version history</strong>. More specifically,
+            <ul>
+              <li>If the commits are meant to be <em>squashed</em> before merging, the guidelines apply to the squashed version.</li>
+              <li>If your project merges PRs/branches without squashing, the guidelines apply to each individual commit.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <box type="secondary" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-quote-left"></span></template>
+          <blockquote>
+            <p>&quot;Ask a programmer to review 10 lines of code, he'll find 10 issues. Ask him to do 500 lines and he'll say it
+              looks good.&quot; -- [<a href="https://twitter.com/girayozil/status/306836785739210752">source</a>]
+            </p>
+          </blockquote>
+        </box>
+
+        <ul>
+          <li>
+            <p><strong>Each commit should contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
+              For example, if the commit message says <code>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code>delete()</code> to <code>Address</code> class only; it should also contain the deletion of <code>delete()</code> from the <code>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+          </li>
+          <li>
+            <p><strong>Commits should be ordered in a bottom-up fashion</strong>, each commit building on top of the previous one towards the end goal of the PR.</p>
+            <box type="info" seamless>
+              <p>Rationale: Reviewers should be able to review one commit at a time.
+              </p>
+            </box>
+          </li>
+          <li>
+            <p><strong>Ideally, a commit should not modify more than 100 lines of code.</strong></p>
+            <box type="info" seamless>
+              <p>Rationale: Bigger commits make reviewing harder.
+              </p>
+            </box>
+            <p>Commits containing <em><em>mechanical changes</em></em> (e.g. automated refactorings, cut-paste type code movements, file renames, etc.),</p>
+            <ul>
+              <li>should include only one <em>mechanical change</em> per commit e.g., rename a single variable across the code base.</li>
+              <li>should not contain other non-mechanical changes, unless unavoidable.</li>
+              <li>can exceed 100 LoC.</li>
+              <li>should have the description of the change in the commit message (so that the results can be reproduced).</li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>Every commit should pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
+            <box type="info" seamless>
+              <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code>git bisect</code> for locating bugs.
+              </p>
+            </box>
+          </li>
+          <li>
+            <p><strong>Refactor commits before pushing.</strong> It is unlikely that you can produce a series of commits that meet all the above criteria in the first try. In such cases, refactor commits until they meet the criteria. <a href="http://stackoverflow.com/a/1186549">This S/O post</a> describes how to refactor commits (even easier to do with visual tools such as SourceTree -- see <a href="https://www.youtube.com/watch?v=mBCJCuU3p7I">this video</a>).</p>
+          </li>
+        </ul>
+        <box type="info">
+          <p><a href="https://github.com/se-edu/addressbook-level4/pull/237">Here</a> is an example of a PR that is organized as described above.
+          </p>
+        </box>
+      </div>
+
+
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
+            <a class="nav-link py-1" href="#guidelines-for-commit-organization">Guidelines for commit organization&#x200E;</a>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+
+      <div class="text-center">
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 1 Jun 2020, 0:11:47 GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/guides'
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
+
+</html>

@@ -8,16 +8,16 @@
   <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSS Coding Standard</title>
-  <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../../markbind/css/page-nav.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -52,17 +52,17 @@
           </li>
           <li>
             <p>Divide long CSS files into sections.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               By segmenting the file(s) in this logical way, it is easy to locate css rules and to ensure that a new rule being added is not already present.
             </box>
           </li>
         </ul>
-        <hr>
+
         <h2 id="css-files">CSS Files<a class="fa fa-anchor" href="#css-files" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
             <p>CSS file includes must be done using <code>&lt;link&gt;</code> tags in the HTML/JSP files and NOT using <code>@import</code> in other css files.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               <p>RATIONALE: <strong><code>@import</code></strong> can be slow and may result in the page being rendered without css for a while before the page magically comes to life. As of now we are using css files as styles of HTML pages and thus the dependency must be clearly visible in the HTML page.
               </p>
             </box>
@@ -73,7 +73,7 @@
           </li>
           <li>
             <p>NO inline style sheets or inline styles in the HTML/JSP files.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               RATIONALE: The whole idea is to have Separation of Concerns (SoC). If css rules are specified everywhere, editing them in the future will be a hassle and redundant overriding of css rules may occur. If all are in one place management is also easier.
             </box>
           </li>
@@ -108,12 +108,12 @@
             </div>
           </div>
         </div>
-        <hr>
+
         <h2 id="selectors">Selectors<a class="fa fa-anchor" href="#selectors" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
             <p>Do not use CSS3 selectors.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               <p>RATIONALE: Although they are powerful, cross-browser compatibility is difficult to achieve and many rules are supported by different browsers starting from different versions (refer: <a href="http://www.w3schools.com/cssref/css3_browsersupport.asp">W3CSchools List</a>). Also, we can stick to more functional names for the css and use classes to achieve our needs → more readable and easier to manage.
               </p>
             </box>
@@ -123,7 +123,7 @@
         <ul>
           <li>
             <p>The selector(s) must be specified in separate lines.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               <p>RATIONALE: This eases reading as well as helps in revision control as conflicts reduce.
               </p>
             </box>
@@ -152,7 +152,7 @@
         <ul>
           <li>
             <p>Group related/hierarchical style specifications (eg :hover, child specifier, etc) and provide an additional indent to the more specific selector. Refer to <a href="http://isobar-idev.github.io/code-standards/#_css_formatting">here</a> for examples.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               <p>RATIONALE: This gives a nice hierarchical structure to the file and helps to visually group css rules by indentation. In addition this gives an immediate idea as to how certain classes are being used in the HTML files (from the hierarchy) without actually reading HTML files.
               </p>
             </box>
@@ -162,20 +162,20 @@
         <ul>
           <li>
             <p>Do not qualify class/ID selectors using tag names (do not use: <code>div.mainContent</code>, simply use <code>.mainContent</code>). Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS">Writing efficient CSS</a> for examples.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               <p>RATIONALE: This speeds up the css match lookup. If such a qualification is actually required, either use another class on top of this to change the style or use a completely different class to start with. In any case, if this kind of qualification is needed, then probably the class has not been named well enough (see <a href="#naming-classes">naming standards for classes</a>)
               </p>
             </box>
           </li>
           <li>
             <p>Use child selector rather than descendant selector (use <code>#container &gt; span</code> rather than <code>#container span</code>). Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS">Writing efficient CSS</a> for examples.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               <p>RATIONALE: This is a strong recommendation as descendant selector is extremely expensive, especially when the specified ancestor has a lot of descendants.
               </p>
             </box>
           </li>
         </ul>
-        <hr>
+
         <h2 id="classes">Classes<a class="fa fa-anchor" href="#classes" onclick="event.stopPropagation()"></a></h2>
         <h3 id="naming-classes">Naming Classes<a class="fa fa-anchor" href="#naming-classes" onclick="event.stopPropagation()"></a></h3>
         <ul>
@@ -221,14 +221,14 @@
             </ul>
           </li>
         </ul>
-        <hr>
+
         <h2 id="attributes">Attributes<a class="fa fa-anchor" href="#attributes" onclick="event.stopPropagation()"></a></h2>
         <h3 id="order-of-attributes">Order of Attributes<a class="fa fa-anchor" href="#order-of-attributes" onclick="event.stopPropagation()"></a></h3>
         <ul>
           <li>
             <p>Alphabetize the attributes, disregarding any browser prefix.<br>
               All browser-prefixed versions of an attribute must be written together.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               <p>RATIONALE: It makes it easier to locate attributes in a css file.
               </p>
             </box>
@@ -263,7 +263,7 @@
           <li>Attributes must have one more indentation than the selector.</li>
           <li>Indent attributes that require browser specifications so that the actual attribute being declared is in one column. Refer to <a href="http://learn.shayhowe.com/html-css/writing-your-best-code/#css-coding-practices">Writing Your Best Code</a> for examples.</li>
         </ul>
-        <hr>
+
         <h2 id="general-details">General Details<a class="fa fa-anchor" href="#general-details" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
@@ -271,7 +271,7 @@
           </li>
           <li>
             <p>DO NOT use <code>!important</code> specifier.</p>
-            <box type="info" light>
+            <box type="info" seamless>
               <p>RATIONALE: Using the <code>!important</code> specifier overrides the natural flow of specificity and cascading hierarchy of css styles. Unless absolutely necessary do not use it. If there is such a situation clearly state the reason with comments (<code>/* */</code>).
               </p>
             </box>
@@ -280,7 +280,7 @@
             </p>
           </li>
         </ul>
-        <hr>
+
         <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
@@ -337,20 +337,20 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Fri, 29 May 2020, 1:11:16 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 1 Jun 2020, 0:11:47 GMT+8]</small></div>
     </footer>
   </div>
 </body>
-<script src="../../markbind/js/vue.min.js"></script>
-<script src="../../markbind/js/vue-strap.min.js"></script>
-<script src="../../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../../markbind/js/polyfill.min.js"></script>
-<script src="../../markbind/js/bootstrap-vue.min.js"></script>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
   const enableSearch = true
 </script>
-<script src="../../markbind/js/setup.js"></script>
-<script src="../../markbind/layouts/default/scripts.js"></script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
 
 </html>

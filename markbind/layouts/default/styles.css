@@ -10,12 +10,38 @@ th, td {
 
 h1, h2 {
   color: #0073e6;
-  padding: 30px 10px 10px 0px;
+  padding: 30px 10px 10px 0;
 }
 
-hr {
-  height: 3px;
-  border: none;
-  color: #0073e6;
-  background-color: #0073e6;
+h3 {
+  border-top: 2px dotted grey;
+  padding: 20px 10px 10px 0;
+}
+
+h2 {
+  border-top: 5px solid #0073e6;
+}
+
+.indented-less {
+    padding-left: 10px;
+}
+
+.indented {
+    padding-left: 20px;
+}
+
+.indented-level1 {
+    padding-left: 20px;
+}
+
+.indented-level2 {
+    padding-left: 40px;
+}
+
+.indented-level3 {
+    padding-left: 60px;
+}
+
+.indented-level4 {
+    padding-left: 80px;
 }

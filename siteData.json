@@ -25,21 +25,9 @@
       "headingKeywords": {}
     },
     {
-      "title": "Guides for Software Engineering Students",
-      "pageNav": 2,
-      "src": "index.md",
-      "layout": "default",
-      "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
-        "tutorials": "\n           Tutorials\n        ",
-        "coding-standards": "\n           Coding Standards\n        "
-      },
-      "headingKeywords": {}
-    },
-    {
       "title": "C# Coding Standard",
       "pageNav": 3,
-      "src": "standards/csharp/index.md",
+      "src": "conventions/csharp.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -59,7 +47,7 @@
     {
       "title": "CSS Coding Standard",
       "pageNav": 3,
-      "src": "standards/css/index.md",
+      "src": "conventions/css.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -80,9 +68,51 @@
       "headingKeywords": {}
     },
     {
+      "title": "Conventions for file/folder naming",
+      "pageNav": 3,
+      "src": "conventions/files.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "conventions-for-file-folder-naming": "Conventions for file/folder naming",
+        "files-folders": "Files/Folders"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Git Coding Standard",
+      "pageNav": 3,
+      "src": "conventions/git.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "git-coding-standard": "Git Coding Standard",
+        "commit-message-subject": "Commit message: Subject",
+        "commit-message-body": "Commit message: Body",
+        "branch-names": "Branch names"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "GitHub conventions",
+      "pageNav": 3,
+      "src": "conventions/github.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "github-conventions": "GitHub conventions",
+        "prs": "PRs",
+        "pr-name": "PR name",
+        "pr-description": "PR description",
+        "pr-merge-commit": "PR merge commit",
+        "issues": "Issues"
+      },
+      "headingKeywords": {}
+    },
+    {
       "title": "HTML Coding Standard",
       "pageNav": 3,
-      "src": "standards/html/index.md",
+      "src": "conventions/html.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -104,7 +134,7 @@
         "level--basic",
         "level--basic-only"
       ],
-      "src": "standards/java/basic.md",
+      "src": "conventions/java/basic.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -128,7 +158,7 @@
       "tags": [
         "level--*"
       ],
-      "src": "standards/java/index.md",
+      "src": "conventions/java/index.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -158,7 +188,7 @@
         "level--intermediate",
         "level--intermediate-only"
       ],
-      "src": "standards/java/intermediate.md",
+      "src": "conventions/java/intermediate.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -179,11 +209,50 @@
     },
     {
       "title": "Markdown Coding Standard",
-      "src": "standards/markdown/index.md",
+      "src": "conventions/markdown.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "markdown-coding-standard": "Markdown Coding Standard"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Guidelines for working with PRs",
+      "pageNav": 3,
+      "src": "guidelines/PRs.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "guidelines-for-working-with-prs": "Guidelines for working with PRs",
+        "selecting-what-to-work-on": "Selecting what to work on",
+        "scoping-a-pr": "Scoping a PR",
+        "submitting-a-pr": "Submitting a PR",
+        "reviewing-a-pr": "Reviewing a PR"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Guidelines for commit organization",
+      "pageNav": 3,
+      "src": "guidelines/commits.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "guidelines-for-commit-organization": "Guidelines for commit organization"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Guides for Software Engineering Students",
+      "pageNav": 2,
+      "src": "index.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "tutorials": "\n           Tutorials\n        ",
+        "conventions": "\n           Conventions\n        ",
+        "guidelines": "\n           Guidelines\n        "
       },
       "headingKeywords": {}
     },

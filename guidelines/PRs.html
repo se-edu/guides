@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guidelines for working with PRs</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+  <link rel="icon" href="/guides/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <navbar placement="top" type="dark" class="temp-navbar">
+        <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a>
+        <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li>
+        <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li>
+        <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right" class="nav-link">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+
+      <div id="content-wrapper">
+        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guidelines-for-working-with-prs">Guidelines for working with PRs<a class="fa fa-anchor" href="#guidelines-for-working-with-prs" onclick="event.stopPropagation()"></a></h1>
+        <h2 id="selecting-what-to-work-on">Selecting what to work on<a class="fa fa-anchor" href="#selecting-what-to-work-on" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><strong>If submitting a PR for an existing issue,</strong>
+            <ul>
+              <li>It's best for first time contributors to start by fixing an issue specifically labelled for first timers e.g., <code>d.FirstTimers</code>, <code>good first issue</code>.</li>
+              <li>It's best to post in the issue to ask if it is OK for you to submit a PR for that issue and wait for approval.</li>
+              <li>Check the issue discussion thread to see if there are <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Some activity during last seven days</span><em>active</em></span> PRs for that issue. You can offer to PR for an issue that has <em>stalled</em> PRs i.e., there is a PRs submitted for that issue but the PR author seems to have stopped working on it.</li>
+            </ul>
+          </li>
+          <li><strong>If the issue list does not contain what you want to work on,</strong> post an issue first and wait for it to be acknowledged. Otherwise you could end up fixing something that does not need fixing.</li>
+        </ul>
+
+        <h2 id="scoping-a-pr">Scoping a PR<a class="fa fa-anchor" href="#scoping-a-pr" onclick="event.stopPropagation()"></a></h2>
+        <div id="section-scoping-a-pr">
+          <p><strong>General rule: try to keep PRs as small as possible</strong> because smaller PRs get merged faster.</p>
+          <ul>
+            <li>
+              <p><strong>A PR should contain a <em>single</em>, <em>standalone</em>, and <em>complete</em> change to the code base</strong>, unless in exceptional cases where the PR is part of a bigger change.</p>
+              <ul>
+                <li>
+                  <p><em>Single</em> means a PR <strong>should not try to fix more than one fix</strong>, unless there are multiple things that <em>must</em> be done together or not at all.</p>
+                  <box type="wrong" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-exclamation-circle"></span></template>
+                    <p>Refrain from <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">do minor improvements to the code e.g., fix typos</span><em>housekeeping</em></span> in the neighboring code <strong>unless the line in concern is already touched by the PR</strong> (i.e., the housekeeping does not increase the line count of the PR.
+                    </p>
+                  </box>
+                  <box type="info" seamless>
+                    <p>Rationale: Imagine we decide to revert the PR for some reason. If a PR contains, unrelated changes or multiple independent changes, we will not be able to revert the offending change without losing the other changes as well.
+                    </p>
+                  </box>
+                  <box type="tip" seamless>
+                    <p>If you notice a need for housekeeping in the neighboring code as you do your PR, create an issue for it in the issue tracker.
+                    </p>
+                  </box>
+                </li>
+                <li>
+                  <p><em>Standalone</em> means the PR <strong>should contain a meaningful change that moves the code base from one working state to another</strong>.</p>
+                </li>
+                <li>
+                  <p><em>Complete</em> means the PR <strong>should contain everything related to the change</strong>, including the following:</p>
+                  <ul>
+                    <li>functional code</li>
+                    <li>code comments</li>
+                    <li>test cases</li>
+                    <li>user docs and developer docs</li>
+                  </ul>
+                </li>
+              </ul>
+              <box type="wrong" seamless class="ml-4"><template slot="icon"><span aria-hidden="true" class="fas fa-exclamation-circle"></span></template>
+                <p>&quot;This PR is just the code fix. I'll update tests and documentation in a separate PR&quot; is not acceptable!</p>
+                <p>However, it is fine to push the functional code first to get early feedback, as long as the rest is added to the same PR later.
+                </p>
+              </box>
+            </li>
+          </ul>
+        </div>
+
+        <h2 id="submitting-a-pr">Submitting a PR<a class="fa fa-anchor" href="#submitting-a-pr" onclick="event.stopPropagation()"></a></h2>
+        <p>When submitting PRs, follow <a href="https://se-education.org/se-book/gitAndGithub/index.html#forking-workflow">the forking workflow</a>. A summary of the steps is given below.</p>
+        <p><span class="badge badge-dark">Step 1</span> <strong>Fork the upstream repo.</strong></p>
+        <p><span class="badge badge-dark">Step 2</span> <strong>Clone the fork to your computer.</strong></p>
+        <p><span class="badge badge-dark">Step 3</span> <strong>Set up the dev environment as described in the project docs.</strong> Confirm the set up is correct.</p>
+        <p><span class="badge badge-dark">Step 4</span> <strong>Create a branch from the <code>master</code> branch</strong>, following the naming convention given.</p>
+        <div class="indented-level2">
+          <panel minimized><template slot="_header">
+              <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Coding Standards » Git » <strong>Branch naming conventions</strong></p>
+            </template>
+            <div>
+              <p>Follow these rules to improve consistency:</p>
+              <ul>
+                <li>Use a meaningful name consisting of some relevant keywords, in the <em>kebab case</em> format e.g., <code>refactor-ui-tests</code>.</li>
+                <li>If the branch is related to an issue, use the format <code>issueNumber-some-keywords-from-issue-title</code> e.g., <code>1234-ui-freeze-error</code></li>
+              </ul>
+            </div>
+          </panel>
+        </div>
+        <p></p>
+        <p><span class="badge badge-dark">Step 5</span> <strong>Add your code to the branch</strong> while ensuring you follow these:</p>
+        <ul>
+          <li>relevant coding standards (the full list is given <a href="/guides/index.html">here</a>)</li>
+          <li>Commit message format</li>
+        </ul>
+        <div class="indented-level2">
+          <panel minimized><template slot="_header">
+              <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Conventions » Git » <strong>Commit message subject</strong></p>
+            </template>
+            <div>
+              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Every commit must have a well-written commit message <em>subject line</em>.</strong></p>
+              <ul>
+                <li><strong>Try to limit the subject line to 50 characters (hard limit: 72 chars)</strong></li>
+              </ul>
+              <box type="info" seamless add-class="ml-5">
+                <p>Rationale: Some tools show only a limited number of characters from the commit message.
+                </p>
+              </box>
+              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong><mark>Use the imperative mood in the subject line.</mark></strong></p>
+              <ul>
+                <li>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code>Add README.md</code>
+                </li>
+                <li>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>Added README.md</code>
+                </li>
+                <li>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>Adding README.md</code>
+                </li>
+              </ul>
+              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Capitalize the first letter of the subject line.</strong></p>
+              <ul>
+                <li>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code>Move index.html file to root</code>
+                </li>
+                <li>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>move index.html file to root</code>
+                </li>
+              </ul>
+              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Do not end the subject line with a period.</strong></p>
+              <ul>
+                <li>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code>Update sample data</code>
+                </li>
+                <li>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>Update sample data.</code>
+                </li>
+              </ul>
+              <box type="tip" seamless>
+                <p>You can use <code>scope: change</code> format (when applicable).</p>
+                <ul>
+                  <li>e.g. <code>Person class: remove static imports</code><br>
+                    <code>Unit tests: remove blank lines</code></li>
+                </ul>
+              </box>
+            </div>
+          </panel>
+        </div>
+        <p></p>
+        <div class="indented-level2">
+          <panel minimized><template slot="_header">
+              <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Conventions » Git » <strong>Commit message body</strong></p>
+            </template>
+            <div>
+              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Commit messages for non-trivial commits should have a <em>body</em> giving details of the commit.</strong></p>
+              <ul>
+                <li><strong>Separate subject from body with a blank line.</strong></li>
+                <li><strong>Wrap the body at 72 characters.</strong></li>
+                <li><strong>Use blank lines to separate paragraphs.</strong></li>
+              </ul>
+              <p>Example: A commit message for a commit that is part of a multi-commit PR:</p>
+              <pre><code class="hljs"><span>Unify variations of toSet() methods<br></span><span><br></span><span>There are several methods that convert a collection to a set. In some<br></span><span>cases the conversion is in-lined as a code block in another method.<br></span><span><br></span><span>Unifying all those duplicated code improves the code quality.<br></span><span><br></span><span>As a step towards such unification, let's extract those duplicated code<br></span><span>blocks into separate methods in their respective classes. Doing so will<br></span><span>make the subsequent unification easier.<br></span></code></pre>
+              <box type="tip" seamless>
+                <p>Tip for SourceTree users: To help you keep the commit message width to a 72 characters:</p>
+                <ol>
+                  <li>Choose <code>Tools</code> -&gt; <code>Options</code>.</li>
+                  <li>Click on the <code>General</code> tab, scroll down to the <code>Commit settings</code> section.</li>
+                  <li>Tick the <code>Display a column guide at commit message at [72] characters</code> option.
+                  </li>
+                </ol>
+              </box>
+
+              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Use bullet points as necessary.</strong> Instead of relying entirely on paragraphs of text, use other constructs such as bullet lists when it helps.</p>
+              <p>Example: A commit message for a bug fix:</p>
+              <pre><code class="hljs"><span>Find command: make matching case insensitive<br></span><span><br></span><span>Find command is case sensitive.<br></span><span><br></span><span>A case insensitive find is more user-friendly because users cannot be<br></span><span>expected to remember the exact case of the keywords.<br></span><span><br></span><span>Let's,<br></span><span>* update the search algorithm to use case-insensitive matching<br></span><span>* add a script to migrate stress tests to the new format<br></span></code></pre>
+              <p><span><span class="badge badge-pill badge-warning text-white"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Explain WHAT, WHY, not HOW</strong>.</p>
+              <ul>
+                <li>
+                  <p>Use the body to explain WHAT the commit is about and WHY it was done that way. The reader can refer to the diff to understand HOW the change was done.</p>
+                </li>
+                <li>
+                  <p>Give an explanation for the change(s) that is detailed enough so that the reader can judge if it is a good thing to do, without reading the actual diff to determine how well the code does what the explanation promises to do.<br>
+                    If your description starts to get too long, that's a sign that you probably need to split up your commit to finer grained pieces. [adapted from: <a href="https://github.com/git/git/blob/e05806da9ec4aff8adfed142ab2a2b3b02e33c8c/Documentation/SubmittingPatches#L37-L132">git project</a>]</p>
+                </li>
+                <li>
+                  <p>Minimize repeating information that are given in code comments of the same commit.</p>
+                </li>
+              </ul>
+              <p><span><span class="badge badge-pill badge-success"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Structure the body as follows</strong>:</p>
+              <pre><code class="hljs"><span>{current situation} -- use present tense<br></span><span><br></span><span>{why it needs to change}<br></span><span><br></span><span>{what is being done about it} -- use imperative mood<br></span><span><br></span><span>{why it is done that way}<br></span><span><br></span><span>{any other relevant info}<br></span></code></pre>
+              <ul>
+                <li>Avoid terms such as 'currently', 'originally' when describing the current situation. They are implied.</li>
+                <li>The word <code>Let's</code> can be used to indicate the beginning of the section that describes the change done in the commit.</li>
+              </ul>
+              <p>Example: A commit message for a code quality refactoring:</p>
+              <pre><code class="hljs"><span>Person attributes classes: extract a parent class PersonAttribute<br></span><span><br></span><span>Person attribute classes (e.g. Name, Address, Age etc.) have some common<br></span><span>behaviors (e.g. isValid()).<br></span><span><br></span><span>The common behaviors across person attribute classes cause code duplication.<br></span><span><br></span><span>Extracting the common behavior into a super class allows us to use<br></span><span>polymorphism when dealing with person attributes. For example, validity<br></span><span>checking can be done for all attributes of a person in one loop.<br></span><span><br></span><span>Let's pull up behaviors common to all person attribute classes into a new<br></span><span>parent class named PersonAttribute.<br></span><span><br></span><span>Using inheritance is preferable over composition in this situation<br></span><span>because the common behaviors are not composable.<br></span><span><br></span><span>Refer to this S/O discussion on dealing with attributes<br></span><span>http://stackoverflow.com/some/question<br></span></code></pre>
+              <box type="info">
+                <p>Refer to the article <em><a href="http://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></em> for more advice on writing good commit messages.
+                </p>
+              </box>
+            </div>
+          </panel>
+        </div>
+        <p></p>
+        <ul>
+          <li>guidelines for commit organization</li>
+        </ul>
+        <div class="indented-level2">
+          <panel minimized><template slot="_header">
+              <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » <strong>Commit organization</strong></p>
+            </template>
+            <div>
+              <h1 id="guidelines-for-commit-organization">Guidelines for commit organization<a class="fa fa-anchor" href="#guidelines-for-commit-organization" onclick="event.stopPropagation()"></a></h1>
+              <ul>
+                <li>This guide <strong>does not cover guidelines for commit messages</strong>, as they are covered <a href="/guides/conventions/git.html">here</a>.</li>
+                <li>This guide <strong>applies to commits that will appear in the final version history</strong>. More specifically,
+                  <ul>
+                    <li>If the commits are meant to be <em>squashed</em> before merging, the guidelines apply to the squashed version.</li>
+                    <li>If your project merges PRs/branches without squashing, the guidelines apply to each individual commit.</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <box type="secondary" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-quote-left"></span></template>
+                <blockquote>
+                  <p>&quot;Ask a programmer to review 10 lines of code, he'll find 10 issues. Ask him to do 500 lines and he'll say it
+                    looks good.&quot; -- [<a href="https://twitter.com/girayozil/status/306836785739210752">source</a>]
+                  </p>
+                </blockquote>
+              </box>
+
+              <ul>
+                <li>
+                  <p><strong>Each commit should contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
+                    For example, if the commit message says <code>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code>delete()</code> to <code>Address</code> class only; it should also contain the deletion of <code>delete()</code> from the <code>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                </li>
+                <li>
+                  <p><strong>Commits should be ordered in a bottom-up fashion</strong>, each commit building on top of the previous one towards the end goal of the PR.</p>
+                  <box type="info" seamless>
+                    <p>Rationale: Reviewers should be able to review one commit at a time.
+                    </p>
+                  </box>
+                </li>
+                <li>
+                  <p><strong>Ideally, a commit should not modify more than 100 lines of code.</strong></p>
+                  <box type="info" seamless>
+                    <p>Rationale: Bigger commits make reviewing harder.
+                    </p>
+                  </box>
+                  <p>Commits containing <em><em>mechanical changes</em></em> (e.g. automated refactorings, cut-paste type code movements, file renames, etc.),</p>
+                  <ul>
+                    <li>should include only one <em>mechanical change</em> per commit e.g., rename a single variable across the code base.</li>
+                    <li>should not contain other non-mechanical changes, unless unavoidable.</li>
+                    <li>can exceed 100 LoC.</li>
+                    <li>should have the description of the change in the commit message (so that the results can be reproduced).</li>
+                  </ul>
+                </li>
+                <li>
+                  <p><strong>Every commit should pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
+                  <box type="info" seamless>
+                    <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code>git bisect</code> for locating bugs.
+                    </p>
+                  </box>
+                </li>
+                <li>
+                  <p><strong>Refactor commits before pushing.</strong> It is unlikely that you can produce a series of commits that meet all the above criteria in the first try. In such cases, refactor commits until they meet the criteria. <a href="http://stackoverflow.com/a/1186549">This S/O post</a> describes how to refactor commits (even easier to do with visual tools such as SourceTree -- see <a href="https://www.youtube.com/watch?v=mBCJCuU3p7I">this video</a>).</p>
+                </li>
+              </ul>
+              <box type="info">
+                <p><a href="https://github.com/se-edu/addressbook-level4/pull/237">Here</a> is an example of a PR that is organized as described above.
+                </p>
+              </box>
+            </div>
+          </panel>
+        </div>
+        <p></p>
+        <ul>
+          <li>PR scoping guidelines given above</li>
+        </ul>
+        <div class="indented-level2">
+          <panel minimized><template slot="_header">
+              <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> This document » <strong>Scoping a PR</strong></p>
+            </template>
+            <div>
+              <p><strong>General rule: try to keep PRs as small as possible</strong> because smaller PRs get merged faster.</p>
+              <ul>
+                <li>
+                  <p><strong>A PR should contain a <em>single</em>, <em>standalone</em>, and <em>complete</em> change to the code base</strong>, unless in exceptional cases where the PR is part of a bigger change.</p>
+                  <ul>
+                    <li>
+                      <p><em>Single</em> means a PR <strong>should not try to fix more than one fix</strong>, unless there are multiple things that <em>must</em> be done together or not at all.</p>
+                      <box type="wrong" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-exclamation-circle"></span></template>
+                        <p>Refrain from <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">do minor improvements to the code e.g., fix typos</span><em>housekeeping</em></span> in the neighboring code <strong>unless the line in concern is already touched by the PR</strong> (i.e., the housekeeping does not increase the line count of the PR.
+                        </p>
+                      </box>
+                      <box type="info" seamless>
+                        <p>Rationale: Imagine we decide to revert the PR for some reason. If a PR contains, unrelated changes or multiple independent changes, we will not be able to revert the offending change without losing the other changes as well.
+                        </p>
+                      </box>
+                      <box type="tip" seamless>
+                        <p>If you notice a need for housekeeping in the neighboring code as you do your PR, create an issue for it in the issue tracker.
+                        </p>
+                      </box>
+                    </li>
+                    <li>
+                      <p><em>Standalone</em> means the PR <strong>should contain a meaningful change that moves the code base from one working state to another</strong>.</p>
+                    </li>
+                    <li>
+                      <p><em>Complete</em> means the PR <strong>should contain everything related to the change</strong>, including the following:</p>
+                      <ul>
+                        <li>functional code</li>
+                        <li>code comments</li>
+                        <li>test cases</li>
+                        <li>user docs and developer docs</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <box type="wrong" seamless class="ml-4"><template slot="icon"><span aria-hidden="true" class="fas fa-exclamation-circle"></span></template>
+                    <p>&quot;This PR is just the code fix. I'll update tests and documentation in a separate PR&quot; is not acceptable!</p>
+                    <p>However, it is fine to push the functional code first to get early feedback, as long as the rest is added to the same PR later.
+                    </p>
+                  </box>
+                </li>
+              </ul>
+            </div>
+          </panel>
+        </div>
+        <p></p>
+        <p><span class="badge badge-dark">Step 6</span> <strong>Sync your branch with the upstream master</strong>, if the <code>master</code> branch advances while you work on your code (i.e., pull upstream <code>master</code>, merge to your branch).</p>
+        <p><span class="badge badge-dark">Step 7</span> <strong>Create a PR</strong> when the code is ready, as follows:</p>
+        <ol>
+          <li>Push the branch to your fork.</li>
+          <li>Create a <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request"><mark>draft</mark> PR</a> from your fork to the upstream repo.</li>
+          <li>Check the draft PR on GitHub to confirm the following:
+            <ul>
+              <li>it follows the <a href="/guides/conventions/github.md">PR format conventions</a></li>
+              <li>it does not contain any unintended changes.</li>
+              <li>it passes <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Continuous Integration (Travis, AppVeyor, GitHub Actions, etc.)</span>CI</span> checks, if any.</li>
+            </ul>
+          </li>
+          <li>Remove the 'draft' status of the PR. Post a <code>ready for review</code> comment for good measure.</li>
+        </ol>
+        <p><span class="badge badge-dark">Step 8</span> <strong>Revise as per reviews</strong> until the PR is merged.</p>
+        <ul>
+          <li>Feel free to post a reminder comment if you don't get a review within 2-3 days.</li>
+          <li>When you receive a review,
+            <ol>
+              <li>Revise the code as per the review.</li>
+              <li>Push the new code to the branch in your fork.</li>
+              <li>Post a comment to indicate the PR is ready for a new review.</li>
+            </ol>
+          </li>
+        </ul>
+
+        <h2 id="reviewing-a-pr">Reviewing a PR<a class="fa fa-anchor" href="#reviewing-a-pr" onclick="event.stopPropagation()"></a></h2>
+        <panel type="info" expanded><template slot="_header">
+            <p><strong>General guidelines for reviewers</strong></p>
+          </template>
+          <box type="info" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-book-open"></span></template>
+            <ul>
+              <li>If you are new to GitHub PRs, see <a href="https://help.github.com/en/articles/about-pull-request-reviews">GitHub help on how to review PRs</a>.</li>
+              <li>Read the blog post <a href="https://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like/"><strong>10 tips for reviewing code you don’t like</strong></a> - by David Lloyd (a Red Hat developer).</li>
+            </ul>
+          </box>
+          <ul>
+            <li><strong>Add specific comments at relevant places of the code</strong>, rather than give one overall comment for the entire PR.
+              <ul>
+                <li>It is typical for the comment to be added right below the code line it refers to.<br>
+                  It is possible to <a href="https://twitter.com/natfriedman/status/1179097330097643521">mark multiple lines</a> as linked to the comment too.</li>
+                <li>You can use Markdown (specifically, <a href="https://guides.github.com/features/mastering-markdown/">GitHub-Flavored Markdown</a>) in your comments.</li>
+              </ul>
+            </li>
+            <li><mark><strong>It's best to phrase comments as questions</strong></mark>, especially if you are a peer reviewer.<br>
+              e.g., <code>Should this be extracted out?</code> rather than <code>Extract this out</code> or <code>This should be extracted out</code>.</li>
+            <li><strong>Feel free to ask for more info from the author</strong>, to help you understand the code/design. For example, you can ask why the author chose to write the code in a specific way.</li>
+            <li><strong>Feel free to compliment the author when appropriate</strong><br>
+              <span class="dimmed">e.g., <em>hey, I like how clean this bit of code is</em> 👍</span></li>
+            <li><strong>You can also suggest alternatives for the author to consider.</strong></li>
+          </ul>
+        </panel>
+
+        <panel type="info" expanded><template slot="_header">
+            <p><strong>General guidelines for authors</strong></p>
+          </template>
+          <ul>
+            <li><strong>Don't get into arguments with reviewers.</strong> If you disagree with the reviewer, you can explain your own view in a non-confrontational way without trying to prove your way is better.</li>
+            <li>Thank reviewers for their inputs.</li>
+          </ul>
+        </panel>
+        <p></p>
+        <ul>
+          <li><strong>Check for basic PR hygiene</strong>, and remind the PR author to rectify if necessary.
+            <ul class="task-list">
+              <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> contains a single, stand-alone, complete fix</li>
+              <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> relevant comments, dev/user docs, tests have been updated</li>
+              <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> PR title/description format is expected</li>
+              <li class="task-list-item"><input class="task-list-item-checkbox" checked type="checkbox"> doesn't contain unrelated changes</li>
+            </ul>
+          </li>
+        </ul>
+        <p></p>
+        <ul>
+          <li><strong>Before approving a PR, confirm that all your previous comments have been addressed.</strong></li>
+        </ul>
+      </div>
+
+
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
+            <a class="nav-link py-1" href="#guidelines-for-working-with-prs">Guidelines for working with PRs&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#selecting-what-to-work-on">Selecting what to work on&#x200E;</a>
+              <a class="nav-link py-1" href="#scoping-a-pr">Scoping a PR&#x200E;</a>
+              <a class="nav-link py-1" href="#submitting-a-pr">Submitting a PR&#x200E;</a>
+              <a class="nav-link py-1" href="#reviewing-a-pr">Reviewing a PR&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+
+      <div class="text-center">
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 1 Jun 2020, 0:11:47 GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/guides'
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
+
+</html>
