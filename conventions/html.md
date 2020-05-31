@@ -149,7 +149,7 @@ pageNav: 3
 
 ## Naming
 
-* **Classes: See [CSS Style Guide](../css).**
+* **Classes: See [CSS Style Guide](css.html).**
 * **IDs: lower-case, join-by-hyphen.** e.g., `header-content-week3`
 
 
@@ -198,7 +198,7 @@ et dolore magna aliqua. Ut enim ad minim veniam,
 
 * **Include `rel="noopener noreferrer"` when using `target="_blank"` in links.**
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: Leaving this out would enable attackers to get hold of `window.opener` object, which can be used to redirect to a malicious link. [[Source](https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c)]
   </box>

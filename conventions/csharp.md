@@ -30,7 +30,7 @@ MyClass.cs → `public class MyClass { ... }`
 
 `System.Windows.Forms.Control` should use the path System\Windows\Forms\Control.cs
 
-<box type="info" light >
+<box type="info" seamless>
 
 Do not use namespace name with dots. This will make it easier to map namespaces to the directory layout.
 </box>
@@ -69,7 +69,7 @@ using Telerik.WebControls;
 1. Properties
 1. Methods
 
-<box type="info" light >
+<box type="info" seamless>
 
 Sequence declaration within type groups are based on StyleCop's SA1202 ordering: `public, internal, protected internal, protected, private`.
 </box>
@@ -195,7 +195,7 @@ English is the preferred language for international development.
 
 #### 2. Use proper casing for language elements.
 
-<box type="info" light >
+<box type="info" seamless>
 
 * Pascal casing: the first letter of every word is capitalized.
 * Camel casing: the first letter of every word, except for the first word, is capitalized.
@@ -246,7 +246,7 @@ HTMLSource
 
 Examples: `CanEvaluate`, `IsVisible`, `HasLicense`.
 
-<box type="info" light >
+<box type="info" seamless>
 
 Avoid boolean variables that represent the negation of things. e.g., use `IsInitialized` instead of `IsNotInitialized`.
 </box>
@@ -283,7 +283,7 @@ ColorsEnum
 {% endcall %}
 
 
-<box type="info" light >
+<box type="info" seamless>
 
 *Exception*: All fields and variable names that contain GUI elements like button should be postfixed with their type name without abbreviations. e.g., `cancelButton`, `nameTextBox`.
 </box>
@@ -369,7 +369,7 @@ Do not use var when the type is not apparent from the right side of the assignme
 int result = ExampleClass.ResultSoFar();
 ```
 
-<box type="info" light >
+<box type="info" seamless>
 
 To know more about when to use/not to use implicit typing read [Uses and misuses of implicit typing](https://blogs.msdn.microsoft.com/ericlippert/2011/04/20/uses-and-misuses-of-implicit-typing/).
 </box>

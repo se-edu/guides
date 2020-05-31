@@ -5,7 +5,7 @@
 
 # Guidelines for commit organization
 
-* This guide **does not cover guidelines for commit messages**, as they are covered [here](../standards/git).
+* This guide **does not cover guidelines for commit messages**, as they are covered [here](../conventions/git.html).
 * This guide **applies to commits that will appear in the final version history**. More specifically,
   * If the commits are meant to be _squashed_ before merging, the guidelines apply to the squashed version.
   * If your project merges PRs/branches without squashing, the guidelines apply to each individual commit.
@@ -23,14 +23,14 @@ looks good." -- [[source](https://twitter.com/girayozil/status/30683678573921075
 
 * **Commits should be ordered in a bottom-up fashion**, each commit building on top of the previous one towards the end goal of the PR.
 
-  <box type="info" light>
+  <box type="info" seamless>
 
   Rationale: Reviewers should be able to review one commit at a time.
   </box>
 
 * **Ideally, a commit should not modify more than 100 lines of code.**
 
-   <box type="info" light>
+   <box type="info" seamless>
 
    Rationale: Bigger commits make reviewing harder.
    </box>
@@ -43,7 +43,7 @@ looks good." -- [[source](https://twitter.com/girayozil/status/30683678573921075
 
 * **Every commit should pass CI.** when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.
 
-  <box type="info" light>
+  <box type="info" seamless>
 
   Rationale: Build-breaking commits in the version history hinder the ability to use `git bisect` for locating bugs.
   </box>

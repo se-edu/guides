@@ -33,7 +33,7 @@ Any changes you make in editor pane on the left will be reflected in the preview
 
 The `PlantUML integration` plugin allows you to export individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
 
-<box type="info" light >
+<box type="info" seamless>
 
 You will have to `git add` any new diagrams generated!
 </box>
@@ -75,7 +75,7 @@ end box
 
 You can fine-tune the formatting of PlantUML diagrams with the `skinparam` command. For example, `skinparam backgroundColor transparent` turns the background of the diagram transparent.
 
-<box type="tip" light>
+<box type="tip" seamless>
 
 For a comprehensive list of `skinparam`s, see [unofficial PlantUML skinparam documentation](https://plantuml-documentation.readthedocs.io/en/latest/).
 </box>
@@ -87,7 +87,7 @@ While PlantUML’s automatic layout engine usually produces satisfactory results
 
 ![The UI class diagram without additional formatting](images/plantuml/RawUiDiagram.png)
 
-<box type="info" light >
+<box type="info" seamless>
 
 In most cases, you should consider decomposing the diagram into smaller ones or focusing on a more specific portion of the diagram.
 
@@ -261,7 +261,7 @@ package "Rule Of Thumb";{
 </tbody>
 </table>
 
-<box type="tip" light >
+<box type="tip" seamless>
  
 Explicitly define all symbols to avoid any potential layout mishaps.
 </box>

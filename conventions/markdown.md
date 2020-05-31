@@ -9,14 +9,14 @@ title: "Markdown Coding Standard"
 * The term 'markdown' in this document refers to _GitHub Flavored Markdown_.
 * **Follow the syntax as strictly as specified** [here](https://guides.github.com/features/mastering-markdown/).
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: Minor deviations from the markdown syntax are sometimes forgiven by GitHub markdown rendering but may not be forgiven by [GitHub Pages html rendering](https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3.).
   </box>
 
 * **Do not wrap lines at a specific length.** Coding standards for other languages typically specify a maximum length for a statement. However, Markdown is used to write natural language content which should not be chopped into a sentence fragments.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: Doing so with throw off grammar checkers and make it harder to modify content later (a simple change might require re-sizing many adjacent lines.
   </box>
@@ -88,7 +88,7 @@ Content of the paragraph.
 
 * **Use generic numbering for ordered lists.** i.e., use `1.` for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: If you use generic numbers, you can insert items into the middle of the list without modifying any existing items.
   </box>
@@ -110,7 +110,7 @@ Content of the paragraph.
 
 * **Use `*` for bullet-points** (not `-`).
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: Although both work, `*` closer to the final outcome.
   </box>
@@ -132,7 +132,7 @@ Content of the paragraph.
 
 * **Use `_` for italics** (not `*`).
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: Although both work, `_` is easier to relate to italics.
   </box>

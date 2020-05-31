@@ -14,7 +14,7 @@ for any topics not covered in this document.
 * If the project is using a framework (e.g. Bootstrap/jQuery UI), use classes from the framework as much as possible.
 * Divide long CSS files into sections.
 
-  <box type="info" light >
+  <box type="info" seamless>
   By segmenting the file(s) in this logical way, it is easy to locate css rules and to ensure that a new rule being added is not already present.
   </box>
 
@@ -24,7 +24,7 @@ for any topics not covered in this document.
 
 * CSS file includes must be done using `<link>` tags in the HTML/JSP files and NOT using `@import` in other css files.
 
-  <box type="info" light >
+  <box type="info" seamless>
   
   RATIONALE: **`@import`** can be slow and may result in the page being rendered without css for a while before the page magically comes to life. As of now we are using css files as styles of HTML pages and thus the dependency must be clearly visible in the HTML page.
   </box>
@@ -35,7 +35,7 @@ for any topics not covered in this document.
 
 * NO inline style sheets or inline styles in the HTML/JSP files.
 
-    <box type="info" light >
+    <box type="info" seamless>
     RATIONALE: The whole idea is to have Separation of Concerns (SoC). If css rules are specified everywhere, editing them in the future will be a hassle and redundant overriding of css rules may occur. If all are in one place management is also easier.
     </box>
 {% call show_example('good') %}
@@ -70,7 +70,7 @@ for any topics not covered in this document.
 
 * Do not use CSS3 selectors.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: Although they are powerful, cross-browser compatibility is difficult to achieve and many rules are supported by different browsers starting from different versions (refer: [W3CSchools List](http://www.w3schools.com/cssref/css3_browsersupport.asp)). Also, we can stick to more functional names for the css and use classes to achieve our needs → more readable and easier to manage.
   </box>
@@ -79,7 +79,7 @@ for any topics not covered in this document.
 
 * The selector(s) must be specified in separate lines.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: This eases reading as well as helps in revision control as conflicts reduce.
   </box>
@@ -103,7 +103,7 @@ for any topics not covered in this document.
 
 * Group related/hierarchical style specifications (eg :hover, child specifier, etc) and provide an additional indent to the more specific selector. Refer to [here](http://isobar-idev.github.io/code-standards/#_css_formatting) for examples.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: This gives a nice hierarchical structure to the file and helps to visually group css rules by indentation. In addition this gives an immediate idea as to how certain classes are being used in the HTML files (from the hierarchy) without actually reading HTML files.
   </box>
@@ -112,14 +112,14 @@ for any topics not covered in this document.
 
 * Do not qualify class/ID selectors using tag names (do not use: `div.mainContent`, simply use `.mainContent`). Refer to [Writing efficient CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS) for examples.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: This speeds up the css match lookup. If such a qualification is actually required, either use another class on top of this to change the style or use a completely different class to start with. In any case, if this kind of qualification is needed, then probably the class has not been named well enough (see [naming standards for classes](#naming-classes))
   </box>
 
 * Use child selector rather than descendant selector (use `#container > span` rather than `#container span`). Refer to [Writing efficient CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS) for examples.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: This is a strong recommendation as descendant selector is extremely expensive, especially when the specified ancestor has a lot of descendants.
   </box>
@@ -173,7 +173,7 @@ for any topics not covered in this document.
 * Alphabetize the attributes, disregarding any browser prefix.<br>
   All browser-prefixed versions of an attribute must be written together.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: It makes it easier to locate attributes in a css file.
   </box>
@@ -219,7 +219,7 @@ for any topics not covered in this document.
 
 * DO NOT use `!important` specifier.
 
-  <box type="info" light >
+  <box type="info" seamless>
 
   RATIONALE: Using the `!important` specifier overrides the natural flow of specificity and cascading hierarchy of css styles. Unless absolutely necessary do not use it. If there is such a situation clearly state the reason with comments (`/* */`).
   </box>

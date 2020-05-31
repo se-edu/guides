@@ -7,7 +7,7 @@
 
 [Netlify](https://www.netlify.com/) is an automated hosting platform for deploying static websites. It is particularly useful for previewing documentation changes in a PR (i.e., how would the final output of the documentation will change if the PR is merged), which can be done using Netlify’s [Deploy Previews](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) feature.
 
-<box type="important" light>
+<box type="important" seamless>
 
 **Caution:** Netlify allows only 300 free build minutes per month. They use an unsavory practice of letting you exceed the limit and then sending you an invoice for the extra use. You will not be able to use Netlify again unless you pay (or get them to cancel the charge). Therefore, we caution you to use Netlify (if at all) during times you update documentation and only if you want to use Netlify _Deploy Previews_ to help review such PRs. 
 

@@ -11,10 +11,12 @@
 
 ## Commit message: Subject
 
+<div id="commit-message-subject-format">
+
 {{ icon_level_basic }} **Every commit must have a well-written commit message _subject line_.**
 * **Try to limit the subject line to 50 characters (hard limit: 72 chars)**
 
-<box type="info" light add-class="ml-5">
+<box type="info" seamless add-class="ml-5">
 
 Rationale: Some tools show only a limited number of characters from the commit message.
 </box>
@@ -32,17 +34,20 @@ Rationale: Some tools show only a limited number of characters from the commit m
 * {{ good }}: `Update sample data`
 * {{ bad }}: `Update sample data.`
 
-<box type="tip" light>
+<box type="tip" seamless>
 
 You can use `scope: change` format (when applicable).
 * e.g. `Person class: remove static imports`<br>
-  `Unit tests: remove blank lines`.
+  `Unit tests: remove blank lines`
 
 </box>
+</div>
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Commit message: Body
+
+<div id="commit-message-body-format">
 
 {{ icon_level_basic }} **Commit messages for non-trivial commits should have a _body_ giving details of the commit.**
 * **Separate subject from body with a blank line.**
@@ -64,7 +69,7 @@ blocks into separate methods in their respective classes. Doing so will
 make the subsequent unification easier.
 ```
 
-<box type="tip" light>
+<box type="tip" seamless>
 
 Tip for SourceTree users: To help you keep the commit message width to a 72 characters:
 1. Choose `Tools` -> `Options`.
@@ -144,9 +149,14 @@ http://stackoverflow.com/some/question
 Refer to the article _[How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/)_ for more advice on writing good commit messages.
 </box>
 
-
+</div>
 <!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Branch names
 
-Recommendation: for consistency, use a meaningful names for branches, in the _kebab case_ format e.g., `refactor-ui-tests`
+<div id="branch-names-format">
+
+Follow these rules to improve consistency:
+* Use a meaningful name consisting of some relevant keywords, in the _kebab case_ format e.g., `refactor-ui-tests`.
+* If the branch is related to an issue, use the format `issueNumber-some-keywords-from-issue-title` e.g., `1234-ui-freeze-error`
+</div>
