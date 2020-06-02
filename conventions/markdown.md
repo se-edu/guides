@@ -1,10 +1,10 @@
 <frontmatter>
-title: "Markdown Coding Standard"
+title: "Markdown coding standard"
 </frontmatter>
 
 {% from 'scripts/macros.njk' import show_example with context %}
 
-# Markdown Coding Standard
+# Markdown coding standard
 
 * The term 'markdown' in this document refers to _GitHub Flavored Markdown_.
 * **Follow the syntax as strictly as specified** [here](https://guides.github.com/features/mastering-markdown/).

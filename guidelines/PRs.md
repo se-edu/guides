@@ -21,35 +21,35 @@
 
 **General rule: try to keep PRs as small as possible** because smaller PRs get merged faster.
 
-* **A PR should contain a _single_, _standalone_, and _complete_ change to the code base**, unless in exceptional cases where the PR is part of a bigger change.
-  * _Single_ means a PR **should not try to fix more than one fix**, unless there are multiple things that _must_ be done together or not at all.
+**A PR should contain a _single_, _standalone_, and _complete_ change to the code base**, unless in exceptional cases where the PR is part of a bigger change.
+* _Single_ means a PR **should not try to fix more than one fix**, unless there are multiple things that _must_ be done together or not at all.
 
-    <box type="wrong" icon=":fas-exclamation-circle:" seamless>
+  <box type="wrong" icon=":fas-exclamation-circle:" seamless>
 
-    Refrain from <tooltip content="do minor improvements to the code e.g., fix typos">_housekeeping_</tooltip> in the neighboring code **unless the line in concern is already touched by the PR** (i.e., the housekeeping does not increase the line count of the PR.
-    </box>
-    <box type="info" seamless>
-
-    Rationale: Imagine we decide to revert the PR for some reason. If a PR contains, unrelated changes or multiple independent changes, we will not be able to revert the offending change without losing the other changes as well.
-    </box>
-    <box type="tip" seamless>
-
-    If you notice a need for housekeeping in the neighboring code as you do your PR, create an issue for it in the issue tracker.
-    </box>
-
-  * _Standalone_ means the PR **should contain a meaningful change that moves the code base from one working state to another**.
-  * _Complete_ means the PR **should contain everything related to the change**, including the following:
-    * functional code
-    * code comments
-    * test cases
-    * user docs and developer docs
-
-  <box type="wrong" icon=":fas-exclamation-circle:" seamless class="ml-4">
-
-  "This PR is just the code fix. I'll update tests and documentation in a separate PR" is not acceptable!
-
-  However, it is fine to push the functional code first to get early feedback, as long as the rest is added to the same PR later.
+  Refrain from <tooltip content="do minor improvements to the code e.g., fix typos">_housekeeping_</tooltip> in the neighboring code **unless the line in concern is already touched by the PR** (i.e., the housekeeping does not increase the line count of the PR.
   </box>
+  <box type="info" seamless>
+
+  Rationale: Imagine we decide to revert the PR for some reason. If a PR contains, unrelated changes or multiple independent changes, we will not be able to revert the offending change without losing the other changes as well.
+  </box>
+  <box type="tip" seamless>
+
+  If you notice a need for housekeeping in the neighboring code as you do your PR, create an issue for it in the issue tracker.
+  </box>
+
+* _Standalone_ means the PR **should contain a meaningful change that moves the code base from one working state to another**.
+* _Complete_ means the PR **should contain everything related to the change**, including the following:
+  * functional code
+  * code comments
+  * test cases
+  * user docs and developer docs
+
+<box type="wrong" icon=":fas-exclamation-circle:" seamless class="ml-4">
+
+"This PR is just the code fix. I'll update tests and documentation in a separate PR" is not acceptable!
+
+However, it is fine to push the functional code first to get early feedback, as long as the rest is added to the same PR later.
+</box>
 
 </div>
 
@@ -60,7 +60,7 @@
 When submitting PRs, follow [the forking workflow](https://se-education.org/se-book/gitAndGithub/index.html#forking-workflow). A summary of the steps is given below.
 
 
-{% macro step(n) %}<span class="badge badge-dark">Step {{ n }}</span>{% endmacro %}
+{% macro step(n, label='Step') %}<span class="badge badge-dark bigger-level1">{{ label }} {{ n }}</span>{% endmacro %}
 
 {% macro embed(header, src) %}
 <div class="indented-level2">
@@ -73,17 +73,22 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
 <p/>
 {% endmacro %}
 
-{{ step(1) }} **Fork the upstream repo.**
+{{ step(0) }} Do these steps if you haven't done them already:
 
-{{ step(2) }} **Clone the fork to your computer.**
+<div class="indented-level2">
 
-{{ step(3) }} **Set up the dev environment as described in the project docs.** Confirm the set up is correct.
+{{ step(0.1, '') }} **Fork the upstream repo** if you haven't done so already.
 
-{{ step(4) }} **Create a branch from the `master` branch**, following the naming convention given.
+{{ step(0.2, '') }} **Clone the fork to your computer.**
 
-  {{ embed("Coding Standards » Git » **Branch naming conventions**", "../conventions/git.md#branch-names-format") }}
+{{ step(0.3, '') }} **Set up the dev environment as described in the project docs.** Confirm the set up is correct.
+</div>
 
-{{ step(5) }} **Add your code to the branch** while ensuring you follow these:
+{{ step(1) }} **Create a branch from the `master` branch**, following the naming convention given.
+
+  {{ embed("coding standards » Git » **Branch naming conventions**", "../conventions/git.md#branch-names-format") }}
+
+{{ step(2) }} **Add your code to the branch** while ensuring you follow these:
 
 * relevant coding standards (the full list is given [here](../index.html))
 * Commit message format
@@ -100,9 +105,10 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
   {{ embed("This document » **Scoping a PR**", "PRs.md#section-scoping-a-pr") }}
 
 
-{{ step(6) }} **Sync your branch with the upstream master**, if the `master` branch advances while you work on your code (i.e., pull upstream `master`, merge to your branch).
+{{ step(3) }} **Sync your branch with the upstream master**, if the `master` branch advances while you work on your code (i.e., pull upstream `master`, merge to your branch).
 
-{{ step(7) }} **Create a PR** when the code is ready, as follows:
+{{ step(4) }} **Create a PR** when the code is ready, as follows:
+   1. Run code style checks (if any) to ensure the code complies with the project standards.
    1. Push the branch to your fork.
    1. Create a [==draft== PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) from your fork to the upstream repo.
    1. Check the draft PR on GitHub to confirm the following:
@@ -111,7 +117,7 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
       * it passes <tooltip content="Continuous Integration (Travis, AppVeyor, GitHub Actions, etc.)">CI</tooltip> checks, if any.
    1. Remove the 'draft' status of the PR. Post a `ready for review` comment for good measure.
 
-{{ step(8) }} **Revise as per reviews** until the PR is merged.
+{{ step(5) }} **Revise as per reviews** until the PR is merged.
 * Feel free to post a reminder comment if you don't get a review within 2-3 days.
 * When you receive a review,
   1. Revise the code as per the review.
@@ -160,4 +166,4 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
   - [x] doesn't contain unrelated changes
 <p/>
 
-* **Before approving a PR, confirm that all your previous comments have been addressed.**
+* **Before approving a PR, ==confirm that all your previous comments have been addressed==.**

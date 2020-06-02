@@ -1,11 +1,11 @@
 <frontmatter>
-title: "HTML Coding Standard"
+title: "HTML coding standard"
 pageNav: 3
 </frontmatter>
 
 {% from 'scripts/macros.njk' import show_example with context %}
 
-# HTML Coding Standard
+# HTML coding standard
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
 

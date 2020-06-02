@@ -1,11 +1,11 @@
 <frontmatter>
-title: "CSS Coding Standard"
+title: "CSS coding standard"
 pageNav: 3
 </frontmatter>
 
 {% from 'scripts/macros.njk' import show_example with context %}
 
-# CSS Coding Standard
+# CSS coding standard
 
 ## General
 
@@ -237,5 +237,5 @@ for any topics not covered in this document.
 * Other Readings
   * [30 CSS Best Practices For Beginners](https://code.tutsplus.com/tutorials/30-css-best-practices-for-beginners--net-6741)
   * [A list of CSS style guides](https://css-tricks.com/css-style-guides)
-  * [Isobar Coding Standards](http://isobar-idev.github.io/code-standards/)
+  * [Isobar coding standards](http://isobar-idev.github.io/code-standards/)
   * [Writing efficient CSS (MDN article)](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)

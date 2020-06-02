@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "JavaFX Tutorial Part 1 – Introduction"
+  title: "JavaFX tutorial part 1 – Introduction"
   pageNav: 2
 </frontmatter>
 
-# JavaFX Tutorial Part 1 – Introduction
+# JavaFX tutorial part 1 – Introduction
 
 ## Lifecycle of a JavaFX  application
 

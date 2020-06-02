@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "Gradle Tutorial"
+  title: "Gradle tutorial"
   pageNav: 3
 </frontmatter>
 
-# Gradle Tutorial
+# Gradle tutorial
 
 Gradle is a _build automation tool_ used to automate build processes. There are many ways of integrating Gradle into a project. This tutorial uses the _Gradle wrapper_ approach.
 

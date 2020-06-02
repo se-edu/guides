@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "Checkstyle Tutorial"
+  title: "Checkstyle tutorial"
   pageNav: 2
 </frontmatter>
 
-# Checkstyle Tutorial
+# Checkstyle tutorial
 
 ## Using Checkstyle with Gradle
 

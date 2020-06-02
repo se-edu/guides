@@ -1,10 +1,10 @@
 <frontmatter>
-title: "Java Coding Standard"
+title: "Java coding standard"
 pageNav: 3
 tags: ["-level--*", "level--basic", "level--intermediate", "level--intermediate-only"]
 </frontmatter>
 
-# Java Coding Standard (Basic + Intermediate)
+# Java coding standard (basic + intermediate)
 
 <include src="rules.mbdf" />
 

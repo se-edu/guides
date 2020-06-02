@@ -1,9 +1,9 @@
 <frontmatter>
-title: "Java Coding Standard"
+title: "Java coding standard"
 pageNav: 3
 tags: ["level--*"]
 </frontmatter>
 
-# Java Coding Standard (All)
+# Java coding standard (all)
 
 <include src="rules.mbdf" />

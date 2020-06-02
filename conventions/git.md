@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "Git Coding Standard"
+  title: "Git coding standard"
   pageNav: 3
 </frontmatter>
 
-# Git Coding Standard
+# Git coding standard
 
 **Legend**: {{ icon_level_basic }} basic rule | {{ icon_level_intermediate }} intermediate rule | {{ icon_level_advanced }} advanced rule
 

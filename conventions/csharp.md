@@ -1,11 +1,11 @@
 <frontmatter>
-title: "C# Coding Standard"
+title: "C# coding standard"
 pageNav: 3
 </frontmatter>
 
 {% from 'scripts/macros.njk' import show_example with context %}
 
-# C# Coding Standard
+# C# coding standard
 
 **Important:** Use [CSharpGuidelines](https://github.com/dennisdoomen/CSharpGuidelines) for any topics not covered in this document.
 
@@ -13,7 +13,7 @@ pageNav: 3
 
 The coding standard is primarily based on [CSharpGuidelines](https://github.com/dennisdoomen/CSharpGuidelines) (by Aviva Solutions) but differs from it in these ways:
 
-* Structure of the document is adapted from [C# Coding Standards for .NET](http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf) and [C# Coding Style Guide](http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf).
+* Structure of the document is adapted from [C# coding standards for .NET](http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf) and [C# Coding Style Guide](http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf).
 * Some examples were taken from other sources listed under [References](#references).
 </box>
 
@@ -399,6 +399,6 @@ startInfo.UseShellExecute = true;
 ## References
 
 * [C# Coding Coventions (C# Programming Guide)](https://msdn.microsoft.com/en-us/library/ff926074.aspx) -- From Microsoft
-* [C# Coding Standards for .NET](http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf) -- By Lance Hunt
+* [C# coding standards for .NET](http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf) -- By Lance Hunt
 * [C# Coding Style Guide](http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf) -- By Mike Krüger
 * [CSharpGuidelines](https://github.com/dennisdoomen/CSharpGuidelines) -- From Aviva Solutions

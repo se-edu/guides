@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "PlantUML Tutorial"
+  title: "PlantUML tutorial"
   pageNav: 3
 </frontmatter>
 
-# PlantUML Tutorial
+# PlantUML tutorial
 
 One main advantage of using  [PlantUML](http://plantuml.com/) for creating diagrams is, as diagrams can be saved in a text format, you can update the diagrams incrementally, as the design evolves over time.
 

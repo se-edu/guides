@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "JavaFX Tutorial 3 – Interacting with the user"
+  title: "JavaFX tutorial part 3 – Interacting with the user"
   pageNav: 2
 </frontmatter>
 
-# JavaFX Tutorial 3 – Interacting with the user
+# JavaFX tutorial part 3 – Interacting with the user
 
 Picking up from where we left off last tutorial, we have successfully achieved the desired layout. Now let’s make the application respond to user input. 
 

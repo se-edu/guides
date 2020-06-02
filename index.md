@@ -19,23 +19,30 @@ This website contains a collection of tutorials, standards, guides, best practic
   * [Part 2: Creating a GUI for Duke](tutorials/javaFxTutorialPart2.html)
   * [Part 3: Interacting with the user](tutorials/javaFxTutorialPart3.html)
   * [Part 4: Using FXML](tutorials/javaFxTutorialPart4.html)
+* **Intellij IDEA**:
+  * [Configuring the JDK](tutorials/intellijJdk.html)
+  * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
+  * [Configuring the code style](tutorials/intellijCodeStyle.html)
 * [**JUnit**](tutorials/junitTutorial.html)
 * [**Gradle**](tutorials/gradleTutorial.html)
 * [**Netlify**](tutorials/netlifyTutorial.html)
-* [**PlantUML**](tutorials/plantUmlTutorial.html)
+* **Project documentation tools**:
+  * [**MarkBind**](tutorials/markbind.html)
+  * [**PlantUML**](tutorials/plantUmlTutorial.html)
 
 ## {{ thumbnail(":fas-file-code:") }} Conventions
 
 Coding standards, format conventions, style guides, ...
 
-* [**C#** Coding Standard](conventions/csharp.html)
-* [**CSS** Coding Standard](conventions/css.html)
+* [**C#** coding standard](conventions/csharp.html)
+* [**CSS** coding standard](conventions/css.html)
 * [**Files/Folders** naming](conventions/files.html)
-* [**HTML** Coding Standard](conventions/html.html)
+* [**HTML** coding standard](conventions/html.html)
+* [**JavaScript** coding standard](conventions/javascript.html)
 * [**Git** conventions](conventions/git.html)
 * [**GitHub** conventions](conventions/github.html)
-* [**Markdown** Coding Standard](conventions/markdown.html)
-* **Java** Coding Standards: [Basic](conventions/java/basic.html) | [Basic + Intermediate](conventions/java/intermediate.html) | [All](conventions/java/index.html)
+* [**Markdown** coding standard](conventions/markdown.html)
+* **Java** coding standards: [basic](conventions/java/basic.html) | [basic + intermediate](conventions/java/intermediate.html) | [all](conventions/java/index.html)
 
 ## {{ thumbnail(":fas-map-signs:") }} Guidelines
 

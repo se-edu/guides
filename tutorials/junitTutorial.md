@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "JUnit Tutorial"
+  title: "JUnit tutorial"
   pageNav: 2
 </frontmatter>
 
-# JUnit Tutorial
+# JUnit tutorial
 
 [JUnit](https://junit.org/junit5/) is a testing framework for Java. 
 

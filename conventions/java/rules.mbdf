@@ -1,6 +1,6 @@
 <sub>Versions: [[Basic Rules]({{baseUrl}}/standards/java/basic.html)] [[Basic + Intermediate Rules]({{baseUrl}}/standards/java/intermediate.html)] [[All Rules]({{baseUrl}}/standards/java/index.html)]</sub>
 
-{{ icon_tip }} Use the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) for any topics not covered in this document.
+{{ icon_tip }} Use the [Google Java style guide](https://google.github.io/styleguide/javaguide.html) for any topics not covered in this document.
 
 <span tags="level--intermediate">
 <box>

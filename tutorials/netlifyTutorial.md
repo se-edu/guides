@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "Netlify Tutorial"
+  title: "Netlify tutorial"
   pageNav: 3
 </frontmatter>
 
-# Netlify Tutorial
+# Netlify tutorial
 
 [Netlify](https://www.netlify.com/) is an automated hosting platform for deploying static websites. It is particularly useful for previewing documentation changes in a PR (i.e., how would the final output of the documentation will change if the PR is merged), which can be done using Netlify’s [Deploy Previews](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) feature.
 
