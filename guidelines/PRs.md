@@ -3,6 +3,8 @@
   pageNav: 3
 </frontmatter>
 
+{% from 'scripts/macros.njk' import step, embed with context %}
+
 # Guidelines for working with PRs
 
 ## Selecting what to work on
@@ -58,20 +60,6 @@ However, it is fine to push the functional code first to get early feedback, as 
 ## Submitting a PR
 
 When submitting PRs, follow [the forking workflow](https://se-education.org/se-book/gitAndGithub/index.html#forking-workflow). A summary of the steps is given below.
-
-
-{% macro step(n, label='Step') %}<span class="badge badge-dark bigger-level1">{{ label }} {{ n }}</span>{% endmacro %}
-
-{% macro embed(header, src) %}
-<div class="indented-level2">
-
-<panel header="{{ icon_embedding | safe }} {{ header }}" minimized>
-
-<include src="{{ src }}" />
-</panel>
-</div>
-<p/>
-{% endmacro %}
 
 {{ step(0) }} Do these steps if you haven't done them already:
 

@@ -13,4 +13,20 @@
 </div>
 {% endmacro %}
 
+
 {% macro thumbnail(icon) %}<thumbnail circle text="{{ icon }}" background="#e67300" font-color="white" size="50" />{% endmacro %}
+
+
+{% macro step(n, label='Step') %}<span class="badge badge-dark bigger-level1">{{ label }} {{ n }}</span>{% endmacro %}
+
+
+{% macro embed(header, src) %}
+<div class="indented-level2">
+
+<panel header="{{ icon_embedding | safe }} {{ header }}" minimized>
+
+<include src="{{ src }}" />
+</panel>
+</div>
+<p/>
+{% endmacro %}
