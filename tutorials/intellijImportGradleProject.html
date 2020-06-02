@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Conventions for file/folder naming</title>
+  <title>Intellij IDEA: Importing a Gradle project</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
   <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
@@ -17,11 +17,10 @@
   <link rel="stylesheet" href="../markbind/css/markbind.css">
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
-<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+<body>
   <div id="app">
     <header>
       <navbar placement="top" type="dark" class="temp-navbar">
@@ -40,52 +39,18 @@
 
       <div id="content-wrapper">
         <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="conventions-for-file-folder-naming">Conventions for file/folder naming<a class="fa fa-anchor" href="#conventions-for-file-folder-naming" onclick="event.stopPropagation()"></a></h1>
-        <h2 id="files-folders">Files/Folders<a class="fa fa-anchor" href="#files-folders" onclick="event.stopPropagation()"></a></h2>
-        <ul>
-          <li><strong>General rule: aim for <em>local consistency</em></strong> i.e., follow the conventions/patterns followed by other files/folders in the neighborhood.
-            <ul>
-              <li>If the project uses a framework that has a specific file naming convention, follow that instead.</li>
-            </ul>
-          </li>
-        </ul>
-        <p></p>
-        <ul>
-          <li>If there is no existing pattern to follow:
-            <ul>
-              <li>Use camelCase whenever possible. e.g. <code>formatsAndConventions.md</code></li>
-              <li>If the name has multiple phrases, use - to separate phrases. e.g. <code>codingStyle-javaBasic.html</code></li>
-            </ul>
-          </li>
-        </ul>
-        <p></p>
-        <ul>
-          <li>
-            <p>Try to user common prefixes so that similar files appear together when sorted by name.<br>
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font> <code>codingStyle-java.html</code>, <code>codingStyle-html.html</code><br>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>javaCodingStyle.html</code>, <code>htmlCodingStyle.html</code>
-            </p>
-          </li>
-          <li>
-            <p>Prefer plurals if the file/folder contains multiple items of same type e.g. <code>docs</code> instead of <code>doc</code></p>
-          </li>
-        </ul>
+        <h1 id="intellij-idea-importing-a-gradle-project">Intellij IDEA: Importing a Gradle project<a class="fa fa-anchor" href="#intellij-idea-importing-a-gradle-project" onclick="event.stopPropagation()"></a></h1>
+        <ol>
+          <li>IntelliJ IDEA by default has the Gradle plugin installed. If you have disabled it, go to <code>File</code> → <code>Settings</code> → <code>Plugins</code> to re-enable them.<br>
+            If your project involves, similarly ensure the JavaFX plugin has not been disabled.</li>
+          <li>Click <code>Import Project</code> (or <code>Open or Import</code> in newer version of Intellij).</li>
+          <li>Locate the <code>build.gradle</code> file and select it. Click <code>OK</code>.</li>
+          <li>Click <code>Open as Project</code>.</li>
+          <li>Click <code>OK</code> to accept the default settings but do ensure that the selected version of <code>Gradle JVM</code> matches the JDK being used for the project.</li>
+        </ol>
       </div>
 
 
-      <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-left-grey nav-inner position-sticky slim-scroll">
-
-          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
-            <a class="nav-link py-1" href="#conventions-for-file-folder-naming">Conventions for file/folder naming&#x200E;</a>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#files-folders">Files/Folders&#x200E;</a>
-            </nav>
-
-          </nav>
-        </div>
-      </nav>
     </div>
     <footer>
 

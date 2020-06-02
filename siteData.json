@@ -25,13 +25,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "C# Coding Standard",
+      "title": "C# coding standard",
       "pageNav": 3,
       "src": "conventions/csharp.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "c-coding-standard": "C# Coding Standard",
+        "c-coding-standard": "C# coding standard",
         "file-organization": "File Organization",
         "formatting": "Formatting",
         "layout": "Layout",
@@ -45,13 +45,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "CSS Coding Standard",
+      "title": "CSS coding standard",
       "pageNav": 3,
       "src": "conventions/css.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "css-coding-standard": "CSS Coding Standard",
+        "css-coding-standard": "CSS coding standard",
         "general": "General",
         "css-files": "CSS Files",
         "selectors": "Selectors",
@@ -80,13 +80,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "Git Coding Standard",
+      "title": "Git coding standard",
       "pageNav": 3,
       "src": "conventions/git.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "git-coding-standard": "Git Coding Standard",
+        "git-coding-standard": "Git coding standard",
         "commit-message-subject": "Commit message: Subject",
         "commit-message-body": "Commit message: Body",
         "branch-names": "Branch names"
@@ -110,13 +110,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "HTML Coding Standard",
+      "title": "HTML coding standard",
       "pageNav": 3,
       "src": "conventions/html.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "html-coding-standard": "HTML Coding Standard",
+        "html-coding-standard": "HTML coding standard",
         "document-properties": "Document Properties",
         "tags": "Tags",
         "attributes": "Attributes",
@@ -127,7 +127,7 @@
       "headingKeywords": {}
     },
     {
-      "title": "Java Coding Standard",
+      "title": "Java coding standard",
       "pageNav": 3,
       "tags": [
         "-level--*",
@@ -138,7 +138,7 @@
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "java-coding-standard-basic": "Java Coding Standard (Basic)",
+        "java-coding-standard-basic": "Java coding standard (basic)",
         "naming": "Naming",
         "layout": "Layout",
         "statements": "Statements",
@@ -153,7 +153,7 @@
       "headingKeywords": {}
     },
     {
-      "title": "Java Coding Standard",
+      "title": "Java coding standard",
       "pageNav": 3,
       "tags": [
         "level--*"
@@ -162,7 +162,7 @@
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "java-coding-standard-all": "Java Coding Standard (All)",
+        "java-coding-standard-all": "Java coding standard (all)",
         "naming": "Naming",
         "layout": "Layout",
         "statements": "Statements",
@@ -180,7 +180,7 @@
       "headingKeywords": {}
     },
     {
-      "title": "Java Coding Standard",
+      "title": "Java coding standard",
       "pageNav": 3,
       "tags": [
         "-level--*",
@@ -192,7 +192,7 @@
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "java-coding-standard-basic-intermediate": "Java Coding Standard (Basic + Intermediate)",
+        "java-coding-standard-basic-intermediate": "Java coding standard (basic + intermediate)",
         "naming": "Naming",
         "layout": "Layout",
         "statements": "Statements",
@@ -208,12 +208,23 @@
       "headingKeywords": {}
     },
     {
-      "title": "Markdown Coding Standard",
+      "title": "JavaScript coding standard",
+      "pageNav": 3,
+      "src": "conventions/javascript.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "javascript-coding-standard": "JavaScript coding standard"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Markdown coding standard",
       "src": "conventions/markdown.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "markdown-coding-standard": "Markdown Coding Standard"
+        "markdown-coding-standard": "Markdown coding standard"
       },
       "headingKeywords": {}
     },
@@ -257,13 +268,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "Checkstyle Tutorial",
+      "title": "Checkstyle tutorial",
       "pageNav": 2,
       "src": "tutorials/checkstyleTutorial.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "checkstyle-tutorial": "Checkstyle Tutorial",
+        "checkstyle-tutorial": "Checkstyle tutorial",
         "using-checkstyle-with-gradle": "Using Checkstyle with Gradle",
         "using-checkstyle-idea-plugin": "Using Checkstyle-IDEA plugin",
         "configuring-checkstyle-rules": "Configuring Checkstyle rules",
@@ -272,13 +283,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "Gradle Tutorial",
+      "title": "Gradle tutorial",
       "pageNav": 3,
       "src": "tutorials/gradleTutorial.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "gradle-tutorial": "Gradle Tutorial",
+        "gradle-tutorial": "Gradle tutorial",
         "basics": "Basics",
         "adding-gradle-to-the-project": "Adding Gradle to the project",
         "using-gradle-in-intellij-idea": "Using Gradle in Intellij IDEA",
@@ -296,13 +307,46 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX Tutorial Part 1 – Introduction",
+      "title": "Intellij IDEA: Configuring the code style",
+      "pageNav": 2,
+      "src": "tutorials/intellijCodeStyle.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "intellij-idea-configuring-the-code-style": "Intellij IDEA: Configuring the code style",
+        "tweak-switch-case-style": "Tweak: switch-case style ",
+        "tweak-import-order": "Tweak: import order "
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Intellij IDEA: Importing a Gradle project",
+      "src": "tutorials/intellijImportGradleProject.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "intellij-idea-importing-a-gradle-project": "Intellij IDEA: Importing a Gradle project"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Intellij IDEA: Configuring the JDK",
+      "src": "tutorials/intellijJdk.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "JavaFX tutorial part 1 – Introduction",
       "pageNav": 2,
       "src": "tutorials/javaFxTutorialPart1.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "javafx-tutorial-part-1-introduction": "JavaFX Tutorial Part 1 – Introduction",
+        "javafx-tutorial-part-1-introduction": "JavaFX tutorial part 1 – Introduction",
         "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX application",
         "setting-up-java-fx": "Setting up Java FX",
         "if-you-are-not-using-gradle": "If you are not using Gradle",
@@ -313,13 +357,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX Tutorial Part 2 - Creating a GUI for Duke",
+      "title": "JavaFX tutorial part 2 - Creating a GUI for Duke",
       "pageNav": 2,
       "src": "tutorials/javaFxTutorialPart2.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "javafx-tutorial-part-2-creating-a-gui-for-duke": "JavaFX Tutorial Part 2 - Creating a GUI for Duke",
+        "javafx-tutorial-part-2-creating-a-gui-for-duke": "JavaFX tutorial part 2 - Creating a GUI for Duke",
         "javafx-controls": "JavaFX controls",
         "designing-the-layout": "Designing the Layout",
         "styling-the-controls": "Styling the Controls",
@@ -328,13 +372,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX Tutorial 3 – Interacting with the user",
+      "title": "JavaFX tutorial part 3 – Interacting with the user",
       "pageNav": 2,
       "src": "tutorials/javaFxTutorialPart3.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "javafx-tutorial-3-interacting-with-the-user": "JavaFX Tutorial 3 – Interacting with the user",
+        "javafx-tutorial-part-3-interacting-with-the-user": "JavaFX tutorial part 3 – Interacting with the user",
         "iteration-1-echoing-the-user": "Iteration 1 – Echoing the user",
         "iteration-2-adding-dialog-boxes": "Iteration 2 – Adding Dialog Boxes",
         "iteration-3-adding-custom-behavior-to-dialogbox": "Iteration 3 – Adding custom behavior to DialogBox",
@@ -343,13 +387,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX Tutorial Part 4 – Using FXML",
+      "title": "JavaFX tutorial part 4 – Using FXML",
       "pageNav": 2,
       "src": "tutorials/javaFxTutorialPart4.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "javafx-tutorial-part-4-using-fxml": "JavaFX Tutorial Part 4 – Using FXML",
+        "javafx-tutorial-part-4-using-fxml": "JavaFX tutorial part 4 – Using FXML",
         "rebuilding-the-scene-using-fxml": "Rebuilding the Scene using FXML",
         "using-controllers": "Using Controllers",
         "using-fxml-in-our-application": "Using FXML in our application",
@@ -358,13 +402,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "JUnit Tutorial",
+      "title": "JUnit tutorial",
       "pageNav": 2,
       "src": "tutorials/junitTutorial.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "junit-tutorial": "JUnit Tutorial",
+        "junit-tutorial": "JUnit tutorial",
         "conventions-to-follow": "Conventions to follow",
         "adding-junit-support-to-your-project": "Adding JUnit support to your project",
         "running-tests": "Running tests",
@@ -373,26 +417,40 @@
       "headingKeywords": {}
     },
     {
-      "title": "Netlify Tutorial",
+      "title": "Using MarkBind for project documentation",
+      "pageNav": 2,
+      "src": "tutorials/markbind.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "using-markbind-for-project-documentation": "Using MarkBind for project documentation",
+        "installation": "Installation",
+        "updating-documents": "Updating documents",
+        "automating-pr-previews-deployments": "Automating PR previews, deployments"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Netlify tutorial",
       "pageNav": 3,
       "src": "tutorials/netlifyTutorial.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "netlify-tutorial": "Netlify Tutorial",
+        "netlify-tutorial": "Netlify tutorial",
         "setting-up": "Setting up",
         "changing-the-site-name": "Changing the site name"
       },
       "headingKeywords": {}
     },
     {
-      "title": "PlantUML Tutorial",
+      "title": "PlantUML tutorial",
       "pageNav": 3,
       "src": "tutorials/plantUmlTutorial.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "plantuml-tutorial": "PlantUML Tutorial",
+        "plantuml-tutorial": "PlantUML tutorial",
         "setting-up-plantuml": "Setting up PlantUML",
         "creating-editing-exporting-diagrams": "Creating/editing/exporting diagrams",
         "tips-and-tricks": "Tips and tricks",
