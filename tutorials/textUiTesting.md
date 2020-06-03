@@ -1,11 +1,16 @@
 <frontmatter>
-  title: "Tutorial: Automated testing of text UIs"
+  title: "Automating the testing of text UIs"
   pageNav: 2
 </frontmatter>
 
-# Tutorial: Automated testing of text UIs
+# Automating the testing of text UIs
 
-_I/O redirection_ technique can be used to semi-automate the testing of text UIs. For an explantion of how that technique works, see [the _Automated Testing of CLI Apps_ section of se-edu/se-book](https://se-education.org/se-book/testing/#automated-testing-of-cli-apps).
+<div class="lead">
+
+[_I/O redirection_ technique](https://se-education.org/se-book/testing/#automated-testing-of-cli-apps) can be used to semi-automate the testing of text UIs.
+</div>
+
+Sections below explain how to use that technique in a small project.
 
 ## Setting up 
 

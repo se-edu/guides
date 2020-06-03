@@ -104,7 +104,7 @@ plugins {
 `gradlew checkstyleMain checkstyleTest`: runs main code and test code complies with the Checkstyle rules. <br>
 
 **Resources**:
-* [Checkstyle Tutorial](checkstyleTutorial.html)
+* [Checkstyle Tutorial](checkstyle.html)
 * [Gradle documentation for the Checkstyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
 
 

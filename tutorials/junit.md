@@ -1,11 +1,16 @@
 <frontmatter>
-  title: "JUnit tutorial"
+  title: "Using JUnit"
   pageNav: 2
 </frontmatter>
 
-# JUnit tutorial
+# Using JUnit
 
-[JUnit](https://junit.org/junit5/) is a testing framework for Java. 
+<div class="lead">
+
+[JUnit](https://junit.org/junit5/) is a testing framework for Java.
+</div>
+
+Sections below explains how to use JUnit in a project.
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
 
@@ -62,7 +67,7 @@ As JUnit is a third-party library, you need to add support to it specifically in
   </tab>
   <tab header="With Gradle">
 
-If you are new to Gradle, read the [_Gradle Tutorial_](gradleTutorial.html) first.
+If you are new to Gradle, read the [_Gradle Tutorial_](gradle.html) first.
 
 Here are the relevant lines to add to the `build.gradle` (change the version number as necessary):
 

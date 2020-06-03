@@ -14,24 +14,24 @@ This website contains a collection of tutorials, standards, guides, best practic
 
 Tutorials, how-to guides, getting-started guides, ...
 
-* [**Checkstyle**](tutorials/checkstyleTutorial.html)
+* [**Checkstyle**](tutorials/checkstyle.html)
 * **JavaFX**:
-  * [Part 1: Introduction](tutorials/javaFxTutorialPart1.html)
-  * [Part 2: Creating a GUI for Duke](tutorials/javaFxTutorialPart2.html)
-  * [Part 3: Interacting with the user](tutorials/javaFxTutorialPart3.html)
-  * [Part 4: Using FXML](tutorials/javaFxTutorialPart4.html)
+  * [Part 1: Introduction](tutorials/javaFxPart1.html)
+  * [Part 2: Creating a GUI for Duke](tutorials/javaFxPart2.html)
+  * [Part 3: Interacting with the user](tutorials/javaFxPart3.html)
+  * [Part 4: Using FXML](tutorials/javaFxPart4.html)
 * **Intellij IDEA**:
   * [Configuring the JDK](tutorials/intellijJdk.html)
   * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
   * [Configuring the code style](tutorials/intellijCodeStyle.html)
 * **Testing**
-  * [Automated testing of text UIs](tutorials/textUiTestingTutorial.html)
-  * [**JUnit**](tutorials/junitTutorial.html)
-* [**Gradle**](tutorials/gradleTutorial.html)
+  * [Automated testing of text UIs](tutorials/textUiTesting.html)
+  * [**JUnit**](tutorials/junit.html)
+* [**Gradle**](tutorials/gradle.html)
 * **Project documentation tools**:
   * [**MarkBind**](tutorials/markbind.html)
-  * [**Netlify**](tutorials/netlifyTutorial.html)
-  * [**PlantUML**](tutorials/plantUmlTutorial.html)
+  * [**Netlify**](tutorials/netlify.html)
+  * [**PlantUML**](tutorials/plantUml.html)
 
 ## {{ thumbnail(":fas-file-code:") }} Conventions
 

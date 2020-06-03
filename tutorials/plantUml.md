@@ -1,12 +1,16 @@
 <frontmatter>
-  title: "PlantUML tutorial"
+  title: "Using PlantUML"
   pageNav: 3
 </frontmatter>
 
-# PlantUML tutorial
+# Using PlantUML
 
-One main advantage of using  [PlantUML](http://plantuml.com/) for creating diagrams is, as diagrams can be saved in a text format, you can update the diagrams incrementally, as the design evolves over time.
+<div class="lead">
 
+**[PlantUML](http://plantuml.com/) is a tool for specifying various diagrams in a textual form.** It is particularly useful in software projects where you want to update the diagrams incrementally, as the project evolves over time.
+</div>
+
+The sections below explains how to use PlantUML in a project.
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
 
