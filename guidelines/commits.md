@@ -15,7 +15,7 @@
 <box type="secondary" icon=":fas-quote-left:" seamless>
 
 > "Ask a programmer to review 10 lines of code, he'll find 10 issues. Ask him to do 500 lines and he'll say it
-looks good." -- [[source](https://twitter.com/girayozil/status/306836785739210752)]
+looks good." --[[source](https://twitter.com/girayozil/status/306836785739210752)]
 </box>
 
 * **Each commit should contains a single logical change, and this change must stand on its own.** i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
@@ -32,7 +32,7 @@ looks good." -- [[source](https://twitter.com/girayozil/status/30683678573921075
 
    <box type="info" seamless>
 
-   Rationale: Bigger commits make reviewing harder.
+   Rationale: Bigger commits are harder to review.
    </box>
 
    Commits containing _*mechanical changes*_ (e.g. automated refactorings, cut-paste type code movements, file renames, etc.),
@@ -52,5 +52,5 @@ looks good." -- [[source](https://twitter.com/girayozil/status/30683678573921075
 
 <box type="info">
 
-[Here](https://github.com/se-edu/addressbook-level4/pull/237) is an example of a PR that is organized as described above.
+[Here](https://github.com/se-edu/addressbook-level4/pull/237) is an example PR of commits that are organized as described above.
 </box>

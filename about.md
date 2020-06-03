@@ -19,8 +19,8 @@ Alternatively, contact project mentor [Damith C. Rajapakse](https://www.comp.nus
 
 ## License
 
-MIT
+This work is released under the [MIT OSS license](https://opensource.org/licenses/MIT).
 
 ## Acknowledgements
 
-* The `favicon.ico` is based on an icon made by [Dave Gandy](https://www.flaticon.com/authors/dave-gandy) from www.flaticon.com 
+* The `favicon.ico` is based on an icon made by [Dave Gandy](https://www.flaticon.com/authors/dave-gandy) from www.flaticon.com
