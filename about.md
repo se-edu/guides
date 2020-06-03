@@ -21,6 +21,16 @@ Alternatively, contact project mentor [Damith C. Rajapakse](https://www.comp.nus
 
 This work is released under the [MIT OSS license](https://opensource.org/licenses/MIT).
 
+
+## Contributing
+
+PRs to improve/add content are welcome.
+
+This website uses MarkBind documentation tool. [This document](tutorials/markbind.html) has some guidance on how to use it when updating contents.
+
+Follow the [Markdown style guide](conventions/markdown.html) in your PR.
+
+
 ## Acknowledgements
 
-* The `favicon.ico` is based on an icon made by [Dave Gandy](https://www.flaticon.com/authors/dave-gandy) from www.flaticon.com
+The `favicon.ico` is based on an icon made by [Dave Gandy](https://www.flaticon.com/authors/dave-gandy) from www.flaticon.com
