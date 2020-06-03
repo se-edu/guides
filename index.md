@@ -7,12 +7,13 @@
 
 <div class="lead">
 
-This website contains a collection of tutorials, standards, guides, best practices etc. useful for SE student.
+This website contains a collection of tutorials, standards, guides, best practices etc. useful for SE students.
 </div>
 
 ## {{ thumbnail(":fas-chalkboard-teacher:") }} Tutorials
 
-* [Automated testing of text UIs](tutorials/textUiTestingTutorial.html)
+Tutorials, how-to guides, getting-started guides, ...
+
 * [**Checkstyle**](tutorials/checkstyleTutorial.html)
 * **JavaFX**:
   * [Part 1: Introduction](tutorials/javaFxTutorialPart1.html)
@@ -23,11 +24,13 @@ This website contains a collection of tutorials, standards, guides, best practic
   * [Configuring the JDK](tutorials/intellijJdk.html)
   * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
   * [Configuring the code style](tutorials/intellijCodeStyle.html)
-* [**JUnit**](tutorials/junitTutorial.html)
+* **Testing**
+  * [Automated testing of text UIs](tutorials/textUiTestingTutorial.html)
+  * [**JUnit**](tutorials/junitTutorial.html)
 * [**Gradle**](tutorials/gradleTutorial.html)
-* [**Netlify**](tutorials/netlifyTutorial.html)
 * **Project documentation tools**:
   * [**MarkBind**](tutorials/markbind.html)
+  * [**Netlify**](tutorials/netlifyTutorial.html)
   * [**PlantUML**](tutorials/plantUmlTutorial.html)
 
 ## {{ thumbnail(":fas-file-code:") }} Conventions
@@ -45,6 +48,8 @@ Coding standards, format conventions, style guides, ...
 * **Java** coding standards: [basic](conventions/java/basic.html) | [basic + intermediate](conventions/java/intermediate.html) | [all](conventions/java/index.html)
 
 ## {{ thumbnail(":fas-map-signs:") }} Guidelines
+
+Best practices, processes, workflows, ...
 
 * [Git commits](guidelines/commits.html)
 * [Working with PRs](guidelines/PRs.html)
