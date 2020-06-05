@@ -46,6 +46,10 @@ h2 {
   padding-left: 80px;
 }
 
+.bigger-level0 {
+  font-size: 1.0em;
+}
+
 .bigger-level1 {
   font-size: 1.1em;
 }
