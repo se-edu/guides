@@ -11,7 +11,7 @@ title: "Markdown coding standard"
 
   <box type="info" seamless>
 
-  RATIONALE: Minor deviations from the markdown syntax are sometimes forgiven by GitHub markdown rendering but may not be forgiven by [GitHub Pages html rendering](https://github.com/blog/2289-publishing-with-github-pages-now-as-easy-as-1-2-3.).
+  RATIONALE: Minor deviations from the markdown syntax are sometimes forgiven by GitHub markdown rendering but may not be forgiven by [GitHub Pages html rendering](https://github.blog/2016-12-09-publishing-with-github-pages-now-as-easy-as-1-2-3/).
   </box>
 
 * **Do not wrap lines at a specific length.** Coding standards for other languages typically specify a maximum length for a statement. However, Markdown is used to write natural language content which should not be chopped into a sentence fragments.

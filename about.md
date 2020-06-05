@@ -11,7 +11,7 @@ This is a sub-project of the [se-education.org](https://se-education.org).
 
 ## Contact
 
-Suggestions, questions, and bug reports can be posted in [our issue tracker](https://github.com/se-edu/guide/issues).
+Suggestions, questions, and bug reports can be posted in [our issue tracker](https://github.com/se-edu/guides/issues).
 
 
 Alternatively, contact project mentor [Damith C. Rajapakse](https://www.comp.nus.edu.sg/~damithch).

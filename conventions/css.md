@@ -110,14 +110,14 @@ for any topics not covered in this document.
 
 ### Use of Efficient Selectors
 
-* Do not qualify class/ID selectors using tag names (do not use: `div.mainContent`, simply use `.mainContent`). Refer to [Writing efficient CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS) for examples.
+* Do not qualify class/ID selectors using tag names (do not use: `div.mainContent`, simply use `.mainContent`). Refer to [Writing efficient CSS](https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html) for examples.
 
   <box type="info" seamless>
 
   RATIONALE: This speeds up the css match lookup. If such a qualification is actually required, either use another class on top of this to change the style or use a completely different class to start with. In any case, if this kind of qualification is needed, then probably the class has not been named well enough (see [naming standards for classes](#naming-classes))
   </box>
 
-* Use child selector rather than descendant selector (use `#container > span` rather than `#container span`). Refer to [Writing efficient CSS](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS) for examples.
+* Use child selector rather than descendant selector (use `#container > span` rather than `#container span`). Refer to [Writing efficient CSS](https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html) for examples.
 
   <box type="info" seamless>
 
@@ -238,4 +238,4 @@ for any topics not covered in this document.
   * [30 CSS Best Practices For Beginners](https://code.tutsplus.com/tutorials/30-css-best-practices-for-beginners--net-6741)
   * [A list of CSS style guides](https://css-tricks.com/css-style-guides)
   * [Isobar coding standards](http://isobar-idev.github.io/code-standards/)
-  * [Writing efficient CSS (MDN article)](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS)
+  * [Writing efficient CSS (MDN article)](https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html)

@@ -100,7 +100,7 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
    1. Push the branch to your fork.
    1. Create a [==draft== PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) from your fork to the upstream repo.
    1. Check the draft PR on GitHub to confirm the following:
-      * it follows the [PR format conventions](../conventions/github.md)
+      * it follows the [PR format conventions](../conventions/github.html)
       * it does not contain any unintended changes.
       * it passes <tooltip content="Continuous Integration (Travis, AppVeyor, GitHub Actions, etc.)">CI</tooltip> checks, if any.
    1. Remove the 'draft' status of the PR. Post a `ready for review` comment for good measure.

@@ -1,4 +1,4 @@
-<sub>Versions: [[Basic Rules]({{baseUrl}}/standards/java/basic.html)] [[Basic + Intermediate Rules]({{baseUrl}}/standards/java/intermediate.html)] [[All Rules]({{baseUrl}}/standards/java/index.html)]</sub>
+<sub>Versions: [[Basic Rules]({{baseUrl}}/conventions/java/basic.html)] [[Basic + Intermediate Rules]({{baseUrl}}/conventions/java/intermediate.html)] [[All Rules]({{baseUrl}}/conventions/java/index.html)]</sub>
 
 {{ icon_tip }} Use the [Google Java style guide](https://google.github.io/styleguide/javaguide.html) for any topics not covered in this document.
 
