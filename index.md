@@ -47,7 +47,9 @@ Coding standards, format conventions, style guides, ...
 * [**Git** conventions](conventions/git.html)
 * [**GitHub** conventions](conventions/github.html)
 * [**Markdown** coding standard](conventions/markdown.html)
-* **Java** coding standards: [basic](conventions/java/basic.html) | [basic + intermediate](conventions/java/intermediate.html) | [all](conventions/java/index.html)
+* **Java**
+  * **coding standards**: [basic](conventions/java/basic.html) | [basic + intermediate](conventions/java/intermediate.html) | [all](conventions/java/index.html)
+  * [**logging** conventions](conventions/java/logging.html)
 
 ## {{ thumbnail(":fas-map-signs:") }} Guidelines
 
