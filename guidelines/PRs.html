@@ -95,13 +95,13 @@
 
         <h2 id="submitting-a-pr">Submitting a PR<a class="fa fa-anchor" href="#submitting-a-pr" onclick="event.stopPropagation()"></a></h2>
         <p>When submitting PRs, follow <a href="https://se-education.org/se-book/gitAndGithub/index.html#forking-workflow">the forking workflow</a>. A summary of the steps is given below.</p>
-        <p><span class="badge badge-dark bigger-level1">Step 0</span> Do these steps if you haven't done them already:</p>
+        <p><span class="badge badge-dark bigger-level0">Step 0</span> Do these steps if you haven't done them already:</p>
         <div class="indented-level2">
-          <p><span class="badge badge-dark bigger-level1"> 0.1</span> <strong>Fork the upstream repo</strong> if you haven't done so already.</p>
-          <p><span class="badge badge-dark bigger-level1"> 0.2</span> <strong>Clone the fork to your computer.</strong></p>
-          <p><span class="badge badge-dark bigger-level1"> 0.3</span> <strong>Set up the dev environment as described in the project docs.</strong> Confirm the set up is correct.</p>
+          <p><span class="badge badge-dark bigger-level0"> 0.1</span> <strong>Fork the upstream repo</strong> if you haven't done so already.</p>
+          <p><span class="badge badge-dark bigger-level0"> 0.2</span> <strong>Clone the fork to your computer.</strong></p>
+          <p><span class="badge badge-dark bigger-level0"> 0.3</span> <strong>Set up the dev environment as described in the project docs.</strong> Confirm the set up is correct.</p>
         </div>
-        <p><span class="badge badge-dark bigger-level1">Step 1</span> <strong>Create a branch from the <code>master</code> branch</strong>, following the naming convention given.</p>
+        <p><span class="badge badge-dark bigger-level0">Step 1</span> <strong>Create a branch from the <code>master</code> branch</strong>, following the naming convention given.</p>
         <div class="indented-level2">
           <panel minimized><template slot="_header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> coding standards » Git » <strong>Branch naming conventions</strong></p>
@@ -116,7 +116,7 @@
           </panel>
         </div>
         <p></p>
-        <p><span class="badge badge-dark bigger-level1">Step 2</span> <strong>Add your code to the branch</strong> while ensuring you follow these:</p>
+        <p><span class="badge badge-dark bigger-level0">Step 2</span> <strong>Add your code to the branch</strong> while ensuring you follow these:</p>
         <ul>
           <li>relevant coding standards (the full list is given <a href="/guides/index.html">here</a>)</li>
           <li>Commit message format</li>
@@ -252,7 +252,7 @@
               <box type="secondary" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-quote-left"></span></template>
                 <blockquote>
                   <p>&quot;Ask a programmer to review 10 lines of code, he'll find 10 issues. Ask him to do 500 lines and he'll say it
-                    looks good.&quot; -- [<a href="https://twitter.com/girayozil/status/306836785739210752">source</a>]
+                    looks good.&quot; --[<a href="https://twitter.com/girayozil/status/306836785739210752">source</a>]
                   </p>
                 </blockquote>
               </box>
@@ -272,7 +272,7 @@
                 <li>
                   <p><strong>Ideally, a commit should not modify more than 100 lines of code.</strong></p>
                   <box type="info" seamless>
-                    <p>Rationale: Bigger commits make reviewing harder.
+                    <p>Rationale: Bigger commits are harder to review.
                     </p>
                   </box>
                   <p>Commits containing <em><em>mechanical changes</em></em> (e.g. automated refactorings, cut-paste type code movements, file renames, etc.),</p>
@@ -295,7 +295,7 @@
                 </li>
               </ul>
               <box type="info">
-                <p><a href="https://github.com/se-edu/addressbook-level4/pull/237">Here</a> is an example of a PR that is organized as described above.
+                <p><a href="https://github.com/se-edu/addressbook-level4/pull/237">Here</a> is an example PR of commits that are organized as described above.
                 </p>
               </box>
             </div>
@@ -350,22 +350,22 @@
           </panel>
         </div>
         <p></p>
-        <p><span class="badge badge-dark bigger-level1">Step 3</span> <strong>Sync your branch with the upstream master</strong>, if the <code>master</code> branch advances while you work on your code (i.e., pull upstream <code>master</code>, merge to your branch).</p>
-        <p><span class="badge badge-dark bigger-level1">Step 4</span> <strong>Create a PR</strong> when the code is ready, as follows:</p>
+        <p><span class="badge badge-dark bigger-level0">Step 3</span> <strong>Sync your branch with the upstream master</strong>, if the <code>master</code> branch advances while you work on your code (i.e., pull upstream <code>master</code>, merge to your branch).</p>
+        <p><span class="badge badge-dark bigger-level0">Step 4</span> <strong>Create a PR</strong> when the code is ready, as follows:</p>
         <ol>
           <li>Run code style checks (if any) to ensure the code complies with the project standards.</li>
           <li>Push the branch to your fork.</li>
           <li>Create a <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request"><mark>draft</mark> PR</a> from your fork to the upstream repo.</li>
           <li>Check the draft PR on GitHub to confirm the following:
             <ul>
-              <li>it follows the <a href="/guides/conventions/github.md">PR format conventions</a></li>
+              <li>it follows the <a href="/guides/conventions/github.html">PR format conventions</a></li>
               <li>it does not contain any unintended changes.</li>
               <li>it passes <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Continuous Integration (Travis, AppVeyor, GitHub Actions, etc.)</span>CI</span> checks, if any.</li>
             </ul>
           </li>
           <li>Remove the 'draft' status of the PR. Post a <code>ready for review</code> comment for good measure.</li>
         </ol>
-        <p><span class="badge badge-dark bigger-level1">Step 5</span> <strong>Revise as per reviews</strong> until the PR is merged.</p>
+        <p><span class="badge badge-dark bigger-level0">Step 5</span> <strong>Revise as per reviews</strong> until the PR is merged.</p>
         <ul>
           <li>Feel free to post a reminder comment if you don't get a review within 2-3 days.</li>
           <li>When you receive a review,
@@ -450,7 +450,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 2 Jun 2020, 23:30:31 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Fri, 5 Jun 2020, 20:38:15 GMT+8]</small></div>
     </footer>
   </div>
 </body>

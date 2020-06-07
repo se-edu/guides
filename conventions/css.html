@@ -161,14 +161,14 @@
         <h3 id="use-of-efficient-selectors">Use of Efficient Selectors<a class="fa fa-anchor" href="#use-of-efficient-selectors" onclick="event.stopPropagation()"></a></h3>
         <ul>
           <li>
-            <p>Do not qualify class/ID selectors using tag names (do not use: <code>div.mainContent</code>, simply use <code>.mainContent</code>). Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS">Writing efficient CSS</a> for examples.</p>
+            <p>Do not qualify class/ID selectors using tag names (do not use: <code>div.mainContent</code>, simply use <code>.mainContent</code>). Refer to <a href="https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html">Writing efficient CSS</a> for examples.</p>
             <box type="info" seamless>
               <p>RATIONALE: This speeds up the css match lookup. If such a qualification is actually required, either use another class on top of this to change the style or use a completely different class to start with. In any case, if this kind of qualification is needed, then probably the class has not been named well enough (see <a href="#naming-classes">naming standards for classes</a>)
               </p>
             </box>
           </li>
           <li>
-            <p>Use child selector rather than descendant selector (use <code>#container &gt; span</code> rather than <code>#container span</code>). Refer to <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS#Guidelines_for_Efficient_CSS">Writing efficient CSS</a> for examples.</p>
+            <p>Use child selector rather than descendant selector (use <code>#container &gt; span</code> rather than <code>#container span</code>). Refer to <a href="https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html">Writing efficient CSS</a> for examples.</p>
             <box type="info" seamless>
               <p>RATIONALE: This is a strong recommendation as descendant selector is extremely expensive, especially when the specified ancestor has a lot of descendants.
               </p>
@@ -296,7 +296,7 @@
               <li><a href="https://code.tutsplus.com/tutorials/30-css-best-practices-for-beginners--net-6741">30 CSS Best Practices For Beginners</a></li>
               <li><a href="https://css-tricks.com/css-style-guides">A list of CSS style guides</a></li>
               <li><a href="http://isobar-idev.github.io/code-standards/">Isobar coding standards</a></li>
-              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS">Writing efficient CSS (MDN article)</a></li>
+              <li><a href="https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html">Writing efficient CSS (MDN article)</a></li>
             </ul>
           </li>
         </ul>
@@ -337,7 +337,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 2 Jun 2020, 23:30:31 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Fri, 5 Jun 2020, 20:38:15 GMT+8]</small></div>
     </footer>
   </div>
 </body>

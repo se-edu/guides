@@ -20,6 +20,7 @@
         "about-us": "About Us",
         "contact": "Contact",
         "license": "License",
+        "contributing": "Contributing",
         "acknowledgements": "Acknowledgements"
       },
       "headingKeywords": {}
@@ -268,13 +269,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "Checkstyle tutorial",
+      "title": "Using Checkstyle",
       "pageNav": 2,
-      "src": "tutorials/checkstyleTutorial.md",
+      "src": "tutorials/checkstyle.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "checkstyle-tutorial": "Checkstyle tutorial",
+        "using-checkstyle": "Using Checkstyle",
         "using-checkstyle-with-gradle": "Using Checkstyle with Gradle",
         "using-checkstyle-idea-plugin": "Using Checkstyle-IDEA plugin",
         "configuring-checkstyle-rules": "Configuring Checkstyle rules",
@@ -285,7 +286,7 @@
     {
       "title": "Gradle tutorial",
       "pageNav": 3,
-      "src": "tutorials/gradleTutorial.md",
+      "src": "tutorials/gradle.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -342,7 +343,7 @@
     {
       "title": "JavaFX tutorial part 1 – Introduction",
       "pageNav": 2,
-      "src": "tutorials/javaFxTutorialPart1.md",
+      "src": "tutorials/javaFxPart1.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -359,7 +360,7 @@
     {
       "title": "JavaFX tutorial part 2 - Creating a GUI for Duke",
       "pageNav": 2,
-      "src": "tutorials/javaFxTutorialPart2.md",
+      "src": "tutorials/javaFxPart2.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -374,7 +375,7 @@
     {
       "title": "JavaFX tutorial part 3 – Interacting with the user",
       "pageNav": 2,
-      "src": "tutorials/javaFxTutorialPart3.md",
+      "src": "tutorials/javaFxPart3.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -389,7 +390,7 @@
     {
       "title": "JavaFX tutorial part 4 – Using FXML",
       "pageNav": 2,
-      "src": "tutorials/javaFxTutorialPart4.md",
+      "src": "tutorials/javaFxPart4.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
@@ -402,13 +403,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "JUnit tutorial",
+      "title": "Using JUnit",
       "pageNav": 2,
-      "src": "tutorials/junitTutorial.md",
+      "src": "tutorials/junit.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "junit-tutorial": "JUnit tutorial",
+        "using-junit": "Using JUnit",
         "conventions-to-follow": "Conventions to follow",
         "adding-junit-support-to-your-project": "Adding JUnit support to your project",
         "running-tests": "Running tests",
@@ -431,26 +432,26 @@
       "headingKeywords": {}
     },
     {
-      "title": "Netlify tutorial",
+      "title": "Using Netlify",
       "pageNav": 3,
-      "src": "tutorials/netlifyTutorial.md",
+      "src": "tutorials/netlify.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "netlify-tutorial": "Netlify tutorial",
+        "using-netlify": "Using Netlify",
         "setting-up": "Setting up",
         "changing-the-site-name": "Changing the site name"
       },
       "headingKeywords": {}
     },
     {
-      "title": "PlantUML tutorial",
+      "title": "Using PlantUML",
       "pageNav": 3,
-      "src": "tutorials/plantUmlTutorial.md",
+      "src": "tutorials/plantUml.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "plantuml-tutorial": "PlantUML tutorial",
+        "using-plantuml": "Using PlantUML",
         "setting-up-plantuml": "Setting up PlantUML",
         "creating-editing-exporting-diagrams": "Creating/editing/exporting diagrams",
         "tips-and-tricks": "Tips and tricks",
@@ -460,13 +461,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "Tutorial: Automated testing of text UIs",
+      "title": "Automating the testing of text UIs",
       "pageNav": 2,
-      "src": "tutorials/textUiTestingTutorial.md",
+      "src": "tutorials/textUiTesting.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "tutorial-automated-testing-of-text-uis": "Tutorial: Automated testing of text UIs",
+        "automating-the-testing-of-text-uis": "Automating the testing of text UIs",
         "setting-up": "Setting up",
         "updating-tests-as-the-program-evolves": "Updating tests as the program evolves",
         "troubleshooting": "Troubleshooting"
