@@ -403,6 +403,19 @@
       "headingKeywords": {}
     },
     {
+      "title": "Using Jekyll for project documentation",
+      "pageNav": 2,
+      "src": "tutorials/jekyll.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "using-jekyll-for-project-documentation": "Using Jekyll for project documentation",
+        "setting-up-github-pages-for-jekyll": "Setting up GitHub Pages for Jekyll",
+        "updating-documents": "Updating documents"
+      },
+      "headingKeywords": {}
+    },
+    {
       "title": "Using JUnit",
       "pageNav": 2,
       "src": "tutorials/junit.md",
@@ -457,6 +470,16 @@
         "tips-and-tricks": "Tips and tricks",
         "maintaining-consistency-in-formatting": "Maintaining consistency in formatting",
         "repositioning-elements": "Repositioning elements"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Saving web documents as PDF files",
+      "src": "tutorials/savingPdf.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "saving-web-documents-as-pdf-files": "Saving web documents as PDF files"
       },
       "headingKeywords": {}
     },

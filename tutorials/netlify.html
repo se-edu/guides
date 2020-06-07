@@ -71,9 +71,23 @@
             <p>Fill out the details as follows and then click <code>Deploy site</code>.</p>
             <ul>
               <li>Branch to deploy: select <code>master</code> branch</li>
-              <li>Build command: <code>cd docs &amp;&amp; bundle install &amp;&amp; bundle exec jekyll build</code></li>
-              <li>Publish directory: <code>docs/_site</code></li>
+              <li>If using Jekyll for project documentation:
+                <ul>
+                  <li>Build command: <code>cd docs &amp;&amp; bundle install &amp;&amp; bundle exec jekyll build</code></li>
+                  <li>Publish directory: <code>docs/_site</code></li>
+                </ul>
+              </li>
+              <li>If using MarkBind for project documentation:
+                <ul>
+                  <li>Build Command: <code>cd docs &amp;&amp; npm i markbind-cli -g &amp;&amp; markbind build --baseUrl</code></li>
+                  <li>Publish directory: <code>docs/_site</code></li>
+                </ul>
+              </li>
             </ul>
+            <box type="info" seamless>
+              <p>For both Jekyll and MarkBind, omit the <code>cd docs &amp;&amp;</code> and <code>docs/</code> from the <em>build command</em> and the <em>publish directory</em> respectively if the documentation is in the root (i.e., not inside the <code>docs</code> folder).
+              </p>
+            </box>
           </li>
           <li>
             <p>Once Netlify has completed building your project, you can now:</p>
@@ -117,7 +131,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Fri, 5 Jun 2020, 20:38:15 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sun, 7 Jun 2020, 17:39:16 GMT+8]</small></div>
     </footer>
   </div>
 </body>
