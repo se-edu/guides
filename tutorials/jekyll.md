@@ -12,7 +12,7 @@
 
 Given below are some information useful for when you want to update documentation in a project that uses MarkBind.
 
-<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Setting up GitHub Pages for Jekyll
 
@@ -23,7 +23,7 @@ Do the following to set up the GitHub Pages website of your project:
 1. Scroll down to the `GitHub Pages` section.
 1. Set the `Source` to `master branch /docs folder` (assuming project documentation is in that folder).
 
-<!-- --------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Updating documents
 
@@ -40,3 +40,17 @@ Jekyll uses [**kramdown**](https://kramdown.gettalong.org/syntax.html) (a supers
 * **Previewing changes on GitHub**:
   * **Option 1 -- Github preview**: You can see a basic preview of the page by navigating to the corresponding `.md` source file in GitHub.
   * **Option 2 -- Use Netlify PR preview**: You can set up Netlify to show previews of PRs (to learn how, read the [_Using Netlify_](netlify.html). This method shows a preview of the exact way the update affects the final outcome.
+
+<!-- ==================================================================================================== -->
+
+## Site-wide settings
+
+* Typically, the `_config.yml` file specifies project-specific site-wide settings.<br>
+  An example is the `title` property, which defines the title of your site, usually the name of your project.
+
+* The files in `docs/_include` and `docs/_layouts` control the template of the pages; the files in `docs/_sass` control the style of the pages.
+
+  <box type="warning" seamless>
+
+  **Caution**: Modifying these files requires some knowledge and experience with Jekyll. You should only modify them (at your own risk) if you need greater control over the site’s layout.
+  </box>
