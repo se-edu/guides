@@ -33,8 +33,18 @@ The sections below explains how to use Netlify in a project.
 
 1. Fill out the details as follows and then click `Deploy site`.
    * Branch to deploy: select `master` branch
-   * Build command: `cd docs && bundle install && bundle exec jekyll build`
-   * Publish directory: `docs/_site`
+   * If using Jekyll for project documentation:
+     * Build command: `cd docs && bundle install && bundle exec jekyll build`
+     * Publish directory: `docs/_site`
+   * If using MarkBind for project documentation:
+     * Build Command: `cd docs && npm i markbind-cli -g && markbind build --baseUrl`
+     * Publish directory: `docs/_site`
+
+   <box type="info" seamless>
+
+   For both Jekyll and MarkBind, omit the `cd docs &&` and `docs/` from the _build command_ and the _publish directory_ respectively if the documentation is in the root (i.e., not inside the `docs` folder).
+   </box>
+
 
 
 1. Once Netlify has completed building your project, you can now:

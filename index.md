@@ -28,10 +28,12 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
   * [**JUnit**](tutorials/junit.html)
 * [**Gradle**](tutorials/gradle.html)
-* **Project documentation tools**:
+* **Project documentation**:
+  * [**Jekyll**](tutorials/jekyll.html)
   * [**MarkBind**](tutorials/markbind.html)
   * [**Netlify**](tutorials/netlify.html)
   * [**PlantUML**](tutorials/plantUml.html)
+  * [**Saving** web documents as PDF files](tutorials/savingPdf.html)
 
 ## {{ thumbnail(":fas-file-code:") }} Conventions
 
