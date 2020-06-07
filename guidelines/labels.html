@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Working with GitHub labels</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+  <link rel="icon" href="/guides/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <navbar placement="top" type="dark" class="temp-navbar">
+        <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a>
+        <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li>
+        <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li>
+        <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right" class="nav-link">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+
+      <div id="content-wrapper">
+        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="working-with-github-labels">Working with GitHub labels<a class="fa fa-anchor" href="#working-with-github-labels" onclick="event.stopPropagation()"></a></h1>
+        <div class="lead">
+          <p>As a project grows, issue/PR labels can play an increasingly important role in managing a large nubmer of issues/PRs. This document has some guidelines that can improve consistency across projects and help make the use of labels more productive.</p>
+        </div>
+        <p>Unless mentioned otherwise, <em>labels are applied to issues only</em> (not PRs).</p>
+
+        <h2 id="label-groups">Label groups<a class="fa fa-anchor" href="#label-groups" onclick="event.stopPropagation()"></a></h2>
+        <p>While GitHub does not have the concept of label groups, we can simulate label groups using systematic label naming.
+          i.e. labels having the same prefix are considered part of a label group.</p>
+        <p>There are two types of label groups:</p>
+        <ul>
+          <li><strong>Exclusive groups</strong>: No more than one label from the group can be applied to an issue</li>
+          <li><strong>Non-exclusive groups</strong>: Multiple labels from a group can be applied to an issue</li>
+        </ul>
+        <p><em>Common label groups</em>:</p>
+        <ul>
+          <li>exclusive: <code>s.</code> status, <code>p.</code> priority, <code>c.</code> category, <code>d.</code> difficulty, <code>e.</code> effort,</li>
+          <li>non-exclusive: <code>a-</code> aspect, <code>f-</code> feature, <code>t-</code> tech,</li>
+        </ul>
+
+        <h2 id="common-labels">Common labels<a class="fa fa-anchor" href="#common-labels" onclick="event.stopPropagation()"></a></h2>
+
+        <h3 id="priority-p">Priority (<code>p.</code>)<a class="fa fa-anchor" href="#priority-p" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li><code>p.Critical</code>: Would like to fix it ASAP and release as a hot patch.</li>
+          <li><code>p.Urgent</code>: Would like to handle in the very next release.</li>
+          <li><code>p.High</code>: Enhances user experience significantly, would like to do in the next few releases.</li>
+          <li><code>p.Medium</code>: Marginal impact on user experience.</li>
+          <li><code>p.Low</code>: Very little impact, unlikely to do in the near future.</li>
+          <li><code>p.Zero</code>: Unlikely to do, ever.</li>
+        </ul>
+        <p>NOTE: An issue is considered as <em>accepted</em> when a priority label has been assigned.</p>
+
+        <h3 id="status-s">Status (<code>s.</code>)<a class="fa fa-anchor" href="#status-s" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li>Open issues
+            <ul>
+              <li>No status: New issue yet to be triaged.</li>
+              <li><code>s.OnHold</code>: The work on the issue has been put on hold pending some other event.</li>
+            </ul>
+          </li>
+          <li>Open PR
+            <ul>
+              <li><code>s.ToReview</code>: Waiting for the review.</li>
+              <li><code>s.Ongoing</code>: The PR is being worked on.</li>
+              <li><code>s.ToMerge</code>: Main reviewer approved the changes.</li>
+              <li><code>s.MergeApproved</code>: Both main reviewer and the code quality reviewer has approved the merge. PR can be merged.</li>
+              <li><code>s.OnHold</code>: The work on the PR has been put on hold pending some other event.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3 id="category-c">Category (<code>c.</code>)<a class="fa fa-anchor" href="#category-c" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li>Changes to <em>functionality</em>, categorized based on size
+            <ul>
+              <li><code>c.Enhancement</code>: An enhancement to an existing functionality (not big enough to be considered as a user story).</li>
+              <li><code>c.Story</code> : A user story.<br>
+                OR <code>c.Feature</code>: A new feature.</li>
+              <li><code>c.Epic</code> or <code>c.Theme</code>: A feature that be broken down into many user-stories/features.</li>
+            </ul>
+          </li>
+          <li>Other work
+            <ul>
+              <li><code>c.Bug</code></li>
+              <li><code>c.Task</code>, <code>c.Chore</code>: Other work items such as updating documentation.</li>
+              <li><code>c.Message</code>: Issue used as a means of discussing something with the dev team.<br>
+                e.g. a request for help on setting up dev environment.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3 id="difficulty-d">Difficulty (<code>d.</code>)<a class="fa fa-anchor" href="#difficulty-d" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li><code>d.Easy</code>: For new contributors to do as their first PR. MUST be simple enough to be contained in one commit.</li>
+          <li><code>d.Intermediate</code>: Moderate difficulty. Small localized change.</li>
+          <li><code>d.Hard</code>, <code>d.VeryHard</code>: More difficult issues that are better left for committers or more senior developers.</li>
+        </ul>
+
+        <h3 id="effort-e">Effort (<code>e.</code>)<a class="fa fa-anchor" href="#effort-e" onclick="event.stopPropagation()"></a></h3>
+        <p>This label can be used to indicate how much effort is expected for (or was spent on) an issue.</p>
+        <p><code>e.1</code> is roughly equal to an hour of work, <code>e.2</code> is two hours of work, and so on. Recommended values: 1,2,4,8,16,32</p>
+        <p>Effort labels can be applied to PRs indicate effort for reviewing (by the main reviewer). Those applied for issues can indicate
+          the effort for fixing the issue.</p>
+
+        <h3 id="aspect-a">Aspect (<code>a-</code>)<a class="fa fa-anchor" href="#aspect-a" onclick="event.stopPropagation()"></a></h3>
+        <p>Classifies the issues based on the non-functional aspect it tackles. Some examples:</p>
+        <div class="table-responsive">
+          <table class="markbind-table table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Label</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>a-AccessControl</code></td>
+                <td>Controlling access to user groups, authentication, privacy, anonymity</td>
+              </tr>
+              <tr>
+                <td><code>a-CodeQuality</code></td>
+                <td>Refactorings that are mainly to improve code/design quality</td>
+              </tr>
+              <tr>
+                <td><code>a-Concurrency</code></td>
+                <td>Things related to concurrent access, session control</td>
+              </tr>
+              <tr>
+                <td><code>a-DevOps</code></td>
+                <td>CI, release management, version control, dev docs</td>
+              </tr>
+              <tr>
+                <td><code>a-Docs</code></td>
+                <td>User docs, product website</td>
+              </tr>
+              <tr>
+                <td><code>a-FaultTolerance</code></td>
+                <td>Resilience to user errors, environmental problems</td>
+              </tr>
+              <tr>
+                <td><code>a-Performance</code></td>
+                <td>Speed of operation</td>
+              </tr>
+              <tr>
+                <td><code>a-Persistence</code></td>
+                <td>Saving data permanently</td>
+              </tr>
+              <tr>
+                <td><code>a-Scalability</code></td>
+                <td>Related to behavior at increasing loads</td>
+              </tr>
+              <tr>
+                <td><code>a-Security</code></td>
+                <td>Protection from security threats</td>
+              </tr>
+              <tr>
+                <td><code>a-Testing</code></td>
+                <td>Testing efficiency and robustness (as opposed to testing a specific feature)</td>
+              </tr>
+              <tr>
+                <td><code>a-UIX</code></td>
+                <td>User interface, User experience, Responsiveness</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="feature-f">Feature (<code>f-</code>)<a class="fa fa-anchor" href="#feature-f" onclick="event.stopPropagation()"></a></h3>
+        <p>Classifies the issue based on the feature it involves. These labels depend on the project.
+          e.g. <code>f-Admin</code>, <code>f-Sessions</code>, <code>f-Delete</code></p>
+
+        <h3 id="tech-t">Tech (<code>t-</code>)<a class="fa fa-anchor" href="#tech-t" onclick="event.stopPropagation()"></a></h3>
+        <p>Classifies the issue based on the tool/technology it involves. Some examples given below.</p>
+        <div class="table-responsive">
+          <table class="markbind-table table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Label</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>t-CSS</code></td>
+                <td>CSS, Bootstrap</td>
+              </tr>
+              <tr>
+                <td><code>t-HTML</code></td>
+                <td>HTML, Browsers</td>
+              </tr>
+              <tr>
+                <td><code>t-JS</code></td>
+                <td>Javascript, JQuery</td>
+              </tr>
+              <tr>
+                <td><code>t-JSTL</code></td>
+                <td>JSTL, JSP, Servlets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="special-labels">Special labels<a class="fa fa-anchor" href="#special-labels" onclick="event.stopPropagation()"></a></h3>
+        <ul>
+          <li><code>good first issue</code>: for first time contributors (note that <a href="https://help.github.com/en/github/building-a-strong-community/encouraging-helpful-contributions-to-your-project-with-labels">GitHub treats this label in a special way</a>)</li>
+          <li><code>kudos</code>: to appreciate good work done in a PR</li>
+        </ul>
+
+        <h2 id="other-guidelines">Other guidelines<a class="fa fa-anchor" href="#other-guidelines" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li>When choosing label colors:
+            <ul>
+              <li>Choose bright colors for labels that should get more attention. <a href="https://github.com/oss-generic/process/labels?sort=name-asc%5BHere%5D">https://github.com/oss-generic/process/labels?sort=name-asc[Here]</a> are some sample labels with suitable colors.</li>
+              <li>Label groups that represent a scale (e.g., difficulty, effort, severity) can be given increasingly darker shades of the same color (<a href="https://github.com/oss-generic/process/labels?q=e.">example</a>)</li>
+            </ul>
+          </li>
+          <li>Use UpperCamelCase for label names; Keep group prefixes short and use lower case.</li>
+        </ul>
+      </div>
+
+
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
+            <a class="nav-link py-1" href="#working-with-github-labels">Working with GitHub labels&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#label-groups">Label groups&#x200E;</a>
+              <a class="nav-link py-1" href="#common-labels">Common labels&#x200E;</a>
+              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+                <a class="nav-link py-1" href="#priority-p">Priority (p.)&#x200E;</a>
+                <a class="nav-link py-1" href="#status-s">Status (s.)&#x200E;</a>
+                <a class="nav-link py-1" href="#category-c">Category (c.)&#x200E;</a>
+                <a class="nav-link py-1" href="#difficulty-d">Difficulty (d.)&#x200E;</a>
+                <a class="nav-link py-1" href="#effort-e">Effort (e.)&#x200E;</a>
+                <a class="nav-link py-1" href="#aspect-a">Aspect (a-)&#x200E;</a>
+                <a class="nav-link py-1" href="#feature-f">Feature (f-)&#x200E;</a>
+                <a class="nav-link py-1" href="#tech-t">Tech (t-)&#x200E;</a>
+                <a class="nav-link py-1" href="#special-labels">Special labels&#x200E;</a>
+              </nav>
+              <a class="nav-link py-1" href="#other-guidelines">Other guidelines&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+
+      <div class="text-center">
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sun, 7 Jun 2020, 22:51:28 GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/guides'
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/default/scripts.js"></script>
+
+</html>

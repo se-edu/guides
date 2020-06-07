@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Intellij IDEA: Configuring the JDK</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <title>Java logging conventions</title>
+  <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../../markbind/css/markbind.css">
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../../markbind/layouts/default/styles.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -39,17 +39,15 @@
 
       <div id="content-wrapper">
         <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="intellij-idea-configuring-the-jdk">Intellij IDEA: Configuring the JDK<a class="fa fa-anchor" href="#intellij-idea-configuring-the-jdk" onclick="event.stopPropagation()"></a></h1>
-        <ol>
-          <li>Ensure you have the correct JDK version installed in your computer.</li>
-          <li>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> → <code>Close Project</code> to close the existing project dialog first).</li>
-          <li>Set up the correct JDK version for Gradle.
-            <ol>
-              <li>Click <code>Configure</code> → <code>Project Defaults</code> → <code>Project Structure</code></li>
-              <li>Click <code>New…​</code> and set it to the directory of the JDK.</li>
-            </ol>
-          </li>
-        </ol>
+        <h1 id="java-logging-conventions">Java logging conventions<a class="fa fa-anchor" href="#java-logging-conventions" onclick="event.stopPropagation()"></a></h1>
+        <p>We recommend using <code>java.util.logging</code> package for logging.</p>
+        <p><strong>Logging Levels</strong></p>
+        <ul>
+          <li><code>SEVERE</code>: A critical problem detected which may cause the termination of the application.</li>
+          <li><code>WARNING</code>: Can continue, but with caution.</li>
+          <li><code>INFO</code>: Information showing the noteworthy actions by the App.</li>
+          <li><code>FINE</code>: Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size.</li>
+        </ul>
       </div>
 
 
@@ -61,16 +59,16 @@
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script src="../../markbind/js/vue.min.js"></script>
+<script src="../../markbind/js/vue-strap.min.js"></script>
+<script src="../../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../../markbind/js/polyfill.min.js"></script>
+<script src="../../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
   const enableSearch = true
 </script>
-<script src="../markbind/js/setup.js"></script>
-<script src="../markbind/layouts/default/scripts.js"></script>
+<script src="../../markbind/js/setup.js"></script>
+<script src="../../markbind/layouts/default/scripts.js"></script>
 
 </html>

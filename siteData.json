@@ -209,6 +209,16 @@
       "headingKeywords": {}
     },
     {
+      "title": "Java logging conventions",
+      "src": "conventions/java/logging.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "java-logging-conventions": "Java logging conventions"
+      },
+      "headingKeywords": {}
+    },
+    {
       "title": "JavaScript coding standard",
       "pageNav": 3,
       "src": "conventions/javascript.md",
@@ -252,6 +262,29 @@
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "guidelines-for-commit-organization": "Guidelines for commit organization"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Working with GitHub labels",
+      "pageNav": 3,
+      "src": "guidelines/labels.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "working-with-github-labels": "Working with GitHub labels",
+        "label-groups": "Label groups",
+        "common-labels": "Common labels",
+        "priority-p": "Priority (p.)",
+        "status-s": "Status (s.)",
+        "category-c": "Category (c.)",
+        "difficulty-d": "Difficulty (d.)",
+        "effort-e": "Effort (e.)",
+        "aspect-a": "Aspect (a-)",
+        "feature-f": "Feature (f-)",
+        "tech-t": "Tech (t-)",
+        "special-labels": "Special labels",
+        "other-guidelines": "Other guidelines"
       },
       "headingKeywords": {}
     },
@@ -411,7 +444,8 @@
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-jekyll-for-project-documentation": "Using Jekyll for project documentation",
         "setting-up-github-pages-for-jekyll": "Setting up GitHub Pages for Jekyll",
-        "updating-documents": "Updating documents"
+        "updating-documents": "Updating documents",
+        "site-wide-settings": "Site-wide settings"
       },
       "headingKeywords": {}
     },
