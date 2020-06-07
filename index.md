@@ -57,3 +57,4 @@ Best practices, processes, workflows, ...
 
 * [Git commits](guidelines/commits.html)
 * [Working with PRs](guidelines/PRs.html)
+* [Working with GitHub labels](guidelines/labels.html)
