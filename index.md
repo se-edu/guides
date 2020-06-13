@@ -55,6 +55,8 @@ Coding standards, format conventions, style guides, ...
 
 Best practices, processes, workflows, ...
 
-* [Working with Git](guidelines/commits.html)
-* [Working with PRs](guidelines/PRs.html)
-* [Working with GitHub labels](guidelines/labels.html)
+* [**Code of conduct**](guidelines/codeOfConduct.html)<br>
+* [**Working with Git**](guidelines/commits.html)
+* **GitHub:**
+  * [Working with **PRs**](guidelines/PRs.html)
+  * [Working with **labels**](guidelines/labels.html)
