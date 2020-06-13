@@ -7,6 +7,8 @@
 
 # Guidelines for working with PRs
 
+<!-- ==================================================================================================== -->
+
 ## Selecting what to work on
 
 * **If submitting a PR for an existing issue,**
@@ -15,7 +17,7 @@
   * Check the issue discussion thread to see if there are <tooltip content="Some activity during last seven days">_active_</tooltip> PRs for that issue. You can offer to PR for an issue that has _stalled_ PRs i.e., there is a PRs submitted for that issue but the PR author seems to have stopped working on it.
 * **If the issue list does not contain what you want to work on,** post an issue first and wait for it to be acknowledged. Otherwise you could end up fixing something that does not need fixing.
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Scoping a PR
 
@@ -55,7 +57,7 @@ However, it is fine to push the functional code first to get early feedback, as 
 
 </div>
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Submitting a PR
 
@@ -112,7 +114,7 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
   1. Push the new code to the branch in your fork.
   1. Post a comment to indicate the PR is ready for a new review.
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Reviewing a PR
 
@@ -155,3 +157,11 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
 <p/>
 
 * **Before approving a PR, ==confirm that all your previous comments have been addressed==.**
+
+<!-- ==================================================================================================== -->
+
+## Merging PRs
+
+Follow the convention for Git branch merging, as given in the panel below.
+
+{{ embed("Guidelines » Working with Git » **Branch merging strategy**", "commits.md#section-merging-branches") }}

@@ -1,13 +1,16 @@
 <frontmatter>
-  title: "Git coding standard"
+  title: "Git conventions"
   pageNav: 3
 </frontmatter>
 
-# Git coding standard
+{% from 'scripts/macros.njk' import step, embed with context %}
+
+# Git conventions
 
 **Legend**: {{ icon_level_basic }} basic rule | {{ icon_level_intermediate }} intermediate rule | {{ icon_level_advanced }} advanced rule
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+
+<!-- ==================================================================================================== -->
 
 ## Commit message: Subject
 
@@ -43,7 +46,8 @@ You can use `scope: change` format (when applicable).
 </box>
 </div>
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+
+<!-- ==================================================================================================== -->
 
 ## Commit message: Body
 
@@ -150,7 +154,8 @@ Refer to the article _[How to Write a Git Commit Message](http://chris.beams.io/
 </box>
 
 </div>
-<!-- --------------------------------------------------------------------------------------------------------- -->
+
+<!-- ==================================================================================================== -->
 
 ## Branch names
 

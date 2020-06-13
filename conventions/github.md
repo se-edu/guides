@@ -3,20 +3,33 @@
   pageNav: 3
 </frontmatter>
 
+{% from 'scripts/macros.njk' import step, embed with context %}
+
 # GitHub conventions
 
+<box type="warning" seamless>
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+**Follow the principle of local consistency**
+
+Some of the conventions given below have multiple options. In those cases, or if in doubt, aim to be consistent locally e.g., when naming PRs, follow the convention most other PRs (especially, those done by senior developers) in the repo seem to follow.
+</box>
+
+
+<!-- ==================================================================================================== -->
 
 ## PRs
 
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
 ### PR name
 
-**Situation 1: The PR _fully_ fixes an existing issue in the issue tracker** (i.e., the issue can be closed when the PR is merged):<br>
-→ **Just copy-paste the issue title (including issue number) as the PR title.**
-
-Format: `IssueTitle #IssueNumber`
-e.g. `Error alert email has very long subject #5958`
+**Situation 1: The PR _fully_ fixes an existing issue in the issue tracker** (i.e., the issue can be closed when the PR is merged):
+* **Option 1: Just copy-paste the issue title (including issue number) as the PR title.**<br>
+  Format: `IssueTitle #IssueNumber`<br>
+  e.g. `Error alert email has very long subject #5958`
+* **Option 2: Copy-paste the issue title as the PR title, but tweak into the following format.**<br>
+  Format: `[#IssueNumber] IssueTitle `<br>
+  e.g. `[#5958] Error alert email has very long subject`
 
 <box type="info" seamless>
 
@@ -27,11 +40,11 @@ Rationale: Duplicating issue title in PR title is for easy tracing between PRs a
 **Situation 2: All other cases** (i.e., the issue is only a partial fix to an existing issue or it does not correspond to an existing issue):<br>
 → **Name the PR as if it is the subject line of a commit that contains the entire PR code.**
 
-<panel header="{{ icon_embedding }} Conventions » Git » **Commit message subject**" minimized class="ml-4">
+{{ embed("Conventions » Git » **Commit message subject**", "git.md#commit-message-subject-format") }}
 
-<include src="git.md#commit-message-subject-format" />
-</panel>
 <p/>
+
+<!-- ------------------------------------------------------------------------------------------------------ -->
 
 ### PR description
 
@@ -45,10 +58,7 @@ Rationale: Duplicating issue title in PR title is for easy tracing between PRs a
 
 * **Give the proposed merge commit message** if applicable. If the PR has more than one commit and the PR is non-trivial, propose a commit message for the merge commit.
 
-<panel header="{{ icon_embedding }} Conventions » Git » **Commit message subject**" minimized add-class="ml-5">
-
-<include src="git.md#commit-message-body-format" />
-</panel>
+{{ embed("Conventions » Git » **Commit message subject**", "git.md#commit-message-body-format") }}
 <p/>
 
 **Example:**
@@ -74,6 +84,8 @@ more ...
 
 </blockquote>
 
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
 ### PR merge commit
 
 **When merging a PR branch to the main branch**, use one of these formats for the subject line of the merge commit.
@@ -86,17 +98,12 @@ more ...
 
 Pick one option and use it consistently in the entire code base.
 
-<box type="tip" seamless>
-
-Option 1 is more convenient as you can simply copy-paste the PR title as the merge commit subject.
-</box>
-
 <box type="info" seamless>
 
 Rationale: This format allows easy traceability among a merge commit, the issue it fixes, and the PR that fixed it. Having the issue name tells us what the commit is about without having to look it up in GitHub issue tracker.
 </box>
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Issues
 
