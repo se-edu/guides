@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -49,7 +49,7 @@
         <h2 id="installation">Installation<a class="fa fa-anchor" href="#installation" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><a href="https://www.npmjs.com/get-npm">Install npm</a>, if you don't have it yet.</li>
-          <li>Run the command <code>npm install -g markbind-cli</code> to install the latest version of MarkBind.</li>
+          <li>Run the command <code v-pre="">npm install -g markbind-cli</code> to install the latest version of MarkBind.</li>
         </ul>
 
         <h2 id="updating-documents">Updating documents<a class="fa fa-anchor" href="#updating-documents" onclick="event.stopPropagation()"></a></h2>
@@ -60,17 +60,17 @@
         <p><strong>First, start the <em>live preview</em></strong>: Unless it is a trivial change, you would want to see how your change to the documentation source files will reflect in the generated website. You can use the MarkBind <em>live preview</em> mode to preview the generated website as you update the source file. To start the live preview mode,</p>
         <ol>
           <li>Open a command prompt.</li>
-          <li>Navigate to the the <em>documentation root</em> (in most projects, the documentation root is <code>[project root]/docs</code> -- if you are not sure, look for the folder containing the <code>site.json</code> file).</li>
-          <li>Run the <code>markbind serve</code> command. That will open the generated website in your default browser.</li>
+          <li>Navigate to the the <em>documentation root</em> (in most projects, the documentation root is <code v-pre="">[project root]/docs</code> -- if you are not sure, look for the folder containing the <code v-pre="">site.json</code> file).</li>
+          <li>Run the <code v-pre="">markbind serve</code> command. That will open the generated website in your default browser.</li>
           <li>In the browser, navigate to the page you want to modify.</li>
         </ol>
         <p><strong>Next, edit the files you want</strong>:</p>
         <ol>
-          <li>Edit the source files (usually, either <code>.md</code>, <code>.mbd</code>, or <code>.mbdf</code> files).</li>
+          <li>Edit the source files (usually, either <code v-pre="">.md</code>, <code v-pre="">.mbd</code>, or <code v-pre="">.mbdf</code> files).</li>
           <li>When you save the file, the live preview will update to reflect the new contents (after a few seconds).</li>
         </ol>
         <box type="warning" seamless>
-          <p>While <em>live preview</em> can pick up most changes, it may not be able to pick up certain changes (e.g., changes to files in the <code>_markbind</code> folder or changes to nunjucks macros). Furthermore, some syntax errors in your code can cause the live preview to crash. In those cases, just stop the server (<kbd>Ctrl</kbd>+<kbd>C</kbd> on Windows) and start it again.
+          <p>While <em>live preview</em> can pick up most changes, it may not be able to pick up certain changes (e.g., changes to files in the <code v-pre="">_markbind</code> folder or changes to nunjucks macros). Furthermore, some syntax errors in your code can cause the live preview to crash. In those cases, just stop the server (<kbd>Ctrl</kbd>+<kbd>C</kbd> on Windows) and start it again.
           </p>
         </box>
         <h2 id="automating-pr-previews-deployments">Automating PR previews, deployments<a class="fa fa-anchor" href="#automating-pr-previews-deployments" onclick="event.stopPropagation()"></a></h2>
@@ -101,7 +101,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

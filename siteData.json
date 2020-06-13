@@ -81,13 +81,13 @@
       "headingKeywords": {}
     },
     {
-      "title": "Git coding standard",
+      "title": "Git conventions",
       "pageNav": 3,
       "src": "conventions/git.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "git-coding-standard": "Git coding standard",
+        "git-conventions": "Git conventions",
         "commit-message-subject": "Commit message: Subject",
         "commit-message-body": "Commit message: Body",
         "branch-names": "Branch names"
@@ -250,18 +250,21 @@
         "selecting-what-to-work-on": "Selecting what to work on",
         "scoping-a-pr": "Scoping a PR",
         "submitting-a-pr": "Submitting a PR",
-        "reviewing-a-pr": "Reviewing a PR"
+        "reviewing-a-pr": "Reviewing a PR",
+        "merging-prs": "Merging PRs"
       },
       "headingKeywords": {}
     },
     {
-      "title": "Guidelines for commit organization",
+      "title": "Working with Git",
       "pageNav": 3,
       "src": "guidelines/commits.md",
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "guidelines-for-commit-organization": "Guidelines for commit organization"
+        "working-with-git": "Working with Git",
+        "organizing-commits": "Organizing commits",
+        "merging-branches": "Merging branches"
       },
       "headingKeywords": {}
     },
@@ -295,9 +298,9 @@
       "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
-        "tutorials": "\n           Tutorials\n        ",
-        "conventions": "\n           Conventions\n        ",
-        "guidelines": "\n           Guidelines\n        "
+        "tutorials": "\r\n           Tutorials\r\n        ",
+        "conventions": "\r\n           Conventions\r\n        ",
+        "guidelines": "\r\n           Guidelines\r\n        "
       },
       "headingKeywords": {}
     },

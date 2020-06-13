@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -44,7 +44,7 @@
           <p>This website contains a collection of tutorials, standards, guides, best practices etc. useful for SE students.</p>
         </div>
         <h2 id="tutorials">
-          <thumbnail circle background="#e67300" font-color="white" size="50"><span aria-hidden="true" class="fas fa-chalkboard-teacher"></span></thumbnail> Tutorials<a class="fa fa-anchor" href="#tutorials" onclick="event.stopPropagation()"></a>
+          <thumbnail circle="" background="#e67300" font-color="white" size="50"><span aria-hidden="true" class="fas fa-chalkboard-teacher"></span></thumbnail> Tutorials<a class="fa fa-anchor" href="#tutorials" onclick="event.stopPropagation()"></a>
         </h2>
         <p>Tutorials, how-to guides, getting-started guides, ...</p>
         <ul>
@@ -82,7 +82,7 @@
           </li>
         </ul>
         <h2 id="conventions">
-          <thumbnail circle background="#e67300" font-color="white" size="50"><span aria-hidden="true" class="fas fa-file-code"></span></thumbnail> Conventions<a class="fa fa-anchor" href="#conventions" onclick="event.stopPropagation()"></a>
+          <thumbnail circle="" background="#e67300" font-color="white" size="50"><span aria-hidden="true" class="fas fa-file-code"></span></thumbnail> Conventions<a class="fa fa-anchor" href="#conventions" onclick="event.stopPropagation()"></a>
         </h2>
         <p>Coding standards, format conventions, style guides, ...</p>
         <ul>
@@ -102,11 +102,11 @@
           </li>
         </ul>
         <h2 id="guidelines">
-          <thumbnail circle background="#e67300" font-color="white" size="50"><span aria-hidden="true" class="fas fa-map-signs"></span></thumbnail> Guidelines<a class="fa fa-anchor" href="#guidelines" onclick="event.stopPropagation()"></a>
+          <thumbnail circle="" background="#e67300" font-color="white" size="50"><span aria-hidden="true" class="fas fa-map-signs"></span></thumbnail> Guidelines<a class="fa fa-anchor" href="#guidelines" onclick="event.stopPropagation()"></a>
         </h2>
         <p>Best practices, processes, workflows, ...</p>
         <ul>
-          <li><a href="/guides/guidelines/commits.html">Git commits</a></li>
+          <li><a href="/guides/guidelines/commits.html">Working with Git</a></li>
           <li><a href="/guides/guidelines/PRs.html">Working with PRs</a></li>
           <li><a href="/guides/guidelines/labels.html">Working with GitHub labels</a></li>
         </ul>
@@ -131,7 +131,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

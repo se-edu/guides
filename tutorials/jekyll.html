@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -47,16 +47,16 @@
         <p>Given below are some information useful for when you want to update documentation in a project that uses MarkBind.</p>
 
         <h2 id="setting-up-github-pages-for-jekyll">Setting up GitHub Pages for Jekyll<a class="fa fa-anchor" href="#setting-up-github-pages-for-jekyll" onclick="event.stopPropagation()"></a></h2>
-        <p>As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the <code>githhub.io</code> URL of your project.</p>
+        <p>As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the <code v-pre="">githhub.io</code> URL of your project.</p>
         <p>Do the following to set up the GitHub Pages website of your project:</p>
         <ol>
-          <li>Go to your repo's <code>settings</code> tab.</li>
-          <li>Scroll down to the <code>GitHub Pages</code> section.</li>
-          <li>Set the <code>Source</code> to <code>master branch /docs folder</code> (assuming project documentation is in that folder).</li>
+          <li>Go to your repo's <code v-pre="">settings</code> tab.</li>
+          <li>Scroll down to the <code v-pre="">GitHub Pages</code> section.</li>
+          <li>Set the <code v-pre="">Source</code> to <code v-pre="">master branch /docs folder</code> (assuming project documentation is in that folder).</li>
         </ol>
 
         <h2 id="updating-documents">Updating documents<a class="fa fa-anchor" href="#updating-documents" onclick="event.stopPropagation()"></a></h2>
-        <p>Jekyll uses <a href="https://kramdown.gettalong.org/syntax.html"><strong>kramdown</strong></a> (a superset of Markdown) for writing content. You can use Intellij (or any other text editor) to update the relevant <code>.md</code> files.</p>
+        <p>Jekyll uses <a href="https://kramdown.gettalong.org/syntax.html"><strong>kramdown</strong></a> (a superset of Markdown) for writing content. You can use Intellij (or any other text editor) to update the relevant <code v-pre="">.md</code> files.</p>
         <box type="tip" seamless>
           <p><strong>Recommendation:</strong> Limit your content to Markdown and GFMD syntax only i.e., avoid kramdown-specific syntax that are not compatible with Markdown/GFMD
           </p>
@@ -70,7 +70,7 @@
           </li>
           <li><strong>Previewing changes on GitHub</strong>:
             <ul>
-              <li><strong>Option 1 -- Github preview</strong>: You can see a basic preview of the page by navigating to the corresponding <code>.md</code> source file in GitHub.</li>
+              <li><strong>Option 1 -- Github preview</strong>: You can see a basic preview of the page by navigating to the corresponding <code v-pre="">.md</code> source file in GitHub.</li>
               <li><strong>Option 2 -- Use Netlify PR preview</strong>: You can set up Netlify to show previews of PRs (to learn how, read the <a href="/guides/tutorials/netlify.html"><em>Using Netlify</em></a>. This method shows a preview of the exact way the update affects the final outcome.</li>
             </ul>
           </li>
@@ -79,11 +79,11 @@
         <h2 id="site-wide-settings">Site-wide settings<a class="fa fa-anchor" href="#site-wide-settings" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
-            <p>Typically, the <code>_config.yml</code> file specifies project-specific site-wide settings.<br>
-              An example is the <code>title</code> property, which defines the title of your site, usually the name of your project.</p>
+            <p>Typically, the <code v-pre="">_config.yml</code> file specifies project-specific site-wide settings.<br>
+              An example is the <code v-pre="">title</code> property, which defines the title of your site, usually the name of your project.</p>
           </li>
           <li>
-            <p>The files in <code>docs/_include</code> and <code>docs/_layouts</code> control the template of the pages; the files in <code>docs/_sass</code> control the style of the pages.</p>
+            <p>The files in <code v-pre="">docs/_include</code> and <code v-pre="">docs/_layouts</code> control the template of the pages; the files in <code v-pre="">docs/_sass</code> control the style of the pages.</p>
             <box type="warning" seamless>
               <p><strong>Caution</strong>: Modifying these files requires some knowledge and experience with Jekyll. You should only modify them (at your own risk) if you need greater control over the site’s layout.
               </p>
@@ -112,7 +112,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -61,14 +61,14 @@
         <h2 id="css-files">CSS Files<a class="fa fa-anchor" href="#css-files" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
-            <p>CSS file includes must be done using <code>&lt;link&gt;</code> tags in the HTML/JSP files and NOT using <code>@import</code> in other css files.</p>
+            <p>CSS file includes must be done using <code v-pre="">&lt;link&gt;</code> tags in the HTML/JSP files and NOT using <code v-pre="">@import</code> in other css files.</p>
             <box type="info" seamless>
-              <p>RATIONALE: <strong><code>@import</code></strong> can be slow and may result in the page being rendered without css for a while before the page magically comes to life. As of now we are using css files as styles of HTML pages and thus the dependency must be clearly visible in the HTML page.
+              <p>RATIONALE: <strong><code v-pre="">@import</code></strong> can be slow and may result in the page being rendered without css for a while before the page magically comes to life. As of now we are using css files as styles of HTML pages and thus the dependency must be clearly visible in the HTML page.
               </p>
             </box>
             <p>
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheets"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../common.css"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span></code><br>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline css"><span class="hljs-keyword">@import</span> <span class="hljs-string">"common.css"</span>;</code>
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline html" v-pre=""><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheets"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"../common.css"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span></code><br>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline css" v-pre="">@<span class="hljs-keyword">import</span> <span class="hljs-string">"common.css"</span>;</code>
             </p>
           </li>
           <li>
@@ -84,7 +84,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs css"><span><span class="hljs-selector-id">#mainDiv</span> {<br></span><span>   <span class="hljs-attribute">border</span>: thin solid black;<br></span><span>   <span class="hljs-attribute">color</span>: white;<br></span><span>   <span class="hljs-attribute">margin</span>: auto;<br></span><span>}<br></span></code></pre>
+              <pre><code class="hljs css" v-pre=""><span><span class="hljs-selector-id">#mainDiv</span> {<br></span><span>   <span class="hljs-attribute">border</span>: thin solid black;<br></span><span>   <span class="hljs-attribute">color</span>: white;<br></span><span>   <span class="hljs-attribute">margin</span>: auto;<br></span><span>}<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br></span><span><span class="css"><span class="hljs-selector-id">#mainDiv</span> {</span><br></span><span>   color: white;<br></span><span>}<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="undefined"></span><br></span><span><span class="css"><span class="hljs-selector-id">#mainDiv</span> {</span><br></span><span><span class="undefined">   color: white;</span><br></span><span><span class="undefined">}</span><br></span><span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mainDiv"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: thin solid black; margin: auto"</span>&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mainDiv"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"border: thin solid black; margin: auto"</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs css"><span><span class="hljs-selector-class">.button-sort-ascending</span><span class="hljs-selector-pseudo">:hover</span>,<br></span><span><span class="hljs-selector-class">.button-sort-none</span><span class="hljs-selector-pseudo">:hover</span> {<br></span><span>   <span class="hljs-attribute">cursor</span>: pointer;<br></span><span>}<br></span></code></pre>
+              <pre><code class="hljs css" v-pre=""><span><span class="hljs-selector-class">.button-sort-ascending</span><span class="hljs-selector-pseudo">:hover</span>,<br></span><span><span class="hljs-selector-class">.button-sort-none</span><span class="hljs-selector-pseudo">:hover</span> {<br></span><span>   <span class="hljs-attribute">cursor</span>: pointer;<br></span><span>}<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs css"><span><span class="hljs-selector-class">.button-sort-ascending</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.button-sort-none</span><span class="hljs-selector-pseudo">:hover</span> {<br></span><span>   <span class="hljs-attribute">cursor</span>: pointer;<br></span><span>}<br></span></code></pre>
+              <pre><code class="hljs css" v-pre=""><span><span class="hljs-selector-class">.button-sort-ascending</span><span class="hljs-selector-pseudo">:hover</span>, <span class="hljs-selector-class">.button-sort-none</span><span class="hljs-selector-pseudo">:hover</span> {<br></span><span>   <span class="hljs-attribute">cursor</span>: pointer;<br></span><span>}<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -161,14 +161,14 @@
         <h3 id="use-of-efficient-selectors">Use of Efficient Selectors<a class="fa fa-anchor" href="#use-of-efficient-selectors" onclick="event.stopPropagation()"></a></h3>
         <ul>
           <li>
-            <p>Do not qualify class/ID selectors using tag names (do not use: <code>div.mainContent</code>, simply use <code>.mainContent</code>). Refer to <a href="https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html">Writing efficient CSS</a> for examples.</p>
+            <p>Do not qualify class/ID selectors using tag names (do not use: <code v-pre="">div.mainContent</code>, simply use <code v-pre="">.mainContent</code>). Refer to <a href="https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html">Writing efficient CSS</a> for examples.</p>
             <box type="info" seamless>
               <p>RATIONALE: This speeds up the css match lookup. If such a qualification is actually required, either use another class on top of this to change the style or use a completely different class to start with. In any case, if this kind of qualification is needed, then probably the class has not been named well enough (see <a href="#naming-classes">naming standards for classes</a>)
               </p>
             </box>
           </li>
           <li>
-            <p>Use child selector rather than descendant selector (use <code>#container &gt; span</code> rather than <code>#container span</code>). Refer to <a href="https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html">Writing efficient CSS</a> for examples.</p>
+            <p>Use child selector rather than descendant selector (use <code v-pre="">#container &gt; span</code> rather than <code v-pre="">#container span</code>). Refer to <a href="https://mdn.beonex.com/en/CSS/Writing_Efficient_CSS.html">Writing efficient CSS</a> for examples.</p>
             <box type="info" seamless>
               <p>RATIONALE: This is a strong recommendation as descendant selector is extremely expensive, especially when the specified ancestor has a lot of descendants.
               </p>
@@ -180,14 +180,14 @@
         <h3 id="naming-classes">Naming Classes<a class="fa fa-anchor" href="#naming-classes" onclick="event.stopPropagation()"></a></h3>
         <ul>
           <li>Use all lowercase letters.<br>
-            Separate words with hyphens (<code>-</code>) and no other separator.<br>
+            Separate words with hyphens (<code v-pre="">-</code>) and no other separator.<br>
             We use 2 kinds of classes: Atomic and Component.
             <ul>
               <li><strong><em>Atomic Classes</em></strong> describe atomic attributes like border-gray, align-center that can be used on any element.
                 They have at most 2 rules in them. Start their names with the attribute, followed by the value.<br>
-                (eg: <code>.align-center</code> and not <code>.center-align</code>)</li>
+                (eg: <code v-pre="">.align-center</code> and not <code v-pre="">.center-align</code>)</li>
               <li><strong><em>Component Classes</em></strong> are used for components that have a particular role that (preferably) recurs in multiple pages. To name these classes, describe the function of the element rather than its location.<br>
-                (eg: <code>.panel-details</code> rather than <code>.top-details-box</code>)</li>
+                (eg: <code v-pre="">.panel-details</code> rather than <code v-pre="">.top-details-box</code>)</li>
             </ul>
           </li>
         </ul>
@@ -197,7 +197,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs css"><span><span class="hljs-comment">/* Component Class */</span><br></span><span><span class="hljs-selector-class">.comment-list</span><br></span><span><span class="hljs-selector-class">.sort-icon</span><br></span><span><span class="hljs-comment">/* Atomic Class */</span><br></span><span><span class="hljs-selector-class">.align-center</span><br></span><span><span class="hljs-selector-class">.border-gray</span><br></span></code></pre>
+              <pre><code class="hljs css" v-pre=""><span><span class="hljs-comment">/* Component Class */</span><br></span><span><span class="hljs-selector-class">.comment-list</span><br></span><span><span class="hljs-selector-class">.sort-icon</span><br></span><span><span class="hljs-comment">/* Atomic Class */</span><br></span><span><span class="hljs-selector-class">.align-center</span><br></span><span><span class="hljs-selector-class">.border-gray</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -207,7 +207,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs css"><span><span class="hljs-selector-class">.commentList</span><br></span><span><span class="hljs-selector-class">.sort_icon</span><br></span><span><span class="hljs-selector-class">.centeralign</span><br></span></code></pre>
+              <pre><code class="hljs css" v-pre=""><span><span class="hljs-selector-class">.commentList</span><br></span><span><span class="hljs-selector-class">.sort_icon</span><br></span><span><span class="hljs-selector-class">.centeralign</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -240,7 +240,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs css"><span><span class="hljs-selector-class">.sort-icon</span> {<br></span><span>   <span class="hljs-attribute">display</span>: block;<br></span><span>   <span class="hljs-attribute">float</span>: right;<br></span><span>   <span class="hljs-attribute">height</span>: <span class="hljs-number">17px</span>;<br></span><span>   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1px</span>;<br></span><span>   <span class="hljs-attribute">width</span>: <span class="hljs-number">12px</span>;<br></span><span>}<br></span></code></pre>
+              <pre><code class="hljs css" v-pre=""><span><span class="hljs-selector-class">.sort-icon</span> {<br></span><span>   <span class="hljs-attribute">display</span>: block;<br></span><span>   <span class="hljs-attribute">float</span>: right;<br></span><span>   <span class="hljs-attribute">height</span>: <span class="hljs-number">17px</span>;<br></span><span>   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1px</span>;<br></span><span>   <span class="hljs-attribute">width</span>: <span class="hljs-number">12px</span>;<br></span><span>}<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -250,7 +250,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs css"><span><span class="hljs-selector-class">.sort-icon</span> {<br></span><span>   <span class="hljs-attribute">width</span>: <span class="hljs-number">12px</span>;<br></span><span>   <span class="hljs-attribute">height</span>: <span class="hljs-number">17px</span>;<br></span><span>   <span class="hljs-attribute">display</span>: block;<br></span><span>   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1px</span>;<br></span><span>   <span class="hljs-attribute">float</span>: right;<br></span><span>}<br></span></code></pre>
+              <pre><code class="hljs css" v-pre=""><span><span class="hljs-selector-class">.sort-icon</span> {<br></span><span>   <span class="hljs-attribute">width</span>: <span class="hljs-number">12px</span>;<br></span><span>   <span class="hljs-attribute">height</span>: <span class="hljs-number">17px</span>;<br></span><span>   <span class="hljs-attribute">display</span>: block;<br></span><span>   <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1px</span>;<br></span><span>   <span class="hljs-attribute">float</span>: right;<br></span><span>}<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -258,7 +258,7 @@
         <ul>
           <li>Semicolon after every attribute specification.</li>
           <li>Space after colon.</li>
-          <li>Drop the units for 0 values (eg: <code>margin: 0</code>).</li>
+          <li>Drop the units for 0 values (eg: <code v-pre="">margin: 0</code>).</li>
           <li>All attribute(s) are to be specified in individual lines.</li>
           <li>Attributes must have one more indentation than the selector.</li>
           <li>Indent attributes that require browser specifications so that the actual attribute being declared is in one column. Refer to <a href="http://learn.shayhowe.com/html-css/writing-your-best-code/#css-coding-practices">Writing Your Best Code</a> for examples.</li>
@@ -267,16 +267,16 @@
         <h2 id="general-details">General Details<a class="fa fa-anchor" href="#general-details" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
-            <p>Use shorthands as much as possible (eg <code>border: 2px 0 1px 4px</code>).</p>
+            <p>Use shorthands as much as possible (eg <code v-pre="">border: 2px 0 1px 4px</code>).</p>
           </li>
           <li>
-            <p>DO NOT use <code>!important</code> specifier.</p>
+            <p>DO NOT use <code v-pre="">!important</code> specifier.</p>
             <box type="info" seamless>
-              <p>RATIONALE: Using the <code>!important</code> specifier overrides the natural flow of specificity and cascading hierarchy of css styles. Unless absolutely necessary do not use it. If there is such a situation clearly state the reason with comments (<code>/* */</code>).
+              <p>RATIONALE: Using the <code v-pre="">!important</code> specifier overrides the natural flow of specificity and cascading hierarchy of css styles. Unless absolutely necessary do not use it. If there is such a situation clearly state the reason with comments (<code v-pre="">/* */</code>).
               </p>
             </box>
             <p>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline css"><span class="hljs-selector-tag">margin</span>: 10<span class="hljs-selector-tag">px</span> 0 !<span class="hljs-selector-tag">important</span>;</code>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline css" v-pre=""><span class="hljs-selector-tag">margin</span>: 10<span class="hljs-selector-tag">px</span> 0 !<span class="hljs-selector-tag">important</span>;</code>
             </p>
           </li>
         </ul>
@@ -337,7 +337,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

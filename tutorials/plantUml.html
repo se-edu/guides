@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -52,53 +52,53 @@
             <p><strong>Install Graphviz.</strong> Graphviz is a dependency that PlantUML requires to generate more advanced diagrams. Head over to the <a href="https://www.graphviz.org/download/">downloads page</a> on the official Graphviz website and follow instructions to install Graphviz.</p>
           </li>
           <li>
-            <p><strong>Install the <code>PlantUML integration</code> plugin in IntelliJ IDEA.</strong></p>
+            <p><strong>Install the <code v-pre="">PlantUML integration</code> plugin in IntelliJ IDEA.</strong></p>
             <ol>
               <li>
-                <p>Go to <code>Settings</code> &gt; <code>Plugins</code> &gt; <code>Marketplace</code> and install the plugin <code>PlantUML integration</code>.</p>
+                <p>Go to <code v-pre="">Settings</code> &gt; <code v-pre="">Plugins</code> &gt; <code v-pre="">Marketplace</code> and install the plugin <code v-pre="">PlantUML integration</code>.</p>
               </li>
               <li>
-                <p>Then go to <code>Settings</code> &gt; <code>Other Settings</code> &gt; <code>PlantUML</code> or search for PlantUML. Configure the path to the <code>dot</code> executable. This executable can be found in the <code>/bin</code> directory where you installed GraphViz.<br>
-                  <a href="/guides/tutorials/images/plantuml/ConfiguringGraphviz.png" target="_self"><img src="/guides/tutorials/images/plantuml/ConfiguringGraphviz.png" alt class="img-fluid"></a></p>
+                <p>Then go to <code v-pre="">Settings</code> &gt; <code v-pre="">Other Settings</code> &gt; <code v-pre="">PlantUML</code> or search for PlantUML. Configure the path to the <code v-pre="">dot</code> executable. This executable can be found in the <code v-pre="">/bin</code> directory where you installed GraphViz.<br>
+                  <a href="/guides/tutorials/images/plantuml/ConfiguringGraphviz.png" target="_self"><img src="/guides/tutorials/images/plantuml/ConfiguringGraphviz.png" alt="" class="img-fluid"></a></p>
               </li>
             </ol>
           </li>
         </ol>
 
         <h2 id="creating-editing-exporting-diagrams">Creating/editing/exporting diagrams<a class="fa fa-anchor" href="#creating-editing-exporting-diagrams" onclick="event.stopPropagation()"></a></h2>
-        <p>After installing the <code>PlantUML integration</code> plugin, simply create or open any <code>.puml</code> file to start editing it.</p>
-        <p><a href="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" alt class="img-fluid"></a></p>
+        <p>After installing the <code v-pre="">PlantUML integration</code> plugin, simply create or open any <code v-pre="">.puml</code> file to start editing it.</p>
+        <p><a href="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" alt="" class="img-fluid"></a></p>
         <p>Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes <em>will not</em> be reflected in your actual documentation until you export the diagram.</p>
-        <p>The <code>PlantUML integration</code> plugin allows you to export individual diagrams to a location of your choosing. Click the <code>Save Current Diagram Only</code> button and choose the location to export the image file.</p>
+        <p>The <code v-pre="">PlantUML integration</code> plugin allows you to export individual diagrams to a location of your choosing. Click the <code v-pre="">Save Current Diagram Only</code> button and choose the location to export the image file.</p>
         <box type="info" seamless>
-          <p>You will have to <code>git add</code> any new diagrams generated!
+          <p>You will have to <code v-pre="">git add</code> any new diagrams generated!
           </p>
         </box>
 
         <h2 id="tips-and-tricks">Tips and tricks<a class="fa fa-anchor" href="#tips-and-tricks" onclick="event.stopPropagation()"></a></h2>
         <h3 id="maintaining-consistency-in-formatting">Maintaining consistency in formatting<a class="fa fa-anchor" href="#maintaining-consistency-in-formatting" onclick="event.stopPropagation()"></a></h3>
         <p>It is highly recommended to consistently color your UML diagrams as an visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.</p>
-        <p>For example, you can create a <code>Style.puml</code> with the contents:</p>
+        <p>For example, you can create a <code v-pre="">Style.puml</code> with the contents:</p>
         <p><strong>Style.puml.</strong></p>
-        <pre><code class="hljs"><span>!define LOGIC_COLOR #3333C4<br></span><span>!define LOGIC_COLOR_T1 #7777DB<br></span><span>!define LOGIC_COLOR_T2 #5252CE<br></span><span>!define LOGIC_COLOR_T3 #1616B0<br></span><span>!define LOGIC_COLOR_T4 #101086<br></span></code></pre>
+        <pre><code class="hljs" v-pre=""><span>!define LOGIC_COLOR #3333C4<br></span><span>!define LOGIC_COLOR_T1 #7777DB<br></span><span>!define LOGIC_COLOR_T2 #5252CE<br></span><span>!define LOGIC_COLOR_T3 #1616B0<br></span><span>!define LOGIC_COLOR_T4 #101086<br></span></code></pre>
         <p>Then you can use it in another PlantUML file like this:</p>
         <p><strong>UndoSequenceDiagram.puml.</strong></p>
-        <pre><code class="hljs"><span>!include Style.puml<br></span><span><br></span><span>box Logic LOGIC_COLOR_T2<br></span><span>participant &quot;:LogicManager&quot; as LogicManager LOGIC_COLOR<br></span><span>participant &quot;:AddressBookParser&quot; as AddressBookParser LOGIC_COLOR<br></span><span>participant &quot;:UndoCommand&quot; as UndoCommand LOGIC_COLOR<br></span><span>end box<br></span></code></pre>
-        <p>You can fine-tune the formatting of PlantUML diagrams with the <code>skinparam</code> command. For example, <code>skinparam backgroundColor transparent</code> turns the background of the diagram transparent.</p>
+        <pre><code class="hljs" v-pre=""><span>!include Style.puml<br></span><span><br></span><span>box Logic LOGIC_COLOR_T2<br></span><span>participant &quot;:LogicManager&quot; as LogicManager LOGIC_COLOR<br></span><span>participant &quot;:AddressBookParser&quot; as AddressBookParser LOGIC_COLOR<br></span><span>participant &quot;:UndoCommand&quot; as UndoCommand LOGIC_COLOR<br></span><span>end box<br></span></code></pre>
+        <p>You can fine-tune the formatting of PlantUML diagrams with the <code v-pre="">skinparam</code> command. For example, <code v-pre="">skinparam backgroundColor transparent</code> turns the background of the diagram transparent.</p>
         <box type="tip" seamless>
-          <p>For a comprehensive list of <code>skinparam</code>s, see <a href="https://plantuml-documentation.readthedocs.io/en/latest/">unofficial PlantUML skinparam documentation</a>.
+          <p>For a comprehensive list of <code v-pre="">skinparam</code>s, see <a href="https://plantuml-documentation.readthedocs.io/en/latest/">unofficial PlantUML skinparam documentation</a>.
           </p>
         </box>
         <h3 id="repositioning-elements">Repositioning elements<a class="fa fa-anchor" href="#repositioning-elements" onclick="event.stopPropagation()"></a></h3>
         <p>While PlantUML’s automatic layout engine usually produces satisfactory results, at times the result can be less than ideal, especially on larger diagrams. Here is an example where the default layout generated by PlantUML has a lot of overlapping lines that are hard to decipher:</p>
-        <p><a href="/guides/tutorials/images/plantuml/RawUiDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/RawUiDiagram.png" alt class="img-fluid"></a></p>
+        <p><a href="/guides/tutorials/images/plantuml/RawUiDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/RawUiDiagram.png" alt="" class="img-fluid"></a></p>
         <box type="info" seamless>
           <p>In most cases, you should consider decomposing the diagram into smaller ones or focusing on a more specific portion of the diagram.</p>
         </box>
         <p>Here are some techniques you can use to obtain a more palatable diagram.</p>
         <h4 id="link-lengths">Link lengths<a class="fa fa-anchor" href="#link-lengths" onclick="event.stopPropagation()"></a></h4>
-        <p>By default, a short link (<code>-&gt;</code>) points to right and a long link (<code>--&gt;</code>) points downwards. you can extend any link to make it longer (<code>---&gt;</code>).</p>
-        <p><a href="/guides/tutorials/images/plantuml/ArrowLength.png" target="_self"><img src="/guides/tutorials/images/plantuml/ArrowLength.png" alt class="img-fluid"></a></p>
+        <p>By default, a short link (<code v-pre="">-&gt;</code>) points to right and a long link (<code v-pre="">--&gt;</code>) points downwards. you can extend any link to make it longer (<code v-pre="">---&gt;</code>).</p>
+        <p><a href="/guides/tutorials/images/plantuml/ArrowLength.png" target="_self"><img src="/guides/tutorials/images/plantuml/ArrowLength.png" alt="" class="img-fluid"></a></p>
         <h4 id="link-directions">Link directions<a class="fa fa-anchor" href="#link-directions" onclick="event.stopPropagation()"></a></h4>
         <p>Clever usage of arrow directions will resolve most layout issues. For example, the table below shows how the way in which you specify arrows can results in drastically different layouts for the same diagram.</p>
         <table>
@@ -257,7 +257,7 @@ package "Rule Of Thumb";{
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

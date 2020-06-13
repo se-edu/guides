@@ -30,7 +30,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -40,13 +40,13 @@
       <div id="content-wrapper">
         <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
         <h1 id="java-logging-conventions">Java logging conventions<a class="fa fa-anchor" href="#java-logging-conventions" onclick="event.stopPropagation()"></a></h1>
-        <p>We recommend using <code>java.util.logging</code> package for logging.</p>
+        <p>We recommend using <code v-pre="">java.util.logging</code> package for logging.</p>
         <p><strong>Logging Levels</strong></p>
         <ul>
-          <li><code>SEVERE</code>: A critical problem detected which may cause the termination of the application.</li>
-          <li><code>WARNING</code>: Can continue, but with caution.</li>
-          <li><code>INFO</code>: Information showing the noteworthy actions by the App.</li>
-          <li><code>FINE</code>: Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size.</li>
+          <li><code v-pre="">SEVERE</code>: A critical problem detected which may cause the termination of the application.</li>
+          <li><code v-pre="">WARNING</code>: Can continue, but with caution.</li>
+          <li><code v-pre="">INFO</code>: Information showing the noteworthy actions by the App.</li>
+          <li><code v-pre="">FINE</code>: Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size.</li>
         </ul>
       </div>
 
@@ -55,7 +55,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -44,36 +44,36 @@
         <p>Gradle is a <em>build automation tool</em> used to automate build processes. There are many ways of integrating Gradle into a project. This tutorial uses the <em>Gradle wrapper</em> approach.</p>
 
         <h2 id="basics">Basics<a class="fa fa-anchor" href="#basics" onclick="event.stopPropagation()"></a></h2>
-        <p>You use a <em>build file</em> (named <code>build.gradle</code>) to describes the project to Gradle. A build file mainly consists of <em>plugins</em>, <em>tasks</em> and <em>properties</em>.</p>
+        <p>You use a <em>build file</em> (named <code v-pre="">build.gradle</code>) to describes the project to Gradle. A build file mainly consists of <em>plugins</em>, <em>tasks</em> and <em>properties</em>.</p>
         <ul>
           <li>
-            <p><strong>Plugins</strong> extend the functionality of Gradle. For example, the <code>java</code> plugin adds support for <code>Java</code> projects.</p>
+            <p><strong>Plugins</strong> extend the functionality of Gradle. For example, the <code v-pre="">java</code> plugin adds support for <code v-pre="">Java</code> projects.</p>
           </li>
           <li>
-            <p><strong>Tasks</strong> are reusable blocks of logic. For example, the task <code>clean</code> simply deletes the project build directory.
+            <p><strong>Tasks</strong> are reusable blocks of logic. For example, the task <code v-pre="">clean</code> simply deletes the project build directory.
               Tasks can be composed of, or dependent on, other tasks.</p>
           </li>
           <li>
-            <p><strong>Properties</strong> change the behavior of tasks. For instance, <code>mainClassName</code> of the <code>application</code> plugin is a compulsory property which tells Gradle which class is the entry point to your application. As Gradle favors <a href="https://en.wikipedia.org/wiki/Convention_over_configuration"><em>convention over configuration</em></a>, there is not much to you need to configure if you follow the recommended directory structure.</p>
+            <p><strong>Properties</strong> change the behavior of tasks. For instance, <code v-pre="">mainClassName</code> of the <code v-pre="">application</code> plugin is a compulsory property which tells Gradle which class is the entry point to your application. As Gradle favors <a href="https://en.wikipedia.org/wiki/Convention_over_configuration"><em>convention over configuration</em></a>, there is not much to you need to configure if you follow the recommended directory structure.</p>
           </li>
         </ul>
 
         <h2 id="adding-gradle-to-the-project">Adding Gradle to the project<a class="fa fa-anchor" href="#adding-gradle-to-the-project" onclick="event.stopPropagation()"></a></h2>
         <p><strong><strong>Scenario 1:</strong></strong> You are setting up a project in Intellij IDEA. The project already has Gradle support.</p>
         <div class="ml-3">
-          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If the project comes with Gradle support, you will see a <code>build.gradle</code> file in your project root.</p>
+          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If the project comes with Gradle support, you will see a <code v-pre="">build.gradle</code> file in your project root.</p>
         </div>
         <ol>
-          <li>When you <em>import</em> the project into IDEA, at the step where you normally select the project root folder, choose the <code>build.gradle</code> file inside the root folder instead.</li>
-          <li>If asked, choose <code>Open as Project</code> (not <code>Open as File</code>).</li>
-          <li>After importing is complete, you will see the <code>Gradle Toolbar</code> in the IDEA interface.<br>
-            <a href="/guides/tutorials/images/gradle/GradleIcon.png" target="_self"><img src="/guides/tutorials/images/gradle/GradleIcon.png" alt class="img-fluid"></a></li>
+          <li>When you <em>import</em> the project into IDEA, at the step where you normally select the project root folder, choose the <code v-pre="">build.gradle</code> file inside the root folder instead.</li>
+          <li>If asked, choose <code v-pre="">Open as Project</code> (not <code v-pre="">Open as File</code>).</li>
+          <li>After importing is complete, you will see the <code v-pre="">Gradle Toolbar</code> in the IDEA interface.<br>
+            <a href="/guides/tutorials/images/gradle/GradleIcon.png" target="_self"><img src="/guides/tutorials/images/gradle/GradleIcon.png" alt="" class="img-fluid"></a></li>
         </ol>
         <p><strong><strong>Scenario 2:</strong></strong> You are adding Gradle support to an ongoing project that is already set up in Intellij IDEA. Gradle wrapper files have been provided.</p>
         <ol>
           <li>Add the Gradle wrapper files to the project. e.g., if they are in a separate branch, merge that branch.</li>
           <li>Close the IDEA project if it is open.</li>
-          <li>Delete the <code>.idea</code> folder.</li>
+          <li>Delete the <code v-pre="">.idea</code> folder.</li>
           <li>Import the project again (similar to scenario 1 above)</li>
         </ol>
         <p><strong><strong>Scenario 3:</strong></strong> You are adding Gradle support to an ongoing project from scratch.</p>
@@ -83,44 +83,44 @@
 
         <h2 id="using-gradle-in-intellij-idea">Using Gradle in Intellij IDEA<a class="fa fa-anchor" href="#using-gradle-in-intellij-idea" onclick="event.stopPropagation()"></a></h2>
         <p>If the Gradle tasks don't appear in the Gradle window, click the 'refresh' button in the tooolbar to reimport the Gradle project.</p>
-        <p>Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to <code>File</code> &gt; <code>Settings</code> and change the following settings:<br>
-          <a href="/guides/tutorials/images/gradle/intellijRunUsingGradle.png" target="_self"><img src="/guides/tutorials/images/gradle/intellijRunUsingGradle.png" alt class="img-fluid"></a></p>
+        <p>Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to <code v-pre="">File</code> &gt; <code v-pre="">Settings</code> and change the following settings:<br>
+          <a href="/guides/tutorials/images/gradle/intellijRunUsingGradle.png" target="_self"><img src="/guides/tutorials/images/gradle/intellijRunUsingGradle.png" alt="" class="img-fluid"></a></p>
 
         <h2 id="running-gradle-tasks">Running Gradle Tasks<a class="fa fa-anchor" href="#running-gradle-tasks" onclick="event.stopPropagation()"></a></h2>
-        <p>To run a task, locate the task in the Gradle toolbar, right-click on a task, and choose <code>run</code>.</p>
+        <p>To run a task, locate the task in the Gradle toolbar, right-click on a task, and choose <code v-pre="">run</code>.</p>
         <p>Alternatively, you can type the command in the terminal.</p>
         <ul>
-          <li>On Windows: <code>gradlew &lt;task1&gt; &lt;task2&gt; …</code>​ e.g. <code>gradlew clean test</code></li>
-          <li>On Mac/Linux: <code>./gradlew &lt;task1&gt; &lt;task2&gt; …</code>​ e.g. <code>./gradlew clean test</code></li>
+          <li>On Windows: <code v-pre="">gradlew &lt;task1&gt; &lt;task2&gt; …</code>​ e.g. <code v-pre="">gradlew clean test</code></li>
+          <li>On Mac/Linux: <code v-pre="">./gradlew &lt;task1&gt; &lt;task2&gt; …</code>​ e.g. <code v-pre="">./gradlew clean test</code></li>
         </ul>
 
         <h2 id="adding-plugins">Adding plugins<a class="fa fa-anchor" href="#adding-plugins" onclick="event.stopPropagation()"></a></h2>
         <p>Gradle plugins are reusable units of build logic. Most common build tasks are bundled into core plugins provided by Gradle. Java, Checkstyle, and Shadow are three of plugins commonly used in Java projects.
-          The relevant lines of the <code>build.gradle</code> are given below:</p>
+          The relevant lines of the <code v-pre="">build.gradle</code> are given below:</p>
         <div class="code-block">
           <div class="code-block-heading"><span>build.gradle</span></div>
           <div class="code-block-content">
-            <pre><code heading="build.gradle" class="hljs groovy"><span>plugins {<br></span><span class="highlighted">    id <span class="hljs-string">'java'</span><br></span><span class="highlighted">    id <span class="hljs-string">'application'</span><br></span><span class="highlighted">    id <span class="hljs-string">'checkstyle'</span><br></span><span class="highlighted">    id <span class="hljs-string">'com.github.johnrengelman.shadow'</span> version <span class="hljs-string">'5.1.0'</span><br></span><span>}<br></span></code></pre>
+            <pre><code heading="build.gradle" class="hljs groovy" v-pre=""><span>plugins {<br></span><span class="highlighted">    id <span class="hljs-string">'java'</span><br></span><span class="highlighted">    id <span class="hljs-string">'application'</span><br></span><span class="highlighted">    id <span class="hljs-string">'checkstyle'</span><br></span><span class="highlighted">    id <span class="hljs-string">'com.github.johnrengelman.shadow'</span> version <span class="hljs-string">'5.1.0'</span><br></span><span>}<br></span></code></pre>
           </div>
         </div>
         <h2 id="using-gradle-to-do-some-common-project-activities">Using Gradle to do some common project activities<a class="fa fa-anchor" href="#using-gradle-to-do-some-common-project-activities" onclick="event.stopPropagation()"></a></h2>
         <h3 id="cleaning-the-project">Cleaning the project<a class="fa fa-anchor" href="#cleaning-the-project" onclick="event.stopPropagation()"></a></h3>
         <ul>
-          <li><strong><code>clean</code></strong>: Deletes the files created during the previous build tasks (e.g. files in the <code>build</code> folder).<br>
-            e.g. <code>./gradlew clean</code></li>
+          <li><strong><code v-pre="">clean</code></strong>: Deletes the files created during the previous build tasks (e.g. files in the <code v-pre="">build</code> folder).<br>
+            e.g. <code v-pre="">./gradlew clean</code></li>
         </ul>
         <box>
-          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> <strong>You can use <code>clean</code> to prevent Gradle from skipping tasks</strong>: When running a Gradle task, Gradle will try to figure out if the task needs running at all. If Gradle determines that the output of the task will be same as the previous time, it will not run the task. For example, it will not build the JAR file again if the relevant source files have not changed since the last time the JAR file was built. If you want to force Gradle to run a task, you can combine that task with <code>clean</code> (e.g., <code>./gradlew clean shadowJar</code>). Once the build files have been <code>clean</code> ed, Gradle has no way to determine if the output will be same as before, and it will have no choice but to execute the task.</p>
+          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> <strong>You can use <code v-pre="">clean</code> to prevent Gradle from skipping tasks</strong>: When running a Gradle task, Gradle will try to figure out if the task needs running at all. If Gradle determines that the output of the task will be same as the previous time, it will not run the task. For example, it will not build the JAR file again if the relevant source files have not changed since the last time the JAR file was built. If you want to force Gradle to run a task, you can combine that task with <code v-pre="">clean</code> (e.g., <code v-pre="">./gradlew clean shadowJar</code>). Once the build files have been <code v-pre="">clean</code> ed, Gradle has no way to determine if the output will be same as before, and it will have no choice but to execute the task.</p>
         </box>
         <h3 id="running-checkstyle">Running Checkstyle<a class="fa fa-anchor" href="#running-checkstyle" onclick="event.stopPropagation()"></a></h3>
-        <p><code>gradlew checkstyleMain checkstyleTest</code>: runs main code and test code complies with the Checkstyle rules. <br></p>
+        <p><code v-pre="">gradlew checkstyleMain checkstyleTest</code>: runs main code and test code complies with the Checkstyle rules. <br></p>
         <p><strong>Resources</strong>:</p>
         <ul>
           <li><a href="/guides/tutorials/checkstyle.html">Checkstyle Tutorial</a></li>
           <li><a href="https://docs.gradle.org/current/userguide/checkstyle_plugin.html">Gradle documentation for the Checkstyle plugin</a></li>
         </ul>
         <h3 id="running-tests">Running tests<a class="fa fa-anchor" href="#running-tests" onclick="event.stopPropagation()"></a></h3>
-        <p>Run the <code>test</code> task to run the tests in the project.</p>
+        <p>Run the <code v-pre="">test</code> task to run the tests in the project.</p>
         <p><strong>Resources</strong>:</p>
         <ul>
           <li><a href="https://docs.gradle.org/current/userguide/java_testing.html#using_junit5">Gradle documentation for JUnit</a></li>
@@ -131,7 +131,7 @@
           <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> <strong>What's a <em>fat</em> JAR? Why do we need one?</strong> If you package only your own class files into the JAR file, it will not work properly unless the user has all the other JAR files (i.e. third-party libraries) your classes depend on, which is rather inconvenient. Therefore, you should package all dependencies into a single JAR files, creating what is also known as a <em>fat</em> JAR file.
           </p>
         </box>
-        <p>The task <strong><code>shadowJar</code></strong> creates the JAR file in the <code>build/libs</code> folder. By default, it produces a jar file with the name in the format of <code>{archiveBaseName}-{archiveVersion}.jar</code> and put it in the <code>builds/libs</code> folder. These properties can be set in the <code>build.gradle</code> file.</p>
+        <p>The task <strong><code v-pre="">shadowJar</code></strong> creates the JAR file in the <code v-pre="">build/libs</code> folder. By default, it produces a jar file with the name in the format of <code v-pre="">{archiveBaseName}-{archiveVersion}.jar</code> and put it in the <code v-pre="">builds/libs</code> folder. These properties can be set in the <code v-pre="">build.gradle</code> file.</p>
         <p><strong>Resources</strong>:</p>
         <ul>
           <li><a href="https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow">Gradle documentation for the Shadow plugin</a></li>
@@ -140,15 +140,15 @@
         <h3 id="compiling">Compiling<a class="fa fa-anchor" href="#compiling" onclick="event.stopPropagation()"></a></h3>
         <p>There is no need to run these Gradle tasks manually as they are called automatically by other relevant Gradle tasks.</p>
         <ul>
-          <li><strong><code>compileJava</code></strong>: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes. See <code>build.gradle</code> → <code>allprojects</code> → <code>dependencies</code> → <code>compile</code> for the list of dependencies required.</li>
-          <li><strong><code>compileTestJava</code></strong>: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes. See <code>build.gradle</code> → <code>allprojects</code> → <code>dependencies</code> → <code>testCompile</code> for the list of dependencies required.</li>
+          <li><strong><code v-pre="">compileJava</code></strong>: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes. See <code v-pre="">build.gradle</code> → <code v-pre="">allprojects</code> → <code v-pre="">dependencies</code> → <code v-pre="">compile</code> for the list of dependencies required.</li>
+          <li><strong><code v-pre="">compileTestJava</code></strong>: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes. See <code v-pre="">build.gradle</code> → <code v-pre="">allprojects</code> → <code v-pre="">dependencies</code> → <code v-pre="">testCompile</code> for the list of dependencies required.</li>
         </ul>
 
         <h2 id="managing-dependencies">Managing dependencies<a class="fa fa-anchor" href="#managing-dependencies" onclick="event.stopPropagation()"></a></h2>
-        <p>Gradle can automate the management of dependencies to third-party libraries. You just need to add the dependency into the <code>build.gradle</code> file and Gradle will do the rest. For example, here is how the JUnit library has been added to the dependencies in the <code>build.gradle</code>:</p>
-        <pre><code class="hljs groovy"><span>dependencies {<br></span><span>    testImplementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.junit.jupiter'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'junit-jupiter-api'</span>, <span class="hljs-string">version:</span> <span class="hljs-string">'5.5.0'</span><br></span><span>}<br></span></code></pre>
-        <p>For example, to add the Natty (a third-party library used for parsing natural lanaguage dates e.g., <code>today</code>), you simply have to add the following line to the <code>dependencies</code> section of the <code>build.gradle</code> file.</p>
-        <pre><code class="hljs groovy"><span>compile <span class="hljs-string">group:</span> <span class="hljs-string">'com.joestelmach'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'natty'</span>, <span class="hljs-string">version:</span> <span class="hljs-string">'0.6'</span><br></span></code></pre>
+        <p>Gradle can automate the management of dependencies to third-party libraries. You just need to add the dependency into the <code v-pre="">build.gradle</code> file and Gradle will do the rest. For example, here is how the JUnit library has been added to the dependencies in the <code v-pre="">build.gradle</code>:</p>
+        <pre><code class="hljs groovy" v-pre=""><span>dependencies {<br></span><span>    testImplementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.junit.jupiter'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'junit-jupiter-api'</span>, <span class="hljs-string">version:</span> <span class="hljs-string">'5.5.0'</span><br></span><span>}<br></span></code></pre>
+        <p>For example, to add the Natty (a third-party library used for parsing natural lanaguage dates e.g., <code v-pre="">today</code>), you simply have to add the following line to the <code v-pre="">dependencies</code> section of the <code v-pre="">build.gradle</code> file.</p>
+        <pre><code class="hljs groovy" v-pre=""><span>compile <span class="hljs-string">group:</span> <span class="hljs-string">'com.joestelmach'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'natty'</span>, <span class="hljs-string">version:</span> <span class="hljs-string">'0.6'</span><br></span></code></pre>
         <p>Tip: Most third-party libararies specify how to add it as a Gradle dependency (<a href="https://mvnrepository.com/artifact/com.joestelmach/natty/0.6">example</a>).</p>
 
         <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
@@ -194,7 +194,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

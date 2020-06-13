@@ -30,7 +30,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -51,12 +51,12 @@
             <p>Go to your generated documentation site on GitHub using Chrome.</p>
           </li>
           <li>
-            <p>Within Chrome, click on the <code>Print</code> option in Chrome’s menu.</p>
+            <p>Within Chrome, click on the <code v-pre="">Print</code> option in Chrome’s menu.</p>
           </li>
           <li>
-            <p>Set the destination to <code>Save as PDF</code>, then click <code>Save</code> to save a copy of the file in PDF format.<br>
+            <p>Set the destination to <code v-pre="">Save as PDF</code>, then click <code v-pre="">Save</code> to save a copy of the file in PDF format.<br>
               <mark>For best results, use the settings indicated in the screenshot below.</mark></p>
-            <p><a href="/guides/tutorials/images/chrome_save_as_pdf.png" target="_self"><img src="/guides/tutorials/images/chrome_save_as_pdf.png" alt class="img-fluid"></a></p>
+            <p><a href="/guides/tutorials/images/chrome_save_as_pdf.png" target="_self"><img src="/guides/tutorials/images/chrome_save_as_pdf.png" alt="" class="img-fluid"></a></p>
           </li>
         </ol>
       </div>
@@ -66,7 +66,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

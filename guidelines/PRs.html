@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -41,11 +41,12 @@
       <div id="content-wrapper">
         <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
         <h1 id="guidelines-for-working-with-prs">Guidelines for working with PRs<a class="fa fa-anchor" href="#guidelines-for-working-with-prs" onclick="event.stopPropagation()"></a></h1>
+
         <h2 id="selecting-what-to-work-on">Selecting what to work on<a class="fa fa-anchor" href="#selecting-what-to-work-on" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><strong>If submitting a PR for an existing issue,</strong>
             <ul>
-              <li>It's best for first time contributors to start by fixing an issue specifically labelled for first timers e.g., <code>d.FirstTimers</code>, <code>good first issue</code>.</li>
+              <li>It's best for first time contributors to start by fixing an issue specifically labelled for first timers e.g., <code v-pre="">d.FirstTimers</code>, <code v-pre="">good first issue</code>.</li>
               <li>It's best to post in the issue to ask if it is OK for you to submit a PR for that issue and wait for approval.</li>
               <li>Check the issue discussion thread to see if there are <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Some activity during last seven days</span><em>active</em></span> PRs for that issue. You can offer to PR for an issue that has <em>stalled</em> PRs i.e., there is a PRs submitted for that issue but the PR author seems to have stopped working on it.</li>
             </ul>
@@ -101,16 +102,16 @@
           <p><span class="badge badge-dark bigger-level0"> 0.2</span> <strong>Clone the fork to your computer.</strong></p>
           <p><span class="badge badge-dark bigger-level0"> 0.3</span> <strong>Set up the dev environment as described in the project docs.</strong> Confirm the set up is correct.</p>
         </div>
-        <p><span class="badge badge-dark bigger-level0">Step 1</span> <strong>Create a branch from the <code>master</code> branch</strong>, following the naming convention given.</p>
+        <p><span class="badge badge-dark bigger-level0">Step 1</span> <strong>Create a branch from the <code v-pre="">master</code> branch</strong>, following the naming convention given.</p>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized=""><template slot="_header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> coding standards » Git » <strong>Branch naming conventions</strong></p>
             </template>
             <div>
               <p>Follow these rules to improve consistency:</p>
               <ul>
-                <li>Use a meaningful name consisting of some relevant keywords, in the <em>kebab case</em> format e.g., <code>refactor-ui-tests</code>.</li>
-                <li>If the branch is related to an issue, use the format <code>issueNumber-some-keywords-from-issue-title</code> e.g., <code>1234-ui-freeze-error</code></li>
+                <li>Use a meaningful name consisting of some relevant keywords, in the <em>kebab case</em> format e.g., <code v-pre="">refactor-ui-tests</code>.</li>
+                <li>If the branch is related to an issue, use the format <code v-pre="">issueNumber-some-keywords-from-issue-title</code> e.g., <code v-pre="">1234-ui-freeze-error</code></li>
               </ul>
             </div>
           </panel>
@@ -122,7 +123,7 @@
           <li>Commit message format</li>
         </ul>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized=""><template slot="_header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Conventions » Git » <strong>Commit message subject</strong></p>
             </template>
             <div>
@@ -137,38 +138,38 @@
               <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong><mark>Use the imperative mood in the subject line.</mark></strong></p>
               <ul>
                 <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code>Add README.md</code>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre="">Add README.md</code>
                 </li>
                 <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>Added README.md</code>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre="">Added README.md</code>
                 </li>
                 <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>Adding README.md</code>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre="">Adding README.md</code>
                 </li>
               </ul>
               <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Capitalize the first letter of the subject line.</strong></p>
               <ul>
                 <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code>Move index.html file to root</code>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre="">Move index.html file to root</code>
                 </li>
                 <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>move index.html file to root</code>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre="">move index.html file to root</code>
                 </li>
               </ul>
               <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Do not end the subject line with a period.</strong></p>
               <ul>
                 <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code>Update sample data</code>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre="">Update sample data</code>
                 </li>
                 <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>Update sample data.</code>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre="">Update sample data.</code>
                 </li>
               </ul>
               <box type="tip" seamless>
-                <p>You can use <code>scope: change</code> format (when applicable).</p>
+                <p>You can use <code v-pre="">scope: change</code> format (when applicable).</p>
                 <ul>
-                  <li>e.g. <code>Person class: remove static imports</code><br>
-                    <code>Unit tests: remove blank lines</code></li>
+                  <li>e.g. <code v-pre="">Person class: remove static imports</code><br>
+                    <code v-pre="">Unit tests: remove blank lines</code></li>
                 </ul>
               </box>
             </div>
@@ -176,7 +177,7 @@
         </div>
         <p></p>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized=""><template slot="_header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Conventions » Git » <strong>Commit message body</strong></p>
             </template>
             <div>
@@ -187,20 +188,20 @@
                 <li><strong>Use blank lines to separate paragraphs.</strong></li>
               </ul>
               <p>Example: A commit message for a commit that is part of a multi-commit PR:</p>
-              <pre><code class="hljs"><span>Unify variations of toSet() methods<br></span><span><br></span><span>There are several methods that convert a collection to a set. In some<br></span><span>cases the conversion is in-lined as a code block in another method.<br></span><span><br></span><span>Unifying all those duplicated code improves the code quality.<br></span><span><br></span><span>As a step towards such unification, let's extract those duplicated code<br></span><span>blocks into separate methods in their respective classes. Doing so will<br></span><span>make the subsequent unification easier.<br></span></code></pre>
+              <pre><code class="hljs" v-pre=""><span>Unify variations of toSet() methods<br></span><span><br></span><span>There are several methods that convert a collection to a set. In some<br></span><span>cases the conversion is in-lined as a code block in another method.<br></span><span><br></span><span>Unifying all those duplicated code improves the code quality.<br></span><span><br></span><span>As a step towards such unification, let's extract those duplicated code<br></span><span>blocks into separate methods in their respective classes. Doing so will<br></span><span>make the subsequent unification easier.<br></span></code></pre>
               <box type="tip" seamless>
                 <p>Tip for SourceTree users: To help you keep the commit message width to a 72 characters:</p>
                 <ol>
-                  <li>Choose <code>Tools</code> -&gt; <code>Options</code>.</li>
-                  <li>Click on the <code>General</code> tab, scroll down to the <code>Commit settings</code> section.</li>
-                  <li>Tick the <code>Display a column guide at commit message at [72] characters</code> option.
+                  <li>Choose <code v-pre="">Tools</code> -&gt; <code v-pre="">Options</code>.</li>
+                  <li>Click on the <code v-pre="">General</code> tab, scroll down to the <code v-pre="">Commit settings</code> section.</li>
+                  <li>Tick the <code v-pre="">Display a column guide at commit message at [72] characters</code> option.
                   </li>
                 </ol>
               </box>
 
               <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Use bullet points as necessary.</strong> Instead of relying entirely on paragraphs of text, use other constructs such as bullet lists when it helps.</p>
               <p>Example: A commit message for a bug fix:</p>
-              <pre><code class="hljs"><span>Find command: make matching case insensitive<br></span><span><br></span><span>Find command is case sensitive.<br></span><span><br></span><span>A case insensitive find is more user-friendly because users cannot be<br></span><span>expected to remember the exact case of the keywords.<br></span><span><br></span><span>Let's,<br></span><span>* update the search algorithm to use case-insensitive matching<br></span><span>* add a script to migrate stress tests to the new format<br></span></code></pre>
+              <pre><code class="hljs" v-pre=""><span>Find command: make matching case insensitive<br></span><span><br></span><span>Find command is case sensitive.<br></span><span><br></span><span>A case insensitive find is more user-friendly because users cannot be<br></span><span>expected to remember the exact case of the keywords.<br></span><span><br></span><span>Let's,<br></span><span>* update the search algorithm to use case-insensitive matching<br></span><span>* add a script to migrate stress tests to the new format<br></span></code></pre>
               <p><span><span class="badge badge-pill badge-warning text-white"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Explain WHAT, WHY, not HOW</strong>.</p>
               <ul>
                 <li>
@@ -215,13 +216,13 @@
                 </li>
               </ul>
               <p><span><span class="badge badge-pill badge-success"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Structure the body as follows</strong>:</p>
-              <pre><code class="hljs"><span>{current situation} -- use present tense<br></span><span><br></span><span>{why it needs to change}<br></span><span><br></span><span>{what is being done about it} -- use imperative mood<br></span><span><br></span><span>{why it is done that way}<br></span><span><br></span><span>{any other relevant info}<br></span></code></pre>
+              <pre><code class="hljs" v-pre=""><span>{current situation} -- use present tense<br></span><span><br></span><span>{why it needs to change}<br></span><span><br></span><span>{what is being done about it} -- use imperative mood<br></span><span><br></span><span>{why it is done that way}<br></span><span><br></span><span>{any other relevant info}<br></span></code></pre>
               <ul>
                 <li>Avoid terms such as 'currently', 'originally' when describing the current situation. They are implied.</li>
-                <li>The word <code>Let's</code> can be used to indicate the beginning of the section that describes the change done in the commit.</li>
+                <li>The word <code v-pre="">Let's</code> can be used to indicate the beginning of the section that describes the change done in the commit.</li>
               </ul>
               <p>Example: A commit message for a code quality refactoring:</p>
-              <pre><code class="hljs"><span>Person attributes classes: extract a parent class PersonAttribute<br></span><span><br></span><span>Person attribute classes (e.g. Name, Address, Age etc.) have some common<br></span><span>behaviors (e.g. isValid()).<br></span><span><br></span><span>The common behaviors across person attribute classes cause code duplication.<br></span><span><br></span><span>Extracting the common behavior into a super class allows us to use<br></span><span>polymorphism when dealing with person attributes. For example, validity<br></span><span>checking can be done for all attributes of a person in one loop.<br></span><span><br></span><span>Let's pull up behaviors common to all person attribute classes into a new<br></span><span>parent class named PersonAttribute.<br></span><span><br></span><span>Using inheritance is preferable over composition in this situation<br></span><span>because the common behaviors are not composable.<br></span><span><br></span><span>Refer to this S/O discussion on dealing with attributes<br></span><span>http://stackoverflow.com/some/question<br></span></code></pre>
+              <pre><code class="hljs" v-pre=""><span>Person attributes classes: extract a parent class PersonAttribute<br></span><span><br></span><span>Person attribute classes (e.g. Name, Address, Age etc.) have some common<br></span><span>behaviors (e.g. isValid()).<br></span><span><br></span><span>The common behaviors across person attribute classes cause code duplication.<br></span><span><br></span><span>Extracting the common behavior into a super class allows us to use<br></span><span>polymorphism when dealing with person attributes. For example, validity<br></span><span>checking can be done for all attributes of a person in one loop.<br></span><span><br></span><span>Let's pull up behaviors common to all person attribute classes into a new<br></span><span>parent class named PersonAttribute.<br></span><span><br></span><span>Using inheritance is preferable over composition in this situation<br></span><span>because the common behaviors are not composable.<br></span><span><br></span><span>Refer to this S/O discussion on dealing with attributes<br></span><span>http://stackoverflow.com/some/question<br></span></code></pre>
               <box type="info">
                 <p>Refer to the article <em><a href="http://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></em> for more advice on writing good commit messages.
                 </p>
@@ -234,70 +235,141 @@
           <li>guidelines for commit organization</li>
         </ul>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized=""><template slot="_header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » <strong>Commit organization</strong></p>
             </template>
             <div>
-              <h1 id="guidelines-for-commit-organization">Guidelines for commit organization<a class="fa fa-anchor" href="#guidelines-for-commit-organization" onclick="event.stopPropagation()"></a></h1>
-              <ul>
-                <li>This guide <strong>does not cover guidelines for commit messages</strong>, as they are covered <a href="/guides/conventions/git.html">here</a>.</li>
-                <li>This guide <strong>applies to commits that will appear in the final version history</strong>. More specifically,
-                  <ul>
-                    <li>If the commits are meant to be <em>squashed</em> before merging, the guidelines apply to the squashed version.</li>
-                    <li>If your project merges PRs/branches without squashing, the guidelines apply to each individual commit.</li>
-                  </ul>
-                </li>
-              </ul>
+              <h1 id="working-with-git">Working with Git<a class="fa fa-anchor" href="#working-with-git" onclick="event.stopPropagation()"></a></h1>
 
-              <box type="secondary" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-quote-left"></span></template>
-                <blockquote>
-                  <p>&quot;Ask a programmer to review 10 lines of code, he'll find 10 issues. Ask him to do 500 lines and he'll say it
-                    looks good.&quot; --[<a href="https://twitter.com/girayozil/status/306836785739210752">source</a>]
+              <span id="section-organizing-commits">
+                <h2 id="organizing-commits">Organizing commits<a class="fa fa-anchor" href="#organizing-commits" onclick="event.stopPropagation()"></a></h2>
+                <p>Commits in a branch or a PR is said to be <em>well-organized</em> if they have the following qualities:</p>
+                <ul>
+                  <li>
+                    <p><strong>Each commit contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
+                      For example, if the commit message says <code v-pre="">Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code v-pre="">delete()</code> to <code v-pre="">Address</code> class only; it should also contain the deletion of <code v-pre="">delete()</code> from the <code v-pre="">Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                  </li>
+                  <li>
+                    <p><strong>Each commit has a <em>well-written</em> commit message</strong> i.e., it follows <a href="/guides/conventions/git.html">these guidelines</a>.</p>
+                  </li>
+                  <li>
+                    <p><strong>Commits are ordered in a bottom-up fashion</strong>, each commit building on top of the previous one towards the end goal of the PR.</p>
+                    <box type="info" seamless>
+                      <p>Rationale: Reviewers should be able to review one commit at a time.
+                      </p>
+                    </box>
+                  </li>
+                  <li>
+                    <p><strong>Ideally, a commit does not modify more than 100 lines of code.</strong></p>
+                    <box type="info" seamless>
+                      <p>Rationale: Bigger commits are harder to review.</p>
+                      <p><span aria-hidden="true" class="fas fa-quote-left"></span> &quot;Ask a programmer to review 10 lines of code, he'll find 10 issues. Ask him to do 500 lines and he'll say it
+                        looks good.&quot; --[<a href="https://twitter.com/girayozil/status/306836785739210752">source</a>]
+                      </p>
+                    </box>
+                    <p>Commits containing <em><em>mechanical changes</em></em> (e.g. automated refactorings, cut-paste type code movements, file renames, etc.),</p>
+                    <ul>
+                      <li>should include only one <em>mechanical change</em> per commit e.g., rename a single variable across the code base.</li>
+                      <li>should not contain other non-mechanical changes, unless unavoidable.</li>
+                      <li>can exceed 100 LoC.</li>
+                      <li>should have the description of the change in the commit message (so that the results can be reproduced).</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p><strong>Every commit pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
+                    <box type="info" seamless>
+                      <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code v-pre="">git bisect</code> for locating bugs.
+                      </p>
+                    </box>
+                  </li>
+                </ul>
+                <box type="info">
+                  <p><a href="https://github.com/se-edu/addressbook-level4/pull/237">Here</a> is an example PR of commits that are organized as described above.
                   </p>
-                </blockquote>
-              </box>
+                </box>
+                <p><strong>Refactor commits before pushing.</strong> It is unlikely that you can produce a series of commits that meet all the above criteria in the first try. In such cases, refactor commits until they meet the criteria. <a href="http://stackoverflow.com/a/1186549">This S/O post</a> describes how to refactor commits (even easier to do with visual tools such as SourceTree -- see <a href="https://www.youtube.com/watch?v=mBCJCuU3p7I">this video</a>).</p>
+              </span>
 
-              <ul>
-                <li>
-                  <p><strong>Each commit should contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
-                    For example, if the commit message says <code>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code>delete()</code> to <code>Address</code> class only; it should also contain the deletion of <code>delete()</code> from the <code>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
-                </li>
-                <li>
-                  <p><strong>Commits should be ordered in a bottom-up fashion</strong>, each commit building on top of the previous one towards the end goal of the PR.</p>
-                  <box type="info" seamless>
-                    <p>Rationale: Reviewers should be able to review one commit at a time.
-                    </p>
-                  </box>
-                </li>
-                <li>
-                  <p><strong>Ideally, a commit should not modify more than 100 lines of code.</strong></p>
-                  <box type="info" seamless>
-                    <p>Rationale: Bigger commits are harder to review.
-                    </p>
-                  </box>
-                  <p>Commits containing <em><em>mechanical changes</em></em> (e.g. automated refactorings, cut-paste type code movements, file renames, etc.),</p>
+              <span id="section-merging-branches">
+                <h2 id="merging-branches">Merging branches<a class="fa fa-anchor" href="#merging-branches" onclick="event.stopPropagation()"></a></h2>
+                <box type="info" seamless>
+                  <p>When merging branch, the aim is to keep the version history neat so that it is easy to do things such as the following:</p>
                   <ul>
-                    <li>should include only one <em>mechanical change</em> per commit e.g., rename a single variable across the code base.</li>
-                    <li>should not contain other non-mechanical changes, unless unavoidable.</li>
-                    <li>can exceed 100 LoC.</li>
-                    <li>should have the description of the change in the commit message (so that the results can be reproduced).</li>
+                    <li>Find which commit introduced a bug using <code v-pre="">git bisect</code>.</li>
+                    <li>Undo a specific change by reverting a commit in the history without breaking anything else.</li>
                   </ul>
-                </li>
-                <li>
-                  <p><strong>Every commit should pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
-                  <box type="info" seamless>
-                    <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code>git bisect</code> for locating bugs.
+                </box>
+                <ul>
+                  <li><strong>The default strategy is to do a <em>squash-merge</em>.</strong> This is suitable when the branch tackles one task but multiple commits that are not well-organized (as per the definition of 'well-organized' in the panel below).</li>
+                </ul>
+                <div class="indented-level2">
+                  <panel minimized=""><template slot="_header">
+                      <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » Working with git » <strong>Organizing commits</strong></p>
+                    </template>
+                    <div>
+                      <h2 id="organizing-commits-2">Organizing commits<a class="fa fa-anchor" href="#organizing-commits-2" onclick="event.stopPropagation()"></a></h2>
+                      <p>Commits in a branch or a PR is said to be <em>well-organized</em> if they have the following qualities:</p>
+                      <ul>
+                        <li>
+                          <p><strong>Each commit contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
+                            For example, if the commit message says <code v-pre="">Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code v-pre="">delete()</code> to <code v-pre="">Address</code> class only; it should also contain the deletion of <code v-pre="">delete()</code> from the <code v-pre="">Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                        </li>
+                        <li>
+                          <p><strong>Each commit has a <em>well-written</em> commit message</strong> i.e., it follows <a href="/guides/conventions/git.html">these guidelines</a>.</p>
+                        </li>
+                        <li>
+                          <p><strong>Commits are ordered in a bottom-up fashion</strong>, each commit building on top of the previous one towards the end goal of the PR.</p>
+                          <box type="info" seamless>
+                            <p>Rationale: Reviewers should be able to review one commit at a time.
+                            </p>
+                          </box>
+                        </li>
+                        <li>
+                          <p><strong>Ideally, a commit does not modify more than 100 lines of code.</strong></p>
+                          <box type="info" seamless>
+                            <p>Rationale: Bigger commits are harder to review.</p>
+                            <p><span aria-hidden="true" class="fas fa-quote-left"></span> &quot;Ask a programmer to review 10 lines of code, he'll find 10 issues. Ask him to do 500 lines and he'll say it
+                              looks good.&quot; --[<a href="https://twitter.com/girayozil/status/306836785739210752">source</a>]
+                            </p>
+                          </box>
+                          <p>Commits containing <em><em>mechanical changes</em></em> (e.g. automated refactorings, cut-paste type code movements, file renames, etc.),</p>
+                          <ul>
+                            <li>should include only one <em>mechanical change</em> per commit e.g., rename a single variable across the code base.</li>
+                            <li>should not contain other non-mechanical changes, unless unavoidable.</li>
+                            <li>can exceed 100 LoC.</li>
+                            <li>should have the description of the change in the commit message (so that the results can be reproduced).</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <p><strong>Every commit pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
+                          <box type="info" seamless>
+                            <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code v-pre="">git bisect</code> for locating bugs.
+                            </p>
+                          </box>
+                        </li>
+                      </ul>
+                      <box type="info">
+                        <p><a href="https://github.com/se-edu/addressbook-level4/pull/237">Here</a> is an example PR of commits that are organized as described above.
+                        </p>
+                      </box>
+                      <p><strong>Refactor commits before pushing.</strong> It is unlikely that you can produce a series of commits that meet all the above criteria in the first try. In such cases, refactor commits until they meet the criteria. <a href="http://stackoverflow.com/a/1186549">This S/O post</a> describes how to refactor commits (even easier to do with visual tools such as SourceTree -- see <a href="https://www.youtube.com/watch?v=mBCJCuU3p7I">this video</a>).</p>
+                    </div>
+                  </panel>
+                </div>
+                <p></p>
+                <ul>
+                  <li>
+                    <p><strong>Use a <em>merge commit</em></strong> if the commits are well-organized, and the branch tackles only one task. In this case the commit message of the merge commit should explain the full task.</p>
+                  </li>
+                  <li>
+                    <p><strong>Use a <em>rebase-merge</em></strong> if the commits are well-organized and each commit is an independent task (as opposed to steps or a bigger tasks).</p>
+                  </li>
+                  <li>
+                    <p><strong>In other cases</strong>, consider reorganizing/splitting the branch to match one of the above.
                     </p>
-                  </box>
-                </li>
-                <li>
-                  <p><strong>Refactor commits before pushing.</strong> It is unlikely that you can produce a series of commits that meet all the above criteria in the first try. In such cases, refactor commits until they meet the criteria. <a href="http://stackoverflow.com/a/1186549">This S/O post</a> describes how to refactor commits (even easier to do with visual tools such as SourceTree -- see <a href="https://www.youtube.com/watch?v=mBCJCuU3p7I">this video</a>).</p>
-                </li>
-              </ul>
-              <box type="info">
-                <p><a href="https://github.com/se-edu/addressbook-level4/pull/237">Here</a> is an example PR of commits that are organized as described above.
-                </p>
-              </box>
+                  </li>
+                </ul>
+              </span>
             </div>
           </panel>
         </div>
@@ -306,7 +378,7 @@
           <li>PR scoping guidelines given above</li>
         </ul>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized=""><template slot="_header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> This document » <strong>Scoping a PR</strong></p>
             </template>
             <div>
@@ -350,7 +422,7 @@
           </panel>
         </div>
         <p></p>
-        <p><span class="badge badge-dark bigger-level0">Step 3</span> <strong>Sync your branch with the upstream master</strong>, if the <code>master</code> branch advances while you work on your code (i.e., pull upstream <code>master</code>, merge to your branch).</p>
+        <p><span class="badge badge-dark bigger-level0">Step 3</span> <strong>Sync your branch with the upstream master</strong>, if the <code v-pre="">master</code> branch advances while you work on your code (i.e., pull upstream <code v-pre="">master</code>, merge to your branch).</p>
         <p><span class="badge badge-dark bigger-level0">Step 4</span> <strong>Create a PR</strong> when the code is ready, as follows:</p>
         <ol>
           <li>Run code style checks (if any) to ensure the code complies with the project standards.</li>
@@ -363,7 +435,7 @@
               <li>it passes <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Continuous Integration (Travis, AppVeyor, GitHub Actions, etc.)</span>CI</span> checks, if any.</li>
             </ul>
           </li>
-          <li>Remove the 'draft' status of the PR. Post a <code>ready for review</code> comment for good measure.</li>
+          <li>Remove the 'draft' status of the PR. Post a <code v-pre="">ready for review</code> comment for good measure.</li>
         </ol>
         <p><span class="badge badge-dark bigger-level0">Step 5</span> <strong>Revise as per reviews</strong> until the PR is merged.</p>
         <ul>
@@ -378,7 +450,7 @@
         </ul>
 
         <h2 id="reviewing-a-pr">Reviewing a PR<a class="fa fa-anchor" href="#reviewing-a-pr" onclick="event.stopPropagation()"></a></h2>
-        <panel type="info" expanded><template slot="_header">
+        <panel type="info" expanded=""><template slot="_header">
             <p><strong>General guidelines for reviewers</strong></p>
           </template>
           <box type="info" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-book-open"></span></template>
@@ -396,7 +468,7 @@
               </ul>
             </li>
             <li><mark><strong>It's best to phrase comments as questions</strong></mark>, especially if you are a peer reviewer.<br>
-              e.g., <code>Should this be extracted out?</code> rather than <code>Extract this out</code> or <code>This should be extracted out</code>.</li>
+              e.g., <code v-pre="">Should this be extracted out?</code> rather than <code v-pre="">Extract this out</code> or <code v-pre="">This should be extracted out</code>.</li>
             <li><strong>Feel free to ask for more info from the author</strong>, to help you understand the code/design. For example, you can ask why the author chose to write the code in a specific way.</li>
             <li><strong>Feel free to compliment the author when appropriate</strong><br>
               <span class="dimmed">e.g., <em>hey, I like how clean this bit of code is</em> 👍</span></li>
@@ -404,7 +476,7 @@
           </ul>
         </panel>
 
-        <panel type="info" expanded><template slot="_header">
+        <panel type="info" expanded=""><template slot="_header">
             <p><strong>General guidelines for authors</strong></p>
           </template>
           <ul>
@@ -427,6 +499,95 @@
         <ul>
           <li><strong>Before approving a PR, <mark>confirm that all your previous comments have been addressed</mark>.</strong></li>
         </ul>
+
+        <h2 id="merging-prs">Merging PRs<a class="fa fa-anchor" href="#merging-prs" onclick="event.stopPropagation()"></a></h2>
+        <p>Follow the convention for Git branch merging, as given in the panel below.</p>
+        <div class="indented-level2">
+          <panel minimized=""><template slot="_header">
+              <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » Working with Git » <strong>Branch merging strategy</strong></p>
+            </template>
+            <div>
+              <h2 id="merging-branches-2">Merging branches<a class="fa fa-anchor" href="#merging-branches-2" onclick="event.stopPropagation()"></a></h2>
+              <box type="info" seamless>
+                <p>When merging branch, the aim is to keep the version history neat so that it is easy to do things such as the following:</p>
+                <ul>
+                  <li>Find which commit introduced a bug using <code v-pre="">git bisect</code>.</li>
+                  <li>Undo a specific change by reverting a commit in the history without breaking anything else.</li>
+                </ul>
+              </box>
+              <ul>
+                <li><strong>The default strategy is to do a <em>squash-merge</em>.</strong> This is suitable when the branch tackles one task but multiple commits that are not well-organized (as per the definition of 'well-organized' in the panel below).</li>
+              </ul>
+              <div class="indented-level2">
+                <panel minimized=""><template slot="_header">
+                    <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » Working with git » <strong>Organizing commits</strong></p>
+                  </template>
+                  <div>
+                    <h2 id="organizing-commits-3">Organizing commits<a class="fa fa-anchor" href="#organizing-commits-3" onclick="event.stopPropagation()"></a></h2>
+                    <p>Commits in a branch or a PR is said to be <em>well-organized</em> if they have the following qualities:</p>
+                    <ul>
+                      <li>
+                        <p><strong>Each commit contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
+                          For example, if the commit message says <code v-pre="">Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code v-pre="">delete()</code> to <code v-pre="">Address</code> class only; it should also contain the deletion of <code v-pre="">delete()</code> from the <code v-pre="">Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                      </li>
+                      <li>
+                        <p><strong>Each commit has a <em>well-written</em> commit message</strong> i.e., it follows <a href="/guides/conventions/git.html">these guidelines</a>.</p>
+                      </li>
+                      <li>
+                        <p><strong>Commits are ordered in a bottom-up fashion</strong>, each commit building on top of the previous one towards the end goal of the PR.</p>
+                        <box type="info" seamless>
+                          <p>Rationale: Reviewers should be able to review one commit at a time.
+                          </p>
+                        </box>
+                      </li>
+                      <li>
+                        <p><strong>Ideally, a commit does not modify more than 100 lines of code.</strong></p>
+                        <box type="info" seamless>
+                          <p>Rationale: Bigger commits are harder to review.</p>
+                          <p><span aria-hidden="true" class="fas fa-quote-left"></span> &quot;Ask a programmer to review 10 lines of code, he'll find 10 issues. Ask him to do 500 lines and he'll say it
+                            looks good.&quot; --[<a href="https://twitter.com/girayozil/status/306836785739210752">source</a>]
+                          </p>
+                        </box>
+                        <p>Commits containing <em><em>mechanical changes</em></em> (e.g. automated refactorings, cut-paste type code movements, file renames, etc.),</p>
+                        <ul>
+                          <li>should include only one <em>mechanical change</em> per commit e.g., rename a single variable across the code base.</li>
+                          <li>should not contain other non-mechanical changes, unless unavoidable.</li>
+                          <li>can exceed 100 LoC.</li>
+                          <li>should have the description of the change in the commit message (so that the results can be reproduced).</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <p><strong>Every commit pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
+                        <box type="info" seamless>
+                          <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code v-pre="">git bisect</code> for locating bugs.
+                          </p>
+                        </box>
+                      </li>
+                    </ul>
+                    <box type="info">
+                      <p><a href="https://github.com/se-edu/addressbook-level4/pull/237">Here</a> is an example PR of commits that are organized as described above.
+                      </p>
+                    </box>
+                    <p><strong>Refactor commits before pushing.</strong> It is unlikely that you can produce a series of commits that meet all the above criteria in the first try. In such cases, refactor commits until they meet the criteria. <a href="http://stackoverflow.com/a/1186549">This S/O post</a> describes how to refactor commits (even easier to do with visual tools such as SourceTree -- see <a href="https://www.youtube.com/watch?v=mBCJCuU3p7I">this video</a>).</p>
+                  </div>
+                </panel>
+              </div>
+              <p></p>
+              <ul>
+                <li>
+                  <p><strong>Use a <em>merge commit</em></strong> if the commits are well-organized, and the branch tackles only one task. In this case the commit message of the merge commit should explain the full task.</p>
+                </li>
+                <li>
+                  <p><strong>Use a <em>rebase-merge</em></strong> if the commits are well-organized and each commit is an independent task (as opposed to steps or a bigger tasks).</p>
+                </li>
+                <li>
+                  <p><strong>In other cases</strong>, consider reorganizing/splitting the branch to match one of the above.</p>
+                </li>
+              </ul>
+            </div>
+          </panel>
+        </div>
+        <p></p>
       </div>
 
 
@@ -441,6 +602,7 @@
               <a class="nav-link py-1" href="#scoping-a-pr">Scoping a PR&#x200E;</a>
               <a class="nav-link py-1" href="#submitting-a-pr">Submitting a PR&#x200E;</a>
               <a class="nav-link py-1" href="#reviewing-a-pr">Reviewing a PR&#x200E;</a>
+              <a class="nav-link py-1" href="#merging-prs">Merging PRs&#x200E;</a>
             </nav>
 
           </nav>
@@ -450,7 +612,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -53,8 +53,8 @@
         <ul>
           <li>If there is no existing pattern to follow:
             <ul>
-              <li>Use camelCase whenever possible. e.g. <code>formatsAndConventions.md</code></li>
-              <li>If the name has multiple phrases, use - to separate phrases. e.g. <code>codingStyle-javaBasic.html</code></li>
+              <li>Use camelCase whenever possible. e.g. <code v-pre="">formatsAndConventions.md</code></li>
+              <li>If the name has multiple phrases, use - to separate phrases. e.g. <code v-pre="">codingStyle-javaBasic.html</code></li>
             </ul>
           </li>
         </ul>
@@ -62,12 +62,12 @@
         <ul>
           <li>
             <p>Try to user common prefixes so that similar files appear together when sorted by name.<br>
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font> <code>codingStyle-java.html</code>, <code>codingStyle-html.html</code><br>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code>javaCodingStyle.html</code>, <code>htmlCodingStyle.html</code>
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font> <code v-pre="">codingStyle-java.html</code>, <code v-pre="">codingStyle-html.html</code><br>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre="">javaCodingStyle.html</code>, <code v-pre="">htmlCodingStyle.html</code>
             </p>
           </li>
           <li>
-            <p>Prefer plurals if the file/folder contains multiple items of same type e.g. <code>docs</code> instead of <code>doc</code></p>
+            <p>Prefer plurals if the file/folder contains multiple items of same type e.g. <code v-pre="">docs</code> instead of <code v-pre="">doc</code></p>
           </li>
         </ul>
       </div>
@@ -90,7 +90,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>

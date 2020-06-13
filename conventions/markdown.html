@@ -30,7 +30,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
           </form>
         </li>
       </navbar>
@@ -68,7 +68,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span>Here is a list:<br></span><span><br></span><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span>Here is a list:<br></span><span><br></span><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span>Here is a list:<br></span><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span>Here is a list:<br></span><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-section"># Heading</span><br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-section"># Heading</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-section">#Heading</span><br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-section">#Heading</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-section">## Heading</span><br></span><span><br></span><span>Content of the paragraph.<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-section">## Heading</span><br></span><span><br></span><span>Content of the paragraph.<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-section">## Heading</span><br></span><span>Content of the paragraph.<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-section">## Heading</span><br></span><span>Content of the paragraph.<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-quote">&gt; first line</span><br></span><span><span class="hljs-quote">&gt; second line</span><br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-quote">&gt; first line</span><br></span><span><span class="hljs-quote">&gt; second line</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -152,13 +152,13 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-quote">&gt; first line</span><br></span><span>  second line<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-quote">&gt; first line</span><br></span><span>  second line<br></span></code></pre>
             </div>
           </div>
         </div>
         <ul>
           <li>
-            <p><strong>Use generic numbering for ordered lists.</strong> i.e., use <code>1.</code> for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.</p>
+            <p><strong>Use generic numbering for ordered lists.</strong> i.e., use <code v-pre="">1.</code> for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.</p>
             <box type="info" seamless>
               <p>RATIONALE: If you use generic numbers, you can insert items into the middle of the list without modifying any existing items.
               </p>
@@ -171,7 +171,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-bullet">1. </span>item 1<br></span><span><span class="hljs-bullet">1. </span>item 2<br></span><span><span class="hljs-bullet">1. </span>item 3<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-bullet">1. </span>item 1<br></span><span><span class="hljs-bullet">1. </span>item 2<br></span><span><span class="hljs-bullet">1. </span>item 3<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -181,15 +181,15 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-bullet">1. </span>item 1<br></span><span><span class="hljs-bullet">2. </span>item 2<br></span><span><span class="hljs-bullet">3. </span>item 3<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-bullet">1. </span>item 1<br></span><span><span class="hljs-bullet">2. </span>item 2<br></span><span><span class="hljs-bullet">3. </span>item 3<br></span></code></pre>
             </div>
           </div>
         </div>
         <ul>
           <li>
-            <p><strong>Use <code>*</code> for bullet-points</strong> (not <code>-</code>).</p>
+            <p><strong>Use <code v-pre="">*</code> for bullet-points</strong> (not <code v-pre="">-</code>).</p>
             <box type="info" seamless>
-              <p>RATIONALE: Although both work, <code>*</code> closer to the final outcome.
+              <p>RATIONALE: Although both work, <code v-pre="">*</code> closer to the final outcome.
               </p>
             </box>
           </li>
@@ -200,7 +200,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span><span><span class="hljs-bullet">* </span>item 3<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span><span><span class="hljs-bullet">* </span>item 3<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -210,15 +210,15 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span><span class="hljs-bullet">- </span>item 1<br></span><span><span class="hljs-bullet">- </span>item 2<br></span><span><span class="hljs-bullet">- </span>item 3<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span><span class="hljs-bullet">- </span>item 1<br></span><span><span class="hljs-bullet">- </span>item 2<br></span><span><span class="hljs-bullet">- </span>item 3<br></span></code></pre>
             </div>
           </div>
         </div>
         <ul>
           <li>
-            <p><strong>Use <code>_</code> for italics</strong> (not <code>*</code>).</p>
+            <p><strong>Use <code v-pre="">_</code> for italics</strong> (not <code v-pre="">*</code>).</p>
             <box type="info" seamless>
-              <p>RATIONALE: Although both work, <code>_</code> is easier to relate to italics.
+              <p>RATIONALE: Although both work, <code v-pre="">_</code> is easier to relate to italics.
               </p>
             </box>
           </li>
@@ -229,7 +229,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span>He <span class="hljs-emphasis">_really_</span> meant it.<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span>He <span class="hljs-emphasis">_really_</span> meant it.<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -239,7 +239,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown"><span>He <span class="hljs-emphasis">*really*</span> meant it.<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre=""><span>He <span class="hljs-emphasis">*really*</span> meant it.<br></span></code></pre>
             </div>
           </div>
         </div>
@@ -250,7 +250,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Mon, 8 Jun 2020, 15:11:51 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 18:13:42 GMT+8]</small></div>
     </footer>
   </div>
 </body>
