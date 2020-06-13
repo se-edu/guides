@@ -256,6 +256,22 @@
       "headingKeywords": {}
     },
     {
+      "title": "Code of conduct for contributors",
+      "pageNav": 3,
+      "src": "guidelines/codeOfConduct.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "code-of-conduct-for-contributors": "Code of conduct for contributors",
+        "our-pledge": "Our pledge",
+        "our-standards": "Our standards",
+        "our-responsibilities": "Our responsibilities",
+        "scope": "Scope",
+        "enforcement": "Enforcement"
+      },
+      "headingKeywords": {}
+    },
+    {
       "title": "Working with Git",
       "pageNav": 3,
       "src": "guidelines/commits.md",
