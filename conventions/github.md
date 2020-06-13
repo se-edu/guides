@@ -30,6 +30,8 @@ Some of the conventions given below have multiple options. In those cases, or if
 * **Option 2: Copy-paste the issue title as the PR title, but tweak into the following format.**<br>
   Format: `[#IssueNumber] IssueTitle `<br>
   e.g. `[#5958] Error alert email has very long subject`
+* **Option 3: Name the PR based on what it does.** This is suitable when the issue titles are not expected to be good enough to be reused as PR titles.<br>
+  e.g. `Shorten the error alert email subject`
 
 <box type="info" seamless>
 
@@ -95,6 +97,9 @@ more ...
 
 * Option 2: `[#IssueNumber] Issue Title (#PrNumber)`<br>
   e.g. `[#5958] Error alert email has very long subject (#6580)`
+
+* Option 3: `PR Title (#PrNumber)` (i.e., based on PR only, issue info omitted)<br>
+  e.g. `Error alert email has very long subject (#6580)`
 
 Pick one option and use it consistently in the entire code base.
 

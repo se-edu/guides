@@ -67,7 +67,7 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
 
 <div class="indented-level2">
 
-{{ step(0.1, '') }} **Fork the upstream repo** if you haven't done so already.
+{{ step(0.1, '') }} **Fork the upstream repo**.
 
 {{ step(0.2, '') }} **Clone the fork to your computer.**
 
