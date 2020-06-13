@@ -58,6 +58,8 @@
           <li><strong>Option 2: Copy-paste the issue title as the PR title, but tweak into the following format.</strong><br>
             Format: <code v-pre="">[#IssueNumber] IssueTitle</code><br>
             e.g. <code v-pre="">[#5958] Error alert email has very long subject</code></li>
+          <li><strong>Option 3: Name the PR based on what it does.</strong> This is suitable when the issue titles are not expected to be good enough to be reused as PR titles.<br>
+            e.g. <code v-pre="">Shorten the error alert email subject</code></li>
         </ul>
         <box type="info" seamless>
           <p>Rationale: Duplicating issue title in PR title is for easy tracing between PRs and issues, to compensate for GitHub’s lack of strong linking between the two. Assume there is an invisible prefix in front of the PR title <code v-pre="">Fix issue: …​</code></p>
@@ -216,6 +218,10 @@
             <p>Option 2: <code v-pre="">[#IssueNumber] Issue Title (#PrNumber)</code><br>
               e.g. <code v-pre="">[#5958] Error alert email has very long subject (#6580)</code></p>
           </li>
+          <li>
+            <p>Option 3: <code v-pre="">PR Title (#PrNumber)</code> (i.e., based on PR only, issue info omitted)<br>
+              e.g. <code v-pre="">Error alert email has very long subject (#6580)</code></p>
+          </li>
         </ul>
         <p>Pick one option and use it consistently in the entire code base.</p>
         <box type="info" seamless>
@@ -258,7 +264,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sat, 13 Jun 2020, 22:03:30 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sun, 14 Jun 2020, 1:25:13 GMT+8]</small></div>
     </footer>
   </div>
 </body>
