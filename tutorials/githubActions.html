@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Intellij IDEA: Configuring the JDK</title>
+  <title>Using GitHub Actions</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
   <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
@@ -17,10 +17,11 @@
   <link rel="stylesheet" href="../markbind/css/markbind.css">
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
   <div id="app">
     <header>
       <navbar placement="top" type="dark" class="temp-navbar">
@@ -39,20 +40,37 @@
 
       <div id="content-wrapper">
         <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="intellij-idea-configuring-the-jdk">Intellij IDEA: Configuring the JDK<a class="fa fa-anchor" href="#intellij-idea-configuring-the-jdk" onclick="event.stopPropagation()"></a></h1>
-        <ol>
-          <li>Ensure you have the correct JDK version installed in your computer.</li>
-          <li>Open IntelliJ (if you are not in the welcome screen, click <code v-pre="">File</code> → <code v-pre="">Close Project</code> to close the existing project dialog first).</li>
-          <li>Set up the correct JDK version for Gradle.
-            <ol>
-              <li>Click <code v-pre="">Configure</code> → <code v-pre="">Project Defaults</code> → <code v-pre="">Project Structure</code></li>
-              <li>Click <code v-pre="">New…​</code> and set it to the directory of the JDK.</li>
-            </ol>
-          </li>
-        </ol>
+        <div></div>
+        <h1 id="using-github-actions">Using GitHub Actions<a class="fa fa-anchor" href="#using-github-actions" onclick="event.stopPropagation()"></a></h1>
+        <div class="lead">
+          <p><a href="https://github.com/features/actions">GitHub Actions</a> is CI/CD tool integrated into GitHub.</p>
+        </div>
+
+        <h2 id="setting-up-a-custom-workflow">Setting up a custom workflow<a class="fa fa-anchor" href="#setting-up-a-custom-workflow" onclick="event.stopPropagation()"></a></h2>
+        <p>In the simplest case, setting up is a matter of adding a <code v-pre="">.yml</code> file into the <code v-pre="">[root]\.workflows</code> folder (<a href="https://github.com/se-edu/duke/blob/full-template/.github/workflows/gradle.yml">example</a>).</p>
+        <p>GitHub Actions will run the workflow (as per the <code v-pre="">.yml</code> file) every time certain project events are triggered (e.g., when a PR is updated, or the <code v-pre="">master</code> branch is updated).</p>
+
+        <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
+        <ul>
+          <li><a href="https://help.github.com/en/actions">GitHub Actions documentation</a></li>
+        </ul>
       </div>
 
 
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
+            <a class="nav-link py-1" href="#using-github-actions">Using GitHub Actions&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#setting-up-a-custom-workflow">Setting up a custom workflow&#x200E;</a>
+              <a class="nav-link py-1" href="#resources">Resources&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
     </div>
     <footer>
 

@@ -45,6 +45,12 @@
           <p>Checkstyle is a static analysis tool that can check Java code against a set of style rules.</p>
         </div>
         <p>Given below are some instructions on how to use Checkstyle for some common project tasks.</p>
+
+        <h2 id="configuring-checkstyle-rules">Configuring Checkstyle rules<a class="fa fa-anchor" href="#configuring-checkstyle-rules" onclick="event.stopPropagation()"></a></h2>
+        <p>Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in <code v-pre="">./config/checkstyle/</code> by convention.</p>
+        <p>The set of code style rules are put in the <code v-pre="">config/checkstyle/checkstyle.xml</code>. To enable <em>exceptions</em> to code styles, you can add in the comment <code v-pre="">//CODESTYLE.OFF: RuleName</code> at the start of the section and <code v-pre="">//CODESTYLE.ON: RuleName</code> at the end of the section. Alternatively, you can specify which rules to suppress in a config file <code v-pre="">config/checkstyle/suppressions.xml</code></p>
+        <p>Checkstyle configuration matching <a href="/guides/conventions/java/intermediate.html">our Java coding standard</a> can be found in the <a href="https://github.com/se-edu/addressbook-level3/tree/master/config/checkstyle">AddressBook Level 3 project</a>.</p>
+
         <h2 id="using-checkstyle-with-gradle">Using Checkstyle with Gradle<a class="fa fa-anchor" href="#using-checkstyle-with-gradle" onclick="event.stopPropagation()"></a></h2>
         <p>Here is an example of relevant lines that should be in the <code v-pre="">build.gradle</code> file.</p>
         <div class="code-block">
@@ -59,6 +65,7 @@
           <li><code v-pre="">checkstyleTest</code>: checks if the test code complies with the style rules</li>
         </ul>
         <p>For example, you can run <code v-pre="">gradlew checkstyleMain checkstyleTest</code> to verify that all your code complies with the style rules.</p>
+
         <h2 id="using-checkstyle-idea-plugin">Using Checkstyle-IDEA plugin<a class="fa fa-anchor" href="#using-checkstyle-idea-plugin" onclick="event.stopPropagation()"></a></h2>
         <p>Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij can alert you about code style problems as you write code.</p>
         <ol>
@@ -115,9 +122,7 @@
           <li>Reason: The plugin may not immediately run after setting it up.</li>
           <li>Solution: Restart the IDE.</li>
         </ul>
-        <h2 id="configuring-checkstyle-rules">Configuring Checkstyle rules<a class="fa fa-anchor" href="#configuring-checkstyle-rules" onclick="event.stopPropagation()"></a></h2>
-        <p>Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in <code v-pre="">./config/checkstyle/</code> by convention.</p>
-        <p>The set of code style rules are put in the <code v-pre="">config/checkstyle/checkstyle.xml</code>. To enable <em>exceptions</em> to code styles, you can add in the comment <code v-pre="">//CODESTYLE.OFF: RuleName</code> at the start of the section and <code v-pre="">//CODESTYLE.ON: RuleName</code> at the end of the section. Alternatively, you can specify which rules to suppress in a config file <code v-pre="">config/checkstyle/suppressions.xml</code></p>
+
         <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><a href="https://checkstyle.sourceforge.io/">Checkstyle home page</a></li>
@@ -132,9 +137,9 @@
             <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
             <a class="nav-link py-1" href="#using-checkstyle">Using Checkstyle&#x200E;</a>
             <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#configuring-checkstyle-rules">Configuring Checkstyle rules&#x200E;</a>
               <a class="nav-link py-1" href="#using-checkstyle-with-gradle">Using Checkstyle with Gradle&#x200E;</a>
               <a class="nav-link py-1" href="#using-checkstyle-idea-plugin">Using Checkstyle-IDEA plugin&#x200E;</a>
-              <a class="nav-link py-1" href="#configuring-checkstyle-rules">Configuring Checkstyle rules&#x200E;</a>
               <a class="nav-link py-1" href="#resources">Resources&#x200E;</a>
             </nav>
 
@@ -145,7 +150,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sun, 14 Jun 2020, 1:25:13 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 16 Jun 2020, 12:27:49 GMT+8]</small></div>
     </footer>
   </div>
 </body>

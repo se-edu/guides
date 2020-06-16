@@ -240,6 +240,19 @@
       "headingKeywords": {}
     },
     {
+      "title": "Best practices for reviewing PRs",
+      "pageNav": 3,
+      "src": "guidelines/PRs-reviewing.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "best-practices-for-reviewing-prs": "Best practices for reviewing PRs",
+        "best-practices-for-reviewers": "Best practices for reviewers",
+        "best-practices-for-authors": "Best practices for authors"
+      },
+      "headingKeywords": {}
+    },
+    {
       "title": "Guidelines for working with PRs",
       "pageNav": 3,
       "src": "guidelines/PRs.md",
@@ -328,9 +341,22 @@
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-checkstyle": "Using Checkstyle",
+        "configuring-checkstyle-rules": "Configuring Checkstyle rules",
         "using-checkstyle-with-gradle": "Using Checkstyle with Gradle",
         "using-checkstyle-idea-plugin": "Using Checkstyle-IDEA plugin",
-        "configuring-checkstyle-rules": "Configuring Checkstyle rules",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Using GitHub Actions",
+      "pageNav": 2,
+      "src": "tutorials/githubActions.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "using-github-actions": "Using GitHub Actions",
+        "setting-up-a-custom-workflow": "Setting up a custom workflow",
         "resources": "Resources"
       },
       "headingKeywords": {}
@@ -352,7 +378,7 @@
         "cleaning-the-project": "Cleaning the project",
         "running-checkstyle": "Running Checkstyle",
         "running-tests": "Running tests",
-        "creating-a-jar-file": "Creating a JAR file",
+        "creating-jar-files": "Creating JAR files",
         "compiling": "Compiling",
         "managing-dependencies": "Managing dependencies",
         "resources": "Resources"
@@ -389,6 +415,33 @@
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Working with JAR files",
+      "pageNav": 2,
+      "src": "tutorials/jar.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "working-with-jar-files": "Working with JAR files",
+        "running-jar-files": "Running JAR files",
+        "fat-jar-files": "Fat JAR files",
+        "creating-jar-files-with-intellij-idea": "Creating JAR files with Intellij IDEA",
+        "creating-jar-files-with-gradle": "Creating JAR files with Gradle",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "JavaFX tutorial",
+      "pageNav": 2,
+      "src": "tutorials/javaFx.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "javafx-tutorial": "JavaFX tutorial"
       },
       "headingKeywords": {}
     },

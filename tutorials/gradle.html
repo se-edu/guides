@@ -78,7 +78,7 @@
         </ol>
         <p><strong><strong>Scenario 3:</strong></strong> You are adding Gradle support to an ongoing project from scratch.</p>
         <ul>
-          <li>You are on you own but <a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">this</a> is a good place to start.</li>
+          <li><a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">This</a> is a good place to start.</li>
         </ul>
 
         <h2 id="using-gradle-in-intellij-idea">Using Gradle in Intellij IDEA<a class="fa fa-anchor" href="#using-gradle-in-intellij-idea" onclick="event.stopPropagation()"></a></h2>
@@ -104,6 +104,7 @@
           </div>
         </div>
         <h2 id="using-gradle-to-do-some-common-project-activities">Using Gradle to do some common project activities<a class="fa fa-anchor" href="#using-gradle-to-do-some-common-project-activities" onclick="event.stopPropagation()"></a></h2>
+
         <h3 id="cleaning-the-project">Cleaning the project<a class="fa fa-anchor" href="#cleaning-the-project" onclick="event.stopPropagation()"></a></h3>
         <ul>
           <li><strong><code v-pre="">clean</code></strong>: Deletes the files created during the previous build tasks (e.g. files in the <code v-pre="">build</code> folder).<br>
@@ -112,6 +113,7 @@
         <box>
           <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> <strong>You can use <code v-pre="">clean</code> to prevent Gradle from skipping tasks</strong>: When running a Gradle task, Gradle will try to figure out if the task needs running at all. If Gradle determines that the output of the task will be same as the previous time, it will not run the task. For example, it will not build the JAR file again if the relevant source files have not changed since the last time the JAR file was built. If you want to force Gradle to run a task, you can combine that task with <code v-pre="">clean</code> (e.g., <code v-pre="">./gradlew clean shadowJar</code>). Once the build files have been <code v-pre="">clean</code> ed, Gradle has no way to determine if the output will be same as before, and it will have no choice but to execute the task.</p>
         </box>
+
         <h3 id="running-checkstyle">Running Checkstyle<a class="fa fa-anchor" href="#running-checkstyle" onclick="event.stopPropagation()"></a></h3>
         <p><code v-pre="">gradlew checkstyleMain checkstyleTest</code>: runs main code and test code complies with the Checkstyle rules. <br></p>
         <p><strong>Resources</strong>:</p>
@@ -119,24 +121,37 @@
           <li><a href="/guides/tutorials/checkstyle.html">Checkstyle Tutorial</a></li>
           <li><a href="https://docs.gradle.org/current/userguide/checkstyle_plugin.html">Gradle documentation for the Checkstyle plugin</a></li>
         </ul>
+
         <h3 id="running-tests">Running tests<a class="fa fa-anchor" href="#running-tests" onclick="event.stopPropagation()"></a></h3>
         <p>Run the <code v-pre="">test</code> task to run the tests in the project.</p>
         <p><strong>Resources</strong>:</p>
         <ul>
           <li><a href="https://docs.gradle.org/current/userguide/java_testing.html#using_junit5">Gradle documentation for JUnit</a></li>
         </ul>
-        <h3 id="creating-a-jar-file">Creating a JAR file<a class="fa fa-anchor" href="#creating-a-jar-file" onclick="event.stopPropagation()"></a></h3>
-        <p><a href="https://github.com/johnrengelman/shadow">Shadow</a> is a plugin that packages an application into an executable <em>fat</em> jar file <em>if the current file is outdated</em>.</p>
-        <box>
-          <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> <strong>What's a <em>fat</em> JAR? Why do we need one?</strong> If you package only your own class files into the JAR file, it will not work properly unless the user has all the other JAR files (i.e. third-party libraries) your classes depend on, which is rather inconvenient. Therefore, you should package all dependencies into a single JAR files, creating what is also known as a <em>fat</em> JAR file.
-          </p>
-        </box>
-        <p>The task <strong><code v-pre="">shadowJar</code></strong> creates the JAR file in the <code v-pre="">build/libs</code> folder. By default, it produces a jar file with the name in the format of <code v-pre="">{archiveBaseName}-{archiveVersion}.jar</code> and put it in the <code v-pre="">builds/libs</code> folder. These properties can be set in the <code v-pre="">build.gradle</code> file.</p>
-        <p><strong>Resources</strong>:</p>
-        <ul>
-          <li><a href="https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow">Gradle documentation for the Shadow plugin</a></li>
-          <li><a href="https://imperceptiblethoughts.com/shadow/introduction/">More about the Shadow plugin</a></li>
-        </ul>
+
+        <h3 id="creating-jar-files">Creating JAR files<a class="fa fa-anchor" href="#creating-jar-files" onclick="event.stopPropagation()"></a></h3>
+        <span id="section-creating-jar-files">
+          <p><a href="https://github.com/johnrengelman/shadow">Shadow</a> is a plugin that packages an application into an executable <em>fat</em> jar file <em>if the current file is outdated</em>.</p>
+          <div class="indented-level2">
+            <panel minimized=""><template slot="_header">
+                <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Tutorials → Working with JAR files → <strong>Fat JAR files</strong></p>
+              </template>
+              <div>
+                <p><strong>A normal JAR file contains only the classes and resources that you created for your app.</strong> If you app has <em>dependencies</em> (i.e., third party libraries that your app depends on), the JAR file will not work unless the person running the JAR file also has those dependencies in their computer. This is not ideal.</p>
+                <p><strong>A <em>fat</em> JAR (aka <em>uber</em> JAR) file solves the above problem by including all the dependencies inside the JAR file</strong> itself <span class="dimmed">(which makes the JAR file bigger than usual, hence the term <em>fat</em>)</span>.</p>
+              </div>
+            </panel>
+          </div>
+          <p></p>
+          <p>The task <strong><code v-pre="">shadowJar</code></strong> creates the JAR file in the <code v-pre="">build/libs</code> folder. By default, it produces a jar file with the name in the format of <code v-pre="">{archiveBaseName}-{archiveVersion}.jar</code> and put it in the <code v-pre="">builds/libs</code> folder. These properties can be set in the <code v-pre="">build.gradle</code> file.</p>
+          <p><strong>Resources</strong>:</p>
+          <ul>
+            <li><a href="https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow">Gradle documentation for the Shadow plugin</a></li>
+            <li><a href="https://imperceptiblethoughts.com/shadow/introduction/">More about the Shadow plugin</a></li>
+          </ul>
+        </span>
+
+
         <h3 id="compiling">Compiling<a class="fa fa-anchor" href="#compiling" onclick="event.stopPropagation()"></a></h3>
         <p>There is no need to run these Gradle tasks manually as they are called automatically by other relevant Gradle tasks.</p>
         <ul>
@@ -180,7 +195,7 @@
                 <a class="nav-link py-1" href="#cleaning-the-project">Cleaning the project&#x200E;</a>
                 <a class="nav-link py-1" href="#running-checkstyle">Running Checkstyle&#x200E;</a>
                 <a class="nav-link py-1" href="#running-tests">Running tests&#x200E;</a>
-                <a class="nav-link py-1" href="#creating-a-jar-file">Creating a JAR file&#x200E;</a>
+                <a class="nav-link py-1" href="#creating-jar-files">Creating JAR files&#x200E;</a>
                 <a class="nav-link py-1" href="#compiling">Compiling&#x200E;</a>
               </nav>
               <a class="nav-link py-1" href="#managing-dependencies">Managing dependencies&#x200E;</a>
@@ -194,7 +209,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Sun, 14 Jun 2020, 1:25:13 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 16 Jun 2020, 12:27:49 GMT+8]</small></div>
     </footer>
   </div>
 </body>
