@@ -12,6 +12,18 @@ Checkstyle is a static analysis tool that can check Java code against a set of s
 
 Given below are some instructions on how to use Checkstyle for some common project tasks.
 
+<!-- ==================================================================================================== -->
+
+## Configuring Checkstyle rules
+
+Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in `./config/checkstyle/` by convention.
+
+The set of code style rules are put in the `config/checkstyle/checkstyle.xml`. To enable *exceptions* to code styles, you can add in the comment `//CODESTYLE.OFF: RuleName` at the start of the section and `//CODESTYLE.ON: RuleName` at the end of the section. Alternatively, you can specify which rules to suppress in a config file `config/checkstyle/suppressions.xml`
+
+Checkstyle configuration matching [our Java coding standard](../conventions/java/intermediate.html) can be found in the [AddressBook Level 3 project](https://github.com/se-edu/addressbook-level3/tree/master/config/checkstyle).
+
+<!-- ==================================================================================================== -->
+
 ## Using Checkstyle with Gradle
 
 Here is an example of relevant lines that should be in the `build.gradle` file.
@@ -32,6 +44,8 @@ Some relevant Gradle _tasks_ added by the CheckStyle plugin.
 * `checkstyleTest`: checks if the test code complies with the style rules
 
 For example, you can run `gradlew checkstyleMain checkstyleTest` to verify that all your code complies with the style rules.
+
+<!-- ==================================================================================================== -->
 
 ## Using Checkstyle-IDEA plugin
 
@@ -77,11 +91,7 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 * Reason: The plugin may not immediately run after setting it up.
 * Solution: Restart the IDE.
 
-## Configuring Checkstyle rules
-
-Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in `./config/checkstyle/` by convention.
-
-The set of code style rules are put in the `config/checkstyle/checkstyle.xml`. To enable *exceptions* to code styles, you can add in the comment `//CODESTYLE.OFF: RuleName` at the start of the section and `//CODESTYLE.ON: RuleName` at the end of the section. Alternatively, you can specify which rules to suppress in a config file `config/checkstyle/suppressions.xml`
+<!-- ==================================================================================================== -->
 
 ## Resources
 

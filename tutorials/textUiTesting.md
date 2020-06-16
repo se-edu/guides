@@ -7,7 +7,7 @@
 
 <div class="lead">
 
-[_I/O redirection_ technique](https://se-education.org/se-book/testing/#automated-testing-of-cli-apps) can be used to semi-automate the testing of text UIs.
+[_I/O redirection_ technique](https://se-education.org/se-book/testing/#automated-testing-of-cli-applications) can be used to semi-automate the testing of text UIs.
 </div>
 
 Sections below explain how to use that technique in a small project.

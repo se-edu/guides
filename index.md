@@ -15,11 +15,13 @@ This website contains a collection of tutorials, standards, guides, best practic
 Tutorials, how-to guides, getting-started guides, ...
 
 * [**Checkstyle**](tutorials/checkstyle.html)
-* **JavaFX**:
-  * [Part 1: Introduction](tutorials/javaFxPart1.html)
-  * [Part 2: Creating a GUI for Duke](tutorials/javaFxPart2.html)
-  * [Part 3: Interacting with the user](tutorials/javaFxPart3.html)
-  * [Part 4: Using FXML](tutorials/javaFxPart4.html)
+* **Java**:
+  * [**JAR files**](tutorials/jar.html)
+  * [**JavaFX**](tutorials/javaFx.html):
+    * [Part 1: Introduction](tutorials/javaFxPart1.html)
+    * [Part 2: Creating a GUI for Duke](tutorials/javaFxPart2.html)
+    * [Part 3: Interacting with the user](tutorials/javaFxPart3.html)
+    * [Part 4: Using FXML](tutorials/javaFxPart4.html)
 * **Intellij IDEA**:
   * [Configuring the JDK](tutorials/intellijJdk.html)
   * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
@@ -27,6 +29,7 @@ Tutorials, how-to guides, getting-started guides, ...
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
   * [**JUnit**](tutorials/junit.html)
+* [**GitHub Actions**](tutorials/githubActions.html)
 * [**Gradle**](tutorials/gradle.html)
 * **Project documentation**:
   * [**Jekyll**](tutorials/jekyll.html)
@@ -59,4 +62,5 @@ Best practices, processes, workflows, ...
 * [**Working with Git**](guidelines/commits.html)
 * **GitHub:**
   * [Working with **PRs**](guidelines/PRs.html)
+    * [Best practices for **reviewing PRs**](guidelines/PRs-reviewing.html)
   * [Working with **labels**](guidelines/labels.html)

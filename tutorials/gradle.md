@@ -3,11 +3,13 @@
   pageNav: 3
 </frontmatter>
 
+{% from "scripts/macros.njk" import embed with context %}
+
 # Gradle tutorial
 
 Gradle is a _build automation tool_ used to automate build processes. There are many ways of integrating Gradle into a project. This tutorial uses the _Gradle wrapper_ approach.
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Basics
 
@@ -20,7 +22,7 @@ Tasks can be composed of, or dependent on, other tasks.
 
 * **Properties** change the behavior of tasks. For instance, `mainClassName` of the `application` plugin is a compulsory property which tells Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much to you need to configure if you follow the recommended directory structure.
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Adding Gradle to the project
 
@@ -45,9 +47,9 @@ Tasks can be composed of, or dependent on, other tasks.
 
 ****Scenario 3:**** You are adding Gradle support to an ongoing project from scratch.
 
-* You are on you own but [this](https://docs.gradle.org/current/userguide/gradle_wrapper.html) is a good place to start.
+* [This](https://docs.gradle.org/current/userguide/gradle_wrapper.html) is a good place to start.
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Using Gradle in Intellij IDEA
 
@@ -57,7 +59,7 @@ If the Gradle tasks don't appear in the Gradle window, click the 'refresh' butto
 Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to `File` > `Settings` and change the following settings:<br>
 ![change Intellij settings to not use Gradle](images/gradle/intellijRunUsingGradle.png)
  
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Running Gradle Tasks
 
@@ -68,7 +70,7 @@ Alternatively, you can type the command in the terminal.
 * On Windows: `gradlew <task1> <task2> …`​ e.g. `gradlew clean test`
 * On Mac/Linux: `./gradlew <task1> <task2> …`​ e.g. `./gradlew clean test`
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Adding plugins
 
@@ -84,9 +86,11 @@ plugins {
 }
 ```
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Using Gradle to do some common project activities
+
+<!-- ------------------------------------------------------------------------------------------------------ -->
 
 ### Cleaning the project
 
@@ -99,6 +103,8 @@ plugins {
 
 </box>
 
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
 ### Running Checkstyle
 
 `gradlew checkstyleMain checkstyleTest`: runs main code and test code complies with the Checkstyle rules. <br>
@@ -107,6 +113,7 @@ plugins {
 * [Checkstyle Tutorial](checkstyle.html)
 * [Gradle documentation for the Checkstyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
 
+<!-- ------------------------------------------------------------------------------------------------------ -->
 
 ### Running tests
 
@@ -116,22 +123,24 @@ Run the `test` task to run the tests in the project.
 **Resources**:
 * [Gradle documentation for JUnit](https://docs.gradle.org/current/userguide/java_testing.html#using_junit5)
 
+<!-- ------------------------------------------------------------------------------------------------------ -->
 
-### Creating a JAR file
+### Creating JAR files
+
+<span id="section-creating-jar-files">
 
 [Shadow](https://github.com/johnrengelman/shadow) is a plugin that packages an application into an executable _fat_ jar file _if the current file is outdated_.
 
-<box>
-
-{{ icon_info }} **What's a _fat_ JAR? Why do we need one?** If you package only your own class files into the JAR file, it will not work properly unless the user has all the other JAR files (i.e. third-party libraries) your classes depend on, which is rather inconvenient. Therefore, you should package all dependencies into a single JAR files, creating what is also known as a _fat_ JAR file.
-</box>
+{{ embed("Tutorials → Working with JAR files → **Fat JAR files**", "jar-fatJar.mbdf") }}
 
 The task **`shadowJar`** creates the JAR file in the `build/libs` folder. By default, it produces a jar file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and put it in the `builds/libs` folder. These properties can be set in the `build.gradle` file.
 
 **Resources**:
 * [Gradle documentation for the Shadow plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
 * [More about the Shadow plugin](https://imperceptiblethoughts.com/shadow/introduction/)
+</span>
 
+<!-- ------------------------------------------------------------------------------------------------------ -->
 
 ### Compiling
 
@@ -140,7 +149,7 @@ There is no need to run these Gradle tasks manually as they are called automatic
 * **`compileJava`**: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes. See `build.gradle` → `allprojects` → `dependencies` → `compile` for the list of dependencies required.
 * **`compileTestJava`**: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes. See `build.gradle` → `allprojects` → `dependencies` → `testCompile` for the list of dependencies required.
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Managing dependencies
 
@@ -158,7 +167,7 @@ compile group: 'com.joestelmach', name: 'natty', version: '0.6'
 
 Tip: Most third-party libararies specify how to add it as a Gradle dependency ([example](https://mvnrepository.com/artifact/com.joestelmach/natty/0.6)).
 
-<!-- --------------------------------------------------------------------------------------------------------- -->
+<!-- ==================================================================================================== -->
 
 ## Resources
 

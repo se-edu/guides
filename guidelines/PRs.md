@@ -119,34 +119,12 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
 ## Reviewing a PR
 
 
-<panel type="info" header="**General guidelines for reviewers**" expanded>
-
-<box type="info" icon=":fas-book-open:" seamless>
-
 * If you are new to GitHub PRs, see [GitHub help on how to review PRs](https://help.github.com/en/articles/about-pull-request-reviews).
-* Read the blog post [**10 tips for reviewing code you don’t like**](https://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like/) - by David Lloyd (a Red Hat developer).
 
-</box>
+* Follow the best practices in the panel below:
 
+{{ embed("Guidelines » **Best practices for reviewing PRs**", "PRs-reviewing.md") }}
 
-* **Add specific comments at relevant places of the code**, rather than give one overall comment for the entire PR.
-  * It is typical for the comment to be added right below the code line it refers to.<br>
-    It is possible to [mark multiple lines](https://twitter.com/natfriedman/status/1179097330097643521) as linked to the comment too.
-  * You can use Markdown (specifically, [GitHub-Flavored Markdown](https://guides.github.com/features/mastering-markdown/)) in your comments.
-* ==**It's best to phrase comments as questions**==, especially if you are a peer reviewer.<br>
-  e.g., `Should this be extracted out?` rather than `Extract this out` or `This should be extracted out`.
-* **Feel free to ask for more info from the author**, to help you understand the code/design. For example, you can ask why the author chose to write the code in a specific way.
-* **Feel free to compliment the author when appropriate**<br>
-  %%e.g., _hey, I like how clean this bit of code is_ :+1:%%
-* **You can also suggest alternatives for the author to consider.**
-</panel>
-
-<panel type="info" header="**General guidelines for authors**" expanded>
-
-* **Don't get into arguments with reviewers.** If you disagree with the reviewer, you can explain your own view in a non-confrontational way without trying to prove your way is better.
-* Thank reviewers for their inputs.
-
-</panel>
 <p/>
 
 * **Check for basic PR hygiene**, and remind the PR author to rectify if necessary.

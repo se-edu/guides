@@ -20,8 +20,8 @@
 {% macro step(n, label='Step') %}<span class="badge badge-dark bigger-level0">{{ label }} {{ n }}</span>{% endmacro %}
 
 
-{% macro embed(header, src) %}
-<div class="indented-level2">
+{% macro embed(header, src, indent=2) %}
+<div class="indented-level{{ indent }}">
 
 <panel header="{{ icon_embedding | safe }} {{ header }}" minimized>
 
