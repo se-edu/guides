@@ -42,18 +42,19 @@
         <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
         <h1 id="using-jekyll-for-project-documentation">Using Jekyll for project documentation<a class="fa fa-anchor" href="#using-jekyll-for-project-documentation" onclick="event.stopPropagation()"></a></h1>
         <div class="lead">
-          <p><strong><a href="https://markbind.org">MarkBind</a> is a tool for generating static websites from markdown-like text</strong>, particularly suitable for text-heavy websites such as software project documentation.</p>
+          <p><strong><a href="https://jekyllrb.com/">Jekyll</a> is a popular tool for generating static websites from markdown-like text</strong>.</p>
         </div>
-        <p>Given below are some information useful for when you want to update documentation in a project that uses MarkBind.</p>
+        <p>Given below are some information useful for when you want to update documentation in a project that uses Jekyll.</p>
 
         <h2 id="setting-up-github-pages-for-jekyll">Setting up GitHub Pages for Jekyll<a class="fa fa-anchor" href="#setting-up-github-pages-for-jekyll" onclick="event.stopPropagation()"></a></h2>
         <p>As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the <code v-pre="">githhub.io</code> URL of your project.</p>
         <p>Do the following to set up the GitHub Pages website of your project:</p>
         <ol>
-          <li>Go to your repo's <code v-pre="">settings</code> tab.</li>
+          <li>Go to your repo's <span class="border border-secondary border-bottom-0 pr-1 pl-1 mr-1 ml-1 rounded-top"><small>settings <span aria-hidden="true" class="fas fa-cog"></span></small></span> tab.</li>
           <li>Scroll down to the <code v-pre="">GitHub Pages</code> section.</li>
           <li>Set the <code v-pre="">Source</code> to <code v-pre="">master branch /docs folder</code> (assuming project documentation is in that folder).</li>
         </ol>
+        <p>The project website will be available at <code v-pre="">https://{your_org}.github.io/{your_repo}</code> the next time the <code v-pre="">master</code> branch is updated. Example: <code v-pre="">https://myorg.github.io/myrepo</code></p>
 
         <h2 id="updating-documents">Updating documents<a class="fa fa-anchor" href="#updating-documents" onclick="event.stopPropagation()"></a></h2>
         <p>Jekyll uses <a href="https://kramdown.gettalong.org/syntax.html"><strong>kramdown</strong></a> (a superset of Markdown) for writing content. You can use Intellij (or any other text editor) to update the relevant <code v-pre="">.md</code> files.</p>
@@ -112,7 +113,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 16 Jun 2020, 12:27:49 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Wed, 17 Jun 2020, 23:48:19 GMT+8]</small></div>
     </footer>
   </div>
 </body>

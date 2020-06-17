@@ -159,6 +159,9 @@
           <li><strong><code v-pre="">compileTestJava</code></strong>: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes. See <code v-pre="">build.gradle</code> → <code v-pre="">allprojects</code> → <code v-pre="">dependencies</code> → <code v-pre="">testCompile</code> for the list of dependencies required.</li>
         </ul>
 
+        <h3 id="enabling-assertions">Enabling assertions<a class="fa fa-anchor" href="#enabling-assertions" onclick="event.stopPropagation()"></a></h3>
+        <p>To enable assertions when executing Java code, add the following to the <code v-pre="">build.gradle</code> file.</p>
+        <pre><code class="hljs groovy" v-pre=""><span>run {<br></span><span>    enableAssertions = <span class="hljs-literal">true</span><br></span><span>}<br></span></code></pre>
         <h2 id="managing-dependencies">Managing dependencies<a class="fa fa-anchor" href="#managing-dependencies" onclick="event.stopPropagation()"></a></h2>
         <p>Gradle can automate the management of dependencies to third-party libraries. You just need to add the dependency into the <code v-pre="">build.gradle</code> file and Gradle will do the rest. For example, here is how the JUnit library has been added to the dependencies in the <code v-pre="">build.gradle</code>:</p>
         <pre><code class="hljs groovy" v-pre=""><span>dependencies {<br></span><span>    testImplementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.junit.jupiter'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'junit-jupiter-api'</span>, <span class="hljs-string">version:</span> <span class="hljs-string">'5.5.0'</span><br></span><span>}<br></span></code></pre>
@@ -197,6 +200,7 @@
                 <a class="nav-link py-1" href="#running-tests">Running tests&#x200E;</a>
                 <a class="nav-link py-1" href="#creating-jar-files">Creating JAR files&#x200E;</a>
                 <a class="nav-link py-1" href="#compiling">Compiling&#x200E;</a>
+                <a class="nav-link py-1" href="#enabling-assertions">Enabling assertions&#x200E;</a>
               </nav>
               <a class="nav-link py-1" href="#managing-dependencies">Managing dependencies&#x200E;</a>
               <a class="nav-link py-1" href="#resources">Resources&#x200E;</a>
@@ -209,7 +213,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Tue, 16 Jun 2020, 12:27:49 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Wed, 17 Jun 2020, 23:48:19 GMT+8]</small></div>
     </footer>
   </div>
 </body>

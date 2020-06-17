@@ -380,6 +380,7 @@
         "running-tests": "Running tests",
         "creating-jar-files": "Creating JAR files",
         "compiling": "Compiling",
+        "enabling-assertions": "Enabling assertions",
         "managing-dependencies": "Managing dependencies",
         "resources": "Resources"
       },
@@ -415,6 +416,18 @@
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Intellij IDEA: Useful settings",
+      "pageNav": 2,
+      "src": "tutorials/intellijUsefulSettings.md",
+      "layout": "default",
+      "headings": {
+        "guides-for-se-student-projects": "Guides for SE student projects »",
+        "intellij-idea-useful-settings": "Intellij IDEA: Useful settings",
+        "enabling-assertions": "Enabling assertions"
       },
       "headingKeywords": {}
     },

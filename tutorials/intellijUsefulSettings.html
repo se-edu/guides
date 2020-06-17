@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="MarkBind 2.14.1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Conventions for file/folder naming</title>
+  <title>Intellij IDEA: Useful settings</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
   <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
@@ -40,36 +40,27 @@
 
       <div id="content-wrapper">
         <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="conventions-for-file-folder-naming">Conventions for file/folder naming<a class="fa fa-anchor" href="#conventions-for-file-folder-naming" onclick="event.stopPropagation()"></a></h1>
-        <h2 id="files-folders">Files/Folders<a class="fa fa-anchor" href="#files-folders" onclick="event.stopPropagation()"></a></h2>
-        <ul>
-          <li><strong>General rule: aim for <em>local consistency</em></strong> i.e., follow the conventions/patterns followed by other files/folders in the neighborhood.
-            <ul>
-              <li>If the project uses a framework that has a specific file naming convention, follow that instead.</li>
-            </ul>
-          </li>
-        </ul>
-        <p></p>
-        <ul>
-          <li>If there is no existing pattern to follow:
-            <ul>
-              <li>Use camelCase whenever possible. e.g. <code v-pre="">formatsAndConventions.md</code></li>
-              <li>If the name has multiple phrases, use - to separate phrases. e.g. <code v-pre="">codingStyle-javaBasic.html</code></li>
-            </ul>
-          </li>
-        </ul>
-        <p></p>
-        <ul>
+        <div></div>
+        <h1 id="intellij-idea-useful-settings">Intellij IDEA: Useful settings<a class="fa fa-anchor" href="#intellij-idea-useful-settings" onclick="event.stopPropagation()"></a></h1>
+
+        <h2 id="enabling-assertions">Enabling assertions<a class="fa fa-anchor" href="#enabling-assertions" onclick="event.stopPropagation()"></a></h2>
+        <box type="warning" seamless>
+          <p>This tweak does not apply if you use Gradle to run code even within Intellij. In that case, refer to 'Enabling assertions' sections of the <a href="/guides/tutorials/gradle.html#enabling-assertions"><em>Gradle tutorial</em></a>.
+          </p>
+        </box>
+        <ol>
           <li>
-            <p>Try to user common prefixes so that similar files appear together when sorted by name.<br>
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font> <code v-pre="">codingStyle-java.html</code>, <code v-pre="">codingStyle-html.html</code><br>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre="">javaCodingStyle.html</code>, <code v-pre="">htmlCodingStyle.html</code>
-            </p>
+            <p>Choose <code v-pre="">Run</code> → <code v-pre="">Edit Configurations...</code>.</p>
           </li>
           <li>
-            <p>Prefer plurals if the file/folder contains multiple items of same type e.g. <code v-pre="">docs</code> instead of <code v-pre="">doc</code></p>
+            <p>Select the run configuration of interest.</p>
           </li>
-        </ul>
+          <li>
+            <p>Add <code v-pre="">-ea</code> to the <code v-pre="">VM options</code> box.</p>
+            <p><a href="https://i.stack.imgur.com/d1ZoO.png" target="_self"><img src="https://i.stack.imgur.com/d1ZoO.png" alt="" class="img-fluid"></a></p>
+            <p><small>[Credits: adapted from <a href="https://stackoverflow.com/questions/18168257/where-to-add-compiler-options-like-ea-in-intellij-idea">this s/o thread</a>]</small></p>
+          </li>
+        </ol>
       </div>
 
 
@@ -78,9 +69,9 @@
 
           <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
             <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
-            <a class="nav-link py-1" href="#conventions-for-file-folder-naming">Conventions for file/folder naming&#x200E;</a>
+            <a class="nav-link py-1" href="#intellij-idea-useful-settings">Intellij IDEA: Useful settings&#x200E;</a>
             <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#files-folders">Files/Folders&#x200E;</a>
+              <a class="nav-link py-1" href="#enabling-assertions">Enabling assertions&#x200E;</a>
             </nav>
 
           </nav>
