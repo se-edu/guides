@@ -3,14 +3,16 @@
   pageNav: 2
 </frontmatter>
 
+{% from "scripts/macros.njk" import show_as_rounded_tab with context %}
+
 # Using Jekyll for project documentation
 
 <div class="lead">
 
-**[MarkBind](https://markbind.org) is a tool for generating static websites from markdown-like text**, particularly suitable for text-heavy websites such as software project documentation.
+**[Jekyll](https://jekyllrb.com/) is a popular tool for generating static websites from markdown-like text**.
 </div>
 
-Given below are some information useful for when you want to update documentation in a project that uses MarkBind.
+Given below are some information useful for when you want to update documentation in a project that uses Jekyll.
 
 <!-- ==================================================================================================== -->
 
@@ -19,9 +21,11 @@ Given below are some information useful for when you want to update documentatio
 As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the `githhub.io` URL of your project.
 
 Do the following to set up the GitHub Pages website of your project:
-1. Go to your repo's `settings` tab.
+1. Go to your repo's {{ show_as_rounded_tab("settings :fas-cog:") }} tab.
 1. Scroll down to the `GitHub Pages` section.
 1. Set the `Source` to `master branch /docs folder` (assuming project documentation is in that folder).
+
+The project website will be available at `https://{your_org}.github.io/{your_repo}` the next time the `master` branch is updated. Example: `https://myorg.github.io/myrepo`
 
 <!-- ==================================================================================================== -->
 

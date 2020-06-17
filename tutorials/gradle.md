@@ -151,6 +151,18 @@ There is no need to run these Gradle tasks manually as they are called automatic
 
 <!-- ==================================================================================================== -->
 
+### Enabling assertions
+
+To enable assertions when executing Java code, add the following to the `build.gradle` file.
+
+```groovy
+run {
+    enableAssertions = true
+}
+```
+
+<!-- ==================================================================================================== -->
+
 ## Managing dependencies
 
 Gradle can automate the management of dependencies to third-party libraries. You just need to add the dependency into the `build.gradle` file and Gradle will do the rest. For example, here is how the JUnit library has been added to the dependencies in the `build.gradle`:
