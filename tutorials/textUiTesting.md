@@ -32,7 +32,7 @@ Given below re steps to set it up for a project.
    del ACTUAL.TXT
    
    REM compile the code into the bin folder
-   javac  -cp ..\src -Xlint:none -d ..\bin ..\src\main\java\Duke.java
+   javac  -cp ..\src\main\java -Xlint:none -d ..\bin ..\src\main\java\*.java
    IF ERRORLEVEL 1 (
        echo ********** BUILD FAILURE **********
        exit /b 1
@@ -64,7 +64,7 @@ Given below re steps to set it up for a project.
    fi
    
    # compile the code into the bin folder, terminates if error occurred
-   if ! javac -cp ../src -Xlint:none -d ../bin ../src/main/java/Duke.java
+   if ! javac -cp ../src/main/java -Xlint:none -d ../bin ../src/main/java/*.java
    then
        echo "********** BUILD FAILURE **********"
        exit 1
