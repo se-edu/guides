@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="generator" content="MarkBind 2.15.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Working with GitHub labels</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
           </form>
         </li>
       </navbar>
@@ -56,76 +56,76 @@
         </ul>
         <p><em>Common label groups</em>:</p>
         <ul>
-          <li>exclusive: <code v-pre="">s.</code> status, <code v-pre="">p.</code> priority, <code v-pre="">c.</code> category, <code v-pre="">d.</code> difficulty, <code v-pre="">e.</code> effort,</li>
-          <li>non-exclusive: <code v-pre="">a-</code> aspect, <code v-pre="">f-</code> feature, <code v-pre="">t-</code> tech,</li>
+          <li>exclusive: <code v-pre>s.</code> status, <code v-pre>p.</code> priority, <code v-pre>c.</code> category, <code v-pre>d.</code> difficulty, <code v-pre>e.</code> effort,</li>
+          <li>non-exclusive: <code v-pre>a-</code> aspect, <code v-pre>f-</code> feature, <code v-pre>t-</code> tech,</li>
         </ul>
 
         <h2 id="common-labels">Common labels<a class="fa fa-anchor" href="#common-labels" onclick="event.stopPropagation()"></a></h2>
 
-        <h3 id="priority-p">Priority (<code v-pre="">p.</code>)<a class="fa fa-anchor" href="#priority-p" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="priority-p">Priority (<code v-pre>p.</code>)<a class="fa fa-anchor" href="#priority-p" onclick="event.stopPropagation()"></a></h3>
         <ul>
-          <li><code v-pre="">p.Critical</code>: Would like to fix it ASAP and release as a hot patch.</li>
-          <li><code v-pre="">p.Urgent</code>: Would like to handle in the very next release.</li>
-          <li><code v-pre="">p.High</code>: Enhances user experience significantly, would like to do in the next few releases.</li>
-          <li><code v-pre="">p.Medium</code>: Marginal impact on user experience.</li>
-          <li><code v-pre="">p.Low</code>: Very little impact, unlikely to do in the near future.</li>
-          <li><code v-pre="">p.Zero</code>: Unlikely to do, ever.</li>
+          <li><code v-pre>p.Critical</code>: Would like to fix it ASAP and release as a hot patch.</li>
+          <li><code v-pre>p.Urgent</code>: Would like to handle in the very next release.</li>
+          <li><code v-pre>p.High</code>: Enhances user experience significantly, would like to do in the next few releases.</li>
+          <li><code v-pre>p.Medium</code>: Marginal impact on user experience.</li>
+          <li><code v-pre>p.Low</code>: Very little impact, unlikely to do in the near future.</li>
+          <li><code v-pre>p.Zero</code>: Unlikely to do, ever.</li>
         </ul>
         <p>NOTE: An issue is considered as <em>accepted</em> when a priority label has been assigned.</p>
 
-        <h3 id="status-s">Status (<code v-pre="">s.</code>)<a class="fa fa-anchor" href="#status-s" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="status-s">Status (<code v-pre>s.</code>)<a class="fa fa-anchor" href="#status-s" onclick="event.stopPropagation()"></a></h3>
         <ul>
           <li>Open issues
             <ul>
               <li>No status: New issue yet to be triaged.</li>
-              <li><code v-pre="">s.OnHold</code>: The work on the issue has been put on hold pending some other event.</li>
+              <li><code v-pre>s.OnHold</code>: The work on the issue has been put on hold pending some other event.</li>
             </ul>
           </li>
           <li>Open PR
             <ul>
-              <li><code v-pre="">s.ToReview</code>: Waiting for the review.</li>
-              <li><code v-pre="">s.Ongoing</code>: The PR is being worked on.</li>
-              <li><code v-pre="">s.ToMerge</code>: Main reviewer approved the changes.</li>
-              <li><code v-pre="">s.MergeApproved</code>: Both main reviewer and the code quality reviewer has approved the merge. PR can be merged.</li>
-              <li><code v-pre="">s.OnHold</code>: The work on the PR has been put on hold pending some other event.</li>
+              <li><code v-pre>s.ToReview</code>: Waiting for the review.</li>
+              <li><code v-pre>s.Ongoing</code>: The PR is being worked on.</li>
+              <li><code v-pre>s.ToMerge</code>: Main reviewer approved the changes.</li>
+              <li><code v-pre>s.MergeApproved</code>: Both main reviewer and the code quality reviewer has approved the merge. PR can be merged.</li>
+              <li><code v-pre>s.OnHold</code>: The work on the PR has been put on hold pending some other event.</li>
             </ul>
           </li>
         </ul>
 
-        <h3 id="category-c">Category (<code v-pre="">c.</code>)<a class="fa fa-anchor" href="#category-c" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="category-c">Category (<code v-pre>c.</code>)<a class="fa fa-anchor" href="#category-c" onclick="event.stopPropagation()"></a></h3>
         <ul>
           <li>Changes to <em>functionality</em>, categorized based on size
             <ul>
-              <li><code v-pre="">c.Enhancement</code>: An enhancement to an existing functionality (not big enough to be considered as a user story).</li>
-              <li><code v-pre="">c.Story</code> : A user story.<br>
-                OR <code v-pre="">c.Feature</code>: A new feature.</li>
-              <li><code v-pre="">c.Epic</code> or <code v-pre="">c.Theme</code>: A feature that be broken down into many user-stories/features.</li>
+              <li><code v-pre>c.Enhancement</code>: An enhancement to an existing functionality (not big enough to be considered as a user story).</li>
+              <li><code v-pre>c.Story</code> : A user story.<br>
+                OR <code v-pre>c.Feature</code>: A new feature.</li>
+              <li><code v-pre>c.Epic</code> or <code v-pre>c.Theme</code>: A feature that be broken down into many user-stories/features.</li>
             </ul>
           </li>
           <li>Other work
             <ul>
-              <li><code v-pre="">c.Bug</code></li>
-              <li><code v-pre="">c.Task</code>, <code v-pre="">c.Chore</code>: Other work items such as updating documentation.</li>
-              <li><code v-pre="">c.Message</code>: Issue used as a means of discussing something with the dev team.<br>
+              <li><code v-pre>c.Bug</code></li>
+              <li><code v-pre>c.Task</code>, <code v-pre>c.Chore</code>: Other work items such as updating documentation.</li>
+              <li><code v-pre>c.Message</code>: Issue used as a means of discussing something with the dev team.<br>
                 e.g. a request for help on setting up dev environment.</li>
             </ul>
           </li>
         </ul>
 
-        <h3 id="difficulty-d">Difficulty (<code v-pre="">d.</code>)<a class="fa fa-anchor" href="#difficulty-d" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="difficulty-d">Difficulty (<code v-pre>d.</code>)<a class="fa fa-anchor" href="#difficulty-d" onclick="event.stopPropagation()"></a></h3>
         <ul>
-          <li><code v-pre="">d.Easy</code>: For new contributors to do as their first PR. MUST be simple enough to be contained in one commit.</li>
-          <li><code v-pre="">d.Moderate</code>: Moderate difficulty. Small localized change.</li>
-          <li><code v-pre="">d.Hard</code>, <code v-pre="">d.VeryHard</code>: More difficult issues that are better left for committers or more senior developers.</li>
+          <li><code v-pre>d.Easy</code>: For new contributors to do as their first PR. MUST be simple enough to be contained in one commit.</li>
+          <li><code v-pre>d.Moderate</code>: Moderate difficulty. Small localized change.</li>
+          <li><code v-pre>d.Hard</code>, <code v-pre>d.VeryHard</code>: More difficult issues that are better left for committers or more senior developers.</li>
         </ul>
 
-        <h3 id="effort-e">Effort (<code v-pre="">e.</code>)<a class="fa fa-anchor" href="#effort-e" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="effort-e">Effort (<code v-pre>e.</code>)<a class="fa fa-anchor" href="#effort-e" onclick="event.stopPropagation()"></a></h3>
         <p>This label can be used to indicate how much effort is expected for (or was spent on) an issue.</p>
-        <p><code v-pre="">e.1</code> is roughly equal to an hour of work, <code v-pre="">e.2</code> is two hours of work, and so on. Recommended values: 1,2,4,8,16,32</p>
+        <p><code v-pre>e.1</code> is roughly equal to an hour of work, <code v-pre>e.2</code> is two hours of work, and so on. Recommended values: 1,2,4,8,16,32</p>
         <p>Effort labels can be applied to PRs indicate effort for reviewing (by the main reviewer). Those applied for issues can indicate
           the effort for fixing the issue.</p>
 
-        <h3 id="aspect-a">Aspect (<code v-pre="">a-</code>)<a class="fa fa-anchor" href="#aspect-a" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="aspect-a">Aspect (<code v-pre>a-</code>)<a class="fa fa-anchor" href="#aspect-a" onclick="event.stopPropagation()"></a></h3>
         <p>Classifies the issues based on the non-functional aspect it tackles. Some examples:</p>
         <div class="table-responsive">
           <table class="markbind-table table table-bordered table-striped">
@@ -137,61 +137,61 @@
             </thead>
             <tbody>
               <tr>
-                <td><code v-pre="">a-AccessControl</code></td>
+                <td><code v-pre>a-AccessControl</code></td>
                 <td>Controlling access to user groups, authentication, privacy, anonymity</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-CodeQuality</code></td>
+                <td><code v-pre>a-CodeQuality</code></td>
                 <td>Refactorings that are mainly to improve code/design quality</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-Concurrency</code></td>
+                <td><code v-pre>a-Concurrency</code></td>
                 <td>Things related to concurrent access, session control</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-DevOps</code></td>
+                <td><code v-pre>a-DevOps</code></td>
                 <td>CI, release management, version control, dev docs</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-Docs</code></td>
+                <td><code v-pre>a-Docs</code></td>
                 <td>User docs, product website</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-FaultTolerance</code></td>
+                <td><code v-pre>a-FaultTolerance</code></td>
                 <td>Resilience to user errors, environmental problems</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-Performance</code></td>
+                <td><code v-pre>a-Performance</code></td>
                 <td>Speed of operation</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-Persistence</code></td>
+                <td><code v-pre>a-Persistence</code></td>
                 <td>Saving data permanently</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-Scalability</code></td>
+                <td><code v-pre>a-Scalability</code></td>
                 <td>Related to behavior at increasing loads</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-Security</code></td>
+                <td><code v-pre>a-Security</code></td>
                 <td>Protection from security threats</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-Testing</code></td>
+                <td><code v-pre>a-Testing</code></td>
                 <td>Testing efficiency and robustness (as opposed to testing a specific feature)</td>
               </tr>
               <tr>
-                <td><code v-pre="">a-UIX</code></td>
+                <td><code v-pre>a-UIX</code></td>
                 <td>User interface, User experience, Responsiveness</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <h3 id="feature-f">Feature (<code v-pre="">f-</code>)<a class="fa fa-anchor" href="#feature-f" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="feature-f">Feature (<code v-pre>f-</code>)<a class="fa fa-anchor" href="#feature-f" onclick="event.stopPropagation()"></a></h3>
         <p>Classifies the issue based on the feature it involves. These labels depend on the project.
-          e.g. <code v-pre="">f-Admin</code>, <code v-pre="">f-Sessions</code>, <code v-pre="">f-Delete</code></p>
+          e.g. <code v-pre>f-Admin</code>, <code v-pre>f-Sessions</code>, <code v-pre>f-Delete</code></p>
 
-        <h3 id="tech-t">Tech (<code v-pre="">t-</code>)<a class="fa fa-anchor" href="#tech-t" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="tech-t">Tech (<code v-pre>t-</code>)<a class="fa fa-anchor" href="#tech-t" onclick="event.stopPropagation()"></a></h3>
         <p>Classifies the issue based on the tool/technology it involves. Some examples given below.</p>
         <div class="table-responsive">
           <table class="markbind-table table table-bordered table-striped">
@@ -203,19 +203,19 @@
             </thead>
             <tbody>
               <tr>
-                <td><code v-pre="">t-CSS</code></td>
+                <td><code v-pre>t-CSS</code></td>
                 <td>CSS, Bootstrap</td>
               </tr>
               <tr>
-                <td><code v-pre="">t-HTML</code></td>
+                <td><code v-pre>t-HTML</code></td>
                 <td>HTML, Browsers</td>
               </tr>
               <tr>
-                <td><code v-pre="">t-JS</code></td>
+                <td><code v-pre>t-JS</code></td>
                 <td>Javascript, JQuery</td>
               </tr>
               <tr>
-                <td><code v-pre="">t-JSTL</code></td>
+                <td><code v-pre>t-JSTL</code></td>
                 <td>JSTL, JSP, Servlets</td>
               </tr>
             </tbody>
@@ -223,8 +223,8 @@
         </div>
         <h3 id="special-labels">Special labels<a class="fa fa-anchor" href="#special-labels" onclick="event.stopPropagation()"></a></h3>
         <ul>
-          <li><code v-pre="">good first issue</code>: for first time contributors (note that <a href="https://help.github.com/en/github/building-a-strong-community/encouraging-helpful-contributions-to-your-project-with-labels">GitHub treats this label in a special way</a>)</li>
-          <li><code v-pre="">kudos</code>: to appreciate good work done in a PR</li>
+          <li><code v-pre>good first issue</code>: for first time contributors (note that <a href="https://help.github.com/en/github/building-a-strong-community/encouraging-helpful-contributions-to-your-project-with-labels">GitHub treats this label in a special way</a>)</li>
+          <li><code v-pre>kudos</code>: to appreciate good work done in a PR</li>
         </ul>
 
         <h2 id="other-guidelines">Other guidelines<a class="fa fa-anchor" href="#other-guidelines" onclick="event.stopPropagation()"></a></h2>
@@ -270,12 +270,12 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Wed, 17 Jun 2020, 23:48:19 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Aug 21, 2020, 8:27:11 PM GMT+8]</small></div>
     </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>

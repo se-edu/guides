@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="generator" content="MarkBind 2.15.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HTML coding standard</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
           </form>
         </li>
       </navbar>
@@ -52,7 +52,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/1999/xhtml"</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -91,13 +91,13 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
         <ul>
           <li>
-            <p><strong>Indentation</strong>: Indentation should be 2 spaces for html files. Spaces should be used instead of <code v-pre="">tab</code>.</p>
+            <p><strong>Indentation</strong>: Indentation should be 2 spaces for html files. Spaces should be used instead of <code v-pre>tab</code>.</p>
           </li>
           <li>
             <p><strong>Readability vs Compression</strong>: We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged, along with ASCII art, where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.</p>
@@ -107,7 +107,7 @@
           </li>
           <li>
             <p><strong>General structure for HTML document</strong>:</p>
-            <pre><code class="hljs html" v-pre=""><span><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"Content-Type"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"text/html; charset=UTF-8"</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br></span><span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>CS2103/T (Module website)<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br></span><span><br></span><span>  <span class="hljs-comment">&lt;!-- Sample stylesheet inclusion --&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles/common.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br></span><span>  <span class="hljs-comment">&lt;!-- Body content goes here --&gt;</span><br></span><span><br></span><span>  <span class="hljs-comment">&lt;!-- Sample javascript inclusion --&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></span></code></pre>
+            <pre><code class="hljs html" v-pre><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"Content-Type"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"text/html; charset=UTF-8"</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br></span><span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>CS2103/T (Module website)<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br></span><span><br></span><span>  <span class="hljs-comment">&lt;!-- Sample stylesheet inclusion --&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"styles/common.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br></span><span>  <span class="hljs-comment">&lt;!-- Body content goes here --&gt;</span><br></span><span><br></span><span>  <span class="hljs-comment">&lt;!-- Sample javascript inclusion --&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></span></code></pre>
           </li>
         </ul>
 
@@ -121,7 +121,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Stuff<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Stuff<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -131,13 +131,13 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Stuff<br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>More Stuff<br></span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Stuff<br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>More Stuff<br></span></code></pre>
             </div>
           </div>
         </div>
         <ul>
-          <li><strong>Do not use <code v-pre="">/&gt;</code> for <em>void</em> elements.</strong><br>
-            Example of void elements are: <code v-pre="">br</code>, <code v-pre="">img</code>, <code v-pre="">link</code>, <code v-pre="">meta</code>.
+          <li><strong>Do not use <code v-pre>/&gt;</code> for <em>void</em> elements.</strong><br>
+            Example of void elements are: <code v-pre>br</code>, <code v-pre>img</code>, <code v-pre>link</code>, <code v-pre>meta</code>.
             The full list of HTML void elements can be accessed <a href="http://www.w3.org/TR/html-markup/syntax.html#void-elements">here</a>.</li>
         </ul>
         <div class="container ml-3">
@@ -146,7 +146,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"5px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"10px"</span>&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"5px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"10px"</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"5px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"10px"</span> /&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"5px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"10px"</span> /&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -169,7 +169,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"frame"</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"frame"</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -179,14 +179,14 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">DIV</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">"frame"</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">DIV</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">"frame"</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
 
         <h2 id="attributes">Attributes<a class="fa fa-anchor" href="#attributes" onclick="event.stopPropagation()"></a></h2>
         <ul>
-          <li><strong>Use <code v-pre="">attr=&quot;value&quot;</code> for attribute values.</strong></li>
+          <li><strong>Use <code v-pre>attr=&quot;value&quot;</code> for attribute values.</strong></li>
         </ul>
         <div class="container ml-3">
           <div class="row">
@@ -194,7 +194,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"computer"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"some-input"</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">"disabled"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"2"</span>&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"computer"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"some-input"</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">"disabled"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"2"</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -204,7 +204,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs html" v-pre=""><span><span class="hljs-comment">&lt;!-- single/no quotes --&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">computer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'some-input'</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">'disabled'</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">2</span>&gt;</span><br></span><span><br></span><span><span class="hljs-comment">&lt;!-- specify boolean variables in the attributes --&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"computer"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"some-input"</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"2"</span>&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-comment">&lt;!-- single/no quotes --&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">computer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'some-input'</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">'disabled'</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">2</span>&gt;</span><br></span><span><br></span><span><span class="hljs-comment">&lt;!-- specify boolean variables in the attributes --&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"computer"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"some-input"</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"2"</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -212,18 +212,18 @@
         <h2 id="naming">Naming<a class="fa fa-anchor" href="#naming" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><strong>Classes: See <a href="/guides/conventions/css.html">CSS Style Guide</a>.</strong></li>
-          <li><strong>IDs: lower-case, join-by-hyphen.</strong> e.g., <code v-pre="">header-content-week3</code></li>
+          <li><strong>IDs: lower-case, join-by-hyphen.</strong> e.g., <code v-pre>header-content-week3</code></li>
         </ul>
 
         <h2 id="indentation">Indentation<a class="fa fa-anchor" href="#indentation" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><strong>Indentation should be <mark>2 spaces</mark> for HTML files (not 4).</strong></li>
-          <li><strong>Spaces should be used instead of <code v-pre="">tab</code>.</strong></li>
+          <li><strong>Spaces should be used instead of <code v-pre>tab</code>.</strong></li>
         </ul>
 
         <h2 id="miscellaneous">Miscellaneous<a class="fa fa-anchor" href="#miscellaneous" onclick="event.stopPropagation()"></a></h2>
         <ul>
-          <li><strong>Follow this format for <code v-pre="">script</code> tags:</strong></li>
+          <li><strong>Follow this format for <code v-pre>script</code> tags:</strong></li>
         </ul>
         <div class="container ml-3">
           <div class="row">
@@ -231,7 +231,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -241,7 +241,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">language</span>=<span class="hljs-string">"JavaScript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">language</span>=<span class="hljs-string">"JavaScript"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/js/jquery-minified.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -254,7 +254,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Student Name<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></span><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></span><span>sed do eiusmod tempor incididunt ut labore<br></span><span>et dolore magna aliqua. Ut enim ad minim veniam,<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Student Name<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br></span><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br></span><span>sed do eiusmod tempor incididunt ut labore<br></span><span>et dolore magna aliqua. Ut enim ad minim veniam,<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -264,17 +264,18 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Student Name <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
+              <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Student Name <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
         <ul>
           <li>
-            <p><strong>Include <code v-pre="">rel=&quot;noopener noreferrer&quot;</code> when using <code v-pre="">target=&quot;_blank&quot;</code> in links.</strong></p>
+            <p><strong>Include <code v-pre>rel=&quot;noopener noreferrer&quot;</code> when using <code v-pre>target=&quot;_blank&quot;</code> in links.</strong></p>
             <box type="info" seamless>
-              <p>RATIONALE: Leaving this out would enable attackers to get hold of <code v-pre="">window.opener</code> object, which can be used to redirect to a malicious link. [<a href="https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c">Source</a>]
+              <p>RATIONALE: Leaving this out would enable attackers to get hold of <code v-pre>window.opener</code> object, which can be used to redirect to a malicious link. [<a href="https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c">Source</a>]
               </p>
             </box>
+            <p></p>
           </li>
         </ul>
         <div class="container ml-3">
@@ -283,7 +284,7 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"noopener noreferrer"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://example.com"</span>&gt;</span>Example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"noopener noreferrer"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://example.com"</span>&gt;</span>Example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -293,7 +294,7 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="no-line-numbers hljs html" v-pre=""><span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://example.com"</span>&gt;</span>Example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></span></code></pre>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://example.com"</span>&gt;</span>Example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></span></code></pre>
             </div>
           </div>
         </div>
@@ -322,12 +323,12 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Wed, 17 Jun 2020, 23:48:19 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Aug 21, 2020, 8:27:11 PM GMT+8]</small></div>
     </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>

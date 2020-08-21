@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="generator" content="MarkBind 2.15.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Using Checkstyle</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -31,7 +31,7 @@
         <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
         <li slot="right" class="nav-link">
           <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right=""></searchbar>
+            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
           </form>
         </li>
       </navbar>
@@ -47,77 +47,77 @@
         <p>Given below are some instructions on how to use Checkstyle for some common project tasks.</p>
 
         <h2 id="configuring-checkstyle-rules">Configuring Checkstyle rules<a class="fa fa-anchor" href="#configuring-checkstyle-rules" onclick="event.stopPropagation()"></a></h2>
-        <p>Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in <code v-pre="">./config/checkstyle/</code> by convention.</p>
-        <p>The set of code style rules are put in the <code v-pre="">config/checkstyle/checkstyle.xml</code>. To enable <em>exceptions</em> to code styles, you can add in the comment <code v-pre="">//CODESTYLE.OFF: RuleName</code> at the start of the section and <code v-pre="">//CODESTYLE.ON: RuleName</code> at the end of the section. Alternatively, you can specify which rules to suppress in a config file <code v-pre="">config/checkstyle/suppressions.xml</code></p>
+        <p>Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in <code v-pre>./config/checkstyle/</code> by convention.</p>
+        <p>The set of code style rules are put in the <code v-pre>config/checkstyle/checkstyle.xml</code>. To enable <em>exceptions</em> to code styles, you can add in the comment <code v-pre>//CODESTYLE.OFF: RuleName</code> at the start of the section and <code v-pre>//CODESTYLE.ON: RuleName</code> at the end of the section. Alternatively, you can specify which rules to suppress in a config file <code v-pre>config/checkstyle/suppressions.xml</code></p>
         <p>Checkstyle configuration matching <a href="/guides/conventions/java/intermediate.html">our Java coding standard</a> can be found in the <a href="https://github.com/se-edu/addressbook-level3/tree/master/config/checkstyle">AddressBook Level 3 project</a>.</p>
 
         <h2 id="using-checkstyle-with-gradle">Using Checkstyle with Gradle<a class="fa fa-anchor" href="#using-checkstyle-with-gradle" onclick="event.stopPropagation()"></a></h2>
-        <p>Here is an example of relevant lines that should be in the <code v-pre="">build.gradle</code> file.</p>
+        <p>Here is an example of relevant lines that should be in the <code v-pre>build.gradle</code> file.</p>
         <div class="code-block">
           <div class="code-block-heading"><span>build.gradle</span></div>
           <div class="code-block-content">
-            <pre><code heading="build.gradle" class="hljs groovy" v-pre=""><span>plugins {<br></span><span class="highlighted">    id <span class="hljs-string">'checkstyle'</span><br></span><span>    <span class="hljs-comment">// other plugins</span><br></span><span>}<br></span><span><br></span><span class="highlighted">checkstyle {<br></span><span class="highlighted">    toolVersion = <span class="hljs-string">'8.23'</span><br></span><span class="highlighted">}<br></span></code></pre>
+            <pre><code heading="build.gradle" class="hljs groovy" v-pre><span>plugins {<br></span><span class="highlighted">    id <span class="hljs-string">'checkstyle'</span><br></span><span>    <span class="hljs-comment">// other plugins</span><br></span><span>}<br></span><span><br></span><span class="highlighted">checkstyle {<br></span><span class="highlighted">    toolVersion = <span class="hljs-string">'8.23'</span><br></span><span class="highlighted">}<br></span></code></pre>
           </div>
         </div>
         <p>Some relevant Gradle <em>tasks</em> added by the CheckStyle plugin.</p>
         <ul>
-          <li><code v-pre="">checkstyleMain</code>: checks if the main code complies with the style rules</li>
-          <li><code v-pre="">checkstyleTest</code>: checks if the test code complies with the style rules</li>
+          <li><code v-pre>checkstyleMain</code>: checks if the main code complies with the style rules</li>
+          <li><code v-pre>checkstyleTest</code>: checks if the test code complies with the style rules</li>
         </ul>
-        <p>For example, you can run <code v-pre="">gradlew checkstyleMain checkstyleTest</code> to verify that all your code complies with the style rules.</p>
+        <p>For example, you can run <code v-pre>gradlew checkstyleMain checkstyleTest</code> to verify that all your code complies with the style rules.</p>
 
         <h2 id="using-checkstyle-idea-plugin">Using Checkstyle-IDEA plugin<a class="fa fa-anchor" href="#using-checkstyle-idea-plugin" onclick="event.stopPropagation()"></a></h2>
         <p>Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij can alert you about code style problems as you write code.</p>
         <ol>
           <li>
-            <p>Install the Checkstyle-IDEA plugin by going to <code v-pre="">File</code> &gt; <code v-pre="">Settings</code> (Windows/Linux), or <code v-pre="">IntelliJ IDEA</code> &gt; <code v-pre="">Preferences…​</code> (macOS). Select <code v-pre="">Plugins</code>, press <code v-pre="">Browse Repository</code>, and find the plugin. Restart the IDE to complete the installation.</p>
+            <p>Install the Checkstyle-IDEA plugin by going to <code v-pre>File</code> &gt; <code v-pre>Settings</code> (Windows/Linux), or <code v-pre>IntelliJ IDEA</code> &gt; <code v-pre>Preferences…​</code> (macOS). Select <code v-pre>Plugins</code>, press <code v-pre>Browse Repository</code>, and find the plugin. Restart the IDE to complete the installation.</p>
           </li>
           <li>
-            <p>Click <code v-pre="">File</code> &gt; <code v-pre="">Settings…​</code> &gt; <code v-pre="">Other Settings</code> &gt; <code v-pre="">Checkstyle</code></p>
+            <p>Click <code v-pre>File</code> &gt; <code v-pre>Settings…​</code> &gt; <code v-pre>Other Settings</code> &gt; <code v-pre>Checkstyle</code></p>
           </li>
           <li>
-            <p>Set <code v-pre="">Scan Scope</code> to <code v-pre="">Only Java sources (including tests)</code>, so that the plugin will run checkstyle for our test source codes as well</p>
+            <p>Set <code v-pre>Scan Scope</code> to <code v-pre>Only Java sources (including tests)</code>, so that the plugin will run checkstyle for our test source codes as well</p>
           </li>
           <li>
-            <p>Ensure that the <code v-pre="">Checkstyle version</code> is set to the one used by the project.<br>
-              <span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If your project uses Gradle, you can check the <code v-pre="">build.gradle</code> file to find the correct version.<br>
-              <a href="/guides/tutorials/images/checkstyle/checkstyle-idea-scan-scope.png" target="_self"><img src="/guides/tutorials/images/checkstyle/checkstyle-idea-scan-scope.png" alt="" class="img-fluid"></a></p>
+            <p>Ensure that the <code v-pre>Checkstyle version</code> is set to the one used by the project.<br>
+              <span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If your project uses Gradle, you can check the <code v-pre>build.gradle</code> file to find the correct version.<br>
+              <a href="/guides/tutorials/images/checkstyle/checkstyle-idea-scan-scope.png" target="_self"><img src="/guides/tutorials/images/checkstyle/checkstyle-idea-scan-scope.png" alt class="img-fluid"></a></p>
           </li>
           <li>
-            <p>Click the plus sign under <code v-pre="">Configuration File</code></p>
+            <p>Click the plus sign under <code v-pre>Configuration File</code></p>
           </li>
           <li>
             <p>Enter an arbitrary description e.g. addressbook</p>
           </li>
           <li>
-            <p>Select <code v-pre="">Use a local Checkstyle file</code></p>
+            <p>Select <code v-pre>Use a local Checkstyle file</code></p>
           </li>
           <li>
-            <p>Use the checkstyle configuration file found at <code v-pre="">config/checkstyle/checkstyle.xml</code></p>
+            <p>Use the checkstyle configuration file found at <code v-pre>config/checkstyle/checkstyle.xml</code></p>
           </li>
           <li>
-            <p>Click <code v-pre="">Next</code> &gt; <code v-pre="">Finish</code></p>
+            <p>Click <code v-pre>Next</code> &gt; <code v-pre>Finish</code></p>
           </li>
           <li>
-            <p>Mark <code v-pre="">Active</code> for the newly imported check configuration<br>
-              <a href="/guides/tutorials/images/checkstyle/checkstyle-idea-configuration.png" target="_self"><img src="/guides/tutorials/images/checkstyle/checkstyle-idea-configuration.png" alt="" class="img-fluid"></a></p>
+            <p>Mark <code v-pre>Active</code> for the newly imported check configuration<br>
+              <a href="/guides/tutorials/images/checkstyle/checkstyle-idea-configuration.png" target="_self"><img src="/guides/tutorials/images/checkstyle/checkstyle-idea-configuration.png" alt class="img-fluid"></a></p>
           </li>
           <li>
-            <p>Click <code v-pre="">OK</code></p>
+            <p>Click <code v-pre>OK</code></p>
           </li>
           <li>
             <p>To verify the plugin is set up correctly, temporirily modify the code to violate a style rule (e.g., add an extra space somewhere) and run the Checkstyle check using the plugin.<br>
-              <a href="/guides/tutorials/images/checkstyle/runCheckstyle.png" target="_self"><img src="/guides/tutorials/images/checkstyle/runCheckstyle.png" alt="" class="img-fluid"></a></p>
+              <a href="/guides/tutorials/images/checkstyle/runCheckstyle.png" target="_self"><img src="/guides/tutorials/images/checkstyle/runCheckstyle.png" alt class="img-fluid"></a></p>
           </li>
         </ol>
         <h4 id="troubleshooting">Troubleshooting<a class="fa fa-anchor" href="#troubleshooting" onclick="event.stopPropagation()"></a></h4>
-        <p><strong>Problem: When importing <code v-pre="">checkstyle.xml</code>, Checkstyle-IDEA plugin complains that <code v-pre="">The Checkstyle rules file could not be parsed. …​ The file has been blacklisted for 60s.</code></strong></p>
+        <p><strong>Problem: When importing <code v-pre>checkstyle.xml</code>, Checkstyle-IDEA plugin complains that <code v-pre>The Checkstyle rules file could not be parsed. …​ The file has been blacklisted for 60s.</code></strong></p>
         <ul>
-          <li>Reason: <code v-pre="">checkstyle.xml</code> is written for a particular version, but the plugin was not configured to the correct version.</li>
-          <li>Solution: Ensure that you have selected the correct <code v-pre="">Checkstyle version</code> that matches the version in <code v-pre="">build.gradle</code> and have clicked
-            <code v-pre="">Apply</code>, as <code v-pre="">checkstyle.xml</code> is written for Gradle’s checkstyle.</li>
+          <li>Reason: <code v-pre>checkstyle.xml</code> is written for a particular version, but the plugin was not configured to the correct version.</li>
+          <li>Solution: Ensure that you have selected the correct <code v-pre>Checkstyle version</code> that matches the version in <code v-pre>build.gradle</code> and have clicked
+            <code v-pre>Apply</code>, as <code v-pre>checkstyle.xml</code> is written for Gradle’s checkstyle.</li>
         </ul>
-        <p><strong>Problem: After setting up <code v-pre="">checkstyle.xml</code>, Checkstyle-IDEA plugin does not seem to highlight the errors / real-time scanning seems broken.</strong></p>
+        <p><strong>Problem: After setting up <code v-pre>checkstyle.xml</code>, Checkstyle-IDEA plugin does not seem to highlight the errors / real-time scanning seems broken.</strong></p>
         <ul>
           <li>Reason: The plugin may not immediately run after setting it up.</li>
           <li>Solution: Restart the IDE.</li>
@@ -150,12 +150,12 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.14.1</a> on Wed, 17 Jun 2020, 23:48:19 GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Aug 21, 2020, 8:27:11 PM GMT+8]</small></div>
     </footer>
   </div>
 </body>
 <script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script src="../markbind/js/polyfill.min.js"></script>
 <script src="../markbind/js/bootstrap-vue.min.js"></script>
