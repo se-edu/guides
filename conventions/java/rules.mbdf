@@ -703,7 +703,7 @@ for (i = 0; i < 10; i++) {
 <div tags="level--intermediate-only">{{ pagebreak }}</div>
 <div tags="level--intermediate">
 
-**{{ icon_level_intermediate }} Class variables should never be declared public.**
+**{{ icon_level_intermediate }} Class variables should never be declared public** unless the class is a _data class_ with no behavior. This rule does not apply to constants.
 
 {{ bad }}
 
@@ -715,7 +715,7 @@ public class Foo{
 }
 ```
 
-%%{{ icon_info }} Rationale: The concept of Java information hiding and encapsulation is violated by public variables. Use private variables and access functions instead. One exception to this rule is when the class is essentially a data structure, with no behavior. In this case it is appropriate to make the class' instance variables public.%%
+%%{{ icon_info }} Rationale: The concept of Java information hiding and encapsulation is violated by public variables. Use non-public variables and access functions instead.%%
 
 </div>
 <div tags="level--advanced">
