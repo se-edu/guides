@@ -377,12 +377,12 @@
           </div>
           <div tags="level--intermediate-only"></div>
           <div tags="level--intermediate">
-            <p><strong><span><span class="badge badge-pill badge-warning text-white"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> Class variables should never be declared public.</strong></p>
+            <p><strong><span><span class="badge badge-pill badge-warning text-white"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> Class variables should never be declared public</strong> unless the class is a <em>data class</em> with no behavior. This rule does not apply to constants.</p>
             <p>
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>
             </p>
             <pre><code class="hljs java" v-pre><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span></span>{<br></span><span><br></span><span>   <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> bar;<br></span><span><br></span><span>}<br></span></code></pre>
-            <p><span class="dimmed"><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> Rationale: The concept of Java information hiding and encapsulation is violated by public variables. Use private variables and access functions instead. One exception to this rule is when the class is essentially a data structure, with no behavior. In this case it is appropriate to make the class' instance variables public.</span></p>
+            <p><span class="dimmed"><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> Rationale: The concept of Java information hiding and encapsulation is violated by public variables. Use non-public variables and access functions instead.</span></p>
           </div>
 
           <h3 id="loops"><strong>Loops</strong><a class="fa fa-anchor" href="#loops" onclick="event.stopPropagation()"></a></h3>
@@ -538,7 +538,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Fri, Aug 21, 2020, 8:27:11 PM GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Thu, 27 Aug 2020, 12:45:45 GMT+8]</small></div>
     </footer>
   </div>
 </body>
