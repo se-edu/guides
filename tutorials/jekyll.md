@@ -43,7 +43,7 @@ Jekyll uses [**kramdown**](https://kramdown.gettalong.org/syntax.html) (a supers
   * **Option 2 -- Run Jekyll locally**: You can [set up Jekyll locally and run it](https://help.github.com/en/github/working-with-github-pages/testing-your-github-pages-site-locally-with-jekyll) to see the exact way the update affects the final outcome.
 * **Previewing changes on GitHub**:
   * **Option 1 -- Github preview**: You can see a basic preview of the page by navigating to the corresponding `.md` source file in GitHub.
-  * **Option 2 -- Use Netlify PR preview**: You can set up Netlify to show previews of PRs (to learn how, read the [_Using Netlify_](netlify.html). This method shows a preview of the exact way the update affects the final outcome.
+  * **Option 2 -- Use Netlify PR preview**: You can set up Netlify to show previews of PRs (to learn how, read the [_Using Netlify_](netlify.html) guide). This method shows a preview of the exact way the update affects the final outcome.
 
 <!-- ==================================================================================================== -->
 
