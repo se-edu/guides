@@ -827,7 +827,7 @@ if (stream != null) {
 {{ bad }}
 ```java
 InputStream stream = File.open(fileName, "w");
-if (stream != null))
+if (stream != null)
     readFile(stream);
 
 ```
