@@ -191,7 +191,7 @@ setText("Long line split"
         + "into two parts.");
 if (isReady) {
     setText("Long line split"
-        + "into two parts.");
+            + "into two parts.");
 }
 ```
 
