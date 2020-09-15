@@ -133,7 +133,9 @@ Run the `test` task to run the tests in the project.
 
 {{ embed("Tutorials → Working with JAR files → **Fat JAR files**", "jar-fatJar.mbdf") }}
 
-The task **`shadowJar`** creates the JAR file in the `build/libs` folder. By default, it produces a jar file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and put it in the `builds/libs` folder. These properties can be set in the `build.gradle` file.
+The task **`shadowJar`** (e.g., running the command `gradlew shadowJar` or `gradlew clean shadowJar`) creates the JAR file in the `build/libs` folder. By default, it produces a jar file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and put it in the `builds/libs` folder. These properties can be set in the `build.gradle` file.
+
+{{ icon_info }} Ensure your `build.gradle` file contain the correct values w.r.t. the ShadowJar plugin e.g., `mainClassName`
 
 **Resources**:
 * [Gradle documentation for the Shadow plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
