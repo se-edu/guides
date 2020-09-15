@@ -137,7 +137,7 @@ The task **`shadowJar`** (e.g., running the command `gradlew shadowJar` or `grad
 
 {{ icon_info }} Ensure your `build.gradle` file contains the correct values w.r.t. the Shadow plugin e.g., `mainClassName`
 
-{{ icon_info }} If you are using JavaFX, see [here](if-you-are-using-gradle) to find what else you need to add to the `build.gradle` to include JavaFX libraries in the generated JAR file.
+{{ icon_info }} If you are using JavaFX, see the panel below to find what else you need to add to the `build.gradle` to pack JavaFX libraries into the generated JAR file.
 
 {{ embed("Tutorials → JavaFX Tutorial Part 1 → If you are using Gradle", "javaFxPart1.md#javafx-gradle") }}
 
