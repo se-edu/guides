@@ -30,6 +30,9 @@ A JavaFX application is like a play you are directing. Instead of creating props
 
 ### If you are using Gradle
 
+<div id="javafx-gradle">
+
+
 Update your `build.gradle` to include the following lines:
 ```groovy
 repositories {
@@ -53,6 +56,7 @@ dependencies {
     implementation group: 'org.openjfx', name: 'javafx-graphics', version: javaFxVersion, classifier: 'linux'
 }
 ```
+</div>
 
 ## Writing your first program
 
