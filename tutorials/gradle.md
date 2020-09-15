@@ -135,7 +135,7 @@ Run the `test` task to run the tests in the project.
 
 The task **`shadowJar`** (e.g., running the command `gradlew shadowJar` or `gradlew clean shadowJar`) creates the JAR file in the `build/libs` folder. By default, it produces a jar file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and put it in the `builds/libs` folder. These properties can be set in the `build.gradle` file.
 
-{{ icon_info }} Ensure your `build.gradle` file contain the correct values w.r.t. the ShadowJar plugin e.g., `mainClassName`
+{{ icon_info }} Ensure your `build.gradle` file contains the correct values w.r.t. the Shadow plugin e.g., `mainClassName`
 
 {{ icon_info }} If you are using JavaFX, see [here](if-you-are-using-gradle) to find what else you need to add to the `build.gradle` to include JavaFX libraries in the generated JAR file.
 
