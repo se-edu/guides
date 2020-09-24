@@ -91,7 +91,7 @@ dependencies {
 
 ## Running tests
 
-* In Injellij IDEA:
+* In Intellij IDEA:
   * To run a specific JUnit test class (e.g., `src/test/java/DukeTest.java`), right-click on the test class, and choose `Run {classname}`.
   * To run all tests in a folder (e.g., `src/test/java` folder), right-click on the folder, and choose `Run tests in {folder name}`.
  * Using Gradle:
