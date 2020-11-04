@@ -19,3 +19,14 @@ Here are the steps to convert the project documentation files to PDF format.
    ==For best results, use the settings indicated in the screenshot below.==
 
    ![Saving documentation as PDF files in Chrome](images/chrome_save_as_pdf.png)
+
+<box type="tip" seamless>
+
+**Adding a page break manually**{.text-success}
+
+In some cases, you might want to force a page break at a certain point in the generated PDF file. In those case, you can do so by inserting the following into the corresponding place in your source file.
+
+```html
+<div style="page-break-after: always;"></div>
+```
+</box>
