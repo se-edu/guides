@@ -93,7 +93,8 @@
         <ol>
           <li>Run the test as per normal after updating the code. The test will fail because the new program behavior is different from the one given in the <code v-pre>EXPECTED.TXT</code>.</li>
           <li>Use a diff tool to compare the <code v-pre>ACTUAL.TXT</code> against the <code v-pre>EXPECTED.TXT</code>.<br>
-            <span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> <a href="https://www.jetbrains.com/help/idea/comparing-files-and-folders.html">Intellij IDEA can compare two files</a>.</li>
+            <span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> <a href="https://www.jetbrains.com/help/idea/comparing-files-and-folders.html">Intellij IDEA can compare two files</a>.
+          </li>
           <li>Confirm the differences indicate the behavior has changed as you intended. If the differences are not as intended, your code is buggy; fix the code and repeat from step 1.</li>
           <li>Copy over the content of the <code v-pre>ACTUAL.TXT</code> to <code v-pre>EXPECTED.TXT</code> i.e., we accept that the actual behavior should be the new <em>expected</em> behavior. Rerun the test to confirm that it passes this time.</li>
         </ol>
@@ -101,7 +102,8 @@
         <ul>
           <li><strong>Problem</strong>: The <code v-pre>ACTUAL.TXT</code> and <code v-pre>EXPECTED.TXT</code> looks exactly the same but the test fails.<br>
             <strong>Explanation</strong>: The likely cause that the line endings are different (not visible to the naked eye) because the two files were created in two different operating systems.<br>
-            <strong>Solution</strong>: You can use the <code v-pre>dos2unix</code> utility (available in git-bash and *nix operating systems) to convert a file to Unix format.</li>
+            <strong>Solution</strong>: You can use the <code v-pre>dos2unix</code> utility (available in git-bash and *nix operating systems) to convert a file to Unix format.
+          </li>
         </ul>
         <hr>
         <p><strong>Authors:</strong></p>
@@ -130,7 +132,8 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Tue, Sep 15, 2020, 4:36:47 PM GMT+8]</small></div>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+      </div>
     </footer>
   </div>
 </body>
