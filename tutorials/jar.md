@@ -61,4 +61,4 @@ If you are using [Gradle](gradle.html) in your project, you can use it to create
 <!-- ==================================================================================================== -->
 ## Resources
 
-* [Oracle's tutorial on JAR files]({{ java_tutorial }}/deployment/jar/basicsindex.html)
+* [Oracle's tutorial on JAR files](https://docs.oracle.com/javase/tutorial/deployment/jar/basicsindex.html)
