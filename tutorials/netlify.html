@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Using Netlify</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,55 +41,56 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="using-netlify">Using Netlify<a class="fa fa-anchor" href="#using-netlify" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="using-netlify"><span id="using-netlify" class="anchor"></span>Using Netlify<a class="fa fa-anchor" href="#using-netlify" onclick="event.stopPropagation()"></a></h1>
         <div class="lead">
-          <p><strong><a href="https://www.netlify.com/">Netlify</a> is an automated hosting platform for deploying websites.</strong> Its <a href="https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/"><em>deploy previews</em></a> feature is particularly useful for <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">i.e., how would the final output of the documentation will change if the PR is merged</span>previewing documentation changes in a PR</span>.</p>
+          <p><strong><a href="https://www.netlify.com/">Netlify</a> is an automated hosting platform for deploying websites.</strong> Its <a href="https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/"><em>deploy previews</em></a> feature is particularly useful for <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">i.e., how would the final output of the documentation will change if the PR is merged</span>previewing documentation changes in a PR</span>.</p>
         </div>
         <p>The sections below explains how to use Netlify in a project.</p>
         <box type="important" seamless>
           <p><strong>Caution:</strong> Netlify allows only 300 free build minutes per month. They use an unsavory practice of letting you exceed the limit silently and then sending you an invoice for the extra use. You will not be able to use Netlify again unless you pay (or get them to cancel the charge). Therefore, we caution you to use Netlify (if at all) during times you update documentation and only if you want to use Netlify <em>Deploy Previews</em> to help review such PRs.</p>
         </box>
-        <h2 id="setting-up">Setting up<a class="fa fa-anchor" href="#setting-up" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="setting-up"><span id="setting-up" class="anchor"></span>Setting up<a class="fa fa-anchor" href="#setting-up" onclick="event.stopPropagation()"></a></h2>
         <ol>
           <li>
-            <p>Go to <a href="https://www.netlify.com/">https://www.netlify.com/</a> and click <code v-pre>Sign Up</code>. Next, click <code v-pre>GITHUB SIGN IN</code>, enter your GitHub account details and authorize netlify.</p>
+            <p>Go to <a href="https://www.netlify.com/">https://www.netlify.com/</a> and click <code class="hljs inline no-lang" v-pre>Sign Up</code>. Next, click <code class="hljs inline no-lang" v-pre>GITHUB SIGN IN</code>, enter your GitHub account details and authorize netlify.</p>
           </li>
           <li>
-            <p>After logging in, click <code v-pre>New site from Git</code>.</p>
+            <p>After logging in, click <code class="hljs inline no-lang" v-pre>New site from Git</code>.</p>
           </li>
           <li>
-            <p>You will then be brought to the setup page. Click <code v-pre>GitHub</code> to link your repository to Netlify.</p>
+            <p>You will then be brought to the setup page. Click <code class="hljs inline no-lang" v-pre>GitHub</code> to link your repository to Netlify.</p>
             <ul>
               <li>Depending on whether you are the owner of the repository, you can either grant or request access to Netlify so that it can access your repository and build your documentation.<br>
                 <a href="/guides/tutorials/images/netlify/grant_or_request_access.png" target="_self"><img src="/guides/tutorials/images/netlify/grant_or_request_access.png" alt class="img-fluid"></a>
               </li>
-              <li>After granting or requesting access to your repository, click <code v-pre>Authorize netlify</code>.</li>
+              <li>After granting or requesting access to your repository, click <code class="hljs inline no-lang" v-pre>Authorize netlify</code>.</li>
             </ul>
           </li>
           <li>
             <p>Pick your repository from the list.</p>
           </li>
           <li>
-            <p>Fill out the details as follows and then click <code v-pre>Deploy site</code>.</p>
+            <p>Fill out the details as follows and then click <code class="hljs inline no-lang" v-pre>Deploy site</code>.</p>
             <ul>
-              <li>Branch to deploy: select <code v-pre>master</code> branch</li>
+              <li>Branch to deploy: select <code class="hljs inline no-lang" v-pre>master</code> branch</li>
               <li>If using Jekyll for project documentation:
                 <ul>
-                  <li>Build command: <code v-pre>cd docs &amp;&amp; bundle install &amp;&amp; bundle exec jekyll build</code></li>
-                  <li>Publish directory: <code v-pre>docs/_site</code></li>
+                  <li>Build command: <code class="hljs inline no-lang" v-pre>cd docs &amp;&amp; bundle install &amp;&amp; bundle exec jekyll build</code></li>
+                  <li>Publish directory: <code class="hljs inline no-lang" v-pre>docs/_site</code></li>
                 </ul>
               </li>
               <li>If using MarkBind for project documentation:
                 <ul>
-                  <li>Build Command: <code v-pre>cd docs &amp;&amp; npm i markbind-cli -g &amp;&amp; markbind build --baseUrl</code></li>
-                  <li>Publish directory: <code v-pre>docs/_site</code></li>
+                  <li>Build Command: <code class="hljs inline no-lang" v-pre>cd docs &amp;&amp; npm i markbind-cli -g &amp;&amp; markbind build --baseUrl</code></li>
+                  <li>Publish directory: <code class="hljs inline no-lang" v-pre>docs/_site</code></li>
                 </ul>
               </li>
             </ul>
             <box type="info" seamless>
-              <p>For both Jekyll and MarkBind, omit the <code v-pre>cd docs &amp;&amp;</code> and <code v-pre>docs/</code> from the <em>build command</em> and the <em>publish directory</em> respectively if the documentation is in the root (i.e., not inside the <code v-pre>docs</code> folder).
+              <p>For both Jekyll and MarkBind, omit the <code class="hljs inline no-lang" v-pre>cd docs &amp;&amp;</code> and <code class="hljs inline no-lang" v-pre>docs/</code> from the <em>build command</em> and the <em>publish directory</em> respectively if the documentation is in the root (i.e., not inside the <code class="hljs inline no-lang" v-pre>docs</code> folder).
               </p>
             </box>
             <p></p>
@@ -97,27 +101,26 @@
               <li>View your main branch’s deployed documentation on the site name given by Netlify (customizable as shown <a href="#changing_the_site_name">below</a>).<br>
                 <a href="/guides/tutorials/images/netlify/temp_site_name.png" target="_self"><img src="/guides/tutorials/images/netlify/temp_site_name.png" alt class="img-fluid"></a>
               </li>
-              <li>Preview the updated documentation whenever a pull request is made by clicking the <code v-pre>Details</code> hyperlink next to the Netlify test status.<br>
+              <li>Preview the updated documentation whenever a pull request is made by clicking the <code class="hljs inline no-lang" v-pre>Details</code> hyperlink next to the Netlify test status.<br>
                 <a href="/guides/tutorials/images/netlify/netlify_details.png" target="_self"><img src="/guides/tutorials/images/netlify/netlify_details.png" alt class="img-fluid"></a>
               </li>
             </ul>
           </li>
         </ol>
-        <h2 id="changing-the-site-name">Changing the site name<a class="fa fa-anchor" href="#changing-the-site-name" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="changing-the-site-name"><span id="changing-the-site-name" class="anchor"></span>Changing the site name<a class="fa fa-anchor" href="#changing-the-site-name" onclick="event.stopPropagation()"></a></h2>
         <p>If you don’t like the site name given by Netlify, you can change it as follows:</p>
         <ol>
           <li>
-            <p>Click on <code v-pre>Settings</code>.</p>
+            <p>Click on <code class="hljs inline no-lang" v-pre>Settings</code>.</p>
           </li>
           <li>
-            <p>Then click <code v-pre>Change site name</code> and fill in your desired site name.<br>
+            <p>Then click <code class="hljs inline no-lang" v-pre>Change site name</code> and fill in your desired site name.<br>
               <a href="/guides/tutorials/images/netlify/change_site_name.png" target="_self"><img src="/guides/tutorials/images/netlify/change_site_name.png" alt class="img-fluid"></a>
             </p>
           </li>
         </ol>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -136,21 +139,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

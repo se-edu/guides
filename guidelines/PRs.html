@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guidelines for working with PRs</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,23 +41,24 @@
     </header>
     <div id="flex-body">
 
-      <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="guidelines-for-working-with-prs">Guidelines for working with PRs<a class="fa fa-anchor" href="#guidelines-for-working-with-prs" onclick="event.stopPropagation()"></a></h1>
 
-        <h2 id="selecting-what-to-work-on">Selecting what to work on<a class="fa fa-anchor" href="#selecting-what-to-work-on" onclick="event.stopPropagation()"></a></h2>
+      <div id="content-wrapper">
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guidelines-for-working-with-prs"><span id="guidelines-for-working-with-prs" class="anchor"></span>Guidelines for working with PRs<a class="fa fa-anchor" href="#guidelines-for-working-with-prs" onclick="event.stopPropagation()"></a></h1>
+
+        <h2 id="selecting-what-to-work-on"><span id="selecting-what-to-work-on" class="anchor"></span>Selecting what to work on<a class="fa fa-anchor" href="#selecting-what-to-work-on" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><strong>If submitting a PR for an existing issue,</strong>
             <ul>
-              <li>It's best for first time contributors to start by fixing an issue specifically labelled for first timers e.g., <code v-pre>d.FirstTimers</code>, <code v-pre>good first issue</code>.</li>
+              <li>It's best for first time contributors to start by fixing an issue specifically labelled for first timers e.g., <code class="hljs inline no-lang" v-pre>d.FirstTimers</code>, <code class="hljs inline no-lang" v-pre>good first issue</code>.</li>
               <li>It's best to post in the issue to ask if it is OK for you to submit a PR for that issue and wait for approval.</li>
-              <li>Check the issue discussion thread to see if there are <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Some activity during last seven days</span><em>active</em></span> PRs for that issue. You can offer to PR for an issue that has <em>stalled</em> PRs i.e., there is a PRs submitted for that issue but the PR author seems to have stopped working on it.</li>
+              <li>Check the issue discussion thread to see if there are <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">Some activity during last seven days</span><em>active</em></span> PRs for that issue. You can offer to PR for an issue that has <em>stalled</em> PRs i.e., there is a PRs submitted for that issue but the PR author seems to have stopped working on it.</li>
             </ul>
           </li>
           <li><strong>If the issue list does not contain what you want to work on,</strong> post an issue first and wait for it to be acknowledged. Otherwise you could end up fixing something that does not need fixing.</li>
         </ul>
 
-        <h2 id="scoping-a-pr">Scoping a PR<a class="fa fa-anchor" href="#scoping-a-pr" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="scoping-a-pr"><span id="scoping-a-pr" class="anchor"></span>Scoping a PR<a class="fa fa-anchor" href="#scoping-a-pr" onclick="event.stopPropagation()"></a></h2>
         <div id="section-scoping-a-pr">
           <p><strong>General rule: try to keep PRs as small as possible</strong> because smaller PRs get merged faster.</p>
           <p><strong>A PR should contain a <em>single</em>, <em>standalone</em>, and <em>complete</em> change to the code base</strong>, unless in exceptional cases where the PR is part of a bigger change.</p>
@@ -62,7 +66,7 @@
             <li>
               <p><em>Single</em> means a PR <strong>should not try to fix more than one fix</strong>, unless there are multiple things that <em>must</em> be done together or not at all.</p>
               <box type="wrong" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-exclamation-circle"></span></template>
-                <p>Refrain from <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">do minor improvements to the code e.g., fix typos</span><em>housekeeping</em></span> in the neighboring code <strong>unless the line in concern is already touched by the PR</strong> (i.e., the housekeeping does not increase the line count of the PR.
+                <p>Refrain from <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">do minor improvements to the code e.g., fix typos</span><em>housekeeping</em></span> in the neighboring code <strong>unless the line in concern is already touched by the PR</strong> (i.e., the housekeeping does not increase the line count of the PR.
                 </p>
               </box>
               <box type="info" seamless>
@@ -98,7 +102,7 @@
           <p></p>
         </div>
 
-        <h2 id="submitting-a-pr">Submitting a PR<a class="fa fa-anchor" href="#submitting-a-pr" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="submitting-a-pr"><span id="submitting-a-pr" class="anchor"></span>Submitting a PR<a class="fa fa-anchor" href="#submitting-a-pr" onclick="event.stopPropagation()"></a></h2>
         <p>When submitting PRs, follow <a href="https://se-education.org/se-book/gitAndGithub/index.html#forking-workflow">the forking workflow</a>. A summary of the steps is given below.</p>
         <p><span class="badge badge-dark bigger-level0">Step 0</span> Do these steps if you haven't done them already:</p>
         <div class="indented-level2">
@@ -106,16 +110,16 @@
           <p><span class="badge badge-dark bigger-level0"> 0.2</span> <strong>Clone the fork to your computer.</strong></p>
           <p><span class="badge badge-dark bigger-level0"> 0.3</span> <strong>Set up the dev environment as described in the project docs.</strong> Confirm the set up is correct.</p>
         </div>
-        <p><span class="badge badge-dark bigger-level0">Step 1</span> <strong>Create a branch from the <code v-pre>master</code> branch</strong>, following the naming convention given.</p>
+        <p><span class="badge badge-dark bigger-level0">Step 1</span> <strong>Create a branch from the <code class="hljs inline no-lang" v-pre>master</code> branch</strong>, following the naming convention given.</p>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized><template slot="header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> coding standards » Git » <strong>Branch naming conventions</strong></p>
             </template>
             <div>
               <p>Follow these rules to improve consistency:</p>
               <ul>
-                <li>Use a meaningful name consisting of some relevant keywords, in the <em>kebab case</em> format e.g., <code v-pre>refactor-ui-tests</code>.</li>
-                <li>If the branch is related to an issue, use the format <code v-pre>issueNumber-some-keywords-from-issue-title</code> e.g., <code v-pre>1234-ui-freeze-error</code></li>
+                <li>Use a meaningful name consisting of some relevant keywords, in the <em>kebab case</em> format e.g., <code class="hljs inline no-lang" v-pre>refactor-ui-tests</code>.</li>
+                <li>If the branch is related to an issue, use the format <code class="hljs inline no-lang" v-pre>issueNumber-some-keywords-from-issue-title</code> e.g., <code class="hljs inline no-lang" v-pre>1234-ui-freeze-error</code></li>
               </ul>
             </div>
           </panel>
@@ -127,7 +131,7 @@
           <li>Commit message format</li>
         </ul>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized><template slot="header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Conventions » Git » <strong>Commit message subject</strong></p>
             </template>
             <div>
@@ -143,38 +147,38 @@
               <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong><mark>Use the imperative mood in the subject line.</mark></strong></p>
               <ul>
                 <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre>Add README.md</code>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Add README.md</code>
                 </li>
                 <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>Added README.md</code>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Added README.md</code>
                 </li>
                 <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>Adding README.md</code>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Adding README.md</code>
                 </li>
               </ul>
               <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Capitalize the first letter of the subject line.</strong></p>
               <ul>
                 <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre>Move index.html file to root</code>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Move index.html file to root</code>
                 </li>
                 <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>move index.html file to root</code>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>move index.html file to root</code>
                 </li>
               </ul>
               <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Do not end the subject line with a period.</strong></p>
               <ul>
                 <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre>Update sample data</code>
+                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Update sample data</code>
                 </li>
                 <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>Update sample data.</code>
+                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Update sample data.</code>
                 </li>
               </ul>
               <box type="tip" seamless>
-                <p>You can use <code v-pre>scope: change</code> format (when applicable).</p>
+                <p>You can use <code class="hljs inline no-lang" v-pre>scope: change</code> format (when applicable).</p>
                 <ul>
-                  <li>e.g. <code v-pre>Person class: remove static imports</code><br>
-                    <code v-pre>Unit tests: remove blank lines</code>
+                  <li>e.g. <code class="hljs inline no-lang" v-pre>Person class: remove static imports</code><br>
+                    <code class="hljs inline no-lang" v-pre>Unit tests: remove blank lines</code>
                   </li>
                 </ul>
               </box>
@@ -183,7 +187,7 @@
         </div>
         <p></p>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized><template slot="header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Conventions » Git » <strong>Commit message body</strong></p>
             </template>
             <div>
@@ -194,20 +198,40 @@
                 <li><strong>Use blank lines to separate paragraphs.</strong></li>
               </ul>
               <p>Example: A commit message for a commit that is part of a multi-commit PR:</p>
-              <pre><code class="hljs" v-pre><span>Unify variations of toSet() methods<br></span><span><br></span><span>There are several methods that convert a collection to a set. In some<br></span><span>cases the conversion is in-lined as a code block in another method.<br></span><span><br></span><span>Unifying all those duplicated code improves the code quality.<br></span><span><br></span><span>As a step towards such unification, let's extract those duplicated code<br></span><span>blocks into separate methods in their respective classes. Doing so will<br></span><span>make the subsequent unification easier.<br></span></code></pre>
+              <pre><code class="hljs" v-pre><span>Unify variations of toSet() methods
+</span><span>
+</span><span>There are several methods that convert a collection to a set. In some
+</span><span>cases the conversion is in-lined as a code block in another method.
+</span><span>
+</span><span>Unifying all those duplicated code improves the code quality.
+</span><span>
+</span><span>As a step towards such unification, let's extract those duplicated code
+</span><span>blocks into separate methods in their respective classes. Doing so will
+</span><span>make the subsequent unification easier.
+</span></code></pre>
               <box type="tip" seamless>
                 <p>Tip for SourceTree users: To help you keep the commit message width to a 72 characters:</p>
                 <ol>
-                  <li>Choose <code v-pre>Tools</code> -&gt; <code v-pre>Options</code>.</li>
-                  <li>Click on the <code v-pre>General</code> tab, scroll down to the <code v-pre>Commit settings</code> section.</li>
-                  <li>Tick the <code v-pre>Display a column guide at commit message at [72] characters</code> option.
+                  <li>Choose <code class="hljs inline no-lang" v-pre>Tools</code> -&gt; <code class="hljs inline no-lang" v-pre>Options</code>.</li>
+                  <li>Click on the <code class="hljs inline no-lang" v-pre>General</code> tab, scroll down to the <code class="hljs inline no-lang" v-pre>Commit settings</code> section.</li>
+                  <li>Tick the <code class="hljs inline no-lang" v-pre>Display a column guide at commit message at [72] characters</code> option.
                   </li>
                 </ol>
               </box>
 
               <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Use bullet points as necessary.</strong> Instead of relying entirely on paragraphs of text, use other constructs such as bullet lists when it helps.</p>
               <p>Example: A commit message for a bug fix:</p>
-              <pre><code class="hljs" v-pre><span>Find command: make matching case insensitive<br></span><span><br></span><span>Find command is case sensitive.<br></span><span><br></span><span>A case insensitive find is more user-friendly because users cannot be<br></span><span>expected to remember the exact case of the keywords.<br></span><span><br></span><span>Let's,<br></span><span>* update the search algorithm to use case-insensitive matching<br></span><span>* add a script to migrate stress tests to the new format<br></span></code></pre>
+              <pre><code class="hljs" v-pre><span>Find command: make matching case insensitive
+</span><span>
+</span><span>Find command is case sensitive.
+</span><span>
+</span><span>A case insensitive find is more user-friendly because users cannot be
+</span><span>expected to remember the exact case of the keywords.
+</span><span>
+</span><span>Let's,
+</span><span>* update the search algorithm to use case-insensitive matching
+</span><span>* add a script to migrate stress tests to the new format
+</span></code></pre>
               <p><span><span class="badge badge-pill badge-warning text-white"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Explain WHAT, WHY, not HOW</strong>.</p>
               <ul>
                 <li>
@@ -222,13 +246,41 @@
                 </li>
               </ul>
               <p><span><span class="badge badge-pill badge-success"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Structure the body as follows</strong>:</p>
-              <pre><code class="hljs" v-pre><span>{current situation} -- use present tense<br></span><span><br></span><span>{why it needs to change}<br></span><span><br></span><span>{what is being done about it} -- use imperative mood<br></span><span><br></span><span>{why it is done that way}<br></span><span><br></span><span>{any other relevant info}<br></span></code></pre>
+              <pre><code class="hljs" v-pre><span>{current situation} -- use present tense
+</span><span>
+</span><span>{why it needs to change}
+</span><span>
+</span><span>{what is being done about it} -- use imperative mood
+</span><span>
+</span><span>{why it is done that way}
+</span><span>
+</span><span>{any other relevant info}
+</span></code></pre>
               <ul>
                 <li>Avoid terms such as 'currently', 'originally' when describing the current situation. They are implied.</li>
-                <li>The word <code v-pre>Let's</code> can be used to indicate the beginning of the section that describes the change done in the commit.</li>
+                <li>The word <code class="hljs inline no-lang" v-pre>Let's</code> can be used to indicate the beginning of the section that describes the change done in the commit.</li>
               </ul>
               <p>Example: A commit message for a code quality refactoring:</p>
-              <pre><code class="hljs" v-pre><span>Person attributes classes: extract a parent class PersonAttribute<br></span><span><br></span><span>Person attribute classes (e.g. Name, Address, Age etc.) have some common<br></span><span>behaviors (e.g. isValid()).<br></span><span><br></span><span>The common behaviors across person attribute classes cause code duplication.<br></span><span><br></span><span>Extracting the common behavior into a super class allows us to use<br></span><span>polymorphism when dealing with person attributes. For example, validity<br></span><span>checking can be done for all attributes of a person in one loop.<br></span><span><br></span><span>Let's pull up behaviors common to all person attribute classes into a new<br></span><span>parent class named PersonAttribute.<br></span><span><br></span><span>Using inheritance is preferable over composition in this situation<br></span><span>because the common behaviors are not composable.<br></span><span><br></span><span>Refer to this S/O discussion on dealing with attributes<br></span><span>http://stackoverflow.com/some/question<br></span></code></pre>
+              <pre><code class="hljs" v-pre><span>Person attributes classes: extract a parent class PersonAttribute
+</span><span>
+</span><span>Person attribute classes (e.g. Name, Address, Age etc.) have some common
+</span><span>behaviors (e.g. isValid()).
+</span><span>
+</span><span>The common behaviors across person attribute classes cause code duplication.
+</span><span>
+</span><span>Extracting the common behavior into a super class allows us to use
+</span><span>polymorphism when dealing with person attributes. For example, validity
+</span><span>checking can be done for all attributes of a person in one loop.
+</span><span>
+</span><span>Let's pull up behaviors common to all person attribute classes into a new
+</span><span>parent class named PersonAttribute.
+</span><span>
+</span><span>Using inheritance is preferable over composition in this situation
+</span><span>because the common behaviors are not composable.
+</span><span>
+</span><span>Refer to this S/O discussion on dealing with attributes
+</span><span>http://stackoverflow.com/some/question
+</span></code></pre>
               <box type="info">
                 <p>Refer to the article <em><a href="http://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></em> for more advice on writing good commit messages.
                 </p>
@@ -242,19 +294,19 @@
           <li>guidelines for commit organization</li>
         </ul>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized><template slot="header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » <strong>Commit organization</strong></p>
             </template>
             <div>
-              <h1 id="working-with-git">Working with Git<a class="fa fa-anchor" href="#working-with-git" onclick="event.stopPropagation()"></a></h1>
+              <h1 id="working-with-git"><span id="working-with-git" class="anchor"></span>Working with Git<a class="fa fa-anchor" href="#working-with-git" onclick="event.stopPropagation()"></a></h1>
 
               <span id="section-organizing-commits">
-                <h2 id="organizing-commits">Organizing commits<a class="fa fa-anchor" href="#organizing-commits" onclick="event.stopPropagation()"></a></h2>
+                <h2 id="organizing-commits"><span id="organizing-commits" class="anchor"></span>Organizing commits<a class="fa fa-anchor" href="#organizing-commits" onclick="event.stopPropagation()"></a></h2>
                 <p>Commits in a branch or a PR is said to be <em>well-organized</em> if they have the following qualities:</p>
                 <ul>
                   <li>
                     <p><strong>Each commit contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
-                      For example, if the commit message says <code v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code v-pre>delete()</code> to <code v-pre>Address</code> class only; it should also contain the deletion of <code v-pre>delete()</code> from the <code v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                      For example, if the commit message says <code class="hljs inline no-lang" v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code class="hljs inline no-lang" v-pre>delete()</code> to <code class="hljs inline no-lang" v-pre>Address</code> class only; it should also contain the deletion of <code class="hljs inline no-lang" v-pre>delete()</code> from the <code class="hljs inline no-lang" v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
                   </li>
                   <li>
                     <p><strong>Each commit has a <em>well-written</em> commit message</strong> i.e., it follows <a href="/guides/conventions/git.html">these guidelines</a>.</p>
@@ -287,7 +339,7 @@
                   <li>
                     <p><strong>Every commit pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
                     <box type="info" seamless>
-                      <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code v-pre>git bisect</code> for locating bugs.
+                      <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code class="hljs inline no-lang" v-pre>git bisect</code> for locating bugs.
                       </p>
                     </box>
                     <p></p>
@@ -302,11 +354,11 @@
               </span>
 
               <span id="section-merging-branches">
-                <h2 id="merging-branches">Merging branches<a class="fa fa-anchor" href="#merging-branches" onclick="event.stopPropagation()"></a></h2>
+                <h2 id="merging-branches"><span id="merging-branches" class="anchor"></span>Merging branches<a class="fa fa-anchor" href="#merging-branches" onclick="event.stopPropagation()"></a></h2>
                 <box type="info" seamless>
                   <p>When merging branch, the aim is to keep the version history neat so that it is easy to do things such as the following:</p>
                   <ul>
-                    <li>Find which commit introduced a bug using <code v-pre>git bisect</code>.</li>
+                    <li>Find which commit introduced a bug using <code class="hljs inline no-lang" v-pre>git bisect</code>.</li>
                     <li>Undo a specific change by reverting a commit in the history without breaking anything else.</li>
                   </ul>
                 </box>
@@ -314,16 +366,16 @@
                   <li><strong>The default strategy is to do a <em>squash-merge</em>.</strong> This is suitable when the branch tackles one task but multiple commits that are not well-organized (as per the definition of 'well-organized' in the panel below).</li>
                 </ul>
                 <div class="indented-level2">
-                  <panel minimized><template slot="_header">
+                  <panel minimized><template slot="header">
                       <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » Working with git » <strong>Organizing commits</strong></p>
                     </template>
                     <div>
-                      <h2 id="organizing-commits-2">Organizing commits<a class="fa fa-anchor" href="#organizing-commits-2" onclick="event.stopPropagation()"></a></h2>
+                      <h2 id="organizing-commits-2"><span id="organizing-commits-2" class="anchor"></span>Organizing commits<a class="fa fa-anchor" href="#organizing-commits-2" onclick="event.stopPropagation()"></a></h2>
                       <p>Commits in a branch or a PR is said to be <em>well-organized</em> if they have the following qualities:</p>
                       <ul>
                         <li>
                           <p><strong>Each commit contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
-                            For example, if the commit message says <code v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code v-pre>delete()</code> to <code v-pre>Address</code> class only; it should also contain the deletion of <code v-pre>delete()</code> from the <code v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                            For example, if the commit message says <code class="hljs inline no-lang" v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code class="hljs inline no-lang" v-pre>delete()</code> to <code class="hljs inline no-lang" v-pre>Address</code> class only; it should also contain the deletion of <code class="hljs inline no-lang" v-pre>delete()</code> from the <code class="hljs inline no-lang" v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
                         </li>
                         <li>
                           <p><strong>Each commit has a <em>well-written</em> commit message</strong> i.e., it follows <a href="/guides/conventions/git.html">these guidelines</a>.</p>
@@ -356,7 +408,7 @@
                         <li>
                           <p><strong>Every commit pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
                           <box type="info" seamless>
-                            <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code v-pre>git bisect</code> for locating bugs.
+                            <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code class="hljs inline no-lang" v-pre>git bisect</code> for locating bugs.
                             </p>
                           </box>
                           <p></p>
@@ -394,7 +446,7 @@
           <li>PR scoping guidelines given above</li>
         </ul>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized><template slot="header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> This document » <strong>Scoping a PR</strong></p>
             </template>
             <div>
@@ -404,7 +456,7 @@
                 <li>
                   <p><em>Single</em> means a PR <strong>should not try to fix more than one fix</strong>, unless there are multiple things that <em>must</em> be done together or not at all.</p>
                   <box type="wrong" seamless><template slot="icon"><span aria-hidden="true" class="fas fa-exclamation-circle"></span></template>
-                    <p>Refrain from <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">do minor improvements to the code e.g., fix typos</span><em>housekeeping</em></span> in the neighboring code <strong>unless the line in concern is already touched by the PR</strong> (i.e., the housekeeping does not increase the line count of the PR.
+                    <p>Refrain from <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">do minor improvements to the code e.g., fix typos</span><em>housekeeping</em></span> in the neighboring code <strong>unless the line in concern is already touched by the PR</strong> (i.e., the housekeeping does not increase the line count of the PR.
                     </p>
                   </box>
                   <box type="info" seamless>
@@ -442,7 +494,7 @@
           </panel>
         </div>
         <p></p>
-        <p><span class="badge badge-dark bigger-level0">Step 3</span> <strong>Sync your branch with the upstream master</strong>, if the <code v-pre>master</code> branch advances while you work on your code (i.e., pull upstream <code v-pre>master</code>, merge to your branch).</p>
+        <p><span class="badge badge-dark bigger-level0">Step 3</span> <strong>Sync your branch with the upstream master</strong>, if the <code class="hljs inline no-lang" v-pre>master</code> branch advances while you work on your code (i.e., pull upstream <code class="hljs inline no-lang" v-pre>master</code>, merge to your branch).</p>
         <p><span class="badge badge-dark bigger-level0">Step 4</span> <strong>Create a PR</strong> when the code is ready, as follows:</p>
         <ol>
           <li>Run code style checks (if any) to ensure the code complies with the project standards.</li>
@@ -452,10 +504,10 @@
             <ul>
               <li>it follows the <a href="/guides/conventions/github.html">PR format conventions</a></li>
               <li>it does not contain any unintended changes.</li>
-              <li>it passes <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">Continuous Integration (Travis, AppVeyor, GitHub Actions, etc.)</span>CI</span> checks, if any.</li>
+              <li>it passes <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">Continuous Integration (Travis, AppVeyor, GitHub Actions, etc.)</span>CI</span> checks, if any.</li>
             </ul>
           </li>
-          <li>Remove the 'draft' status of the PR. Post a <code v-pre>ready for review</code> comment for good measure.</li>
+          <li>Remove the 'draft' status of the PR. Post a <code class="hljs inline no-lang" v-pre>ready for review</code> comment for good measure.</li>
         </ol>
         <p><span class="badge badge-dark bigger-level0">Step 5</span> <strong>Revise as per reviews</strong> until the PR is merged.</p>
         <ul>
@@ -469,7 +521,7 @@
           </li>
         </ul>
 
-        <h2 id="reviewing-a-pr">Reviewing a PR<a class="fa fa-anchor" href="#reviewing-a-pr" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="reviewing-a-pr"><span id="reviewing-a-pr" class="anchor"></span>Reviewing a PR<a class="fa fa-anchor" href="#reviewing-a-pr" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
             <p>If you are new to GitHub PRs, see <a href="https://help.github.com/en/articles/about-pull-request-reviews">GitHub help on how to review PRs</a>.</p>
@@ -479,17 +531,17 @@
           </li>
         </ul>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized><template slot="header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » <strong>Best practices for reviewing PRs</strong></p>
             </template>
             <div>
               <div></div>
-              <h1 id="best-practices-for-reviewing-prs">Best practices for reviewing PRs<a class="fa fa-anchor" href="#best-practices-for-reviewing-prs" onclick="event.stopPropagation()"></a></h1>
+              <h1 id="best-practices-for-reviewing-prs"><span id="best-practices-for-reviewing-prs" class="anchor"></span>Best practices for reviewing PRs<a class="fa fa-anchor" href="#best-practices-for-reviewing-prs" onclick="event.stopPropagation()"></a></h1>
               <div class="lead">
                 <p>Reviewing PRs is not just about the code or the tools, <strong>the way you phrase your comments matters a too</strong>, especially if you are a peer reviewer.</p>
               </div>
 
-              <h2 id="best-practices-for-reviewers">Best practices for reviewers<a class="fa fa-anchor" href="#best-practices-for-reviewers" onclick="event.stopPropagation()"></a></h2>
+              <h2 id="best-practices-for-reviewers"><span id="best-practices-for-reviewers" class="anchor"></span>Best practices for reviewers<a class="fa fa-anchor" href="#best-practices-for-reviewers" onclick="event.stopPropagation()"></a></h2>
               <ul>
                 <li><strong>Add specific comments at relevant places of the code</strong>, rather than give one overall comment for the entire PR.
                   <ul>
@@ -499,19 +551,19 @@
                   </ul>
                 </li>
                 <li><mark><strong>It's best to phrase comments as questions</strong></mark>, especially if you are a peer reviewer.<br>
-                  e.g., <code v-pre>Should this be extracted out?</code> rather than <code v-pre>Extract this out</code> or <code v-pre>This should be extracted out</code>.</li>
+                  e.g., <code class="hljs inline no-lang" v-pre>Should this be extracted out?</code> rather than <code class="hljs inline no-lang" v-pre>Extract this out</code> or <code class="hljs inline no-lang" v-pre>This should be extracted out</code>.</li>
                 <li><strong>Say 'I like', not 'good/bad'</strong>. Consider these two alternatives:<br>
-                  Option 1: <code v-pre>This separation of X from Y is good</code> (or <code v-pre>correct</code> or <code v-pre>wrong</code> or <code v-pre>bad</code>)<br>
-                  Option 2: <code v-pre>I like how you separated X from Y</code> (or <code v-pre>didn't like</code> or <code v-pre>Not sure I like</code>)<br>
+                  Option 1: <code class="hljs inline no-lang" v-pre>This separation of X from Y is good</code> (or <code class="hljs inline no-lang" v-pre>correct</code> or <code class="hljs inline no-lang" v-pre>wrong</code> or <code class="hljs inline no-lang" v-pre>bad</code>)<br>
+                  Option 2: <code class="hljs inline no-lang" v-pre>I like how you separated X from Y</code> (or <code class="hljs inline no-lang" v-pre>didn't like</code> or <code class="hljs inline no-lang" v-pre>Not sure I like</code>)<br>
                   The second one is less judgemental and less likely to cause the author to become defensive.</li>
                 <li><strong>Feel free to ask for more info from the author</strong>, to help you understand the code/design. For example, you can ask why the author chose to write the code in a specific way.</li>
                 <li><strong>You can also suggest alternatives for the author to consider.</strong><br>
-                  Combining this with the previous point, you can ask <code v-pre>Any reason why you did it this way instead of that way?</code></li>
+                  Combining this with the previous point, you can ask <code class="hljs inline no-lang" v-pre>Any reason why you did it this way instead of that way?</code></li>
                 <li><strong>Feel free to compliment the author when appropriate</strong> instead of focusing on negative things only.<br>
                   <span class="dimmed">e.g., <em>hey, I like how clean this bit of code is</em> 👍</span>
                 </li>
-                <li><strong>Say please, but don't say <em>please</em></strong>. Beware of overusing 'please' as it can be interpreted as a condescending tone. For example, someone can interpret <code v-pre>Please use better variable names</code> as <code v-pre>Please for the love of God can you use better variable names?</code>. Instead, you can say <code v-pre>Perhaps a more intuitive variable name here?</code> which doesn't run any risk of misinterpretation.</li>
-                <li><strong>No need to repeat the same comment <em>many</em> times</strong>. It's not the job of the reviewer to clean up after a sloppy author. If you notice the same problem in multiple places, after commenting an a few of them, you can simply say <code v-pre>... I noticed the same issue in several other places too</code>.</li>
+                <li><strong>Say please, but don't say <em>please</em></strong>. Beware of overusing 'please' as it can be interpreted as a condescending tone. For example, someone can interpret <code class="hljs inline no-lang" v-pre>Please use better variable names</code> as <code class="hljs inline no-lang" v-pre>Please for the love of God can you use better variable names?</code>. Instead, you can say <code class="hljs inline no-lang" v-pre>Perhaps a more intuitive variable name here?</code> which doesn't run any risk of misinterpretation.</li>
+                <li><strong>No need to repeat the same comment <em>many</em> times</strong>. It's not the job of the reviewer to clean up after a sloppy author. If you notice the same problem in multiple places, after commenting an a few of them, you can simply say <code class="hljs inline no-lang" v-pre>... I noticed the same issue in several other places too</code>.</li>
                 <li><strong>Remember the <em>other</em> readers</strong>. PR comments can be read by people other than the reviewer and the author e.g., future programmers. Use regular English and avoid slang, colloquialisms, cultural references etc.</li>
               </ul>
               <p><strong><strong>Further readings</strong></strong>:</p>
@@ -519,7 +571,7 @@
                 <li>Read the blog post <a href="https://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like/"><strong>10 tips for reviewing code you don’t like</strong></a> - by David Lloyd (a Red Hat developer).</li>
               </ul>
 
-              <h2 id="best-practices-for-authors">Best practices for authors<a class="fa fa-anchor" href="#best-practices-for-authors" onclick="event.stopPropagation()"></a></h2>
+              <h2 id="best-practices-for-authors"><span id="best-practices-for-authors" class="anchor"></span>Best practices for authors<a class="fa fa-anchor" href="#best-practices-for-authors" onclick="event.stopPropagation()"></a></h2>
               <ul>
                 <li><strong>Don't get into arguments with reviewers.</strong> If you disagree with the reviewer, you can explain your own view in a non-confrontational way without trying to prove your way is better.</li>
                 <li>Thank reviewers for their inputs.</li>
@@ -544,18 +596,18 @@
           <li><strong>Before approving a PR, <mark>confirm that all your previous comments have been addressed</mark>.</strong></li>
         </ul>
 
-        <h2 id="merging-prs">Merging PRs<a class="fa fa-anchor" href="#merging-prs" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="merging-prs"><span id="merging-prs" class="anchor"></span>Merging PRs<a class="fa fa-anchor" href="#merging-prs" onclick="event.stopPropagation()"></a></h2>
         <p>Follow the convention for Git branch merging, as given in the panel below.</p>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized><template slot="header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » Working with Git » <strong>Branch merging strategy</strong></p>
             </template>
             <div>
-              <h2 id="merging-branches-2">Merging branches<a class="fa fa-anchor" href="#merging-branches-2" onclick="event.stopPropagation()"></a></h2>
+              <h2 id="merging-branches-2"><span id="merging-branches-2" class="anchor"></span>Merging branches<a class="fa fa-anchor" href="#merging-branches-2" onclick="event.stopPropagation()"></a></h2>
               <box type="info" seamless>
                 <p>When merging branch, the aim is to keep the version history neat so that it is easy to do things such as the following:</p>
                 <ul>
-                  <li>Find which commit introduced a bug using <code v-pre>git bisect</code>.</li>
+                  <li>Find which commit introduced a bug using <code class="hljs inline no-lang" v-pre>git bisect</code>.</li>
                   <li>Undo a specific change by reverting a commit in the history without breaking anything else.</li>
                 </ul>
               </box>
@@ -563,16 +615,16 @@
                 <li><strong>The default strategy is to do a <em>squash-merge</em>.</strong> This is suitable when the branch tackles one task but multiple commits that are not well-organized (as per the definition of 'well-organized' in the panel below).</li>
               </ul>
               <div class="indented-level2">
-                <panel minimized><template slot="_header">
+                <panel minimized><template slot="header">
                     <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » Working with git » <strong>Organizing commits</strong></p>
                   </template>
                   <div>
-                    <h2 id="organizing-commits-3">Organizing commits<a class="fa fa-anchor" href="#organizing-commits-3" onclick="event.stopPropagation()"></a></h2>
+                    <h2 id="organizing-commits-3"><span id="organizing-commits-3" class="anchor"></span>Organizing commits<a class="fa fa-anchor" href="#organizing-commits-3" onclick="event.stopPropagation()"></a></h2>
                     <p>Commits in a branch or a PR is said to be <em>well-organized</em> if they have the following qualities:</p>
                     <ul>
                       <li>
                         <p><strong>Each commit contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
-                          For example, if the commit message says <code v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code v-pre>delete()</code> to <code v-pre>Address</code> class only; it should also contain the deletion of <code v-pre>delete()</code> from the <code v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                          For example, if the commit message says <code class="hljs inline no-lang" v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code class="hljs inline no-lang" v-pre>delete()</code> to <code class="hljs inline no-lang" v-pre>Address</code> class only; it should also contain the deletion of <code class="hljs inline no-lang" v-pre>delete()</code> from the <code class="hljs inline no-lang" v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
                       </li>
                       <li>
                         <p><strong>Each commit has a <em>well-written</em> commit message</strong> i.e., it follows <a href="/guides/conventions/git.html">these guidelines</a>.</p>
@@ -605,7 +657,7 @@
                       <li>
                         <p><strong>Every commit pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
                         <box type="info" seamless>
-                          <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code v-pre>git bisect</code> for locating bugs.
+                          <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code class="hljs inline no-lang" v-pre>git bisect</code> for locating bugs.
                           </p>
                         </box>
                         <p></p>
@@ -636,9 +688,8 @@
           </panel>
         </div>
         <p></p>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -660,21 +711,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

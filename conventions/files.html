@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conventions for file/folder naming</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,10 +41,11 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="conventions-for-file-folder-naming">Conventions for file/folder naming<a class="fa fa-anchor" href="#conventions-for-file-folder-naming" onclick="event.stopPropagation()"></a></h1>
-        <h2 id="files-folders">Files/Folders<a class="fa fa-anchor" href="#files-folders" onclick="event.stopPropagation()"></a></h2>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="conventions-for-file-folder-naming"><span id="conventions-for-file-folder-naming" class="anchor"></span>Conventions for file/folder naming<a class="fa fa-anchor" href="#conventions-for-file-folder-naming" onclick="event.stopPropagation()"></a></h1>
+        <h2 id="files-folders"><span id="files-folders" class="anchor"></span>Files/Folders<a class="fa fa-anchor" href="#files-folders" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><strong>General rule: aim for <em>local consistency</em></strong> i.e., follow the conventions/patterns followed by other files/folders in the neighborhood.
             <ul>
@@ -53,8 +57,8 @@
         <ul>
           <li>If there is no existing pattern to follow:
             <ul>
-              <li>Use camelCase whenever possible. e.g. <code v-pre>formatsAndConventions.md</code></li>
-              <li>If the name has multiple phrases, use - to separate phrases. e.g. <code v-pre>codingStyle-javaBasic.html</code></li>
+              <li>Use camelCase whenever possible. e.g. <code class="hljs inline no-lang" v-pre>formatsAndConventions.md</code></li>
+              <li>If the name has multiple phrases, use - to separate phrases. e.g. <code class="hljs inline no-lang" v-pre>codingStyle-javaBasic.html</code></li>
             </ul>
           </li>
         </ul>
@@ -62,17 +66,17 @@
         <ul>
           <li>
             <p>Try to user common prefixes so that similar files appear together when sorted by name.<br>
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font> <code v-pre>codingStyle-java.html</code>, <code v-pre>codingStyle-html.html</code><br>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>javaCodingStyle.html</code>, <code v-pre>htmlCodingStyle.html</code>
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font> <code class="hljs inline no-lang" v-pre>codingStyle-java.html</code>, <code class="hljs inline no-lang" v-pre>codingStyle-html.html</code><br>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>javaCodingStyle.html</code>, <code class="hljs inline no-lang" v-pre>htmlCodingStyle.html</code>
             </p>
           </li>
           <li>
-            <p>Prefer plurals if the file/folder contains multiple items of same type e.g. <code v-pre>docs</code> instead of <code v-pre>doc</code></p>
+            <p>Prefer plurals if the file/folder contains multiple items of same type e.g. <code class="hljs inline no-lang" v-pre>docs</code> instead of <code class="hljs inline no-lang" v-pre>doc</code>
+              <i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i>
+            </p>
           </li>
         </ul>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -90,21 +94,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

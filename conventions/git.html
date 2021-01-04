@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Git conventions</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,12 +41,13 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="git-conventions">Git conventions<a class="fa fa-anchor" href="#git-conventions" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="git-conventions"><span id="git-conventions" class="anchor"></span>Git conventions<a class="fa fa-anchor" href="#git-conventions" onclick="event.stopPropagation()"></a></h1>
         <p><strong>Legend</strong>: <span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> basic rule | <span><span class="badge badge-pill badge-warning text-white"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> intermediate rule | <span><span class="badge badge-pill badge-success"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> advanced rule</p>
 
-        <h2 id="commit-message-subject">Commit message: Subject<a class="fa fa-anchor" href="#commit-message-subject" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="commit-message-subject"><span id="commit-message-subject" class="anchor"></span>Commit message: Subject<a class="fa fa-anchor" href="#commit-message-subject" onclick="event.stopPropagation()"></a></h2>
         <div id="commit-message-subject-format">
           <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Every commit must have a well-written commit message <em>subject line</em>.</strong></p>
           <ul>
@@ -57,44 +61,44 @@
           <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong><mark>Use the imperative mood in the subject line.</mark></strong></p>
           <ul>
             <li>
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre>Add README.md</code>
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Add README.md</code>
             </li>
             <li>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>Added README.md</code>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Added README.md</code>
             </li>
             <li>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>Adding README.md</code>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Adding README.md</code>
             </li>
           </ul>
           <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Capitalize the first letter of the subject line.</strong></p>
           <ul>
             <li>
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre>Move index.html file to root</code>
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Move index.html file to root</code>
             </li>
             <li>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>move index.html file to root</code>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>move index.html file to root</code>
             </li>
           </ul>
           <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Do not end the subject line with a period.</strong></p>
           <ul>
             <li>
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code v-pre>Update sample data</code>
+              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Update sample data</code>
             </li>
             <li>
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code v-pre>Update sample data.</code>
+              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Update sample data.</code>
             </li>
           </ul>
           <box type="tip" seamless>
-            <p>You can use <code v-pre>scope: change</code> format (when applicable).</p>
+            <p>You can use <code class="hljs inline no-lang" v-pre>scope: change</code> format (when applicable).</p>
             <ul>
-              <li>e.g. <code v-pre>Person class: remove static imports</code><br>
-                <code v-pre>Unit tests: remove blank lines</code>
+              <li>e.g. <code class="hljs inline no-lang" v-pre>Person class: remove static imports</code><br>
+                <code class="hljs inline no-lang" v-pre>Unit tests: remove blank lines</code>
               </li>
             </ul>
           </box>
         </div>
 
-        <h2 id="commit-message-body">Commit message: Body<a class="fa fa-anchor" href="#commit-message-body" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="commit-message-body"><span id="commit-message-body" class="anchor"></span>Commit message: Body<a class="fa fa-anchor" href="#commit-message-body" onclick="event.stopPropagation()"></a></h2>
         <div id="commit-message-body-format">
           <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Commit messages for non-trivial commits should have a <em>body</em> giving details of the commit.</strong></p>
           <ul>
@@ -103,20 +107,40 @@
             <li><strong>Use blank lines to separate paragraphs.</strong></li>
           </ul>
           <p>Example: A commit message for a commit that is part of a multi-commit PR:</p>
-          <pre><code class="hljs" v-pre><span>Unify variations of toSet() methods<br></span><span><br></span><span>There are several methods that convert a collection to a set. In some<br></span><span>cases the conversion is in-lined as a code block in another method.<br></span><span><br></span><span>Unifying all those duplicated code improves the code quality.<br></span><span><br></span><span>As a step towards such unification, let's extract those duplicated code<br></span><span>blocks into separate methods in their respective classes. Doing so will<br></span><span>make the subsequent unification easier.<br></span></code></pre>
+          <pre><code class="hljs" v-pre><span>Unify variations of toSet() methods
+</span><span>
+</span><span>There are several methods that convert a collection to a set. In some
+</span><span>cases the conversion is in-lined as a code block in another method.
+</span><span>
+</span><span>Unifying all those duplicated code improves the code quality.
+</span><span>
+</span><span>As a step towards such unification, let's extract those duplicated code
+</span><span>blocks into separate methods in their respective classes. Doing so will
+</span><span>make the subsequent unification easier.
+</span></code></pre>
           <box type="tip" seamless>
             <p>Tip for SourceTree users: To help you keep the commit message width to a 72 characters:</p>
             <ol>
-              <li>Choose <code v-pre>Tools</code> -&gt; <code v-pre>Options</code>.</li>
-              <li>Click on the <code v-pre>General</code> tab, scroll down to the <code v-pre>Commit settings</code> section.</li>
-              <li>Tick the <code v-pre>Display a column guide at commit message at [72] characters</code> option.
+              <li>Choose <code class="hljs inline no-lang" v-pre>Tools</code> -&gt; <code class="hljs inline no-lang" v-pre>Options</code>.</li>
+              <li>Click on the <code class="hljs inline no-lang" v-pre>General</code> tab, scroll down to the <code class="hljs inline no-lang" v-pre>Commit settings</code> section.</li>
+              <li>Tick the <code class="hljs inline no-lang" v-pre>Display a column guide at commit message at [72] characters</code> option.
               </li>
             </ol>
           </box>
 
           <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Use bullet points as necessary.</strong> Instead of relying entirely on paragraphs of text, use other constructs such as bullet lists when it helps.</p>
           <p>Example: A commit message for a bug fix:</p>
-          <pre><code class="hljs" v-pre><span>Find command: make matching case insensitive<br></span><span><br></span><span>Find command is case sensitive.<br></span><span><br></span><span>A case insensitive find is more user-friendly because users cannot be<br></span><span>expected to remember the exact case of the keywords.<br></span><span><br></span><span>Let's,<br></span><span>* update the search algorithm to use case-insensitive matching<br></span><span>* add a script to migrate stress tests to the new format<br></span></code></pre>
+          <pre><code class="hljs" v-pre><span>Find command: make matching case insensitive
+</span><span>
+</span><span>Find command is case sensitive.
+</span><span>
+</span><span>A case insensitive find is more user-friendly because users cannot be
+</span><span>expected to remember the exact case of the keywords.
+</span><span>
+</span><span>Let's,
+</span><span>* update the search algorithm to use case-insensitive matching
+</span><span>* add a script to migrate stress tests to the new format
+</span></code></pre>
           <p><span><span class="badge badge-pill badge-warning text-white"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Explain WHAT, WHY, not HOW</strong>.</p>
           <ul>
             <li>
@@ -131,13 +155,41 @@
             </li>
           </ul>
           <p><span><span class="badge badge-pill badge-success"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Structure the body as follows</strong>:</p>
-          <pre><code class="hljs" v-pre><span>{current situation} -- use present tense<br></span><span><br></span><span>{why it needs to change}<br></span><span><br></span><span>{what is being done about it} -- use imperative mood<br></span><span><br></span><span>{why it is done that way}<br></span><span><br></span><span>{any other relevant info}<br></span></code></pre>
+          <pre><code class="hljs" v-pre><span>{current situation} -- use present tense
+</span><span>
+</span><span>{why it needs to change}
+</span><span>
+</span><span>{what is being done about it} -- use imperative mood
+</span><span>
+</span><span>{why it is done that way}
+</span><span>
+</span><span>{any other relevant info}
+</span></code></pre>
           <ul>
             <li>Avoid terms such as 'currently', 'originally' when describing the current situation. They are implied.</li>
-            <li>The word <code v-pre>Let's</code> can be used to indicate the beginning of the section that describes the change done in the commit.</li>
+            <li>The word <code class="hljs inline no-lang" v-pre>Let's</code> can be used to indicate the beginning of the section that describes the change done in the commit.</li>
           </ul>
           <p>Example: A commit message for a code quality refactoring:</p>
-          <pre><code class="hljs" v-pre><span>Person attributes classes: extract a parent class PersonAttribute<br></span><span><br></span><span>Person attribute classes (e.g. Name, Address, Age etc.) have some common<br></span><span>behaviors (e.g. isValid()).<br></span><span><br></span><span>The common behaviors across person attribute classes cause code duplication.<br></span><span><br></span><span>Extracting the common behavior into a super class allows us to use<br></span><span>polymorphism when dealing with person attributes. For example, validity<br></span><span>checking can be done for all attributes of a person in one loop.<br></span><span><br></span><span>Let's pull up behaviors common to all person attribute classes into a new<br></span><span>parent class named PersonAttribute.<br></span><span><br></span><span>Using inheritance is preferable over composition in this situation<br></span><span>because the common behaviors are not composable.<br></span><span><br></span><span>Refer to this S/O discussion on dealing with attributes<br></span><span>http://stackoverflow.com/some/question<br></span></code></pre>
+          <pre><code class="hljs" v-pre><span>Person attributes classes: extract a parent class PersonAttribute
+</span><span>
+</span><span>Person attribute classes (e.g. Name, Address, Age etc.) have some common
+</span><span>behaviors (e.g. isValid()).
+</span><span>
+</span><span>The common behaviors across person attribute classes cause code duplication.
+</span><span>
+</span><span>Extracting the common behavior into a super class allows us to use
+</span><span>polymorphism when dealing with person attributes. For example, validity
+</span><span>checking can be done for all attributes of a person in one loop.
+</span><span>
+</span><span>Let's pull up behaviors common to all person attribute classes into a new
+</span><span>parent class named PersonAttribute.
+</span><span>
+</span><span>Using inheritance is preferable over composition in this situation
+</span><span>because the common behaviors are not composable.
+</span><span>
+</span><span>Refer to this S/O discussion on dealing with attributes
+</span><span>http://stackoverflow.com/some/question
+</span></code></pre>
           <box type="info">
             <p>Refer to the article <em><a href="http://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></em> for more advice on writing good commit messages.
             </p>
@@ -145,17 +197,16 @@
           <p></p>
         </div>
 
-        <h2 id="branch-names">Branch names<a class="fa fa-anchor" href="#branch-names" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="branch-names"><span id="branch-names" class="anchor"></span>Branch names<a class="fa fa-anchor" href="#branch-names" onclick="event.stopPropagation()"></a></h2>
         <div id="branch-names-format">
           <p>Follow these rules to improve consistency:</p>
           <ul>
-            <li>Use a meaningful name consisting of some relevant keywords, in the <em>kebab case</em> format e.g., <code v-pre>refactor-ui-tests</code>.</li>
-            <li>If the branch is related to an issue, use the format <code v-pre>issueNumber-some-keywords-from-issue-title</code> e.g., <code v-pre>1234-ui-freeze-error</code></li>
+            <li>Use a meaningful name consisting of some relevant keywords, in the <em>kebab case</em> format e.g., <code class="hljs inline no-lang" v-pre>refactor-ui-tests</code>.</li>
+            <li>If the branch is related to an issue, use the format <code class="hljs inline no-lang" v-pre>issueNumber-some-keywords-from-issue-title</code> e.g., <code class="hljs inline no-lang" v-pre>1234-ui-freeze-error</code></li>
           </ul>
         </div>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -175,21 +226,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

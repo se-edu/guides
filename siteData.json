@@ -4,17 +4,14 @@
     {
       "src": "README.md",
       "title": "",
-      "layout": "default",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »"
       },
       "headingKeywords": {}
     },
     {
-      "title": "About Us",
-      "pageNav": 2,
       "src": "about.md",
-      "layout": "default",
+      "title": "About Us",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "about-us": "About Us",
@@ -26,10 +23,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "C# coding standard",
-      "pageNav": 3,
       "src": "conventions/csharp.md",
-      "layout": "default",
+      "title": "C# coding standard",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "c-coding-standard": "C# coding standard",
@@ -46,10 +41,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "CSS coding standard",
-      "pageNav": 3,
       "src": "conventions/css.md",
-      "layout": "default",
+      "title": "CSS coding standard",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "css-coding-standard": "CSS coding standard",
@@ -69,10 +62,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Conventions for file/folder naming",
-      "pageNav": 3,
       "src": "conventions/files.md",
-      "layout": "default",
+      "title": "Conventions for file/folder naming",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "conventions-for-file-folder-naming": "Conventions for file/folder naming",
@@ -81,10 +72,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Git conventions",
-      "pageNav": 3,
       "src": "conventions/git.md",
-      "layout": "default",
+      "title": "Git conventions",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "git-conventions": "Git conventions",
@@ -95,10 +84,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "GitHub conventions",
-      "pageNav": 3,
       "src": "conventions/github.md",
-      "layout": "default",
+      "title": "GitHub conventions",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "github-conventions": "GitHub conventions",
@@ -111,10 +98,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "HTML coding standard",
-      "pageNav": 3,
       "src": "conventions/html.md",
-      "layout": "default",
+      "title": "HTML coding standard",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "html-coding-standard": "HTML coding standard",
@@ -128,15 +113,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Java coding standard",
-      "pageNav": 3,
-      "tags": [
-        "-level--*",
-        "level--basic",
-        "level--basic-only"
-      ],
       "src": "conventions/java/basic.md",
-      "layout": "default",
+      "title": "Java coding standard",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "java-coding-standard-basic": "Java coding standard (basic)",
@@ -154,13 +132,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Java coding standard",
-      "pageNav": 3,
-      "tags": [
-        "level--*"
-      ],
       "src": "conventions/java/index.md",
-      "layout": "default",
+      "title": "Java coding standard",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "java-coding-standard-all": "Java coding standard (all)",
@@ -181,16 +154,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Java coding standard",
-      "pageNav": 3,
-      "tags": [
-        "-level--*",
-        "level--basic",
-        "level--intermediate",
-        "level--intermediate-only"
-      ],
       "src": "conventions/java/intermediate.md",
-      "layout": "default",
+      "title": "Java coding standard",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "java-coding-standard-basic-intermediate": "Java coding standard (basic + intermediate)",
@@ -209,9 +174,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Java logging conventions",
       "src": "conventions/java/logging.md",
-      "layout": "default",
+      "title": "Java logging conventions",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "java-logging-conventions": "Java logging conventions"
@@ -219,10 +183,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaScript coding standard",
-      "pageNav": 3,
       "src": "conventions/javascript.md",
-      "layout": "default",
+      "title": "JavaScript coding standard",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "javascript-coding-standard": "JavaScript coding standard"
@@ -230,9 +192,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Markdown coding standard",
       "src": "conventions/markdown.md",
-      "layout": "default",
+      "title": "Markdown coding standard",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "markdown-coding-standard": "Markdown coding standard"
@@ -240,10 +201,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Best practices for reviewing PRs",
-      "pageNav": 3,
       "src": "guidelines/PRs-reviewing.md",
-      "layout": "default",
+      "title": "Best practices for reviewing PRs",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "best-practices-for-reviewing-prs": "Best practices for reviewing PRs",
@@ -253,10 +212,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Guidelines for working with PRs",
-      "pageNav": 3,
       "src": "guidelines/PRs.md",
-      "layout": "default",
+      "title": "Guidelines for working with PRs",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "guidelines-for-working-with-prs": "Guidelines for working with PRs",
@@ -269,10 +226,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Code of conduct for contributors",
-      "pageNav": 3,
       "src": "guidelines/codeOfConduct.md",
-      "layout": "default",
+      "title": "Code of conduct for contributors",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "code-of-conduct-for-contributors": "Code of conduct for contributors",
@@ -285,10 +240,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Working with Git",
-      "pageNav": 3,
       "src": "guidelines/commits.md",
-      "layout": "default",
+      "title": "Working with Git",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "working-with-git": "Working with Git",
@@ -298,10 +251,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Working with GitHub labels",
-      "pageNav": 3,
       "src": "guidelines/labels.md",
-      "layout": "default",
+      "title": "Working with GitHub labels",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "working-with-github-labels": "Working with GitHub labels",
@@ -321,10 +272,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Guides for Software Engineering Students",
-      "pageNav": 2,
       "src": "index.md",
-      "layout": "default",
+      "title": "Guides for Software Engineering Students",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "tutorials": "\r\n           Tutorials\r\n        ",
@@ -334,10 +283,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Using Checkstyle",
-      "pageNav": 2,
       "src": "tutorials/checkstyle.md",
-      "layout": "default",
+      "title": "Using Checkstyle",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-checkstyle": "Using Checkstyle",
@@ -349,10 +296,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Using GitHub Actions",
-      "pageNav": 2,
       "src": "tutorials/githubActions.md",
-      "layout": "default",
+      "title": "Using GitHub Actions",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-github-actions": "Using GitHub Actions",
@@ -362,10 +307,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Gradle tutorial",
-      "pageNav": 3,
       "src": "tutorials/gradle.md",
-      "layout": "default",
+      "title": "Gradle tutorial",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "gradle-tutorial": "Gradle tutorial",
@@ -387,10 +330,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Intellij IDEA: Configuring the code style",
-      "pageNav": 2,
       "src": "tutorials/intellijCodeStyle.md",
-      "layout": "default",
+      "title": "Intellij IDEA: Configuring the code style",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-configuring-the-code-style": "Intellij IDEA: Configuring the code style",
@@ -400,9 +341,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Intellij IDEA: Importing a Gradle project",
       "src": "tutorials/intellijImportGradleProject.md",
-      "layout": "default",
+      "title": "Intellij IDEA: Importing a Gradle project",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-importing-a-gradle-project": "Intellij IDEA: Importing a Gradle project"
@@ -410,9 +350,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Intellij IDEA: Configuring the JDK",
       "src": "tutorials/intellijJdk.md",
-      "layout": "default",
+      "title": "Intellij IDEA: Configuring the JDK",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
@@ -420,10 +359,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Intellij IDEA: Useful settings",
-      "pageNav": 2,
       "src": "tutorials/intellijUsefulSettings.md",
-      "layout": "default",
+      "title": "Intellij IDEA: Useful settings",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-useful-settings": "Intellij IDEA: Useful settings",
@@ -432,10 +369,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Working with JAR files",
-      "pageNav": 2,
       "src": "tutorials/jar.md",
-      "layout": "default",
+      "title": "Working with JAR files",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "working-with-jar-files": "Working with JAR files",
@@ -448,10 +383,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX tutorial",
-      "pageNav": 2,
       "src": "tutorials/javaFx.md",
-      "layout": "default",
+      "title": "JavaFX tutorial",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial": "JavaFX tutorial"
@@ -459,10 +392,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX tutorial part 1 – Introduction",
-      "pageNav": 2,
       "src": "tutorials/javaFxPart1.md",
-      "layout": "default",
+      "title": "JavaFX tutorial part 1 – Introduction",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial-part-1-introduction": "JavaFX tutorial part 1 – Introduction",
@@ -476,10 +407,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX tutorial part 2 - Creating a GUI for Duke",
-      "pageNav": 2,
       "src": "tutorials/javaFxPart2.md",
-      "layout": "default",
+      "title": "JavaFX tutorial part 2 - Creating a GUI for Duke",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial-part-2-creating-a-gui-for-duke": "JavaFX tutorial part 2 - Creating a GUI for Duke",
@@ -491,10 +420,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX tutorial part 3 – Interacting with the user",
-      "pageNav": 2,
       "src": "tutorials/javaFxPart3.md",
-      "layout": "default",
+      "title": "JavaFX tutorial part 3 – Interacting with the user",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial-part-3-interacting-with-the-user": "JavaFX tutorial part 3 – Interacting with the user",
@@ -506,10 +433,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "JavaFX tutorial part 4 – Using FXML",
-      "pageNav": 2,
       "src": "tutorials/javaFxPart4.md",
-      "layout": "default",
+      "title": "JavaFX tutorial part 4 – Using FXML",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial-part-4-using-fxml": "JavaFX tutorial part 4 – Using FXML",
@@ -521,10 +446,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Using Jekyll for project documentation",
-      "pageNav": 2,
       "src": "tutorials/jekyll.md",
-      "layout": "default",
+      "title": "Using Jekyll for project documentation",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-jekyll-for-project-documentation": "Using Jekyll for project documentation",
@@ -535,10 +458,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Using JUnit",
-      "pageNav": 2,
       "src": "tutorials/junit.md",
-      "layout": "default",
+      "title": "Using JUnit",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-junit": "Using JUnit",
@@ -550,10 +471,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Using MarkBind for project documentation",
-      "pageNav": 2,
       "src": "tutorials/markbind.md",
-      "layout": "default",
+      "title": "Using MarkBind for project documentation",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-markbind-for-project-documentation": "Using MarkBind for project documentation",
@@ -564,10 +483,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Using Netlify",
-      "pageNav": 3,
       "src": "tutorials/netlify.md",
-      "layout": "default",
+      "title": "Using Netlify",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-netlify": "Using Netlify",
@@ -577,10 +494,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Using PlantUML",
-      "pageNav": 3,
       "src": "tutorials/plantUml.md",
-      "layout": "default",
+      "title": "Using PlantUML",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-plantuml": "Using PlantUML",
@@ -593,9 +508,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Saving web documents as PDF files",
       "src": "tutorials/savingPdf.md",
-      "layout": "default",
+      "title": "Saving web documents as PDF files",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "saving-web-documents-as-pdf-files": "Saving web documents as PDF files"
@@ -603,10 +517,8 @@
       "headingKeywords": {}
     },
     {
-      "title": "Automating the testing of text UIs",
-      "pageNav": 2,
       "src": "tutorials/textUiTesting.md",
-      "layout": "default",
+      "title": "Automating the testing of text UIs",
       "headings": {
         "guides-for-se-student-projects": "Guides for SE student projects »",
         "automating-the-testing-of-text-uis": "Automating the testing of text UIs",

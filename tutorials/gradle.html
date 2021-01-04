@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gradle tutorial</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,35 +41,36 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="gradle-tutorial">Gradle tutorial<a class="fa fa-anchor" href="#gradle-tutorial" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="gradle-tutorial"><span id="gradle-tutorial" class="anchor"></span>Gradle tutorial<a class="fa fa-anchor" href="#gradle-tutorial" onclick="event.stopPropagation()"></a></h1>
         <p>Gradle is a <em>build automation tool</em> used to automate build processes. There are many ways of integrating Gradle into a project. This tutorial uses the <em>Gradle wrapper</em> approach.</p>
 
-        <h2 id="basics">Basics<a class="fa fa-anchor" href="#basics" onclick="event.stopPropagation()"></a></h2>
-        <p>You use a <em>build file</em> (named <code v-pre>build.gradle</code>) to describe the project to Gradle. A build file mainly consists of <em>plugins</em>, <em>tasks</em> and <em>properties</em>.</p>
+        <h2 id="basics"><span id="basics" class="anchor"></span>Basics<a class="fa fa-anchor" href="#basics" onclick="event.stopPropagation()"></a></h2>
+        <p>You use a <em>build file</em> (named <code class="hljs inline no-lang" v-pre>build.gradle</code>) to describe the project to Gradle. A build file mainly consists of <em>plugins</em>, <em>tasks</em> and <em>properties</em>.</p>
         <ul>
           <li>
-            <p><strong>Plugins</strong> extend the functionality of Gradle. For example, the <code v-pre>java</code> plugin adds support for <code v-pre>Java</code> projects.</p>
+            <p><strong>Plugins</strong> extend the functionality of Gradle. For example, the <code class="hljs inline no-lang" v-pre>java</code> plugin adds support for <code class="hljs inline no-lang" v-pre>Java</code> projects.</p>
           </li>
           <li>
-            <p><strong>Tasks</strong> are reusable blocks of logic. For example, the task <code v-pre>clean</code> simply deletes the project build directory.
+            <p><strong>Tasks</strong> are reusable blocks of logic. For example, the task <code class="hljs inline no-lang" v-pre>clean</code> simply deletes the project build directory.
               Tasks can be composed of, or dependent on, other tasks.</p>
           </li>
           <li>
-            <p><strong>Properties</strong> change the behavior of tasks. For instance, <code v-pre>mainClassName</code> of the <code v-pre>application</code> plugin is a compulsory property which tells Gradle which class is the entry point to your application. As Gradle favors <a href="https://en.wikipedia.org/wiki/Convention_over_configuration"><em>convention over configuration</em></a>, there is not much to you need to configure if you follow the recommended directory structure.</p>
+            <p><strong>Properties</strong> change the behavior of tasks. For instance, <code class="hljs inline no-lang" v-pre>mainClassName</code> of the <code class="hljs inline no-lang" v-pre>application</code> plugin is a compulsory property which tells Gradle which class is the entry point to your application. As Gradle favors <a href="https://en.wikipedia.org/wiki/Convention_over_configuration"><em>convention over configuration</em></a>, there is not much to you need to configure if you follow the recommended directory structure.</p>
           </li>
         </ul>
 
-        <h2 id="adding-gradle-to-the-project">Adding Gradle to the project<a class="fa fa-anchor" href="#adding-gradle-to-the-project" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="adding-gradle-to-the-project"><span id="adding-gradle-to-the-project" class="anchor"></span>Adding Gradle to the project<a class="fa fa-anchor" href="#adding-gradle-to-the-project" onclick="event.stopPropagation()"></a></h2>
         <p><strong><strong>Scenario 1:</strong></strong> You are setting up a project in Intellij IDEA. The project already has Gradle support.</p>
         <div class="ml-3">
-          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If the project comes with Gradle support, you will see a <code v-pre>build.gradle</code> file in your project root.</p>
+          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If the project comes with Gradle support, you will see a <code class="hljs inline no-lang" v-pre>build.gradle</code> file in your project root.</p>
         </div>
         <ol>
-          <li>When you <em>import</em> the project into IDEA, at the step where you normally select the project root folder, choose the <code v-pre>build.gradle</code> file inside the root folder instead.</li>
-          <li>If asked, choose <code v-pre>Open as Project</code> (not <code v-pre>Open as File</code>).</li>
-          <li>After importing is complete, you will see the <code v-pre>Gradle Toolbar</code> in the IDEA interface.<br>
+          <li>When you <em>import</em> the project into IDEA, at the step where you normally select the project root folder, choose the <code class="hljs inline no-lang" v-pre>build.gradle</code> file inside the root folder instead.</li>
+          <li>If asked, choose <code class="hljs inline no-lang" v-pre>Open as Project</code> (not <code class="hljs inline no-lang" v-pre>Open as File</code>).</li>
+          <li>After importing is complete, you will see the <code class="hljs inline no-lang" v-pre>Gradle Toolbar</code> in the IDEA interface.<br>
             <a href="/guides/tutorials/images/gradle/GradleIcon.png" target="_self"><img src="/guides/tutorials/images/gradle/GradleIcon.png" alt class="img-fluid"></a>
           </li>
         </ol>
@@ -74,7 +78,7 @@
         <ol>
           <li>Add the Gradle wrapper files to the project. e.g., if they are in a separate branch, merge that branch.</li>
           <li>Close the IDEA project if it is open.</li>
-          <li>Delete the <code v-pre>.idea</code> folder.</li>
+          <li>Delete the <code class="hljs inline no-lang" v-pre>.idea</code> folder.</li>
           <li>Import the project again (similar to scenario 1 above)</li>
         </ol>
         <p><strong><strong>Scenario 3:</strong></strong> You are adding Gradle support to an ongoing project from scratch.</p>
@@ -82,60 +86,66 @@
           <li><a href="https://docs.gradle.org/current/userguide/gradle_wrapper.html">This</a> is a good place to start.</li>
         </ul>
 
-        <h2 id="using-gradle-in-intellij-idea">Using Gradle in Intellij IDEA<a class="fa fa-anchor" href="#using-gradle-in-intellij-idea" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="using-gradle-in-intellij-idea"><span id="using-gradle-in-intellij-idea" class="anchor"></span>Using Gradle in Intellij IDEA<a class="fa fa-anchor" href="#using-gradle-in-intellij-idea" onclick="event.stopPropagation()"></a></h2>
         <p>If the Gradle tasks don't appear in the Gradle window, click the 'refresh' button in the tooolbar to reimport the Gradle project.</p>
-        <p>Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to <code v-pre>File</code> &gt; <code v-pre>Settings</code> and change the following settings:<br>
+        <p>Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to <code class="hljs inline no-lang" v-pre>File</code> &gt; <code class="hljs inline no-lang" v-pre>Settings</code> and change the following settings:<br>
           <a href="/guides/tutorials/images/gradle/intellijRunUsingGradle.png" target="_self"><img src="/guides/tutorials/images/gradle/intellijRunUsingGradle.png" alt class="img-fluid"></a>
         </p>
 
-        <h2 id="running-gradle-tasks">Running Gradle Tasks<a class="fa fa-anchor" href="#running-gradle-tasks" onclick="event.stopPropagation()"></a></h2>
-        <p>To run a task, locate the task in the Gradle toolbar, right-click on a task, and choose <code v-pre>run</code>.</p>
+        <h2 id="running-gradle-tasks"><span id="running-gradle-tasks" class="anchor"></span>Running Gradle Tasks<a class="fa fa-anchor" href="#running-gradle-tasks" onclick="event.stopPropagation()"></a></h2>
+        <p>To run a task, locate the task in the Gradle toolbar, right-click on a task, and choose <code class="hljs inline no-lang" v-pre>run</code>.</p>
         <p>Alternatively, you can type the command in the terminal.</p>
         <ul>
-          <li>On Windows: <code v-pre>gradlew &lt;task1&gt; &lt;task2&gt; …</code>​ e.g. <code v-pre>gradlew clean test</code></li>
-          <li>On Mac/Linux: <code v-pre>./gradlew &lt;task1&gt; &lt;task2&gt; …</code>​ e.g. <code v-pre>./gradlew clean test</code></li>
+          <li>On Windows: <code class="hljs inline no-lang" v-pre>gradlew &lt;task1&gt; &lt;task2&gt; …</code>​ e.g. <code class="hljs inline no-lang" v-pre>gradlew clean test</code></li>
+          <li>On Mac/Linux: <code class="hljs inline no-lang" v-pre>./gradlew &lt;task1&gt; &lt;task2&gt; …</code>​ e.g. <code class="hljs inline no-lang" v-pre>./gradlew clean test</code></li>
         </ul>
 
-        <h2 id="adding-plugins">Adding plugins<a class="fa fa-anchor" href="#adding-plugins" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="adding-plugins"><span id="adding-plugins" class="anchor"></span>Adding plugins<a class="fa fa-anchor" href="#adding-plugins" onclick="event.stopPropagation()"></a></h2>
         <p>Gradle plugins are reusable units of build logic. Most common build tasks are bundled into core plugins provided by Gradle. Java, Checkstyle, and Shadow are three of plugins commonly used in Java projects.
-          The relevant lines of the <code v-pre>build.gradle</code> are given below:</p>
+          The relevant lines of the <code class="hljs inline no-lang" v-pre>build.gradle</code> are given below:</p>
         <div class="code-block">
           <div class="code-block-heading"><span>build.gradle</span></div>
           <div class="code-block-content">
-            <pre><code heading="build.gradle" class="hljs groovy" v-pre><span>plugins {<br></span><span class="highlighted">    id <span class="hljs-string">'java'</span><br></span><span class="highlighted">    id <span class="hljs-string">'application'</span><br></span><span class="highlighted">    id <span class="hljs-string">'checkstyle'</span><br></span><span class="highlighted">    id <span class="hljs-string">'com.github.johnrengelman.shadow'</span> version <span class="hljs-string">'5.1.0'</span><br></span><span>}<br></span></code></pre>
+            <pre><code heading="build.gradle" class="hljs groovy" v-pre><span>plugins {
+</span><span>    <span class="highlighted">id <span class="hljs-string">&#x27;java&#x27;</span></span>
+</span><span>    <span class="highlighted">id <span class="hljs-string">&#x27;application&#x27;</span></span>
+</span><span>    <span class="highlighted">id <span class="hljs-string">&#x27;checkstyle&#x27;</span></span>
+</span><span>    <span class="highlighted">id <span class="hljs-string">&#x27;com.github.johnrengelman.shadow&#x27;</span> version <span class="hljs-string">&#x27;5.1.0&#x27;</span></span>
+</span><span>}
+</span></code></pre>
           </div>
         </div>
-        <h2 id="using-gradle-to-do-some-common-project-activities">Using Gradle to do some common project activities<a class="fa fa-anchor" href="#using-gradle-to-do-some-common-project-activities" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="using-gradle-to-do-some-common-project-activities"><span id="using-gradle-to-do-some-common-project-activities" class="anchor"></span>Using Gradle to do some common project activities<a class="fa fa-anchor" href="#using-gradle-to-do-some-common-project-activities" onclick="event.stopPropagation()"></a></h2>
 
-        <h3 id="cleaning-the-project">Cleaning the project<a class="fa fa-anchor" href="#cleaning-the-project" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="cleaning-the-project"><span id="cleaning-the-project" class="anchor"></span>Cleaning the project<a class="fa fa-anchor" href="#cleaning-the-project" onclick="event.stopPropagation()"></a></h3>
         <ul>
-          <li><strong><code v-pre>clean</code></strong>: Deletes the files created during the previous build tasks (e.g. files in the <code v-pre>build</code> folder).<br>
-            e.g. <code v-pre>./gradlew clean</code></li>
+          <li><strong><code class="hljs inline no-lang" v-pre>clean</code></strong>: Deletes the files created during the previous build tasks (e.g. files in the <code class="hljs inline no-lang" v-pre>build</code> folder).<br>
+            e.g. <code class="hljs inline no-lang" v-pre>./gradlew clean</code></li>
         </ul>
         <box>
-          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> <strong>You can use <code v-pre>clean</code> to prevent Gradle from skipping tasks</strong>: When running a Gradle task, Gradle will try to figure out if the task needs running at all. If Gradle determines that the output of the task will be same as the previous time, it will not run the task. For example, it will not build the JAR file again if the relevant source files have not changed since the last time the JAR file was built. If you want to force Gradle to run a task, you can combine that task with <code v-pre>clean</code> (e.g., <code v-pre>./gradlew clean shadowJar</code>). Once the build files have been <code v-pre>clean</code> ed, Gradle has no way to determine if the output will be same as before, and it will have no choice but to execute the task.</p>
+          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> <strong>You can use <code class="hljs inline no-lang" v-pre>clean</code> to prevent Gradle from skipping tasks</strong>: When running a Gradle task, Gradle will try to figure out if the task needs running at all. If Gradle determines that the output of the task will be same as the previous time, it will not run the task. For example, it will not build the JAR file again if the relevant source files have not changed since the last time the JAR file was built. If you want to force Gradle to run a task, you can combine that task with <code class="hljs inline no-lang" v-pre>clean</code> (e.g., <code class="hljs inline no-lang" v-pre>./gradlew clean shadowJar</code>). Once the build files have been <code class="hljs inline no-lang" v-pre>clean</code> ed, Gradle has no way to determine if the output will be same as before, and it will have no choice but to execute the task.</p>
         </box>
 
-        <h3 id="running-checkstyle">Running Checkstyle<a class="fa fa-anchor" href="#running-checkstyle" onclick="event.stopPropagation()"></a></h3>
-        <p><code v-pre>gradlew checkstyleMain checkstyleTest</code>: runs main code and test code complies with the Checkstyle rules. <br></p>
+        <h3 id="running-checkstyle"><span id="running-checkstyle" class="anchor"></span>Running Checkstyle<a class="fa fa-anchor" href="#running-checkstyle" onclick="event.stopPropagation()"></a></h3>
+        <p><code class="hljs inline no-lang" v-pre>gradlew checkstyleMain checkstyleTest</code>: runs main code and test code complies with the Checkstyle rules. <br></p>
         <p><strong>Resources</strong>:</p>
         <ul>
           <li><a href="/guides/tutorials/checkstyle.html">Checkstyle Tutorial</a></li>
           <li><a href="https://docs.gradle.org/current/userguide/checkstyle_plugin.html">Gradle documentation for the Checkstyle plugin</a></li>
         </ul>
 
-        <h3 id="running-tests">Running tests<a class="fa fa-anchor" href="#running-tests" onclick="event.stopPropagation()"></a></h3>
-        <p>Run the <code v-pre>test</code> task to run the tests in the project.</p>
+        <h3 id="running-tests"><span id="running-tests" class="anchor"></span>Running tests<a class="fa fa-anchor" href="#running-tests" onclick="event.stopPropagation()"></a></h3>
+        <p>Run the <code class="hljs inline no-lang" v-pre>test</code> task to run the tests in the project.</p>
         <p><strong>Resources</strong>:</p>
         <ul>
           <li><a href="https://docs.gradle.org/current/userguide/java_testing.html#using_junit5">Gradle documentation for JUnit</a></li>
         </ul>
 
-        <h3 id="creating-jar-files">Creating JAR files<a class="fa fa-anchor" href="#creating-jar-files" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="creating-jar-files"><span id="creating-jar-files" class="anchor"></span>Creating JAR files<a class="fa fa-anchor" href="#creating-jar-files" onclick="event.stopPropagation()"></a></h3>
         <span id="section-creating-jar-files">
           <p><a href="https://github.com/johnrengelman/shadow">Shadow</a> is a plugin that packages an application into an executable <em>fat</em> jar file <em>if the current file is outdated</em>.</p>
           <div class="indented-level2">
-            <panel minimized><template slot="_header">
+            <panel minimized><template slot="header">
                 <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Tutorials → Working with JAR files → <strong>Fat JAR files</strong></p>
               </template>
               <div>
@@ -145,16 +155,36 @@
             </panel>
           </div>
           <p></p>
-          <p>The task <strong><code v-pre>shadowJar</code></strong> (e.g., running the command <code v-pre>gradlew shadowJar</code> or <code v-pre>gradlew clean shadowJar</code>) creates the JAR file in the <code v-pre>build/libs</code> folder. By default, it produces a jar file with the name in the format of <code v-pre>{archiveBaseName}-{archiveVersion}.jar</code> and put it in the <code v-pre>builds/libs</code> folder. These properties can be set in the <code v-pre>build.gradle</code> file.</p>
-          <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> Ensure your <code v-pre>build.gradle</code> file contains the correct values w.r.t. the Shadow plugin e.g., <code v-pre>mainClassName</code></p>
-          <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> If you are using JavaFX, see the panel below to find what else you need to add to the <code v-pre>build.gradle</code> to pack JavaFX libraries into the generated JAR file.</p>
+          <p>The task <strong><code class="hljs inline no-lang" v-pre>shadowJar</code></strong> (e.g., running the command <code class="hljs inline no-lang" v-pre>gradlew shadowJar</code> or <code class="hljs inline no-lang" v-pre>gradlew clean shadowJar</code>) creates the JAR file in the <code class="hljs inline no-lang" v-pre>build/libs</code> folder. By default, it produces a jar file with the name in the format of <code class="hljs inline no-lang" v-pre>{archiveBaseName}-{archiveVersion}.jar</code> and put it in the <code class="hljs inline no-lang" v-pre>builds/libs</code> folder. These properties can be set in the <code class="hljs inline no-lang" v-pre>build.gradle</code> file.</p>
+          <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> Ensure your <code class="hljs inline no-lang" v-pre>build.gradle</code> file contains the correct values w.r.t. the Shadow plugin e.g., <code class="hljs inline no-lang" v-pre>mainClassName</code></p>
+          <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> If you are using JavaFX, see the panel below to find what else you need to add to the <code class="hljs inline no-lang" v-pre>build.gradle</code> to pack JavaFX libraries into the generated JAR file.</p>
           <div class="indented-level2">
-            <panel minimized><template slot="_header">
+            <panel minimized><template slot="header">
                 <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Tutorials → JavaFX Tutorial Part 1 → If you are using Gradle</p>
               </template>
               <div>
-                <p>Update your <code v-pre>build.gradle</code> to include the following lines:</p>
-                <pre><code class="hljs groovy" v-pre><span>repositories {<br></span><span>    mavenCentral()<br></span><span>}<br></span><span><br></span><span>dependencies {<br></span><span>    String javaFxVersion = <span class="hljs-string">'11'</span><br></span><span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-base'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'win'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-base'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'mac'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-base'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'linux'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-controls'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'win'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-controls'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'mac'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-controls'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'linux'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-fxml'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'win'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-fxml'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'mac'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-fxml'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'linux'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-graphics'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'win'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-graphics'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'mac'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-graphics'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'linux'</span><br></span><span>}<br></span></code></pre>
+                <p>Update your <code class="hljs inline no-lang" v-pre>build.gradle</code> to include the following lines:</p>
+                <pre><code class="hljs groovy" v-pre><span>repositories {
+</span><span>    mavenCentral()
+</span><span>}
+</span><span>
+</span><span>dependencies {
+</span><span>    String javaFxVersion = <span class="hljs-string">&#x27;11&#x27;</span>
+</span><span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-base&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;win&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-base&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;mac&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-base&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;linux&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-controls&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;win&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-controls&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;mac&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-controls&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;linux&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-fxml&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;win&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-fxml&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;mac&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-fxml&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;linux&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-graphics&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;win&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-graphics&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;mac&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-graphics&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;linux&#x27;</span>
+</span><span>}
+</span></code></pre>
               </div>
             </panel>
           </div>
@@ -167,24 +197,31 @@
         </span>
 
 
-        <h3 id="compiling">Compiling<a class="fa fa-anchor" href="#compiling" onclick="event.stopPropagation()"></a></h3>
+        <h3 id="compiling"><span id="compiling" class="anchor"></span>Compiling<a class="fa fa-anchor" href="#compiling" onclick="event.stopPropagation()"></a></h3>
         <p>There is no need to run these Gradle tasks manually as they are called automatically by other relevant Gradle tasks.</p>
         <ul>
-          <li><strong><code v-pre>compileJava</code></strong>: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes. See <code v-pre>build.gradle</code> → <code v-pre>allprojects</code> → <code v-pre>dependencies</code> → <code v-pre>compile</code> for the list of dependencies required.</li>
-          <li><strong><code v-pre>compileTestJava</code></strong>: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes. See <code v-pre>build.gradle</code> → <code v-pre>allprojects</code> → <code v-pre>dependencies</code> → <code v-pre>testCompile</code> for the list of dependencies required.</li>
+          <li><strong><code class="hljs inline no-lang" v-pre>compileJava</code></strong>: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes. See <code class="hljs inline no-lang" v-pre>build.gradle</code> → <code class="hljs inline no-lang" v-pre>allprojects</code> → <code class="hljs inline no-lang" v-pre>dependencies</code> → <code class="hljs inline no-lang" v-pre>compile</code> for the list of dependencies required.</li>
+          <li><strong><code class="hljs inline no-lang" v-pre>compileTestJava</code></strong>: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes. See <code class="hljs inline no-lang" v-pre>build.gradle</code> → <code class="hljs inline no-lang" v-pre>allprojects</code> → <code class="hljs inline no-lang" v-pre>dependencies</code> → <code class="hljs inline no-lang" v-pre>testCompile</code> for the list of dependencies required.</li>
         </ul>
 
-        <h3 id="enabling-assertions">Enabling assertions<a class="fa fa-anchor" href="#enabling-assertions" onclick="event.stopPropagation()"></a></h3>
-        <p>To enable assertions when executing Java code, add the following to the <code v-pre>build.gradle</code> file.</p>
-        <pre><code class="hljs groovy" v-pre><span>run {<br></span><span>    enableAssertions = <span class="hljs-literal">true</span><br></span><span>}<br></span></code></pre>
-        <h2 id="managing-dependencies">Managing dependencies<a class="fa fa-anchor" href="#managing-dependencies" onclick="event.stopPropagation()"></a></h2>
-        <p>Gradle can automate the management of dependencies to third-party libraries. You just need to add the dependency into the <code v-pre>build.gradle</code> file and Gradle will do the rest. For example, here is how the JUnit library has been added to the dependencies in the <code v-pre>build.gradle</code>:</p>
-        <pre><code class="hljs groovy" v-pre><span>dependencies {<br></span><span>    testImplementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.junit.jupiter'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'junit-jupiter-api'</span>, <span class="hljs-string">version:</span> <span class="hljs-string">'5.5.0'</span><br></span><span>}<br></span></code></pre>
-        <p>For example, to add the Natty (a third-party library used for parsing natural lanaguage dates e.g., <code v-pre>today</code>), you simply have to add the following line to the <code v-pre>dependencies</code> section of the <code v-pre>build.gradle</code> file.</p>
-        <pre><code class="hljs groovy" v-pre><span>compile <span class="hljs-string">group:</span> <span class="hljs-string">'com.joestelmach'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'natty'</span>, <span class="hljs-string">version:</span> <span class="hljs-string">'0.6'</span><br></span></code></pre>
+        <h3 id="enabling-assertions"><span id="enabling-assertions" class="anchor"></span>Enabling assertions<a class="fa fa-anchor" href="#enabling-assertions" onclick="event.stopPropagation()"></a></h3>
+        <p>To enable assertions when executing Java code, add the following to the <code class="hljs inline no-lang" v-pre>build.gradle</code> file.</p>
+        <pre><code class="hljs groovy" v-pre><span>run {
+</span><span>    enableAssertions = <span class="hljs-literal">true</span>
+</span><span>}
+</span></code></pre>
+        <h2 id="managing-dependencies"><span id="managing-dependencies" class="anchor"></span>Managing dependencies<a class="fa fa-anchor" href="#managing-dependencies" onclick="event.stopPropagation()"></a></h2>
+        <p>Gradle can automate the management of dependencies to third-party libraries. You just need to add the dependency into the <code class="hljs inline no-lang" v-pre>build.gradle</code> file and Gradle will do the rest. For example, here is how the JUnit library has been added to the dependencies in the <code class="hljs inline no-lang" v-pre>build.gradle</code>:</p>
+        <pre><code class="hljs groovy" v-pre><span>dependencies {
+</span><span>    testImplementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.junit.jupiter&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;junit-jupiter-api&#x27;</span>, <span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;5.5.0&#x27;</span>
+</span><span>}
+</span></code></pre>
+        <p>For example, to add the Natty (a third-party library used for parsing natural lanaguage dates e.g., <code class="hljs inline no-lang" v-pre>today</code>), you simply have to add the following line to the <code class="hljs inline no-lang" v-pre>dependencies</code> section of the <code class="hljs inline no-lang" v-pre>build.gradle</code> file.</p>
+        <pre><code class="hljs groovy" v-pre><span>compile <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;com.joestelmach&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;natty&#x27;</span>, <span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;0.6&#x27;</span>
+</span></code></pre>
         <p>Tip: Most third-party libararies specify how to add it as a Gradle dependency (<a href="https://mvnrepository.com/artifact/com.joestelmach/natty/0.6">example</a>).</p>
 
-        <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="resources"><span id="resources" class="anchor"></span>Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><a href="https://docs.gradle.org/current/userguide/userguide.html">Official Gradle Documentation</a></li>
         </ul>
@@ -193,9 +230,8 @@
         <ul>
           <li>Initial Version: Jeffry Lum</li>
         </ul>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -228,21 +264,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

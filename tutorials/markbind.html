@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Using MarkBind for project documentation</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,21 +41,22 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="using-markbind-for-project-documentation">Using MarkBind for project documentation<a class="fa fa-anchor" href="#using-markbind-for-project-documentation" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="using-markbind-for-project-documentation"><span id="using-markbind-for-project-documentation" class="anchor"></span>Using MarkBind for project documentation<a class="fa fa-anchor" href="#using-markbind-for-project-documentation" onclick="event.stopPropagation()"></a></h1>
         <div class="lead">
           <p><strong><a href="https://markbind.org">MarkBind</a> is a tool for generating static websites from markdown-like text</strong>, particularly suitable for text-heavy websites such as software project documentation.</p>
         </div>
         <p>Given below are some information useful for when you want to update documentation in a project that uses MarkBind.</p>
 
-        <h2 id="installation">Installation<a class="fa fa-anchor" href="#installation" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="installation"><span id="installation" class="anchor"></span>Installation<a class="fa fa-anchor" href="#installation" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><a href="https://www.npmjs.com/get-npm">Install npm</a>, if you don't have it yet.</li>
-          <li>Run the command <code v-pre>npm install -g markbind-cli</code> to install the latest version of MarkBind.</li>
+          <li>Run the command <code class="hljs inline no-lang" v-pre>npm install -g markbind-cli</code> to install the latest version of MarkBind.</li>
         </ul>
 
-        <h2 id="updating-documents">Updating documents<a class="fa fa-anchor" href="#updating-documents" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="updating-documents"><span id="updating-documents" class="anchor"></span>Updating documents<a class="fa fa-anchor" href="#updating-documents" onclick="event.stopPropagation()"></a></h2>
         <box type="info" seamless>
           <p>MarkBind is a superset of Markdown. Refer the <a href="https://markbind.org/userGuide/gettingStarted.html">MarkBind user guide</a> for more details.
           </p>
@@ -61,29 +65,29 @@
         <p><strong>First, start the <em>live preview</em></strong>: Unless it is a trivial change, you would want to see how your change to the documentation source files will reflect in the generated website. You can use the MarkBind <em>live preview</em> mode to preview the generated website as you update the source file. To start the live preview mode,</p>
         <ol>
           <li>Open a command prompt.</li>
-          <li>Navigate to the the <em>documentation root</em> (in most projects, the documentation root is <code v-pre>[project root]/docs</code> -- if you are not sure, look for the folder containing the <code v-pre>site.json</code> file).</li>
-          <li>Run the <code v-pre>markbind serve</code> command. That will open the generated website in your default browser.</li>
+          <li>Navigate to the the <em>documentation root</em> (in most projects, the documentation root is <code class="hljs inline no-lang" v-pre>[project root]/docs</code> -- if you are not sure, look for the folder containing the <code class="hljs inline no-lang" v-pre>site.json</code> file).</li>
+          <li>Run the <code class="hljs inline no-lang" v-pre>markbind serve</code> command. That will open the generated website in your default browser.</li>
           <li>In the browser, navigate to the page you want to modify.</li>
         </ol>
         <p><strong>Next, edit the files you want</strong>:</p>
         <ol>
-          <li>Edit the source files (usually, either <code v-pre>.md</code>, <code v-pre>.mbd</code>, or <code v-pre>.mbdf</code> files).</li>
+          <li>Edit the source files (usually, either <code class="hljs inline no-lang" v-pre>.md</code>, <code class="hljs inline no-lang" v-pre>.mbd</code>, or <code class="hljs inline no-lang" v-pre>.mbdf</code> files).</li>
           <li>When you save the file, the live preview will update to reflect the new contents (after a few seconds).</li>
         </ol>
         <box type="warning" seamless>
-          <p>While <em>live preview</em> can pick up most changes, it may not be able to pick up certain changes (e.g., changes to files in the <code v-pre>_markbind</code> folder or changes to nunjucks macros). Furthermore, some syntax errors in your code can cause the live preview to crash. In those cases, just stop the server (<kbd>Ctrl</kbd>+<kbd>C</kbd> on Windows) and start it again.
+          <p>While <em>live preview</em> can pick up most changes, it may not be able to pick up certain changes (e.g., changes to files in the <code class="hljs inline no-lang" v-pre>_markbind</code> folder or changes to nunjucks macros). Furthermore, some syntax errors in your code can cause the live preview to crash. In those cases, just stop the server (<kbd>Ctrl</kbd>+<kbd>C</kbd> on Windows) and start it again.
           </p>
         </box>
         <p></p>
-        <h2 id="automating-pr-previews-deployments">Automating PR previews, deployments<a class="fa fa-anchor" href="#automating-pr-previews-deployments" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="automating-pr-previews-deployments"><span id="automating-pr-previews-deployments" class="anchor"></span>Automating PR previews, deployments<a class="fa fa-anchor" href="#automating-pr-previews-deployments" onclick="event.stopPropagation()"></a></h2>
         <p>Project admins can,</p>
         <ul>
           <li>set up Netlify to give a preview of how a PR can affect the generated website. More info <a href="https://markbind.org/userGuide/deployingTheSite.html#deploying-to-netlify">here</a>.</li>
-          <li>set up Travis to automatically generate and deploy the project website when new code is pushed. More info <a href="https://markbind.org/userGuide/deployingTheSite.html#deploying-to-github-pages">here</a></li>
+          <li>set up Travis to automatically generate and deploy the project website when new code is pushed. More info <a href="https://markbind.org/userGuide/deployingTheSite.html#deploying-to-github-pages">here</a>
+            <i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i>
+          </li>
         </ul>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -103,21 +107,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

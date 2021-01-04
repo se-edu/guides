@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Using Jekyll for project documentation</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,26 +41,27 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="using-jekyll-for-project-documentation">Using Jekyll for project documentation<a class="fa fa-anchor" href="#using-jekyll-for-project-documentation" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="using-jekyll-for-project-documentation"><span id="using-jekyll-for-project-documentation" class="anchor"></span>Using Jekyll for project documentation<a class="fa fa-anchor" href="#using-jekyll-for-project-documentation" onclick="event.stopPropagation()"></a></h1>
         <div class="lead">
           <p><strong><a href="https://jekyllrb.com/">Jekyll</a> is a popular tool for generating static websites from markdown-like text</strong>.</p>
         </div>
         <p>Given below are some information useful for when you want to update documentation in a project that uses Jekyll.</p>
 
-        <h2 id="setting-up-github-pages-for-jekyll">Setting up GitHub Pages for Jekyll<a class="fa fa-anchor" href="#setting-up-github-pages-for-jekyll" onclick="event.stopPropagation()"></a></h2>
-        <p>As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the <code v-pre>githhub.io</code> URL of your project.</p>
+        <h2 id="setting-up-github-pages-for-jekyll"><span id="setting-up-github-pages-for-jekyll" class="anchor"></span>Setting up GitHub Pages for Jekyll<a class="fa fa-anchor" href="#setting-up-github-pages-for-jekyll" onclick="event.stopPropagation()"></a></h2>
+        <p>As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the <code class="hljs inline no-lang" v-pre>githhub.io</code> URL of your project.</p>
         <p>Do the following to set up the GitHub Pages website of your project:</p>
         <ol>
           <li>Go to your repo's <span class="border border-secondary border-bottom-0 pr-1 pl-1 mr-1 ml-1 rounded-top"><small>settings <span aria-hidden="true" class="fas fa-cog"></span></small></span> tab.</li>
-          <li>Scroll down to the <code v-pre>GitHub Pages</code> section.</li>
-          <li>Set the <code v-pre>Source</code> to <code v-pre>master branch /docs folder</code> (assuming project documentation is in that folder).</li>
+          <li>Scroll down to the <code class="hljs inline no-lang" v-pre>GitHub Pages</code> section.</li>
+          <li>Set the <code class="hljs inline no-lang" v-pre>Source</code> to <code class="hljs inline no-lang" v-pre>master branch /docs folder</code> (assuming project documentation is in that folder).</li>
         </ol>
-        <p>The project website will be available at <code v-pre>https://{your_org}.github.io/{your_repo}</code> the next time the <code v-pre>master</code> branch is updated. Example: <code v-pre>https://myorg.github.io/myrepo</code></p>
+        <p>The project website will be available at <code class="hljs inline no-lang" v-pre>https://{your_org}.github.io/{your_repo}</code> the next time the <code class="hljs inline no-lang" v-pre>master</code> branch is updated. Example: <code class="hljs inline no-lang" v-pre>https://myorg.github.io/myrepo</code></p>
 
-        <h2 id="updating-documents">Updating documents<a class="fa fa-anchor" href="#updating-documents" onclick="event.stopPropagation()"></a></h2>
-        <p>Jekyll uses <a href="https://kramdown.gettalong.org/syntax.html"><strong>kramdown</strong></a> (a superset of Markdown) for writing content. You can use Intellij (or any other text editor) to update the relevant <code v-pre>.md</code> files.</p>
+        <h2 id="updating-documents"><span id="updating-documents" class="anchor"></span>Updating documents<a class="fa fa-anchor" href="#updating-documents" onclick="event.stopPropagation()"></a></h2>
+        <p>Jekyll uses <a href="https://kramdown.gettalong.org/syntax.html"><strong>kramdown</strong></a> (a superset of Markdown) for writing content. You can use Intellij (or any other text editor) to update the relevant <code class="hljs inline no-lang" v-pre>.md</code> files.</p>
         <box type="tip" seamless>
           <p><strong>Recommendation:</strong> Limit your content to Markdown and GFMD syntax only i.e., avoid kramdown-specific syntax that are not compatible with Markdown/GFMD
           </p>
@@ -72,20 +76,20 @@
           </li>
           <li><strong>Previewing changes on GitHub</strong>:
             <ul>
-              <li><strong>Option 1 -- Github preview</strong>: You can see a basic preview of the page by navigating to the corresponding <code v-pre>.md</code> source file in GitHub.</li>
+              <li><strong>Option 1 -- Github preview</strong>: You can see a basic preview of the page by navigating to the corresponding <code class="hljs inline no-lang" v-pre>.md</code> source file in GitHub.</li>
               <li><strong>Option 2 -- Use Netlify PR preview</strong>: You can set up Netlify to show previews of PRs (to learn how, read the <a href="/guides/tutorials/netlify.html"><em>Using Netlify</em></a> guide). This method shows a preview of the exact way the update affects the final outcome.</li>
             </ul>
           </li>
         </ul>
 
-        <h2 id="site-wide-settings">Site-wide settings<a class="fa fa-anchor" href="#site-wide-settings" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="site-wide-settings"><span id="site-wide-settings" class="anchor"></span>Site-wide settings<a class="fa fa-anchor" href="#site-wide-settings" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li>
-            <p>Typically, the <code v-pre>_config.yml</code> file specifies project-specific site-wide settings.<br>
-              An example is the <code v-pre>title</code> property, which defines the title of your site, usually the name of your project.</p>
+            <p>Typically, the <code class="hljs inline no-lang" v-pre>_config.yml</code> file specifies project-specific site-wide settings.<br>
+              An example is the <code class="hljs inline no-lang" v-pre>title</code> property, which defines the title of your site, usually the name of your project.</p>
           </li>
           <li>
-            <p>The files in <code v-pre>docs/_include</code> and <code v-pre>docs/_layouts</code> control the template of the pages; the files in <code v-pre>docs/_sass</code> control the style of the pages.</p>
+            <p>The files in <code class="hljs inline no-lang" v-pre>docs/_include</code> and <code class="hljs inline no-lang" v-pre>docs/_layouts</code> control the template of the pages; the files in <code class="hljs inline no-lang" v-pre>docs/_sass</code> control the style of the pages.</p>
             <box type="warning" seamless>
               <p><strong>Caution</strong>: Modifying these files requires some knowledge and experience with Jekyll. You should only modify them (at your own risk) if you need greater control over the site’s layout.
               </p>
@@ -93,9 +97,8 @@
             <p></p>
           </li>
         </ul>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -115,21 +118,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

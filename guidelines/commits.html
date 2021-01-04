@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Working with Git</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,17 +41,18 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="working-with-git">Working with Git<a class="fa fa-anchor" href="#working-with-git" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="working-with-git"><span id="working-with-git" class="anchor"></span>Working with Git<a class="fa fa-anchor" href="#working-with-git" onclick="event.stopPropagation()"></a></h1>
 
         <span id="section-organizing-commits">
-          <h2 id="organizing-commits">Organizing commits<a class="fa fa-anchor" href="#organizing-commits" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="organizing-commits"><span id="organizing-commits" class="anchor"></span>Organizing commits<a class="fa fa-anchor" href="#organizing-commits" onclick="event.stopPropagation()"></a></h2>
           <p>Commits in a branch or a PR is said to be <em>well-organized</em> if they have the following qualities:</p>
           <ul>
             <li>
               <p><strong>Each commit contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
-                For example, if the commit message says <code v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code v-pre>delete()</code> to <code v-pre>Address</code> class only; it should also contain the deletion of <code v-pre>delete()</code> from the <code v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                For example, if the commit message says <code class="hljs inline no-lang" v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code class="hljs inline no-lang" v-pre>delete()</code> to <code class="hljs inline no-lang" v-pre>Address</code> class only; it should also contain the deletion of <code class="hljs inline no-lang" v-pre>delete()</code> from the <code class="hljs inline no-lang" v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
             </li>
             <li>
               <p><strong>Each commit has a <em>well-written</em> commit message</strong> i.e., it follows <a href="/guides/conventions/git.html">these guidelines</a>.</p>
@@ -81,7 +85,7 @@
             <li>
               <p><strong>Every commit pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
               <box type="info" seamless>
-                <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code v-pre>git bisect</code> for locating bugs.
+                <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code class="hljs inline no-lang" v-pre>git bisect</code> for locating bugs.
                 </p>
               </box>
               <p></p>
@@ -96,11 +100,11 @@
         </span>
 
         <span id="section-merging-branches">
-          <h2 id="merging-branches">Merging branches<a class="fa fa-anchor" href="#merging-branches" onclick="event.stopPropagation()"></a></h2>
+          <h2 id="merging-branches"><span id="merging-branches" class="anchor"></span>Merging branches<a class="fa fa-anchor" href="#merging-branches" onclick="event.stopPropagation()"></a></h2>
           <box type="info" seamless>
             <p>When merging branch, the aim is to keep the version history neat so that it is easy to do things such as the following:</p>
             <ul>
-              <li>Find which commit introduced a bug using <code v-pre>git bisect</code>.</li>
+              <li>Find which commit introduced a bug using <code class="hljs inline no-lang" v-pre>git bisect</code>.</li>
               <li>Undo a specific change by reverting a commit in the history without breaking anything else.</li>
             </ul>
           </box>
@@ -108,16 +112,16 @@
             <li><strong>The default strategy is to do a <em>squash-merge</em>.</strong> This is suitable when the branch tackles one task but multiple commits that are not well-organized (as per the definition of 'well-organized' in the panel below).</li>
           </ul>
           <div class="indented-level2">
-            <panel minimized><template slot="_header">
+            <panel minimized><template slot="header">
                 <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Guidelines » Working with git » <strong>Organizing commits</strong></p>
               </template>
               <div>
-                <h2 id="organizing-commits-2">Organizing commits<a class="fa fa-anchor" href="#organizing-commits-2" onclick="event.stopPropagation()"></a></h2>
+                <h2 id="organizing-commits-2"><span id="organizing-commits-2" class="anchor"></span>Organizing commits<a class="fa fa-anchor" href="#organizing-commits-2" onclick="event.stopPropagation()"></a></h2>
                 <p>Commits in a branch or a PR is said to be <em>well-organized</em> if they have the following qualities:</p>
                 <ul>
                   <li>
                     <p><strong>Each commit contains a single logical change, and this change must stand on its own.</strong> i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
-                      For example, if the commit message says <code v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code v-pre>delete()</code> to <code v-pre>Address</code> class only; it should also contain the deletion of <code v-pre>delete()</code> from the <code v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
+                      For example, if the commit message says <code class="hljs inline no-lang" v-pre>Move delete() from Person class to Address class</code>, the commit cannot contain the addition of <code class="hljs inline no-lang" v-pre>delete()</code> to <code class="hljs inline no-lang" v-pre>Address</code> class only; it should also contain the deletion of <code class="hljs inline no-lang" v-pre>delete()</code> from the <code class="hljs inline no-lang" v-pre>Person</code> class for it to be a <em>complete</em> implementation what is stated in the commit message.</p>
                   </li>
                   <li>
                     <p><strong>Each commit has a <em>well-written</em> commit message</strong> i.e., it follows <a href="/guides/conventions/git.html">these guidelines</a>.</p>
@@ -150,7 +154,7 @@
                   <li>
                     <p><strong>Every commit pass CI.</strong> when you merge a series of commits (without squashing), every commit in your push (not just the last commit) should pass CI.</p>
                     <box type="info" seamless>
-                      <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code v-pre>git bisect</code> for locating bugs.
+                      <p>Rationale: Build-breaking commits in the version history hinder the ability to use <code class="hljs inline no-lang" v-pre>git bisect</code> for locating bugs.
                       </p>
                     </box>
                     <p></p>
@@ -180,9 +184,10 @@
           </ul>
         </span>
         <p></p>
+
+
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -201,21 +206,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Automating the testing of text UIs</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,71 +41,127 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="automating-the-testing-of-text-uis">Automating the testing of text UIs<a class="fa fa-anchor" href="#automating-the-testing-of-text-uis" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="automating-the-testing-of-text-uis"><span id="automating-the-testing-of-text-uis" class="anchor"></span>Automating the testing of text UIs<a class="fa fa-anchor" href="#automating-the-testing-of-text-uis" onclick="event.stopPropagation()"></a></h1>
         <div class="lead">
           <p><a href="https://se-education.org/se-book/testing/#automated-testing-of-cli-applications"><em>I/O redirection</em> technique</a> can be used to semi-automate the testing of text UIs.</p>
         </div>
         <p>Sections below explain how to use that technique in a small project.</p>
-        <h2 id="setting-up">Setting up<a class="fa fa-anchor" href="#setting-up" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="setting-up"><span id="setting-up" class="anchor"></span>Setting up<a class="fa fa-anchor" href="#setting-up" onclick="event.stopPropagation()"></a></h2>
         <p>Given below re steps to set it up for a project.</p>
         <ol>
           <li>
-            <p>Create a folder to hold the relevant files e.g., <code v-pre>[project root]\text-ui-test</code></p>
+            <p>Create a folder to hold the relevant files e.g., <code class="hljs inline no-lang" v-pre>[project root]\text-ui-test</code></p>
           </li>
           <li>
-            <p>Add a <code v-pre>runtest.bat</code> (if you are on Windows) or <code v-pre>runtest.sh</code> (if you are on a *nix OS) into the folder, containing the script below.<br></p>
+            <p>Add a <code class="hljs inline no-lang" v-pre>runtest.bat</code> (if you are on Windows) or <code class="hljs inline no-lang" v-pre>runtest.sh</code> (if you are on a *nix OS) into the folder, containing the script below.<br></p>
             <tabs>
-              <tab><template slot="_header"><code v-pre>runtest.bat</code></template>
-                <pre><code class="hljs bat" v-pre><span>@<span class="hljs-built_in">ECHO</span> OFF<br></span><span><br></span><span><span class="hljs-comment">REM create bin directory if it doesn't exist</span><br></span><span><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exist</span> ..\bin <span class="hljs-built_in">mkdir</span> ..\bin<br></span><span><br></span><span><span class="hljs-comment">REM delete output from previous run</span><br></span><span><span class="hljs-built_in">del</span> ACTUAL.TXT<br></span><span><br></span><span><span class="hljs-comment">REM compile the code into the bin folder</span><br></span><span>javac  -cp ..\src\main\java -Xlint:none -d ..\bin ..\src\main\java\*.java<br></span><span><span class="hljs-keyword">IF</span> <span class="hljs-keyword">ERRORLEVEL</span> <span class="hljs-number">1</span> (<br></span><span>    <span class="hljs-built_in">echo</span> ********** BUILD FAILURE **********<br></span><span>    <span class="hljs-keyword">exit</span> /b <span class="hljs-number">1</span><br></span><span>)<br></span><span><span class="hljs-comment">REM no error here, errorlevel == 0</span><br></span><span><br></span><span><span class="hljs-comment">REM run the program, feed commands from input.txt file and redirect the output to the ACTUAL.TXT</span><br></span><span>java -classpath ..\bin Duke &lt; input.txt &gt; ACTUAL.TXT<br></span><span><br></span><span><span class="hljs-comment">REM compare the output to the expected output</span><br></span><span>FC ACTUAL.TXT EXPECTED.TXT<br></span></code></pre>
+              <tab><template slot="_header"><code class="hljs inline no-lang" v-pre>runtest.bat</code></template>
+                <pre><code class="hljs bat" v-pre><span>@<span class="hljs-built_in">ECHO</span> OFF
+</span><span>
+</span><span><span class="hljs-comment">REM create bin directory if it doesn&#x27;t exist</span>
+</span><span><span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">exist</span> ..\bin <span class="hljs-built_in">mkdir</span> ..\bin
+</span><span>
+</span><span><span class="hljs-comment">REM delete output from previous run</span>
+</span><span><span class="hljs-built_in">del</span> ACTUAL.TXT
+</span><span>
+</span><span><span class="hljs-comment">REM compile the code into the bin folder</span>
+</span><span>javac  -cp ..\src\main\java -Xlint:none -d ..\bin ..\src\main\java\*.java
+</span><span><span class="hljs-keyword">IF</span> <span class="hljs-keyword">ERRORLEVEL</span> <span class="hljs-number">1</span> (
+</span><span>    <span class="hljs-built_in">echo</span> ********** BUILD FAILURE **********
+</span><span>    <span class="hljs-keyword">exit</span> /b <span class="hljs-number">1</span>
+</span><span>)
+</span><span><span class="hljs-comment">REM no error here, errorlevel == 0</span>
+</span><span>
+</span><span><span class="hljs-comment">REM run the program, feed commands from input.txt file and redirect the output to the ACTUAL.TXT</span>
+</span><span>java -classpath ..\bin Duke &lt; input.txt &gt; ACTUAL.TXT
+</span><span>
+</span><span><span class="hljs-comment">REM compare the output to the expected output</span>
+</span><span>FC ACTUAL.TXT EXPECTED.TXT
+</span></code></pre>
               </tab>
-              <tab><template slot="_header"><code v-pre>runtest.sh</code></template>
-                <pre><code class="hljs sh" v-pre><span><span class="hljs-meta">#!/usr/bin/env bash</span><br></span><span><br></span><span><span class="hljs-comment"># create bin directory if it doesn't exist</span><br></span><span><span class="hljs-keyword">if</span> [ ! -d <span class="hljs-string">"../bin"</span> ]<br></span><span><span class="hljs-keyword">then</span><br></span><span>    mkdir ../bin<br></span><span><span class="hljs-keyword">fi</span><br></span><span><br></span><span><span class="hljs-comment"># delete output from previous run</span><br></span><span><span class="hljs-keyword">if</span> [ -e <span class="hljs-string">"./ACTUAL.TXT"</span> ]<br></span><span><span class="hljs-keyword">then</span><br></span><span>    rm ACTUAL.TXT<br></span><span><span class="hljs-keyword">fi</span><br></span><span><br></span><span><span class="hljs-comment"># compile the code into the bin folder, terminates if error occurred</span><br></span><span><span class="hljs-keyword">if</span> ! javac -cp ../src/main/java -Xlint:none -d ../bin ../src/main/java/*.java<br></span><span><span class="hljs-keyword">then</span><br></span><span>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"********** BUILD FAILURE **********"</span><br></span><span>    <span class="hljs-built_in">exit</span> 1<br></span><span><span class="hljs-keyword">fi</span><br></span><span><br></span><span><span class="hljs-comment"># run the program, feed commands from input.txt file and redirect the output to the ACTUAL.TXT</span><br></span><span>java -classpath ../bin Duke &lt; input.txt &gt; ACTUAL.TXT<br></span><span><br></span><span><span class="hljs-comment"># compare the output to the expected output</span><br></span><span>diff ACTUAL.TXT EXPECTED.TXT<br></span><span><span class="hljs-keyword">if</span> [ $? -eq 0 ]<br></span><span><span class="hljs-keyword">then</span><br></span><span>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Test result: PASSED"</span><br></span><span>    <span class="hljs-built_in">exit</span> 0<br></span><span><span class="hljs-keyword">else</span><br></span><span>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Test result: FAILED"</span><br></span><span>    <span class="hljs-built_in">exit</span> 1<br></span><span><span class="hljs-keyword">fi</span><br></span></code></pre>
+              <tab><template slot="_header"><code class="hljs inline no-lang" v-pre>runtest.sh</code></template>
+                <pre><code class="hljs sh" v-pre><span><span class="hljs-meta">#!/usr/bin/env bash</span>
+</span><span>
+</span><span><span class="hljs-comment"># create bin directory if it doesn&#x27;t exist</span>
+</span><span><span class="hljs-keyword">if</span> [ ! -d <span class="hljs-string">&quot;../bin&quot;</span> ]
+</span><span><span class="hljs-keyword">then</span>
+</span><span>    mkdir ../bin
+</span><span><span class="hljs-keyword">fi</span>
+</span><span>
+</span><span><span class="hljs-comment"># delete output from previous run</span>
+</span><span><span class="hljs-keyword">if</span> [ -e <span class="hljs-string">&quot;./ACTUAL.TXT&quot;</span> ]
+</span><span><span class="hljs-keyword">then</span>
+</span><span>    rm ACTUAL.TXT
+</span><span><span class="hljs-keyword">fi</span>
+</span><span>
+</span><span><span class="hljs-comment"># compile the code into the bin folder, terminates if error occurred</span>
+</span><span><span class="hljs-keyword">if</span> ! javac -cp ../src/main/java -Xlint:none -d ../bin ../src/main/java/*.java
+</span><span><span class="hljs-keyword">then</span>
+</span><span>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;********** BUILD FAILURE **********&quot;</span>
+</span><span>    <span class="hljs-built_in">exit</span> 1
+</span><span><span class="hljs-keyword">fi</span>
+</span><span>
+</span><span><span class="hljs-comment"># run the program, feed commands from input.txt file and redirect the output to the ACTUAL.TXT</span>
+</span><span>java -classpath ../bin Duke &lt; input.txt &gt; ACTUAL.TXT
+</span><span>
+</span><span><span class="hljs-comment"># compare the output to the expected output</span>
+</span><span>diff ACTUAL.TXT EXPECTED.TXT
+</span><span><span class="hljs-keyword">if</span> [ $? -eq 0 ]
+</span><span><span class="hljs-keyword">then</span>
+</span><span>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Test result: PASSED&quot;</span>
+</span><span>    <span class="hljs-built_in">exit</span> 0
+</span><span><span class="hljs-keyword">else</span>
+</span><span>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Test result: FAILED&quot;</span>
+</span><span>    <span class="hljs-built_in">exit</span> 1
+</span><span><span class="hljs-keyword">fi</span>
+</span></code></pre>
               </tab>
             </tabs>
             <br>
           </li>
           <li>
-            <p>Update the <code v-pre>javac</code> and <code v-pre>java</code> commands in the script to match the name/location of your main class.<br>
+            <p>Update the <code class="hljs inline no-lang" v-pre>javac</code> and <code class="hljs inline no-lang" v-pre>java</code> commands in the script to match the name/location of your main class.<br>
               If you are using packages, the two commands need to take the packages into account too.</p>
           </li>
           <li>
-            <p>Add an <code v-pre>EXPECTED.txt</code> to the same folder, containing the expected output.</p>
+            <p>Add an <code class="hljs inline no-lang" v-pre>EXPECTED.txt</code> to the same folder, containing the expected output.</p>
           </li>
           <li>
-            <p>Add an <code v-pre>input.txt</code> containing the input commands.</p>
+            <p>Add an <code class="hljs inline no-lang" v-pre>input.txt</code> containing the input commands.</p>
           </li>
           <li>
-            <p>Run the <code v-pre>.bat</code>/<code v-pre>.sh</code> file to execute the test.</p>
+            <p>Run the <code class="hljs inline no-lang" v-pre>.bat</code>/<code class="hljs inline no-lang" v-pre>.sh</code> file to execute the test.</p>
             <ul>
               <li>If the actual output matches the EXPECTED.TXT, the test passes.</li>
               <li>If the actual output differs from the EXPECTED.TXT, the script will report a failure.</li>
             </ul>
           </li>
         </ol>
-        <h2 id="updating-tests-as-the-program-evolves">Updating tests as the program evolves<a class="fa fa-anchor" href="#updating-tests-as-the-program-evolves" onclick="event.stopPropagation()"></a></h2>
-        <p>The purpose of testing as explained in the previous section is to confirm there are no <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-html-for="_content">i.e., there are no <em>unintentional</em> behavior changes</span><em>regressions</em></span>. However, we often update the behavior of the program intentionally e.g., enhance an existing feature. Let's look at how to update our test set up in those cases.</p>
+        <h2 id="updating-tests-as-the-program-evolves"><span id="updating-tests-as-the-program-evolves" class="anchor"></span>Updating tests as the program evolves<a class="fa fa-anchor" href="#updating-tests-as-the-program-evolves" onclick="event.stopPropagation()"></a></h2>
+        <p>The purpose of testing as explained in the previous section is to confirm there are no <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">i.e., there are no <em>unintentional</em> behavior changes</span><em>regressions</em></span>. However, we often update the behavior of the program intentionally e.g., enhance an existing feature. Let's look at how to update our test set up in those cases.</p>
         <p><strong>Option 1:</strong> This is the ideal but more tedious approach.</p>
         <ol>
           <li>Determine how the expected behavior <em>should</em> change due to your update to the code.</li>
-          <li>Update the <code v-pre>EXPECTED.TXT</code> file accordingly.</li>
+          <li>Update the <code class="hljs inline no-lang" v-pre>EXPECTED.TXT</code> file accordingly.</li>
           <li>Run the test to confirm the actual behavior is same as the <em>updated</em> expected behavior.</li>
         </ol>
         <p><strong>Option 2:</strong> This is a more practical shortcut.</p>
         <ol>
-          <li>Run the test as per normal after updating the code. The test will fail because the new program behavior is different from the one given in the <code v-pre>EXPECTED.TXT</code>.</li>
-          <li>Use a diff tool to compare the <code v-pre>ACTUAL.TXT</code> against the <code v-pre>EXPECTED.TXT</code>.<br>
+          <li>Run the test as per normal after updating the code. The test will fail because the new program behavior is different from the one given in the <code class="hljs inline no-lang" v-pre>EXPECTED.TXT</code>.</li>
+          <li>Use a diff tool to compare the <code class="hljs inline no-lang" v-pre>ACTUAL.TXT</code> against the <code class="hljs inline no-lang" v-pre>EXPECTED.TXT</code>.<br>
             <span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> <a href="https://www.jetbrains.com/help/idea/comparing-files-and-folders.html">Intellij IDEA can compare two files</a>.
           </li>
           <li>Confirm the differences indicate the behavior has changed as you intended. If the differences are not as intended, your code is buggy; fix the code and repeat from step 1.</li>
-          <li>Copy over the content of the <code v-pre>ACTUAL.TXT</code> to <code v-pre>EXPECTED.TXT</code> i.e., we accept that the actual behavior should be the new <em>expected</em> behavior. Rerun the test to confirm that it passes this time.</li>
+          <li>Copy over the content of the <code class="hljs inline no-lang" v-pre>ACTUAL.TXT</code> to <code class="hljs inline no-lang" v-pre>EXPECTED.TXT</code> i.e., we accept that the actual behavior should be the new <em>expected</em> behavior. Rerun the test to confirm that it passes this time.</li>
         </ol>
-        <h2 id="troubleshooting">Troubleshooting<a class="fa fa-anchor" href="#troubleshooting" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="troubleshooting"><span id="troubleshooting" class="anchor"></span>Troubleshooting<a class="fa fa-anchor" href="#troubleshooting" onclick="event.stopPropagation()"></a></h2>
         <ul>
-          <li><strong>Problem</strong>: The <code v-pre>ACTUAL.TXT</code> and <code v-pre>EXPECTED.TXT</code> looks exactly the same but the test fails.<br>
+          <li><strong>Problem</strong>: The <code class="hljs inline no-lang" v-pre>ACTUAL.TXT</code> and <code class="hljs inline no-lang" v-pre>EXPECTED.TXT</code> looks exactly the same but the test fails.<br>
             <strong>Explanation</strong>: The likely cause that the line endings are different (not visible to the naked eye) because the two files were created in two different operating systems.<br>
-            <strong>Solution</strong>: You can use the <code v-pre>dos2unix</code> utility (available in git-bash and *nix operating systems) to convert a file to Unix format.
+            <strong>Solution</strong>: You can use the <code class="hljs inline no-lang" v-pre>dos2unix</code> utility (available in git-bash and *nix operating systems) to convert a file to Unix format.
           </li>
         </ul>
         <hr>
@@ -110,9 +169,8 @@
         <ul>
           <li>Initial Version: based on se-edu/addressbook-level2, adapted by Jeffry Lum</li>
         </ul>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -132,21 +190,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

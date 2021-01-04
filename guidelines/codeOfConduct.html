@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Code of conduct for contributors</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,20 +41,21 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="code-of-conduct-for-contributors">Code of conduct for contributors<a class="fa fa-anchor" href="#code-of-conduct-for-contributors" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="code-of-conduct-for-contributors"><span id="code-of-conduct-for-contributors" class="anchor"></span>Code of conduct for contributors<a class="fa fa-anchor" href="#code-of-conduct-for-contributors" onclick="event.stopPropagation()"></a></h1>
         <box type="info">
           <p>This Code of Conduct is adapted from the <a href="https://www.contributor-covenant.org">Contributor Covenant (https://www.contributor-covenant.org)</a>, <a href="https://www.contributor-covenant.org/version/1/4/code-of-conduct.html">version 1.4</a> (<a href="https://www.contributor-covenant.org/faq">FAQ</a></p>
         </box>
-        <h2 id="our-pledge">Our pledge<a class="fa fa-anchor" href="#our-pledge" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="our-pledge"><span id="our-pledge" class="anchor"></span>Our pledge<a class="fa fa-anchor" href="#our-pledge" onclick="event.stopPropagation()"></a></h2>
         <p>In the interest of fostering an open and welcoming environment, we as
           contributors and maintainers pledge to making participation in our project and
           our community a harassment-free experience for everyone, regardless of age, body
           size, disability, ethnicity, sex characteristics, gender identity and expression,
           level of experience, education, socio-economic status, nationality, personal
           appearance, race, religion, or sexual identity and orientation.</p>
-        <h2 id="our-standards">Our standards<a class="fa fa-anchor" href="#our-standards" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="our-standards"><span id="our-standards" class="anchor"></span>Our standards<a class="fa fa-anchor" href="#our-standards" onclick="event.stopPropagation()"></a></h2>
         <p>Examples of behavior that contributes to creating a positive environment
           include:</p>
         <ul>
@@ -72,7 +76,7 @@
           <li>Other conduct which could reasonably be considered inappropriate in a
             professional setting</li>
         </ul>
-        <h2 id="our-responsibilities">Our responsibilities<a class="fa fa-anchor" href="#our-responsibilities" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="our-responsibilities"><span id="our-responsibilities" class="anchor"></span>Our responsibilities<a class="fa fa-anchor" href="#our-responsibilities" onclick="event.stopPropagation()"></a></h2>
         <p>Project maintainers are responsible for clarifying the standards of acceptable
           behavior and are expected to take appropriate and fair corrective action in
           response to any instances of unacceptable behavior.</p>
@@ -81,16 +85,16 @@
           that are not aligned to this Code of Conduct, or to ban temporarily or
           permanently any contributor for other behaviors that they deem inappropriate,
           threatening, offensive, or harmful.</p>
-        <h2 id="scope">Scope<a class="fa fa-anchor" href="#scope" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="scope"><span id="scope" class="anchor"></span>Scope<a class="fa fa-anchor" href="#scope" onclick="event.stopPropagation()"></a></h2>
         <p>This Code of Conduct applies both within project spaces and in public spaces
           when an individual is representing the project or its community. Examples of
           representing a project or community include using an official project e-mail
           address, posting via an official social media account, or acting as an appointed
           representative at an online or offline event. Representation of a project may be
           further defined and clarified by project maintainers.</p>
-        <h2 id="enforcement">Enforcement<a class="fa fa-anchor" href="#enforcement" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="enforcement"><span id="enforcement" class="anchor"></span>Enforcement<a class="fa fa-anchor" href="#enforcement" onclick="event.stopPropagation()"></a></h2>
         <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be
-          reported by contacting the project team at <code v-pre>seer[at]comp.nus.edu.sg</code>. All
+          reported by contacting the project team at <code class="hljs inline no-lang" v-pre>seer[at]comp.nus.edu.sg</code>. All
           complaints will be reviewed and investigated and will result in a response that
           is deemed necessary and appropriate to the circumstances. The project team is
           obligated to maintain confidentiality with regard to the reporter of an incident.
@@ -98,9 +102,8 @@
         <p>Project maintainers who do not follow or enforce the Code of Conduct in good
           faith may face temporary or permanent repercussions as determined by other
           members of the project's leadership.</p>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -122,21 +125,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Working with JAR files</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,27 +41,28 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
         <div></div>
-        <h1 id="working-with-jar-files">Working with JAR files<a class="fa fa-anchor" href="#working-with-jar-files" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="working-with-jar-files"><span id="working-with-jar-files" class="anchor"></span>Working with JAR files<a class="fa fa-anchor" href="#working-with-jar-files" onclick="event.stopPropagation()"></a></h1>
         <div class="lead">
           <p>Java applications are typically delivered as JAR (short for <em>Java Archive</em>) files.</p>
         </div>
 
-        <h2 id="running-jar-files">Running JAR files<a class="fa fa-anchor" href="#running-jar-files" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="running-jar-files"><span id="running-jar-files" class="anchor"></span>Running JAR files<a class="fa fa-anchor" href="#running-jar-files" onclick="event.stopPropagation()"></a></h2>
         <p>Not all JAR files are <em>executable</em>. Some may be just a library that you you reuse in your own application.</p>
         <p>While some executable JAR files can be launched simply by double-clicking, the fool-proof way to run a jar file is to
-          use the <code v-pre>java -jar</code> command e.g., <code v-pre>java -jar foo.jar</code> launches the <code v-pre>foo.jar</code> file.</p>
-        <p>You can download the Collate-TUI.jar from <a href="https://se-edu.github.io/collate/">https://se-edu.github.io/collate/</a> and run it using the command<code v-pre>java -jar Collate-TUI.jar</code> command. It's usage is given <a href="https://se-education.org/collate/docs/User-Guide.html#using-the-text-ui">here</a>.</p>
+          use the <code class="hljs inline no-lang" v-pre>java -jar</code> command e.g., <code class="hljs inline no-lang" v-pre>java -jar foo.jar</code> launches the <code class="hljs inline no-lang" v-pre>foo.jar</code> file.</p>
+        <p>You can download the Collate-TUI.jar from <a href="https://se-edu.github.io/collate/">https://se-edu.github.io/collate/</a> and run it using the command<code class="hljs inline no-lang" v-pre>java -jar Collate-TUI.jar</code> command. It's usage is given <a href="https://se-education.org/collate/docs/User-Guide.html#using-the-text-ui">here</a>.</p>
 
-        <h2 id="fat-jar-files">Fat JAR files<a class="fa fa-anchor" href="#fat-jar-files" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="fat-jar-files"><span id="fat-jar-files" class="anchor"></span>Fat JAR files<a class="fa fa-anchor" href="#fat-jar-files" onclick="event.stopPropagation()"></a></h2>
         <div>
           <p><strong>A normal JAR file contains only the classes and resources that you created for your app.</strong> If you app has <em>dependencies</em> (i.e., third party libraries that your app depends on), the JAR file will not work unless the person running the JAR file also has those dependencies in their computer. This is not ideal.</p>
           <p><strong>A <em>fat</em> JAR (aka <em>uber</em> JAR) file solves the above problem by including all the dependencies inside the JAR file</strong> itself <span class="dimmed">(which makes the JAR file bigger than usual, hence the term <em>fat</em>)</span>.</p>
         </div>
 
-        <h2 id="creating-jar-files-with-intellij-idea">Creating JAR files with Intellij IDEA<a class="fa fa-anchor" href="#creating-jar-files-with-intellij-idea" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="creating-jar-files-with-intellij-idea"><span id="creating-jar-files-with-intellij-idea" class="anchor"></span>Creating JAR files with Intellij IDEA<a class="fa fa-anchor" href="#creating-jar-files-with-intellij-idea" onclick="event.stopPropagation()"></a></h2>
         <p><strong><span><span aria-hidden="true" class="glyphicon glyphicon-facetime-video"></span></span> Creating a JAR file in Intellij</strong> - A video by Artur Spirin:</p>
         <div class="block-embed block-embed-service-youtube"><iframe type="text/html" src="//www.youtube.com/embed/3Xo6zSBgdgk" frameborder="0" width="640" height="390" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
         <p><strong>If your app uses third-party libraries</strong>, you are recommended to create a fat jar file (see the <a href="#fat-jar-files"><em>Fat JAR files</em> section</a>) using Gradle instead, as explained <a href="#creating-jar-files-with-gradle"><em>Creating JAR files with Gradle</em> section</a>.</p>
@@ -69,17 +73,17 @@
         </box>
         <p></p>
 
-        <h2 id="creating-jar-files-with-gradle">Creating JAR files with Gradle<a class="fa fa-anchor" href="#creating-jar-files-with-gradle" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="creating-jar-files-with-gradle"><span id="creating-jar-files-with-gradle" class="anchor"></span>Creating JAR files with Gradle<a class="fa fa-anchor" href="#creating-jar-files-with-gradle" onclick="event.stopPropagation()"></a></h2>
         <p>If you are using <a href="/guides/tutorials/gradle.html">Gradle</a> in your project, you can use it to create a JAR file as given in the panel below.</p>
         <p>(Although JUnit as test classes are not pacakged into the JAR file).</p>
         <div class="indented-level2">
-          <panel minimized><template slot="_header">
+          <panel minimized><template slot="header">
               <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Tutorials → Gradle → <strong>Creating JAR files</strong></p>
             </template>
             <div>
               <p><a href="https://github.com/johnrengelman/shadow">Shadow</a> is a plugin that packages an application into an executable <em>fat</em> jar file <em>if the current file is outdated</em>.</p>
               <div class="indented-level2">
-                <panel minimized><template slot="_header">
+                <panel minimized><template slot="header">
                     <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Tutorials → Working with JAR files → <strong>Fat JAR files</strong></p>
                   </template>
                   <div>
@@ -89,16 +93,36 @@
                 </panel>
               </div>
               <p></p>
-              <p>The task <strong><code v-pre>shadowJar</code></strong> (e.g., running the command <code v-pre>gradlew shadowJar</code> or <code v-pre>gradlew clean shadowJar</code>) creates the JAR file in the <code v-pre>build/libs</code> folder. By default, it produces a jar file with the name in the format of <code v-pre>{archiveBaseName}-{archiveVersion}.jar</code> and put it in the <code v-pre>builds/libs</code> folder. These properties can be set in the <code v-pre>build.gradle</code> file.</p>
-              <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> Ensure your <code v-pre>build.gradle</code> file contains the correct values w.r.t. the Shadow plugin e.g., <code v-pre>mainClassName</code></p>
-              <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> If you are using JavaFX, see the panel below to find what else you need to add to the <code v-pre>build.gradle</code> to pack JavaFX libraries into the generated JAR file.</p>
+              <p>The task <strong><code class="hljs inline no-lang" v-pre>shadowJar</code></strong> (e.g., running the command <code class="hljs inline no-lang" v-pre>gradlew shadowJar</code> or <code class="hljs inline no-lang" v-pre>gradlew clean shadowJar</code>) creates the JAR file in the <code class="hljs inline no-lang" v-pre>build/libs</code> folder. By default, it produces a jar file with the name in the format of <code class="hljs inline no-lang" v-pre>{archiveBaseName}-{archiveVersion}.jar</code> and put it in the <code class="hljs inline no-lang" v-pre>builds/libs</code> folder. These properties can be set in the <code class="hljs inline no-lang" v-pre>build.gradle</code> file.</p>
+              <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> Ensure your <code class="hljs inline no-lang" v-pre>build.gradle</code> file contains the correct values w.r.t. the Shadow plugin e.g., <code class="hljs inline no-lang" v-pre>mainClassName</code></p>
+              <p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> If you are using JavaFX, see the panel below to find what else you need to add to the <code class="hljs inline no-lang" v-pre>build.gradle</code> to pack JavaFX libraries into the generated JAR file.</p>
               <div class="indented-level2">
-                <panel minimized><template slot="_header">
+                <panel minimized><template slot="header">
                     <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Tutorials → JavaFX Tutorial Part 1 → If you are using Gradle</p>
                   </template>
                   <div>
-                    <p>Update your <code v-pre>build.gradle</code> to include the following lines:</p>
-                    <pre><code class="hljs groovy" v-pre><span>repositories {<br></span><span>    mavenCentral()<br></span><span>}<br></span><span><br></span><span>dependencies {<br></span><span>    String javaFxVersion = <span class="hljs-string">'11'</span><br></span><span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-base'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'win'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-base'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'mac'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-base'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'linux'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-controls'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'win'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-controls'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'mac'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-controls'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'linux'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-fxml'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'win'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-fxml'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'mac'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-fxml'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'linux'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-graphics'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'win'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-graphics'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'mac'</span><br></span><span>    implementation <span class="hljs-string">group:</span> <span class="hljs-string">'org.openjfx'</span>, <span class="hljs-string">name:</span> <span class="hljs-string">'javafx-graphics'</span>, <span class="hljs-string">version:</span> javaFxVersion, <span class="hljs-string">classifier:</span> <span class="hljs-string">'linux'</span><br></span><span>}<br></span></code></pre>
+                    <p>Update your <code class="hljs inline no-lang" v-pre>build.gradle</code> to include the following lines:</p>
+                    <pre><code class="hljs groovy" v-pre><span>repositories {
+</span><span>    mavenCentral()
+</span><span>}
+</span><span>
+</span><span>dependencies {
+</span><span>    String javaFxVersion = <span class="hljs-string">&#x27;11&#x27;</span>
+</span><span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-base&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;win&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-base&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;mac&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-base&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;linux&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-controls&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;win&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-controls&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;mac&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-controls&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;linux&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-fxml&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;win&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-fxml&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;mac&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-fxml&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;linux&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-graphics&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;win&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-graphics&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;mac&#x27;</span>
+</span><span>    implementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.openjfx&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;javafx-graphics&#x27;</span>, <span class="hljs-attr">version:</span> javaFxVersion, <span class="hljs-attr">classifier:</span> <span class="hljs-string">&#x27;linux&#x27;</span>
+</span><span>}
+</span></code></pre>
                   </div>
                 </panel>
               </div>
@@ -113,13 +137,12 @@
         </div>
         <p></p>
 
-        <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="resources"><span id="resources" class="anchor"></span>Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
         <ul>
           <li><a href="/deployment/jar/basicsindex.html">Oracle's tutorial on JAR files</a></li>
         </ul>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -141,21 +164,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

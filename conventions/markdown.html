@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Markdown coding standard</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,8 +13,12 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
   <link rel="icon" href="/guides/favicon.ico">
@@ -37,9 +41,10 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="markdown-coding-standard">Markdown coding standard<a class="fa fa-anchor" href="#markdown-coding-standard" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="markdown-coding-standard"><span id="markdown-coding-standard" class="anchor"></span>Markdown coding standard<a class="fa fa-anchor" href="#markdown-coding-standard" onclick="event.stopPropagation()"></a></h1>
         <ul>
           <li>
             <p>The term 'markdown' in this document refers to <em>GitHub Flavored Markdown</em>.</p>
@@ -70,7 +75,11 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span>Here is a list:<br></span><span><br></span><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span>Here is a list:
+</span><span>
+</span><span><span class="hljs-bullet">*</span> item 1
+</span><span><span class="hljs-bullet">*</span> item 2
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -80,7 +89,10 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span>Here is a list:<br></span><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span>Here is a list:
+</span><span><span class="hljs-bullet">*</span> item 1
+</span><span><span class="hljs-bullet">*</span> item 2
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -98,7 +110,8 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section"># Heading</span><br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section"># Heading</span>
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -108,7 +121,8 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">#Heading</span><br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">#Heading</span>
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -121,7 +135,10 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Heading</span><br></span><span><br></span><span>Content of the paragraph.<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Heading</span>
+</span><span>
+</span><span>Content of the paragraph.
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -131,7 +148,9 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Heading</span><br></span><span>Content of the paragraph.<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Heading</span>
+</span><span>Content of the paragraph.
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -144,7 +163,9 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-quote">&gt; first line</span><br></span><span><span class="hljs-quote">&gt; second line</span><br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-quote">&gt; first line</span>
+</span><span><span class="hljs-quote">&gt; second line</span>
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -154,13 +175,15 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-quote">&gt; first line</span><br></span><span>  second line<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-quote">&gt; first line</span>
+</span><span>  second line
+</span></code></pre>
             </div>
           </div>
         </div>
         <ul>
           <li>
-            <p><strong>Use generic numbering for ordered lists.</strong> i.e., use <code v-pre>1.</code> for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.</p>
+            <p><strong>Use generic numbering for ordered lists.</strong> i.e., use <code class="hljs inline no-lang" v-pre>1.</code> for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.</p>
             <box type="info" seamless>
               <p>RATIONALE: If you use generic numbers, you can insert items into the middle of the list without modifying any existing items.
               </p>
@@ -174,7 +197,10 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">1. </span>item 1<br></span><span><span class="hljs-bullet">1. </span>item 2<br></span><span><span class="hljs-bullet">1. </span>item 3<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">1.</span> item 1
+</span><span><span class="hljs-bullet">1.</span> item 2
+</span><span><span class="hljs-bullet">1.</span> item 3
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -184,15 +210,18 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">1. </span>item 1<br></span><span><span class="hljs-bullet">2. </span>item 2<br></span><span><span class="hljs-bullet">3. </span>item 3<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">1.</span> item 1
+</span><span><span class="hljs-bullet">2.</span> item 2
+</span><span><span class="hljs-bullet">3.</span> item 3
+</span></code></pre>
             </div>
           </div>
         </div>
         <ul>
           <li>
-            <p><strong>Use <code v-pre>*</code> for bullet-points</strong> (not <code v-pre>-</code>).</p>
+            <p><strong>Use <code class="hljs inline no-lang" v-pre>*</code> for bullet-points</strong> (not <code class="hljs inline no-lang" v-pre>-</code>).</p>
             <box type="info" seamless>
-              <p>RATIONALE: Although both work, <code v-pre>*</code> closer to the final outcome.
+              <p>RATIONALE: Although both work, <code class="hljs inline no-lang" v-pre>*</code> closer to the final outcome.
               </p>
             </box>
             <p></p>
@@ -204,7 +233,10 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">* </span>item 1<br></span><span><span class="hljs-bullet">* </span>item 2<br></span><span><span class="hljs-bullet">* </span>item 3<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">*</span> item 1
+</span><span><span class="hljs-bullet">*</span> item 2
+</span><span><span class="hljs-bullet">*</span> item 3
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -214,15 +246,18 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">- </span>item 1<br></span><span><span class="hljs-bullet">- </span>item 2<br></span><span><span class="hljs-bullet">- </span>item 3<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">-</span> item 1
+</span><span><span class="hljs-bullet">-</span> item 2
+</span><span><span class="hljs-bullet">-</span> item 3
+</span></code></pre>
             </div>
           </div>
         </div>
         <ul>
           <li>
-            <p><strong>Use <code v-pre>_</code> for italics</strong> (not <code v-pre>*</code>).</p>
+            <p><strong>Use <code class="hljs inline no-lang" v-pre>_</code> for italics</strong> (not <code class="hljs inline no-lang" v-pre>*</code>).</p>
             <box type="info" seamless>
-              <p>RATIONALE: Although both work, <code v-pre>_</code> is easier to relate to italics.
+              <p>RATIONALE: Although both work, <code class="hljs inline no-lang" v-pre>_</code> is easier to relate to italics.
               </p>
             </box>
             <p></p>
@@ -234,7 +269,8 @@
               <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span>He <span class="hljs-emphasis">_really_</span> meant it.<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span>He <span class="hljs-emphasis">_really_</span> meant it.
+</span></code></pre>
             </div>
           </div>
         </div>
@@ -244,32 +280,30 @@
               <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
             </div>
             <div class="col">
-              <pre><code class="hljs markdown" v-pre><span>He <span class="hljs-emphasis">*really*</span> meant it.<br></span></code></pre>
+              <pre><code class="hljs markdown" v-pre><span>He <span class="hljs-emphasis">*really*</span> meant it.
+</span></code></pre>
             </div>
           </div>
         </div>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
     </div>
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Us</title>
   <link rel="stylesheet" href="markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="markbind/css/octicons.css">
-  <link rel="stylesheet" href="markbind/css/github.min.css">
-  <link rel="stylesheet" href="markbind/css/markbind.css">
+  <link rel="stylesheet" href="markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="markbind/css/markbind.min.css">
+  <script src="markbind/js/polyfill.min.js"></script>
+  <script src="markbind/js/vue.min.js"></script>
+  <script src="markbind/js/markbind.min.js"></script>
+  <script src="markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,27 +41,27 @@
     </header>
     <div id="flex-body">
 
+
       <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="about-us">About Us<a class="fa fa-anchor" href="#about-us" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="about-us"><span id="about-us" class="anchor"></span>About Us<a class="fa fa-anchor" href="#about-us" onclick="event.stopPropagation()"></a></h1>
         <p>This is a sub-project of the <a href="https://se-education.org">se-education.org</a>.
           <span id="contact-info"></span>
         </p>
-        <h2 id="contact">Contact<a class="fa fa-anchor" href="#contact" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="contact"><span id="contact" class="anchor"></span>Contact<a class="fa fa-anchor" href="#contact" onclick="event.stopPropagation()"></a></h2>
         <p>Suggestions, questions, and bug reports can be posted in <a href="https://github.com/se-edu/guides/issues">our issue tracker</a>.</p>
         <p>Alternatively, contact project mentor <a href="https://www.comp.nus.edu.sg/~damithch">Damith C. Rajapakse</a>.
         </p>
-        <h2 id="license">License<a class="fa fa-anchor" href="#license" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="license"><span id="license" class="anchor"></span>License<a class="fa fa-anchor" href="#license" onclick="event.stopPropagation()"></a></h2>
         <p>This work is released under the <a href="https://opensource.org/licenses/MIT">MIT OSS license</a>.</p>
-        <h2 id="contributing">Contributing<a class="fa fa-anchor" href="#contributing" onclick="event.stopPropagation()"></a></h2>
+        <h2 id="contributing"><span id="contributing" class="anchor"></span>Contributing<a class="fa fa-anchor" href="#contributing" onclick="event.stopPropagation()"></a></h2>
         <p>PRs to improve/add content are welcome.</p>
         <p>This website uses MarkBind documentation tool. <a href="/guides/tutorials/markbind.html">This document</a> has some guidance on how to use it when updating contents.</p>
         <p>Follow the <a href="/guides/conventions/markdown.html">Markdown style guide</a> in your PR.</p>
-        <h2 id="acknowledgements">Acknowledgements<a class="fa fa-anchor" href="#acknowledgements" onclick="event.stopPropagation()"></a></h2>
-        <p>The <code v-pre>favicon.ico</code> is based on an icon made by <a href="https://www.flaticon.com/authors/dave-gandy">Dave Gandy</a> from <a href="http://www.flaticon.com">www.flaticon.com</a></p>
+        <h2 id="acknowledgements"><span id="acknowledgements" class="anchor"></span>Acknowledgements<a class="fa fa-anchor" href="#acknowledgements" onclick="event.stopPropagation()"></a></h2>
+        <p>The <code class="hljs inline no-lang" v-pre>favicon.ico</code> is based on an icon made by <a href="https://www.flaticon.com/authors/dave-gandy">Dave Gandy</a> from <a href="http://www.flaticon.com">www.flaticon.com</a></p>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -79,21 +82,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="markbind/js/vue.min.js"></script>
-<script src="markbind/js/components.min.js"></script>
 <script src="markbind/js/bootstrap-utility.min.js"></script>
-<script src="markbind/js/polyfill.min.js"></script>
-<script src="markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="markbind/js/setup.js"></script>
 <script src="markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>

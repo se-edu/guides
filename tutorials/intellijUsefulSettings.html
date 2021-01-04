@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="generator" content="MarkBind 2.17.2">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Intellij IDEA: Useful settings</title>
   <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
@@ -13,11 +13,14 @@
   <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/github.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
   <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="stylesheet" href="../markbind/css/page-nav.css">
   <link rel="icon" href="/guides/favicon.ico">
 </head>
 
@@ -38,12 +41,13 @@
     </header>
     <div id="flex-body">
 
-      <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <div></div>
-        <h1 id="intellij-idea-useful-settings">Intellij IDEA: Useful settings<a class="fa fa-anchor" href="#intellij-idea-useful-settings" onclick="event.stopPropagation()"></a></h1>
 
-        <h2 id="enabling-assertions">Enabling assertions<a class="fa fa-anchor" href="#enabling-assertions" onclick="event.stopPropagation()"></a></h2>
+      <div id="content-wrapper">
+        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
+        <div></div>
+        <h1 id="intellij-idea-useful-settings"><span id="intellij-idea-useful-settings" class="anchor"></span>Intellij IDEA: Useful settings<a class="fa fa-anchor" href="#intellij-idea-useful-settings" onclick="event.stopPropagation()"></a></h1>
+
+        <h2 id="enabling-assertions"><span id="enabling-assertions" class="anchor"></span>Enabling assertions<a class="fa fa-anchor" href="#enabling-assertions" onclick="event.stopPropagation()"></a></h2>
         <box type="warning" seamless>
           <p>This tweak does not apply if you use Gradle to run code even within Intellij. In that case, refer to 'Enabling assertions' sections of the <a href="/guides/tutorials/gradle.html#enabling-assertions"><em>Gradle tutorial</em></a>.
           </p>
@@ -51,20 +55,19 @@
         <p></p>
         <ol>
           <li>
-            <p>Choose <code v-pre>Run</code> → <code v-pre>Edit Configurations...</code>.</p>
+            <p>Choose <code class="hljs inline no-lang" v-pre>Run</code> → <code class="hljs inline no-lang" v-pre>Edit Configurations...</code>.</p>
           </li>
           <li>
             <p>Select the run configuration of interest.</p>
           </li>
           <li>
-            <p>Add <code v-pre>-ea</code> to the <code v-pre>VM options</code> box.</p>
+            <p>Add <code class="hljs inline no-lang" v-pre>-ea</code> to the <code class="hljs inline no-lang" v-pre>VM options</code> box.</p>
             <p><a href="https://i.stack.imgur.com/d1ZoO.png" target="_self"><img src="https://i.stack.imgur.com/d1ZoO.png" alt class="img-fluid"></a></p>
             <p><small>[Credits: adapted from <a href="https://stackoverflow.com/questions/18168257/where-to-add-compiler-options-like-ea-in-intellij-idea">this s/o thread</a>]</small></p>
           </li>
         </ol>
+        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
       </div>
-
-
       <nav id="page-nav" class="navbar navbar-light bg-transparent">
         <div class="border-left-grey nav-inner position-sticky slim-scroll">
 
@@ -82,21 +85,19 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.15.2</a> on Wed, 4 Nov 2020, 16:26:57 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:03:53 GMT+8]</small>
       </div>
     </footer>
   </div>
 </body>
-<script src="../markbind/js/vue.min.js"></script>
-<script src="../markbind/js/components.min.js"></script>
 <script src="../markbind/js/bootstrap-utility.min.js"></script>
-<script src="../markbind/js/polyfill.min.js"></script>
-<script src="../markbind/js/bootstrap-vue.min.js"></script>
 <script>
   const baseUrl = '/guides'
-  const enableSearch = true
+  MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/js/setup.js"></script>
 <script src="../markbind/layouts/default/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
 
 </html>
