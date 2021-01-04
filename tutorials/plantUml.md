@@ -16,13 +16,14 @@ The sections below explains how to use PlantUML in a project.
 
 ## Setting up PlantUML
 
-1. **Install Graphviz.** Graphviz is a dependency that PlantUML requires to generate more advanced diagrams. Head over to the [downloads page](https://www.graphviz.org/download/) on the official Graphviz website and follow instructions to install Graphviz.
+1. **Install Graphviz.** Graphviz is a dependency that PlantUML requires to generate more advanced diagrams. Head over to the [downloads page](https://www.graphviz.org/download/) on the official Graphviz website and follow instructions to install Graphviz.<br>
+ :fab-windows: Windows 10 users can download the zip file in [here](https://www2.graphviz.org/Packages/stable/windows/10/msbuild/Release/Win32/) and unzip it somewhere. The required `dot.exe` file is inside that zip file.
 
 1. **Install the `PlantUML integration` plugin in IntelliJ IDEA.**
 
    1. Go to `Settings` \> `Plugins` \> `Marketplace` and install the plugin `PlantUML integration`.
 
-   1. Then go to `Settings` \> `Other Settings` \> `PlantUML` or search for PlantUML. Configure the path to the `dot` executable. This executable can be found in the `/bin` directory where you installed GraphViz.<br>
+   1. Then go to `Settings` \> `Other Settings` \> `PlantUML` or search for PlantUML. Configure the path to the `dot` executable. This executable can be found in the `/bin` directory where you installed GraphViz earlier.<br>
     ![Settings - Other Settings - PlantUML: input the path to your dot executable](images/plantuml/ConfiguringGraphviz.png)
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
