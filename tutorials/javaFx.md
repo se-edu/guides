@@ -1,4 +1,4 @@
-<variable name="title">JavaFX tutorial</variable>
+{% set title="JavaFX tutorial" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2

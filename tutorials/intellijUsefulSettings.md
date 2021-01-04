@@ -1,4 +1,4 @@
-<variable name="title">Intellij IDEA: Useful settings</variable>
+{% set title="Intellij IDEA: Useful settings" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2

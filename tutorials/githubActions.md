@@ -1,4 +1,4 @@
-<variable name="title">Using GitHub Actions</variable>
+{% set title="Using GitHub Actions" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2

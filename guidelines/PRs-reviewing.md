@@ -1,4 +1,4 @@
-<variable name="title">Best practices for reviewing PRs</variable>
+{% set title="Best practices for reviewing PRs" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 3

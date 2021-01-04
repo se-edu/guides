@@ -1,4 +1,4 @@
-<variable name="title">Working with JAR files</variable>
+{% set title="Working with JAR files" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
