@@ -51,7 +51,12 @@ For example, you can run `gradlew checkstyleMain checkstyleTest` to verify that 
 
 Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij can alert you about code style problems as you write code.
 
-1. Install the Checkstyle-IDEA plugin by going to `File` \> `Settings` (Windows/Linux), or `IntelliJ IDEA` \> `Preferences…​` (macOS). Select `Plugins`, press `Browse Repository`, and find the plugin. Restart the IDE to complete the installation.
+1. Install the Checkstyle-IDEA plugin as follows:
+   1. `File` \> `Settings` (Windows/Linux), or `IntelliJ IDEA` \> `Preferences…​` (macOS)
+   1. Select `Plugins` (on the left slide menu in the dialog that pops up)
+   1. Select `Marketplace` (on to top center of the same dialog box)
+   1. Find the plugin.
+   1. Restart the IDE to complete the installation.
 
 1. Click `File` \> `Settings…​` \> `Other Settings` \> `Checkstyle`
 
@@ -77,7 +82,7 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 1. Click `OK`
 
 1. To verify the plugin is set up correctly, temporirily modify the code to violate a style rule (e.g., add an extra space somewhere) and run the Checkstyle check using the plugin.<br>
-   ![run checkstyle plugin](images/checkstyle/runCheckstyle.png)
+   <img src="images/checkstyle/runCheckstyle.png" width="800" />
 
 #### Troubleshooting
 
