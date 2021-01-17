@@ -33,9 +33,12 @@ Tasks can be composed of, or dependent on, other tasks.
 {{ icon_tip }} If the project comes with Gradle support, you will see a `build.gradle` file in your project root.
 </div>
 
-1. When you _import_ the project into IDEA, at the step where you normally select the project root folder, choose the `build.gradle` file inside the root folder instead.
-1. If asked, choose `Open as Project` (not `Open as File`).
-1. After importing is complete, you will see the `Gradle Toolbar` in the IDEA interface.<br>
+1. Open Intellij (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project first)
+1. Open the project into Intellij as follows:
+   1. Click `Open`.
+   1. Select the project directory, and click `OK`.
+   1. If there are any further prompts, accept the defaults.
+1. After the importing of the project is complete, you will see the `Gradle Toolbar` in the IDEA interface %%e.g., look for the elephant icon on (on Windows, this appears on the right-edge of the IDE window) and click it%%.<br>
    ![Gradle icon](images/gradle/GradleIcon.png)
 
 ****Scenario 2:**** You are adding Gradle support to an ongoing project that is already set up in Intellij IDEA. Gradle wrapper files have been provided.
@@ -43,7 +46,7 @@ Tasks can be composed of, or dependent on, other tasks.
 1. Add the Gradle wrapper files to the project. e.g., if they are in a separate branch, merge that branch.
 1. Close the IDEA project if it is open.
 1. Delete the `.idea` folder.
-1. Import the project again (similar to scenario 1 above)
+1. Open/import the project again, as explained in scenario 1 above.
 
 ****Scenario 3:**** You are adding Gradle support to an ongoing project from scratch.
 
