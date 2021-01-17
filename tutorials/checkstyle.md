@@ -58,7 +58,7 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
    1. Find the plugin.
    1. Restart the IDE to complete the installation.
 
-1. Click `File` \> `Settings…​` \> `Other Settings` \> `Checkstyle`
+1. Click `File` \> `Settings…​` \> `Tools` \> `Checkstyle`
 
 1. Set `Scan Scope` to `Only Java sources (including tests)`, so that the plugin will run checkstyle for our test source codes as well
 
@@ -66,7 +66,7 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 {{ icon_tip }} If your project uses Gradle, you can check the `build.gradle` file to find the correct version.<br>
    ![checkstyle idea scan scope](images/checkstyle/checkstyle-idea-scan-scope.png)
 
-1.  Click the plus sign under `Configuration File`
+1.  Click the `+` sign under `Configuration File`
 
 1.  Enter an arbitrary description e.g. addressbook
 
@@ -81,7 +81,7 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 
 1. Click `OK`
 
-1. To verify the plugin is set up correctly, temporirily modify the code to violate a style rule (e.g., add an extra space somewhere) and run the Checkstyle check using the plugin.<br>
+1. To verify the plugin is set up correctly, temporarily modify the code to violate a style rule (e.g., add an extra line break before an `{`) and run the Checkstyle check using the plugin.<br>
    <img src="images/checkstyle/runCheckstyle.png" width="800" />
 
 #### Troubleshooting
