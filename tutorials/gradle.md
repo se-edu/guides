@@ -38,7 +38,7 @@ Tasks can be composed of, or dependent on, other tasks.
    1. Click `Open`.
    1. Select the project directory, and click `OK`.
    1. If there are any further prompts, accept the defaults.
-1. After the importing of the project is complete, you will see the `Gradle Toolbar` in the IDEA interface %%e.g., look for the elephant icon on (on Windows, this appears on the right-edge of the IDE window) and click it%%.<br>
+1. After the importing of the project is complete, you will see the `Gradle Toolbar` in the IDEA interface %%e.g., look for the elephant icon (on Windows, this appears on the right-edge of the IDE window) and click it%%.<br>
    ![Gradle icon](images/gradle/GradleIcon.png)
 
 ****Scenario 2:**** You are adding Gradle support to an ongoing project that is already set up in Intellij IDEA. Gradle wrapper files have been provided.
