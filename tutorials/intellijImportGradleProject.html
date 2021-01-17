@@ -45,12 +45,20 @@
       <div id="content-wrapper">
         <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
         <h1 id="intellij-idea-importing-a-gradle-project"><span id="intellij-idea-importing-a-gradle-project" class="anchor"></span>Intellij IDEA: Importing a Gradle project<a class="fa fa-anchor" href="#intellij-idea-importing-a-gradle-project" onclick="event.stopPropagation()"></a></h1>
+        <div class="ml-3">
+          <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If there is a <code class="hljs inline no-lang" v-pre>build.gradle</code> file in the project root, Intellij treats it as a Gradle project by default.</p>
+        </div>
         <ol>
-          <li>IntelliJ IDEA by default has the Gradle plugin installed. If you have disabled it, go to <code class="hljs inline no-lang" v-pre>File</code> → <code class="hljs inline no-lang" v-pre>Settings</code> → <code class="hljs inline no-lang" v-pre>Plugins</code> to re-enable them.<br>
+          <li>IntelliJ IDEA has the Gradle plugin installed by default. If you have disabled it, go to <code class="hljs inline no-lang" v-pre>File</code> → <code class="hljs inline no-lang" v-pre>Settings</code> → <code class="hljs inline no-lang" v-pre>Plugins</code> to re-enable them.<br>
             If your project involves GUI programming, similarly ensure the JavaFX plugin has not been disabled.</li>
-          <li>Click <code class="hljs inline no-lang" v-pre>Import Project</code> (or <code class="hljs inline no-lang" v-pre>Open or Import</code> in newer version of Intellij).</li>
-          <li>Locate the <code class="hljs inline no-lang" v-pre>build.gradle</code> file <mark>(not the root folder as you would do in a normal importing)</mark> and select it. Click <code class="hljs inline no-lang" v-pre>OK</code>.<br>
-            If asked, choose to <code class="hljs inline no-lang" v-pre>Open as Project</code> (not <code class="hljs inline no-lang" v-pre>Open as File</code>).</li>
+          <li>Open Intellij (if you are not in the welcome screen, click <code class="hljs inline no-lang" v-pre>File</code> &gt; <code class="hljs inline no-lang" v-pre>Close Project</code> to close the existing project first)</li>
+          <li>Open the project into Intellij as follows:
+            <ol>
+              <li>Click <code class="hljs inline no-lang" v-pre>Open</code>.</li>
+              <li>Select the project directory, and click <code class="hljs inline no-lang" v-pre>OK</code>.</li>
+              <li>If there are any further prompts, accept the defaults.</li>
+            </ol>
+          </li>
           <li>Click <code class="hljs inline no-lang" v-pre>OK</code> to accept the default settings but do ensure that the selected version of <code class="hljs inline no-lang" v-pre>Gradle JVM</code> matches the JDK being used for the project.</li>
           <li>Wait for the importing process to finish (could take a few minutes).</li>
         </ol>
@@ -60,7 +68,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:47:26 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Sun, 17 Jan 2021, 14:32:37 GMT+8]</small>
       </div>
     </footer>
   </div>

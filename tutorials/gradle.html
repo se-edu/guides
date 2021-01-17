@@ -68,9 +68,15 @@
           <p><span class="badge badge-pill badge-warning"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If the project comes with Gradle support, you will see a <code class="hljs inline no-lang" v-pre>build.gradle</code> file in your project root.</p>
         </div>
         <ol>
-          <li>When you <em>import</em> the project into IDEA, at the step where you normally select the project root folder, choose the <code class="hljs inline no-lang" v-pre>build.gradle</code> file inside the root folder instead.</li>
-          <li>If asked, choose <code class="hljs inline no-lang" v-pre>Open as Project</code> (not <code class="hljs inline no-lang" v-pre>Open as File</code>).</li>
-          <li>After importing is complete, you will see the <code class="hljs inline no-lang" v-pre>Gradle Toolbar</code> in the IDEA interface.<br>
+          <li>Open Intellij (if you are not in the welcome screen, click <code class="hljs inline no-lang" v-pre>File</code> &gt; <code class="hljs inline no-lang" v-pre>Close Project</code> to close the existing project first)</li>
+          <li>Open the project into Intellij as follows:
+            <ol>
+              <li>Click <code class="hljs inline no-lang" v-pre>Open</code>.</li>
+              <li>Select the project directory, and click <code class="hljs inline no-lang" v-pre>OK</code>.</li>
+              <li>If there are any further prompts, accept the defaults.</li>
+            </ol>
+          </li>
+          <li>After the importing of the project is complete, you will see the <code class="hljs inline no-lang" v-pre>Gradle Toolbar</code> in the IDEA interface <span class="dimmed">e.g., look for the elephant icon on (on Windows, this appears on the right-edge of the IDE window) and click it</span>.<br>
             <a href="/guides/tutorials/images/gradle/GradleIcon.png" target="_self"><img src="/guides/tutorials/images/gradle/GradleIcon.png" alt class="img-fluid"></a>
           </li>
         </ol>
@@ -79,7 +85,7 @@
           <li>Add the Gradle wrapper files to the project. e.g., if they are in a separate branch, merge that branch.</li>
           <li>Close the IDEA project if it is open.</li>
           <li>Delete the <code class="hljs inline no-lang" v-pre>.idea</code> folder.</li>
-          <li>Import the project again (similar to scenario 1 above)</li>
+          <li>Open/import the project again, as explained in scenario 1 above.</li>
         </ol>
         <p><strong><strong>Scenario 3:</strong></strong> You are adding Gradle support to an ongoing project from scratch.</p>
         <ul>
@@ -264,7 +270,7 @@
     <footer>
 
       <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Mon, 4 Jan 2021, 22:47:26 GMT+8]</small>
+        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Sun, 17 Jan 2021, 14:32:37 GMT+8]</small>
       </div>
     </footer>
   </div>
