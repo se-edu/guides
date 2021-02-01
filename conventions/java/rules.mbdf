@@ -850,9 +850,9 @@ Furthermore, use American spelling and avoid local slang.
 
 <div tags="level--intermediate">
 
-**{{ icon_level_intermediate }} Write descriptive header comments for all public classes/methods.**
+**{{ icon_level_intermediate }} Write descriptive header comments for all public classes/methods**.
 
-You MUST write header comments for all classes, public methods.
+You MUST write header comments for all classes, public methods except for getters/setters.
 
 %%{{ icon_info }} Rationale: `public` method are meant to be used by others and the users should not be forced to read the code of the method to understand its exact behavior. The code, even if it is self-explanatory, can only tell the reader HOW the code works, not WHAT the code is supposed to do.%%
 
