@@ -337,7 +337,7 @@
         "intellij-idea-configuring-the-code-style": "Intellij IDEA: Configuring the code style",
         "tweak-switch-case-style": "Tweak: switch-case style ",
         "tweak-import-order": "Tweak: import order ",
-        "tweak-auto-remove-trailing-spaces": "Tweak: Auto-remove trailing spaces"
+        "tweak-auto-remove-trailing-spaces": "Tweak: Auto-remove trailing spaces "
       },
       "headingKeywords": {}
     },
