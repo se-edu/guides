@@ -25,3 +25,12 @@ IntelliJ’s default style is mostly compliant with [ours](../conventions/java/)
    * For `Class count to use import with '*'` and `Names count to use static import with '*'`: Set to `999` to prevent IntelliJ from contracting the import statements.
    * For `Import Layout`: The order is:<br>
      ![](images/intellij/importOrder.png)
+
+
+## Tweak: Auto-remove trailing spaces {{ icon_level_intermediate }}
+
+You can configure Intellij to automatically strip trailing white space in code lines, as follows:
+1. Go to `Settings`.
+1. On the left side of the dialog, click on `Editor` -> `General`.
+1. On the right side, scroll to the `On Save` section.
+1. Change `Remove trailing spaces on:` to `Modified lines`.
