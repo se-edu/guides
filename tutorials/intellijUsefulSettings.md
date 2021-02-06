@@ -17,8 +17,8 @@ This tweak does not apply if you use Gradle to run code even within Intellij. In
 
 1. Choose `Run` → `Edit Configurations...`.
 1. Select the run configuration of interest.
+1. Click on `Modify options` link and choose `Add VM options`<br>
+   <img src="images/intellij/addVmOptions.png" width="800"/>
 1. Add `-ea` to the `VM options` box.
+   <img src="images/intellij/enableAssertions.png" width="800"/>
 
-   ![](https://i.stack.imgur.com/d1ZoO.png)
-
-   <small>[Credits: adapted from [this s/o thread](https://stackoverflow.com/questions/18168257/where-to-add-compiler-options-like-ea-in-intellij-idea)]</small>
