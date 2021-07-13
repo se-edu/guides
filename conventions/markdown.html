@@ -1,309 +1,70 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.2">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Markdown coding standard</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="icon" href="/guides/favicon.ico">
-</head>
-
-<body>
-  <div id="app">
-    <header>
-      <navbar placement="top" type="dark" class="temp-navbar">
-        <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a>
-        <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li>
-        <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li>
-        <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right" class="nav-link">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-
-
-      <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="markdown-coding-standard"><span id="markdown-coding-standard" class="anchor"></span>Markdown coding standard<a class="fa fa-anchor" href="#markdown-coding-standard" onclick="event.stopPropagation()"></a></h1>
-        <ul>
-          <li>
-            <p>The term 'markdown' in this document refers to <em>GitHub Flavored Markdown</em>.</p>
-          </li>
-          <li>
-            <p><strong>Follow the syntax as strictly as specified</strong> <a href="https://guides.github.com/features/mastering-markdown/">here</a>.</p>
-            <box type="info" seamless>
-              <p>RATIONALE: Minor deviations from the markdown syntax are sometimes forgiven by GitHub markdown rendering but may not be forgiven by <a href="https://github.blog/2016-12-09-publishing-with-github-pages-now-as-easy-as-1-2-3/">GitHub Pages html rendering</a>.
-              </p>
-            </box>
-            <p></p>
-          </li>
-          <li>
-            <p><strong>Do not wrap lines at a specific length.</strong> Coding standards for other languages typically specify a maximum length for a statement. However, Markdown is used to write natural language content which should not be chopped into a sentence fragments.</p>
-            <box type="info" seamless>
-              <p>RATIONALE: Doing so with throw off grammar checkers and make it harder to modify content later (a simple change might require re-sizing many adjacent lines.
-              </p>
-            </box>
-            <p></p>
-          </li>
-          <li>
-            <p><strong>Add a blank line at the beginning of a list.</strong></p>
-          </li>
-        </ul>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span>Here is a list:
-</span><span>
-</span><span><span class="hljs-bullet">*</span> item 1
-</span><span><span class="hljs-bullet">*</span> item 2
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span>Here is a list:
-</span><span><span class="hljs-bullet">*</span> item 1
-</span><span><span class="hljs-bullet">*</span> item 2
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <ul>
-          <li>
-            <p><strong>Add a blank line at the beginning of a code block.</strong></p>
-          </li>
-          <li>
-            <p><strong>Add a space at the start of a heading.</strong></p>
-          </li>
-        </ul>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section"># Heading</span>
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">#Heading</span>
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <ul>
-          <li><strong>Use blank lines to separate headings</strong></li>
-        </ul>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Heading</span>
-</span><span>
-</span><span>Content of the paragraph.
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-section">## Heading</span>
-</span><span>Content of the paragraph.
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <ul>
-          <li><strong>Use blockquote symbol in every line of the blockquote.</strong></li>
-        </ul>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-quote">&gt; first line</span>
-</span><span><span class="hljs-quote">&gt; second line</span>
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-quote">&gt; first line</span>
-</span><span>  second line
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <ul>
-          <li>
-            <p><strong>Use generic numbering for ordered lists.</strong> i.e., use <code class="hljs inline no-lang" v-pre>1.</code> for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.</p>
-            <box type="info" seamless>
-              <p>RATIONALE: If you use generic numbers, you can insert items into the middle of the list without modifying any existing items.
-              </p>
-            </box>
-            <p></p>
-          </li>
-        </ul>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">1.</span> item 1
-</span><span><span class="hljs-bullet">1.</span> item 2
-</span><span><span class="hljs-bullet">1.</span> item 3
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">1.</span> item 1
-</span><span><span class="hljs-bullet">2.</span> item 2
-</span><span><span class="hljs-bullet">3.</span> item 3
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <ul>
-          <li>
-            <p><strong>Use <code class="hljs inline no-lang" v-pre>*</code> for bullet-points</strong> (not <code class="hljs inline no-lang" v-pre>-</code>).</p>
-            <box type="info" seamless>
-              <p>RATIONALE: Although both work, <code class="hljs inline no-lang" v-pre>*</code> closer to the final outcome.
-              </p>
-            </box>
-            <p></p>
-          </li>
-        </ul>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">*</span> item 1
-</span><span><span class="hljs-bullet">*</span> item 2
-</span><span><span class="hljs-bullet">*</span> item 3
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span><span class="hljs-bullet">-</span> item 1
-</span><span><span class="hljs-bullet">-</span> item 2
-</span><span><span class="hljs-bullet">-</span> item 3
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <ul>
-          <li>
-            <p><strong>Use <code class="hljs inline no-lang" v-pre>_</code> for italics</strong> (not <code class="hljs inline no-lang" v-pre>*</code>).</p>
-            <box type="info" seamless>
-              <p>RATIONALE: Although both work, <code class="hljs inline no-lang" v-pre>_</code> is easier to relate to italics.
-              </p>
-            </box>
-            <p></p>
-          </li>
-        </ul>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span>He <span class="hljs-emphasis">_really_</span> meant it.
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs markdown" v-pre><span>He <span class="hljs-emphasis">*really*</span> meant it.
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-    </div>
-    <footer>
-
-      <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Sat, 6 Feb 2021, 23:25:00 GMT+8]</small>
-      </div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Markdown coding standard</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="markdown.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
 <script>
   const baseUrl = '/guides'
+</script>
+<body >
+<div id="app" data-server-rendered="true"><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-15113a2f></span> <strong data-v-15113a2f><strong data-v-15113a2f>SE-EDU</strong></strong></span></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a href="/guides/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Home</strong></span></a></li> <li data-v-15113a2f><a href="/guides/about.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>About</strong></span></a></li> <li data-v-15113a2f><a href="https://github.com/se-edu/guides" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="markdown-coding-standard"><span id="markdown-coding-standard" class="anchor"></span>Markdown coding standard<a href="#markdown-coding-standard" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <ul><li><p>The term 'markdown' in this document refers to <em>GitHub Flavored Markdown</em>.</p></li> <li><p><strong>Follow the syntax as strictly as specified</strong> <a href="https://guides.github.com/features/mastering-markdown/">here</a>.</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>RATIONALE: Minor deviations from the markdown syntax are sometimes forgiven by GitHub markdown rendering but may not be forgiven by <a href="https://github.blog/2016-12-09-publishing-with-github-pages-now-as-easy-as-1-2-3/" data-v-7d17494f>GitHub Pages html rendering</a>.</p></div> <!----></div></div></div></li> <li><p><strong>Do not wrap lines at a specific length.</strong> Coding standards for other languages typically specify a maximum length for a statement. However, Markdown is used to write natural language content which should not be chopped into a sentence fragments.</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>RATIONALE: Doing so with throw off grammar checkers and make it harder to modify content later (a simple change might require re-sizing many adjacent lines.</p></div> <!----></div></div></div></li> <li><p><strong>Add a blank line at the beginning of a list.</strong></p></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs markdown"><span>Here is a list:
+</span><span>
+</span><span><span class="hljs-bullet">*</span> item 1
+</span><span><span class="hljs-bullet">*</span> item 2
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs markdown"><span>Here is a list:
+</span><span><span class="hljs-bullet">*</span> item 1
+</span><span><span class="hljs-bullet">*</span> item 2
+</span></code></pre></div></div></div> <ul><li><p><strong>Add a blank line at the beginning of a code block.</strong></p></li> <li><p><strong>Add a space at the start of a heading.</strong></p></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-section"># Heading</span>
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-section">#Heading</span>
+</span></code></pre></div></div></div> <ul><li><strong>Use blank lines to separate headings</strong></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-section">## Heading</span>
+</span><span>
+</span><span>Content of the paragraph.
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-section">## Heading</span>
+</span><span>Content of the paragraph.
+</span></code></pre></div></div></div> <ul><li><strong>Use blockquote symbol in every line of the blockquote.</strong></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-quote">&gt; first line</span>
+</span><span><span class="hljs-quote">&gt; second line</span>
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-quote">&gt; first line</span>
+</span><span>  second line
+</span></code></pre></div></div></div> <ul><li><p><strong>Use generic numbering for ordered lists.</strong> i.e., use <code class="hljs inline no-lang">1.</code> for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>RATIONALE: If you use generic numbers, you can insert items into the middle of the list without modifying any existing items.</p></div> <!----></div></div></div></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-bullet">1.</span> item 1
+</span><span><span class="hljs-bullet">1.</span> item 2
+</span><span><span class="hljs-bullet">1.</span> item 3
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-bullet">1.</span> item 1
+</span><span><span class="hljs-bullet">2.</span> item 2
+</span><span><span class="hljs-bullet">3.</span> item 3
+</span></code></pre></div></div></div> <ul><li><p><strong>Use <code class="hljs inline no-lang">*</code> for bullet-points</strong> (not <code class="hljs inline no-lang">-</code>).</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>RATIONALE: Although both work, <code class="hljs inline no-lang" data-v-7d17494f>*</code> closer to the final outcome.</p></div> <!----></div></div></div></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-bullet">*</span> item 1
+</span><span><span class="hljs-bullet">*</span> item 2
+</span><span><span class="hljs-bullet">*</span> item 3
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs markdown"><span><span class="hljs-bullet">-</span> item 1
+</span><span><span class="hljs-bullet">-</span> item 2
+</span><span><span class="hljs-bullet">-</span> item 3
+</span></code></pre></div></div></div> <ul><li><p><strong>Use <code class="hljs inline no-lang">_</code> for italics</strong> (not <code class="hljs inline no-lang">*</code>).</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>RATIONALE: Although both work, <code class="hljs inline no-lang" data-v-7d17494f>_</code> is easier to relate to italics.</p></div> <!----></div></div></div></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs markdown"><span>He <span class="hljs-emphasis">_really_</span> meant it.
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs markdown"><span>He <span class="hljs-emphasis">*really*</span> meant it.
+</span></code></pre></div></div></div> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88> <!----></nav></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 3.0.4</a> on Wed, 14 Jul 2021, 1:59:52 GMT+8]</small></div></footer></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script>
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/default/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>

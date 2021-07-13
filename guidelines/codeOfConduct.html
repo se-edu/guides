@@ -1,143 +1,58 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.2">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Code of conduct for contributors</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="icon" href="/guides/favicon.ico">
-</head>
-
-<body data-spy="scroll" data-target="#page-nav" data-offset="100">
-  <div id="app">
-    <header>
-      <navbar placement="top" type="dark" class="temp-navbar">
-        <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a>
-        <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li>
-        <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li>
-        <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right" class="nav-link">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-
-
-      <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="code-of-conduct-for-contributors"><span id="code-of-conduct-for-contributors" class="anchor"></span>Code of conduct for contributors<a class="fa fa-anchor" href="#code-of-conduct-for-contributors" onclick="event.stopPropagation()"></a></h1>
-        <box type="info">
-          <p>This Code of Conduct is adapted from the <a href="https://www.contributor-covenant.org">Contributor Covenant (https://www.contributor-covenant.org)</a>, <a href="https://www.contributor-covenant.org/version/1/4/code-of-conduct.html">version 1.4</a> (<a href="https://www.contributor-covenant.org/faq">FAQ</a></p>
-        </box>
-        <h2 id="our-pledge"><span id="our-pledge" class="anchor"></span>Our pledge<a class="fa fa-anchor" href="#our-pledge" onclick="event.stopPropagation()"></a></h2>
-        <p>In the interest of fostering an open and welcoming environment, we as
-          contributors and maintainers pledge to making participation in our project and
-          our community a harassment-free experience for everyone, regardless of age, body
-          size, disability, ethnicity, sex characteristics, gender identity and expression,
-          level of experience, education, socio-economic status, nationality, personal
-          appearance, race, religion, or sexual identity and orientation.</p>
-        <h2 id="our-standards"><span id="our-standards" class="anchor"></span>Our standards<a class="fa fa-anchor" href="#our-standards" onclick="event.stopPropagation()"></a></h2>
-        <p>Examples of behavior that contributes to creating a positive environment
-          include:</p>
-        <ul>
-          <li>Using welcoming and inclusive language</li>
-          <li>Being respectful of differing viewpoints and experiences</li>
-          <li>Gracefully accepting constructive criticism</li>
-          <li>Focusing on what is best for the community</li>
-          <li>Showing empathy towards other community members</li>
-        </ul>
-        <p>Examples of unacceptable behavior by participants include:</p>
-        <ul>
-          <li>The use of sexualized language or imagery and unwelcome sexual attention or
-            advances</li>
-          <li>Trolling, insulting/derogatory comments, and personal or political attacks</li>
-          <li>Public or private harassment</li>
-          <li>Publishing others' private information, such as a physical or electronic
-            address, without explicit permission</li>
-          <li>Other conduct which could reasonably be considered inappropriate in a
-            professional setting</li>
-        </ul>
-        <h2 id="our-responsibilities"><span id="our-responsibilities" class="anchor"></span>Our responsibilities<a class="fa fa-anchor" href="#our-responsibilities" onclick="event.stopPropagation()"></a></h2>
-        <p>Project maintainers are responsible for clarifying the standards of acceptable
-          behavior and are expected to take appropriate and fair corrective action in
-          response to any instances of unacceptable behavior.</p>
-        <p>Project maintainers have the right and responsibility to remove, edit, or
-          reject comments, commits, code, wiki edits, issues, and other contributions
-          that are not aligned to this Code of Conduct, or to ban temporarily or
-          permanently any contributor for other behaviors that they deem inappropriate,
-          threatening, offensive, or harmful.</p>
-        <h2 id="scope"><span id="scope" class="anchor"></span>Scope<a class="fa fa-anchor" href="#scope" onclick="event.stopPropagation()"></a></h2>
-        <p>This Code of Conduct applies both within project spaces and in public spaces
-          when an individual is representing the project or its community. Examples of
-          representing a project or community include using an official project e-mail
-          address, posting via an official social media account, or acting as an appointed
-          representative at an online or offline event. Representation of a project may be
-          further defined and clarified by project maintainers.</p>
-        <h2 id="enforcement"><span id="enforcement" class="anchor"></span>Enforcement<a class="fa fa-anchor" href="#enforcement" onclick="event.stopPropagation()"></a></h2>
-        <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be
-          reported by contacting the project team at <code class="hljs inline no-lang" v-pre>seer[at]comp.nus.edu.sg</code>. All
-          complaints will be reviewed and investigated and will result in a response that
-          is deemed necessary and appropriate to the circumstances. The project team is
-          obligated to maintain confidentiality with regard to the reporter of an incident.
-          Further details of specific enforcement policies may be posted separately.</p>
-        <p>Project maintainers who do not follow or enforce the Code of Conduct in good
-          faith may face temporary or permanent repercussions as determined by other
-          members of the project's leadership.</p>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-      <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-left-grey nav-inner position-sticky slim-scroll">
-
-          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
-            <a class="nav-link py-1" href="#code-of-conduct-for-contributors">Code of conduct for contributors&#x200E;</a>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#our-pledge">Our pledge&#x200E;</a>
-              <a class="nav-link py-1" href="#our-standards">Our standards&#x200E;</a>
-              <a class="nav-link py-1" href="#our-responsibilities">Our responsibilities&#x200E;</a>
-              <a class="nav-link py-1" href="#scope">Scope&#x200E;</a>
-              <a class="nav-link py-1" href="#enforcement">Enforcement&#x200E;</a>
-            </nav>
-
-          </nav>
-        </div>
-      </nav>
-    </div>
-    <footer>
-
-      <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Sat, 6 Feb 2021, 23:25:00 GMT+8]</small>
-      </div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code of conduct for contributors</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="codeOfConduct.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
 <script>
   const baseUrl = '/guides'
+</script>
+<body >
+<div id="app" data-server-rendered="true"><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-15113a2f></span> <strong data-v-15113a2f><strong data-v-15113a2f>SE-EDU</strong></strong></span></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a href="/guides/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Home</strong></span></a></li> <li data-v-15113a2f><a href="/guides/about.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>About</strong></span></a></li> <li data-v-15113a2f><a href="https://github.com/se-edu/guides" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="code-of-conduct-for-contributors"><span id="code-of-conduct-for-contributors" class="anchor"></span>Code of conduct for contributors<a href="#code-of-conduct-for-contributors" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div class="alert box-container alert-info" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f>This Code of Conduct is adapted from the <a href="https://www.contributor-covenant.org" data-v-7d17494f>Contributor Covenant (https://www.contributor-covenant.org)</a>, <a href="https://www.contributor-covenant.org/version/1/4/code-of-conduct.html" data-v-7d17494f>version 1.4</a> (<a href="https://www.contributor-covenant.org/faq" data-v-7d17494f>FAQ</a></p></div> <!----></div></div></div> <h2 id="our-pledge"><span id="our-pledge" class="anchor"></span>Our pledge<a href="#our-pledge" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>In the interest of fostering an open and welcoming environment, we as
+contributors and maintainers pledge to making participation in our project and
+our community a harassment-free experience for everyone, regardless of age, body
+size, disability, ethnicity, sex characteristics, gender identity and expression,
+level of experience, education, socio-economic status, nationality, personal
+appearance, race, religion, or sexual identity and orientation.</p> <h2 id="our-standards"><span id="our-standards" class="anchor"></span>Our standards<a href="#our-standards" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Examples of behavior that contributes to creating a positive environment
+include:</p> <ul><li>Using welcoming and inclusive language</li> <li>Being respectful of differing viewpoints and experiences</li> <li>Gracefully accepting constructive criticism</li> <li>Focusing on what is best for the community</li> <li>Showing empathy towards other community members</li></ul> <p>Examples of unacceptable behavior by participants include:</p> <ul><li>The use of sexualized language or imagery and unwelcome sexual attention or
+advances</li> <li>Trolling, insulting/derogatory comments, and personal or political attacks</li> <li>Public or private harassment</li> <li>Publishing others' private information, such as a physical or electronic
+address, without explicit permission</li> <li>Other conduct which could reasonably be considered inappropriate in a
+professional setting</li></ul> <h2 id="our-responsibilities"><span id="our-responsibilities" class="anchor"></span>Our responsibilities<a href="#our-responsibilities" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Project maintainers are responsible for clarifying the standards of acceptable
+behavior and are expected to take appropriate and fair corrective action in
+response to any instances of unacceptable behavior.</p> <p>Project maintainers have the right and responsibility to remove, edit, or
+reject comments, commits, code, wiki edits, issues, and other contributions
+that are not aligned to this Code of Conduct, or to ban temporarily or
+permanently any contributor for other behaviors that they deem inappropriate,
+threatening, offensive, or harmful.</p> <h2 id="scope"><span id="scope" class="anchor"></span>Scope<a href="#scope" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>This Code of Conduct applies both within project spaces and in public spaces
+when an individual is representing the project or its community. Examples of
+representing a project or community include using an official project e-mail
+address, posting via an official social media account, or acting as an appointed
+representative at an online or offline event. Representation of a project may be
+further defined and clarified by project maintainers.</p> <h2 id="enforcement"><span id="enforcement" class="anchor"></span>Enforcement<a href="#enforcement" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported by contacting the project team at <code class="hljs inline no-lang">seer[at]comp.nus.edu.sg</code>. All
+complaints will be reviewed and investigated and will result in a response that
+is deemed necessary and appropriate to the circumstances. The project team is
+obligated to maintain confidentiality with regard to the reporter of an incident.
+Further details of specific enforcement policies may be posted separately.</p> <p>Project maintainers who do not follow or enforce the Code of Conduct in good
+faith may face temporary or permanent repercussions as determined by other
+members of the project's leadership.</p> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88> <!----></nav></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 3.0.4</a> on Wed, 14 Jul 2021, 1:59:52 GMT+8]</small></div></footer></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script>
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/default/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>

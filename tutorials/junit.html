@@ -1,94 +1,35 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.2">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Using JUnit</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="icon" href="/guides/favicon.ico">
-</head>
-
-<body data-spy="scroll" data-target="#page-nav" data-offset="100">
-  <div id="app">
-    <header>
-      <navbar placement="top" type="dark" class="temp-navbar">
-        <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a>
-        <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li>
-        <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li>
-        <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right" class="nav-link">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-
-
-      <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="using-junit"><span id="using-junit" class="anchor"></span>Using JUnit<a class="fa fa-anchor" href="#using-junit" onclick="event.stopPropagation()"></a></h1>
-        <div class="lead">
-          <p><a href="https://junit.org/junit5/">JUnit</a> is a testing framework for Java.</p>
-        </div>
-        <p>Sections below explains how to use JUnit in a project.</p>
-
-        <h2 id="conventions-to-follow"><span id="conventions-to-follow" class="anchor"></span>Conventions to follow<a class="fa fa-anchor" href="#conventions-to-follow" onclick="event.stopPropagation()"></a></h2>
-        <ul>
-          <li>Add test code in a folder named <code class="hljs inline no-lang" v-pre>[project root]\src\test\java\</code> folder.</li>
-          <li>Name the test class to match the class being tested (<code class="hljs inline no-lang" v-pre>Todo.java</code> can be tested by <code class="hljs inline no-lang" v-pre>TodoTest.java</code>), and put it in a package to match. For example,
-            <ul>
-              <li>Class being tested <code class="hljs inline no-lang" v-pre>seedu.duke.Todo</code>: <code class="hljs inline no-lang" v-pre>src\main\java\seedu\duke\Todo.java</code></li>
-              <li>Test class <code class="hljs inline no-lang" v-pre>seedu.duke.TodoTest</code>: <code class="hljs inline no-lang" v-pre>src\test\java\seedu\duke\TodoTest.java</code></li>
-            </ul>
-          </li>
-        </ul>
-
-        <h2 id="adding-junit-support-to-your-project"><span id="adding-junit-support-to-your-project" class="anchor"></span>Adding JUnit support to your project<a class="fa fa-anchor" href="#adding-junit-support-to-your-project" onclick="event.stopPropagation()"></a></h2>
-        <p>As JUnit is a third-party library, you need to add support to it specifically in your project.</p>
-        <tabs>
-          <tab><template slot="_header">In Intellij, without Gradle</template>
-            <ol>
-              <li>Add a folder named <code class="hljs inline no-lang" v-pre>[project root]\src\test\java\</code></li>
-              <li>Go to Intellij and add a new module to the project as follows.
-                <ol>
-                  <li><code class="hljs inline no-lang" v-pre>File</code> → <code class="hljs inline no-lang" v-pre>New</code> → <code class="hljs inline no-lang" v-pre>Module From Existing Sources ...</code></li>
-                  <li>Choose the <code class="hljs inline no-lang" v-pre>[project root]\src\test\</code> (not the <code class="hljs inline no-lang" v-pre>java</code>) folder.</li>
-                  <li>In the next screen, select <code class="hljs inline no-lang" v-pre>Create module from existing sources</code></li>
-                  <li>Keep clicking <code class="hljs inline no-lang" v-pre>Next</code> until the process is complete</li>
-                </ol>
-              </li>
-              <li>In the <code class="hljs inline no-lang" v-pre>Project</code> panel of Intellij, expand the newly-created <code class="hljs inline no-lang" v-pre>test</code> module, right-click on the <code class="hljs inline no-lang" v-pre>java</code> folder inside it, and choose <code class="hljs inline no-lang" v-pre>Mark Directory as</code> → <code class="hljs inline no-lang" v-pre>Test Source Root</code> (that will make the folder turn to green color).</li>
-              <li>Now, create a class inside the <code class="hljs inline no-lang" v-pre>java</code> folder and type <code class="hljs inline no-lang" v-pre>@Test</code> inside it. A code example given below.<br>
-                <span><span aria-hidden="true" class="fas fa-info-circle"></span></span> Note: If you are using packages, create this class in a matching package (to test <code class="hljs inline no-lang" v-pre>duke.Duke</code> class, create a <code class="hljs inline no-lang" v-pre>duke.DukeTest</code> i.e., in <code class="hljs inline no-lang" v-pre>src\test\java\duke\DukeTest.java</code>).
-                <pre><code class="hljs java" v-pre><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DukeTest</span> </span>{
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Using JUnit</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="junit.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body >
+<div id="app" data-server-rendered="true"><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-15113a2f></span> <strong data-v-15113a2f><strong data-v-15113a2f>SE-EDU</strong></strong></span></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a href="/guides/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Home</strong></span></a></li> <li data-v-15113a2f><a href="/guides/about.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>About</strong></span></a></li> <li data-v-15113a2f><a href="https://github.com/se-edu/guides" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="using-junit"><span id="using-junit" class="anchor"></span>Using JUnit<a href="#using-junit" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div class="lead"><p><a href="https://junit.org/junit5/">JUnit</a> is a testing framework for Java.</p></div> <p>Sections below explains how to use JUnit in a project.</p> <h2 id="conventions-to-follow"><span id="conventions-to-follow" class="anchor"></span>Conventions to follow<a href="#conventions-to-follow" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ul><li>Add test code in a folder named <code class="hljs inline no-lang">[project root]\src\test\java\</code> folder.</li> <li>Name the test class to match the class being tested (<code class="hljs inline no-lang">Todo.java</code> can be tested by <code class="hljs inline no-lang">TodoTest.java</code>), and put it in a package to match. For example,
+<ul><li>Class being tested <code class="hljs inline no-lang">seedu.duke.Todo</code>: <code class="hljs inline no-lang">src\main\java\seedu\duke\Todo.java</code></li> <li>Test class <code class="hljs inline no-lang">seedu.duke.TodoTest</code>: <code class="hljs inline no-lang">src\test\java\seedu\duke\TodoTest.java</code></li></ul></li></ul> <h2 id="adding-junit-support-to-your-project"><span id="adding-junit-support-to-your-project" class="anchor"></span>Adding JUnit support to your project<a href="#adding-junit-support-to-your-project" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>As JUnit is a third-party library, you need to add support to it specifically in your project.</p> <div class="printable-tabs" data-v-3b6be04c><ul role="tablist" class="nav nav-tabs d-print-none nav-tabs" data-v-3b6be04c></ul> <div class="tab-content" data-v-3b6be04c><div role="tabpanel" class="tab-pane active printable-tab-pane d-print-block hide" style="display:none;"><div class="nav-tabs printable-tab-header d-none d-print-flex"><div class="nav-link active">In Intellij, without Gradle</div></div>  <ol><li>Add a folder named <code class="hljs inline no-lang">[project root]\src\test\java\</code></li> <li>Go to Intellij and add a new module to the project as follows.
+<ol><li><code class="hljs inline no-lang">File</code> → <code class="hljs inline no-lang">New</code> → <code class="hljs inline no-lang">Module From Existing Sources ...</code></li> <li>Choose the <code class="hljs inline no-lang">[project root]\src\test\</code> (not the <code class="hljs inline no-lang">java</code>) folder.</li> <li>In the next screen, select <code class="hljs inline no-lang">Create module from existing sources</code></li> <li>Keep clicking <code class="hljs inline no-lang">Next</code> until the process is complete</li></ol></li> <li>In the <code class="hljs inline no-lang">Project</code> panel of Intellij, expand the newly-created <code class="hljs inline no-lang">test</code> module, right-click on the <code class="hljs inline no-lang">java</code> folder inside it, and choose <code class="hljs inline no-lang">Mark Directory as</code> → <code class="hljs inline no-lang">Test Source Root</code> (that will make the folder turn to green color).</li> <li>Now, create a class inside the <code class="hljs inline no-lang">java</code> folder and type <code class="hljs inline no-lang">@Test</code> inside it. A code example given below.<br> <span><span aria-hidden="true" class="fas fa-info-circle"></span></span> Note: If you are using packages, create this class in a matching package (to test <code class="hljs inline no-lang">duke.Duke</code> class, create a <code class="hljs inline no-lang">duke.DukeTest</code> i.e., in <code class="hljs inline no-lang">src\test\java\duke\DukeTest.java</code>).<pre><code class="hljs java"><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DukeTest</span> </span>{
 </span><span>    <span class="hljs-meta">@Test</span>
 </span><span>}
-</span></code></pre>
-              </li>
-              <li>Note how the <code class="hljs inline no-lang" v-pre>@Test</code> turn to red because Intellij (not having JUnit support yet) does not understand it. But it will pop up a hint, asking if you want to add support for JUnit. Select <code class="hljs inline no-lang" v-pre>Add JUnit 5.* to classpath</code>.</li>
-              <li>In the dialog that pops up, you can optionally tick the <code class="hljs inline no-lang" v-pre>Sources</code>, <code class="hljs inline no-lang" v-pre>JavaDocs</code> and <code class="hljs inline no-lang" v-pre>Annotations</code> boxes. After that, click <code class="hljs inline no-lang" v-pre>OK</code> to add the JUnit 5 to the project dependencies.</li>
-              <li>To check if JUnit integration is working as expected,
-                <ol>
-                  <li>Add a dummy test method to the class e.g.,
-                    <pre><code class="hljs java" v-pre><span><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
+</span></code></pre></li> <li>Note how the <code class="hljs inline no-lang">@Test</code> turn to red because Intellij (not having JUnit support yet) does not understand it. But it will pop up a hint, asking if you want to add support for JUnit. Select <code class="hljs inline no-lang">Add JUnit 5.* to classpath</code>.</li> <li>In the dialog that pops up, you can optionally tick the <code class="hljs inline no-lang">Sources</code>, <code class="hljs inline no-lang">JavaDocs</code> and <code class="hljs inline no-lang">Annotations</code> boxes. After that, click <code class="hljs inline no-lang">OK</code> to add the JUnit 5 to the project dependencies.</li> <li>To check if JUnit integration is working as expected,
+<ol><li>Add a dummy test method to the class e.g.,<pre><code class="hljs java"><span><span class="hljs-keyword">import</span> org.junit.jupiter.api.Test;
 </span><span>
 </span><span><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;
 </span><span>
@@ -98,99 +39,20 @@
 </span><span>        assertEquals(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>);
 </span><span>    }
 </span><span>}
-</span></code></pre>
-                  </li>
-                  <li>Run the test (right-click on the class and choose <code class="hljs inline no-lang" v-pre>Run DukeTest</code>.</li>
-                </ol>
-              </li>
-              <li>To be able to refer to <code class="hljs inline no-lang" v-pre>Duke</code> from <code class="hljs inline no-lang" v-pre>DukeTest</code> class, you need to add <code class="hljs inline no-lang" v-pre>main</code> module as a dependency of the <code class="hljs inline no-lang" v-pre>test</code> module you just created.
-                <ul>
-                  <li>Option 1: When you add a reference to the <code class="hljs inline no-lang" v-pre>Duke</code> inside the <code class="hljs inline no-lang" v-pre>DukeTest</code>, Intellij will flag it as an error and will give you an option (i.e., in the bulb icon that pops up) to add the <code class="hljs inline no-lang" v-pre>main</code> module as a dependency.</li>
-                  <li>Option 2: Follow the info <a href="https://www.jetbrains.com/help/idea/working-with-module-dependencies.html">here</a> to add the dependency yourself.
-                  </li>
-                </ul>
-              </li>
-            </ol>
-          </tab>
-          <tab><template slot="_header">With Gradle</template>
-
-
-
-            <p>If you are new to Gradle, read the <a href="/guides/tutorials/gradle.html"><em>Gradle Tutorial</em></a> first.</p>
-            <p>Here are the relevant lines to add to the <code class="hljs inline no-lang" v-pre>build.gradle</code> (change the version number as necessary):</p>
-            <div class="code-block">
-              <div class="code-block-heading"><span>buidl.gradle</span></div>
-              <div class="code-block-content">
-                <pre><code heading="buidl.gradle" class="hljs groovy" v-pre><span>test {
+</span></code></pre></li> <li>Run the test (right-click on the class and choose <code class="hljs inline no-lang">Run DukeTest</code>.</li></ol></li> <li>To be able to refer to <code class="hljs inline no-lang">Duke</code> from <code class="hljs inline no-lang">DukeTest</code> class, you need to add <code class="hljs inline no-lang">main</code> module as a dependency of the <code class="hljs inline no-lang">test</code> module you just created.
+<ul><li>Option 1: When you add a reference to the <code class="hljs inline no-lang">Duke</code> inside the <code class="hljs inline no-lang">DukeTest</code>, Intellij will flag it as an error and will give you an option (i.e., in the bulb icon that pops up) to add the <code class="hljs inline no-lang">main</code> module as a dependency.</li> <li>Option 2: Follow the info <a href="https://www.jetbrains.com/help/idea/working-with-module-dependencies.html">here</a> to add the dependency yourself.</li></ul></li></ol> <hr></div> <div role="tabpanel" class="tab-pane active printable-tab-pane d-print-block hide" style="display:none;"><div class="nav-tabs printable-tab-header d-none d-print-flex"><div class="nav-link active">With Gradle</div></div>  <p>If you are new to Gradle, read the <a href="/guides/tutorials/gradle.html"><em>Gradle Tutorial</em></a> first.</p> <p>Here are the relevant lines to add to the <code class="hljs inline no-lang">build.gradle</code> (change the version number as necessary):</p> <div class="code-block"><div class="code-block-heading"><span>buidl.gradle</span></div><div class="code-block-content"><pre><code heading="buidl.gradle" class="hljs groovy"><span>test {
 </span><span>    <span class="highlighted">useJUnitPlatform()</span>
 </span><span>}
 </span><span>
 </span><span>dependencies {
-</span><span>    <span class="highlighted">testImplementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.junit.jupiter&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;junit-jupiter-api&#x27;</span>, <span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;5.5.0&#x27;</span></span>
-</span><span>    <span class="highlighted">testRuntimeOnly <span class="hljs-attr">group:</span> <span class="hljs-string">&#x27;org.junit.jupiter&#x27;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#x27;junit-jupiter-engine&#x27;</span>, <span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;5.5.0&#x27;</span></span>
+</span><span>    <span class="highlighted">testImplementation <span class="hljs-attr">group:</span> <span class="hljs-string">'org.junit.jupiter'</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">'junit-jupiter-api'</span>, <span class="hljs-attr">version:</span> <span class="hljs-string">'5.5.0'</span></span>
+</span><span>    <span class="highlighted">testRuntimeOnly <span class="hljs-attr">group:</span> <span class="hljs-string">'org.junit.jupiter'</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">'junit-jupiter-engine'</span>, <span class="hljs-attr">version:</span> <span class="hljs-string">'5.5.0'</span></span>
 </span><span>}
-</span></code></pre>
-              </div>
-            </div>
-            <p>To run tests, simply run the corresponding gradle task e.g., <code class="hljs inline no-lang" v-pre>gradlew test</code>.</p>
-          </tab>
-        </tabs>
-        <br>
-
-        <h2 id="running-tests"><span id="running-tests" class="anchor"></span>Running tests<a class="fa fa-anchor" href="#running-tests" onclick="event.stopPropagation()"></a></h2>
-        <ul>
-          <li>In Intellij IDEA:
-            <ul>
-              <li>To run a specific JUnit test class (e.g., <code class="hljs inline no-lang" v-pre>src/test/java/DukeTest.java</code>), right-click on the test class, and choose <code class="hljs inline no-lang" v-pre>Run {classname}</code>.</li>
-              <li>To run all tests in a folder (e.g., <code class="hljs inline no-lang" v-pre>src/test/java</code> folder), right-click on the folder, and choose <code class="hljs inline no-lang" v-pre>Run tests in {folder name}</code>.</li>
-            </ul>
-          </li>
-          <li>Using Gradle:
-            <ul>
-              <li>Run the <code class="hljs inline no-lang" v-pre>test</code> task</li>
-            </ul>
-          </li>
-        </ul>
-
-        <h2 id="resources"><span id="resources" class="anchor"></span>Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2>
-        <ul>
-          <li><a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5 User Guide</a></li>
-        </ul>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-      <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-left-grey nav-inner position-sticky slim-scroll">
-
-          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
-            <a class="nav-link py-1" href="#using-junit">Using JUnit&#x200E;</a>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#conventions-to-follow">Conventions to follow&#x200E;</a>
-              <a class="nav-link py-1" href="#adding-junit-support-to-your-project">Adding JUnit support to your project&#x200E;</a>
-              <a class="nav-link py-1" href="#running-tests">Running tests&#x200E;</a>
-              <a class="nav-link py-1" href="#resources">Resources&#x200E;</a>
-            </nav>
-
-          </nav>
-        </div>
-      </nav>
-    </div>
-    <footer>
-
-      <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Sat, 6 Feb 2021, 23:25:00 GMT+8]</small>
-      </div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+</span></code></pre></div></div><p>To run tests, simply run the corresponding gradle task e.g., <code class="hljs inline no-lang">gradlew test</code>.</p> <hr></div></div></div> <br> <h2 id="running-tests"><span id="running-tests" class="anchor"></span>Running tests<a href="#running-tests" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ul><li>In Intellij IDEA:
+<ul><li>To run a specific JUnit test class (e.g., <code class="hljs inline no-lang">src/test/java/DukeTest.java</code>), right-click on the test class, and choose <code class="hljs inline no-lang">Run {classname}</code>.</li> <li>To run all tests in a folder (e.g., <code class="hljs inline no-lang">src/test/java</code> folder), right-click on the folder, and choose <code class="hljs inline no-lang">Run tests in {folder name}</code>.</li></ul></li> <li>Using Gradle:
+<ul><li>Run the <code class="hljs inline no-lang">test</code> task</li></ul></li></ul> <h2 id="resources"><span id="resources" class="anchor"></span>Resources<a href="#resources" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ul><li><a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5 User Guide</a></li></ul> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88> <!----></nav></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 3.0.4</a> on Wed, 14 Jul 2021, 1:59:52 GMT+8]</small></div></footer></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script>
-  const baseUrl = '/guides'
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/default/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>

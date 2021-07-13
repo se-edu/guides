@@ -1,78 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.2">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>C# coding standard</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="icon" href="/guides/favicon.ico">
-</head>
-
-<body data-spy="scroll" data-target="#page-nav" data-offset="100">
-  <div id="app">
-    <header>
-      <navbar placement="top" type="dark" class="temp-navbar">
-        <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a>
-        <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li>
-        <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li>
-        <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right" class="nav-link">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-
-
-      <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="c-coding-standard"><span id="c-coding-standard" class="anchor"></span>C# coding standard<a class="fa fa-anchor" href="#c-coding-standard" onclick="event.stopPropagation()"></a></h1>
-        <p><strong>Important:</strong> Use <a href="https://github.com/dennisdoomen/CSharpGuidelines">CSharpGuidelines</a> for any topics not covered in this document.</p>
-        <box>
-          <p>The coding standard is primarily based on <a href="https://github.com/dennisdoomen/CSharpGuidelines">CSharpGuidelines</a> (by Aviva Solutions) but differs from it in these ways:</p>
-          <ul>
-            <li>Structure of the document is adapted from <a href="http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf">C# coding standards for .NET</a> and <a href="http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf">C# Coding Style Guide</a>.</li>
-            <li>Some examples were taken from other sources listed under <a href="#references">References</a>.
-            </li>
-          </ul>
-        </box>
-
-
-        <h2 id="file-organization"><span id="file-organization" class="anchor"></span>File Organization<a class="fa fa-anchor" href="#file-organization" onclick="event.stopPropagation()"></a></h2>
-        <h4 id="1-source-file-name-and-class-name-should-always-match"><span id="1-source-file-name-and-class-name-should-always-match" class="anchor"></span>1. Source file name and class name should always match.<a class="fa fa-anchor" href="#1-source-file-name-and-class-name-should-always-match" onclick="event.stopPropagation()"></a></h4>
-        <p>MyClass.cs → <code class="hljs inline no-lang" v-pre>public class MyClass { ... }</code></p>
-        <h4 id="2-directory-names-should-follow-namespace-for-the-class"><span id="2-directory-names-should-follow-namespace-for-the-class" class="anchor"></span>2. Directory names should follow namespace for the class.<a class="fa fa-anchor" href="#2-directory-names-should-follow-namespace-for-the-class" onclick="event.stopPropagation()"></a></h4>
-        <p><code class="hljs inline no-lang" v-pre>System.Windows.Forms.Control</code> should use the path System\Windows\Forms\Control.cs</p>
-        <box type="info" seamless>
-          <p>Do not use namespace name with dots. This will make it easier to map namespaces to the directory layout.
-          </p>
-        </box>
-        <p></p>
-
-        <h2 id="formatting"><span id="formatting" class="anchor"></span>Formatting<a class="fa fa-anchor" href="#formatting" onclick="event.stopPropagation()"></a></h2>
-        <h3 id="layout"><span id="layout" class="anchor"></span>Layout<a class="fa fa-anchor" href="#layout" onclick="event.stopPropagation()"></a></h3>
-        <h4 id="1-avoid-putting-multiple-namespaces-or-classes-per-file"><span id="1-avoid-putting-multiple-namespaces-or-classes-per-file" class="anchor"></span>1. Avoid putting multiple namespaces or classes per file.<a class="fa fa-anchor" href="#1-avoid-putting-multiple-namespaces-or-classes-per-file" onclick="event.stopPropagation()"></a></h4>
-        <p>This will make your code more readable and also make it easier to find the .cs file for a particular class.</p>
-        <h4 id="2-place-using-directives-at-the-top-of-the-file-grouped-and-ordered-alphabetically"><span id="2-place-using-directives-at-the-top-of-the-file-grouped-and-ordered-alphabetically" class="anchor"></span>2. Place <em>using</em> directives at the top of the file, grouped and ordered alphabetically.<a class="fa fa-anchor" href="#2-place-using-directives-at-the-top-of-the-file-grouped-and-ordered-alphabetically" onclick="event.stopPropagation()"></a></h4>
-        <pre><code class="hljs cs" v-pre><span><span class="hljs-comment">// .NET namespaces first</span>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C# coding standard</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="csharp.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body >
+<div id="app" data-server-rendered="true"><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-15113a2f></span> <strong data-v-15113a2f><strong data-v-15113a2f>SE-EDU</strong></strong></span></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a href="/guides/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Home</strong></span></a></li> <li data-v-15113a2f><a href="/guides/about.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>About</strong></span></a></li> <li data-v-15113a2f><a href="https://github.com/se-edu/guides" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="c-coding-standard"><span id="c-coding-standard" class="anchor"></span>C# coding standard<a href="#c-coding-standard" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p><strong>Important:</strong> Use <a href="https://github.com/dennisdoomen/CSharpGuidelines">CSharpGuidelines</a> for any topics not covered in this document.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f>The coding standard is primarily based on <a href="https://github.com/dennisdoomen/CSharpGuidelines" data-v-7d17494f>CSharpGuidelines</a> (by Aviva Solutions) but differs from it in these ways:</p> <ul data-v-7d17494f><li data-v-7d17494f>Structure of the document is adapted from <a href="http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf" data-v-7d17494f>C# coding standards for .NET</a> and <a href="http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf" data-v-7d17494f>C# Coding Style Guide</a>.</li> <li data-v-7d17494f>Some examples were taken from other sources listed under <a href="#references" data-v-7d17494f>References</a>.</li></ul></div> <!----></div></div></div> <h2 id="file-organization"><span id="file-organization" class="anchor"></span>File Organization<a href="#file-organization" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <h4 id="1-source-file-name-and-class-name-should-always-match"><span id="1-source-file-name-and-class-name-should-always-match" class="anchor"></span>1. Source file name and class name should always match.<a href="#1-source-file-name-and-class-name-should-always-match" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>MyClass.cs → <code class="hljs inline no-lang">public class MyClass { ... }</code></p> <h4 id="2-directory-names-should-follow-namespace-for-the-class"><span id="2-directory-names-should-follow-namespace-for-the-class" class="anchor"></span>2. Directory names should follow namespace for the class.<a href="#2-directory-names-should-follow-namespace-for-the-class" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p><code class="hljs inline no-lang">System.Windows.Forms.Control</code> should use the path System\Windows\Forms\Control.cs</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Do not use namespace name with dots. This will make it easier to map namespaces to the directory layout.</p></div> <!----></div></div></div> <h2 id="formatting"><span id="formatting" class="anchor"></span>Formatting<a href="#formatting" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <h3 id="layout"><span id="layout" class="anchor"></span>Layout<a href="#layout" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <h4 id="1-avoid-putting-multiple-namespaces-or-classes-per-file"><span id="1-avoid-putting-multiple-namespaces-or-classes-per-file" class="anchor"></span>1. Avoid putting multiple namespaces or classes per file.<a href="#1-avoid-putting-multiple-namespaces-or-classes-per-file" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>This will make your code more readable and also make it easier to find the .cs file for a particular class.</p> <h4 id="2-place-using-directives-at-the-top-of-the-file-grouped-and-ordered-alphabetically"><span id="2-place-using-directives-at-the-top-of-the-file-grouped-and-ordered-alphabetically" class="anchor"></span>2. Place <em>using</em> directives at the top of the file, grouped and ordered alphabetically.<a href="#2-place-using-directives-at-the-top-of-the-file-grouped-and-ordered-alphabetically" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <pre><code class="hljs cs"><span><span class="hljs-comment">// .NET namespaces first</span>
 </span><span><span class="hljs-keyword">using</span> System;
 </span><span><span class="hljs-keyword">using</span> System.Collections;
 </span><span>
@@ -82,513 +33,88 @@
 </span><span>
 </span><span><span class="hljs-keyword">using</span> Telerik.Ajax;
 </span><span><span class="hljs-keyword">using</span> Telerik.WebControls;
-</span></code></pre>
-        <h4 id="3-maintain-a-common-order-for-each-file"><span id="3-maintain-a-common-order-for-each-file" class="anchor"></span>3. Maintain a common order for each file.<a class="fa fa-anchor" href="#3-maintain-a-common-order-for-each-file" onclick="event.stopPropagation()"></a></h4>
-        <ol>
-          <li>Member variable</li>
-          <li>Constructors and Finalizer</li>
-          <li>Nested Enums, Structs and Classes</li>
-          <li>Properties</li>
-          <li>Methods</li>
-        </ol>
-        <box type="info" seamless>
-          <p>Sequence declaration within type groups are based on StyleCop's SA1202 ordering: <code class="hljs inline no-lang" v-pre>public, internal, protected internal, protected, private</code>.
-          </p>
-        </box>
-        <p></p>
-        <h3 id="indentation"><span id="indentation" class="anchor"></span>Indentation<a class="fa fa-anchor" href="#indentation" onclick="event.stopPropagation()"></a></h3>
-        <h4 id="1-basic-indentation-should-be-4-spaces-not-tabs"><span id="1-basic-indentation-should-be-4-spaces-not-tabs" class="anchor"></span>1. Basic indentation should be 4 spaces(not tabs).<a class="fa fa-anchor" href="#1-basic-indentation-should-be-4-spaces-not-tabs" onclick="event.stopPropagation()"></a></h4>
-        <pre><code class="hljs cs" v-pre><span><span class="hljs-comment">// A Hello World! program in C#.</span>
+</span></code></pre><h4 id="3-maintain-a-common-order-for-each-file"><span id="3-maintain-a-common-order-for-each-file" class="anchor"></span>3. Maintain a common order for each file.<a href="#3-maintain-a-common-order-for-each-file" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <ol><li>Member variable</li> <li>Constructors and Finalizer</li> <li>Nested Enums, Structs and Classes</li> <li>Properties</li> <li>Methods</li></ol> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Sequence declaration within type groups are based on StyleCop's SA1202 ordering: <code class="hljs inline no-lang" data-v-7d17494f>public, internal, protected internal, protected, private</code>.</p></div> <!----></div></div></div> <h3 id="indentation"><span id="indentation" class="anchor"></span>Indentation<a href="#indentation" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <h4 id="1-basic-indentation-should-be-4-spaces-not-tabs"><span id="1-basic-indentation-should-be-4-spaces-not-tabs" class="anchor"></span>1. Basic indentation should be 4 spaces(not tabs).<a href="#1-basic-indentation-should-be-4-spaces-not-tabs" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <pre><code class="hljs cs"><span><span class="hljs-comment">// A Hello World! program in C#.</span>
 </span><span><span class="hljs-keyword">using</span> System;
 </span><span>
 </span><span><span class="hljs-keyword">namespace</span> <span class="hljs-title">HelloWorld</span>
 </span><span>{
 </span><span>    <span class="hljs-keyword">class</span> <span class="hljs-title">Hello</span> 
 </span><span>    {
-</span><span>        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>) </span>
-</span><span><span class="hljs-function"></span>        {
+</span><span>        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"></span>)</span> 
+</span><span>        {
 </span><span>            Console.WriteLine(<span class="hljs-string">&quot;Hello World!&quot;</span>);
 </span><span>        }
 </span><span>    }
 </span><span>}
-</span></code></pre>
-        <h4 id="2-maximum-line-length-is-130-characters"><span id="2-maximum-line-length-is-130-characters" class="anchor"></span>2. Maximum line length is 130 characters.<a class="fa fa-anchor" href="#2-maximum-line-length-is-130-characters" onclick="event.stopPropagation()"></a></h4>
-        <p>When an expression does not fit, follow the general guidelines:</p>
-        <ul>
-          <li>Break after a comma</li>
-          <li>Break after an operator</li>
-          <li>Align the new line with the beginning of the expression at the same level on the previous line</li>
-          <li>Prefer higher-level breaks to lower-level breaks</li>
-        </ul>
-        <p>Example of breaking up method calls:</p>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>longMethodCall(expr1, expr2,
+</span></code></pre><h4 id="2-maximum-line-length-is-130-characters"><span id="2-maximum-line-length-is-130-characters" class="anchor"></span>2. Maximum line length is 130 characters.<a href="#2-maximum-line-length-is-130-characters" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>When an expression does not fit, follow the general guidelines:</p> <ul><li>Break after a comma</li> <li>Break after an operator</li> <li>Align the new line with the beginning of the expression at the same level on the previous line</li> <li>Prefer higher-level breaks to lower-level breaks</li></ul> <p>Example of breaking up method calls:</p> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs cs"><span>longMethodCall(expr1, expr2,
 </span><span>               expr3, expr4, expr5);
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>longMethodCall(expr1, expr2
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs cs"><span>longMethodCall(expr1, expr2
 </span><span>        ,expr3, expr4, expr5);
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <p>Example of breaking an arithmetic expression:</p>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span><span class="hljs-keyword">var</span> result = a * b / (c - g + f) +
+</span></code></pre></div></div></div> <p>Example of breaking an arithmetic expression:</p> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs cs"><span><span class="hljs-keyword">var</span> result = a * b / (c - g + f) +
 </span><span>             <span class="hljs-number">4</span> * z;
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span><span class="hljs-keyword">var</span> result = a * b / (c - g +
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs cs"><span><span class="hljs-keyword">var</span> result = a * b / (c - g +
 </span><span>             f) + <span class="hljs-number">4</span> * z;
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <p>The top one is preferred, since the break occurs outside the parenthesized expression, which is higher-level.</p>
-        <h4 id="3-always-place-curly-braces-on-a-new-line"><span id="3-always-place-curly-braces-on-a-new-line" class="anchor"></span>3. Always place curly braces on a new line.<a class="fa fa-anchor" href="#3-always-place-curly-braces-on-a-new-line" onclick="event.stopPropagation()"></a></h4>
-        <p>This is known as the <a href="https://en.wikipedia.org/wiki/Indent_style#Allman_style">https://en.wikipedia.org/wiki/Indent_style#Allman_style</a>[Allman style].</p>
-        <pre><code class="hljs cs" v-pre><span><span class="hljs-keyword">while</span> (x &lt; y)
+</span></code></pre></div></div></div> <p>The top one is preferred, since the break occurs outside the parenthesized expression, which is higher-level.</p> <h4 id="3-always-place-curly-braces-on-a-new-line"><span id="3-always-place-curly-braces-on-a-new-line" class="anchor"></span>3. Always place curly braces on a new line.<a href="#3-always-place-curly-braces-on-a-new-line" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>This is known as the <a href="https://en.wikipedia.org/wiki/Indent_style#Allman_style">https://en.wikipedia.org/wiki/Indent_style#Allman_style</a>[Allman style].</p> <pre><code class="hljs cs"><span><span class="hljs-keyword">while</span> (x &lt; y)
 </span><span>{
 </span><span>    firstMethod();
 </span><span>    secondMethod();
 </span><span>}
 </span><span>
 </span><span>lastMethod();
-</span></code></pre>
-        <h4 id="4-always-put-curly-braces-even-if-it-might-not-be-required"><span id="4-always-put-curly-braces-even-if-it-might-not-be-required" class="anchor"></span>4. Always put curly braces even if it might not be required.<a class="fa fa-anchor" href="#4-always-put-curly-braces-even-if-it-might-not-be-required" onclick="event.stopPropagation()"></a></h4>
-        <p>Such as having only one statement in the <code class="hljs inline no-lang" v-pre>if</code> clause. This is to enforce consistency.</p>
-        <pre><code class="hljs cs" v-pre><span><span class="hljs-keyword">if</span> (x &gt; y) 
+</span></code></pre><h4 id="4-always-put-curly-braces-even-if-it-might-not-be-required"><span id="4-always-put-curly-braces-even-if-it-might-not-be-required" class="anchor"></span>4. Always put curly braces even if it might not be required.<a href="#4-always-put-curly-braces-even-if-it-might-not-be-required" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Such as having only one statement in the <code class="hljs inline no-lang">if</code> clause. This is to enforce consistency.</p> <pre><code class="hljs cs"><span><span class="hljs-keyword">if</span> (x &gt; y) 
 </span><span>{
 </span><span>    doSomething();
 </span><span>}
-</span></code></pre>
-        <h3 id="white-space"><span id="white-space" class="anchor"></span>White Space<a class="fa fa-anchor" href="#white-space" onclick="event.stopPropagation()"></a></h3>
-        <h4 id="1-general-guidelines"><span id="1-general-guidelines" class="anchor"></span>1. General guidelines.<a class="fa fa-anchor" href="#1-general-guidelines" onclick="event.stopPropagation()"></a></h4>
-        <ul>
-          <li>Keywords like <code class="hljs inline no-lang" v-pre>if</code>, <code class="hljs inline no-lang" v-pre>while</code> should be followed by a white space.</li>
-          <li>Semicolons in <code class="hljs inline no-lang" v-pre>for</code> statements should be followed by a white space.</li>
-          <li>Commas should be followed by a white space.</li>
-          <li>Add a white space around operators like <code class="hljs inline no-lang" v-pre>+</code>, <code class="hljs inline no-lang" v-pre>-</code>, <code class="hljs inline no-lang" v-pre>==</code> etc.</li>
-          <li>Do not add white space after <code class="hljs inline no-lang" v-pre>(</code> and before <code class="hljs inline no-lang" v-pre>)</code>.</li>
-        </ul>
-        <p>Examples:</p>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <p><code class="hljs inline cs" v-pre>a = (b + c) * d;</code><br>
-                <code class="hljs inline cs" v-pre><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)</code><br>
-                <code class="hljs inline cs" v-pre>doSomething(a, b, c, d)</code><br>
-                <code class="hljs inline cs" v-pre><span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)</code>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <p><code class="hljs inline cs" v-pre>a=(b+c)*d;</code><br>
-                <code class="hljs inline cs" v-pre><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)</code><br>
-                <code class="hljs inline cs" v-pre>doSomething(a,b,c,d)</code><br>
-                <code class="hljs inline cs" v-pre><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)</code>
-              </p>
-            </div>
-          </div>
-        </div>
-        <h2 id="naming"><span id="naming" class="anchor"></span>Naming<a class="fa fa-anchor" href="#naming" onclick="event.stopPropagation()"></a></h2>
-        <h4 id="1-all-names-should-be-written-in-english"><span id="1-all-names-should-be-written-in-english" class="anchor"></span>1. All names should be written in English.<a class="fa fa-anchor" href="#1-all-names-should-be-written-in-english" onclick="event.stopPropagation()"></a></h4>
-        <p>English is the preferred language for international development.</p>
-        <h4 id="2-use-proper-casing-for-language-elements"><span id="2-use-proper-casing-for-language-elements" class="anchor"></span>2. Use proper casing for language elements.<a class="fa fa-anchor" href="#2-use-proper-casing-for-language-elements" onclick="event.stopPropagation()"></a></h4>
-        <box type="info" seamless>
-          <ul>
-            <li>Pascal casing: the first letter of every word is capitalized.</li>
-            <li>Camel casing: the first letter of every word, except for the first word, is capitalized.
-            </li>
-          </ul>
-        </box>
-
-        <div class="table-responsive">
-          <table class="markbind-table table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Language element</th>
-                <th>Casing</th>
-                <th>Example</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Class, Struct</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>AppDomain</code></td>
-              </tr>
-              <tr>
-                <td>Interface</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>IBusinessService</code></td>
-              </tr>
-              <tr>
-                <td>Enumeration type</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>ErrorLevel</code></td>
-              </tr>
-              <tr>
-                <td>Enumeration values</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>FatalError</code></td>
-              </tr>
-              <tr>
-                <td>Event</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>Click</code></td>
-              </tr>
-              <tr>
-                <td>Private field</td>
-                <td>Camel</td>
-                <td><code class="hljs inline no-lang" v-pre>listItem</code></td>
-              </tr>
-              <tr>
-                <td>Protected field</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>MainPanel</code></td>
-              </tr>
-              <tr>
-                <td>Constant field</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>MaximumItems</code></td>
-              </tr>
-              <tr>
-                <td>Constant local variable</td>
-                <td>Camel</td>
-                <td><code class="hljs inline no-lang" v-pre>maximumItems</code></td>
-              </tr>
-              <tr>
-                <td>Read-only static field</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>RedValue</code></td>
-              </tr>
-              <tr>
-                <td>Local variable</td>
-                <td>Camel</td>
-                <td><code class="hljs inline no-lang" v-pre>listOfValues</code></td>
-              </tr>
-              <tr>
-                <td>Method</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>ToString</code></td>
-              </tr>
-              <tr>
-                <td>Namespace</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>System.Drawing</code></td>
-              </tr>
-              <tr>
-                <td>Parameter</td>
-                <td>Camel</td>
-                <td><code class="hljs inline no-lang" v-pre>typeName</code></td>
-              </tr>
-              <tr>
-                <td>Type parameter</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>TView</code></td>
-              </tr>
-              <tr>
-                <td>Property</td>
-                <td>Pascal</td>
-                <td><code class="hljs inline no-lang" v-pre>BackColor</code></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <h4 id="3-avoid-using-abbreviations"><span id="3-avoid-using-abbreviations" class="anchor"></span>3. Avoid using abbreviations.<a class="fa fa-anchor" href="#3-avoid-using-abbreviations" onclick="event.stopPropagation()"></a></h4>
-        <p>Unless the full name is excessive:</p>
-        <ul>
-          <li>Avoid abbreviations longer than 5 characters.</li>
-          <li>Abbreviations must be widely known and accepted.</li>
-          <li>Use upper case for 2-character abbreviations, and Pascal Case for longer abbreviations.</li>
-        </ul>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>UIControl
+</span></code></pre><h3 id="white-space"><span id="white-space" class="anchor"></span>White Space<a href="#white-space" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <h4 id="1-general-guidelines"><span id="1-general-guidelines" class="anchor"></span>1. General guidelines.<a href="#1-general-guidelines" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <ul><li>Keywords like <code class="hljs inline no-lang">if</code>, <code class="hljs inline no-lang">while</code> should be followed by a white space.</li> <li>Semicolons in <code class="hljs inline no-lang">for</code> statements should be followed by a white space.</li> <li>Commas should be followed by a white space.</li> <li>Add a white space around operators like <code class="hljs inline no-lang">+</code>, <code class="hljs inline no-lang">-</code>, <code class="hljs inline no-lang">==</code> etc.</li> <li>Do not add white space after <code class="hljs inline no-lang">(</code> and before <code class="hljs inline no-lang">)</code>.</li></ul> <p>Examples:</p> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><p><code class="hljs inline cs">a = (b + c) * d;</code><br> <code class="hljs inline cs"><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>)</code><br> <code class="hljs inline cs">doSomething(a, b, c, d)</code><br> <code class="hljs inline cs"><span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)</code></p></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><p><code class="hljs inline cs">a=(b+c)*d;</code><br> <code class="hljs inline cs"><span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)</code><br> <code class="hljs inline cs">doSomething(a,b,c,d)</code><br> <code class="hljs inline cs"><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">10</span>;i++)</code></p></div></div></div> <h2 id="naming"><span id="naming" class="anchor"></span>Naming<a href="#naming" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <h4 id="1-all-names-should-be-written-in-english"><span id="1-all-names-should-be-written-in-english" class="anchor"></span>1. All names should be written in English.<a href="#1-all-names-should-be-written-in-english" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>English is the preferred language for international development.</p> <h4 id="2-use-proper-casing-for-language-elements"><span id="2-use-proper-casing-for-language-elements" class="anchor"></span>2. Use proper casing for language elements.<a href="#2-use-proper-casing-for-language-elements" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><ul data-v-7d17494f><li data-v-7d17494f>Pascal casing: the first letter of every word is capitalized.</li> <li data-v-7d17494f>Camel casing: the first letter of every word, except for the first word, is capitalized.</li></ul></div> <!----></div></div></div> <div class="table-responsive"><table class="markbind-table table table-bordered table-striped"><thead><tr><th>Language element</th> <th>Casing</th> <th>Example</th></tr></thead> <tbody><tr><td>Class, Struct</td> <td>Pascal</td> <td><code class="hljs inline no-lang">AppDomain</code></td></tr> <tr><td>Interface</td> <td>Pascal</td> <td><code class="hljs inline no-lang">IBusinessService</code></td></tr> <tr><td>Enumeration type</td> <td>Pascal</td> <td><code class="hljs inline no-lang">ErrorLevel</code></td></tr> <tr><td>Enumeration values</td> <td>Pascal</td> <td><code class="hljs inline no-lang">FatalError</code></td></tr> <tr><td>Event</td> <td>Pascal</td> <td><code class="hljs inline no-lang">Click</code></td></tr> <tr><td>Private field</td> <td>Camel</td> <td><code class="hljs inline no-lang">listItem</code></td></tr> <tr><td>Protected field</td> <td>Pascal</td> <td><code class="hljs inline no-lang">MainPanel</code></td></tr> <tr><td>Constant field</td> <td>Pascal</td> <td><code class="hljs inline no-lang">MaximumItems</code></td></tr> <tr><td>Constant local variable</td> <td>Camel</td> <td><code class="hljs inline no-lang">maximumItems</code></td></tr> <tr><td>Read-only static field</td> <td>Pascal</td> <td><code class="hljs inline no-lang">RedValue</code></td></tr> <tr><td>Local variable</td> <td>Camel</td> <td><code class="hljs inline no-lang">listOfValues</code></td></tr> <tr><td>Method</td> <td>Pascal</td> <td><code class="hljs inline no-lang">ToString</code></td></tr> <tr><td>Namespace</td> <td>Pascal</td> <td><code class="hljs inline no-lang">System.Drawing</code></td></tr> <tr><td>Parameter</td> <td>Camel</td> <td><code class="hljs inline no-lang">typeName</code></td></tr> <tr><td>Type parameter</td> <td>Pascal</td> <td><code class="hljs inline no-lang">TView</code></td></tr> <tr><td>Property</td> <td>Pascal</td> <td><code class="hljs inline no-lang">BackColor</code></td></tr></tbody></table></div><h4 id="3-avoid-using-abbreviations"><span id="3-avoid-using-abbreviations" class="anchor"></span>3. Avoid using abbreviations.<a href="#3-avoid-using-abbreviations" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Unless the full name is excessive:</p> <ul><li>Avoid abbreviations longer than 5 characters.</li> <li>Abbreviations must be widely known and accepted.</li> <li>Use upper case for 2-character abbreviations, and Pascal Case for longer abbreviations.</li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs cs"><span>UIControl
 </span><span>HtmlSource
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>UiControl
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs cs"><span>UiControl
 </span><span>HTMLSource
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <h4 id="4-prefix-boolean-variables-with-can-is-or-has"><span id="4-prefix-boolean-variables-with-can-is-or-has" class="anchor"></span>4. Prefix boolean variables with <code class="hljs inline no-lang" v-pre>Can</code>, <code class="hljs inline no-lang" v-pre>Is</code>, or <code class="hljs inline no-lang" v-pre>Has</code>.<a class="fa fa-anchor" href="#4-prefix-boolean-variables-with-can-is-or-has" onclick="event.stopPropagation()"></a></h4>
-        <p>Examples: <code class="hljs inline no-lang" v-pre>CanEvaluate</code>, <code class="hljs inline no-lang" v-pre>IsVisible</code>, <code class="hljs inline no-lang" v-pre>HasLicense</code>.</p>
-        <box type="info" seamless>
-          <p>Avoid boolean variables that represent the negation of things. e.g., use <code class="hljs inline no-lang" v-pre>IsInitialized</code> instead of <code class="hljs inline no-lang" v-pre>IsNotInitialized</code>.
-          </p>
-        </box>
-        <p></p>
-        <h4 id="5-do-not-include-the-parent-class-name-within-a-property-name"><span id="5-do-not-include-the-parent-class-name-within-a-property-name" class="anchor"></span>5. Do not include the parent class name within a property name.<a class="fa fa-anchor" href="#5-do-not-include-the-parent-class-name-within-a-property-name" onclick="event.stopPropagation()"></a></h4>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>Customer.Name
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>Customer.CustomerName
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <h4 id="6-do-not-use-hungarian-notation"><span id="6-do-not-use-hungarian-notation" class="anchor"></span>6. Do not use Hungarian Notation.<a class="fa fa-anchor" href="#6-do-not-use-hungarian-notation" onclick="event.stopPropagation()"></a></h4>
-        <p>Hungarian notation is a defined set of pre and postfixes which are applied to names to reflect the type of the variable. This style was used in early Windows programming, but is now obsolete.</p>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>Name
+</span></code></pre></div></div></div> <h4 id="4-prefix-boolean-variables-with-can-is-or-has"><span id="4-prefix-boolean-variables-with-can-is-or-has" class="anchor"></span>4. Prefix boolean variables with <code class="hljs inline no-lang">Can</code>, <code class="hljs inline no-lang">Is</code>, or <code class="hljs inline no-lang">Has</code>.<a href="#4-prefix-boolean-variables-with-can-is-or-has" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Examples: <code class="hljs inline no-lang">CanEvaluate</code>, <code class="hljs inline no-lang">IsVisible</code>, <code class="hljs inline no-lang">HasLicense</code>.</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Avoid boolean variables that represent the negation of things. e.g., use <code class="hljs inline no-lang" data-v-7d17494f>IsInitialized</code> instead of <code class="hljs inline no-lang" data-v-7d17494f>IsNotInitialized</code>.</p></div> <!----></div></div></div> <h4 id="5-do-not-include-the-parent-class-name-within-a-property-name"><span id="5-do-not-include-the-parent-class-name-within-a-property-name" class="anchor"></span>5. Do not include the parent class name within a property name.<a href="#5-do-not-include-the-parent-class-name-within-a-property-name" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs cs"><span>Customer.Name
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs cs"><span>Customer.CustomerName
+</span></code></pre></div></div></div> <h4 id="6-do-not-use-hungarian-notation"><span id="6-do-not-use-hungarian-notation" class="anchor"></span>6. Do not use Hungarian Notation.<a href="#6-do-not-use-hungarian-notation" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Hungarian notation is a defined set of pre and postfixes which are applied to names to reflect the type of the variable. This style was used in early Windows programming, but is now obsolete.</p> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs cs"><span>Name
 </span><span>Colors
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>strName
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs cs"><span>strName
 </span><span>ColorsEnum
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <box type="info" seamless>
-          <p><em>Exception</em>: All fields and variable names that contain GUI elements like button should be postfixed with their type name without abbreviations. e.g., <code class="hljs inline no-lang" v-pre>cancelButton</code>, <code class="hljs inline no-lang" v-pre>nameTextBox</code>.
-          </p>
-        </box>
-        <p></p>
-
-        <h2 id="commenting"><span id="commenting" class="anchor"></span>Commenting<a class="fa fa-anchor" href="#commenting" onclick="event.stopPropagation()"></a></h2>
-        <h4 id="1-general-guidelines-2"><span id="1-general-guidelines-2" class="anchor"></span>1. General guidelines.<a class="fa fa-anchor" href="#1-general-guidelines-2" onclick="event.stopPropagation()"></a></h4>
-        <ul>
-          <li>Place the comment on a separate line, not at the end of a line of code.</li>
-          <li>Begin comment text with an upper case letter.</li>
-          <li>Insert one space between comment delimiter (<code class="hljs inline no-lang" v-pre>//</code>) and comment text.</li>
-          <li>Use <code class="hljs inline no-lang" v-pre>//</code> or <code class="hljs inline no-lang" v-pre>///</code> but never <code class="hljs inline no-lang" v-pre>/* ... */</code>.</li>
-          <li>The length of comment should not exceed the length of code.</li>
-        </ul>
-        <h4 id="2-document-all-public-protected-and-internal-types-and-members"><span id="2-document-all-public-protected-and-internal-types-and-members" class="anchor"></span>2. Document all public, protected and internal types and members.<a class="fa fa-anchor" href="#2-document-all-public-protected-and-internal-types-and-members" onclick="event.stopPropagation()"></a></h4>
-        <p>Documenting your code allows Visual Studio to pop-up the documentation when your class is used somewhere else. You can form your documentation using <a href="https://msdn.microsoft.com/en-us/library/5ast78ax.aspx">https://msdn.microsoft.com/en-us/library/5ast78ax.aspx</a>[XML tags].</p>
-        <pre><code class="hljs css" v-pre><span>/// &lt;<span class="hljs-selector-tag">summary</span>&gt;
-</span><span>/// <span class="hljs-selector-tag">Get</span> <span class="hljs-selector-tag">a</span> <span class="hljs-selector-tag">value</span> <span class="hljs-selector-tag">indicating</span> <span class="hljs-selector-tag">whether</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">user</span> <span class="hljs-selector-tag">has</span> <span class="hljs-selector-tag">a</span> <span class="hljs-selector-tag">license</span>.
+</span></code></pre></div></div></div> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f><em data-v-7d17494f>Exception</em>: All fields and variable names that contain GUI elements like button should be postfixed with their type name without abbreviations. e.g., <code class="hljs inline no-lang" data-v-7d17494f>cancelButton</code>, <code class="hljs inline no-lang" data-v-7d17494f>nameTextBox</code>.</p></div> <!----></div></div></div> <h2 id="commenting"><span id="commenting" class="anchor"></span>Commenting<a href="#commenting" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <h4 id="1-general-guidelines-2"><span id="1-general-guidelines-2" class="anchor"></span>1. General guidelines.<a href="#1-general-guidelines-2" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <ul><li>Place the comment on a separate line, not at the end of a line of code.</li> <li>Begin comment text with an upper case letter.</li> <li>Insert one space between comment delimiter (<code class="hljs inline no-lang">//</code>) and comment text.</li> <li>Use <code class="hljs inline no-lang">//</code> or <code class="hljs inline no-lang">///</code> but never <code class="hljs inline no-lang">/* ... */</code>.</li> <li>The length of comment should not exceed the length of code.</li></ul> <h4 id="2-document-all-public-protected-and-internal-types-and-members"><span id="2-document-all-public-protected-and-internal-types-and-members" class="anchor"></span>2. Document all public, protected and internal types and members.<a href="#2-document-all-public-protected-and-internal-types-and-members" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Documenting your code allows Visual Studio to pop-up the documentation when your class is used somewhere else. You can form your documentation using <a href="https://msdn.microsoft.com/en-us/library/5ast78ax.aspx">https://msdn.microsoft.com/en-us/library/5ast78ax.aspx</a>[XML tags].</p> <pre><code class="hljs css"><span>/// &lt;<span class="hljs-selector-tag">summary</span>&gt;
+</span><span>/// Get <span class="hljs-selector-tag">a</span> value indicating whether the user has <span class="hljs-selector-tag">a</span> license.
 </span><span>/// &lt;/<span class="hljs-selector-tag">summary</span>&gt;
-</span><span>/// &lt;<span class="hljs-selector-tag">returns</span>&gt;
-</span><span>/// &lt;<span class="hljs-selector-tag">c</span>&gt;<span class="hljs-selector-tag">true</span>&lt;/<span class="hljs-selector-tag">c</span>&gt; <span class="hljs-selector-tag">if</span> <span class="hljs-selector-tag">the</span> <span class="hljs-selector-tag">user</span> <span class="hljs-selector-tag">has</span> <span class="hljs-selector-tag">a</span> <span class="hljs-selector-tag">license</span>; <span class="hljs-selector-tag">otherwise</span> &lt;<span class="hljs-selector-tag">c</span>&gt;<span class="hljs-selector-tag">false</span>&lt;/<span class="hljs-selector-tag">c</span>&gt;.
-</span><span>/// &lt;/<span class="hljs-selector-tag">returns</span>&gt;
-</span><span><span class="hljs-selector-tag">public</span> <span class="hljs-selector-tag">bool</span> <span class="hljs-selector-tag">HasLicense</span>() { ... }
-</span></code></pre>
-        <h2 id="language-conventions"><span id="language-conventions" class="anchor"></span>Language Conventions<a class="fa fa-anchor" href="#language-conventions" onclick="event.stopPropagation()"></a></h2>
-        <h4 id="1-do-not-omit-access-modifiers"><span id="1-do-not-omit-access-modifiers" class="anchor"></span>1. Do not omit access modifiers.<a class="fa fa-anchor" href="#1-do-not-omit-access-modifiers" onclick="event.stopPropagation()"></a></h4>
-        <p>Explicitly declare all identifiers with the appropriate access modifiers instead of allowing the default.</p>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">WriteEvent</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> message</span>)</span>
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">WriteEvent</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> message</span>)</span>
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <h4 id="2-always-use-the-built-in-c-data-type-aliases-instead-of-the-net-common-type-system"><span id="2-always-use-the-built-in-c-data-type-aliases-instead-of-the-net-common-type-system" class="anchor"></span>2. Always use the built-in C# data type aliases, instead of the .NET common type system.<a class="fa fa-anchor" href="#2-always-use-the-built-in-c-data-type-aliases-instead-of-the-net-common-type-system" onclick="event.stopPropagation()"></a></h4>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span><span class="hljs-built_in">short</span>
+</span><span>/// &lt;returns&gt;
+</span><span>/// &lt;c&gt;true&lt;/c&gt; if the user has <span class="hljs-selector-tag">a</span> license; otherwise &lt;c&gt;false&lt;/c&gt;.
+</span><span>/// &lt;/returns&gt;
+</span><span>public bool HasLicense() { ... }
+</span></code></pre> <h2 id="language-conventions"><span id="language-conventions" class="anchor"></span>Language Conventions<a href="#language-conventions" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <h4 id="1-do-not-omit-access-modifiers"><span id="1-do-not-omit-access-modifiers" class="anchor"></span>1. Do not omit access modifiers.<a href="#1-do-not-omit-access-modifiers" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Explicitly declare all identifiers with the appropriate access modifiers instead of allowing the default.</p> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs cs"><span><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">WriteEvent</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> message</span>)</span>
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs cs"><span><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">WriteEvent</span>(<span class="hljs-params"><span class="hljs-built_in">string</span> message</span>)</span>
+</span></code></pre></div></div></div> <h4 id="2-always-use-the-built-in-c-data-type-aliases-instead-of-the-net-common-type-system"><span id="2-always-use-the-built-in-c-data-type-aliases-instead-of-the-net-common-type-system" class="anchor"></span>2. Always use the built-in C# data type aliases, instead of the .NET common type system.<a href="#2-always-use-the-built-in-c-data-type-aliases-instead-of-the-net-common-type-system" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs cs"><span><span class="hljs-built_in">short</span>
 </span><span><span class="hljs-built_in">int</span>
 </span><span><span class="hljs-built_in">long</span>
 </span><span><span class="hljs-built_in">string</span>
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span>Int16
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs cs"><span>Int16
 </span><span>Int32
 </span><span>Int64
 </span><span>String
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <h4 id="3-only-use-var-when-the-type-is-very-obvious"><span id="3-only-use-var-when-the-type-is-very-obvious" class="anchor"></span>3. Only use var when the type is very obvious.<a class="fa fa-anchor" href="#3-only-use-var-when-the-type-is-very-obvious" onclick="event.stopPropagation()"></a></h4>
-        <p>When the type of a variable is clear from the context, use var in the declaration.</p>
-        <pre><code class="hljs cs" v-pre><span><span class="hljs-keyword">var</span> welcomeMessage = <span class="hljs-string">&quot;This is a welcome message!&quot;</span>;
+</span></code></pre></div></div></div> <h4 id="3-only-use-var-when-the-type-is-very-obvious"><span id="3-only-use-var-when-the-type-is-very-obvious" class="anchor"></span>3. Only use var when the type is very obvious.<a href="#3-only-use-var-when-the-type-is-very-obvious" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>When the type of a variable is clear from the context, use var in the declaration.</p> <pre><code class="hljs cs"><span><span class="hljs-keyword">var</span> welcomeMessage = <span class="hljs-string">&quot;This is a welcome message!&quot;</span>;
 </span><span><span class="hljs-keyword">var</span> account = <span class="hljs-keyword">new</span> Account();
-</span></code></pre>
-        <p>Do not use var when the type is not apparent from the right side of the assignment.</p>
-        <pre><code class="hljs cs" v-pre><span><span class="hljs-built_in">int</span> result = ExampleClass.ResultSoFar();
-</span></code></pre>
-        <box type="info" seamless>
-          <p>To know more about when to use/not to use implicit typing read <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/04/20/uses-and-misuses-of-implicit-typing/">Uses and misuses of implicit typing</a>.
-          </p>
-        </box>
-        <p></p>
-        <h4 id="4-favor-object-and-collection-initializers-over-separate-statements"><span id="4-favor-object-and-collection-initializers-over-separate-statements" class="anchor"></span>4. Favor Object and Collection initializers over separate statements.<a class="fa fa-anchor" href="#4-favor-object-and-collection-initializers-over-separate-statements" onclick="event.stopPropagation()"></a></h4>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span><span class="hljs-keyword">var</span> startInfo = <span class="hljs-keyword">new</span> ProcessStartInfo(<span class="hljs-string">&quot;myapp.exe&quot;</span>);
+</span></code></pre><p>Do not use var when the type is not apparent from the right side of the assignment.</p> <pre><code class="hljs cs"><span><span class="hljs-built_in">int</span> result = ExampleClass.ResultSoFar();
+</span></code></pre><div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>To know more about when to use/not to use implicit typing read <a href="https://blogs.msdn.microsoft.com/ericlippert/2011/04/20/uses-and-misuses-of-implicit-typing/" data-v-7d17494f>Uses and misuses of implicit typing</a>.</p></div> <!----></div></div></div> <h4 id="4-favor-object-and-collection-initializers-over-separate-statements"><span id="4-favor-object-and-collection-initializers-over-separate-statements" class="anchor"></span>4. Favor Object and Collection initializers over separate statements.<a href="#4-favor-object-and-collection-initializers-over-separate-statements" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs cs"><span><span class="hljs-keyword">var</span> startInfo = <span class="hljs-keyword">new</span> ProcessStartInfo(<span class="hljs-string">&quot;myapp.exe&quot;</span>);
 </span><span>{
 </span><span>    StandardOutput = Console.Output,
 </span><span>    UseShellExecute = <span class="hljs-literal">true</span>
 </span><span>};
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-        <div class="container ml-3">
-          <div class="row">
-            <div class="col-sm-auto">
-              <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>&nbsp;&nbsp;
-            </div>
-            <div class="col">
-              <pre><code class="hljs cs" v-pre><span><span class="hljs-keyword">var</span> startInfo = <span class="hljs-keyword">new</span> ProcessStartInfo(<span class="hljs-string">&quot;myapp.exe&quot;</span>);
+</span></code></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
+</div> <div class="col"><pre><code class="hljs cs"><span><span class="hljs-keyword">var</span> startInfo = <span class="hljs-keyword">new</span> ProcessStartInfo(<span class="hljs-string">&quot;myapp.exe&quot;</span>);
 </span><span>startInfo.StandardOutput = Console.Output;
 </span><span>startInfo.UseShellExecute = <span class="hljs-literal">true</span>;
-</span></code></pre>
-            </div>
-          </div>
-        </div>
-
-        <h2 id="references"><span id="references" class="anchor"></span>References<a class="fa fa-anchor" href="#references" onclick="event.stopPropagation()"></a></h2>
-        <ul>
-          <li><a href="https://msdn.microsoft.com/en-us/library/ff926074.aspx">C# Coding Coventions (C# Programming Guide)</a> -- From Microsoft</li>
-          <li><a href="http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf">C# coding standards for .NET</a> -- By Lance Hunt</li>
-          <li><a href="http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf">C# Coding Style Guide</a> -- By Mike Krüger</li>
-          <li><a href="https://github.com/dennisdoomen/CSharpGuidelines">CSharpGuidelines</a> -- From Aviva Solutions</li>
-        </ul>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-      <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-left-grey nav-inner position-sticky slim-scroll">
-
-          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
-            <a class="nav-link py-1" href="#c-coding-standard">C# coding standard&#x200E;</a>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#file-organization">File Organization&#x200E;</a>
-              <a class="nav-link py-1" href="#formatting">Formatting&#x200E;</a>
-              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#layout">Layout&#x200E;</a>
-                <a class="nav-link py-1" href="#indentation">Indentation&#x200E;</a>
-                <a class="nav-link py-1" href="#white-space">White Space&#x200E;</a>
-              </nav>
-              <a class="nav-link py-1" href="#naming">Naming&#x200E;</a>
-              <a class="nav-link py-1" href="#commenting">Commenting&#x200E;</a>
-              <a class="nav-link py-1" href="#language-conventions">Language Conventions&#x200E;</a>
-              <a class="nav-link py-1" href="#references">References&#x200E;</a>
-            </nav>
-
-          </nav>
-        </div>
-      </nav>
-    </div>
-    <footer>
-
-      <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Sat, 6 Feb 2021, 23:25:00 GMT+8]</small>
-      </div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+</span></code></pre></div></div></div> <h2 id="references"><span id="references" class="anchor"></span>References<a href="#references" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ul><li><a href="https://msdn.microsoft.com/en-us/library/ff926074.aspx">C# Coding Coventions (C# Programming Guide)</a> -- From Microsoft</li> <li><a href="http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf">C# coding standards for .NET</a> -- By Lance Hunt</li> <li><a href="http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf">C# Coding Style Guide</a> -- By Mike Krüger</li> <li><a href="https://github.com/dennisdoomen/CSharpGuidelines">CSharpGuidelines</a> -- From Aviva Solutions</li></ul> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88> <!----></nav></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 3.0.4</a> on Wed, 14 Jul 2021, 1:59:52 GMT+8]</small></div></footer></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script>
-  const baseUrl = '/guides'
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/default/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>

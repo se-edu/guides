@@ -1,0 +1,22 @@
+
+    var pageVueRenderFn = function anonymous(
+) {
+with(this){return _c('div',{attrs:{"id":"app"}},[_c('header',{attrs:{"fixed":""}},[_c('navbar',{attrs:{"type":"dark"},scopedSlots:_u([{key:"brand",fn:function(){return [_c('a',{staticClass:"navbar-brand",attrs:{"href":"https://se-education.org","title":"SE-EDU"}},[_c('span',[_c('span',{staticClass:"fas fa-chevron-circle-left",attrs:{"aria-hidden":"true"}}),_v(" "),_c('strong',[_c('strong',[_v("SE-EDU")])])])])]},proxy:true},{key:"right",fn:function(){return [_c('li',{staticClass:"nav-link"},[_c('form',{staticClass:"navbar-form"},[_c('searchbar',{attrs:{"data":searchData,"placeholder":"Search this site","on-hit":searchCallback,"menu-align-right":""}})],1)])]},proxy:true}])},[_v(" "),_c('li',[_c('a',{staticClass:"nav-link",attrs:{"href":"/guides/index.html"}},[_c('span',[_c('strong',[_v("Home")])])])]),_v(" "),_c('li',[_c('a',{staticClass:"nav-link",attrs:{"href":"/guides/about.html"}},[_c('span',[_c('strong',[_v("About")])])])]),_v(" "),_c('li',[_c('a',{staticClass:"nav-link",attrs:{"href":"https://github.com/se-edu/guides"}},[_c('span',[_c('span',{staticClass:"fab fa-github",attrs:{"aria-hidden":"true"}})])])])])],1),_v(" "),_c('div',{attrs:{"id":"flex-body"}},[_c('div',{staticClass:"fixed-header-padding",attrs:{"id":"content-wrapper"}},[_m(0),_v(" "),_c('p'),_m(1),_v(" "),_m(2),_v(" "),_c('box',{attrs:{"type":"warning","seamless":""}},[_c('p',[_v("This tweak does not apply if you use Gradle to run code even within Intellij. In that case, refer to 'Enabling assertions' sections of the "),_c('a',{attrs:{"href":"/guides/tutorials/gradle.html#enabling-assertions"}},[_c('em',[_v("Gradle tutorial")])]),_v(".")])]),_v(" "),_m(3),_v(" "),_c('i',{staticClass:"fa fa-arrow-circle-up fa-lg d-print-none",attrs:{"id":"scroll-top-button","onclick":"handleScrollTop()","aria-hidden":"true"}}),_c('p')],1),_v(" "),_c('overlay-source',{staticClass:"fixed-header-padding",attrs:{"id":"page-nav","tag-name":"nav","to":"page-nav"}})],1),_v(" "),_m(4)])}
+};
+    var pageVueStaticRenderFns = [function anonymous(
+) {
+with(this){return _c('h1',{attrs:{"id":"guides-for-se-student-projects"}},[_c('span',{staticClass:"anchor",attrs:{"id":"guides-for-se-student-projects"}}),_c('span',{staticClass:"text-dark"},[_c('strong',[_c('strong',[_v("Guides for SE student projects »")])])]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#guides-for-se-student-projects","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('h1',{attrs:{"id":"intellij-idea-useful-settings"}},[_c('span',{staticClass:"anchor",attrs:{"id":"intellij-idea-useful-settings"}}),_v("Intellij IDEA: Useful settings"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#intellij-idea-useful-settings","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('h2',{attrs:{"id":"enabling-assertions"}},[_c('span',{staticClass:"anchor",attrs:{"id":"enabling-assertions"}}),_v("Enabling assertions"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#enabling-assertions","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
+with(this){return _c('ol',[_c('li',[_v("Choose "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Run")]),_v(" → "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Edit Configurations...")]),_v(".")]),_v(" "),_c('li',[_v("Select the run configuration of interest.")]),_v(" "),_c('li',[_v("Click on "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Modify options")]),_v(" link and choose "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Add VM options")]),_c('br'),_v(" "),_c('img',{attrs:{"src":"/guides/tutorials/images/intellij/addVmOptions.png","width":"800"}})]),_v(" "),_c('li',[_v("Add "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("-ea")]),_v(" to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("VM options")]),_v(" box.\n"),_c('img',{attrs:{"src":"/guides/tutorials/images/intellij/enableAssertions.png","width":"800"}})])])}
+},function anonymous(
+) {
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.4")]),_v(" on Wed, 14 Jul 2021, 1:59:52 GMT+8]")])])])}
+}];
+  

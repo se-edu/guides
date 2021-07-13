@@ -1,342 +1,46 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.17.2">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GitHub conventions</title>
-  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
-  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
-  <link rel="stylesheet" href="../markbind/css/octicons.css">
-  <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css">
-  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
-  <script src="../markbind/js/polyfill.min.js"></script>
-  <script src="../markbind/js/vue.min.js"></script>
-  <script src="../markbind/js/markbind.min.js"></script>
-  <script src="../markbind/js/jquery.min.js"></script>
-  <link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="../markbind/layouts/default/styles.css">
-  <link rel="icon" href="/guides/favicon.ico">
-</head>
-
-<body data-spy="scroll" data-target="#page-nav" data-offset="100">
-  <div id="app">
-    <header>
-      <navbar placement="top" type="dark" class="temp-navbar">
-        <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a>
-        <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li>
-        <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li>
-        <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right" class="nav-link">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search this site" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
-    <div id="flex-body">
-
-
-      <div id="content-wrapper">
-        <h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1>
-        <h1 id="github-conventions"><span id="github-conventions" class="anchor"></span>GitHub conventions<a class="fa fa-anchor" href="#github-conventions" onclick="event.stopPropagation()"></a></h1>
-        <box type="warning" seamless>
-          <p><strong>Follow the principle of local consistency</strong></p>
-          <p>Some of the conventions given below have multiple options. In those cases, or if in doubt, aim to be consistent locally e.g., when naming PRs, follow the convention most other PRs (especially, those done by senior developers) in the repo seem to follow.
-          </p>
-        </box>
-        <p></p>
-
-        <h2 id="prs"><span id="prs" class="anchor"></span>PRs<a class="fa fa-anchor" href="#prs" onclick="event.stopPropagation()"></a></h2>
-
-        <h3 id="pr-name"><span id="pr-name" class="anchor"></span>PR name<a class="fa fa-anchor" href="#pr-name" onclick="event.stopPropagation()"></a></h3>
-        <p><strong>Situation 1: The PR <em>fully</em> fixes an existing issue in the issue tracker</strong> (i.e., the issue can be closed when the PR is merged):</p>
-        <ul>
-          <li><strong>Option 1: Just copy-paste the issue title (including issue number) as the PR title.</strong><br>
-            Format: <code class="hljs inline no-lang" v-pre>IssueTitle #IssueNumber</code><br>
-            e.g. <code class="hljs inline no-lang" v-pre>Error alert email has very long subject #5958</code></li>
-          <li><strong>Option 2: Copy-paste the issue title as the PR title, but tweak into the following format.</strong><br>
-            Format: <code class="hljs inline no-lang" v-pre>[#IssueNumber] IssueTitle </code><br>
-            e.g. <code class="hljs inline no-lang" v-pre>[#5958] Error alert email has very long subject</code></li>
-          <li><strong>Option 3: Name the PR based on what it does.</strong> This is suitable when the issue titles are not expected to be good enough to be reused as PR titles.<br>
-            e.g. <code class="hljs inline no-lang" v-pre>Shorten the error alert email subject</code></li>
-        </ul>
-        <box type="info" seamless>
-          <p>Rationale: Duplicating issue title in PR title is for easy tracing between PRs and issues, to compensate for GitHub’s lack of strong linking between the two. Assume there is an invisible prefix in front of the PR title <code class="hljs inline no-lang" v-pre>Fix issue: …​</code></p>
-        </box>
-        <p><strong>Situation 2: All other cases</strong> (i.e., the issue is only a partial fix to an existing issue or it does not correspond to an existing issue):<br>
-          → <strong>Name the PR as if it is the subject line of a commit that contains the entire PR code.</strong></p>
-        <div class="indented-level2">
-          <panel minimized><template slot="header">
-              <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Conventions » Git » <strong>Commit message subject</strong></p>
-            </template>
-            <div>
-              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Every commit must have a well-written commit message <em>subject line</em>.</strong></p>
-              <ul>
-                <li><strong>Try to limit the subject line to 50 characters (hard limit: 72 chars)</strong></li>
-              </ul>
-              <box type="info" seamless add-class="ml-5">
-                <p>Rationale: Some tools show only a limited number of characters from the commit message.
-                </p>
-              </box>
-              <p></p>
-              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong><mark>Use the imperative mood in the subject line.</mark></strong></p>
-              <ul>
-                <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Add README.md</code>
-                </li>
-                <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Added README.md</code>
-                </li>
-                <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Adding README.md</code>
-                </li>
-              </ul>
-              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Capitalize the first letter of the subject line.</strong></p>
-              <ul>
-                <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Move index.html file to root</code>
-                </li>
-                <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>move index.html file to root</code>
-                </li>
-              </ul>
-              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Do not end the subject line with a period.</strong></p>
-              <ul>
-                <li>
-                  <font color="green"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-up"></span></span> Good</strong></span></font>: <code class="hljs inline no-lang" v-pre>Update sample data</code>
-                </li>
-                <li>
-                  <font color="red"><span><strong><span><span aria-hidden="true" class="fas fa-thumbs-down"></span></span> Bad</strong></span></font>: <code class="hljs inline no-lang" v-pre>Update sample data.</code>
-                </li>
-              </ul>
-              <box type="tip" seamless>
-                <p>You can use <code class="hljs inline no-lang" v-pre>scope: change</code> format (when applicable).</p>
-                <ul>
-                  <li>e.g. <code class="hljs inline no-lang" v-pre>Person class: remove static imports</code><br>
-                    <code class="hljs inline no-lang" v-pre>Unit tests: remove blank lines</code>
-                  </li>
-                </ul>
-              </box>
-            </div>
-          </panel>
-        </div>
-        <p></p>
-        <p></p>
-
-        <h3 id="pr-description"><span id="pr-description" class="anchor"></span>PR description<a class="fa fa-anchor" href="#pr-description" onclick="event.stopPropagation()"></a></h3>
-        <ul>
-          <li>
-            <p><strong>Follow <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">when you submit a PR, GitHub will present you with some boilerplate content to tell you what details to include</span>the PR template</span></strong> (<a href="https://github.com/TEAMMATES/teammates/edit/master/.github/PULL_REQUEST_TEMPLATE.html">example</a>), if any.</p>
-          </li>
-          <li>
-            <p><strong>Use the <a href="https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue"><code class="hljs inline no-lang" v-pre>Fixes</code> keyword annotations</a> in the PR description</strong> so that the related issue can auto-closed when the PR is merged.
-              e.g., <code class="hljs inline no-lang" v-pre>Fixes #1234</code><br>
-              If the PR is a partial fix, use <code class="hljs inline no-lang" v-pre>Fixes part of #1234</code>.</p>
-          </li>
-          <li>
-            <p><strong>Give before-and-after screenshots</strong> if applicable. If yor change results in UI changes that are not readily apparent from the code, give <em>before</em> and <em>after</em> screenshots to help the reviewer.</p>
-          </li>
-          <li>
-            <p><strong>Give the proposed merge commit message</strong> if applicable. If the PR has more than one commit and the PR is non-trivial, propose a commit message for the merge commit.</p>
-          </li>
-        </ul>
-        <div class="indented-level2">
-          <panel minimized><template slot="header">
-              <p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Conventions » Git » <strong>Commit message subject</strong></p>
-            </template>
-            <div>
-              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Commit messages for non-trivial commits should have a <em>body</em> giving details of the commit.</strong></p>
-              <ul>
-                <li><strong>Separate subject from body with a blank line.</strong></li>
-                <li><strong>Wrap the body at 72 characters.</strong></li>
-                <li><strong>Use blank lines to separate paragraphs.</strong></li>
-              </ul>
-              <p>Example: A commit message for a commit that is part of a multi-commit PR:</p>
-              <pre><code class="hljs" v-pre><span>Unify variations of toSet() methods
-</span><span>
-</span><span>There are several methods that convert a collection to a set. In some
-</span><span>cases the conversion is in-lined as a code block in another method.
-</span><span>
-</span><span>Unifying all those duplicated code improves the code quality.
-</span><span>
-</span><span>As a step towards such unification, let's extract those duplicated code
-</span><span>blocks into separate methods in their respective classes. Doing so will
-</span><span>make the subsequent unification easier.
-</span></code></pre>
-              <box type="tip" seamless>
-                <p>Tip for SourceTree users: To help you keep the commit message width to a 72 characters:</p>
-                <ol>
-                  <li>Choose <code class="hljs inline no-lang" v-pre>Tools</code> -&gt; <code class="hljs inline no-lang" v-pre>Options</code>.</li>
-                  <li>Click on the <code class="hljs inline no-lang" v-pre>General</code> tab, scroll down to the <code class="hljs inline no-lang" v-pre>Commit settings</code> section.</li>
-                  <li>Tick the <code class="hljs inline no-lang" v-pre>Display a column guide at commit message at [72] characters</code> option.
-                  </li>
-                </ol>
-              </box>
-
-              <p><span><span class="badge badge-pill badge-danger"><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Use bullet points as necessary.</strong> Instead of relying entirely on paragraphs of text, use other constructs such as bullet lists when it helps.</p>
-              <p>Example: A commit message for a bug fix:</p>
-              <pre><code class="hljs" v-pre><span>Find command: make matching case insensitive
-</span><span>
-</span><span>Find command is case sensitive.
-</span><span>
-</span><span>A case insensitive find is more user-friendly because users cannot be
-</span><span>expected to remember the exact case of the keywords.
-</span><span>
-</span><span>Let's,
-</span><span>* update the search algorithm to use case-insensitive matching
-</span><span>* add a script to migrate stress tests to the new format
-</span></code></pre>
-              <p><span><span class="badge badge-pill badge-warning text-white"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Explain WHAT, WHY, not HOW</strong>.</p>
-              <ul>
-                <li>
-                  <p>Use the body to explain WHAT the commit is about and WHY it was done that way. The reader can refer to the diff to understand HOW the change was done.</p>
-                </li>
-                <li>
-                  <p>Give an explanation for the change(s) that is detailed enough so that the reader can judge if it is a good thing to do, without reading the actual diff to determine how well the code does what the explanation promises to do.<br>
-                    If your description starts to get too long, that's a sign that you probably need to split up your commit to finer grained pieces. [adapted from: <a href="https://github.com/git/git/blob/e05806da9ec4aff8adfed142ab2a2b3b02e33c8c/Documentation/SubmittingPatches#L37-L132">git project</a>]</p>
-                </li>
-                <li>
-                  <p>Minimize repeating information that are given in code comments of the same commit.</p>
-                </li>
-              </ul>
-              <p><span><span class="badge badge-pill badge-success"><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span><span aria-hidden="true" class="far fa-star"></span></span></span> <strong>Structure the body as follows</strong>:</p>
-              <pre><code class="hljs" v-pre><span>{current situation} -- use present tense
-</span><span>
-</span><span>{why it needs to change}
-</span><span>
-</span><span>{what is being done about it} -- use imperative mood
-</span><span>
-</span><span>{why it is done that way}
-</span><span>
-</span><span>{any other relevant info}
-</span></code></pre>
-              <ul>
-                <li>Avoid terms such as 'currently', 'originally' when describing the current situation. They are implied.</li>
-                <li>The word <code class="hljs inline no-lang" v-pre>Let's</code> can be used to indicate the beginning of the section that describes the change done in the commit.</li>
-              </ul>
-              <p>Example: A commit message for a code quality refactoring:</p>
-              <pre><code class="hljs" v-pre><span>Person attributes classes: extract a parent class PersonAttribute
-</span><span>
-</span><span>Person attribute classes (e.g. Name, Address, Age etc.) have some common
-</span><span>behaviors (e.g. isValid()).
-</span><span>
-</span><span>The common behaviors across person attribute classes cause code duplication.
-</span><span>
-</span><span>Extracting the common behavior into a super class allows us to use
-</span><span>polymorphism when dealing with person attributes. For example, validity
-</span><span>checking can be done for all attributes of a person in one loop.
-</span><span>
-</span><span>Let's pull up behaviors common to all person attribute classes into a new
-</span><span>parent class named PersonAttribute.
-</span><span>
-</span><span>Using inheritance is preferable over composition in this situation
-</span><span>because the common behaviors are not composable.
-</span><span>
-</span><span>Refer to this S/O discussion on dealing with attributes
-</span><span>http://stackoverflow.com/some/question
-</span></code></pre>
-              <box type="info">
-                <p>Refer to the article <em><a href="http://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a></em> for more advice on writing good commit messages.
-                </p>
-              </box>
-              <p></p>
-            </div>
-          </panel>
-        </div>
-        <p></p>
-        <p></p>
-        <p><strong>Example:</strong></p>
-        <blockquote class="ml-4">
-          <p>Fixes <a href>#1234</a></p>
-          <p><em>[Details of the PR...]</em></p>
-          <p>Before:<br>
-              <em>[screenshot]</em></p>
-          <p>After:<br>
-              <em>[screenshot]</em></p>
-          <p>Proposed commit message:</p>
-          <pre><code class="no-line-numbers hljs" v-pre><span>commit message goes here
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 3.0.4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GitHub conventions</title>
+    <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+    <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../markbind/css/markbind.min.css"><script src="../markbind/js/polyfill.min.js"></script>
+    <script src="../markbind/js/vue.min.js"></script>
+    <script src="../markbind/js/markbind.min.js"></script>
+    <script src="github.page-vue-render.js"></script>
+    <script src="../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body >
+<div id="app" data-server-rendered="true"><header fixed=""><div data-v-15113a2f><nav class="navbar navbar-expand-md navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-brand" data-v-15113a2f><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-15113a2f></span> <strong data-v-15113a2f><strong data-v-15113a2f>SE-EDU</strong></strong></span></a></div> <button type="button" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-v-15113a2f><span class="navbar-toggler-icon" data-v-15113a2f></span> </button> <div class="navbar-collapse collapse" data-v-15113a2f><ul class="navbar-nav mr-auto mt-2 mt-lg-0" data-v-15113a2f> <li data-v-15113a2f><a href="/guides/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Home</strong></span></a></li> <li data-v-15113a2f><a href="/guides/about.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>About</strong></span></a></li> <li data-v-15113a2f><a href="https://github.com/se-edu/guides" class="nav-link" data-v-15113a2f><span data-v-15113a2f><span aria-hidden="true" class="fab fa-github" data-v-15113a2f></span></span></a></li></ul> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div style="position:relative;"><input type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control"> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-right"></ul></div></form></li></ul></div></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span id="guides-for-se-student-projects" class="anchor"></span><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="github-conventions"><span id="github-conventions" class="anchor"></span>GitHub conventions<a href="#github-conventions" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-warning" data-v-7d17494f><i class="fas fa-exclamation" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-warning" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f><strong data-v-7d17494f>Follow the principle of local consistency</strong></p> <p data-v-7d17494f>Some of the conventions given below have multiple options. In those cases, or if in doubt, aim to be consistent locally e.g., when naming PRs, follow the convention most other PRs (especially, those done by senior developers) in the repo seem to follow.</p></div> <!----></div></div></div> <h2 id="prs"><span id="prs" class="anchor"></span>PRs<a href="#prs" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <h3 id="pr-name"><span id="pr-name" class="anchor"></span>PR name<a href="#pr-name" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Situation 1: The PR <em>fully</em> fixes an existing issue in the issue tracker</strong> (i.e., the issue can be closed when the PR is merged):</p> <ul><li><strong>Option 1: Just copy-paste the issue title (including issue number) as the PR title.</strong><br>
+Format: <code class="hljs inline no-lang">IssueTitle #IssueNumber</code><br>
+e.g. <code class="hljs inline no-lang">Error alert email has very long subject #5958</code></li> <li><strong>Option 2: Copy-paste the issue title as the PR title, but tweak into the following format.</strong><br>
+Format: <code class="hljs inline no-lang">[#IssueNumber] IssueTitle </code><br>
+e.g. <code class="hljs inline no-lang">[#5958] Error alert email has very long subject</code></li> <li><strong>Option 3: Name the PR based on what it does.</strong> This is suitable when the issue titles are not expected to be good enough to be reused as PR titles.<br>
+e.g. <code class="hljs inline no-lang">Shorten the error alert email subject</code></li></ul> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Rationale: Duplicating issue title in PR title is for easy tracing between PRs and issues, to compensate for GitHub’s lack of strong linking between the two. Assume there is an invisible prefix in front of the PR title <code class="hljs inline no-lang" data-v-7d17494f>Fix issue: …​</code></p></div> <!----></div></div></div> <p><strong>Situation 2: All other cases</strong> (i.e., the issue is only a partial fix to an existing issue or it does not correspond to an existing issue):<br>
+→ <strong>Name the PR as if it is the subject line of a commit that contains the entire PR code.</strong></p> <div class="indented-level2"><span minimized="" class="card-container" data-v-5681bde8><span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary card-title" data-v-5681bde8><p data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-log-in" data-v-5681bde8></span></span> Conventions » Git » <strong data-v-5681bde8>Commit message subject</strong></p></button></span></span></div> <p></p> <p></p> <h3 id="pr-description"><span id="pr-description" class="anchor"></span>PR description<a href="#pr-description" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <ul><li><p><strong>Follow <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">when you submit a PR, GitHub will present you with some boilerplate content to tell you what details to include</span>the PR template</span></strong> (<a href="https://github.com/TEAMMATES/teammates/edit/master/.github/PULL_REQUEST_TEMPLATE.md">example</a>), if any.</p></li> <li><p><strong>Use the <a href="https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue"><code class="hljs inline no-lang">Fixes</code> keyword annotations</a> in the PR description</strong> so that the related issue can auto-closed when the PR is merged.
+e.g., <code class="hljs inline no-lang">Fixes #1234</code><br>
+If the PR is a partial fix, use <code class="hljs inline no-lang">Fixes part of #1234</code>.</p></li> <li><p><strong>Give before-and-after screenshots</strong> if applicable. If yor change results in UI changes that are not readily apparent from the code, give <em>before</em> and <em>after</em> screenshots to help the reviewer.</p></li> <li><p><strong>Give the proposed merge commit message</strong> if applicable. If the PR has more than one commit and the PR is non-trivial, propose a commit message for the merge commit.</p></li></ul> <div class="indented-level2"><span minimized="" class="card-container" data-v-5681bde8><span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary card-title" data-v-5681bde8><p data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-log-in" data-v-5681bde8></span></span> Conventions » Git » <strong data-v-5681bde8>Commit message subject</strong></p></button></span></span></div> <p></p> <p></p> <p><strong>Example:</strong></p> <blockquote class="ml-4"><p>Fixes <a href="">#1234</a></p> <p><em>[Details of the PR...]</em></p> <p>Before:<br> <em>[screenshot]</em></p> <p>After:<br> <em>[screenshot]</em></p> <p>Proposed commit message:</p> <pre><code class="no-line-numbers hljs"><span>commit message goes here
 </span><span>
 </span><span>more ...
 </span><span>
-</span></code></pre>
-        </blockquote>
-
-        <h3 id="pr-merge-commit"><span id="pr-merge-commit" class="anchor"></span>PR merge commit<a class="fa fa-anchor" href="#pr-merge-commit" onclick="event.stopPropagation()"></a></h3>
-        <p><strong>When merging a PR branch to the main branch</strong>, use one of these formats for the subject line of the merge commit.</p>
-        <ul>
-          <li>
-            <p>Option 1: <code class="hljs inline no-lang" v-pre>Issue Title #IssueNumber (#PrNumber)</code><br>
-              e.g. <code class="hljs inline no-lang" v-pre>Error alert email has very long subject #5958 (#6580)</code></p>
-          </li>
-          <li>
-            <p>Option 2: <code class="hljs inline no-lang" v-pre>[#IssueNumber] Issue Title (#PrNumber)</code><br>
-              e.g. <code class="hljs inline no-lang" v-pre>[#5958] Error alert email has very long subject (#6580)</code></p>
-          </li>
-          <li>
-            <p>Option 3: <code class="hljs inline no-lang" v-pre>PR Title (#PrNumber)</code> (i.e., based on PR only, issue info omitted)<br>
-              e.g. <code class="hljs inline no-lang" v-pre>Error alert email has very long subject (#6580)</code></p>
-          </li>
-        </ul>
-        <p>Pick one option and use it consistently in the entire code base.</p>
-        <box type="info" seamless>
-          <p>Rationale: This format allows easy traceability among a merge commit, the issue it fixes, and the PR that fixed it. Having the issue name tells us what the commit is about without having to look it up in GitHub issue tracker.
-          </p>
-        </box>
-        <p></p>
-
-        <h2 id="issues"><span id="issues" class="anchor"></span>Issues<a class="fa fa-anchor" href="#issues" onclick="event.stopPropagation()"></a></h2>
-        <ul>
-          <li>
-            <p><strong>Issue title should be concise yet descriptive.</strong> For example, instead of <code class="hljs inline no-lang" v-pre>Newbie question, please help</code>, use <code class="hljs inline no-lang" v-pre>How do I set up git to ignore test files?</code></p>
-          </li>
-          <li>
-            <p><strong>Follow <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">when you submit an issue, GitHub will present you with some boilerplate content to tell you what details to include</span>the issue template</span></strong> (<a href="https://github.com/MarkBind/markbind/edit/master/.github/ISSUE_TEMPLATE/bug-report.html">example</a>), if any.</p>
-          </li>
-        </ul>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
-      </div>
-      <nav id="page-nav" class="navbar navbar-light bg-transparent">
-        <div class="border-left-grey nav-inner position-sticky slim-scroll">
-
-          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
-            <a class="nav-link py-1" href="#guides-for-se-student-projects">Guides for SE student projects »&#x200E;</a>
-            <a class="nav-link py-1" href="#github-conventions">GitHub conventions&#x200E;</a>
-            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-              <a class="nav-link py-1" href="#prs">PRs&#x200E;</a>
-              <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
-                <a class="nav-link py-1" href="#pr-name">PR name&#x200E;</a>
-                <a class="nav-link py-1" href="#pr-description">PR description&#x200E;</a>
-                <a class="nav-link py-1" href="#pr-merge-commit">PR merge commit&#x200E;</a>
-              </nav>
-              <a class="nav-link py-1" href="#issues">Issues&#x200E;</a>
-            </nav>
-
-          </nav>
-        </div>
-      </nav>
-    </div>
-    <footer>
-
-      <div class="text-center">
-        <small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 2.17.2</a> on Sat, 6 Feb 2021, 23:25:00 GMT+8]</small>
-      </div>
-    </footer>
-  </div>
-</body>
-<script src="../markbind/js/bootstrap-utility.min.js"></script>
+</span></code></pre></blockquote> <h3 id="pr-merge-commit"><span id="pr-merge-commit" class="anchor"></span>PR merge commit<a href="#pr-merge-commit" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>When merging a PR branch to the main branch</strong>, use one of these formats for the subject line of the merge commit.</p> <ul><li><p>Option 1: <code class="hljs inline no-lang">Issue Title #IssueNumber (#PrNumber)</code><br>
+e.g. <code class="hljs inline no-lang">Error alert email has very long subject #5958 (#6580)</code></p></li> <li><p>Option 2: <code class="hljs inline no-lang">[#IssueNumber] Issue Title (#PrNumber)</code><br>
+e.g. <code class="hljs inline no-lang">[#5958] Error alert email has very long subject (#6580)</code></p></li> <li><p>Option 3: <code class="hljs inline no-lang">PR Title (#PrNumber)</code> (i.e., based on PR only, issue info omitted)<br>
+e.g. <code class="hljs inline no-lang">Error alert email has very long subject (#6580)</code></p></li></ul> <p>Pick one option and use it consistently in the entire code base.</p> <div class="alert box-container seamless" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper  text-info" data-v-7d17494f><i class="fas fa-info" data-v-7d17494f></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-7d17494f></div> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Rationale: This format allows easy traceability among a merge commit, the issue it fixes, and the PR that fixed it. Having the issue name tells us what the commit is about without having to look it up in GitHub issue tracker.</p></div> <!----></div></div></div> <h2 id="issues"><span id="issues" class="anchor"></span>Issues<a href="#issues" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ul><li><p><strong>Issue title should be concise yet descriptive.</strong> For example, instead of <code class="hljs inline no-lang">Newbie question, please help</code>, use <code class="hljs inline no-lang">How do I set up git to ignore test files?</code></p></li> <li><p><strong>Follow <span data-mb-component-type="tooltip" class="trigger"><span data-mb-slot-name="_content">when you submit an issue, GitHub will present you with some boilerplate content to tell you what details to include</span>the issue template</span></strong> (<a href="https://github.com/MarkBind/markbind/edit/master/.github/ISSUE_TEMPLATE/bug-report.md">example</a>), if any.</p></li></ul> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88> <!----></nav></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 3.0.4</a> on Wed, 14 Jul 2021, 1:59:52 GMT+8]</small></div></footer></div>
+</body><script src="../markbind/js/bootstrap-utility.min.js"></script>
 <script>
-  const baseUrl = '/guides'
   MarkBind.setupWithSearch()
 </script>
-<script src="../markbind/layouts/default/scripts.js"></script>
-<script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
-</script>
-
 </html>

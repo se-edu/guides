@@ -4,16 +4,13 @@
     {
       "src": "README.md",
       "title": "",
-      "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »"
-      },
+      "headings": {},
       "headingKeywords": {}
     },
     {
       "src": "about.md",
       "title": "About Us",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "about-us": "About Us",
         "contact": "Contact",
         "license": "License",
@@ -26,7 +23,6 @@
       "src": "conventions/csharp.md",
       "title": "C# coding standard",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "c-coding-standard": "C# coding standard",
         "file-organization": "File Organization",
         "formatting": "Formatting",
@@ -44,7 +40,6 @@
       "src": "conventions/css.md",
       "title": "CSS coding standard",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "css-coding-standard": "CSS coding standard",
         "general": "General",
         "css-files": "CSS Files",
@@ -65,7 +60,6 @@
       "src": "conventions/files.md",
       "title": "Conventions for file/folder naming",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "conventions-for-file-folder-naming": "Conventions for file/folder naming",
         "files-folders": "Files/Folders"
       },
@@ -75,7 +69,6 @@
       "src": "conventions/git.md",
       "title": "Git conventions",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "git-conventions": "Git conventions",
         "commit-message-subject": "Commit message: Subject",
         "commit-message-body": "Commit message: Body",
@@ -87,7 +80,6 @@
       "src": "conventions/github.md",
       "title": "GitHub conventions",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "github-conventions": "GitHub conventions",
         "prs": "PRs",
         "pr-name": "PR name",
@@ -101,7 +93,6 @@
       "src": "conventions/html.md",
       "title": "HTML coding standard",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "html-coding-standard": "HTML coding standard",
         "document-properties": "Document Properties",
         "tags": "Tags",
@@ -116,7 +107,6 @@
       "src": "conventions/java/basic.md",
       "title": "Java coding standard",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "java-coding-standard-basic": "Java coding standard (basic)",
         "naming": "Naming",
         "layout": "Layout",
@@ -135,7 +125,6 @@
       "src": "conventions/java/index.md",
       "title": "Java coding standard",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "java-coding-standard-all": "Java coding standard (all)",
         "naming": "Naming",
         "layout": "Layout",
@@ -157,7 +146,6 @@
       "src": "conventions/java/intermediate.md",
       "title": "Java coding standard",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "java-coding-standard-basic-intermediate": "Java coding standard (basic + intermediate)",
         "naming": "Naming",
         "layout": "Layout",
@@ -177,7 +165,6 @@
       "src": "conventions/java/logging.md",
       "title": "Java logging conventions",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "java-logging-conventions": "Java logging conventions"
       },
       "headingKeywords": {}
@@ -186,7 +173,6 @@
       "src": "conventions/javascript.md",
       "title": "JavaScript coding standard",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "javascript-coding-standard": "JavaScript coding standard"
       },
       "headingKeywords": {}
@@ -195,7 +181,6 @@
       "src": "conventions/markdown.md",
       "title": "Markdown coding standard",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "markdown-coding-standard": "Markdown coding standard"
       },
       "headingKeywords": {}
@@ -204,7 +189,6 @@
       "src": "guidelines/PRs-reviewing.md",
       "title": "Best practices for reviewing PRs",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "best-practices-for-reviewing-prs": "Best practices for reviewing PRs",
         "best-practices-for-reviewers": "Best practices for reviewers",
         "best-practices-for-authors": "Best practices for authors"
@@ -213,9 +197,8 @@
     },
     {
       "src": "guidelines/PRs.md",
-      "title": "Guidelines for working with PRs",
+      "title": "Best practices for reviewing PRs",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "guidelines-for-working-with-prs": "Guidelines for working with PRs",
         "selecting-what-to-work-on": "Selecting what to work on",
         "scoping-a-pr": "Scoping a PR",
@@ -229,7 +212,6 @@
       "src": "guidelines/codeOfConduct.md",
       "title": "Code of conduct for contributors",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "code-of-conduct-for-contributors": "Code of conduct for contributors",
         "our-pledge": "Our pledge",
         "our-standards": "Our standards",
@@ -243,7 +225,6 @@
       "src": "guidelines/commits.md",
       "title": "Working with Git",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "working-with-git": "Working with Git",
         "organizing-commits": "Organizing commits",
         "merging-branches": "Merging branches"
@@ -254,7 +235,6 @@
       "src": "guidelines/labels.md",
       "title": "Working with GitHub labels",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "working-with-github-labels": "Working with GitHub labels",
         "label-groups": "Label groups",
         "common-labels": "Common labels",
@@ -275,10 +255,9 @@
       "src": "index.md",
       "title": "Guides for Software Engineering Students",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
-        "tutorials": "\r\n           Tutorials\r\n        ",
-        "conventions": "\r\n           Conventions\r\n        ",
-        "guidelines": "\r\n           Guidelines\r\n        "
+        "tutorials": " Tutorials",
+        "conventions": " Conventions",
+        "guidelines": " Guidelines"
       },
       "headingKeywords": {}
     },
@@ -286,7 +265,6 @@
       "src": "tutorials/checkstyle.md",
       "title": "Using Checkstyle",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-checkstyle": "Using Checkstyle",
         "configuring-checkstyle-rules": "Configuring Checkstyle rules",
         "using-checkstyle-with-gradle": "Using Checkstyle with Gradle",
@@ -299,7 +277,6 @@
       "src": "tutorials/githubActions.md",
       "title": "Using GitHub Actions",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-github-actions": "Using GitHub Actions",
         "setting-up-a-custom-workflow": "Setting up a custom workflow",
         "resources": "Resources"
@@ -310,7 +287,6 @@
       "src": "tutorials/gradle.md",
       "title": "Gradle tutorial",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "gradle-tutorial": "Gradle tutorial",
         "basics": "Basics",
         "adding-gradle-to-the-project": "Adding Gradle to the project",
@@ -333,11 +309,10 @@
       "src": "tutorials/intellijCodeStyle.md",
       "title": "Intellij IDEA: Configuring the code style",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-configuring-the-code-style": "Intellij IDEA: Configuring the code style",
-        "tweak-switch-case-style": "Tweak: switch-case style ",
-        "tweak-import-order": "Tweak: import order ",
-        "tweak-auto-remove-trailing-spaces": "Tweak: Auto-remove trailing spaces "
+        "tweak-switch-case-style-span-class-badge-badge-pill-badge-danger-span-aria-hidden-true-class-far-fa-star-span-span": "Tweak: switch-case style ",
+        "tweak-import-order-span-class-badge-badge-pill-badge-warning-text-white-span-aria-hidden-true-class-far-fa-star-span-span-aria-hidden-true-class-far-fa-star-span-span": "Tweak: import order ",
+        "tweak-auto-remove-trailing-spaces-span-class-badge-badge-pill-badge-warning-text-white-span-aria-hidden-true-class-far-fa-star-span-span-aria-hidden-true-class-far-fa-star-span-span": "Tweak: Auto-remove trailing spaces "
       },
       "headingKeywords": {}
     },
@@ -345,7 +320,6 @@
       "src": "tutorials/intellijImportGradleProject.md",
       "title": "Intellij IDEA: Importing a Gradle project",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-importing-a-gradle-project": "Intellij IDEA: Importing a Gradle project"
       },
       "headingKeywords": {}
@@ -354,7 +328,6 @@
       "src": "tutorials/intellijJdk.md",
       "title": "Intellij IDEA: Configuring the JDK",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
       },
       "headingKeywords": {}
@@ -363,7 +336,6 @@
       "src": "tutorials/intellijUsefulSettings.md",
       "title": "Intellij IDEA: Useful settings",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "intellij-idea-useful-settings": "Intellij IDEA: Useful settings",
         "enabling-assertions": "Enabling assertions"
       },
@@ -373,7 +345,6 @@
       "src": "tutorials/jar.md",
       "title": "Working with JAR files",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "working-with-jar-files": "Working with JAR files",
         "running-jar-files": "Running JAR files",
         "fat-jar-files": "Fat JAR files",
@@ -387,7 +358,6 @@
       "src": "tutorials/javaFx.md",
       "title": "JavaFX tutorial",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial": "JavaFX tutorial"
       },
       "headingKeywords": {}
@@ -396,9 +366,8 @@
       "src": "tutorials/javaFxPart1.md",
       "title": "JavaFX tutorial part 1 – Introduction",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial-part-1-introduction": "JavaFX tutorial part 1 – Introduction",
-        "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX application",
+        "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX  application",
         "setting-up-java-fx": "Setting up Java FX",
         "if-you-are-not-using-gradle": "If you are not using Gradle",
         "if-you-are-using-gradle": "If you are using Gradle",
@@ -411,7 +380,6 @@
       "src": "tutorials/javaFxPart2.md",
       "title": "JavaFX tutorial part 2 - Creating a GUI for Duke",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial-part-2-creating-a-gui-for-duke": "JavaFX tutorial part 2 - Creating a GUI for Duke",
         "javafx-controls": "JavaFX controls",
         "designing-the-layout": "Designing the Layout",
@@ -424,7 +392,6 @@
       "src": "tutorials/javaFxPart3.md",
       "title": "JavaFX tutorial part 3 – Interacting with the user",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial-part-3-interacting-with-the-user": "JavaFX tutorial part 3 – Interacting with the user",
         "iteration-1-echoing-the-user": "Iteration 1 – Echoing the user",
         "iteration-2-adding-dialog-boxes": "Iteration 2 – Adding Dialog Boxes",
@@ -437,7 +404,6 @@
       "src": "tutorials/javaFxPart4.md",
       "title": "JavaFX tutorial part 4 – Using FXML",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "javafx-tutorial-part-4-using-fxml": "JavaFX tutorial part 4 – Using FXML",
         "rebuilding-the-scene-using-fxml": "Rebuilding the Scene using FXML",
         "using-controllers": "Using Controllers",
@@ -450,7 +416,6 @@
       "src": "tutorials/jekyll.md",
       "title": "Using Jekyll for project documentation",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-jekyll-for-project-documentation": "Using Jekyll for project documentation",
         "setting-up-github-pages-for-jekyll": "Setting up GitHub Pages for Jekyll",
         "updating-documents": "Updating documents",
@@ -462,7 +427,6 @@
       "src": "tutorials/junit.md",
       "title": "Using JUnit",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-junit": "Using JUnit",
         "conventions-to-follow": "Conventions to follow",
         "adding-junit-support-to-your-project": "Adding JUnit support to your project",
@@ -475,7 +439,6 @@
       "src": "tutorials/markbind.md",
       "title": "Using MarkBind for project documentation",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-markbind-for-project-documentation": "Using MarkBind for project documentation",
         "installation": "Installation",
         "updating-documents": "Updating documents",
@@ -487,7 +450,6 @@
       "src": "tutorials/netlify.md",
       "title": "Using Netlify",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-netlify": "Using Netlify",
         "setting-up": "Setting up",
         "changing-the-site-name": "Changing the site name"
@@ -498,7 +460,6 @@
       "src": "tutorials/plantUml.md",
       "title": "Using PlantUML",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "using-plantuml": "Using PlantUML",
         "setting-up-plantuml": "Setting up PlantUML",
         "creating-editing-exporting-diagrams": "Creating/editing/exporting diagrams",
@@ -512,7 +473,6 @@
       "src": "tutorials/savingPdf.md",
       "title": "Saving web documents as PDF files",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "saving-web-documents-as-pdf-files": "Saving web documents as PDF files"
       },
       "headingKeywords": {}
@@ -521,7 +481,6 @@
       "src": "tutorials/textUiTesting.md",
       "title": "Automating the testing of text UIs",
       "headings": {
-        "guides-for-se-student-projects": "Guides for SE student projects »",
         "automating-the-testing-of-text-uis": "Automating the testing of text UIs",
         "setting-up": "Setting up",
         "updating-tests-as-the-program-evolves": "Updating tests as the program evolves",
