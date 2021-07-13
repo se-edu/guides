@@ -5,11 +5,9 @@
 
 {{ content }}
 </div>
-  <nav id="page-nav" class="fixed-header-padding">
-{% if page_nav %}
+<nav id="page-nav" class="fixed-header-padding">
   <div class="nav-component slim-scroll">
-      <page-nav />
-    </div>
-{% endif %}
-  </nav>
+    <page-nav />
+  </div>
+</nav>
 </div>
