@@ -36,7 +36,7 @@
 <span id="icon_windows"><md>:fab-windows:</md></span>
 <span id="icon_x"><md>:fas-times:</md></span>
 <span id="icon_x_red"><span style="color:red">{{ icon_x | safe }}</span></span>
-<span id="bad"><font color="red"><md>**{{ icon_dislike | safe }} Bad**</md></font></span>
-<span id="good"><font color="green"><md>**{{ icon_like | safe }} Good**</md></font></span>
+<span id="bad"><span style="color: red"><md>**:fas-thumbs-down: Bad**</md></span></span>
+<span id="good"><span style="color: green"><md>**:fas-thumbs-up: Good**</md></span></span>
 
 <variable from="variables.json" />
