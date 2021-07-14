@@ -115,6 +115,11 @@ boolean hasLicense();
 boolean canEvaluate();
 boolean shouldAbort = false;
 ```
+<box type="info" seamless>
+
+As much as possible, use a prefix such as `is`, `has`, `was`, etc. for boolean variable/method names so that linters can automatically verify that this style rule is being followed.
+</box>
+
 <div tags="level--basic-only">{{ pagebreak }}</div>
 
 Setter methods for boolean variables must be of the form:
