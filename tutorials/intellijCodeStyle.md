@@ -34,3 +34,8 @@ You can configure Intellij to automatically strip trailing white space in code l
 1. On the left side of the dialog, click on `Editor` -> `General`.
 1. On the right side, scroll to the `On Save` section.
 1. Change `Remove trailing spaces on:` to `Modified lines`.
+
+
+## More useful settings {{ icon_level_advanced }}
+
+The tweaks given above are specific to code style. A few more useful settings (not related to the code style) can be found [here](intellijUsefulSettings.md).
