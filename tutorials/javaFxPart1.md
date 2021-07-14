@@ -56,6 +56,8 @@ dependencies {
     implementation group: 'org.openjfx', name: 'javafx-graphics', version: javaFxVersion, classifier: 'linux'
 }
 ```
+
+Alternatively, you can follow the approach mentioned in [this tutorial](https://openjfx.io/openjfx-docs/#gradle).
 </div>
 
 ## Writing your first program
