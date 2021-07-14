@@ -24,6 +24,17 @@ Tasks can be composed of, or dependent on, other tasks.
 
 <!-- ==================================================================================================== -->
 
+## Gradle within Intellij: an overview
+
+The following video (from the Intellij team) gives a quick overview of various ways Gradle can be used within Intellij.
+A quick watch of it may be useful before diving into specific use cases explained in the subsequent sections in this page.
+
+@[youtube](6V6G3RyxEMk)
+
+<p/>
+
+<!-- ==================================================================================================== -->
+
 ## Adding Gradle to the project
 
 ****Scenario 1:**** You are setting up a project in Intellij IDEA. The project already has Gradle support.
