@@ -56,6 +56,6 @@ with(this){return _c('h2',{attrs:{"id":"resources"}},[_c('span',{staticClass:"an
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://docs.oracle.com/javase/tutorial/deployment/jar/basicsindex.html"}},[_v("Oracle's tutorial on JAR files")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.4")]),_v(" on Thu, 15 Jul 2021, 1:35:06 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Tue, 27 Jul 2021, 15:11:17 GMT+8]")])])])}
 }];
   
