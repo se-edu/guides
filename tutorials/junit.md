@@ -61,9 +61,18 @@ As JUnit is a third-party library, you need to add support to it specifically in
       }
       ```
    1. Run the test (right-click on the class and choose `Run DukeTest`.
-1. To be able to refer to `Duke` from `DukeTest` class, you need to add `main` module as a dependency of the `test` module you just created.
-   * Option 1: When you add a reference to the `Duke` inside the `DukeTest`, Intellij will flag it as an error and will give you an option (i.e., in the bulb icon that pops up) to add the `main` module as a dependency.
-   * Option 2: Follow the info [here](https://www.jetbrains.com/help/idea/working-with-module-dependencies.html) to add the dependency yourself.
+1. To be able to refer to `Duke` from `DukeTest` class, you need to add `main` module as a dependency of the `test` module you just created.<br>
+   8a\. First, ensure there is a `main` module in your project, as follows:
+      1. Check if your project explorer look like this (note how the `main` and `test` modules show up).<br>
+      <img src="images/junit/modulesMainAndTest.png" />
+      1. If there is no module named `main`, Intellij may have failed to recognize the `main` folder as the source folder and auto-created a module to include the entire project folder, usually given the same name as project folder. If there is such an extraneous module, delete that first (Go to `File` -> `Project Structure`,  click on `Modules`, select the module you want to delete, and click on the `-` button).<br>
+        <img src="images/junit/removeModule.png" />
+      1. After that, create the `main` module the same way you created the `test` module in an earlier step above.<br>
+         Tip: You may have to close the project and open it again after creating the `main` module, before you can see the `main` module in the project explorer view.
+
+   8b\. Now that you have the modules `main` and `test`, you can set up the dependency using one of these options:
+      * Option 1: When you add a reference to the `Duke` inside the `DukeTest`, Intellij will flag it as an error and will give you an option (i.e., in the bulb icon that pops up) to add the `main` module as a dependency.<br>
+      * Option 2: Follow the info [here](https://www.jetbrains.com/help/idea/working-with-module-dependencies.html) to add the dependency yourself.
   </tab>
   <tab header="With Gradle">
 
