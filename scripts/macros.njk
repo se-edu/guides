@@ -32,6 +32,8 @@
 {% endmacro %}
 
 
+{% macro show_as_button(text) %}<span class="border border-secondary pr-1 pl-1 mr-1 ml-1 rounded">&nbsp;{{ text }}&nbsp;</span>{% endmacro %}
+
 {% macro show_as_tab(text, icon) %}<span class="border">&nbsp;{{ icon }} {{ text }}&nbsp;</span>{% endmacro %}
 
 {% macro show_as_rounded_tab(text) %}<span class="border border-secondary border-bottom-0 pr-1 pl-1 mr-1 ml-1 rounded-top"><small>{{ text }}</small></span>{% endmacro %}
