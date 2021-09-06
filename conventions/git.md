@@ -80,7 +80,7 @@ Tips for SourceTree users:
 * **Enable the column guide option** to help you keep the commit message width to a 72 characters:
   1. Choose `Tools` -> `Options`.
   1. Click on the `General` tab, scroll down to the `Commit settings` section.
-  1. Tick the `Display a column guide at commit message at [72] characters` option.
+  1. Tick the `Display a column guide at commit message at [72] characters` option (if this option is disabled, first tick the option `used fixed-width fonts for commit messages` %%-- reason: a column guide makes sense only if a fixed-width font is used%%).
 * **Enable the `spell check commit messages` option** (found in the same place as above) too.
 </box>
 
