@@ -50,6 +50,6 @@ with(this){return _c('ul',[_c('li',[_c('strong',[_v("The default strategy is to 
 with(this){return _c('ul',[_c('li',[_c('p',[_c('strong',[_v("Use a "),_c('em',[_v("merge commit")])]),_v(" if the commits are well-organized, and the branch tackles only one task. In this case the commit message of the merge commit should explain the full task.")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("Use a "),_c('em',[_v("rebase-merge")])]),_v(" if the commits are well-organized and each commit is an independent task (as opposed to steps or a bigger tasks).")])]),_v(" "),_c('li',[_c('p',[_c('strong',[_v("In other cases")]),_v(", consider reorganizing/splitting the branch to match one of the above.\n")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Mon, 6 Sept 2021, 23:56:59 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Sun, 12 Sept 2021, 12:39:15 GMT+8]")])])])}
 }];
   
