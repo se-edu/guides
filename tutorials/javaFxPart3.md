@@ -243,6 +243,8 @@ You have successfully implemented a fully functional GUI for Duke!
    * What was the development workflow like?
    * Is the code base well-organized?
 
+<span class="badge badge-pill badge-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 4 - **Using FXML**](javaFxPart4.md) | [:fas-arrow-up: JavaFX Tutorial **ToC**](javaFx.md)
+
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum

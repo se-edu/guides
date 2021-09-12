@@ -183,6 +183,8 @@ Run the application again. It should now look like this:
    1. What happens when you press the `Enter` key or left-click the send button?
    1. Why?
 
+<span class="badge badge-pill badge-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 3 - **Interacting with the user**](javaFxPart3.md) | [:fas-arrow-up: JavaFX Tutorial **ToC**](javaFx.md)
+
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
