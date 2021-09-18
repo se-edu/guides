@@ -161,15 +161,15 @@ for (int i = 0; i < nTables; i++) {
 
 <div tags="level--intermediate">
 
-**{{ icon_level_intermediate }} Associated constants (final variables) should be prefixed by a common type name.**
+**{{ icon_level_intermediate }} Associated constants should have a common prefix.**
 
 ```java
-final int COLOR_RED   = 1;
-final int COLOR_GREEN = 2;
-final int COLOR_BLUE  = 3;
+static final int COLOR_RED   = 1;
+static final int COLOR_GREEN = 2;
+static final int COLOR_BLUE  = 3;
 ```
 
-%%{{ icon_info }} Rationale: This indicates that the constants belong together, and make them appear together when sorted alphabetically.%%
+%%{{ icon_info }} Rationale: This indicates that they belong together, and make them appear together when sorted alphabetically.%%
 
 </div>
 
