@@ -41,6 +41,6 @@ with(this){return _c('h2',{attrs:{"id":"automating-pr-previews-deployments"}},[_
 with(this){return _c('ul',[_c('li',[_v("set up Netlify to give a preview of how a PR can affect the generated website. More info "),_c('a',{attrs:{"href":"https://markbind.org/userGuide/deployingTheSite.html#deploying-to-netlify"}},[_v("here")]),_v(".")]),_v(" "),_c('li',[_v("set up Travis to automatically generate and deploy the project website when new code is pushed. More info "),_c('a',{attrs:{"href":"https://markbind.org/userGuide/deployingTheSite.html#deploying-to-github-pages"}},[_v("here")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Sun, 19 Sept 2021, 0:29:46 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Tue, 21 Sept 2021, 11:03:28 GMT+8]")])])])}
 }];
   

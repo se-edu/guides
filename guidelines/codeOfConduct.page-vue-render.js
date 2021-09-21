@@ -35,6 +35,6 @@ with(this){return _c('h2',{attrs:{"id":"enforcement"}},[_c('span',{staticClass:"
 with(this){return _c('p',[_v("Instances of abusive, harassing, or otherwise unacceptable behavior may be\nreported by contacting the project team at "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("seer[at]comp.nus.edu.sg")]),_v(". All\ncomplaints will be reviewed and investigated and will result in a response that\nis deemed necessary and appropriate to the circumstances. The project team is\nobligated to maintain confidentiality with regard to the reporter of an incident.\nFurther details of specific enforcement policies may be posted separately.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Sun, 19 Sept 2021, 0:29:46 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Tue, 21 Sept 2021, 11:03:28 GMT+8]")])])])}
 }];
   
