@@ -23,7 +23,7 @@ The sections below explains how to use PlantUML in a project.
 
    1. Go to `Settings` \> `Plugins` \> `Marketplace` and install the plugin `PlantUML integration`.
 
-   1. Then go to `Settings` \> `Other Settings` \> `PlantUML` or search for PlantUML. Configure the path to the `dot` executable. This executable can be found in the `/bin` directory where you installed GraphViz earlier.<br>
+   1. Then go to `Settings` \> `Languages & Frameworks` \> `PlantUML` or search for PlantUML. Configure the path to the `dot` executable. This executable can be found in the `/bin` directory where you installed GraphViz earlier.<br>
     ![Settings - Other Settings - PlantUML: input the path to your dot executable](images/plantuml/ConfiguringGraphviz.png)
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
