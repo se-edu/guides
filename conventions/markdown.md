@@ -18,7 +18,7 @@ title: "Markdown coding standard"
 
   <box type="info" seamless>
 
-  RATIONALE: Doing so with throw off grammar checkers and make it harder to modify content later (a simple change might require re-sizing many adjacent lines.
+  RATIONALE: Doing so could throw off grammar checkers, and make it harder to modify content later (because a simple change might require re-sizing many adjacent lines).
   </box>
 
 * **Add a blank line at the beginning of a list.**
