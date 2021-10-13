@@ -83,6 +83,6 @@ with(this){return _c('h2',{attrs:{"id":"branch-names"}},[_c('span',{staticClass:
 with(this){return _c('div',{attrs:{"id":"branch-names-format"}},[_c('p',[_v("Follow these rules to improve consistency:")]),_v(" "),_c('ul',[_c('li',[_v("Use a meaningful name consisting of some relevant keywords, in the "),_c('em',[_v("kebab case")]),_v(" format e.g., "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("refactor-ui-tests")]),_v(".")]),_v(" "),_c('li',[_v("If the branch is related to an issue, use the format "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("issueNumber-some-keywords-from-issue-title")]),_v(" e.g., "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("1234-ui-freeze-error")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Tue, 21 Sept 2021, 11:03:28 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Wed, 13 Oct 2021, 13:52:04 GMT+8]")])])])}
 }];
   

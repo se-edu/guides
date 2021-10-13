@@ -26,6 +26,6 @@ with(this){return _c('p',[_v("While it is common to enforce a maximum line lengt
 with(this){return _c('p',[_v("Read "),_c('a',{attrs:{"href":"https://www.jetbrains.com/idea/guide/tips/enable-soft-wrap/"}},[_v("this")]),_v(" to find how to enable soft wraps.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Tue, 21 Sept 2021, 11:03:28 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Wed, 13 Oct 2021, 13:52:04 GMT+8]")])])])}
 }];
   

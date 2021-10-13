@@ -221,6 +221,6 @@ with(this){return _c('h2',{attrs:{"id":"references"}},[_c('span',{staticClass:"a
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://msdn.microsoft.com/en-us/library/ff926074.aspx"}},[_v("C# Coding Coventions (C# Programming Guide)")]),_v(" -- From Microsoft")]),_v(" "),_c('li',[_c('a',{attrs:{"href":"http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf"}},[_v("C# coding standards for .NET")]),_v(" -- By Lance Hunt")]),_v(" "),_c('li',[_c('a',{attrs:{"href":"http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf"}},[_v("C# Coding Style Guide")]),_v(" -- By Mike Krüger")]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://github.com/dennisdoomen/CSharpGuidelines"}},[_v("CSharpGuidelines")]),_v(" -- From Aviva Solutions")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Tue, 21 Sept 2021, 11:03:28 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Wed, 13 Oct 2021, 13:52:04 GMT+8]")])])])}
 }];
   
