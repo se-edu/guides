@@ -59,6 +59,6 @@ with(this){return _c('h2',{attrs:{"id":"issues"}},[_c('span',{staticClass:"ancho
 with(this){return _c('li',[_c('p',[_c('strong',[_v("Issue title should be concise yet descriptive.")]),_v(" For example, instead of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Newbie question, please help")]),_v(", use "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("How do I set up git to ignore test files?")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.0.6")]),_v(" on Wed, 13 Oct 2021, 13:52:04 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.1.0")]),_v(" on Thu, 20 Jan 2022, 20:59:13 GMT+8]")])])])}
 }];
   
