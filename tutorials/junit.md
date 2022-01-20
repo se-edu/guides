@@ -45,9 +45,14 @@ As JUnit is a third-party library, you need to add support to it specifically in
    }
    ```
 1. Note how the `@Test` turn to red because Intellij (not having JUnit support yet) does not understand it. But it will pop up a hint, asking if you want to add support for JUnit. Select `Add JUnit 5.* to classpath`.
-  1. In the dialog that pops up, you can optionally tick the `Sources`, `JavaDocs` and `Annotations` boxes. After that, click `OK` to add the JUnit 5 to the project dependencies.
-1. To check if JUnit integration is working as expected,
-   1. Add a dummy test method to the class e.g.,
+1. In the dialog that pops up, you can optionally tick the `Sources`, `JavaDocs` and `Annotations` boxes. After that, click `OK` to add the JUnit 5 to the project dependencies.<br>
+   <box type="info" seamless>
+
+   When using the dialog shown below, if the version auto-selected by Intellij is not available (i.e., it shows `Found: 0`), change the verson number to a slightly lower number (e.g., `5.6.0`) and click the :fas-search: button to try again.<br>
+   <img src="images/junit/downloadJunitDialog.png"/>
+   </box>
+1. To check if JUnit integration is working as expected,<br>
+   7a\. Add a dummy test method to the class e.g.,
       ```java
       import org.junit.jupiter.api.Test;
       
@@ -60,12 +65,17 @@ As JUnit is a third-party library, you need to add support to it specifically in
           }
       }
       ```
-   1. Run the test (right-click on the class and choose `Run DukeTest`.
+   7b\. Run the test (right-click on the class and choose `Run DukeTest`).
 1. To be able to refer to `Duke` from `DukeTest` class, you need to add `main` module as a dependency of the `test` module you just created.<br>
    8a\. First, ensure there is a `main` module in your project, as follows:
       1. Check if your project explorer look like this (note how the `main` and `test` modules show up).<br>
-      <img src="images/junit/modulesMainAndTest.png" />
-      1. If there is no module named `main`, Intellij may have failed to recognize the `main` folder as the source folder and auto-created a module to include the entire project folder, usually given the same name as project folder. If there is such an extraneous module, delete that first (Go to `File` -> `Project Structure`,  click on `Modules`, select the module you want to delete, and click on the `-` button).<br>
+      <img src="images/junit/modulesMainAndTest.png" /><br>
+   <box type="tip" seamless>
+
+   To see other project sub-folders (e.g., `docs`) not currently shown (refer to the screenshot above), you can change the dropdown (shown at the top of the screenshot) from `Project` to `Project files`
+   </box>
+
+      1. If there is no module named `main`, Intellij may have failed to recognize the `main` folder as the source folder and auto-created a module to include the entire project folder, usually given the same name as project folder. If there is such an extraneous module, delete that first (Go to `File` -> `Project Structure`,  click on `Modules`, select the module you want to delete, and click on the `-` button), followed by `OK`/`Apply`.<br>
         <img src="images/junit/removeModule.png" />
       1. After that, create the `main` module the same way you created the `test` module in an earlier step above.<br>
          Tip: You may have to close the project and open it again after creating the `main` module, before you can see the `main` module in the project explorer view.
@@ -73,6 +83,11 @@ As JUnit is a third-party library, you need to add support to it specifically in
    8b\. Now that you have the modules `main` and `test`, you can set up the dependency using one of these options:
       * Option 1: When you add a reference to the `Duke` inside the `DukeTest`, Intellij will flag it as an error and will give you an option (i.e., in the bulb icon that pops up) to add the `main` module as a dependency.<br>
       * Option 2: Follow the info [here](https://www.jetbrains.com/help/idea/working-with-module-dependencies.html) to add the dependency yourself.
+
+<box type="info" seamless>
+
+As you can see from the above, setting up JUnit in Intellij is somewhat complicated. The good news is that it is easier to add JUnit to a project if you are using a build tool such as Gradle (although Gradle itself has a learning curve).
+</box>
   </tab>
   <tab header="With Gradle">
 
