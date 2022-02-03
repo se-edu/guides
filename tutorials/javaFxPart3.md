@@ -125,6 +125,11 @@ public class Duke extends Application {
 }
 ```
 
+<box type="important" seamless>
+
+Note the image location (e.g., `/images/DaUser.png`) is given relative to the `main/resources` folder and there is a `/` in front. Follow the same for similar cases of using `getResourceAsStream` method in later parts of this tutorial.
+</box>
+
 Add a new method to handle user input:
 ```java
 /**
