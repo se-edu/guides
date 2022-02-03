@@ -17,7 +17,7 @@ Sections below explains how to use JUnit in a project.
 ## Conventions to follow
 
 * Add test code in a folder named `[project root]\src\test\java\` folder.
-* Name the test class to match the class being tested (`Todo.java` can be tested by `TodoTest.java`), and put it in a package to match. For example, 
+* Name the test class to match the class being tested (`Todo.java` can be tested by `TodoTest.java`), and put it in a package to match %%(reason: if packages are matched, the test class can access package-private members of the target class)%%. For example,
   * Class being tested `seedu.duke.Todo`: `src\main\java\seedu\duke\Todo.java`
   * Test class `seedu.duke.TodoTest`: `src\test\java\seedu\duke\TodoTest.java`
 
