@@ -65,6 +65,11 @@ Create the following files in `src/main/resources/view`:
 </AnchorPane>
 ```
 
+<box type="important" seamless>
+
+Note that if you are using packages, `fx:controller="MainWindow"` needs to be updated accordingly e.g., `fx:controller="seedu.duke.MainWindow"`
+</box>
+
 **DialogBox.fxml**
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
