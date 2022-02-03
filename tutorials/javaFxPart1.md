@@ -123,7 +123,7 @@ Congratulations! You have created your first GUI application!
    1. Can you have more than one `Stage` an application?
    1. Try creating another stage and showing it! What happens?
 
-<span class="badge badge-pill badge-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 2 - **Creating a GUI for Duke**](javaFxPart2.md) | [:fas-arrow-up: JavaFX Tutorial **ToC**](javaFx.md)
+[:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge badge-pill badge-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 2 - **Creating a GUI for Duke**](javaFxPart2.md)
 
 --------------------------------------------------------------------------------
 **Authors:**

@@ -293,6 +293,9 @@ Application.launch(Main.class, args);
 1. Extend `MainWindow` to have a `Stage` as a root Node.
 1. Customize the appearance of the application further with CSS.
 
+[:fas-arrow-left: Previous](javaFxPart3.md) | [:fas-arrow-up: **ToC**](javaFx.md)
+
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
+
