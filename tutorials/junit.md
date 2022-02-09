@@ -48,7 +48,7 @@ As JUnit is a third-party library, you need to add support to it specifically in
 1. In the dialog that pops up, you can optionally tick the `Sources`, `JavaDocs` and `Annotations` boxes. After that, click `OK` to add the JUnit 5 to the project dependencies.<br>
    <box type="info" seamless>
 
-   When using the dialog shown below, if the version auto-selected by Intellij is not available (i.e., it shows `Found: 0`), change the verson number to a slightly lower number (e.g., `5.6.0`) and click the :fas-search: button to try again.<br>
+   When using the dialog shown below, if the version auto-selected by Intellij is not available (i.e., it shows `Found: 0`), change the version number to a slightly lower number (e.g., `5.6.0`) and click the :fas-search: button to try again.<br>
    <img src="images/junit/downloadJunitDialog.png"/>
    </box>
 1. To check if JUnit integration is working as expected,<br>

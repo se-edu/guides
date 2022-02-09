@@ -899,7 +899,7 @@ Note in particular:
 - Space after each `*`
 - Empty line between description and parameter section
 - Punctuation behind each parameter description
--No blank line between the documentation block and the method/class
+- No blank line between the documentation block and the method/class
 
 Javadoc of class members can be specified on a single line as follows:
 

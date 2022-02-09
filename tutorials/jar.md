@@ -54,7 +54,7 @@ But if you use JavaFX, you need to create package it into a fat JAR.
 If you are using [Gradle](gradle.html) in your project, you can use it to create a JAR file as given in the panel below.
 
 
-(Although JUnit as test classes are not pacakged into the JAR file).
+(Although JUnit as test classes are not packaged into the JAR file).
 {{ embed("Tutorials → Gradle → **Creating JAR files**", "gradle.md#section-creating-jar-files") }}
 
 
