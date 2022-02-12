@@ -879,7 +879,7 @@ You MUST write header comments for all classes, public methods except for getter
  * Returns lateral location of the specified position.
  * If the position is unset, NaN is returned.
  *
- * @param x  X coordinate of position.
+ * @param x X coordinate of position.
  * @param y Y coordinate of position.
  * @param zone Zone of position.
  * @return Lateral location.
