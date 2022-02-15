@@ -30,7 +30,7 @@
 
   <box type="wrong" icon=":fas-exclamation-circle:" seamless>
 
-  Refrain from <tooltip content="do minor improvements to the code e.g., fix typos">_housekeeping_</tooltip> in the neighboring code **unless the line in concern is already touched by the PR** (i.e., the housekeeping does not increase the line count of the PR.
+  Refrain from <tooltip content="do minor improvements to the code e.g., fix typos">_housekeeping_</tooltip> in the neighboring code **unless the line in concern is already touched by the PR** (i.e., the housekeeping does not increase the line count of the PR).
   </box>
   <box type="info" seamless>
 

@@ -68,7 +68,7 @@ A quick watch of it may be useful before diving into specific use cases explaine
 ## Using Gradle in Intellij IDEA
 
 
-If the Gradle tasks don't appear in the Gradle window, click the 'refresh' button in the tooolbar to reimport the Gradle project.
+If the Gradle tasks don't appear in the Gradle window, click the 'refresh' button in the toolbar to reimport the Gradle project.
 
 Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to `File` > `Settings` and change the following settings:<br>
 ![change Intellij settings to not use Gradle](images/gradle/intellijRunUsingGradle.png)
@@ -192,12 +192,12 @@ dependencies {
 }
 ```
 
-For example, to add the Natty (a third-party library used for parsing natural lanaguage dates e.g., `today`), you simply have to add the following line to the `dependencies` section of the `build.gradle` file.
+For example, to add the Natty (a third-party library used for parsing natural language dates e.g., `today`), you simply have to add the following line to the `dependencies` section of the `build.gradle` file.
 ```groovy
 compile group: 'com.joestelmach', name: 'natty', version: '0.6'
 ```
 
-Tip: Most third-party libararies specify how to add it as a Gradle dependency ([example](https://mvnrepository.com/artifact/com.joestelmach/natty/0.6)).
+Tip: Most third-party libraries specify how to add it as a Gradle dependency ([example](https://mvnrepository.com/artifact/com.joestelmach/natty/0.6)).
 
 <!-- ==================================================================================================== -->
 
