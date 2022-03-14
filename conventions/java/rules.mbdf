@@ -886,8 +886,8 @@ You MUST write header comments for all classes, public methods except for getter
  * @throws IllegalArgumentException  If zone is <= 0.
  */
 public double computeLocation(double x, double y, int zone)
-    throws IllegalArgumentException {
-  ...
+        throws IllegalArgumentException {
+    //...
 }
 ```
 
