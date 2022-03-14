@@ -17,7 +17,7 @@ with(this){return _c('div',{staticClass:"lead"},[_c('p',[_c('strong',[_c('a',{at
 with(this){return _c('h2',{attrs:{"id":"setting-up-github-pages-for-jekyll"}},[_c('span',{staticClass:"anchor",attrs:{"id":"setting-up-github-pages-for-jekyll"}}),_v("Setting up GitHub Pages for Jekyll"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#setting-up-github-pages-for-jekyll","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("githhub.io")]),_v(" URL of your project.")])}
+with(this){return _c('p',[_v("As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("github.io")]),_v(" URL of your project.")])}
 },function anonymous(
 ) {
 with(this){return _c('li',[_v("Go to your repo's "),_c('span',{staticClass:"border border-secondary border-bottom-0 pr-1 pl-1 mr-1 ml-1 rounded-top"},[_c('small',[_v("settings "),_c('span',{staticClass:"fas fa-cog",attrs:{"aria-hidden":"true"}})])]),_v(" tab.")])}
@@ -47,6 +47,6 @@ with(this){return _c('li',[_c('p',[_v("Typically, the "),_c('code',{pre:true,att
 with(this){return _c('p',[_v("The files in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("docs/_include")]),_v(" and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("docs/_layouts")]),_v(" control the template of the pages; the files in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("docs/_sass")]),_v(" control the style of the pages.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.1.1")]),_v(" on Thu, 3 Feb 2022, 16:43:45 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.1.1")]),_v(" on Mon, 14 Mar 2022, 13:54:21 GMT+8]")])])])}
 }];
   
