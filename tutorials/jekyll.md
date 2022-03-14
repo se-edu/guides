@@ -18,7 +18,7 @@ Given below are some information useful for when you want to update documentatio
 
 ## Setting up GitHub Pages for Jekyll
 
-As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the `githhub.io` URL of your project.
+As GitHub has native support for Jekyll, it can convert your documentation into HTML and deploy it on the `github.io` URL of your project.
 
 Do the following to set up the GitHub Pages website of your project:
 1. Go to your repo's {{ show_as_rounded_tab("settings :fas-cog:") }} tab.

@@ -7,7 +7,7 @@
 
 <div class="lead">
 
-As a project grows, issue/PR labels can play an increasingly important role in managing a large nubmer of issues/PRs. This document has some guidelines that can improve consistency across projects and help make the use of labels more productive.
+As a project grows, issue/PR labels can play an increasingly important role in managing a large number of issues/PRs. This document has some guidelines that can improve consistency across projects and help make the use of labels more productive.
 </div>
 
 Unless mentioned otherwise, *labels are applied to issues only* (not PRs).
