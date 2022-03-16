@@ -101,6 +101,6 @@ with(this){return _c('ul',[_c('li',[_c('strong',[_v("Before approving a PR, "),_
 with(this){return _c('h2',{attrs:{"id":"merging-prs"}},[_c('span',{staticClass:"anchor",attrs:{"id":"merging-prs"}}),_v("Merging PRs"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#merging-prs","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.1.1")]),_v(" on Mon, 14 Mar 2022, 13:54:21 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 3.1.1")]),_v(" on Wed, 16 Mar 2022, 17:12:01 GMT+8]")])])])}
 }];
   
