@@ -6,4 +6,4 @@ tags: ["level--*"]
 
 # Java coding standard (all)
 
-<include src="rules.mbdf" />
+<include src="rules-fragment.md" />

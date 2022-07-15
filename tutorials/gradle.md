@@ -13,12 +13,12 @@ Gradle is a _build automation tool_ used to automate build processes. There are 
 
 ## Basics
 
-You use a _build file_ (named `build.gradle`) to describe the project to Gradle. A build file mainly consists of _plugins_, _tasks_ and _properties_. 
+You use a _build file_ (named `build.gradle`) to describe the project to Gradle. A build file mainly consists of _plugins_, _tasks_ and _properties_.
 
 * **Plugins** extend the functionality of Gradle. For example, the `java` plugin adds support for `Java` projects.
 
-* **Tasks** are reusable blocks of logic. For example, the task `clean` simply deletes the project build directory. 
-Tasks can be composed of, or dependent on, other tasks. 
+* **Tasks** are reusable blocks of logic. For example, the task `clean` simply deletes the project build directory.
+Tasks can be composed of, or dependent on, other tasks.
 
 * **Properties** change the behavior of tasks. For instance, `mainClassName` of the `application` plugin is a compulsory property which tells Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much to you need to configure if you follow the recommended directory structure.
 
@@ -72,7 +72,7 @@ If the Gradle tasks don't appear in the Gradle window, click the 'refresh' butto
 
 Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to `File` > `Settings` and change the following settings:<br>
 ![change Intellij settings to not use Gradle](images/gradle/intellijRunUsingGradle.png)
- 
+
 <!-- ==================================================================================================== -->
 
 ## Running Gradle Tasks
@@ -145,7 +145,7 @@ Run the `test` task to run the tests in the project.
 
 [Shadow](https://github.com/johnrengelman/shadow) is a plugin that packages an application into an executable _fat_ jar file _if the current file is outdated_.
 
-{{ embed("Tutorials → Working with JAR files → **Fat JAR files**", "jar-fatJar.mbdf") }}
+{{ embed("Tutorials → Working with JAR files → **Fat JAR files**", "jar-fatJar-fragment.md") }}
 
 The task **`shadowJar`** (e.g., running the command `gradlew shadowJar` or `gradlew clean shadowJar`) creates the JAR file in the `build/libs` folder. By default, it produces a jar file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and put it in the `builds/libs` folder. These properties can be set in the `build.gradle` file.
 

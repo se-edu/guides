@@ -35,7 +35,7 @@ MarkBind is a superset of Markdown. Refer the [MarkBind user guide](https://mark
 1. In the browser, navigate to the page you want to modify.
 
 **Next, edit the files you want**:
-1. Edit the source files (usually, either `.md`, `.mbd`, or `.mbdf` files).
+1. Edit the source files (usually, `.md` files).
 1. When you save the file, the live preview will update to reflect the new contents (after a few seconds).
 
 <box type="warning" seamless>

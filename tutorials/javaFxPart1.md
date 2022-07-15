@@ -19,7 +19,7 @@ A JavaFX application is like a play you are directing. Instead of creating props
 
 1. Download the [JavaFX 11 SDK](https://gluonhq.com/products/javafx/) and unzip it.
 
-1. Import the `libs` folder from the SDK into your project (note: `JAVAFX_HOME` is the directory in which you have unzipped the JavaFX SDK). 
+1. Import the `libs` folder from the SDK into your project (note: `JAVAFX_HOME` is the directory in which you have unzipped the JavaFX SDK).
 
    `File` > `Project Structure` > `Libraries` > `+` > `Java` > `{JAVAFX_HOME}/lib`
 
@@ -71,7 +71,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class Duke extends Application {
-    
+
     // ...
 
     @Override
@@ -85,7 +85,7 @@ public class Duke extends Application {
 }
 ```
 
-Note how we have created a `Label` to contain the text that we want to show. We then create the `Scene` and set its content. Finally, we set the stage and show it. 
+Note how we have created a `Label` to contain the text that we want to show. We then create the `Scene` and set its content. Finally, we set the stage and show it.
 
 Next, we create another Java class, `Launcher`, as an entry point to our application.
 The `Launcher` class is reproduced below in its entirety.
@@ -105,7 +105,7 @@ public class Launcher {
 
 Run `Launcher` and you should see something like this:
 
-![Hello World](images/javafx/HelloWorld.png) 
+![Hello World](images/javafx/HelloWorld.png)
 
 Congratulations! You have created your first GUI application!
 
@@ -119,11 +119,11 @@ Congratulations! You have created your first GUI application!
    1. What properties of a `Label` can you change programmatically?
    1. Try changing the `Label` to have a font of Arial at size 50.
 
-1. You’ve learnt that a `Stage` can be thought of as a window. 
+1. You’ve learnt that a `Stage` can be thought of as a window.
    1. Can you have more than one `Stage` an application?
    1. Try creating another stage and showing it! What happens?
 
-[:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge badge-pill badge-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 2 - **Creating a GUI for Duke**](javaFxPart2.md)
+[:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 2 - **Creating a GUI for Duke**](javaFxPart2.md)
 
 --------------------------------------------------------------------------------
 **Authors:**

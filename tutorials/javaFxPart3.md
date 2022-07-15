@@ -5,9 +5,9 @@
 
 # JavaFX tutorial part 3 – Interacting with the user
 
-Picking up from where we left off last tutorial, we have successfully achieved the desired layout. Now let’s make the application respond to user input. 
+Picking up from where we left off last tutorial, we have successfully achieved the desired layout. Now let’s make the application respond to user input.
 
-Rather than to do everything in one try, let’s iterate and build up towards our final goal. 
+Rather than to do everything in one try, let’s iterate and build up towards our final goal.
 
 ## Iteration 1 – Echoing the user
 
@@ -28,7 +28,7 @@ public void start(Stage stage) {
         dialogContainer.getChildren().add(getDialogLabel(userInput.getText()));
         userInput.clear();
     });
-    
+
     userInput.setOnAction((event) -> {
         dialogContainer.getChildren().add(getDialogLabel(userInput.getText()));
         userInput.clear();
@@ -61,7 +61,7 @@ Update the `start` method as shown below.
 ```java
 public void start(Stage stage) {
     // current code ...
- 
+
     //Scroll down to the end every time dialogContainer's height changes.
     dialogContainer.heightProperty().addListener((observable) -> scrollPane.setVvalue(1.0));
 }
@@ -176,7 +176,7 @@ public void start(Stage stage) {
 
 Run the program and see how it works.
 
-![DialogBoxes Iteration 2](images/javafx/DialogBoxesIteration2.png) 
+![DialogBoxes Iteration 2](images/javafx/DialogBoxesIteration2.png)
 
 ## Iteration 3 – Adding custom behavior to DialogBox
 
@@ -215,7 +215,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 ```
 
-Now, we can go back to the `Main` class and change the event handler to use our new `DialogBox`. 
+Now, we can go back to the `Main` class and change the event handler to use our new `DialogBox`.
 
 ```java
 private void handleUserInput() {
@@ -229,12 +229,12 @@ private void handleUserInput() {
 }
 ```
 
-Run the application and play around with it. 
+Run the application and play around with it.
 
 ![DialogBoxes Iteration 3](images/javafx/DialogBoxesIteration3.png)
 
-Congratulations! 
-You have successfully implemented a fully functional GUI for Duke!  
+Congratulations!
+You have successfully implemented a fully functional GUI for Duke!
 
 ## Exercises
 
@@ -248,7 +248,7 @@ You have successfully implemented a fully functional GUI for Duke!
    * What was the development workflow like?
    * Is the code base well-organized?
 
-[:fas-arrow-left: Previous](javaFxPart2.md) | [:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge badge-pill badge-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 4 - **Using FXML**](javaFxPart4.md)
+[:fas-arrow-left: Previous](javaFxPart2.md) | [:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 4 - **Using FXML**](javaFxPart4.md)
 
 --------------------------------------------------------------------------------
 **Authors:**

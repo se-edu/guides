@@ -6,7 +6,7 @@ tags: ["-level--*", "level--basic", "level--intermediate", "level--intermediate-
 
 # Java coding standard (basic + intermediate)
 
-<include src="rules.mbdf" />
+<include src="rules-fragment.md" />
 
 
 

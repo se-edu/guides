@@ -1,4 +1,4 @@
-<header fixed>
+<header sticky>
   <navbar type="dark">
     <a slot="brand" href="https://se-education.org" title="SE-EDU" class="navbar-brand"><md>:fas-chevron-circle-left: ****SE-EDU****</md></a>
     <li><a href="{{baseUrl}}/index.html" class="nav-link"><md>**Home**</md></a></li>

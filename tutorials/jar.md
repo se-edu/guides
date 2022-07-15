@@ -28,7 +28,7 @@ You can download the Collate-TUI.jar from [https://se-edu.github.io/collate/](ht
 
 ## Fat JAR files
 
-<include src="jar-fatJar.mbdf" />
+<include src="jar-fatJar-fragment.md" />
 
 <!-- ==================================================================================================== -->
 
