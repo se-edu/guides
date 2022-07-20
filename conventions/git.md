@@ -44,6 +44,12 @@ You can use `scope: change` format (when applicable).
   `Unit tests: remove blank lines`
 
 </box>
+
+<box type="info" seamless>
+
+There are other commit subject conventions such as the [_Conventional Commits_ Format](https://www.conventionalcommits.org/) which are more elaborate but have additional benefits.
+
+</box>
 </div>
 
 
