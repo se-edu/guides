@@ -481,6 +481,17 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/sourcetree.md",
+      "title": "Sourcetree Tips",
+      "headings": {
+        "sourcetree-tips": "Sourcetree Tips",
+        "connecting-sourcetree-to-your-github-account": "Connecting Sourcetree to Your GitHub Account",
+        "on-windows": "On Windows",
+        "on-a-mac": "On a Mac"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/textUiTesting.md",
       "title": "Automating the testing of text UIs",
       "headings": {
