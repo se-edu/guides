@@ -27,6 +27,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
   * [Configuring the code style](tutorials/intellijCodeStyle.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
+* [**Sourcetree** tips](tutorials/sourcetree.html)
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
   * [**JUnit**](tutorials/junit.html)
