@@ -14,17 +14,28 @@ Given below are some instructions on how to use Checkstyle for some common proje
 
 <!-- ==================================================================================================== -->
 
-## Configuring Checkstyle rules
+## Configuring Checkstyle
 
 Checkstyle expects configuration files for checkstyle (e.g., files that specify which style rules to follow) to be in `./config/checkstyle/` by convention.
 
-The set of code style rules are put in the `config/checkstyle/checkstyle.xml`. To enable *exceptions* to code styles, you can add in the comment `//CODESTYLE.OFF: RuleName` at the start of the section and `//CODESTYLE.ON: RuleName` at the end of the section. Alternatively, you can specify which rules to suppress in a config file `config/checkstyle/suppressions.xml`
+The two config files to add are:
 
-Checkstyle configuration matching [our Java coding standard](../conventions/java/intermediate.html) can be found in the [AddressBook Level 3 project](https://github.com/se-edu/addressbook-level3/tree/master/config/checkstyle).
+* `config/checkstyle/checkstyle.xml`:  Contains the set of code style rules to follow.
+* `config/checkstyle/suppressions.xml`: Contains which rules to suppress under in which files.
+
+{{ icon_tip }} Checkstyle configuration matching [our Java coding standard](../conventions/java/intermediate.html) can be found in the [AddressBook Level 3 project](https://github.com/se-edu/addressbook-level3/tree/master/config/checkstyle).
+
+{{ icon_tip }} To suppress a rule for a segment of code, you can add in the comment `//CODESTYLE.OFF: RuleName` at the start of the code segment and `//CODESTYLE.ON: RuleName` at the end of the segment.
+
 
 <!-- ==================================================================================================== -->
 
 ## Using Checkstyle with Gradle
+
+<div id="config-prereq">
+
+Prerequisite: The two config files `checkstyle.xml` and `suppressions.xml` are present (see the [_Configuring Checkstyle_ section above](#configuring-checkstyle) for more details on these two files).
+</div>
 
 Here is an example of relevant lines that should be in the `build.gradle` file.
 
@@ -48,6 +59,8 @@ For example, you can run `gradlew checkstyleMain checkstyleTest` to verify that 
 <!-- ==================================================================================================== -->
 
 ## Using Checkstyle-IDEA plugin
+
+<include src="checkstyle.md#config-prereq" />
 
 Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij can alert you about code style problems as you write code.
 
