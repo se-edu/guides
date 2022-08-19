@@ -46,7 +46,7 @@ plugins {
 }
 
 checkstyle {
-    toolVersion = '8.29'
+    toolVersion = '10.2'
 }
 ```
 
