@@ -266,7 +266,7 @@
       "title": "Using Checkstyle",
       "headings": {
         "using-checkstyle": "Using Checkstyle",
-        "configuring-checkstyle-rules": "Configuring Checkstyle rules",
+        "configuring-checkstyle": "Configuring Checkstyle",
         "using-checkstyle-with-gradle": "Using Checkstyle with Gradle",
         "using-checkstyle-idea-plugin": "Using Checkstyle-IDEA plugin",
         "resources": "Resources"
