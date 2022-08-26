@@ -857,7 +857,7 @@ Furthermore, use American spelling and avoid local slang.
 
 **{{ icon_level_intermediate }} Write descriptive header comments for all public classes/methods**.
 
-You MUST write header comments for all classes, public methods except for the following cases:<br>
+You MUST write header comments for all classes, public methods. But they _can_ be omitted for the following cases:<br>
 i. Getters/setters<br>
 ii. When overriding methods (provided the parent method's Javadoc applies exactly _as is_ to the overridden method)
 
@@ -903,7 +903,7 @@ Note in particular:
 - Punctuation behind each parameter description
 - No blank line between the documentation block and the method/class
 - `@return` can be omitted if the method does not return anything
-- When writing Javadocs for overridden methods, the `@inheritDoc` tag can be used to reduce duplication.
+- When writing Javadocs for overridden methods, the `@inheritDoc` tag can be used to reuse the header comment from the parent method but with further modifications e.g., when the method has a slightly different behavior from the parent method.
 
 Javadoc of class members can be specified on a single line as follows:
 
