@@ -43,11 +43,12 @@ Given below are some things you can try if you encounter that problem.
 1. Click on the `Refresh Password` button. When prompted, enter your usual GitHub username but give the PAT (the one you created in step 1) instead of the regular password.
 1. Now, your Sourcetree should be able to push code to a GitHub repo that you have write permission to.
 
-**If neither of the above works**, you can try them again but first delete any GitHub credentials already saved by Windows.
-Here are the steps:
+**Option 3:**
 
 1. [Open the Windows Credential Manager](https://support.microsoft.com/en-gb/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0).
-2. Delete any credentials related to GitHub (if the name mentions GitHub) in `Web Credentials` or `Windows Credentials` categories.
+2. For each credentials related to GitHub (if the name mentions GitHub) in `Web Credentials` or `Windows Credentials` categories,<br>
+   (a) edit it and replace the password field with a GitHub PAT.<br>
+   (b) If the above didn't work, delete those credential altogether and try Option 1 or 2 again.
 
 ### On a Mac
 
