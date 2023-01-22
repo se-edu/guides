@@ -17,7 +17,7 @@
 
 ## Setting up a custom workflow
 
-In the simplest case, setting up is a matter of adding a `.yml` file into the `[root]\.workflows` folder ([example](https://github.com/se-edu/duke/blob/full-template/.github/workflows/gradle.yml)).
+In the simplest case, setting up is a matter of adding a `.yml` file into the `[root]\.github\workflows` folder ([example](https://github.com/se-edu/duke/blob/full-template/.github/workflows/gradle.yml)).
 
 GitHub Actions will run the workflow (as per the `.yml` file) every time certain project events are triggered (e.g., when a PR is updated, or the `master` branch is updated).
 
