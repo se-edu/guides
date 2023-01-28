@@ -25,7 +25,7 @@ The two config files to add are:
 
 {{ icon_tip }} Checkstyle configuration matching [our Java coding standard](../conventions/java/intermediate.html) can be found in the [AddressBook Level 3 project](https://github.com/se-edu/addressbook-level3/tree/master/config/checkstyle).
 
-{{ icon_tip }} To suppress a rule for a segment of code, you can add in the comment `//CODESTYLE.OFF: RuleName` at the start of the code segment and `//CODESTYLE.ON: RuleName` at the end of the segment.
+{{ icon_tip }} To suppress a rule for a segment of code, you can add in the comment `//CHECKSTYLE.OFF: RuleName` at the start of the code segment and `//CHECKSTYLE.ON: RuleName` at the end of the segment.
 
 
 <!-- ==================================================================================================== -->
