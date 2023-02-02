@@ -15,6 +15,7 @@ This website contains a collection of tutorials, standards, guides, best practic
 Tutorials, how-to guides, getting-started guides, ...
 
 * [**Checkstyle**](tutorials/checkstyle.html)
+* [**Codecov**](tutorials/codecov.html)
 * **Java**:
   * [**JAR files**](tutorials/jar.html)
   * [**JavaFX**](tutorials/javaFx.html):
