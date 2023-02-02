@@ -23,7 +23,7 @@ As GitHub has native support for Jekyll, it can convert your documentation into 
 Do the following to set up the GitHub Pages website of your project:
 1. Go to your repo's {{ show_as_rounded_tab("settings :fas-cog:") }} tab.
 1. Click {{ show_as_tab("Pages") }} on the menu on the left edge of page.
-1. Set the `Source` as: {{ show_as_button('**%%:octicon-git-branch: Branch:%%** master :octicon-triangle-down:') }} branch and {{ show_as_button(':octicon-file-directory: /docs :octicon-triangle-down:') }} folder (assuming project documentation is in that folder) and click {{ show_as_button('Save') }}.
+1. Set the `Source` as: {{ show_as_button('Deploy from a branch :octicon-triangle-down:') }} branch{{ show_as_button('master :octicon-triangle-down:') }} branch and {{ show_as_button(':octicon-file-directory: /docs :octicon-triangle-down:') }} folder (assuming project documentation is in that folder) and click {{ show_as_button('Save') }}.
 
 The project website will be available at `https://{your_org}.github.io/{your_repo}` the next time the `master` branch is updated. Example: `https://myorg.github.io/myrepo`
 
