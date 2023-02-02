@@ -274,6 +274,15 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/codecov.md",
+      "title": "Using Codecov",
+      "headings": {
+        "using-codecov": "Using Codecov",
+        "setting-up-codecov-with-github-actions": "Setting up Codecov with GitHub actions"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/githubActions.md",
       "title": "Using GitHub Actions",
       "headings": {
