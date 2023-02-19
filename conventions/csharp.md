@@ -399,6 +399,5 @@ startInfo.UseShellExecute = true;
 ## References
 
 * [C# Coding Conventions (C# Programming Guide)](https://msdn.microsoft.com/en-us/library/ff926074.aspx) -- From Microsoft
-* [C# coding standards for .NET](http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf) -- By Lance Hunt
 * [C# Coding Style Guide](http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf) -- By Mike Krüger
 * [CSharpGuidelines](https://github.com/dennisdoomen/CSharpGuidelines) -- From Aviva Solutions

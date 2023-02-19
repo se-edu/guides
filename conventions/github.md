@@ -114,4 +114,4 @@ Rationale: This format allows easy traceability among a merge commit, the issue 
 
 * **Issue title should be concise yet descriptive.** For example, instead of `Newbie question, please help`, use `How do I set up git to ignore test files?`
 
-* **Follow <tooltip content="when you submit an issue, GitHub will present you with some boilerplate content to tell you what details to include">the issue template</tooltip>** ([example](https://github.com/MarkBind/markbind/edit/master/.github/ISSUE_TEMPLATE/bug-report.md)), if any.
+* **Follow <tooltip content="when you submit an issue, GitHub will present you with some boilerplate content to tell you what details to include">the issue template</tooltip>** ([example](https://github.com/MarkBind/markbind/issues/new)), if any.
