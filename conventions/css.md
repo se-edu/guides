@@ -25,7 +25,7 @@ for any topics not covered in this document.
 * CSS file includes must be done using `<link>` tags in the HTML/JSP files and NOT using `@import` in other css files.
 
   <box type="info" seamless>
-  
+
   RATIONALE: **`@import`** can be slow and may result in the page being rendered without css for a while before the page magically comes to life. As of now we are using css files as styles of HTML pages and thus the dependency must be clearly visible in the HTML page.
   </box>
 

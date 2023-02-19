@@ -85,9 +85,9 @@ using System;
 
 namespace HelloWorld
 {
-    class Hello 
+    class Hello
     {
-        static void Main() 
+        static void Main()
         {
             Console.WriteLine("Hello World!");
         }
@@ -156,7 +156,7 @@ lastMethod();
 Such as having only one statement in the `if` clause. This is to enforce consistency.
 
 ```cs
-if (x > y) 
+if (x > y)
 {
     doSomething();
 }
