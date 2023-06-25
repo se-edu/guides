@@ -4,17 +4,23 @@
 
 # Intellij IDEA: Importing a Gradle project
 
-<div class="ml-3">
+<div id="importing-gradle-project">
 
-{{ icon_tip }} If there is a `build.gradle` file in the project root, Intellij treats it as a Gradle project by default.
-</div>
+<box type="tip" seamless>
 
-1. IntelliJ IDEA has the Gradle plugin installed by default.  If you have disabled it, go to `File` → `Settings` → `Plugins` to re-enable them.<br>
+If the project comes with Gradle support, you will see a `build.gradle` file in your project root.
+</box>
+
+<box type="warning" seamless>
+
+IntelliJ IDEA has the Gradle plugin installed by default.  If you have disabled it, go to `File` → `Settings` → `Plugins` to re-enable it.<br>
   If your project involves GUI programming, similarly ensure the JavaFX plugin has not been disabled.
-1. Open Intellij (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project first)
-1. Open the project into Intellij as follows:
-   1. Click `Open`.
-   1. Select the project directory, and click `OK`.
-   1. If there are any further prompts, accept the defaults.
-1. Click `OK` to accept the default settings but do ensure that the selected version of `Gradle JVM` matches the JDK being used for the project.
-1. Wait for the importing process to finish (could take a few minutes).
+</box>
+
+1. Open Intellij.
+1. if you are in the welcome screen, Click `Open`. Otherwise, click `File` -> `Open`.<br>
+   i. Select the project directory, and click `OK`.<br>
+   ii. If there are any further prompts, accept the defaults but do ensure that the selected version of `Gradle JVM` matches the JDK being used for the project.
+1. After the importing of the project is complete (which could take a few minutes), you will see the `Gradle Toolbar` in the IDEA interface %%e.g., look for the elephant icon (on Windows, this appears on the right-edge of the IDE window) and click it%%.<br>
+   ![Gradle icon](images/gradle/GradleIcon.png)
+</div>

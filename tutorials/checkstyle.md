@@ -23,9 +23,15 @@ The two config files to add are:
 * `config/checkstyle/checkstyle.xml`:  Contains the set of code style rules to follow.
 * `config/checkstyle/suppressions.xml`: Contains which rules to suppress under in which files.
 
-{{ icon_tip }} Checkstyle configuration matching [our Java coding standard](../conventions/java/intermediate.html) can be found in the [AddressBook Level 3 project](https://github.com/se-edu/addressbook-level3/tree/master/config/checkstyle).
+<box type="tip" seamless>
 
-{{ icon_tip }} To suppress a rule for a segment of code, you can add in the comment `//CHECKSTYLE.OFF: RuleName` at the start of the code segment and `//CHECKSTYLE.ON: RuleName` at the end of the segment.
+Checkstyle configuration matching [our Java coding standard](../conventions/java/intermediate.html) can be found in the [AddressBook Level 3 project](https://github.com/se-edu/addressbook-level3/tree/master/config/checkstyle).
+</box>
+
+<box type="tip" seamless>
+
+To suppress a rule for a segment of code, you can add in the comment `//CHECKSTYLE.OFF: RuleName` at the start of the code segment and `//CHECKSTYLE.ON: RuleName` at the end of the segment.
+</box>
 
 
 <!-- ==================================================================================================== -->
@@ -114,3 +120,4 @@ Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij
 ## Resources
 
 * [Checkstyle home page](https://checkstyle.sourceforge.io/)
+* [Gradle documentation for the Checkstyle plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html)
