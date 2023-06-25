@@ -72,7 +72,23 @@ What happens when we need to display more than one <code class="hljs inline no-l
 </span><span>        <span class="hljs-comment">// more code to be added here later</span>
 </span><span>    }
 </span><span>}
-</span></code></pre><p>Run the application and you should see something like this:</p> <p><a href="/guides/tutorials/images/javafx/RawLayout.png" target="_self"><img src="/guides/tutorials/images/javafx/RawLayout.png" alt="Duke's raw layout" class="img-fluid"></a></p> <p>That is not what we were expecting, what did we forget to do?</p> <h2 id="styling-the-controls"><span id="styling-the-controls" class="anchor"></span>Styling the Controls<a href="#styling-the-controls" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Almost every JavaFX object offer properties that you can set to customize its look and feel. For example, the <code class="hljs inline no-lang">Stage</code> allows you to set its preferred size and title. Again, refer to the official JavaFX documentation for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:</p> <p>Add the following code to the bottom of the <code class="hljs inline no-lang">start</code> method. You'll have to add <code class="hljs inline no-lang">import javafx.scene.layout.Region;</code> to the imports too.</p> <pre><code class="hljs java"><span>    <span class="hljs-meta">@Override</span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>Run the application and you should see something like this:</p> <p><a href="/guides/tutorials/images/javafx/RawLayout.png" target="_self"><img src="/guides/tutorials/images/javafx/RawLayout.png" alt="Duke's raw layout" class="img-fluid"></a></p> <p>That is not what we were expecting, what did we forget to do?</p> <h2 id="styling-the-controls"><span id="styling-the-controls" class="anchor"></span>Styling the Controls<a href="#styling-the-controls" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Almost every JavaFX object offer properties that you can set to customize its look and feel. For example, the <code class="hljs inline no-lang">Stage</code> allows you to set its preferred size and title. Again, refer to the official JavaFX documentation for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:</p> <p>Add the following code to the bottom of the <code class="hljs inline no-lang">start</code> method. You'll have to add <code class="hljs inline no-lang">import javafx.scene.layout.Region;</code> to the imports too.</p> <pre><code class="hljs java"><span>    <span class="hljs-meta">@Override</span>
 </span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> </span>{
 </span><span>        <span class="hljs-comment">//Step 1. Formatting the window to look as expected.</span>
 </span><span>
@@ -110,9 +126,40 @@ What happens when we need to display more than one <code class="hljs inline no-l
 </span><span>
 </span><span>        <span class="hljs-comment">// more code to be added here later</span>
 </span><span>    }
-</span></code></pre><p>Run the application again. It should now look like this:</p> <p><a href="/guides/tutorials/images/javafx/FinalLayout.png" target="_self"><img src="/guides/tutorials/images/javafx/FinalLayout.png" alt="Duke's Final layout" class="img-fluid"></a></p> <h2 id="exercises"><span id="exercises" class="anchor"></span>Exercises<a href="#exercises" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ol><li><p>In the tutorial, we used an <code class="hljs inline no-lang">AnchorPane</code> to achieve the desired layout.</p> <ol><li>Can you find other ways to obtain a similar layout?</li> <li>What are the advantages and disadvantages of your layout?</li></ol></li> <li><p>Try interacting with the application</p> <ol><li>What happens when you press the <code class="hljs inline no-lang">Enter</code> key or left-click the send button?</li> <li>Why?</li></ol></li></ol> <p><a href="/guides/tutorials/javaFxPart1.html"><span aria-hidden="true" class="fas fa-arrow-left"></span> Previous</a> | <a href="/guides/tutorials/javaFx.html"><span aria-hidden="true" class="fas fa-arrow-up"></span> <strong>ToC</strong></a> | <span class="badge rounded-pill bg-primary"><strong><span class="large">What's next?</span></strong></span> <a href="/guides/tutorials/javaFxPart3.html"><span aria-hidden="true" class="fas fa-arrow-right"></span> JavaFX tutorial part 3 - <strong>Interacting with the user</strong></a></p> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Jeffry Lum</li></ul> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#javafx-tutorial-part-2-creating-a-gui-for-duke" data-v-e8c82f88>JavaFX tutorial part 2 - Creating a GUI for Duke‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#javafx-controls" data-v-e8c82f88>JavaFX controls‎</a> <a class="nav-link py-1" href="#designing-the-layout" data-v-e8c82f88>Designing the Layout‎</a> <a class="nav-link py-1" href="#styling-the-controls" data-v-e8c82f88>Styling the Controls‎</a> <a class="nav-link py-1" href="#exercises" data-v-e8c82f88>Exercises‎</a></nav> <!----></nav></div> <!----></nav></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 4.1.0</a> on Mon, 20 Feb 2023, 1:25:27 GMT+8]</small></div></footer></div>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>Run the application again. It should now look like this:</p> <p><a href="/guides/tutorials/images/javafx/FinalLayout.png" target="_self"><img src="/guides/tutorials/images/javafx/FinalLayout.png" alt="Duke's Final layout" class="img-fluid"></a></p> <h2 id="exercises"><span id="exercises" class="anchor"></span>Exercises<a href="#exercises" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ol><li><p>In the tutorial, we used an <code class="hljs inline no-lang">AnchorPane</code> to achieve the desired layout.</p> <ol><li>Can you find other ways to obtain a similar layout?</li> <li>What are the advantages and disadvantages of your layout?</li></ol></li> <li><p>Try interacting with the application</p> <ol><li>What happens when you press the <code class="hljs inline no-lang">Enter</code> key or left-click the send button?</li> <li>Why?</li></ol></li></ol> <p><a href="/guides/tutorials/javaFxPart1.html"><span aria-hidden="true" class="fas fa-arrow-left"></span> Previous</a> | <a href="/guides/tutorials/javaFx.html"><span aria-hidden="true" class="fas fa-arrow-up"></span> <strong>ToC</strong></a> | <span class="badge rounded-pill bg-primary"><strong><span class="large">What's next?</span></strong></span> <a href="/guides/tutorials/javaFxPart3.html"><span aria-hidden="true" class="fas fa-arrow-right"></span> JavaFX tutorial part 3 - <strong>Interacting with the user</strong></a></p> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Jeffry Lum</li></ul> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#javafx-tutorial-part-2-creating-a-gui-for-duke" data-v-e8c82f88>JavaFX tutorial part 2 - Creating a GUI for Duke‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#javafx-controls" data-v-e8c82f88>JavaFX controls‎</a> <a class="nav-link py-1" href="#designing-the-layout" data-v-e8c82f88>Designing the Layout‎</a> <a class="nav-link py-1" href="#styling-the-controls" data-v-e8c82f88>Styling the Controls‎</a> <a class="nav-link py-1" href="#exercises" data-v-e8c82f88>Exercises‎</a></nav> <!----></nav></div> <!----></nav></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 4.1.0</a> on Mon, 26 Jun 2023, 2:16:12 GMT+8]</small></div></footer></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script>
   MarkBind.setupWithSearch()
 </script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
 </html>

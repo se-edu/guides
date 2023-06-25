@@ -298,19 +298,17 @@
       "headings": {
         "gradle-tutorial": "Gradle tutorial",
         "basics": "Basics",
-        "gradle-within-intellij-an-overview": "Gradle within Intellij: an overview",
         "adding-gradle-to-the-project": "Adding Gradle to the project",
-        "using-gradle-in-intellij-idea": "Using Gradle in Intellij IDEA",
-        "running-gradle-tasks": "Running Gradle Tasks",
-        "adding-plugins": "Adding plugins",
+        "running-gradle-tasks": "Running Gradle tasks",
+        "managing-plugins-and-dependencies": "Managing plugins and dependencies",
         "using-gradle-to-do-some-common-project-activities": "Using Gradle to do some common project activities",
+        "running-the-application": "Running the application",
         "cleaning-the-project": "Cleaning the project",
         "running-checkstyle": "Running Checkstyle",
         "running-tests": "Running tests",
         "creating-jar-files": "Creating JAR files",
         "compiling": "Compiling",
         "enabling-assertions": "Enabling assertions",
-        "managing-dependencies": "Managing dependencies",
         "resources": "Resources"
       },
       "headingKeywords": {}
@@ -360,8 +358,7 @@
         "working-with-jar-files": "Working with JAR files",
         "running-jar-files": "Running JAR files",
         "fat-jar-files": "Fat JAR files",
-        "creating-jar-files-with-intellij-idea": "Creating JAR files with Intellij IDEA",
-        "creating-jar-files-with-gradle": "Creating JAR files with Gradle",
+        "creating-jar-files": "Creating JAR files",
         "resources": "Resources"
       },
       "headingKeywords": {}
@@ -443,6 +440,7 @@
         "conventions-to-follow": "Conventions to follow",
         "adding-junit-support-to-your-project": "Adding JUnit support to your project",
         "running-tests": "Running tests",
+        "writing-useful-junit-tests": "Writing useful JUnit tests",
         "resources": "Resources"
       },
       "headingKeywords": {}
