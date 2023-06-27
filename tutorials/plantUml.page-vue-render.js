@@ -110,6 +110,6 @@ with(this){return _c('td',[_c('img',{attrs:{"src":"/guides/tutorials/images/plan
 with(this){return _c('td',[_c('img',{attrs:{"src":"/guides/tutorials/images/plantuml/PackagesAndConsistency.png"}})])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(" on Mon, 26 Jun 2023, 2:16:12 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(" on Tue, 27 Jun 2023, 18:12:54 GMT+8]")])])])}
 }];
   
