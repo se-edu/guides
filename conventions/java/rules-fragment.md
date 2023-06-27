@@ -894,15 +894,15 @@ public double computeLocation(double x, double y, int zone)
 ```
 
 Note in particular:
-- The opening `/**` on a separate line
+- The opening `/**` on a separate line.
 - **Write the first sentence as a short summary of the method**, as Javadoc automatically places it in the method summary table (and index).
   - In method header comments, the first sentence should start in the form `Returns ...`, `Sends ...`, `Adds ...` (not `Return` or `Returnning` etc.)
-- Subsequent `*` is aligned with the first one
-- Space after each `*`
-- Empty line between description and parameter section
-- Punctuation behind each parameter description
-- No blank line between the documentation block and the method/class
-- `@return` can be omitted if the method does not return anything
+- Subsequent `*` is aligned with the first one.
+- Space after each `*`.
+- Empty line between description and parameter section.
+- Punctuation behind each parameter description.
+- No blank line between the documentation block and the method/class.
+- `@return` can be omitted if the method does not return anything or the return value is obvious from the rest of the comment.
 - When writing Javadocs for overridden methods, the `@inheritDoc` tag can be used to reuse the header comment from the parent method but with further modifications e.g., when the method has a slightly different behavior from the parent method.
 
 Javadoc of class members can be specified on a single line as follows:
@@ -913,6 +913,7 @@ private int connectionCount;
 ```
 
 </div>
+<div tags="level--basic">
 
 **{{ icon_level_basic }} Comments should be indented relative to their position in the code.**
 
@@ -951,13 +952,17 @@ while (true) {
 
 %%{{ icon_info }} Rationale: This is to avoid the comments from breaking the logical structure of the program.%%
 
+Note that trailing comments such as the below are allowed as well.
+
+```java
+    process('ABC'); // process a dummy String frst
+```
+</div>
+
 ## References
 
-1. http://geosoft.no/development/javastyle.html
-1. http://www.oracle.com/technetwork/java/codeconventions-150003.pdf
-1. http://developers.sun.com/sunstudio/products/archive/whitepapers/java-style.pdf
-1. Effective Java, 2nd Edition by Joshua Bloch
-1. http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html
+1. Oracle's Java Style Guide https://www.oracle.com/docs/tech/java/codeconventions.pdf
+1. Google's Java Style Guide https://google.github.io/styleguide/javaguide.html
 
 ## Contributors
 
