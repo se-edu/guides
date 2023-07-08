@@ -491,7 +491,8 @@
       "src": "tutorials/sourcetree.md",
       "title": "Sourcetree Tips",
       "headings": {
-        "sourcetree-tips": "Sourcetree Tips",
+        "sourcetree": "Sourcetree",
+        "installation": "Installation",
         "connecting-sourcetree-to-your-github-account": "Connecting Sourcetree to Your GitHub Account",
         "on-windows": "On Windows",
         "on-a-mac": "On a Mac"
