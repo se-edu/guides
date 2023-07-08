@@ -116,6 +116,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Jeffry Lum")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(" on Sat, 8 Jul 2023, 23:58:09 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(" on Sun, 9 Jul 2023, 2:12:33 GMT+8]")])])])}
 }];
   
