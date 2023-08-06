@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    String javaFxVersion = '11'
+    String javaFxVersion = '17.0.7'
 
     implementation group: 'org.openjfx', name: 'javafx-base', version: javaFxVersion, classifier: 'win'
     implementation group: 'org.openjfx', name: 'javafx-base', version: javaFxVersion, classifier: 'mac'
@@ -49,7 +49,7 @@ Alternatively, you can follow the approach mentioned in [this tutorial](https://
 
 ### If you are not using Gradle
 
-1. Download the [JavaFX 11 SDK](https://gluonhq.com/products/javafx/) and unzip it.
+1. Download the [JavaFX 17 SDK](https://gluonhq.com/products/javafx/) and unzip it.
 
 1. Import the `libs` folder from the SDK into your project (note: `JAVAFX_HOME` is the directory in which you have unzipped the JavaFX SDK).
 
@@ -58,7 +58,7 @@ Alternatively, you can follow the approach mentioned in [this tutorial](https://
 1. From `Run` > `Edit Configurations`, add the following line into your `VM options` for each of the `main` classes.
 
    `--module-path {JAVAFX_HOME}/lib --add-modules javafx.controls,javafx.fxml`<br>
-   e.g., `--module-path C:/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml`
+   e.g., `--module-path C:/javafx-sdk-17.0.7/lib --add-modules javafx.controls,javafx.fxml`
 
 ## Writing your first program
 
