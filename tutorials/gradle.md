@@ -141,15 +141,15 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
-    id 'com.github.johnrengelman.shadow' version '5.1.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 ```
 
-You can follow the links in the list above to find what tasks are provided by a plugin and how to configure it. For example, `run` is a task provided by the Application plugin, and you can specify the `mainClassName` (`mainClass` in some versions) property, to indicate which class should be used as the as the entry point of the application:
+You can follow the links in the list above to find what tasks are provided by a plugin and how to configure it. For example, `run` is a task provided by the Application plugin, and you can set the `mainClassName` (`mainClass` in some versions) property, to indicate which class should be used as the as the entry point of the application:
 
 ```groovy{heading="build.gradle"}
 application {
-    mainClassName = 'seedu.duke.Main'
+    mainClass.set("seedu.duke.Main")
 }
 ```
 
