@@ -35,6 +35,6 @@ with(this){return _c('p',[_v("There are several ways of integrating Gradle into 
 with(this){return _c('p',[_c('strong',[_c('strong',[_v("Scenario 1:")])]),_v(" You are setting up a project that already has Gradle wrapper files.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.0.1")]),_v(" on Tue, 8 Aug 2023, 1:31:48 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.0.1")]),_v(" on Tue, 8 Aug 2023, 1:37:37 GMT+8]")])])])}
 }];
   
