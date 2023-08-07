@@ -116,7 +116,7 @@ public class DukeTest {
 
 After you are able to run JUnit tests successfully using a dummy test class such as the above, you can add more tests and test classes as necessary.
 
-To learn how to write useful JUnit test cases, refer [this section](https://se-education.org/se-book/cppToJava/junit/basic/index.html) of our SE book.
+To learn how to write useful JUnit test cases, refer [this section](https://se-education.org/se-book/cppToJava/junit/basic/index.html) of our SE book. For a quick overview of more advance JUnit features, refer [this section](https://se-education.org/se-book/cppToJava/junit/intermediate/index.html).
 
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
