@@ -27,7 +27,7 @@ Tasks can be composed of, or dependent on, other tasks.
 
 **Even if you are not using Intellij, ==a quick watch of the following video is strongly recommended==** before proceeding with the rest of this tutorial, if you are new to Gradle. The video will help you grasp how Gradle fits into the big picture of a project, and how it looks like to be using it.
 
-<panel header="Expand to see screenshot ..." peek no-close no-switch>
+<panel peek no-close no-switch>
 <div slot="header"><md><span class="text-danger">:fab-youtube:</span> VIDEO: Working with Grade</md></div>
 
 @[youtube](6V6G3RyxEMk)
