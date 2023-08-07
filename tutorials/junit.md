@@ -53,8 +53,8 @@ As JUnit is a third-party library, you need to add support to it specifically in
 First, add the following too dependencies to the `dependencies` block, to tell which JUnit libraries to be used:
 ```groovy {highlight-lines="2-3", heading="build.gradle"}
 dependencies {
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.0'
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.0'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.0'
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.10.0'
 }
 ```
 Next, add the following, to tell Gradle that JUnit is to be used as the testing tool.
