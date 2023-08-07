@@ -16,18 +16,26 @@ The sections below explains how to use PlantUML in a project.
 
 ## Setting up PlantUML
 
-1. **Install the `PlantUML integration` plugin in IntelliJ IDEA.**
+<box type="info">
 
-   1. Go to `File` \> `Settings` to access the `Settings` page.
+This section explains how to install the `PlantUML integration` plugin in IntelliJ IDEA. If you are not using Intellij IDEA, you can refer to [this guide](https://plantuml.com/starting) on how to use PlantUML locally.
+</box>
 
-   1. Go to `Settings` \> `Plugins` \> `Marketplace` and install the plugin `PlantUML integration`.
+1. Go to `File` \> `Settings` to access the `Settings` page.
 
-   1. Then go to `Settings` \> `Languages & Frameworks` \> `PlantUML` or search for PlantUML. You can also use a custom version of plantuml from the [releases page](https://github.com/plantuml/plantuml/releases) but ensure that the version used is at least `1.2020.21` to avoid dependency on Graphviz.
+1. Go to `Settings` \> `Plugins` \> `Marketplace` and install the plugin `PlantUML integration`.
+
+1. Then go to `Settings` \> `Languages & Frameworks` \> `PlantUML` or search for PlantUML. You can also use a specific version of PlantUML from the [releases page](https://github.com/plantuml/plantuml/releases).
     ![Settings - Other Settings - PlantUML: location of PlantUML.jar](images/plantuml/ConfiguringSettings.png)
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Creating/editing/exporting diagrams
+
+<box type="info">
+
+This section is for those using the `PlantUML integration` plugin in IntelliJ IDEA. Others can refer to [this guide](https://plantuml.com/starting) on how to use PlantUML locally.
+</box>
 
 After installing the `PlantUML integration` plugin, simply create or open any `.puml` file to start editing it.
 
@@ -266,6 +274,6 @@ package "Rule Of Thumb";{
 </table>
 
 <box type="tip" seamless>
- 
+
 Explicitly define all symbols to avoid any potential layout mishaps.
 </box>
