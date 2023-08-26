@@ -96,11 +96,11 @@ Tips for SourceTree users:
 Example: A commit message for a bug fix:
 
 ```
-Find command: make matching case insensitive
+Find command: make matching case-insensitive
 
-Find command is case sensitive.
+Find command is case-sensitive.
 
-A case insensitive find is more user-friendly because users cannot be
+A case-insensitive find is more user-friendly because users cannot be
 expected to remember the exact case of the keywords.
 
 Let's,
