@@ -54,8 +54,8 @@ If you did not connect your SourceTree to your GitHub account during the install
 1. In the next dialog, choose:
    * Hosting Service: `GitHub`
    * Preferred Protocol: `HTTPS`
-   * Authentication: `Basic` ==(different from option 1 above)==
-1. Click on the `Refresh Password` button. When prompted, enter your usual GitHub username but ==give the PAT (the one you created in step 1) instead of the regular password==.
+   * Authentication: `Personal Access Token` ==(different from option 1 above)==
+1. Click on the `Refresh Personal Access Token` button. When prompted, enter your usual GitHub username but ==give the PAT (the one you created in step 1) instead of the regular password==.
 1. Now, your Sourcetree should be able to push code to a GitHub repo that you have write permission to.
 
 **Option 3:**
