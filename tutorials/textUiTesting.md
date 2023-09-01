@@ -14,7 +14,7 @@ Sections below explain how to use that technique in a small project.
 
 ## Setting up
 
-Given below re steps to set it up for a project.
+Given below are the steps to set it up for a project.
 
 1. Create a folder to hold the relevant files e.g., `[project root]\text-ui-test`
 1. Add a `runtest.bat` (if you are on Windows) or `runtest.sh` (if you are on a *nix OS) into the folder, containing the script below.<br>
