@@ -43,7 +43,7 @@ use the `java -jar`. For example, if the `foo.jar` is in `C:\projects` folder, y
 
 If you are using [Gradle](gradle.html) in your project, you can use the [Shadow](https://imperceptiblethoughts.com/shadow/) Gradle plugin to package an application into an executable JAR file. It is particularly useful if you wish to creat a _fat_ JAR file.
 
-To use the Shadow plugin, first ensure the following plugins are listed in your `build.gralde` file.
+To use the Shadow plugin, first ensure the following plugins are listed in your `build.gradle` file.
 
 ```groovy{heading="build.gradle"}
 plugins {
