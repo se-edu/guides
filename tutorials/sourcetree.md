@@ -69,7 +69,7 @@ If you did not connect your SourceTree to your GitHub account during the install
 
 Try this guide from Medium: [Connecting Mac Sourcetree with your GitHub account](https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66).
 
-If the above doesn't work, try this guide (also from Medium): [Using Sourcetree to connect to Github without password](https://medium.com/geekculture/using-personal-access-token-in-sourcetree-to-connect-to-github-3702a29554d3).<br>
+If the above doesn't work, try this guide (also from Medium): [Using Sourcetree to connect to GitHub without password](https://medium.com/geekculture/using-personal-access-token-in-sourcetree-to-connect-to-github-3702a29554d3).<br>
 It gives two methods. Recommended to try method 2 first.
 
 <!-- ==================================================================================================== -->

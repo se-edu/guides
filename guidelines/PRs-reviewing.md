@@ -10,7 +10,7 @@
 
 <div class="lead">
 
-Reviewing PRs is not just about the code or the tools, **the way you phrase your comments matters a too**, especially if you are a peer reviewer.
+Reviewing PRs is not just about the code or the tools, **the way you phrase your comments matters too**, especially if you are a peer reviewer.
 </div>
 
 <!-- ==================================================================================================== -->

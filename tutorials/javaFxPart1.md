@@ -44,7 +44,7 @@ dependencies {
 }
 ```
 
-Alternatively, you can follow the approach mentioned in [this tutorial](https://openjfx.io/openjfx-docs/#gradle).
+Alternatively, you can follow the approach mentioned in [this tutorial](https://openjfx.io/openjfx-docs/#gradle), but if you do, use `version = "17.0.7"` instead of the version given there.
 </div>
 
 ### If you are not using Gradle
@@ -106,6 +106,13 @@ public class Launcher {
 Run `Launcher` and you should see something like this:
 
 ![Hello World](images/javafx/HelloWorld.png)
+
+<box type="info" seamless>
+
+The following warning issued by Java runtime can be ignored. This warning appears when you use a later JavaFX version (e.g., 17) with a JDK version that doesn't support the _modules_ feature yet (e.g., Java 11).
+
+>WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @...
+</box>
 
 Congratulations! You have created your first GUI application!
 
