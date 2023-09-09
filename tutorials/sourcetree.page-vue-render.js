@@ -59,9 +59,9 @@ with(this){return _c('h3',{attrs:{"id":"on-a-mac"}},[_v("On a Mac"),_c('a',{stat
 with(this){return _c('p',[_v("Try this guide from Medium: "),_c('a',{attrs:{"href":"https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66"}},[_v("Connecting Mac Sourcetree with your GitHub account")]),_v(".")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("If the above doesn't work, try this guide (also from Medium): "),_c('a',{attrs:{"href":"https://medium.com/geekculture/using-personal-access-token-in-sourcetree-to-connect-to-github-3702a29554d3"}},[_v("Using Sourcetree to connect to Github without password")]),_v("."),_c('br'),_v("\nIt gives two methods. Recommended to try method 2 first.")])}
+with(this){return _c('p',[_v("If the above doesn't work, try this guide (also from Medium): "),_c('a',{attrs:{"href":"https://medium.com/geekculture/using-personal-access-token-in-sourcetree-to-connect-to-github-3702a29554d3"}},[_v("Using Sourcetree to connect to GitHub without password")]),_v("."),_c('br'),_v("\nIt gives two methods. Recommended to try method 2 first.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.0.2")]),_v(" on Fri, 8 Sept 2023, 11:18:41 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.0.2")]),_v(" on Sat, 9 Sept 2023, 14:38:58 GMT+8]")])])])}
 }];
   
