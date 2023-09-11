@@ -15,7 +15,7 @@ This guide explains how to work with a MarkBind site that has been forked on Git
 **Assumptions** (these are true for AB3):
 
 1. Documentation source files are in the `[project root]/docs` folder.
-1. The project comes with a `package.json` file.
+1. The project comes with a `package.json` file, specifying the dependencies.
 1. The site is to be deployed on GitHub Pages, using GitHub Actions CI.
 
 <!-- --------------------------------------------------------------------------------------------------- -->
@@ -24,7 +24,7 @@ This guide explains how to work with a MarkBind site that has been forked on Git
 
 Once you have forked the repo into your own GitHub org, you need to adapt the site to your project (e.g., change project name) and publish the MarkBind site on GitHub. Given below are the steps for doing that.
 
-{{ step('1') }} **Give ==org level== write permissions to GitHub Actions** as GitHub actions will needs write permissions to push your MarkBind site onto the `gh-pages` branch of your repo:
+{{ step('1') }} **Give ==org level== write permissions to GitHub Actions** as GitHub actions will needs write permissions to push your MarkBind site onto the `gh-pages` branch of your repo, as follows:
 
 1. Go to the {{ show_as_rounded_tab(":octicon-gear: Settings ") }} &nbsp;tab of your GitHub org that contains the fork (not the `settings` tab of your fork).
 1. On the navigation menu on the left, expand on the {{ show_as_tab(":octicon-play: Actions") }} menu and click on the {{ show_as_tab("General") }} option.
@@ -39,17 +39,17 @@ Once you have forked the repo into your own GitHub org, you need to adapt the si
 
 {{ step('3') }} **Update the site configs to match your fork**
 
-When adapting the documentation to a new fork that evolves/morphs the upstream project into a different project/product, in addition to updating content files, you need to update the following config files:
+When adapting the documentation to a new fork that evolves/morphs the upstream project into a different project/product, in addition to updating content files, you need to update config files to match your own project. In AB3, these are the config files you need to update:
 
 <tree>
 :far-folder: [project root]
   :far-folder: .github
     :far-folder: workflows
-      ==:fas-file: docs.yml== (this is the config for auto-deploying the site)
+      ==:fas-file: docs.yml== (<span class="text-danger">change repo name in this file to match yours!</span>)
   :far-folder: docs
     :far-folder: _markbind
       :far-folder: layouts
-        ==:fas-file: default.md== (<span class="text-danger">change repo name in this file to match yours!</span>)
+        ==:fas-file: default.md==
     ==:fas-file: site.json==
 </tree>
 
@@ -104,18 +104,23 @@ MarkBind is a superset of Markdown. Refer the [MarkBind UG: Authoring Contents](
 1. Open a terminal and navigate to the `[project root]/docs` folder.
 1. Run the `npm run serve` command. That will open the generated website in your default browser in a ==_live preview_ mode==.
 1. In the browser, navigate to the page you want to preview.
-1. Edit the source files (usually, `.md` files). When you save the file, the live preview will update to reflect the new contents (after a few seconds).
+1. Edit the source files (usually, `*.md` files). When you save the file, the live preview will update to reflect the new contents (after a few seconds).
 
 <box type="warning" seamless>
 
 While _live preview_ can pick up most changes, it may not be able to pick up certain changes (e.g., changes to files in the `_markbind` folder or changes to nunjucks macros). Furthermore, some syntax errors in your code can cause the live preview to crash. In those cases, just stop the server (e.g., <kbd>Ctrl</kbd>+<kbd>C</kbd> on Windows) and start it again.
 </box>
 
-
 <box type="tip" seamless>
 
 If you are using Intellij for editing documentation files, you can consider enabling 'soft wrapping' for `*.md` files, as explained in our [**Intellij IDEA: Useful settings**](intellijUsefulSettings.html#enabling-soft-wrapping) guide.
 </box>
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+## Working with UML diagrams
+
+MarkBind had built-in support for PlantUML diagrams. See the [this page of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#diagrams) to find how to use PlantUML with MarkBind.
 
 <!-- --------------------------------------------------------------------------------------------------- -->
 

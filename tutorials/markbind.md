@@ -16,8 +16,7 @@ Given below are some information useful for when you want to update documentatio
 
 ## Installation
 
-* [Install npm](https://www.npmjs.com/get-npm), if you don't have it yet.
-* Run the command `npm install -g markbind-cli` to install the latest version of MarkBind.
+* You can choose one of the three methods described in [this page of the MarkBind User Guide](https://markbind.org/userGuide/gettingStarted.html)
 
 <!-- --------------------------------------------------------------------------------------------------- -->
 
