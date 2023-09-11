@@ -17,7 +17,7 @@ with(this){return _c('div',{staticClass:"lead"},[_c('p',[_c('strong',[_c('a',{at
 with(this){return _c('h2',{attrs:{"id":"installation"}},[_v("Installation"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#installation","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://www.npmjs.com/get-npm"}},[_v("Install npm")]),_v(", if you don't have it yet.")]),_v(" "),_c('li',[_v("Run the command "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("npm install -g markbind-cli")]),_v(" to install the latest version of MarkBind.")])])}
+with(this){return _c('ul',[_c('li',[_v("You can choose one of the three methods described in "),_c('a',{attrs:{"href":"https://markbind.org/userGuide/gettingStarted.html"}},[_v("this page of the MarkBind User Guide")])])])}
 },function anonymous(
 ) {
 with(this){return _c('h2',{attrs:{"id":"updating-documents"}},[_v("Updating documents"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#updating-documents","onclick":"event.stopPropagation()"}})])}
@@ -41,6 +41,6 @@ with(this){return _c('h2',{attrs:{"id":"automating-pr-previews-deployments"}},[_
 with(this){return _c('ul',[_c('li',[_v("set up Netlify to give a preview of how a PR can affect the generated website. More info "),_c('a',{attrs:{"href":"https://markbind.org/userGuide/deployingTheSite.html#deploying-to-netlify"}},[_v("here")]),_v(".")]),_v(" "),_c('li',[_v("set up Travis to automatically generate and deploy the project website when new code is pushed. More info "),_c('a',{attrs:{"href":"https://markbind.org/userGuide/deployingTheSite.html#deploying-to-github-pages"}},[_v("here")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(" on Mon, 11 Sept 2023, 14:48:04 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(" on Mon, 11 Sept 2023, 21:09:01 GMT+8]")])])])}
 }];
   
