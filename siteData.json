@@ -445,6 +445,17 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/markbind-forked-sites.md",
+      "title": "Working with a forked MarkBind site",
+      "headings": {
+        "working-with-a-forked-markbind-site": "Working with a forked MarkBind site",
+        "initiating-the-site": "Initiating the site",
+        "installing-markbind": "Installing MarkBind",
+        "updating-documents": "Updating documents"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/markbind.md",
       "title": "Using MarkBind for project documentation",
       "headings": {
