@@ -9,10 +9,10 @@
 
 <div class="lead">
 
-This guide explains how to work with a MarkBind site that has been forked on GitHub, taking [addressbook-level3 (AB3)](https://github.com/se-edu/addressbook-level3) as an example).
+This guide explains how to work with a MarkBind site that has been forked on GitHub, taking [addressbook-level3 (AB-3)](https://github.com/se-edu/addressbook-level3) as an example).
 </div>
 
-**Assumptions** (these are true for AB3):
+**Assumptions** (these are true for AB-3):
 
 1. Documentation source files are in the `[project root]/docs` folder.
 1. The project comes with a `package.json` file, specifying the dependencies.
@@ -39,7 +39,7 @@ Once you have forked the repo into your own GitHub org, you need to adapt the si
 
 {{ step('3') }} **Update the site configs to match your fork**
 
-When adapting the documentation to a new fork that evolves/morphs the upstream project into a different project/product, in addition to updating content files, you need to update config files to match your own project. In AB3, these are the config files you need to update:
+When adapting the documentation to a new fork that evolves/morphs the upstream project into a different project/product, in addition to updating content files, you need to update config files to match your own project. In AB-3, these are the config files you need to update:
 
 <tree>
 :far-folder: [project root]
@@ -78,8 +78,7 @@ For any non-trivial site updates, you would want to edit the source files locall
 1. Ensure you have Java 8 or higher installed
 1. Install [Node.js](https://nodejs.org) 16 or higher
 1. Install [Graphviz](https://graphviz.org/download/) (for generating diagrams)
-    * Windows: you can download the installer from [Graphviz](https://graphviz.org/download/).<br>
-      Alternatively use [Chocolatey](https://chocolatey.org/install) to install Graphviz: `choco install graphviz` {icon="fab-windows"}
+    * Windows: Graphviz not required. There will be warning about missing Graphviz, which you can ignore.{icon="fab-windows"}
     * Mac: you can use [Homebrew](https://brew.sh/) to install Graphviz: `brew install graphviz` {icon="fab-apple"}
     * For Linux, you can use your package manager to install Graphviz: `sudo apt install graphviz` {icon="fab-linux"}
 1. Open a terminal and navigate to the `[project root]/docs` folder
@@ -121,6 +120,8 @@ If you are using Intellij for editing documentation files, you can consider enab
 ## Working with UML diagrams
 
 MarkBind had built-in support for PlantUML diagrams. See the [this page of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#diagrams) to find how to use PlantUML with MarkBind.
+
+Also see [_se-edu/guides **Using PlantUML**_](https://se-education.org/guides/tutorials/plantUml.html) for useful info on using PlantUML in a project such as AB-3.
 
 <!-- --------------------------------------------------------------------------------------------------- -->
 
