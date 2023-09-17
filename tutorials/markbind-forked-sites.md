@@ -45,15 +45,21 @@ When adapting the documentation to a new fork that evolves/morphs the upstream p
 :far-folder: [project root]
   :far-folder: .github
     :far-folder: workflows
-      ==:fas-file: docs.yml== (<span class="text-danger">change repo name in this file!</span> e.g., `baseUrl: '/tp'`)
+      ==:fas-file: docs.yml== (change `baseUrl` in this file e.g.,`baseUrl: '/addresssbook-level3'` -> `baseUrl: '/tp'`)
   :far-folder: docs
     :far-folder: _markbind
       :far-folder: layouts
-        ==:fas-file: default.md==
-    ==:fas-file: site.json==
+        ==:fas-file: default.md== (update product name in this file e.g., `AB-3` -> `MyProduct`)
+    ==:fas-file: site.json== (change `titlePrefix` in this file e.g., `titlePrefix: "MyProduct"`)
 </tree>
 
+<p/>
 
+<box type="info" seamless>
+
+`baseUrl` in `site.json` is used for links when running the site locally, and should remain as empty e.g., `baseUrl: ""`.<br>
+`baseUrl` in `docs.yml` is used for links in the deployed site, and should match the repo name e.g., `baseUrl: '/tp'`.
+</box>
 <box type="info" seamless>
 
 The [_markbind/tweaking the page structure_](https://markbind.org/userGuide/tweakingThePageStructure.html) and [_markbind/site.json_](https://markbind.org/userGuide/siteJsonFile.html) pages have information on how to update site-wide elements such as the top navigation bar.
