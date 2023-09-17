@@ -45,7 +45,7 @@ When adapting the documentation to a new fork that evolves/morphs the upstream p
 :far-folder: [project root]
   :far-folder: .github
     :far-folder: workflows
-      ==:fas-file: docs.yml== (<span class="text-danger">change repo name in this file to match yours!</span>)
+      ==:fas-file: docs.yml== (<span class="text-danger">change repo name in this file!</span> e.g., `baseUrl: '/tp'`)
   :far-folder: docs
     :far-folder: _markbind
       :far-folder: layouts
