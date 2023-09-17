@@ -103,7 +103,22 @@ public class Launcher {
 }
 ```
 
-Run `Launcher` and you should see something like this:
+JavaFX creates the `Application` instance by calling the no-argument constructor. So, you need to define a no-argument constructor in the `Duke` class (i.e., the `Application` subclass you use) if you don't have one already e.g.,
+
+```java
+\\...
+
+public class Duke extends Application {
+
+    public Duke() {
+        // code here
+    }
+
+    \\ other code
+}
+```
+
+Now, run `Launcher` and you should see something like this:
 
 ![Hello World](images/javafx/HelloWorld.png)
 
