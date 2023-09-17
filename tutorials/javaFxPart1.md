@@ -105,16 +105,16 @@ public class Launcher {
 
 JavaFX creates the `Application` instance by calling the no-argument constructor. So, you need to define a no-argument constructor in the `Duke` class (i.e., the `Application` subclass you use) if you don't have one already e.g.,
 
-```java
-\\...
+```java{highlight-lines="5-7"}
+//...
 
 public class Duke extends Application {
 
     public Duke() {
-        // code here
+        // ...
     }
 
-    \\ other code
+    // ...
 }
 ```
 
