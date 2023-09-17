@@ -74,6 +74,6 @@ with(this){return _c('p',[_v("MarkBind had built-in support for PlantUML diagram
 with(this){return _c('p',[_v("Also see "),_c('a',{attrs:{"href":"https://se-education.org/guides/tutorials/plantUml.html"}},[_c('em',[_v("se-edu/guides "),_c('strong',[_v("Using PlantUML")])])]),_v(" for useful info on using PlantUML in a project such as AB-3.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(" on Sun, 17 Sept 2023, 12:30:38 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(" on Sun, 17 Sept 2023, 13:02:54 GMT+8]")])])])}
 }];
   
