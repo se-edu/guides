@@ -377,8 +377,6 @@
         "javafx-tutorial-part-1-introduction": "JavaFX tutorial part 1 – Introduction",
         "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX  application",
         "setting-up-java-fx": "Setting up Java FX",
-        "if-you-are-using-gradle": "If you are using Gradle",
-        "if-you-are-not-using-gradle": "If you are not using Gradle",
         "writing-your-first-program": "Writing your first program",
         "exercises": "Exercises"
       },
