@@ -15,7 +15,7 @@ A JavaFX application is like a play you are directing. Instead of creating props
 
 ## Setting up Java FX
 
-### If you are using Gradle
+Note: this tutorial assumes you will be using [Gradle](gradle.md) to manage dependencies of your project.
 
 <div id="javafx-gradle">
 
