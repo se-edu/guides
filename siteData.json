@@ -448,6 +448,7 @@
       "headings": {
         "working-with-a-forked-markbind-site": "Working with a forked MarkBind site",
         "initiating-the-site": "Initiating the site",
+        "site-wide-settings": "Site-wide settings",
         "installing-markbind": "Installing MarkBind",
         "updating-documents": "Updating documents",
         "working-with-uml-diagrams": "Working with UML diagrams"
