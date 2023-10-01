@@ -60,10 +60,6 @@ When adapting the documentation to a new fork that evolves/morphs the upstream p
 `baseUrl` in `site.json` is used for links when running the site locally, and should remain as empty e.g., `baseUrl: ""`.<br>
 `baseUrl` in `docs.yml` is used for links in the deployed site, and should match the repo name e.g., `baseUrl: '/tp'`.
 </box>
-<box type="info" seamless>
-
-The [_markbind/tweaking the page structure_](https://markbind.org/userGuide/tweakingThePageStructure.html) and [_markbind/site.json_](https://markbind.org/userGuide/siteJsonFile.html) pages have information on how to update site-wide elements such as the top navigation bar.
-</box>
 
 {{ step('4') }} **Commit the config changes and push to your fork**. After the CI has run, your MarkBind site will be available at `https://github.io/ORG/REPO` e.g., `https://se-education.org/addressbook-level3`
 
@@ -73,6 +69,10 @@ The [_markbind/tweaking the page structure_](https://markbind.org/userGuide/twea
 
 Read the two sections below to find how to install MarkBind in your computer and use it to live-preview changes as you edit source files.
 </box>
+
+## Site-wide settings
+
+The [_markbind/tweaking the page structure_](https://markbind.org/userGuide/tweakingThePageStructure.html) and [_markbind/site.json_](https://markbind.org/userGuide/siteJsonFile.html) pages have information on how to update site-wide elements such as the top navigation bar.
 
 
 <!-- --------------------------------------------------------------------------------------------------- -->
@@ -106,6 +106,7 @@ npm install markbind-cli@latest --save-dev
 
 MarkBind is a superset of Markdown. Refer the [MarkBind UG: Authoring Contents](https://markbind.org/userGuide/authoringContents.html) for more details on the syntax. Given below is the recommended workflow for any non-trivial changes to this docs site.
 
+1. Install MarkBind (as described in the [section above](#installing-markbind)), if you haven't done so already.
 1. Open a terminal and navigate to the `[project root]/docs` folder.
 1. Run the `npm run serve` command. That will open the generated website in your default browser in a ==_live preview_ mode==.
 1. In the browser, navigate to the page you want to preview.

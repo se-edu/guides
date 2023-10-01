@@ -5,6 +5,11 @@
 
 # Using MarkBind for project documentation
 
+<box type="warning">
+
+**If you are working with a forked repo that is using MarkBind already**, refer to [this guide](markbind-forked-sites.md) instead.
+</box>
+
 <div class="lead">
 
 **[MarkBind](https://markbind.org) is a tool for generating static websites from markdown-like text**, particularly suitable for text-heavy websites such as software project documentation.
