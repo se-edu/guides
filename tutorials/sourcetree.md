@@ -47,7 +47,7 @@ If you did not connect your SourceTree to your GitHub account during the install
 **Option 2:**
 
 1. Create a _classic_ (not fine-grained) GitHub Personal Access Token (PAT), by following the instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic).<br>
-   When asked to select the scope of the PAT, you can choose the `repo` option.
+   When asked to select the scope of the PAT, you can choose the `repo` option and the `workflow` option.
 1. In the Sourcetree, choose `Tools` -> `Options` -> `Authentication`
 1. If any GitHub authentication methods are shown in that dialog, delete them.
 1. Click on `Add`, to add an authentication method.
