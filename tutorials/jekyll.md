@@ -35,7 +35,11 @@ Jekyll uses [**kramdown**](https://kramdown.gettalong.org/syntax.html) (a supers
 
 <box type="tip" seamless>
 
-**Recommendation:** Limit your content to Markdown and GFMD syntax only i.e., avoid kramdown-specific syntax that are not compatible with Markdown/GFMD
+**Recommendation: Limit your content to Markdown and GFMD** syntax only i.e., avoid kramdown-specific syntax that are not compatible with Markdown/GFMD
+</box>
+<box type="tip" seamless>
+
+**Recommendation: Enable _soft-wrapping_ in your code editor** for `*.md` files. For example, as explained in [**Intellij IDEA: Useful settings**](intellijUsefulSettings.html#enabling-soft-wrapping) guide.
 </box>
 
 * **Previewing changes locally**: There are several ways to preview changes locally.

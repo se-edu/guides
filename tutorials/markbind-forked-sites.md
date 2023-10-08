@@ -9,10 +9,10 @@
 
 <div class="lead">
 
-This guide explains how to work with a MarkBind site that has been forked on GitHub, taking [addressbook-level3 (AB-3)](https://github.com/se-edu/addressbook-level3) as an example).
+This guide explains how to work with a MarkBind site that has been forked on GitHub, taking [addressbook-level3 (AB3)](https://github.com/se-edu/addressbook-level3) as an example).
 </div>
 
-**Assumptions** (these are true for AB-3):
+**Assumptions** (these are true for AB3):
 
 1. Documentation source files are in the `[project root]/docs` folder.
 1. The project comes with a `package.json` file, specifying the dependencies.
@@ -24,7 +24,7 @@ This guide explains how to work with a MarkBind site that has been forked on Git
 
 Once you have forked the repo into your own GitHub org, you need to adapt the site to your project (e.g., change project name) and publish the MarkBind site on GitHub. Given below are the steps for doing that.
 
-{{ step('1') }} **Give ==org level== write permissions to GitHub Actions** as GitHub actions will needs write permissions to push your MarkBind site onto the `gh-pages` branch of your repo, as follows:
+{{ step('1') }} **Give ==org level== write permissions to GitHub Actions** as follows (reason: GitHub actions will needs write permissions to push your MarkBind site onto the `gh-pages` branch of your repo):
 
 1. Go to the {{ show_as_rounded_tab(":octicon-gear: Settings ") }} &nbsp;tab of your GitHub org that contains the fork (not the `settings` tab of your fork).
 1. On the navigation menu on the left, expand on the {{ show_as_tab(":octicon-play: Actions") }} menu and click on the {{ show_as_tab("General") }} option.
@@ -39,7 +39,7 @@ Once you have forked the repo into your own GitHub org, you need to adapt the si
 
 {{ step('3') }} **Update the site configs to match your fork**
 
-When adapting the documentation to a new fork that evolves/morphs the upstream project into a different project/product, in addition to updating content files, you need to update config files to match your own project. In AB-3, these are the config files you need to update:
+When adapting the documentation to a new fork that evolves/morphs the upstream project into a different project/product, in addition to updating content files, you need to update config files to match your own project. In AB3, these are the config files you need to update:
 
 <tree>
 :far-folder: [project root]
@@ -119,16 +119,16 @@ While _live preview_ can pick up most changes, it may not be able to pick up cer
 
 <box type="tip" seamless>
 
-If you are using Intellij for editing documentation files, you can consider enabling 'soft wrapping' for `*.md` files, as explained in our [**Intellij IDEA: Useful settings**](intellijUsefulSettings.html#enabling-soft-wrapping) guide.
+**Recommendation: Enable _soft-wrapping_ in your code editor** for `*.md` files. For example, as explained in [**Intellij IDEA: Useful settings**](intellijUsefulSettings.html#enabling-soft-wrapping) guide.
 </box>
 
 <!-- --------------------------------------------------------------------------------------------------- -->
 
 ## Working with UML diagrams
 
-MarkBind had built-in support for PlantUML diagrams. See the [this page of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#diagrams) to find how to use PlantUML with MarkBind.
+**MarkBind has built-in support for PlantUML diagrams.** See the [this page of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#diagrams) to find how to use PlantUML with MarkBind.
 
-Also see [_se-edu/guides **Using PlantUML**_](https://se-education.org/guides/tutorials/plantUml.html) for useful info on using PlantUML in a project such as AB-3.
+Also see [_se-edu/guides **Using PlantUML**_](https://se-education.org/guides/tutorials/plantUml.html) for useful info on using PlantUML in a project such as AB3.
 
 <!-- --------------------------------------------------------------------------------------------------- -->
 
