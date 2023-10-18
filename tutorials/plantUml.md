@@ -43,12 +43,13 @@ After installing the `PlantUML integration` plugin, simply create or open any `.
 
 Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes *will not* be reflected in your actual documentation until you export the diagram.
 
-The `PlantUML integration` plugin allows you to export individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
+****Saving the Diagram as an image****
 
-<box type="info" seamless>
-
-You will have to `git add` any new diagrams generated!
-</box>
+* **When using MarkBind** as the site generation tool:
+  * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you.
+* **When using Jekyll** as the site generation tool:
+  * The `PlantUML integration` plugin allows you to export individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
+  * You will have to `git add` any new diagrams generated!
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
 
