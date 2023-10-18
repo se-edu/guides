@@ -125,6 +125,6 @@ with(this){return _c('div',{staticClass:"col-sm-auto"},[_c('span',{staticStyle:{
 with(this){return _c('code',{pre:true,attrs:{"class":"hljs markdown"}},[_c('span',[_v("He "),_c('span',{pre:true,attrs:{"class":"hljs-emphasis"}},[_v("*really*")]),_v(" meant it.\n")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(" on Sun, 8 Oct 2023, 12:26:00 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(" on Thu, 19 Oct 2023, 0:21:18 GMT+8]")])])])}
 }];
   
