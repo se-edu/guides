@@ -49,14 +49,14 @@ Coding standards, format conventions, style guides, ...
 * [**C#** coding standard](conventions/csharp.html)
 * [**CSS** coding standard](conventions/css.html)
 * [**Files/Folders** naming](conventions/files.html)
-* [**HTML** coding standard](conventions/html.html)
-* [**JavaScript** coding standard](conventions/javascript.html)
 * [**Git** conventions](conventions/git.html)
 * [**GitHub** conventions](conventions/github.html)
-* [**Markdown** coding standard](conventions/markdown.html)
+* [**HTML** coding standard](conventions/html.html)
 * **Java**
   * **coding standards**: [basic](conventions/java/basic.html) | [basic + intermediate](conventions/java/intermediate.html) | [all](conventions/java/index.html)
   * [**logging** conventions](conventions/java/logging.html)
+* [**JavaScript** coding standard](conventions/javascript.html)
+* [**Markdown** coding standard](conventions/markdown.html)
 
 ## {{ thumbnail(":fas-map-signs:") }} Guidelines
 
