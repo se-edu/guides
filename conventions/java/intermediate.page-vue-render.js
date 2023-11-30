@@ -50,7 +50,7 @@ with(this){return _c('p',[_c('strong',[_c('span',[_c('span',{staticClass:"badge 
 with(this){return _c('code',{pre:true,attrs:{"class":"hljs java"}},[_c('span',[_v("line, audioSystem\n")])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_c('span',[_c('span',{staticClass:"badge rounded-pill bg-danger"},[_c('span',{staticClass:"far fa-star",attrs:{"aria-hidden":"true"}})])]),_v(" Constant names must be all uppercase using underscore to separate words.")])])}
+with(this){return _c('p',[_c('strong',[_c('span',[_c('span',{staticClass:"badge rounded-pill bg-danger"},[_c('span',{staticClass:"far fa-star",attrs:{"aria-hidden":"true"}})])]),_v(" Constant names must be all uppercase using underscore to separate words (aka SCREAMING_SNAKE_CASE).")])])}
 },function anonymous(
 ) {
 with(this){return _c('code',{pre:true,attrs:{"class":"hljs java"}},[_c('span',[_v("MAX_ITERATIONS, COLOR_RED\n")])])}
@@ -506,6 +506,6 @@ with(this){return _c('h2',{attrs:{"id":"contributors"}},[_v("Contributors"),_c('
 with(this){return _c('ul',[_c('li',[_v("Nimantha Baranasuriya - Initial draft")]),_v(" "),_c('li',[_v("Dai Thanh - Further tweaks")]),_v(" "),_c('li',[_v("Tong Chun Kit - Further tweaks")]),_v(" "),_c('li',[_v("Barnabas Tan - Converted from Google Docs to Markdown Document")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(" on Wed, 8 Nov 2023, 15:31:36 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(" on Thu, 30 Nov 2023, 11:00:00 GMT+8]")])])])}
 }];
   
