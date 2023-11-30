@@ -45,7 +45,7 @@ Line, AudioSystem
 line, audioSystem
 ```
 
-**{{ icon_level_basic }} Constant names must be all uppercase using underscore to separate words.**
+**{{ icon_level_basic }} Constant names must be all uppercase using underscore to separate words (aka SCREAMING_SNAKE_CASE).**
 
 ```java
 MAX_ITERATIONS, COLOR_RED
