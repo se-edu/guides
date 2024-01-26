@@ -59,7 +59,7 @@ getName(), computeTotalWidth()
 
 Underscores may be used in test method names using the following three part format **`featureUnderTest_testScenario_expectedBehavior()`**
 
-e.g. `sortList_emptyList_exceptionThrown()` `getMember_memberNotFount_nullReturned`
+e.g. `sortList_emptyList_exceptionThrown()` `getMember_memberNotFound_nullReturned`
 
 Third part or both second and third parts can be omitted depending on what's covered in the test.
 For example, the test method `sortList_emptyList()` will test `sortList()` method for all variations of the 'empty list'
