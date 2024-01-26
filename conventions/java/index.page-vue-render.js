@@ -65,7 +65,7 @@ with(this){return _c('code',{pre:true,attrs:{"class":"hljs java"}},[_c('span',[_
 with(this){return _c('p',[_v("Underscores may be used in test method names using the following three part format "),_c('strong',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("featureUnderTest_testScenario_expectedBehavior()")])])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("e.g. "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sortList_emptyList_exceptionThrown()")]),_v(" "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("getMember_memberNotFount_nullReturned")])])}
+with(this){return _c('p',[_v("e.g. "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sortList_emptyList_exceptionThrown()")]),_v(" "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("getMember_memberNotFound_nullReturned")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("Third part or both second and third parts can be omitted depending on what's covered in the test.\nFor example, the test method "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sortList_emptyList()")]),_v(" will test "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sortList()")]),_v(" method for all variations of the 'empty list'\nscenario and the test method "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sortList()")]),_v(" will test the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sortList()")]),_v(" method for all scenarios.")])}
@@ -569,6 +569,6 @@ with(this){return _c('h2',{attrs:{"id":"contributors"}},[_v("Contributors"),_c('
 with(this){return _c('ul',[_c('li',[_v("Nimantha Baranasuriya - Initial draft")]),_v(" "),_c('li',[_v("Dai Thanh - Further tweaks")]),_v(" "),_c('li',[_v("Tong Chun Kit - Further tweaks")]),_v(" "),_c('li',[_v("Barnabas Tan - Converted from Google Docs to Markdown Document")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.2.0")]),_v(" on Fri, 26 Jan 2024, 22:49:51 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.2.0")]),_v(" on Fri, 26 Jan 2024, 23:48:51 GMT+8]")])])])}
 }];
   
