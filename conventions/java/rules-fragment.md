@@ -896,7 +896,7 @@ public double computeLocation(double x, double y, int zone)
 Note in particular:
 - The opening `/**` on a separate line.
 - **Write the first sentence as a short summary of the method**, as Javadoc automatically places it in the method summary table (and index).
-  - In method header comments, the first sentence should start in the form `Returns ...`, `Sends ...`, `Adds ...` (not `Return` or `Returnning` etc.)
+  - In method header comments, the first sentence should start in the form `Returns ...`, `Sends ...`, `Adds ...` etc. (not `Return` or `Returning` etc.)
 - Subsequent `*` is aligned with the first one.
 - Space after each `*`.
 - Empty line between description and parameter section.
