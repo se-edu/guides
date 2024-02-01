@@ -131,7 +131,7 @@ Add the following code to the bottom of the `start` method. You'll have to add `
 ```java
     @Override
     public void start(Stage stage) {
-        //Step 1. Formatting the window to look as expected.
+        //Step 1. Setting up required components.
 
         //...
 
