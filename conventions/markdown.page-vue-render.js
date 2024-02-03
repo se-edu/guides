@@ -125,6 +125,6 @@ with(this){return _c('div',{staticClass:"col-sm-auto"},[_c('span',{staticStyle:{
 with(this){return _c('code',{pre:true,attrs:{"class":"hljs markdown"}},[_c('span',[_v("He "),_c('span',{pre:true,attrs:{"class":"hljs-emphasis"}},[_v("*really*")]),_v(" meant it.\n")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.2.0")]),_v(" on Thu, 1 Feb 2024, 17:07:42 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.2.0")]),_v(" on Sat, 3 Feb 2024, 17:42:05 GMT+8]")])])])}
 }];
   
