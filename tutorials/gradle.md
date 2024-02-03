@@ -67,7 +67,8 @@ First, add the Gradle wrapper files to the project. e.g., if they are in a separ
 <tab header="Using Intellij">
 
 1. Close the IDEA project if it is open.
-1. Delete the `.idea` folder.
+1. Delete the `.idea` folder.<br>
+   {{ icon_info }} Note that some operating systems hides folders/files starting with `.` by default. If you can't see the `.idea` folder, you might need to configure the OS to 'un-hide' those files/folders.
 1. Open/import the project again, as explained in scenario 1 above.
 
 </tab>
