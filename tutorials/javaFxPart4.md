@@ -172,7 +172,7 @@ public class MainWindow extends AnchorPane {
 The `@FXML` annotation marks a `private` or `protected` member and makes it accessible to FXML despite its modifier.
 Without the annotation, we will have to make everything `public` and expose our UI to unwanted changes.
 
-The `FXMLLoader` will map the a control with a `fx:id` defined in FXML to a variable with the same name in its controller.
+The `FXMLLoader` will map a control with a `fx:id` defined in FXML to a variable with the same name in its controller.
 Notice how in `MainWindow`, we can invoke `TextField#clear()` on `userInput` and access its content just as we did in the previous example.
 Similarly, methods like private methods like `handleUserInput` can be used in FXML when annotated by `@FXML`. 
 
