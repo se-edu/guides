@@ -100,14 +100,31 @@ public class DukeTest {
 
 {% set play_button = '<span class="text-success">:fas-play:</span>' %}
 
-* **In Intellij IDEA**:
-  * To run a specific JUnit test class (e.g., `src/test/java/seedu/DukeTest.java`), right-click on the test class, and choose {{ play_button }} `Run {classname}`.
-  * To run all tests in a folder (e.g., `src/test/java` folder), right-click on the folder, and choose {{ play_button }} `Run Tests in '...'`.
-  * Other supported IDEs (e.g., Eclipse, NetBeans, VS Code, etc.) have similar mechanisms.
-* **Using Gradle**:
-  * To run all tests in the project, run the Gradle task `test` ([more info on running Gradle tasks](gradle.html#running-gradle-tasks))
-  * [If using Intellij UI to run the `test` task] The location of the `test` task in the Gradle task hierarchy is `Tasks -> verification -> test` (see screenshot below).<br>
+****In Intellij IDEA:****
+
+* To run a specific JUnit test class (e.g., `src/test/java/seedu/DukeTest.java`), right-click on the test class, and choose {{ play_button }} `Run {classname}`.
+
+<box type="tip" seamless>
+
+If the above doesn't work, you may want to go to `File` > `Settings` and change the`Run tests using:` setting to `Intellij IDEA` (instead of `Gradle`), as shown below:
+
+<panel header="Expand to see screenshot ..." peek no-close no-switch>
+
+![change Intellij settings to not use Gradle](images/gradle/intellijRunTestsUsingIntellij.png)
+</panel>
+</box>
+
+* To run all tests in a folder (e.g., `src/test/java` folder), right-click on the folder, and choose {{ play_button }} `Run Tests in '...'`.
+* Other supported IDEs (e.g., Eclipse, NetBeans, VS Code, etc.) have similar mechanisms.
+
+****Using Gradle:****:
+
+* To run all tests in the project, run the Gradle task `test` ([more info on running Gradle tasks](gradle.html#running-gradle-tasks))
+* [If using Intellij UI to run the `test` task] The location of the `test` task in the Gradle task hierarchy is `Tasks -> verification -> test` (see screenshot below).<br>
     <pic src="images\junit\gradleTaskHierarchy.png" />
+
+****Other ways:****
+
 * There is also [a way to run JUnit tests in the console (without Gradle or an IDE)](https://junit.org/junit5/docs/current/user-guide/#running-tests-console-launcher), which is not used as much as the above two methods.
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
