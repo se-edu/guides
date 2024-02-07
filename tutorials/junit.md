@@ -50,7 +50,7 @@ As JUnit is a third-party library, you need to add support to it specifically in
 
 **1. Update the `build.gradle` file** to include JUnit as a dependency. Here are the relevant lines that needs to be in the `build.gradle` (change the version number as necessary):
 
-First, add the following too dependencies to the `dependencies` block, to tell which JUnit libraries to be used:
+First, add the following two dependencies to the `dependencies` block, to tell which JUnit libraries to be used:
 ```groovy {highlight-lines="2-3", heading="build.gradle"}
 dependencies {
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.0'
