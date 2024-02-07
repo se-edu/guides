@@ -32,7 +32,7 @@ with(this){return _c('p',[_c('span',[_c('span',{staticClass:"glyphicon glyphicon
 with(this){return _c('p',[_c('strong',[_v("1. Update the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("build.gradle")]),_v(" file")]),_v(" to include JUnit as a dependency. Here are the relevant lines that needs to be in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("build.gradle")]),_v(" (change the version number as necessary):")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("First, add the following too dependencies to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("dependencies")]),_v(" block, to tell which JUnit libraries to be used:")])}
+with(this){return _c('p',[_v("First, add the following two dependencies to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("dependencies")]),_v(" block, to tell which JUnit libraries to be used:")])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticClass:"code-block-heading"},[_c('span',[_v("build.gradle")])])}
@@ -95,6 +95,6 @@ with(this){return _c('h2',{attrs:{"id":"resources"}},[_v("Resources"),_c('a',{st
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://junit.org/junit5/docs/current/user-guide/"}},[_v("JUnit 5 User Guide")])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://docs.gradle.org/current/userguide/java_testing.html#using_junit5"}},[_v("Gradle documentation for JUnit")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.2.0")]),_v(" on Mon, 5 Feb 2024, 10:35:04 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.2.0")]),_v(" on Thu, 8 Feb 2024, 0:26:28 GMT+8]")])])])}
 }];
   
