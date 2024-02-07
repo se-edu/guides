@@ -215,7 +215,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 ```
 
-Now, we can go back to the `Main` class and change the event handler to use our new `DialogBox`.
+Now, we can go back to the `Duke` class and change the event handler to use our new `DialogBox`.
 
 ```java
 private void handleUserInput() {
