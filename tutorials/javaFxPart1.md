@@ -46,6 +46,11 @@ dependencies {
 
 </div>
 
+<box type="tip" seamless>
+
+After updating the `build.gradle` file, remember to reload the Gradle dependencies using your IDE UI, or by running the command `./gradlew clean build`. If using an IDE, you can restart the IDE for good measure.
+</box>
+
 ## Writing your first program
 
 As customary, let’s start off with a simple “Hello World” program. Let's say you have a class named `Duke` that you want make a GUI. First, modify the `Duke` class to extend `javafx.application.Application`. This requires you to override the `Application#start()` method and provide a concrete implementation. Notice that the method signature for `Application#start()` has a parameter `Stage`. This is the _primary stage_ that JavaFX provides.
