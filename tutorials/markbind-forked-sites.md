@@ -79,7 +79,7 @@ The [_markbind/tweaking the page structure_](https://markbind.org/userGuide/twea
 
 ## Installing MarkBind
 
-For any non-trivial site updates, you would want to edit the source files locally, and preview the generated site first (to ensure the edits produces the intended outcome), before publishing the changes. For that, you need to install MarkBind in your computer. Given below are the steps.
+For any non-trivial site updates, you would want to edit the source files locally, and preview the generated site first (to ensure the edits produces the intended outcome), before publishing the changes. For that, you need to install MarkBind in your computer. Given below are the steps, which assumes you already have the source files for a MarkBind-compatible Website e.g., [AB3](https://github.com/se-edu/addressbook-level3).
 
 1. Ensure you have Java 8 or higher installed
 1. Install [Node.js](https://nodejs.org) 16 or higher
@@ -87,13 +87,13 @@ For any non-trivial site updates, you would want to edit the source files locall
     * Windows: Graphviz not required. There will be warning about missing Graphviz, which you can ignore.{icon="fab-windows"}
     * Mac: you can use [Homebrew](https://brew.sh/) to install Graphviz: `brew install graphviz` {icon="fab-apple"}
     * For Linux, you can use your package manager to install Graphviz: `sudo apt install graphviz` {icon="fab-linux"}
-1. Open a terminal and navigate to the `[project root]/docs` folder
+1. Open a terminal and navigate to the root folder of the Website which contains the `package.json` file (in AB3, this would be `[project root]/docs` folder).
 1. To install MarkBind (and other dependencies), run the command `npm ci`
 
 
 <box type="info" seamless>
 
-To update MarkBind to a newer version (at a later time), run the following command from the `docs` folder:
+To update MarkBind to a newer version (at a later time), run the following command from the same folder you ran the `npm ci` command:
 
 ```
 npm install markbind-cli@latest --save-dev
