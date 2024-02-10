@@ -122,6 +122,12 @@ While _live preview_ can pick up most changes, it may not be able to pick up cer
 **Recommendation: Enable _soft-wrapping_ in your code editor** for `*.md` files. For example, as explained in [**Intellij IDEA: Useful settings**](intellijUsefulSettings.html#enabling-soft-wrapping) guide.
 </box>
 
+<box type="tip" seamless>
+
+**Generating a _Table of Content_ for a page:** As MarkBind pages automatically generate a [_page navigation menu_](https://markbind.org/userGuide/components/navigation.html#page-navigation-menus) (which appears on the top right edge of the page), there is no need to manually insert a ToC into a page.<br>
+  Furthermore, when saving the page as a PDF, you can make the page navigation menu appear as a ToC in the generated PDF, by inserting `<page-nav-print />` in the page where you want the ToC to appear.
+</box>
+
 <!-- --------------------------------------------------------------------------------------------------- -->
 
 ## Working with UML diagrams
