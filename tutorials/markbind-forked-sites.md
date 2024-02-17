@@ -31,13 +31,7 @@ Once you have forked the repo into your own GitHub org, you need to adapt the si
 1. Scroll to the `Workflow permissions` section at the bottom of the page.
 1. Choose `Read and write permissions` option.
 
-{{ step('2') }} **Enable GitHub Pages of your fork**
-
-1. Go to the {{ show_as_rounded_tab(":octicon-gear: Settings ") }} &nbsp;tab of your fork (not the org, as you did in step 1).
-1. Click {{ show_as_tab("Pages") }} on the menu on the left edge of page.
-1. Set the `Source` as: {{ show_as_button('Deploy from a branch :octicon-triangle-down:') }} branch{{ show_as_button(':octicon-git-branch: gh-pages :octicon-triangle-down:') }} branch and {{ show_as_button(':octicon-file-directory: /root :octicon-triangle-down:') }} folder (assuming project documentation is in that folder) and click {{ show_as_button('Save') }}.
-
-{{ step('3') }} **Update the site configs to match your fork**
+{{ step('2') }} **Update the site configs to match your fork**
 
 When adapting the documentation to a new fork that evolves/morphs the upstream project into a different project/product, in addition to updating content files, you need to update config files to match your own project. In AB3, these are the config files you need to update:
 
@@ -61,7 +55,15 @@ When adapting the documentation to a new fork that evolves/morphs the upstream p
 `baseUrl` in `docs.yml` is used for links in the deployed site, and should match the repo name e.g., `baseUrl: '/tp'`.
 </box>
 
-{{ step('4') }} **Commit the config changes and push to your fork**. After the CI has run, your MarkBind site will be available at `https://github.io/ORG/REPO` e.g., `https://se-education.org/addressbook-level3`
+
+{{ step('3') }} **Commit the config changes and push to your fork.**
+
+{{ step('4') }} **Enable GitHub Pages of your fork.**
+
+1. Go to the {{ show_as_rounded_tab(":octicon-gear: Settings ") }} &nbsp;tab of your fork (not the org, as you did in step 1).
+1. Click {{ show_as_tab("Pages") }} on the menu on the left edge of page.
+1. Set the `Source` as: {{ show_as_button('Deploy from a branch :octicon-triangle-down:') }} branch{{ show_as_button(':octicon-git-branch: gh-pages :octicon-triangle-down:') }} branch and {{ show_as_button(':octicon-file-directory: /root :octicon-triangle-down:') }} folder (assuming project documentation is in that folder) and click {{ show_as_button('Save') }}.
+1. After CI has run (which might take 1-2 minutes), your MarkBind site will be available at `https://github.io/ORG/REPO` e.g., `https://se-education.org/addressbook-level3`
 
 {{ step('...', "Next") }} **Update content, commit, and push**. For future updates to the site, all you need to do is update content (usually, in `*.md` files), commit the changes, and push to your fork. The published MarkBind site will be updated automatically after the CI has run.
 
