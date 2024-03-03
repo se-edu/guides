@@ -885,7 +885,7 @@ ii. When overriding methods (provided the parent method's Javadoc applies exactl
  * @param y Y coordinate of position.
  * @param zone Zone of position.
  * @return Lateral location.
- * @throws IllegalArgumentException  If zone is <= 0.
+ * @throws IllegalArgumentException If zone is <= 0.
  */
 public double computeLocation(double x, double y, int zone)
         throws IllegalArgumentException {
