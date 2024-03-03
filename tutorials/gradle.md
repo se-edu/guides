@@ -55,7 +55,10 @@ Given below are three scenarios of adding the Gradle wrapper to a project. Choos
 </tab>
 <tab header="Not using an IDE">
 
-No action required. You should be able to use Gradle via the command line right away.
+Run the `java -version` command in the same terminal you use for running Gradle commands, to ensure you are using the intended Java version for Gradle.
+
+No further action required. You should be able to use Gradle via the command line right away.
+
 </tab>
 <p/>
 
