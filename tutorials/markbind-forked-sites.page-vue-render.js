@@ -47,7 +47,7 @@ with(this){return _c('p',[_c('span',{staticClass:"badge bg-dark bigger-level0"},
 with(this){return _c('li',[_v("Click "),_c('span',{staticClass:"border"},[_v("  Pages ")]),_v(" on the menu on the left edge of page.")])}
 },function anonymous(
 ) {
-with(this){return _c('li',[_v("After CI has run (which might take 1-2 minutes), your MarkBind site will be available at "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("https://github.io/ORG/REPO")]),_v(" e.g., "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("https://se-education.org/addressbook-level3")])])}
+with(this){return _c('li',[_v("After CI has run (which might take 1-2 minutes), your MarkBind site will be available at "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("http(s)://<organization_name_in_lower_case>.github.io/<repository>")]),_v(" e.g., "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("https://ay2324s2-csxxxx-f18.github.io/tp")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('span',{staticClass:"badge bg-dark bigger-level0"},[_v("Next ...")]),_v(" "),_c('strong',[_v("Update content, commit, and push")]),_v(". For future updates to the site, all you need to do is update content (usually, in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("*.md")]),_v(" files), commit the changes, and push to your fork. The published MarkBind site will be updated automatically after the CI has run.")])}
@@ -86,6 +86,6 @@ with(this){return _c('p',[_c('strong',[_v("MarkBind has built-in support for Pla
 with(this){return _c('p',[_v("Also see "),_c('a',{attrs:{"href":"https://se-education.org/guides/tutorials/plantUml.html"}},[_c('em',[_v("se-edu/guides "),_c('strong',[_v("Using PlantUML")])])]),_v(" for useful info on using PlantUML in a project such as AB3.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.2.0")]),_v(" on Tue, 20 Feb 2024, 14:21:31 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.3.0")]),_v(" on Tue, 5 Mar 2024, 16:05:05 GMT+8]")])])])}
 }];
   
