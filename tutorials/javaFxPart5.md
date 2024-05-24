@@ -406,6 +406,7 @@ Here are other things you can do with your app to make it more personalized:
 - Setting a placeholder in your `TextField` (e.g., "Type here... ")
 - Change the title and icon of your app
 - Change the send button to an icon
+- Make profile pictures circular
 - Set GIF as profile pictures
 - Change the text box color if it is an error message
 - Add [sound effects](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/media/AudioClip.html)
