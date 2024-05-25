@@ -23,7 +23,7 @@ Tutorials, how-to guides, getting-started guides, ...
     * [Part 2: Creating a GUI for Duke](tutorials/javaFxPart2.html)
     * [Part 3: Interacting with the user](tutorials/javaFxPart3.html)
     * [Part 4: Using FXML](tutorials/javaFxPart4.html)
-    * [Part 5: Tweaking the GUI (Optional)](tutorials/javaFxPart5.html)
+    * [Part 5: Tweaking the GUI](tutorials/javaFxPart5.html)
 * **Intellij IDEA**:
   * [Configuring the JDK](tutorials/intellijJdk.html)
   * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
