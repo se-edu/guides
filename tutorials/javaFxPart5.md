@@ -63,7 +63,7 @@ If you don't want to let the user resize horizontally, you can set the maximum w
 Update the `start` method as shown below.
 
 **Main.java**
-```java
+```java {heading="Main.java" highlight-lines="4-5"}
 public void start(Stage stage) {
     try {
         // current code...
