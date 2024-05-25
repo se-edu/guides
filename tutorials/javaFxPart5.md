@@ -267,7 +267,7 @@ To demonstrate this, let us take a look at the following code for our text bubbl
 
 The values are set in a **clockwise** manner starting with the **top left corner/top edge**.
 
-![BorderDemo](images/javafx/BorderDemo.png)
+<pic src="images/javafx/BorderDemo.png" width="600" />
 
 ## Color
 
