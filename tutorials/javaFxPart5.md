@@ -56,8 +56,7 @@ Save `MainWindow.fxml` and you're done! Run and test your app out to see if it w
 
 ## Setting limit to Window size
 
-Let's add a few restrictions to the window size so that the user can't resize the window too small. We can do this by
-setting the minimum height and width.
+If you don't want the user to be able to resize the window below certain limits, you can set the minimum height and width.
 
 If you don't want to let the user resize horizontally, you can set the maximum width = minimum width.
 
