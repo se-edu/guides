@@ -3,7 +3,7 @@
   pageNav: 2
 </frontmatter>
 
-# JavaFX tutorial part 5 – Tweaking the GUI (Optional)
+# JavaFX tutorial part 5 – Tweaking the GUI
 
 This guide aims to help shorten the amount of time needed to learn some of the layout/CSS related stuff so that you may
 focus more on designing your own GUI.
