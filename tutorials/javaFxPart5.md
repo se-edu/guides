@@ -12,10 +12,9 @@ focus more on designing your own GUI.
 
 As you may have noticed, some of the boxes does not follow the dimension of the app.
 
-To handle this, we have 3 choices:
+To rectify this, we can use a mixture of the following two techniques:
 1) [Automatically anchor nodes](#automatically-anchor-nodes)
 2) [Set limit to window dimensions](#setting-limit-to-window-size)
-3) Both
 
 
 ## Automatically Anchor Nodes
