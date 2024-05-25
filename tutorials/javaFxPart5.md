@@ -80,7 +80,7 @@ public void start(Stage stage) {
 
 # Customize with JavaFX CSS!
 
-For current and future projects, you might need to customize colors, shapes, borders, and other design elements.
+Suppose you want to customize colors, shapes, borders, and other design elements.
 The most effective way to do this is through CSS, so this will be a mini [**JavaFX CSS**](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html)
 introductory guide.
 
