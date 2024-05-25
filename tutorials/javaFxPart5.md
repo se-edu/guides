@@ -83,7 +83,10 @@ public void start(Stage stage) {
 Suppose you want to customize colors, shapes, borders, and other design elements.
 The most effective way to do this is through CSS, so this will be a mini [**JavaFX CSS**](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html)
 introductory guide.
+<box type="tip" seamless>
 
+If you are new to CSS entirely, a quick way to learn the basics is [give a suitable resoruce here].
+</box>
 ## Setting up and linking CSS to FXML
 
 Create the following files in `src/main/resources/css`:
