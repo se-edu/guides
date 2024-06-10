@@ -419,6 +419,43 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/javaFxPart5.md",
+      "title": "JavaFX tutorial part 5 – Tweaking the GUI",
+      "headings": {
+        "javafx-tutorial-part-5-tweaking-the-gui": "JavaFX tutorial part 5 – Tweaking the GUI",
+        "setting-the-dimensions": "Setting the dimensions",
+        "automatically-resize-elements": "Automatically Resize Elements",
+        "anchor-textfield": "Anchor TextField",
+        "anchor-send-button": "Anchor Send Button",
+        "anchor-scrollpane": "Anchor ScrollPane",
+        "setting-limit-to-window-size": "Setting limit to Window size",
+        "customize-with-javafx-css": "Customize with JavaFX CSS!",
+        "setting-up-and-linking-css-to-fxml": "Setting up and linking CSS to FXML",
+        "flipped-text-bubbles": "Flipped text bubbles",
+        "padding-and-margin": "Padding and Margin",
+        "borders": "Borders",
+        "color": "Color",
+        "rgb-or-rgba": "RGB or RGBA",
+        "hex": "HEX",
+        "looked-up-color": "Looked-up Color",
+        "gradient-color": "Gradient color",
+        "ladder": "Ladder",
+        "derive": "Derive",
+        "states": "States",
+        "image-and-shadows": "Image and shadows",
+        "java-css-reference-guide": "Java CSS Reference Guide",
+        "enhancements": "Enhancements",
+        "change-style-dynamically-based-on-command": "Change style dynamically based on command",
+        "set-image-as-background": "Set image as background",
+        "resize-image": "Resize Image",
+        "stretch-image": "Stretch Image",
+        "repeat-image": "Repeat Image",
+        "changing-and-quot-opacity-and-quot": "Changing &quot;Opacity&quot;",
+        "other-things-to-consider": "Other things to consider"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/jekyll.md",
       "title": "Using Jekyll for project documentation",
       "headings": {
