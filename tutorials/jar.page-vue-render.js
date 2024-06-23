@@ -44,6 +44,6 @@ with(this){return _c('h2',{attrs:{"id":"resources"}},[_v("Resources"),_c('a',{st
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://docs.oracle.com/javase/tutorial/deployment/jar/basicsindex.html"}},[_v("Oracle's tutorial on JAR files")])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow"}},[_v("Gradle documentation for the Shadow plugin")])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://imperceptiblethoughts.com/shadow/introduction/"}},[_v("Shadow plugin homepage")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Thu, 13 Jun 2024, 15:28:26 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sun, 23 Jun 2024, 18:25:50 GMT+8]")])])])}
 }];
   
