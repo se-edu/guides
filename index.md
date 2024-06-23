@@ -14,6 +14,7 @@ This website contains a collection of tutorials, standards, guides, best practic
 
 Tutorials, how-to guides, getting-started guides, ...
 
+* [**AddressBook Level-3 (AB3)**](tutorials/ab3.html)
 * [**Checkstyle**](tutorials/checkstyle.html)
 * [**Codecov**](tutorials/codecov.html)
 * **Java**:
