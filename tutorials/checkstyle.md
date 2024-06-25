@@ -71,13 +71,15 @@ For example, you can run `gradlew checkstyleMain checkstyleTest` to verify that 
 Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij can alert you about code style problems as you write code.
 
 1. Install the Checkstyle-IDEA plugin as follows:
-   1. `File` \> `Settings` (Windows/Linux), or `IntelliJ IDEA` \> `Preferences…​` (macOS)
+   1. `File` \> `Settings` (Windows/Linux), or `IntelliJ IDEA` \> `Settings…​` (macOS)
    1. Select `Plugins` (on the left slide menu in the dialog that pops up)
    1. Select `Marketplace` (on to top center of the same dialog box)
    1. Find the plugin.
    1. Restart the IDE to complete the installation.
 
-1. Click `File` \> `Settings…​` \> `Tools` \> `Checkstyle`
+1. Click `File` \> `Settings` (Windows/Linux), or `IntelliJ IDEA` \> `Settings…​` (macOS)
+
+1. Click `Tools` \> `Checkstyle`
 
 1. Set `Scan Scope` to `Only Java sources (including tests)`, so that the plugin will run checkstyle for our test source codes as well
 
