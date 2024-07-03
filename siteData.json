@@ -386,6 +386,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/intellijDebugger.md",
+      "title": "Intellij IDEA: Using the debugger",
+      "headings": {
+        "intellij-idea-using-the-debugger": "Intellij IDEA: Using the debugger"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/intellijImportGradleProject.md",
       "title": "Intellij IDEA: Importing a Gradle project",
       "headings": {
