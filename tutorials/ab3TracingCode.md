@@ -27,9 +27,9 @@ It also has a sequence diagram (reproduced below) that tells us how a command pr
 Note how the diagram shows only the execution flows _between_ the main components. That is, it does not show details of the execution path *inside* each component. By hiding those details, the diagram aims to inform the reader about the overall execution path of a command without overwhelming the reader with too much details. In this tutorial, you aim to find those omitted details so that you get a more in-depth understanding of how the code works.
 
 Before we proceed, ensure that you have done the following:
-1. Read the [*Architecture* section of the DG](../DeveloperGuide.md#architecture)
-1. Set up the project in Intellij IDEA
-1. Learn basic debugging features of Intellij IDEA
+1. Read the [**_Architecture_ section** of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture) (until you reach the _UI component_ section).
+1. Set up the project in Intellij IDEA.
+1. Learn basic debugging features of Intellij IDEA:
    * If you are using a different IDE, we'll leave it to you to figure out the equivalent feature to use in your IDE.
    * If you are not using an IDE, we'll let you figure out how to achieve the same using your coding toolchain.
 
@@ -67,7 +67,7 @@ public interface Logic {
 ```
 
 But apparently, this is an interface, not a concrete implementation.
-That should be fine because the [Architecture section of the Developer Guide](../DeveloperGuide.html#architecture) tells us that components interact through interfaces. Here's the relevant diagram:
+That should be fine because the [_Architecture_ section of the Developer Guide](../DeveloperGuide.html#architecture) tells us that components interact through interfaces. Here's the relevant diagram:
 
 <pic src="https://se-education.org/addressbook-level3/images/ComponentManagers.png" />
 
@@ -210,7 +210,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
      FYI, The 'filtered list' is the list of persons resulting from the most recent operation that will be shown to the user immediately after. For the `edit` command, we populate it with all the persons so that the user can see the edited person along with all other persons. If this was a `find` command, we would be setting that list to contain the search results instead.<br>
      To provide some context, given below is the class diagram of the `Model` component. See if you can figure out where the 'filtered list' of persons is being tracked.
      <pic src="https://se-education.org/addressbook-level3/images/ModelClassDiagram.png" width="450" /><br>
-   * :bulb: This may be a good time to read through the [`Model` component section of the DG](../DeveloperGuide.html#model-component)
+   * {{ icon_tip }} This may be a good time to read through the [**_Model component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#model-component)
 
 1. As you step through the rest of the statements in the `EditCommand#execute()` method, you'll see that it creates a `CommandResult` object (containing information about the result of the execution) and returns it.<br>
    Advancing the debugger by one more step should take you back to the middle of the `LogicManager#execute()` method.<br>
@@ -218,7 +218,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 1. Given that you have already seen quite a few classes in the `Logic` component in action, see if you can identify in this partial class diagram some of the classes you've encountered so far, and see how they fit into the class structure of the `Logic` component:
     <pic src="https://se-education.org/addressbook-level3/images/LogicClassDiagram.png" width="550"/>
 
-   * :bulb: This may be a good time to read through the [`Logic` component section of the DG](../DeveloperGuide.html#logic-component)
+   * {{ icon_tip }} This may be a good time to read through the [**_Logic component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#logic-component)
 
 1. Similar to before, you can step over/into statements in the `LogicManager#execute()` method to examine how the control is transferred to the `Storage` component and what happens inside that component.
 
@@ -252,7 +252,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 1. While you are stepping through the classes in the `Storage` component, here is the component's class diagram to help you understand how those classes fit into the structure of the component.<br>
    <pic src="https://se-education.org/addressbook-level3/images/StorageClassDiagram.png" width="550" />
 
-   * :bulb: This may be a good time to read through the [`Storage` component section of the DG](../DeveloperGuide.html#storage-component)
+   * {{ icon_tip }} This may be a good time to read through the [`Storage` component section of the DG](../DeveloperGuide.html#storage-component)
 
 1. We can continue to step through until you reach the end of the `LogicManager#execute()` method and return to the `MainWindow#executeCommand()` method (the place where we put the original breakpoint).
 
@@ -267,7 +267,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
     ```
 
 1. Finally, you can step through until you reach the end of`MainWindow#executeCommand()`.<br>
-   :bulb: This may be a good time to read through the [`UI` component section of the DG](../DeveloperGuide.html#ui-component)
+{{ icon_tip }} This may be a good time to read through the [**_UI component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#ui-component)
 
 
 ## Conclusion
