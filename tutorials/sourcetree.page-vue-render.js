@@ -62,6 +62,6 @@ with(this){return _c('p',[_v("Try this guide from Medium: "),_c('a',{attrs:{"hre
 with(this){return _c('p',[_v("If the above doesn't work, try this guide (also from Medium): "),_c('a',{attrs:{"href":"https://medium.com/geekculture/using-personal-access-token-in-sourcetree-to-connect-to-github-3702a29554d3"}},[_v("Using Sourcetree to connect to GitHub without password")]),_v("."),_c('br'),_v("\nIt gives two methods. Recommended to try method 2 first.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sun, 23 Jun 2024, 18:25:50 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 3 Jul 2024, 22:43:29 GMT+8]")])])])}
 }];
   
