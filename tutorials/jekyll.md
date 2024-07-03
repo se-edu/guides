@@ -39,7 +39,7 @@ Jekyll uses [**kramdown**](https://kramdown.gettalong.org/syntax.html) (a supers
 </box>
 <box type="tip" seamless>
 
-**Recommendation: Enable _soft-wrapping_ in your code editor** for `*.md` files. For example, as explained in [**Intellij IDEA: Useful settings**](intellijUsefulSettings.html#enabling-soft-wrapping) guide.
+**Recommendation: Enable _soft-wrapping_ in your code editor** for `*.md` files. For example, as explained in [**Intellij IDEA: Useful settings**](intellijUsefulSettings.md#enabling-soft-wrapping) guide.
 </box>
 
 * **Previewing changes locally**: There are several ways to preview changes locally.

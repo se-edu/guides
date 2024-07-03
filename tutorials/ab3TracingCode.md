@@ -67,7 +67,7 @@ public interface Logic {
 ```
 
 But apparently, this is an interface, not a concrete implementation.
-That should be fine because the [_Architecture_ section of the Developer Guide](../DeveloperGuide.html#architecture) tells us that components interact through interfaces. Here's the relevant diagram:
+That should be fine because the [_Architecture_ section of the Developer Guide](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture) tells us that components interact through interfaces. Here's the relevant diagram:
 
 <pic src="https://se-education.org/addressbook-level3/images/ComponentManagers.png" />
 
@@ -252,7 +252,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 1. While you are stepping through the classes in the `Storage` component, here is the component's class diagram to help you understand how those classes fit into the structure of the component.<br>
    <pic src="https://se-education.org/addressbook-level3/images/StorageClassDiagram.png" width="550" />
 
-   * {{ icon_tip }} This may be a good time to read through the [`Storage` component section of the DG](../DeveloperGuide.html#storage-component)
+   * {{ icon_tip }} This may be a good time to read through the [**_Storage component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#storage-component)
 
 1. We can continue to step through until you reach the end of the `LogicManager#execute()` method and return to the `MainWindow#executeCommand()` method (the place where we put the original breakpoint).
 

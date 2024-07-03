@@ -121,7 +121,7 @@ While _live preview_ can pick up most changes, it may not be able to pick up cer
 
 <box type="tip" seamless>
 
-**Recommendation: Enable _soft-wrapping_ in your code editor** for `*.md` files. For example, as explained in [**Intellij IDEA: Useful settings**](intellijUsefulSettings.html#enabling-soft-wrapping) guide.
+**Recommendation: Enable _soft-wrapping_ in your code editor** for `*.md` files. For example, as explained in [**Intellij IDEA: Useful settings**](intellijUsefulSettings.md#enabling-soft-wrapping) guide.
 </box>
 
 <box type="tip" seamless>
