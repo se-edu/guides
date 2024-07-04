@@ -105,7 +105,7 @@ We will get to that later.
    ![Controller for MainWindow](images/javafx/MainWindowController.png)
 
 1. Let’s repeat the process for `DialogBox`.
-   The main difference here is that DialogBox checks `Use fx:root construct` and _does not define a controller class_. 
+   The main difference here is that DialogBox checks `Use fx:root construct` and _does not define a controller class_. Checking this enables the use of the `fx:root` element, allowing you to reference a predefined root element. More about `fx:root` on the documentation [Introduction to FXML | JavaFX 2.2](https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html#root_elements).
 
    ![Settings for DialogBox](images/javafx/DialogBoxController.png)
 
