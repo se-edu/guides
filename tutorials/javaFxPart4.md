@@ -109,6 +109,28 @@ We will get to that later.
 
    ![Settings for DialogBox](images/javafx/DialogBoxController.png)
 
+<box type="info" seamless>
+
+  Using the FXML files above, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and ending with `...` instead.
+
+  To fix this issue, we can implement one of the suggested changes below to the FXML files:
+
+  <b>1. Changing MainWindow.fxml</b>
+  
+  Remove `prefHeight` for `VBox`:
+  ```xml
+  <VBox fx:id="dialogContainer" prefWidth="388.0" />
+  ```
+
+  <b>2. Changing DialogBox.fxml</b>
+  
+  Set `minHeight` for `Label`:
+  ```xml
+  <Label fx:id="dialog" text="Label" wrapText="true" minHeight="-Infinity"/>
+```
+
+</box>
+
 ## Using Controllers
 
 As part of the effort to separate the code handling Duke's logic and UI, let's _refactor_ the UI-related code to its own class.
