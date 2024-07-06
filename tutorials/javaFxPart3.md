@@ -15,38 +15,40 @@ JavaFX has an _event-driven architecture style_. As such, we programmatically de
 
 For Duke, there are two events that we want to respond to, namely the user pressing `Enter` in the `TextField` and left-clicking the `Button`. These are the `onAction` event for the `TextField` and the `onMouseClicked` event for the `Button`.
 
-For now, let’s have the application add a new `Label` with the text from the `TextField`. Update the `Main` class as follows. You'll need to add an `import javafx.scene.control.Label;` too.
+For now, let’s have the application add a new `DialogBox` with the text from the `TextField`, so the user can see the message they have sent. Update the `Duke` class as follows.
 ```java
 @Override
 public void start(Stage stage) {
-    // Step 1 code here
+    //Step 1 code here
 
     //Step 2 code here
+    //Delete or comment off the following section
+    //Label text = new Label("Hello!");
+    //ImageView displayPicture = new ImageView(user);
+    //DialogBox dialogBox = new DialogBox(text, displayPicture);
+    //dialogContainer.getChildren().addAll(dialogBox);
 
     //Step 3. Add functionality to handle user input.
     sendButton.setOnMouseClicked((event) -> {
-        dialogContainer.getChildren().add(getDialogLabel(userInput.getText()));
-        userInput.clear();
+        handleUserInput();
     });
 
     userInput.setOnAction((event) -> {
-        dialogContainer.getChildren().add(getDialogLabel(userInput.getText()));
-        userInput.clear();
+        handleUserInput();
     });
 }
 
 /**
  * Iteration 1:
- * Creates a label with the specified text and adds it to the dialog container.
- * @param text String containing text to add
- * @return a label with the specified text that has word wrap enabled.
+ * Creates a dialog box containing user input, and appends it to
+ * the dialog container. Clears the user input after processing.
  */
-private Label getDialogLabel(String text) {
-    // You will need to import `javafx.scene.control.Label`.
-    Label textToAdd = new Label(text);
-    textToAdd.setWrapText(true);
-
-    return textToAdd;
+private void handleUserInput() {
+        Label userText = new Label(userInput.getText());
+        dialogContainer.getChildren().addAll(
+            new DialogBox(userText, new ImageView(user))
+        );
+        userInput.clear();
 }
 ```
 
@@ -56,7 +58,7 @@ Run the program and give it a whirl!
 
 At first glance everything appears to work perfectly. However, when the `VBox` stretches beyond the confines of the `ScrollPane`, the `ScrollPane` does not scroll down automatically as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
 
-Update the `start` method as shown below.
+Update the `Duke.start` method as shown below.
 
 ```java
 public void start(Stage stage) {
@@ -67,70 +69,14 @@ public void start(Stage stage) {
 }
 ```
 
-Verify that the `ScrollPane` scrolls as intended.
-
-## Iteration 2 – Adding Dialog Boxes
-
-In the mockup of the UI, notice that the dialog boxes are composed of two different controls (`ImageView` and `Label`) and reused multiple times. In situations like this, it is often beneficial to create our own custom control.
-
-Let’s create our custom control `DialogBox`:
+Verify that the `ScrollPane` scrolls as intended. Feel free to use the following long message to test your program:
 ```java
-import javafx.geometry.Pos;
-import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-
-public class DialogBox extends HBox {
-
-    private Label text;
-    private ImageView displayPicture;
-
-    public DialogBox(Label l, ImageView iv) {
-        text = l;
-        displayPicture = iv;
-
-        text.setWrapText(true);
-        displayPicture.setFitWidth(100.0);
-        displayPicture.setFitHeight(100.0);
-
-        this.setAlignment(Pos.TOP_RIGHT);
-        this.getChildren().addAll(text, displayPicture);
-    }
-}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet dictum diam, eget venenatis ligula blandit sed. Pellentesque gravida, mauris ut consectetur porta, tellus odio porttitor purus, dignissim vehicula dui neque sit amet tellus. Donec ullamcorper odio eu urna hendrerit, et pharetra nisi vehicula. Vestibulum mattis faucibus nunc. Integer commodo sed felis sed faucibus. Ut eget erat est. Mauris ligula mi, vulputate a iaculis non, pulvinar eu lorem. Donec volutpat vitae lorem ut cursus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed tempus lacus in nisl aliquam egestas. Cras posuere justo dictum nisl vulputate interdum. Proin quis enim nec odio iaculis ultrices posuere id ipsum. Nulla molestie neque non sem dictum, at egestas libero ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Maecenas gravida ante non erat iaculis, nec bibendum ligula porta. Donec sagittis ultrices justo, sed sollicitudin eros volutpat sit amet. Etiam hendrerit enim sed nibh volutpat, vel tincidunt augue vehicula. Suspendisse quis imperdiet felis, ut scelerisque nunc. Pellentesque non nulla volutpat, placerat elit vel, posuere enim. Mauris sit amet porttitor ligula. Morbi libero ipsum, tincidunt eget erat ultricies, consectetur varius metus. Vivamus sagittis augue vel fringilla fermentum. Suspendisse rutrum gravida mauris nec mollis. Vivamus sit amet nunc vel ante luctus pretium et tristique nibh. Sed dapibus malesuada tempor.Morbi massa elit, eleifend id consectetur eu, tempus id enim. Etiam rhoncus rhoncus augue ut accumsan. Nullam ac tortor semper, mattis leo sed, malesuada metus. Nunc pharetra nisl vel ante lobortis mattis. Praesent sollicitudin ipsum nibh, quis consectetur leo iaculis vitae. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam consequat diam sed ultricies venenatis. Aliquam non elementum eros. Morbi gravida a lacus id venenatis. Nulla ex purus, rhoncus at turpis ac, ultrices elementum ipsum. Nam gravida purus nisi, sed laoreet felis condimentum ut. Pellentesque non sapien id eros fermentum sagittis. Aliquam facilisis justo in efficitur gravida. Proin tempus eros tortor, eu venenatis libero ullamcorper id. Suspendisse tellus augue, interdum non massa sit amet, pulvinar tristique enim.
 ```
 
-We use the code in our main class just like any other control. Here are the steps to update the code to use the custom control in `Main.java`.
-
-First, add these imports:
-```java
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-```
-
-Next, add two images to the `main/resources/images` folder.
-For this tutorial, we have two images `DaUser.png` and `DaDuke.png` to represent the user avatar and Duke's avatar respectively but you can use any image you want.
-
-Image|Filename
----|---
-![DaDuke](images/javafx/DaUser.png) | `DaUser.png`
-![DaUser](images/javafx/DaDuke.png) | `DaDuke.png`
-
-
-```java
-public class Duke extends Application {
-    // ...
-    private Image user = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
-    private Image duke = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
-    // ...
-}
-```
-
-<box type="important" seamless>
-
-Note the image location (e.g., `/images/DaUser.png`) is given relative to the `main/resources` folder and there is a `/` in front. Follow the same for similar cases of using `getResourceAsStream` method in later parts of this tutorial.
-</box>
-
-Add a new method to handle user input:
+## Iteration 2 – Adding dialog boxes for Duke's response
+The next step is to enable Duke to respond to sent messages. On top of showing what the user sent, we need to take the response generated my the program and pass it to the UI components.
+Add a new method in `Duke` to handle user input:
 ```java
 /**
  * Iteration 2:
@@ -139,9 +85,11 @@ Add a new method to handle user input:
  */
 private void handleUserInput() {
     Label userText = new Label(userInput.getText());
+    //add the following line
     Label dukeText = new Label(getResponse(userInput.getText()));
     dialogContainer.getChildren().addAll(
             new DialogBox(userText, new ImageView(user)),
+            //add the following line
             new DialogBox(dukeText, new ImageView(duke))
     );
     userInput.clear();
@@ -153,24 +101,6 @@ private void handleUserInput() {
  */
 private String getResponse(String input) {
     return "Duke heard: " + input;
-}
-```
-
-Update the event handler code in the `start` method to use the new `handleUserInput` method:
-```java
-
-@Override
-public void start(Stage stage) {
-    //...
-
-    //Part 3. Add functionality to handle user input.
-    sendButton.setOnMouseClicked((event) -> {
-        handleUserInput();
-    });
-
-    userInput.setOnAction((event) -> {
-        handleUserInput();
-    });
 }
 ```
 

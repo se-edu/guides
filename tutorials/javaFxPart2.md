@@ -115,6 +115,71 @@ public class Duke extends Application {
     }
 }
 ```
+You might have noticed that the code above does not include the dialog boxes, which are HBoxes with a Label and an ImageView. For groups of components that are reused multiple times like this, it is often beneficial to create our own custom control.
+
+Let’s create our custom control `DialogBox`:
+```java
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+
+public class DialogBox extends HBox {
+
+    private Label text;
+    private ImageView displayPicture;
+
+    public DialogBox(Label l, ImageView iv) {
+        text = l;
+        displayPicture = iv;
+        
+        this.getChildren().addAll(text, displayPicture);
+    }
+}
+```
+We use this control just like any other control. To have a dialog box in the scene, we need to create a new DialogBox instance and pass two elements to it: a Label and an ImageView. For now, we can do this in `Duke.java`.
+
+First, add these imports:
+
+```java
+import duke.ui.DialogBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+```
+Next, add two images to the `main/resources/images` folder.
+For this tutorial, we have two images `DaUser.png` and `DaDuke.png` to represent the user avatar and Duke's avatar respectively but you can use any image you want.
+
+Image|Filename
+---|---
+![DaDuke](images/javafx/DaUser.png) | `DaUser.png`
+![DaUser](images/javafx/DaDuke.png) | `DaDuke.png`
+
+Then, create an example DialogBox with a simple message.
+
+```java
+public class Duke extends Application {
+    // ...
+    private Image user = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
+    private Image duke = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
+    // ...
+    @Override
+    public void start(Stage stage) {
+       //...
+       //This part is to be removed later
+       Label text = new Label("Hello!");
+       ImageView displayPicture = new ImageView(user);
+       DialogBox dialogBox = new DialogBox(text, displayPicture);
+       dialogContainer.getChildren().addAll(dialogBox);
+       //...
+    }
+}
+```
+<box type="important" seamless>
+
+Note the image location (e.g., `/images/DaUser.png`) is given relative to the `main/resources` folder and there is a `/` in front. Follow the same for similar cases of using `getResourceAsStream` method in later parts of this tutorial.
+</box>
 
 Run the application and you should see something like this:
 
@@ -166,6 +231,21 @@ Add the following code to the bottom of the `start` method. You'll have to add `
         AnchorPane.setBottomAnchor(userInput, 1.0);
 
         //More code to be added here later
+    }
+```
+Style the `DialogBox` too:
+
+```java
+public DialogBox(Label l, ImageView iv) {
+        text = l;
+        displayPicture = iv;
+        //styling the dialog box
+        text.setWrapText(true);
+        displayPicture.setFitWidth(100.0);
+        displayPicture.setFitHeight(100.0);
+        this.setAlignment(Pos.TOP_RIGHT);
+        
+        this.getChildren().addAll(text, displayPicture);
     }
 ```
 
