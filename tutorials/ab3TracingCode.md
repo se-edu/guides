@@ -6,7 +6,7 @@ pageNav: 3
 
 # {{ title }}
 
-
+<link rel="stylesheet" href="images/tracing/static/tracing.css">
 > Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. …[Therefore,] making it easy to read makes it easier to write.
 >
 > —  Robert C. Martin Clean Code: A Handbook of Agile Software Craftsmanship
@@ -14,13 +14,14 @@ pageNav: 3
 When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. In this tutorial, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command.
 
 
-## Before we start
+<h2 id="before-we-start">Before we start</h2>
 
 Before we jump into the code, it is useful to get an idea of the overall structure and the high-level behavior of the application. This is provided in the 'Architecture' section of the developer guide. In particular, the architecture diagram (reproduced below), tells us that the App consists of several components.
 
 <pic src="https://se-education.org/addressbook-level3/images/ArchitectureDiagram.png" alt="ArchitectureDiagram" />
 
-It also has a sequence diagram (reproduced below) that tells us how a command propagates through the App.
+It also has a sequence diagram (reproduced below)
+that tells us how a command propagates through the App.
 
 <pic src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550" />
 
@@ -85,14 +86,43 @@ Bingo\! `MainWindow#executeCommand()` seems to be exactly what we’re looking f
 Now let’s set the breakpoint. First, double-click the item to reach the corresponding code. Once there, click on the left gutter to set a breakpoint, as shown below.
  ![LeftGutter](images/tracing/LeftGutter.png)
 
+
 ## Tracing the execution path
 
-Recall from the User Guide that the `edit` command has the format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…` For this tutorial we will be issuing the command `edit 1 n/Alice Yeoh`.
+At this point, you should have appreciated the general sequence diagram **shown** [above](#before-we-start)
+
+
+For this code tracing,
+we will explore the `EditCommand` which is a feature that allows users to edit exising person fields in AB3.
+
+<box type="tip" seamless>
+    Recall from the <a href="https://se-education.org/addressbook-level3/UserGuide.html#editing-a-person--edit">User Guide</a> that the <code>edit</code> command has the format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…</code>.
+</box>
+
+For this tutorial, we will be issuing the command <code>edit 1 n/Alice Yeoh</code>
+
+Specifically,
+we trace the following sequence diagram
+which explores the `Logic` component in more detail which will be paramount to understanding other commands as well! 
+
+<puml src="images/tracing/LogicSequenceDiagramWithMainWindow.puml" alt="Tracing an `edit` command with specific arguments"></puml>
+
 
 <box type="tip" seamless>
 
 **Tip:** Over the course of the debugging session, you will encounter every major component in the application. Try to keep track of what happens inside the component and where the execution transfers to another component.
 </box>
+
+
+
+
+
+### 1. MainWindow -> LogicManager
+
+<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
+  <!-- Set Legend to both -->
+  <a-point x="26%" y="20%"  label="1"/>
+</annotate>
 
 1. To start the debugging session, simply `Run` \> `Debug Main`
 
@@ -108,7 +138,17 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 1. We are interested in the `logic.execute(commandText)` portion of that line so let’s _Step in_ into that method call:<br>
     ![StepInto](images/tracing/StepInto.png)
 
-1. We end up in `LogicManager#execute()` (not `Logic#execute` -- but this is expected because we know the `execute()` method in the `Logic` interface is actually implemented by the `LogicManager` class). Let’s take a look at the body of the method. Given below is the same code, with additional explanatory comments.
+### 2. LogicManager -> AddressBookParser
+
+<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
+  <!-- Set Legend to both -->
+  <a-point x="50.7%" y="29%"  label="2"/>
+</annotate>
+
+
+1. After stepping in, we note that `MainWindow` has passed control to the `Logic` component.
+
+1. Specifically, We end up in `LogicManager#execute()` (not `Logic#execute` -- but this is expected because we know the `execute()` method in the `Logic` interface is actually implemented by the `LogicManager` class). Let’s take a look at the body of the method. Given below is the same code, with additional explanatory comments.
 
    **LogicManager\#execute().**
 
@@ -143,6 +183,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 1. _Step over_ the logging code since it is of no interest to us now.
    ![StepOver](images/tracing/StepOver.png)
 
+
 1. _Step into_ the line where user input in parsed from a String to a Command, which should bring you to the `AddressBookParser#parseCommand()` method (partial code given below):
    ```java
    public Command parseCommand(String userInput) throws ParseException {
@@ -151,6 +192,18 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
        final String arguments = matcher.group("arguments");
        ...
    ```
+
+<h3 id="flow-3">3. AddressBookParser -> EditCommandParser</h3>
+
+
+<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
+  <!-- Set Legend to both -->
+  <a-point x="60.7%" y="30%"  label="3"/>
+  <a-point x="69%" y="53%"  label="4"/>
+</annotate>
+
+
+1. Now, `LogicManager` has passed control to `AddressBookParser`
 
 1. _Step over_ the statements in that method until you reach the `switch` statement. The 'Variables' window now shows the value of both `commandWord` and `arguments`:<br>
     ![Variables](images/tracing/Variables.png)
@@ -165,6 +218,13 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
         return new EditCommandParser().parse(arguments);
     ...
     ```
+
+1. Note that this creates the `EditCommandParser` first.
+
+
+### 4. AddressBookParser -> EditCommand
+
+1. `AddressBookParser` calling `parse(...)` of the newly created `EditCommandParser`. This is shown in the diagram [earlier when EditCommand was created](#flow-3).
 
 1. Let’s see what `EditCommandParser#parse()` does by stepping into it. You might have to click the 'step into' button multiple times here because there are two method calls in that statement: `EditCommandParser()` and `parse()`.
 
