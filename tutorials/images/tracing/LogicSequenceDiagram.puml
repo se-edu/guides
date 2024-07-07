@@ -9,14 +9,15 @@ Participant "command:EditCommand" as ec LOGIC_COLOR
 
 [-> logic : execute
 activate logic
-logic -> abp ++: parseCommand(commandText)
+logic -> abp ++: parseCommand(edit 1 n/Alice Yeoh)
 create ecp
 abp -> ecp
-abp -> ecp ++: parse(arguments)
+abp -> ecp ++: parse(1 n/Alice Yeoh)
 create ec
-ecp -> ec ++: index, editPersonDescriptor
+ecp -> ec ++: 1, n/Alice Yeoh
 ec --> ecp --
 ecp --> abp --: command
 abp --> logic --: command
+[<-- logic
 
 @enduml
