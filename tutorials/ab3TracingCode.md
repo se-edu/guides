@@ -27,10 +27,13 @@ that tells us how a command propagates through the App.
 
 Note how the diagram shows only the execution flows _between_ the main components. That is, it does not show details of the execution path *inside* each component. By hiding those details, the diagram aims to inform the reader about the overall execution path of a command without overwhelming the reader with too much details. In this tutorial, you aim to find those omitted details so that you get a more in-depth understanding of how the code works.
 
+{% set dg_ref %}<span class="badge rounded-pill bg-info">:fas-arrow-right-long: DG</span>{% endset %}
+
 Before we proceed, ensure that you have done the following:
-1. Read the [*Architecture* section of the DG](../DeveloperGuide.md#architecture)
-1. Set up the project in Intellij IDEA
-1. Learn basic debugging features of Intellij IDEA
+1. As we go through this tutorial, we will be referring you to read corresponding sections of the AB3 Developer Guide, so that you can mentally connect the code you encounter with corresponding design descriptions. Given below is the first of such DG cross-references.<br>
+   {{ dg_ref }} Read the [**_Architecture_ section** of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture).
+1. Set up the project in Intellij IDEA.
+1. Learn [basic debugging features of Intellij IDEA](intellijDebugger.md):
    * If you are using a different IDE, we'll leave it to you to figure out the equivalent feature to use in your IDE.
    * If you are not using an IDE, we'll let you figure out how to achieve the same using your coding toolchain.
 
@@ -38,7 +41,7 @@ Before we proceed, ensure that you have done the following:
 
 As you know, the first step of debugging is to put in a breakpoint where you want the debugger to pause the execution. For example, if you are trying to understand how the App starts up, you would put a breakpoint in the first statement of the `main` method.
 
-In our case, we would want to begin the tracing at the very point where the App start processing user input (i.e., somewhere in the UI component), and then trace through how the execution proceeds through the UI component. However, the execution path through a GUI is often somewhat obscure due to various *event-driven mechanisms* used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the `UI` transfers control to the `Logic` component.
+In our case, we would want to begin the tracing at the very point where the App start processing user input (i.e., somewhere in the UI component), and then trace through how the execution proceeds through the UI component. However, the execution path through a GUI is often somewhat obscure due to various <popover content="**More on _event-driven mechanisms_**: Unlike command-line programs, GUI applications respond to user actions (like clicks and keystrokes) and other events, triggering various event _listeners_ and _handlers_. This non-linear flow of control can make it difficult to trace and debug the sequence of operations, as the program reacts dynamically to different events, creating an obscure execution path.">*event-driven mechanisms*</popover>  used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the `UI` transfers control to the `Logic` component.
 
 <pic src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550" />
 
@@ -68,7 +71,7 @@ public interface Logic {
 ```
 
 But apparently, this is an interface, not a concrete implementation.
-That should be fine because the [Architecture section of the Developer Guide](../DeveloperGuide.html#architecture) tells us that components interact through interfaces. Here's the relevant diagram:
+That should be fine because the [_Architecture_ section of the Developer Guide](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture) tells us that components interact through interfaces. Here's the relevant diagram:
 
 <pic src="https://se-education.org/addressbook-level3/images/ComponentManagers.png" />
 
@@ -183,8 +186,8 @@ which explores the `Logic` component in more detail which will be paramount to u
 1. _Step over_ the logging code since it is of no interest to us now.
    ![StepOver](images/tracing/StepOver.png)
 
-
 1. _Step into_ the line where user input in parsed from a String to a Command, which should bring you to the `AddressBookParser#parseCommand()` method (partial code given below):
+
    ```java
    public Command parseCommand(String userInput) throws ParseException {
        ...
@@ -268,9 +271,9 @@ which explores the `Logic` component in more detail which will be paramount to u
    * it uses the `setPerson()` method (defined in the interface `Model` and implemented in `ModelManager` as per the usual pattern) to update the person data.
    * it uses the `updateFilteredPersonList` method to ask the `Model` to populate the 'filtered list' with _all_ persons.<br>
      FYI, The 'filtered list' is the list of persons resulting from the most recent operation that will be shown to the user immediately after. For the `edit` command, we populate it with all the persons so that the user can see the edited person along with all other persons. If this was a `find` command, we would be setting that list to contain the search results instead.<br>
-     To provide some context, given below is the class diagram of the `Model` component. See if you can figure out where the 'filtered list' of persons is being tracked.
+     To provide some context, given below is the class diagram of the `Model` component. See if you can figure out where the 'filtered list' of persons is being tracked.<br>
      <pic src="https://se-education.org/addressbook-level3/images/ModelClassDiagram.png" width="450" /><br>
-   * :bulb: This may be a good time to read through the [`Model` component section of the DG](../DeveloperGuide.html#model-component)
+   * {{ dg_ref }} This is a good time to read through the [**_Model component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#model-component)
 
 1. As you step through the rest of the statements in the `EditCommand#execute()` method, you'll see that it creates a `CommandResult` object (containing information about the result of the execution) and returns it.<br>
    Advancing the debugger by one more step should take you back to the middle of the `LogicManager#execute()` method.<br>
@@ -278,7 +281,7 @@ which explores the `Logic` component in more detail which will be paramount to u
 1. Given that you have already seen quite a few classes in the `Logic` component in action, see if you can identify in this partial class diagram some of the classes you've encountered so far, and see how they fit into the class structure of the `Logic` component:
     <pic src="https://se-education.org/addressbook-level3/images/LogicClassDiagram.png" width="550"/>
 
-   * :bulb: This may be a good time to read through the [`Logic` component section of the DG](../DeveloperGuide.html#logic-component)
+   * {{ dg_ref }} This is a good time to read through the [**_Logic component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#logic-component)
 
 1. Similar to before, you can step over/into statements in the `LogicManager#execute()` method to examine how the control is transferred to the `Storage` component and what happens inside that component.
 
@@ -312,7 +315,7 @@ which explores the `Logic` component in more detail which will be paramount to u
 1. While you are stepping through the classes in the `Storage` component, here is the component's class diagram to help you understand how those classes fit into the structure of the component.<br>
    <pic src="https://se-education.org/addressbook-level3/images/StorageClassDiagram.png" width="550" />
 
-   * :bulb: This may be a good time to read through the [`Storage` component section of the DG](../DeveloperGuide.html#storage-component)
+   * {{ dg_ref }} This is a good time to read through the [**_Storage component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#storage-component)
 
 1. We can continue to step through until you reach the end of the `LogicManager#execute()` method and return to the `MainWindow#executeCommand()` method (the place where we put the original breakpoint).
 
@@ -327,7 +330,7 @@ which explores the `Logic` component in more detail which will be paramount to u
     ```
 
 1. Finally, you can step through until you reach the end of`MainWindow#executeCommand()`.<br>
-   :bulb: This may be a good time to read through the [`UI` component section of the DG](../DeveloperGuide.html#ui-component)
+{{ dg_ref }} This is a good time to read through the [**_UI component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#ui-component)
 
 
 ## Conclusion
