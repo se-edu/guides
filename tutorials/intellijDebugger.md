@@ -14,13 +14,13 @@ This video (from LaunchCode) gives a pretty good explanation of how to use the I
 
 ## Starting A Debugging Session
 
-To utilise the debugger, we need to make sure that the code is running in debugging mode.
+To utilise the debugger, we need to make sure that the code is running in debug mode.
 
-### Run Debugger Mode
+### Run Debug Mode
 
 <box type="info" seamless>
 
-**Video reference:** [3.53](https://youtu.be/1bCgzjatcr4?si=fIEvUVhXHwKQeOlc&t=233): Run your program in debugging mode to use debugging features.
+**Video reference:** [3.53](https://youtu.be/1bCgzjatcr4?si=fIEvUVhXHwKQeOlc&t=233): Run your program in debug mode to use debugging features.
 </box>
 
 Go to `Run` > `Debug 'Main'` or click on the bug icon in the top-right corner of the IntelliJ IDEA window.
