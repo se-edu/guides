@@ -18,7 +18,7 @@ ecp -> abp
 deactivate ecp
 abp -> ecp ++: parse(1 n/Alice Yeoh)
 create ec
-ecp -> ec ++: 1, n/Alice Yeoh
+ecp -> ec ++: 1, editPersonDescriptor
 ec --> ecp --
 ecp --> abp --: command
 abp --> logic --: command
