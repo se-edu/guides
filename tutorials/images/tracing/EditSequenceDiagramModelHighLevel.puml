@@ -29,6 +29,9 @@ ObservableList --> EditCommand : Person
 deactivate ObservableList
 
 EditCommand --> EditCommand : createEditedPerson
+activate EditCommand
+EditCommand --> EditCommand
+deactivate EditCommand
 
 EditCommand --> Model : setPerson
 activate Model

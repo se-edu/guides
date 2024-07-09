@@ -215,6 +215,11 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
      <pic src="https://se-education.org/addressbook-level3/images/ModelClassDiagram.png" width="450" /><br>
    * {{ dg_ref }} This is a good time to read through the [**_Model component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#model-component)
 
+1. Now that we have explored the sequence diagram for the Logic component, here is a sequence diagram for the `Model` interactions as well.
+   <puml src="images/tracing/EditSequenceDiagramModelHighLevel.puml"
+   alt="Tracing an `edit` command through the Model component"/> 
+
+
 1. As you step through the rest of the statements in the `EditCommand#execute()` method, you'll see that it creates a `CommandResult` object (containing information about the result of the execution) and returns it.<br>
    Advancing the debugger by one more step should take you back to the middle of the `LogicManager#execute()` method.<br>
 
