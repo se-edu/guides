@@ -22,6 +22,8 @@ Mockup | Control
 ![TextField](images/javafx/MockupTextField.png) | TextField
 ![ScrollPane](images/javafx/MockupScrollPane.png) | ScrollPane
 
+:bulb: You may be wondering why a ScrollPane is a `Control`, and not a `Pane`, as its name suggests. `ScrollPane` extends the `Control` class in JavaFX, because it represents a UI "widget" which the user directly interacts with (such as `Label`, `Button`, and `TextField`), whereas a `Pane` is a mere container that contains the other components. Of course, ScrollPane has the functionality of a container, allowing it to contain, or rather show a viewport of, its content.
+
 ## Designing the Layout
 
 Now that we know what controls we need to implement our UI, let’s start programming! We quickly run into a problem: how do we show all of them on the screen at once?
