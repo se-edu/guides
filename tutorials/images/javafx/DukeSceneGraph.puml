@@ -19,6 +19,7 @@ TextField -up-> AnchorPane
 Button -up-> AnchorPane
 
 VBox -up-> ScrollPane
-ImageView -up-> VBox
-Label -up-> VBox
+HBox -up-> VBox
+ImageView -up-> HBox
+Label -up-> HBox
 @enduml
