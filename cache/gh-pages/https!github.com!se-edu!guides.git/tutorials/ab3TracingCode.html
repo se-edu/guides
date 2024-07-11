@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 5.5.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>AB3 Tutorial: Tracing Code</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><header sticky=""><div data-v-7c0fd418><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-7c0fd418><div class="container-fluid" data-v-7c0fd418><div class="navbar-left" data-v-7c0fd418><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-7c0fd418></span> <strong data-v-7c0fd418><strong data-v-7c0fd418>SE-EDU</strong></strong></span></a></div> <div class="navbar-default" data-v-7c0fd418><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-7c0fd418> <li data-v-7c0fd418><a href="/guides/index.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>Home</strong></span></a></li> <li data-v-7c0fd418><a href="/guides/about.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>About</strong></span></a></li> <li data-v-7c0fd418><a href="https://github.com/se-edu/guides" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fab fa-github" data-v-7c0fd418></span></span></a></li></ul></div> <ul class="navbar-nav navbar-right" data-v-7c0fd418><li class="nav-link" data-v-7c0fd418><form class="navbar-form" data-v-7c0fd418><div class="dropdown" style="position:relative;" data-v-cea1a814><input data-bs-toggle="dropdown" type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control" data-v-cea1a814> <div class="form-control placeholder-div-hidden" data-v-cea1a814>
+      Search this site
+    </div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-cea1a814></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-7c0fd418><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="ab3-tutorial-tracing-code">AB3 Tutorial: Tracing Code<a href="#ab3-tutorial-tracing-code" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <blockquote><p>Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. …[Therefore,] making it easy to read makes it easier to write.</p> <p>—  Robert C. Martin Clean Code: A Handbook of Agile Software Craftsmanship</p></blockquote> <p>When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. In this tutorial, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command.</p> <h2 id="before-we-start">Before we start<a href="#before-we-start" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Before we jump into the code, it is useful to get an idea of the overall structure and the high-level behavior of the application. This is provided in the 'Architecture' section of the developer guide. In particular, the architecture diagram (reproduced below), tells us that the App consists of several components.</p> <span class="image-wrapper"><img src="https://se-education.org/addressbook-level3/images/ArchitectureDiagram.png" alt="ArchitectureDiagram" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>It also has a sequence diagram (reproduced below) that tells us how a command propagates through the App.</p> <span class="image-wrapper"><img src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>Note how the diagram shows only the execution flows <em>between</em> the main components. That is, it does not show details of the execution path <em>inside</em> each component. By hiding those details, the diagram aims to inform the reader about the overall execution path of a command without overwhelming the reader with too much details. In this tutorial, you aim to find those omitted details so that you get a more in-depth understanding of how the code works.</p> <p>Before we proceed, ensure that you have done the following:</p> <ol><li>As we go through this tutorial, we will be referring you to read corresponding sections of the AB3 Developer Guide, so that you can mentally connect the code you encounter with corresponding design descriptions. Given below is the first of such DG cross-references.<br> <span class="badge rounded-pill bg-info"><span aria-hidden="true" class="fas fa-arrow-right-long"></span> DG</span> Read the <a href="https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture"><strong><em>Architecture</em> section</strong> of the DG</a>.</li> <li>Set up the project in Intellij IDEA.</li> <li>Learn <a href="/guides/tutorials/intellijDebugger.html">basic debugging features of Intellij IDEA</a>:
+<ul><li>If you are using a different IDE, we'll leave it to you to figure out the equivalent feature to use in your IDE.</li> <li>If you are not using an IDE, we'll let you figure out how to achieve the same using your coding toolchain.</li></ul></li></ol> <h2 id="setting-a-breakpoint">Setting a breakpoint<a href="#setting-a-breakpoint" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>As you know, the first step of debugging is to put in a breakpoint where you want the debugger to pause the execution. For example, if you are trying to understand how the App starts up, you would put a breakpoint in the first statement of the <code class="hljs inline no-lang">main</code> method.</p> <p>In our case, we would want to begin the tracing at the very point where the App start processing user input (i.e., somewhere in the UI component), and then trace through how the execution proceeds through the UI component. However, the execution path through a GUI is often somewhat obscure due to various <span data-mb-component-type="popover" tabindex="0" class="trigger"><!----><!----></span>  used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the <code class="hljs inline no-lang">UI</code> transfers control to the <code class="hljs inline no-lang">Logic</code> component.</p> <span class="image-wrapper"><img src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>According to the sequence diagram you saw earlier (and repeated above for reference), the <code class="hljs inline no-lang">UI</code> component yields control to the <code class="hljs inline no-lang">Logic</code> component through a method named <code class="hljs inline no-lang">execute</code>. Searching through the code base for an <code class="hljs inline no-lang">execute()</code> method that belongs to the <code class="hljs inline no-lang">Logic</code> component yields a promising candidate in <code class="hljs inline no-lang">seedu.address.logic.Logic</code>.</p> <img src="/guides/tutorials/images/tracing/searchResultsForExecuteMethod.png"> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-success" data-v-6607c59e><i class="fas fa-lightbulb" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e><strong data-v-6607c59e>Intellij Tip:</strong> The <a href="https://www.jetbrains.com/help/idea/searching-everywhere.html" data-v-6607c59e>'<strong data-v-6607c59e>Search Everywhere</strong>' feature</a> can be used here. In particular, the '<strong data-v-6607c59e>Find Symbol</strong>' ('Symbol' here refers to methods, variables, classes etc.) variant of that feature is quite useful here as we are looking for a <em data-v-6607c59e>method</em> named <code class="hljs inline no-lang" data-v-6607c59e>execute</code>, not simply the text <code class="hljs inline no-lang" data-v-6607c59e>execute</code>.</p></div> <!----></div></div></div> <p>A quick look at the <code class="hljs inline no-lang">seedu.address.logic.Logic</code> (an extract given below) confirms that this indeed might be what we’re looking for.</p> <pre><code class="hljs java"><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Logic</span> </span>{
+</span><span>    <span class="hljs-comment">/**</span>
+</span><span><span class="hljs-comment">     * Executes the command and returns the result.</span>
+</span><span><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> commandText The command as entered by the user.</span>
+</span><span><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> the result of the command execution.</span>
+</span><span><span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> CommandException If an error occurs during command execution.</span>
+</span><span><span class="hljs-comment">     * <span class="hljs-doctag">@throws</span> ParseException If an error occurs during parsing.</span>
+</span><span><span class="hljs-comment">     */</span>
+</span><span>    <span class="hljs-function">CommandResult <span class="hljs-title">execute</span><span class="hljs-params">(String commandText)</span> <span class="hljs-keyword">throws</span> CommandException, ParseException</span>;
+</span><span>...
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>But apparently, this is an interface, not a concrete implementation.
+That should be fine because the <a href="https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture"><em>Architecture</em> section of the Developer Guide</a> tells us that components interact through interfaces. Here's the relevant diagram:</p> <span class="image-wrapper"><img src="https://se-education.org/addressbook-level3/images/ComponentManagers.png" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>Next, let's find out which statement(s) in the <code class="hljs inline no-lang">UI</code> code is calling this method, thus transferring control from the <code class="hljs inline no-lang">UI</code> to the <code class="hljs inline no-lang">Logic</code>.</p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-success" data-v-6607c59e><i class="fas fa-lightbulb" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e><strong data-v-6607c59e>Intellij Tip:</strong> The <a href="https://www.jetbrains.com/help/idea/find-highlight-usages.html#find-usages" data-v-6607c59e>'<strong data-v-6607c59e>Find Usages</strong>' feature</a> can find from which parts of the code a class/method/variable is being used.</p></div> <!----></div></div></div> <span class="image-wrapper"><img src="/guides/tutorials/images/tracing/FindUsages.png" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>Bingo! <code class="hljs inline no-lang">MainWindow#executeCommand()</code> seems to be exactly what we’re looking for!</p> <p>Now let’s set the breakpoint. First, double-click the item to reach the corresponding code. Once there, click on the left gutter to set a breakpoint, as shown below.
+<a href="/guides/tutorials/images/tracing/LeftGutter.png" target="_self"><img src="/guides/tutorials/images/tracing/LeftGutter.png" alt="LeftGutter" class="img-fluid"></a></p> <h2 id="tracing-the-execution-path">Tracing the execution path<a href="#tracing-the-execution-path" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Recall from the User Guide that the <code class="hljs inline no-lang">edit</code> command has the format: <code class="hljs inline no-lang">edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…</code> For this tutorial we will be issuing the command <code class="hljs inline no-lang">edit 1 n/Alice Yeoh</code>.</p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-success" data-v-6607c59e><i class="fas fa-lightbulb" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e><strong data-v-6607c59e>Tip:</strong> Over the course of the debugging session, you will encounter every major component in the application. Try to keep track of what happens inside the component and where the execution transfers to another component.</p></div> <!----></div></div></div> <ol><li><p>To start the debugging session, simply <code class="hljs inline no-lang">Run</code> &gt; <code class="hljs inline no-lang">Debug Main</code></p></li> <li><p>When the GUI appears, enter <code class="hljs inline no-lang">edit 1 n/Alice Yeoh</code> into the command box and press <code class="hljs inline no-lang">Enter</code>.</p></li> <li><p>The Debugger tool window should show up and show something like this:<br> <a href="/guides/tutorials/images/tracing/DebuggerStep1.png" target="_self"><img src="/guides/tutorials/images/tracing/DebuggerStep1.png" alt="DebuggerStep1" class="img-fluid"></a></p></li> <li><p>Use the <em>Show execution point</em> feature to jump to the line of code that we stopped at:<br> <a href="/guides/tutorials/images/tracing/ShowExecutionPoint.png" target="_self"><img src="/guides/tutorials/images/tracing/ShowExecutionPoint.png" alt="ShowExecutionPoint" class="img-fluid"></a><br> <code class="hljs inline no-lang">CommandResult commandResult = logic.execute(commandText);</code> is the line that you end up at (i.e., the place where we put the breakpoint).</p></li> <li><p>We are interested in the <code class="hljs inline no-lang">logic.execute(commandText)</code> portion of that line so let’s <em>Step in</em> into that method call:<br> <a href="/guides/tutorials/images/tracing/StepInto.png" target="_self"><img src="/guides/tutorials/images/tracing/StepInto.png" alt="StepInto" class="img-fluid"></a></p></li> <li><p>We end up in <code class="hljs inline no-lang">LogicManager#execute()</code> (not <code class="hljs inline no-lang">Logic#execute</code> -- but this is expected because we know the <code class="hljs inline no-lang">execute()</code> method in the <code class="hljs inline no-lang">Logic</code> interface is actually implemented by the <code class="hljs inline no-lang">LogicManager</code> class). Let’s take a look at the body of the method. Given below is the same code, with additional explanatory comments.</p> <p><strong>LogicManager#execute().</strong></p> <pre><code class="hljs java"><span><span class="hljs-meta">@Override</span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">public</span> CommandResult <span class="hljs-title">execute</span><span class="hljs-params">(String commandText)</span></span>
+</span><span><span class="hljs-function">        <span class="hljs-keyword">throws</span> CommandException, ParseException </span>{
+</span><span>
+</span><span>     <span class="hljs-comment">//Logging, safe to ignore</span>
+</span><span>     logger.info(<span class="hljs-string">&quot;----------------[USER COMMAND][&quot;</span> + commandText + <span class="hljs-string">&quot;]&quot;</span>);
+</span><span>
+</span><span>     CommandResult commandResult;
+</span><span>     <span class="hljs-comment">//Parse user input from String to a Command</span>
+</span><span>     Command command = addressBookParser.parseCommand(commandText);
+</span><span>     <span class="hljs-comment">//Executes the Command and stores the result</span>
+</span><span>     commandResult = command.execute(model);
+</span><span>
+</span><span>     <span class="hljs-keyword">try</span> {
+</span><span>         <span class="hljs-comment">//We can deduce that the previous line of code modifies model in some way</span>
+</span><span>         <span class="hljs-comment">// since it's being stored here.</span>
+</span><span>         storage.saveAddressBook(model.getAddressBook());
+</span><span>     } <span class="hljs-keyword">catch</span> (IOException ioe) {
+</span><span>         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> CommandException(FILE_OPS_ERROR_MESSAGE + ioe, ioe);
+</span><span>     }
+</span><span>
+</span><span>     <span class="hljs-keyword">return</span> commandResult;
+</span><span> }
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><p><code class="hljs inline no-lang">LogicManager#execute()</code> appears to delegate most of the heavy lifting to other components. Let’s take a closer look at each one.</p></li> <li><p><em>Step over</em> the logging code since it is of no interest to us now.
+<a href="/guides/tutorials/images/tracing/StepOver.png" target="_self"><img src="/guides/tutorials/images/tracing/StepOver.png" alt="StepOver" class="img-fluid"></a></p></li> <li><p><em>Step into</em> the line where user input is parsed from a String to a Command, which should bring you to the <code class="hljs inline no-lang">AddressBookParser#parseCommand()</code> method (partial code given below):</p> <pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">public</span> Command <span class="hljs-title">parseCommand</span><span class="hljs-params">(String userInput)</span> <span class="hljs-keyword">throws</span> ParseException </span>{
+</span><span>    ...
+</span><span>    <span class="hljs-keyword">final</span> String commandWord = matcher.group(<span class="hljs-string">&quot;commandWord&quot;</span>);
+</span><span>    <span class="hljs-keyword">final</span> String arguments = matcher.group(<span class="hljs-string">&quot;arguments&quot;</span>);
+</span><span>    ...
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><p><em>Step over</em> the statements in that method until you reach the <code class="hljs inline no-lang">switch</code> statement. The 'Variables' window now shows the value of both <code class="hljs inline no-lang">commandWord</code> and <code class="hljs inline no-lang">arguments</code>:<br> <a href="/guides/tutorials/images/tracing/Variables.png" target="_self"><img src="/guides/tutorials/images/tracing/Variables.png" alt="Variables" class="img-fluid"></a></p></li> <li><p>We see that the value of <code class="hljs inline no-lang">commandWord</code> is now <code class="hljs inline no-lang">edit</code> but <code class="hljs inline no-lang">arguments</code> is still not processed in any meaningful way.</p></li> <li><p>Stepping through the <code class="hljs inline no-lang">switch</code> block, we end up at a call to <code class="hljs inline no-lang">EditCommandParser().parse()</code> as expected (because the command we typed is an edit command).</p> <pre><code class="hljs java"><span>...
+</span><span><span class="hljs-keyword">case</span> EditCommand.COMMAND_WORD:
+</span><span>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> EditCommandParser().parse(arguments);
+</span><span>...
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><p>Let’s see what <code class="hljs inline no-lang">EditCommandParser#parse()</code> does by stepping into it. You might have to click the 'step into' button multiple times here because there are two method calls in that statement: <code class="hljs inline no-lang">EditCommandParser()</code> and <code class="hljs inline no-lang">parse()</code>.</p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-success" data-v-6607c59e><i class="fas fa-lightbulb" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e><strong data-v-6607c59e>Intellij Tip:</strong> Sometimes, you might end up stepping into functions that are not of interest. Simply use the <code class="hljs inline no-lang" data-v-6607c59e>step out</code> button to get out of them!</p></div> <!----></div></div></div></li> <li><p>Stepping through the method shows that it calls <code class="hljs inline no-lang">ArgumentTokenizer#tokenize()</code> and <code class="hljs inline no-lang">ParserUtil#parseIndex()</code> to obtain the arguments and index required.</p></li> <li><p>The rest of the method seems to exhaustively check for the existence of each possible parameter of the <code class="hljs inline no-lang">edit</code> command and store any possible changes in an <code class="hljs inline no-lang">EditPersonDescriptor</code>. Recall that we can verify the contents of <code class="hljs inline no-lang">editPersonDesciptor</code> through the 'Variables' window.<br> <a href="/guides/tutorials/images/tracing/EditCommand.png" target="_self"><img src="/guides/tutorials/images/tracing/EditCommand.png" alt="EditCommand" class="img-fluid"></a></p></li> <li><p>As you just traced through some code involved in parsing a command, you can take a look at this class diagram to see where the various parsing-related classes you encountered fit into the design of the <code class="hljs inline no-lang">Logic</code> component.
+<span class="image-wrapper"><img src="https://se-education.org/addressbook-level3/images/ParserClasses.png" width="600" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span></p></li> <li><p>Let’s continue stepping through until we return to <code class="hljs inline no-lang">LogicManager#execute()</code>.</p> <p>The sequence diagram below shows the details of the execution path through the Logic component. Does the execution path you traced in the code so far match the diagram?<br></p> <span class="image-wrapper"><img src="/guides/tutorials/images/tracing/LogicSequenceDiagram.png" alt="Tracing an `edit` command through the Logic component" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span></li> <li><p>Now, step over until you read the statement that calls the <code class="hljs inline no-lang">execute()</code> method of the <code class="hljs inline no-lang">EditCommand</code> object received, and step into that <code class="hljs inline no-lang">execute()</code> method (partial code given below):</p> <p><strong><code class="hljs inline no-lang">EditCommand#execute()</code>:</strong></p> <pre><code class="hljs java"><span><span class="hljs-meta">@Override</span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">public</span> CommandResult <span class="hljs-title">execute</span><span class="hljs-params">(Model model)</span> <span class="hljs-keyword">throws</span> CommandException </span>{
+</span><span>    ...
+</span><span>    Person personToEdit = lastShownList.get(index.getZeroBased());
+</span><span>    Person editedPerson = createEditedPerson(personToEdit, editPersonDescriptor);
+</span><span>    <span class="hljs-keyword">if</span> (!personToEdit.isSamePerson(editedPerson) &amp;&amp; model.hasPerson(editedPerson)) {
+</span><span>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> CommandException(MESSAGE_DUPLICATE_PERSON);
+</span><span>    }
+</span><span>    model.setPerson(personToEdit, editedPerson);
+</span><span>    model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+</span><span>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, editedPerson));
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><p>As suspected, <code class="hljs inline no-lang">command#execute()</code> does indeed make changes to the <code class="hljs inline no-lang">model</code> object. Specifically,</p> <ul><li>it uses the <code class="hljs inline no-lang">setPerson()</code> method (defined in the interface <code class="hljs inline no-lang">Model</code> and implemented in <code class="hljs inline no-lang">ModelManager</code> as per the usual pattern) to update the person data.</li> <li>it uses the <code class="hljs inline no-lang">updateFilteredPersonList</code> method to ask the <code class="hljs inline no-lang">Model</code> to populate the 'filtered list' with <em>all</em> persons.<br>
+FYI, The 'filtered list' is the list of persons resulting from the most recent operation that will be shown to the user immediately after. For the <code class="hljs inline no-lang">edit</code> command, we populate it with all the persons so that the user can see the edited person along with all other persons. If this was a <code class="hljs inline no-lang">find</code> command, we would be setting that list to contain the search results instead.<br>
+To provide some context, given below is the class diagram of the <code class="hljs inline no-lang">Model</code> component. See if you can figure out where the 'filtered list' of persons is being tracked.<br> <span class="image-wrapper"><img src="https://se-education.org/addressbook-level3/images/ModelClassDiagram.png" width="450" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span><br></li> <li><span class="badge rounded-pill bg-info"><span aria-hidden="true" class="fas fa-arrow-right-long"></span> DG</span> This is a good time to read through the <a href="https://se-education.org/addressbook-level3/DeveloperGuide.html#model-component"><strong><em>Model component</em></strong> section of the DG</a></li></ul></li> <li><p>As you step through the rest of the statements in the <code class="hljs inline no-lang">EditCommand#execute()</code> method, you'll see that it creates a <code class="hljs inline no-lang">CommandResult</code> object (containing information about the result of the execution) and returns it.<br>
+Advancing the debugger by one more step should take you back to the middle of the <code class="hljs inline no-lang">LogicManager#execute()</code> method.<br></p></li> <li><p>Given that you have already seen quite a few classes in the <code class="hljs inline no-lang">Logic</code> component in action, see if you can identify in this partial class diagram some of the classes you've encountered so far, and see how they fit into the class structure of the <code class="hljs inline no-lang">Logic</code> component:
+<span class="image-wrapper"><img src="https://se-education.org/addressbook-level3/images/LogicClassDiagram.png" width="550" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span></p> <ul><li><span class="badge rounded-pill bg-info"><span aria-hidden="true" class="fas fa-arrow-right-long"></span> DG</span> This is a good time to read through the <a href="https://se-education.org/addressbook-level3/DeveloperGuide.html#logic-component"><strong><em>Logic component</em></strong> section of the DG</a></li></ul></li> <li><p>Similar to before, you can step over/into statements in the <code class="hljs inline no-lang">LogicManager#execute()</code> method to examine how the control is transferred to the <code class="hljs inline no-lang">Storage</code> component and what happens inside that component.</p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-success" data-v-6607c59e><i class="fas fa-lightbulb" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e><strong data-v-6607c59e>Intellij Tip:</strong> When trying to step into a statement such as <code class="hljs inline no-lang" data-v-6607c59e>storage.saveAddressBook(model.getAddressBook())</code> which contains multiple method calls, Intellij will let you choose (by clicking) which one you want to step into.</p></div> <!----></div></div></div></li> <li><p>As you step through the code inside the <code class="hljs inline no-lang">Storage</code> component, you will eventually arrive at the <code class="hljs inline no-lang">JsonAddressBook#saveAddressBook()</code> method which calls the <code class="hljs inline no-lang">JsonSerializableAddressBook</code> constructor, to create an object that can be <em>serialized</em> (i.e., stored in storage medium) in JSON format. That constructor is given below (with added line breaks for easier readability):</p> <p><strong><code class="hljs inline no-lang">JsonSerializableAddressBook</code> constructor:</strong></p> <pre><code class="hljs java"><span><span class="hljs-comment">/**</span>
+</span><span><span class="hljs-comment"> * Converts a given {<span class="hljs-doctag">@code</span> ReadOnlyAddressBook} into this class for Jackson use.</span>
+</span><span><span class="hljs-comment"> *</span>
+</span><span><span class="hljs-comment"> * <span class="hljs-doctag">@param</span> source future changes to this will not affect the created</span>
+</span><span><span class="hljs-comment"> * {<span class="hljs-doctag">@code</span> JsonSerializableAddressBook}.</span>
+</span><span><span class="hljs-comment"> */</span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">JsonSerializableAddressBook</span><span class="hljs-params">(ReadOnlyAddressBook source)</span> </span>{
+</span><span>    persons.addAll(
+</span><span>        source.getPersonList()
+</span><span>              .stream()
+</span><span>              .map(JsonAdaptedPerson::<span class="hljs-keyword">new</span>)
+</span><span>              .collect(Collectors.toList()));
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><p>It appears that a <code class="hljs inline no-lang">JsonAdaptedPerson</code> is created for each <code class="hljs inline no-lang">Person</code> and then added to the <code class="hljs inline no-lang">JsonSerializableAddressBook</code>.
+This is because regular Java objects need to go through an <em>adaptation</em> for them to be suitable to be saved in JSON format.</p></li> <li><p>While you are stepping through the classes in the <code class="hljs inline no-lang">Storage</code> component, here is the component's class diagram to help you understand how those classes fit into the structure of the component.<br> <span class="image-wrapper"><img src="https://se-education.org/addressbook-level3/images/StorageClassDiagram.png" width="550" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span></p> <ul><li><span class="badge rounded-pill bg-info"><span aria-hidden="true" class="fas fa-arrow-right-long"></span> DG</span> This is a good time to read through the <a href="https://se-education.org/addressbook-level3/DeveloperGuide.html#storage-component"><strong><em>Storage component</em></strong> section of the DG</a></li></ul></li> <li><p>We can continue to step through until you reach the end of the <code class="hljs inline no-lang">LogicManager#execute()</code> method and return to the <code class="hljs inline no-lang">MainWindow#executeCommand()</code> method (the place where we put the original breakpoint).</p></li> <li><p>Stepping into <code class="hljs inline no-lang">resultDisplay.setFeedbackToUser(commandResult.getFeedbackToUser());</code>, we end up in:</p> <p><strong><code class="hljs inline no-lang">ResultDisplay#setFeedbackToUser()</code></strong></p> <pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setFeedbackToUser</span><span class="hljs-params">(String feedbackToUser)</span> </span>{
+</span><span>    requireNonNull(feedbackToUser);
+</span><span>    resultDisplay.setText(feedbackToUser);
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><p>Finally, you can step through until you reach the end of<code class="hljs inline no-lang">MainWindow#executeCommand()</code>.<br> <span class="badge rounded-pill bg-info"><span aria-hidden="true" class="fas fa-arrow-right-long"></span> DG</span> This is a good time to read through the <a href="https://se-education.org/addressbook-level3/DeveloperGuide.html#ui-component"><strong><em>UI component</em></strong> section of the DG</a></p></li></ol> <h2 id="conclusion">Conclusion<a href="#conclusion" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>In this tutorial, we traced a valid edit command from raw user input to the result being displayed to the user. From this tutorial, you learned more about how the various components work together to produce a response to a user command.</p> <p>Here are some quick questions you can try to answer based on your execution path tracing. In some cases, you can do further tracing for the given commands to find exactly what happens.</p> <ol><li><p>In this tutorial, we traced the &quot;happy path&quot; (i.e., no errors). What
+do you think will happen if we traced the following commands
+instead? What exceptions do you think will be thrown (if any), where
+will the exceptions be thrown and where will they be handled?</p> <ol><li><p><code class="hljs inline no-lang">redit 1 n/Alice Yu</code></p></li> <li><p><code class="hljs inline no-lang">edit 0 n/Alice Yu</code></p></li> <li><p><code class="hljs inline no-lang">edit 1 n/Alex Yeoh</code></p></li> <li><p><code class="hljs inline no-lang">edit 1</code></p></li> <li><p><code class="hljs inline no-lang">edit 1 n/アリス ユー</code></p></li> <li><p><code class="hljs inline no-lang">edit 1 t/one t/two t/three t/one</code></p></li></ol></li> <li><p>What components will you have to modify to perform the following
+enhancements to the application?</p> <ol><li><p>Make command words case-insensitive</p></li> <li><p>Allow <code class="hljs inline no-lang">delete</code> to remove more than one index at a time</p></li> <li><p>Save the address book in the CSV format instead</p></li> <li><p>Add a new command</p></li> <li><p>Add a new field to <code class="hljs inline no-lang">Person</code></p></li> <li><p>Add a new entity to the address book</p></li></ol></li></ol> <p><a href="/guides/tutorials/ab3.html"><span aria-hidden="true" class="fas fa-arrow-up"></span> <strong>ToC</strong></a> | <span class="badge rounded-pill bg-primary"><strong><span class="large">What's next?</span></strong></span> <a href="/guides/tutorials/ab3AddRemark.html"><span aria-hidden="true" class="fas fa-arrow-right"></span> <strong>Adding a Command</strong></a></p><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#ab3-tutorial-tracing-code" data-v-e6005420>AB3 Tutorial: Tracing Code‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#before-we-start" data-v-e6005420>Before we start‎</a> <a class="nav-link py-1" href="#setting-a-breakpoint" data-v-e6005420>Setting a breakpoint‎</a> <a class="nav-link py-1" href="#tracing-the-execution-path" data-v-e6005420>Tracing the execution path‎</a> <a class="nav-link py-1" href="#conclusion" data-v-e6005420>Conclusion‎</a></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.2</a> on Thu, 11 Jul 2024, 18:54:07 GMT+8]</small></div></footer></div>
+</body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
+<script src="/guides/markbind/js/polyfill.min.js"></script>
+<script src="/guides/markbind/js/vue.min.js"></script>
+<script src="/guides/markbind/js/markbind.min.js"></script>
+<script src="ab3TracingCode.page-vue-render.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>

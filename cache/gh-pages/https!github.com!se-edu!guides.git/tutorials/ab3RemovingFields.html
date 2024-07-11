@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 5.5.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>AB3 Tutorial: Removing Fields</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><header sticky=""><div data-v-7c0fd418><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-7c0fd418><div class="container-fluid" data-v-7c0fd418><div class="navbar-left" data-v-7c0fd418><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-7c0fd418></span> <strong data-v-7c0fd418><strong data-v-7c0fd418>SE-EDU</strong></strong></span></a></div> <div class="navbar-default" data-v-7c0fd418><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-7c0fd418> <li data-v-7c0fd418><a href="/guides/index.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>Home</strong></span></a></li> <li data-v-7c0fd418><a href="/guides/about.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>About</strong></span></a></li> <li data-v-7c0fd418><a href="https://github.com/se-edu/guides" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fab fa-github" data-v-7c0fd418></span></span></a></li></ul></div> <ul class="navbar-nav navbar-right" data-v-7c0fd418><li class="nav-link" data-v-7c0fd418><form class="navbar-form" data-v-7c0fd418><div class="dropdown" style="position:relative;" data-v-cea1a814><input data-bs-toggle="dropdown" type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control" data-v-cea1a814> <div class="form-control placeholder-div-hidden" data-v-cea1a814>
+      Search this site
+    </div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-cea1a814></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-7c0fd418><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="ab3-tutorial-removing-fields">AB3 Tutorial: Removing Fields<a href="#ab3-tutorial-removing-fields" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <blockquote><p>Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.</p> <p>—  Antoine de Saint-Exupery</p></blockquote> <p>When working on an existing code base, you will most likely find that some features that are no longer necessary.
+This tutorial aims to give you some practice on such a code 'removal' activity by removing the <code class="hljs inline no-lang">address</code> field from <code class="hljs inline no-lang">Person</code> class.</p> <div class="alert box-container alert-success" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper" data-v-6607c59e><i class="fas fa-check" data-v-6607c59e></i></div> <!----> <div class="contents" data-v-6607c59e><p data-v-6607c59e><strong data-v-6607c59e>If you have done the <a href="/guides/tutorials/AddRemark.html" data-v-6607c59e>Add <code class="hljs inline no-lang" data-v-6607c59e>remark</code> command tutorial</a>  already</strong>, you should know where the code had to be updated to add the field <code class="hljs inline no-lang" data-v-6607c59e>remark</code>. From that experience, you can deduce where the code needs to be changed to <em data-v-6607c59e>remove</em> that field too. The removing of the <code class="hljs inline no-lang" data-v-6607c59e>address</code> field can be done similarly.
+<br data-v-6607c59e> <br data-v-6607c59e>
+However, if you have no such prior knowledge, removing a field can take a quite a bit of detective work. This tutorial takes you through that process. <strong data-v-6607c59e>At least have a read even if you don't actually do the steps yourself.</strong></p></div> <!----></div></div></div> <h2 id="safely-deleting-address">Safely deleting <code class="hljs inline no-lang">Address</code><a href="#safely-deleting-address" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>IntelliJ IDEA provides a refactoring tool that can identify <em>most</em> parts of a removal easily. Let’s try to use it as much as we can.</p> <h3 id="assisted-refactoring">Assisted refactoring<a href="#assisted-refactoring" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>The <code class="hljs inline no-lang">address</code> field in <code class="hljs inline no-lang">Person</code> is actually an instance of the <code class="hljs inline no-lang">seedu.address.model.person.Address</code> class. Since removing the <code class="hljs inline no-lang">Address</code> class will break the application, we start by identifying <code class="hljs inline no-lang">Address</code>'s usages. This allows us to see code that depends on <code class="hljs inline no-lang">Address</code> to function properly and edit them on a case-by-case basis. Right-click the <code class="hljs inline no-lang">Address</code> class and select <code class="hljs inline no-lang">Refactor</code> &gt; <code class="hljs inline no-lang">Safe Delete</code> through the menu.</p> <ul><li>💡 To make things simpler, you can unselect the options <code class="hljs inline no-lang">Search in comments and strings</code> and <code class="hljs inline no-lang">Search for text occurrences</code></li></ul> <span class="image-wrapper"><img src="/guides/tutorials/images/remove/UnsafeDelete.png" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>Choose to <code class="hljs inline no-lang">View Usages</code> and you should be presented with a list of <code class="hljs inline no-lang">Safe Delete Conflicts</code>. These conflicts describe locations in which the <code class="hljs inline no-lang">Address</code> class is used.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/remove/SafeDeleteConflicts.png" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>Remove usages of <code class="hljs inline no-lang">Address</code> by performing <code class="hljs inline no-lang">Safe Delete</code>s on each entry i.e., double-click on the entry (which takes you to the code in concern, right-click on that entity, and choose <code class="hljs inline no-lang">Refactor</code> -&gt; <code class="hljs inline no-lang">Safe delete</code> as before). You will need to exercise discretion when removing usages of <code class="hljs inline no-lang">Address</code>. Functions like <code class="hljs inline no-lang">ParserUtil#parseAddress()</code> can be safely removed but its usages must be removed as well. Other usages like in <code class="hljs inline no-lang">EditPersonDescriptor</code> may require more careful inspection.</p> <p>Let’s try removing references to <code class="hljs inline no-lang">Address</code> in <code class="hljs inline no-lang">EditPersonDescriptor</code>.</p> <ol><li><p>Safe delete the field <code class="hljs inline no-lang">address</code> in <code class="hljs inline no-lang">EditPersonDescriptor</code>.</p></li> <li><p>Select <code class="hljs inline no-lang">Yes</code> when prompted to remove getters and setters.</p></li> <li><p>Select <code class="hljs inline no-lang">View Usages</code> again.<br> <span class="image-wrapper"><img src="/guides/tutorials/images/remove/UnsafeDeleteOnField.png" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span></p></li> <li><p>Remove the usages of <code class="hljs inline no-lang">address</code> and select <code class="hljs inline no-lang">Do refactor</code> when you are done.</p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-success" data-v-6607c59e><i class="fas fa-lightbulb" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e><strong data-v-6607c59e>Tip:</strong> Removing usages may result in errors. Exercise discretion and fix them. For example, removing the <code class="hljs inline no-lang" data-v-6607c59e>address</code> field from the <code class="hljs inline no-lang" data-v-6607c59e>Person</code> class will require you to modify its constructor.</p></div> <!----></div></div></div></li> <li><p>Repeat the steps for the remaining usages of <code class="hljs inline no-lang">Address</code></p></li></ol> <p>After you are done, verify that the application still works by compiling and running it again.</p> <h3 id="manual-refactoring">Manual refactoring<a href="#manual-refactoring" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Unfortunately, there are usages of <code class="hljs inline no-lang">Address</code> that IntelliJ IDEA cannot identify. You can find them by searching for instances of the word <code class="hljs inline no-lang">address</code> in your code (<code class="hljs inline no-lang">Edit</code> &gt; <code class="hljs inline no-lang">Find</code> &gt; <code class="hljs inline no-lang">Find in path</code>).</p> <p>Places of interest to look out for would be resources used by the application. <code class="hljs inline no-lang">main/resources</code> contains images and <code class="hljs inline no-lang">fxml</code> files used by the application and <code class="hljs inline no-lang">test/resources</code> contains test data. For example, there is a <code class="hljs inline no-lang">$address</code> in each <code class="hljs inline no-lang">PersonCard</code> that has not been removed nor identified.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/remove/$address.png" width="800" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>A quick look at the <code class="hljs inline no-lang">PersonCard</code> class and its <code class="hljs inline no-lang">fxml</code> file quickly reveals why it slipped past the automated refactoring.</p> <p><strong><code class="hljs inline no-lang">PersonCard.java</code></strong></p> <pre><code class="hljs java"><span>...
+</span><span><span class="hljs-meta">@FXML</span>
+</span><span><span class="hljs-keyword">private</span> Label address;
+</span><span>...
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p><strong><code class="hljs inline no-lang">PersonCard.fxml</code></strong></p> <pre><code class="hljs"><span>...
+</span><span>&lt;Label fx:id=&quot;phone&quot; styleClass=&quot;cell_small_label&quot; text=&quot;\$phone&quot; /&gt;
+</span><span>&lt;Label fx:id=&quot;address&quot; styleClass=&quot;cell_small_label&quot; text=&quot;\$address&quot; /&gt;
+</span><span>&lt;Label fx:id=&quot;email&quot; styleClass=&quot;cell_small_label&quot; text=&quot;\$email&quot; /&gt;
+</span><span>...
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>After removing the <code class="hljs inline no-lang">Label</code>, we can proceed to formally test our code. If everything went well, you should have most of your tests pass. Fix any remaining errors until the tests all pass.</p> <h2 id="tidying-up">Tidying up<a href="#tidying-up" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>At this point, your application is working as intended and all your tests are passing. What’s left to do is to clean up references to <code class="hljs inline no-lang">Address</code> in test data and documentation.</p> <p>In <code class="hljs inline no-lang">src/test/data/</code>, data meant for testing purposes are stored. While keeping the <code class="hljs inline no-lang">address</code> field in the json files does not cause the tests to fail, it is not good practice to let cruft from old features accumulate.</p> <p><strong><code class="hljs inline no-lang">invalidPersonAddressBook.json</code>:</strong></p> <pre><code class="hljs json"><span>{
+</span><span>  <span class="hljs-attr">&quot;persons&quot;</span>: [ {
+</span><span>    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Person with invalid name field: Ha!ns Mu@ster&quot;</span>,
+</span><span>    <span class="hljs-attr">&quot;phone&quot;</span>: <span class="hljs-string">&quot;9482424&quot;</span>,
+</span><span>    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;hans@example.com&quot;</span>,
+</span><span>    <span class="hljs-attr">&quot;address&quot;</span>: <span class="hljs-string">&quot;4th street&quot;</span>
+</span><span>  } ]
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>You can go through each individual <code class="hljs inline no-lang">json</code> file and manually remove the <code class="hljs inline no-lang">address</code> field.</p> <p><a href="/guides/tutorials/ab3AddRemark.html"><span aria-hidden="true" class="fas fa-arrow-left"></span> Previous</a> | <a href="/guides/tutorials/ab3.html"><span aria-hidden="true" class="fas fa-arrow-up"></span> <strong>ToC</strong></a></p><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#ab3-tutorial-removing-fields" data-v-e6005420>AB3 Tutorial: Removing Fields‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#safely-deleting-address" data-v-e6005420>Safely deleting Address‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#assisted-refactoring" data-v-e6005420>Assisted refactoring‎</a> <a class="nav-link py-1" href="#manual-refactoring" data-v-e6005420>Manual refactoring‎</a></nav> <a class="nav-link py-1" href="#tidying-up" data-v-e6005420>Tidying up‎</a></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.2</a> on Thu, 11 Jul 2024, 18:54:07 GMT+8]</small></div></footer></div>
+</body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
+<script src="/guides/markbind/js/polyfill.min.js"></script>
+<script src="/guides/markbind/js/vue.min.js"></script>
+<script src="/guides/markbind/js/markbind.min.js"></script>
+<script src="ab3RemovingFields.page-vue-render.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>
