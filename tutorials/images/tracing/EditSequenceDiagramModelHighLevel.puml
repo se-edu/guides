@@ -8,7 +8,7 @@ participant "CommandResult" as CommandResult LOGIC_COLOR
 end box
 
 box Model MODEL_COLOR_T1
-participant "List<Person>" as ObservableList MODEL_COLOR
+participant "FilteredList<Person>" as ObservableList MODEL_COLOR
 participant "ModelManager" as Model MODEL_COLOR
 end box
 
