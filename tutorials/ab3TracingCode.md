@@ -302,9 +302,8 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
         return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson)));
     }
    ```
-4. We hope that you have developed an appreciation for sequence diagrams in understanding high-level overviews of AB3.
-   Below is a sequence diagram, some method calls are not included for sake of brevity.
-   that illustrates the interactions within the Model component during the execution of an edit command.
+4. We hope that you have developed an appreciation for sequence diagrams in understanding high-level overviews of AB3. 
+   Below is a sequence diagram, with some method calls omitted for brevity, illustrating the interactions within the Model component during the execution of an edit command.
    <puml src="images/tracing/EditSequenceDiagramModelHighLevel.puml"
    alt="Tracing an `edit` command through the Model component"/>
 5. Let us put a breakpoint at this line which will be the first passing of control to `Model` in `EditCommand#execute()`.
@@ -326,7 +325,8 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
         }
 ```
 
-1. Peeking into the constructor reveals `filteredPersons` with AddressBook's _unmodifiable_ `ObservableList<Person>` as well.
+1. Peeking into the constructor reveals `filteredPersons` is created with a `FilteredList` wrapped around
+   Addressbook's internal list. 
 2. `FilteredList` is a wrapper around an existing list and, as the name suggests, applies a filter to determine which 
     elements from the original list should be included.
 3. Any modifications to the original list (e.g., adding, removing, or updating elements) will be visible in the FilteredList.
@@ -341,7 +341,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 
 2. This reveals our first pass of control to `Addressbook`
 2. Upon further inspection, the `Addressbook` is merely invoking the contains method of its internal list of persons. 
-   [Remember](#what-is-filteredlistperson), this is the same list that the `ModelManager`'s `FilteredList` wraps around.
+   [Remember](#what-is-filteredlist), this is the same list that the `ModelManager`'s `FilteredList` wraps around.
 3. Stepping over again brings us to `model.setPerson` which again further calls on `Addressbook` to `setPerson` as it has access to its internal list. 
 
 ### Filtering the FilteredPersons
