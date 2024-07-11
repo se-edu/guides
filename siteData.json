@@ -625,6 +625,14 @@
         "troubleshooting": "Troubleshooting"
       },
       "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/vscode.md",
+      "title": "VS Code - Community Resources",
+      "headings": {
+        "vs-code-community-resources": "VS Code - Community Resources"
+      },
+      "headingKeywords": {}
     }
   ]
 }
