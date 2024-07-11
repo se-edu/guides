@@ -7,11 +7,18 @@
 
 Picking up from where we left off last tutorial, we have successfully achieved the desired layout. Now let’s make the application respond to user input.
 
+JavaFX has an _event-driven architecture style_. As such, we programmatically define _handler_ methods to execute as a response to certain _events_. "Events" refers to the [Event class](https://docs.oracle.com/javase/8/javafx/api/javafx/event/Event.html). Two of the most commonly used subclasses are [ActionEvent](https://docs.oracle.com/javase/8/javafx/api/javafx/event/Event.html) (such as a button fired or a key frame finished) and [InputEvent](https://docs.oracle.com/javase/8/javafx/api/javafx/event/Event.html) (such as a mouseclick).
+All UI components have a set of methods to define handlers with respect to different events. Some of these methods are unique to the component, but most are inherited from the parent classes `Node`, `Control`, etc.
+For example, the [Button](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Button.html) class inherits `setOnAction` from parent `ButtonBase` and `setOnMouseClicked` from `Node`. Either one fulfills the functionality of Duke as the following:
+```java
+component.setOnMouseClick((event) -> {/*response*/});
+```
+
+When an event is detected, JavaFX will call the respective handlers.
+
 Rather than to do everything in one try, let’s iterate and build up towards our final goal.
 
 ## Iteration 1 – Echoing the user
-
-JavaFX has an _event-driven architecture style_. As such, we programmatically define _handler_ methods to execute as a response to certain _events_. When an event is detected, JavaFX will call the respective handlers.
 
 For Duke, there are two events that we want to respond to, namely the user pressing `Enter` in the `TextField` and left-clicking the `Button`. These are the `onAction` event for the `TextField` and the `onMouseClicked` event for the `Button`.
 
