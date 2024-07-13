@@ -14,7 +14,7 @@ pageNav: 3
 When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. In this tutorial, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command.
 
 
-<h2 id="before-we-start">Before we start</h2>
+## Before we start
 
 Before we jump into the code, it is useful to get an idea of the overall structure and the high-level behavior of the application. This is provided in the 'Architecture' section of the developer guide. In particular, the architecture diagram (reproduced below), tells us that the App consists of several components.
 
@@ -92,7 +92,7 @@ Now let’s set the breakpoint. First, double-click the item to reach the corres
 
 ## Tracing the execution path
 
-At this point, you should have appreciated the general sequence diagram **shown** [above](#before-we-start)
+At this point, you should have appreciated the general sequence diagram [**shown above**](#before-we-start)
 
 
 For this code tracing,
