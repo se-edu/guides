@@ -22,6 +22,12 @@ ecp -> ec ++: 1, editPersonDescriptor
 ec --> ecp --
 ecp --> abp --: command
 abp --> logic --: command
-logic --> main --: command
+
+logic --> ec : execute
+activate ec
+ec --> logic : commandResult
+deactivate ec
+
+logic --> main --: commandResult
 
 @enduml
