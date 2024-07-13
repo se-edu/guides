@@ -11,7 +11,14 @@ pageNav: 3
 >
 > —  Robert C. Martin Clean Code: A Handbook of Agile Software Craftsmanship
 
-When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. In this tutorial, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command.
+## Introduction
+Understanding the execution path of a program is crucial for debugging and extending existing codebases. Tracing code helps in identifying how different components interact, where potential bugs may occur, and how changes in one part of the code can affect the entire application. By the end of this tutorial, you will be equipped with the skills to: 
+* Set breakpoints effectively.
+* Trace the flow of execution through various components.
+* Understand the interactions between different parts of the application. 
+* Identify and troubleshoot issues within the code.
+
+When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. Next up, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command.
 
 
 ## Before we start
