@@ -106,7 +106,8 @@ For this tutorial, we will be issuing the command <code>edit 1 n/Alice Yeoh</cod
 
 Specifically,
 we trace the following sequence diagram
-which explores the `Logic` component in more detail which will be paramount to understanding other commands as well! 
+which explores the `Logic` component in more detail which will be paramount to understanding other commands as well!
+The diagrams will be reproduced with labels in their sections to highlight the pass of control between classes.
 
 <puml src="images/tracing/LogicSequenceDiagramWithMainWindow.puml" alt="Tracing an `edit` command with specific arguments"></puml>
 
@@ -124,7 +125,7 @@ which explores the `Logic` component in more detail which will be paramount to u
 
 <annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
   <!-- Set Legend to both -->
-  <a-point x="26%" y="20%"  label="1"/>
+  <a-point x="24%" y="16%"  label="1"/>
 </annotate>
 
 1. To start the debugging session, simply `Run` \> `Debug Main`
@@ -145,7 +146,7 @@ which explores the `Logic` component in more detail which will be paramount to u
 
 <annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
   <!-- Set Legend to both -->
-  <a-point x="50.7%" y="29%"  label="2"/>
+  <a-point x="47.5%" y="23%"  label="2"/>
 </annotate>
 
 
@@ -196,20 +197,20 @@ which explores the `Logic` component in more detail which will be paramount to u
        ...
    ```
 
-<h3 id="flow-3">3. AddressBookParser -> EditCommandParser</h3>
+### 3. AddressBookParser -> EditCommandParser
 
 
 <annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
   <!-- Set Legend to both -->
-  <a-point x="60.7%" y="30%"  label="3"/>
-  <a-point x="69%" y="53%"  label="4"/>
+  <a-point x="58%" y="26%"  label="3"/>
+  <a-point x="64%" y="44%"  label="4"/>
 </annotate>
 
 
 1. Now, `LogicManager` has passed control to `AddressBookParser`
 
 1. _Step over_ the statements in that method until you reach the `switch` statement. The 'Variables' window now shows the value of both `commandWord` and `arguments`:<br>
-    ![Variables](images/tracing/Variables.png)
+    ![Variables](images/tracing/VariablesAnnotated.png)
 
 1. We see that the value of `commandWord` is now `edit` but `arguments` is still not processed in any meaningful way.
 
@@ -222,12 +223,21 @@ which explores the `Logic` component in more detail which will be paramount to u
     ...
     ```
 
-1. Note that this creates the `EditCommandParser` first.
+1. `EditCommandParser` is created first, annotated with [label 3](#3-addressbookparser-editcommandparser)
+
+1. `AddressBookParser` now calls `parse(...)` of the newly created `EditCommandParser`, highlighted in the diagram as well, passing control to
+   `EditCommandParser`, annotated with [label 4](#3-addressbookparser-editcommandparser)
 
 
-### 4. AddressBookParser -> EditCommand
+### 4. EditCommandParser -> EditCommand
 
-1. `AddressBookParser` calling `parse(...)` of the newly created `EditCommandParser`. This is shown in the diagram [earlier when EditCommand was created](#flow-3).
+<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
+  <!-- Set Legend to both -->
+<a-point x="82%" y="51%"  label="5"/>
+<a-point x="50%" y="64%"  color = "RED" label="6"/>
+<a-point x="26%" y="71%"  color = "RED" label="7"/>
+</annotate>
+
 
 1. Let’s see what `EditCommandParser#parse()` does by stepping into it. You might have to click the 'step into' button multiple times here because there are two method calls in that statement: `EditCommandParser()` and `parse()`.
 
@@ -236,20 +246,37 @@ which explores the `Logic` component in more detail which will be paramount to u
    **Intellij Tip:** Sometimes, you might end up stepping into functions that are not of interest. Simply use the `step out` button to get out of them!
    </box>
 
-1. Stepping through the method shows that it calls `ArgumentTokenizer#tokenize()` and `ParserUtil#parseIndex()` to obtain the arguments and index required.
+1. Stepping through the method, `EditCommandParser#parse()`, shows that it calls `ArgumentTokenizer#tokenize()` and `ParserUtil#parseIndex()` to obtain the arguments and index required.
+
 
 1. The rest of the method seems to exhaustively check for the existence of each possible parameter of the `edit` command and store any possible changes in an `EditPersonDescriptor`. Recall that we can verify the contents of `editPersonDesciptor` through the 'Variables' window.<br>
-   ![EditCommand](images/tracing/EditCommand.png)
+   ![EditCommand](images/tracing/EditCommandAnnotated.png)
+
+1. Note the index and the contents of `EditPersonDescriptor`.
+   In this case, since the argument contains only name, only the `Name` field of
+   `EditPersonDescriptor` is set.
+
+1. A `EditCommand` with parsed index and created `EditPersonDescriptor` from the parsed arguments is created and returned, annotated with [label 5](#4-editcommandparser-editcommand).
+
+1. The newly created `EditCommand` is returned to `AddressBookParser` which then returns to `LogicManager`, returning control to `LogicManager`. This is annotated with [label 6 and 7](#4-editcommandparser-editcommand).
+
+----
 
 1. As you just traced through some code involved in parsing a command, you can take a look at this class diagram to see where the various parsing-related classes you encountered fit into the design of the `Logic` component.
    <pic src="https://se-education.org/addressbook-level3/images/ParserClasses.png" width="600"/>
 
+
+### 5. LogicManager -> EditCommand
+
+<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
+  <!-- Set Legend to both -->
+  <a-point x="90%" y="79%"  label="8"/>
+<a-point x="26%" y="86.5%"  color = "RED" label="9"/>
+</annotate>
+
 1. Let’s continue stepping through until we return to `LogicManager#execute()`.
 
-    The sequence diagram below shows the details of the execution path through the Logic component. Does the execution path you traced in the code so far match the diagram?<br>
-    <puml src="images/tracing/LogicSequenceDiagram.puml" alt="Tracing an `edit` command through the Logic component"/>
-
-1. Now, step over until you read the statement that calls the `execute()` method of the `EditCommand` object received, and step into that `execute()` method (partial code given below):
+1. Step over until you read the statement that calls the `execute()` method of the `EditCommand` object received, and step into that `execute()` method (partial code given below):
 
    **`EditCommand#execute()`:**
    ```java
@@ -275,13 +302,20 @@ which explores the `Logic` component in more detail which will be paramount to u
      <pic src="https://se-education.org/addressbook-level3/images/ModelClassDiagram.png" width="450" /><br>
    * {{ dg_ref }} This is a good time to read through the [**_Model component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#model-component)
 
-1. As you step through the rest of the statements in the `EditCommand#execute()` method, you'll see that it creates a `CommandResult` object (containing information about the result of the execution) and returns it.<br>
+1. As you step through the rest of the statements in the `EditCommand#execute()` method,
+   you'll see that it creates a `CommandResult` object
+   (containing information about the result of the execution) and returns it to `LogicManager`.<br>
+
+
    Advancing the debugger by one more step should take you back to the middle of the `LogicManager#execute()` method.<br>
 
 1. Given that you have already seen quite a few classes in the `Logic` component in action, see if you can identify in this partial class diagram some of the classes you've encountered so far, and see how they fit into the class structure of the `Logic` component:
     <pic src="https://se-education.org/addressbook-level3/images/LogicClassDiagram.png" width="550"/>
 
    * {{ dg_ref }} This is a good time to read through the [**_Logic component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#logic-component)
+
+
+### 6. LogicManager -> Storage
 
 1. Similar to before, you can step over/into statements in the `LogicManager#execute()` method to examine how the control is transferred to the `Storage` component and what happens inside that component.
 
@@ -316,6 +350,14 @@ which explores the `Logic` component in more detail which will be paramount to u
    <pic src="https://se-education.org/addressbook-level3/images/StorageClassDiagram.png" width="550" />
 
    * {{ dg_ref }} This is a good time to read through the [**_Storage component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#storage-component)
+
+
+### 7. Returning to MainWindow
+
+<annotate src="images/tracing/LogicSequenceDiagramOnlyWithMainWindow.png" alt="Sample Image">
+  <!-- Set Legend to both -->
+<a-point x="19%" y="84%"  color = "RED" label="9"/>
+</annotate>
 
 1. We can continue to step through until you reach the end of the `LogicManager#execute()` method and return to the `MainWindow#executeCommand()` method (the place where we put the original breakpoint).
 
