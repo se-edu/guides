@@ -86,7 +86,7 @@ Usage: Useful when you've stepped into a method and want to quickly return to th
 
 <box type="info" seamless>
 
-**Video reference:** [15.20 - 16.45](https://youtu.be/1bCgzjatcr4?si=7-NJpfpqo5pWtkyW&t=920): Right click on the breakpoint and enter condition as a boolean .
+**Video reference:** [15.20 - 16.45](https://youtu.be/1bCgzjatcr4?si=7-NJpfpqo5pWtkyW&t=920): Right click on the breakpoint and enter condition as a boolean.
 </box>
 
 Purpose: Executes the lines of code and pauses execution only when the condition is met.
