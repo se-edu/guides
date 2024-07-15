@@ -32,9 +32,12 @@ Go to `Run` > `Debug 'Main'` or click on the bug icon in the top-right corner of
 **Video reference:** [3.09 - 3.30](https://youtu.be/1bCgzjatcr4?si=KkJw2Cri-ERmqgAJ&t=189): Set a breakpoint by clicking on the line number in the left gutter like this!
 </box>
 
-Purpose: Breakpoints pause program execution at specific lines of code.
+To set a breakpoint in IntelliJ IDEA:
+- Click on the line number in the left gutter.
 
-Usage: Place breakpoints at critical points where you want to examine the program state, such as method entry points or before complex operations.
+Breakpoints are useful for:
+- Pausing execution at method entry points
+- Examining the program state before complex operations
 
 ## Basic Debugger Features
 
@@ -58,7 +61,9 @@ Use the values of each variable to ascertain if the logic of your code is correc
 
 Purpose: Executes the current line of code without stepping into method calls.
 
-Usage: Used to skip over lines of code that are not critical for understanding the current flow, such as logging or simple getter/setter methods.
+Usage:
+- Skip over lines of code that are not critical for understanding the current flow.
+- Execute the current line of code and move on to the next.
 
 ### Stepping Into a Method Call
 
@@ -69,7 +74,9 @@ Usage: Used to skip over lines of code that are not critical for understanding t
 
 Purpose: Steps into the implementation of a method called at the current execution point.
 
-Usage: Useful for delving into how specific methods work, especially when you want to understand detailed functionality.
+Usage: 
+- Delving into how specific methods work, especially when you want to understand detailed functionality.
+- Example: The current execution point calls a method, `addCommand.execute()` and you want to see how `execute()` works.
 
 ### Stepping Out of a Method
 
@@ -80,7 +87,9 @@ Usage: Useful for delving into how specific methods work, especially when you wa
 
 Purpose: Executes the remaining lines of code in the current method and returns to the caller.
 
-Usage: Useful when you've stepped into a method and want to quickly return to the higher-level context without stepping through every line.
+Usage:
+- When you've stepped into a method and want to quickly return to the higher-level context without stepping through every line.
+- Example: After looking at `execute()`, return to `addCommand.execute()` to continue tracing the code.
 
 ### Setting a Conditional Breakpoint
 
@@ -91,4 +100,6 @@ Usage: Useful when you've stepped into a method and want to quickly return to th
 
 Purpose: Executes the lines of code and pauses execution only when the condition is met.
 
-Usage: Useful when you want the execution to pause only at a certain iteration of a loop.
+Usage:
+- Useful when you want the execution to pause only at a certain iteration of a loop.
+- Example: Right-click on a breakpoint and enter a condition like `i == 5` to pause execution when the loop variable `i` equals 5.
