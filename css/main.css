@@ -190,6 +190,10 @@ h2 {
     border-top: 5px solid #0073e6;
 }
 
+img {
+    margin: 20px;
+}
+
 .indented-less {
     padding-left: 10px;
 }
