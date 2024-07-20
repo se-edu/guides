@@ -16,7 +16,7 @@ When an event is detected, JavaFX will call the respective handlers.
 
 Rather than doing everything in one try, let’s iterate and build up towards our final goal.
 
-## Iteration 1 – Echoing the user
+## Iteration 1 – Echoing the user input
 
 For Duke, there are two events that we want to respond to, namely the user pressing `Enter` in the `TextField` and left-clicking the `Button`. These are the `onAction` event for the `TextField` and the `onMouseClicked` event for the `Button`.
 
