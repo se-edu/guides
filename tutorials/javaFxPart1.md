@@ -109,6 +109,30 @@ public class Duke extends Application {
 }
 ```
 
+However, if you do already have an existing constructor which takes arguments, you can proceed 
+by creating an overloaded constructor with no arguments, passing the arguments to the existing 
+constructor e.g.,
+
+```java{highlight-lines="11-14"}
+//...
+private static final String DEFAULT_FILE_PATH = "duke/example.txt";
+
+public class Duke extends Application {
+
+    // Existing constructor
+    public Duke(String filePath) {
+        // ...
+    }
+
+    // Overloaded constructor
+    public Duke() {
+        this(DEFAULT_FILE_PATH);
+    }
+
+    // ...
+}
+```
+
 Now, run `Launcher` and you should see something like this:
 
 ![Hello World](images/javafx/HelloWorld.png)
