@@ -310,7 +310,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
    ![ModelBreakpoint](images/tracing/ModelBreakpoint.png)
 1. Stepping into the Model component reveals that it returns an `FilteredList<Person>`.
 
-### What is FilteredList<Person>?
+### What is `FilteredList`<Person>?
 
 
 ```java
@@ -327,12 +327,11 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 
 1. Peeking into the constructor reveals `filteredPersons` is created with a `FilteredList` wrapped around
    Addressbook's internal list. 
-1. `FilteredList` is a wrapper around an existing list and, as the name suggests, applies a filter to determine which 
-    elements from the original list should be included.
-1. Any modifications to the original list (e.g., adding, removing, or updating elements) will be visible in the FilteredList.
+1. `FilteredList` is a wrapper around an existing list and, as the name suggests, applies a filter to determine which elements from the original list should be included.
+1. Any modifications to the original list (e.g., adding, removing, or updating elements) will be visible in the `FilteredList`.
 
 
-### Model's AddressBook
+### Model's `AddressBook`
 
 
 1. Continuing on, let us step over until the next `Model` interaction, `model.hasPerson(editedPerson)`.
@@ -344,7 +343,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
    [Remember](#what-is-filteredlist), this is the same list that the `ModelManager`'s `FilteredList` wraps around.
 1. Stepping over again brings us to `model.setPerson` which again further calls on `Addressbook` to `setPerson` as it has access to its internal list. 
 
-### Filtering the FilteredPersons
+### Filtering the `FilteredList`
 
 1. Now we should be at `model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS)`.
    <img src="images/tracing/setPredicate.png" alt="setPredicate" width="800">
