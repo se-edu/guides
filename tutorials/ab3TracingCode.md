@@ -276,8 +276,8 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 ## Misc: Tracing `Model` execution path
 
 1. In our previous discussions, we've primarily focused on the `Logic` component to understand the general flow of logic when executing commands.
-2. Now, let's delve into how the `EditCommand#execute()` method interacts with the `Model` component.
-3. Let us reproduce the full code of `EditCommand#execute()`
+1. Now, let's delve into how the `EditCommand#execute()` method interacts with the `Model` component.
+1. Let us reproduce the full code of `EditCommand#execute()`.
 
    **`EditCommand#execute()`:**
    ```java
@@ -302,13 +302,13 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
         return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPerson)));
     }
    ```
-4. We hope that you have developed an appreciation for sequence diagrams in understanding high-level overviews of AB3. 
+1. We hope that you have developed an appreciation for sequence diagrams in understanding high-level overviews of AB3. 
    Below is a sequence diagram, with some method calls omitted for brevity, illustrating the interactions within the Model component during the execution of an edit command.
    <puml src="images/tracing/EditSequenceDiagramModelHighLevel.puml"
    alt="Tracing an `edit` command through the Model component"/>
-5. Let us put a breakpoint at this line which will be the first passing of control to `Model` in `EditCommand#execute()`.
+1. Let us put a breakpoint at this line which will be the first passing of control to `Model` in `EditCommand#execute()`.
    ![ModelBreakpoint](images/tracing/ModelBreakpoint.png)
-6. Stepping into the Model component reveals that it returns an `FilteredList<Person>`.
+1. Stepping into the Model component reveals that it returns an `FilteredList<Person>`.
 
 ### What is FilteredList<Person>?
 
@@ -327,9 +327,9 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 
 1. Peeking into the constructor reveals `filteredPersons` is created with a `FilteredList` wrapped around
    Addressbook's internal list. 
-2. `FilteredList` is a wrapper around an existing list and, as the name suggests, applies a filter to determine which 
+1. `FilteredList` is a wrapper around an existing list and, as the name suggests, applies a filter to determine which 
     elements from the original list should be included.
-3. Any modifications to the original list (e.g., adding, removing, or updating elements) will be visible in the FilteredList.
+1. Any modifications to the original list (e.g., adding, removing, or updating elements) will be visible in the FilteredList.
 
 
 ### Model's AddressBook
@@ -339,20 +339,20 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 
 <img src="images/tracing/modelhasPerson.png" alt="setPredicate" width="600">
 
-2. This reveals our first pass of control to `Addressbook`
-2. Upon further inspection, the `Addressbook` is merely invoking the contains method of its internal list of persons. 
+1. This reveals our first pass of control to `Addressbook`.
+1. Upon further inspection, the `Addressbook` is merely invoking the contains method of its internal list of persons. 
    [Remember](#what-is-filteredlist), this is the same list that the `ModelManager`'s `FilteredList` wraps around.
-3. Stepping over again brings us to `model.setPerson` which again further calls on `Addressbook` to `setPerson` as it has access to its internal list. 
+1. Stepping over again brings us to `model.setPerson` which again further calls on `Addressbook` to `setPerson` as it has access to its internal list. 
 
 ### Filtering the FilteredPersons
 
 1. Now we should be at `model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS)`.
    <img src="images/tracing/setPredicate.png" alt="setPredicate" width="800">
-2. Stepping into this method, we see it calls `filteredPersons.setPredicate(predicate)`.
-3. Predicates enable filtering the list based on specific criteria. _Hint: Another feature uses this too!_
-4. For `EditCommand`, `PREDICATE_SHOW_ALL_PERSONS` is used to clear any existing filters, 
+1. Stepping into this method, we see it calls `filteredPersons.setPredicate(predicate)`.
+1. Predicates enable filtering the list based on specific criteria. _Hint: Another feature uses this too!_.
+1. For `EditCommand`, `PREDICATE_SHOW_ALL_PERSONS` is used to clear any existing filters, 
    ensuring that all persons are displayed.
-5. A `CommandResult` is returned with a message displaying edited `Person`.
+1. A `CommandResult` is returned with a message displaying edited `Person`.
 
 <box type="tip" seamless>
 How can you use what you learnt to develop a sort feature?
