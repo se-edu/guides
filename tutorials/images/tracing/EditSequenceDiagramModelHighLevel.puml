@@ -23,24 +23,24 @@ Model --> EditCommand
 deactivate Model
 
 
-EditCommand --> ObservableList : retrieve Person
+EditCommand -> ObservableList : retrieve Person
 activate ObservableList
 ObservableList --> EditCommand : Person
 deactivate ObservableList
 
-EditCommand --> EditCommand : createEditedPerson
+EditCommand -> EditCommand : createEditedPerson
 activate EditCommand
 EditCommand --> EditCommand
 deactivate EditCommand
 
-EditCommand --> Model : setPerson
+EditCommand -> Model : setPerson
 activate Model
 Model --> EditCommand
 deactivate Model
 
-EditCommand --> Model : updateFilteredPersonList
+EditCommand -> Model : updateFilteredPersonList
 activate Model
-Model --> ObservableList : setPredicate
+Model -> ObservableList : setPredicate
 activate ObservableList
 ObservableList --> Model
 deactivate ObservableList
@@ -51,7 +51,7 @@ deactivate Model
 
 
 create CommandResult
-EditCommand --> CommandResult
+EditCommand -> CommandResult
 activate CommandResult
 CommandResult --> EditCommand
 deactivate CommandResult
