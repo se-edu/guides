@@ -17,7 +17,7 @@ We’ll assume that you have already set up the development environment as outli
 
 ## Create a new `remark` command
 
-Looking in the `logic.command` package, you will notice that each existing command have their own class. All the commands inherit from the abstract class `Command` which means that they must override `execute()`. Each `Command` returns an instance of `CommandResult` upon success and `CommandResult#feedbackToUser` is printed to the `ResultDisplay`.
+Looking in the `logic.commands` package, you will notice that each existing command have their own class. All the commands inherit from the abstract class `Command` which means that they must override `execute()`. Each `Command` returns an instance of `CommandResult` upon success and `CommandResult#feedbackToUser` is printed to the `ResultDisplay`.
 
 Let’s start by creating a new `RemarkCommand` class in the `src/main/java/seedu/address/logic/command` directory.
 
