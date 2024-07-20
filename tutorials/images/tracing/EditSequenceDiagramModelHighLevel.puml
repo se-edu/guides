@@ -3,51 +3,50 @@
 skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
-participant "EditCommand" as EditCommand LOGIC_COLOR
-participant "CommandResult" as CommandResult LOGIC_COLOR
+participant ":EditCommand" as EditCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
+participant "filteredPersons:FilteredList<Person>" as ObservableList MODEL_COLOR
 box Model MODEL_COLOR_T1
-participant "FilteredList<Person>" as ObservableList MODEL_COLOR
-participant "ModelManager" as Model MODEL_COLOR
+participant "model:ModelManager" as Model MODEL_COLOR
 end box
 
---> EditCommand
+-> EditCommand : execute(model)
 activate EditCommand
 
 
 
 EditCommand -> Model : getFilteredPersonList()
 activate Model
-Model --> EditCommand
+Model --> EditCommand : filteredPersons
 deactivate Model
 
 
-EditCommand -> ObservableList : retrieve Person
+EditCommand -> ObservableList : get(index)
 activate ObservableList
-ObservableList --> EditCommand : Person
+ObservableList --> EditCommand : personToEdit
 deactivate ObservableList
 
-EditCommand -> EditCommand : createEditedPerson
+EditCommand -> EditCommand : createEditedPerson(...)
 activate EditCommand
-EditCommand --> EditCommand
+EditCommand --> EditCommand: editedPerson
 deactivate EditCommand
 
-EditCommand -> Model : setPerson
+EditCommand -> EditCommand : check for duplicates
+activate EditCommand
+deactivate EditCommand
+
+EditCommand -> Model : setPerson(...)
 activate Model
 Model --> EditCommand
 deactivate Model
 
-EditCommand -> Model : updateFilteredPersonList
+EditCommand -> Model : updateFilteredPersonList(...)
 activate Model
-Model -> ObservableList : setPredicate
-activate ObservableList
-ObservableList --> Model
 deactivate ObservableList
 Model --> EditCommand
 deactivate Model
-
-
 
 
 create CommandResult
@@ -56,7 +55,7 @@ activate CommandResult
 CommandResult --> EditCommand
 deactivate CommandResult
 
-[<-- EditCommand
+[<-- EditCommand: r
 deactivate EditCommand
 
 @enduml
