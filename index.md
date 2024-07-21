@@ -18,6 +18,8 @@ Tutorials, how-to guides, getting-started guides, ...
 * [**Checkstyle**](tutorials/checkstyle.html)
 * [**Codecov**](tutorials/codecov.html)
 * **Java**:
+  * [**Installation**](tutorials/javaInstallation.html):
+    * [**Mac**](tutorials/javaInstallationMac.html)
   * [**JAR files**](tutorials/jar.html)
   * [**JavaFX**](tutorials/javaFx.html):
     * [Part 1: Introduction](tutorials/javaFxPart1.html)
