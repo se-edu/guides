@@ -133,6 +133,7 @@ public class Duke extends Application {
 
 This approach enables JavaFX to create the `Application` instance using the newly defined 
 no-argument constructor, while preserving the functionality of the existing constructor.
+
 Now, run `Launcher` and you should see something like this:
 
 ![Hello World](images/javafx/HelloWorld.png)
