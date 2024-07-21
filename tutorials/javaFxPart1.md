@@ -109,9 +109,7 @@ public class Duke extends Application {
 }
 ```
 
-However, if you do already have an existing constructor which takes arguments, you can proceed 
-by creating an overloaded constructor with no arguments, passing the arguments to the existing 
-constructor e.g.,
+However, if you do already have an existing constructor which takes arguments, you can proceed by creating an overloaded constructor with no arguments, passing the arguments to the existing constructor e.g.,
 
 ```java{highlight-lines="11-14"}
 //...
@@ -132,6 +130,8 @@ public class Duke extends Application {
     // ...
 }
 ```
+
+This approach enables JavaFX to create the `Application` instance using the newly defined no-argument constructor, while preserving the functionality of the existing constructor. This extends the class's functionality without altering its existing behavior.
 
 Now, run `Launcher` and you should see something like this:
 
