@@ -525,6 +525,21 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/javaInstallationMac.md",
+      "title": "Java 17 Installation Guide for Mac Users",
+      "headings": {
+        "java-17-installation-guide-for-mac-users": "Java 17 Installation Guide for Mac Users",
+        "introduction": "Introduction",
+        "installation-steps": "Installation Steps",
+        "step-1-install-sdkman": "Step 1: Install SDKMAN",
+        "step-2-install-jdk-fx-using-sdkman": "Step 2: Install JDK-FX Using SDKMAN",
+        "step-3-verify-installation": "Step 3: Verify Installation",
+        "switching-between-java-versions": "Switching Between Java Versions",
+        "switch-to-a-different-java-version": "Switch to a Different Java Version"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/jekyll.md",
       "title": "Using Jekyll for project documentation",
       "headings": {
