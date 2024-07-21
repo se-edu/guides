@@ -10,6 +10,8 @@
 
 This guide provides detailed steps to install Java JDK-FX 17.0.11.fx-zulu on macOS using SDKMAN.
 
+SDKMAN is a tool that simplifies the process of installing, switching between, and managing multiple versions of software development kits on Unix-based systems. It's particularly useful for Java developers as it allows easy installation and management of different Java versions.
+
 ## Installation Steps
 
 ### Step 1: Install SDKMAN
