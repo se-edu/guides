@@ -106,8 +106,7 @@ application {
 
 // ...
 ```
-Now, if we want to run the application, we can use the command `./gradlew run` if we want to use 
-Gradle, or run the `Launcher` class directly from an IDE.
+Now, if we want to run the application, we can use the command `./gradlew run` if we want to use Gradle, or run the `Launcher` class directly from an IDE.
 
 JavaFX creates the `Application` instance by calling the no-argument constructor. So, you need to define a no-argument constructor in the `Duke` class (i.e., the `Application` subclass you use) if you don't have one already e.g.,
 
