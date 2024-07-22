@@ -89,6 +89,17 @@ Note that if you are using packages, `fx:controller="MainWindow"` needs to be up
   </padding>
 </fx:root>
 ```
+<box type="info" seamless>
+
+Note that for `Label`, we set `wrapText` to **true** and `minHeight` to **-Infinity**. This configuration wraps the text within the label, removes the minimum height constraint, and allows the label to grow vertically as needed.
+
+![Set minHeight for Label](images/javafx/NoOverrunDialogBox.png)
+
+Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and ending with `...` instead.
+
+![No minHeight for Label](images/javafx/OverrunDialogBox.png)
+
+</box>
 
 1. Let’s explore the provided FXML files in Scene Builder. 
     
