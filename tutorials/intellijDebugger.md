@@ -26,6 +26,8 @@ To utilise the debugger, we need to make sure that the code is running in debug 
 
 ### Setting Breakpoints
 
+<img src="images/intellijDebugger/breakpoint.png" height="300dp"/>
+
 <box type="info" seamless>
 
 **Video reference:** {{ show_video("3", "09", "3", "30") }}
@@ -43,6 +45,8 @@ Breakpoints are useful for:
 
 ### Run Debug Mode
 
+<img src="images/intellijDebugger/debuggerMode.png" height="300dp"/>
+
 <box type="info" seamless>
 
 **Video reference:** {{ show_video("3", "53", "4", "00") }}
@@ -57,6 +61,8 @@ Debugger features help you step through code systematically, inspect variable va
 
 ### Showing Execution Point
 
+<img src="images/intellijDebugger/showingExecutionPoint.png" height="300dp"/>
+
 <box type="info" seamless>
 
 **Video reference:** {{ show_video("4", "41", "6", "06") }}
@@ -66,6 +72,8 @@ You can see the values of each variable up to the execution point selected.
 Use the values of each variable to ascertain if the logic of your code is correct.
 
 ### Stepping Over Code
+
+<img src="images/intellijDebugger/stepOverCode.png" height="300dp"/>
 
 <box type="info" seamless>
 
@@ -82,6 +90,8 @@ Usage:
 
 ### Stepping Into a Method Call
 
+<img src="images/intellijDebugger/stepIntoCode.png" height="300dp"/>
+
 <box type="info" seamless>
 
 **Video reference:** {{ show_video("13", "05", "13", "35") }}
@@ -97,6 +107,8 @@ Usage:
 
 ### Stepping Out of a Method
 
+<img src="images/intellijDebugger/stepOutCode.png" height="300dp"/>
+
 <box type="info" seamless>
 
 **Video reference:** {{ show_video("13", "45", "13", "55") }}
@@ -111,6 +123,8 @@ Usage:
 - Example: After looking at `execute()`, return to `addCommand.execute()` to continue tracing the code.
 
 ### Setting a Conditional Breakpoint
+
+<img src="images/intellijDebugger/conditionalBreakpoint.png" height="300dp"/>
 
 <box type="info" seamless>
 
@@ -141,6 +155,8 @@ Relevant video segment ({{ start_m }}:{{ start_s }} - {{ end_m }}:{{ end_s }}):
 
 ### Evaluate Expression
 
+<img src="images/intellijDebugger/evaluateExpression.png" height="300dp"/>
+
 <box type="info" seamless>
 
 **Video reference:**  {{ show_video("8", "17", "9", "14") }}
@@ -155,6 +171,8 @@ Usage:
 - Example: while debugging, you can enter expressions like myVariable \* 2 to see its current value multiplied by 2, or call functions directly to inspect their return values.
 
 ### Exception Breakpoint
+
+<img src="images/intellijDebugger/exceptionBreakpoint.png" height="400dp"/>
 
 <box type="info" seamless>
 
