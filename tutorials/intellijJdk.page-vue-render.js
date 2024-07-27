@@ -8,6 +8,6 @@ with(this){return _c('div',{attrs:{"id":"app"}},[_c('header',{attrs:{"sticky":""
 with(this){return _c('div',{staticClass:"fixed-header-padding",attrs:{"id":"content-wrapper"}},[_c('h1',{attrs:{"id":"guides-for-se-student-projects"}},[_c('span',{staticClass:"text-dark"},[_c('strong',[_c('strong',[_v("Guides for SE student projects »")])])]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#guides-for-se-student-projects","onclick":"event.stopPropagation()"}})]),_v(" "),_c('p'),_c('h1',{attrs:{"id":"intellij-idea-configuring-the-jdk"}},[_v("Intellij IDEA: Configuring the JDK"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#intellij-idea-configuring-the-jdk","onclick":"event.stopPropagation()"}})]),_v(" "),_c('p',[_v("Please refer to Intellij's own documentation "),_c('a',{attrs:{"href":"https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk"}},[_v("here")]),_v(".")]),_c('p')])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sat, 27 Jul 2024, 13:07:42 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sat, 27 Jul 2024, 16:13:22 GMT+8]")])])])}
 }];
   

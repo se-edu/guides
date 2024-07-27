@@ -389,7 +389,16 @@
       "src": "tutorials/intellijDebugger.md",
       "title": "Intellij IDEA: Using the debugger",
       "headings": {
-        "intellij-idea-using-the-debugger": "Intellij IDEA: Using the debugger"
+        "intellij-idea-using-the-debugger": "Intellij IDEA: Using the debugger",
+        "setting-breakpoints": "Setting breakpoints",
+        "running-the-code-in-debugger-mode": "Running the code in 'debugger mode'",
+        "examining-the-state-of-the-suspended-program": "Examining the state of the suspended program",
+        "stepping-through-code": "Stepping through code",
+        "stepping-into-a-method": "Stepping into a method",
+        "stepping-out-of-a-method": "Stepping out of a method",
+        "setting-a-conditional-breakpoint": "Setting a conditional breakpoint",
+        "evaluate-expression": "Evaluate expression",
+        "set-an-exception-breakpoint": "Set an exception breakpoint"
       },
       "headingKeywords": {}
     },
