@@ -71,7 +71,7 @@ with(this){return _c('p',[_c('strong',[_c('code',{pre:true,attrs:{"class":"hljs 
 with(this){return _c('code',{pre:true,attrs:{"class":"hljs java"}},[_c('span',[_v("...\n")]),_c('span',[_c('span',{pre:true,attrs:{"class":"hljs-meta"}},[_v("@FXML")]),_v("\n")]),_c('span',[_c('span',{pre:true,attrs:{"class":"hljs-keyword"}},[_v("private")]),_v(" Label address;\n")]),_c('span',[_v("...\n")])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("PersonCard.fxml")])])])}
+with(this){return _c('p',[_c('strong',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("PersonListCard.fxml")])])])}
 },function anonymous(
 ) {
 with(this){return _c('code',{pre:true,attrs:{"class":"hljs"}},[_c('span',[_v("...\n")]),_c('span',[_v("<Label fx:id=\"phone\" styleClass=\"cell_small_label\" text=\"\\$phone\" />\n")]),_c('span',[_v("<Label fx:id=\"address\" styleClass=\"cell_small_label\" text=\"\\$address\" />\n")]),_c('span',[_v("<Label fx:id=\"email\" styleClass=\"cell_small_label\" text=\"\\$email\" />\n")]),_c('span',[_v("...\n")])])}
@@ -101,6 +101,6 @@ with(this){return _c('p',[_v("You can go through each individual "),_c('code',{p
 with(this){return _c('p',[_c('a',{attrs:{"href":"/guides/tutorials/ab3AddRemark.html"}},[_c('span',{staticClass:"fas fa-arrow-left",attrs:{"aria-hidden":"true"}}),_v(" Previous")]),_v(" | "),_c('a',{attrs:{"href":"/guides/tutorials/ab3.html"}},[_c('span',{staticClass:"fas fa-arrow-up",attrs:{"aria-hidden":"true"}}),_v(" "),_c('strong',[_v("ToC")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Mon, 22 Jul 2024, 0:25:26 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sat, 27 Jul 2024, 10:32:23 GMT+8]")])])])}
 }];
   
