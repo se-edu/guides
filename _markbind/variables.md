@@ -39,4 +39,7 @@
 <variable name="bad"><span style="color: red"><md>**:fas-thumbs-down: Bad**</md></span></variable>
 <variable name="good"><span style="color: green"><md>**:fas-thumbs-up: Good**</md></span></variable>
 
+<variable name="step_numbers">\{texts="['1', '2', '3']" t-class="badge rounded-pill bg-primary text-white"\}</variable>
+<variable name="abcd_numbers">\{texts="['a)', 'b)', 'c)', 'd)', 'e)']" \}</variable>
+
 <variable from="variables.json" />
