@@ -11,7 +11,9 @@ pageNav: 3
 >
 > —  Robert C. Martin Clean Code: A Handbook of Agile Software Craftsmanship
 
-When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. In this tutorial, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command.
+When trying to understand an unfamiliar code base, one common strategy used is to _trace_ some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. In this tutorial, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command to:  
+**(a) learn how to use a debugger to trace code**, and  
+**(b) get a preliminary sense of how AB3's code works**.
 
 
 ## Before we start
@@ -39,13 +41,23 @@ Before we proceed, ensure that you have done the following:
 
 ## Setting a breakpoint
 
-As you know, the first step of debugging is to put in a breakpoint where you want the debugger to pause the execution. For example, if you are trying to understand how the App starts up, you would put a breakpoint in the first statement of the `main` method.
+As you know, the first step of debugging is to put in a breakpoint where you want the debugger to pause the execution %%(e.g., to debug an issue with data saving, you might put a breakpoint in the method that saves data)%%. When using the debugger to trace the code (to learn how it works), we start the same way, by putting a breakpoint in the code where we want to start tracing the execution path.
 
-In our case, we would want to begin the tracing at the very point where the App start processing user input (i.e., somewhere in the UI component), and then trace through how the execution proceeds through the UI component. However, the execution path through a GUI is often somewhat obscure due to various <popover content="**More on _event-driven mechanisms_**: Unlike command-line programs, GUI applications respond to user actions (like clicks and keystrokes) and other events, triggering various event _listeners_ and _handlers_. This non-linear flow of control can make it difficult to trace and debug the sequence of operations, as the program reacts dynamically to different events, creating an obscure execution path.">*event-driven mechanisms*</popover>  used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the `UI` transfers control to the `Logic` component.
+In our case, it's natural that we start tracing the code at the point where the App start processing user input (i.e., somewhere in the UI component), and then trace through how the execution proceeds through the UI component. That is the part of the `UI` component's activation bar indicated by the yellow circle in the component-level sequence diagram below.
 
-<pic src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550" />
+<annotate src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550">
+<a-point x="19%" y="37%" content="This is where the UI processes the user input." opacity="0.3" size="40" color="yellow"/>
+</annotate>
 
-According to the sequence diagram you saw earlier (and repeated above for reference), the `UI` component yields control to the `Logic` component through a method named `execute`. Searching through the code base for an `execute()` method that belongs to the `Logic` component yields a promising candidate in `seedu.address.logic.Logic`.
+However, the execution path through a GUI is often somewhat obscure due to various <popover content="**More on _event-driven mechanisms_**: Unlike command-line programs, GUI applications respond to user actions (like clicks and keystrokes) and other events, triggering various event _listeners_ and _handlers_. This non-linear flow of control can make it difficult to trace and debug the sequence of operations, as the program reacts dynamically to different events, creating an obscure execution path.">*event-driven mechanisms*</popover>  used by GUI frameworks. Therefore, let us skip that part of the execution path for now, and put the breakpoint where the `UI` transfers control to the `Logic` component.
+
+<annotate src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550">
+<a-point x="43%" y="40%" content="This is where the`UI` component yields control to the `Logic` component through a method named `execute`." opacity="0.3" size="40" color="yellow"/>
+</annotate>
+
+According to the sequence diagram, the `UI` component yields control to the `Logic` component through a method named `execute` (also indicated by the yellow circle in the diagram above). So, let's put our breakpoint in the `execute` method of the `Logic` component.
+
+Searching through the code base for an `execute()` method that belongs to the `Logic` component yields a promising candidate in `seedu.address.logic.Logic`, as shown below.
 
 <img src="images/tracing/searchResultsForExecuteMethod.png" />
 
@@ -324,7 +336,7 @@ The diagrams will be reproduced with labels in their sections to highlight the p
    **Intellij Tip:** When trying to step into a statement such as `storage.saveAddressBook(model.getAddressBook())` which contains multiple method calls, Intellij will let you choose (by clicking) which one you want to step into.
    </box>
 
-1. As you step through the code inside the `Storage` component, you will eventually arrive at the `JsonAddressBook#saveAddressBook()` method which calls the `JsonSerializableAddressBook` constructor, to create an object that can be _serialized_ (i.e., stored in storage medium) in JSON format. That constructor is given below (with added line breaks for easier readability):
+1. As you step through the code inside the `Storage` component, you will eventually arrive at the `JsonAddressBookStorage#saveAddressBook()` method which calls the `JsonSerializableAddressBook` constructor, to create an object that can be _serialized_ (i.e., stored in storage medium) in JSON format. That constructor is given below (with added line breaks for easier readability):
 
     **`JsonSerializableAddressBook` constructor:**
     ```java
