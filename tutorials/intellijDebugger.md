@@ -110,7 +110,7 @@ To remove the breakpoint, click the red dot again.
 
 **How:** Click the `Step Over` button in the debugger toolbar, as shown below.
 
-{{ show_screenshot("images/intellijDebugger/stepOver.png", "se-edu") }}
+{{ show_screenshot("images/intellijDebugger/stepOverCode.png", "se-edu") }}
 {{ show_video("7", "30", "7", "55") }}
 {{ show_intellij_page("https://www.jetbrains.com/help/idea/stepping-through-the-program.html") }}
 
@@ -124,7 +124,7 @@ To remove the breakpoint, click the red dot again.
 
 **How:** Click the `Step Into` button in the debugger toolbar, as shown below.
 
-{{ show_screenshot("images/intellijDebugger/stepInto.png", "se-edu") }}
+{{ show_screenshot("images/intellijDebugger/stepIntoCode.png", "se-edu") }}
 {{ show_video("13", "05", "13", "35") }}
 
 <box type="tip" id="choosing-which-method-to-step-into" seamless>
