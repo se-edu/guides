@@ -81,7 +81,7 @@ Note that if you are using packages, `fx:controller="MainWindow"` needs to be up
 
 <fx:root alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="400.0" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <Label fx:id="dialog" text="Label" wrapText="true" />
+    <Label fx:id="dialog" text="Label" wrapText="true" minHeight="-Infinity"/>
     <ImageView fx:id="displayPicture" fitHeight="99.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true" />
   </children>
   <padding>
@@ -89,6 +89,17 @@ Note that if you are using packages, `fx:controller="MainWindow"` needs to be up
   </padding>
 </fx:root>
 ```
+<box type="info" seamless>
+
+Note that for `Label`, we set `wrapText` to **true** and `minHeight` to **-Infinity**. This configuration wraps the text within the label, removes the minimum height constraint, and allows the label to grow vertically as needed.
+
+![Set minHeight for Label](images/javafx/NoOverrunDialogBox.png)
+
+Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and ending with `...` instead.
+
+![No minHeight for Label](images/javafx/OverrunDialogBox.png)
+
+</box>
 
 1. Let’s explore the provided FXML files in Scene Builder. 
     
@@ -105,7 +116,9 @@ We will get to that later.
    ![Controller for MainWindow](images/javafx/MainWindowController.png)
 
 1. Let’s repeat the process for `DialogBox`.
-   The main difference here is that DialogBox checks `Use fx:root construct` and _does not define a controller class_. 
+   The main difference here is that DialogBox ticks `Use fx:root construct` and _does not define a controller class_. Ticking this enables the use of the `fx:root` element, allowing you to reference a root element predefined by calling the `setRoot()` method. The controller can be programatically set using the `setController()` method. 
+   
+   More about `fx:root` on the documentation [Introduction to FXML | JavaFX 2.2](https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html#root_elements).
 
    ![Settings for DialogBox](images/javafx/DialogBoxController.png)
 

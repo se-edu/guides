@@ -25,6 +25,8 @@
 <variable name="icon_Q"><md>:glyphicon-question-sign:</md></variable>
 <variable name="icon_Q_A">{{ icon_Q | safe }}:glyphicon-ok-sign:</variable>
 <variable name="icon_resource"><md>:fas-paperclip:</md></variable>
+<variable name="icon_run"><md>:fas-play:</md></variable>
+<variable name="icon_run_green"><span class="text-success">:fas-play:</span></variable>
 <variable name="icon_terminal"><smal><span class="badge bg-secondary">&gt;_</span></smal></variable>
 <variable name="icon_text"><md>:far-file-alt:</md></variable>
 <variable name="icon_tick"><md>:fas-check:</md></variable>
@@ -38,5 +40,8 @@
 <variable name="icon_x_red"><span style="color:red">{{ icon_x | safe }}</span></variable>
 <variable name="bad"><span style="color: red"><md>**:fas-thumbs-down: Bad**</md></span></variable>
 <variable name="good"><span style="color: green"><md>**:fas-thumbs-up: Good**</md></span></variable>
+
+<variable name="step_numbers">\{texts="['1', '2', '3']" t-class="badge rounded-pill bg-primary text-white"\}</variable>
+<variable name="abcd_numbers">\{texts="['a)', 'b)', 'c)', 'd)', 'e)']" \}</variable>
 
 <variable from="variables.json" />

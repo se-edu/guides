@@ -78,7 +78,7 @@ private Label address;
 ...
 ```
 
-**`PersonCard.fxml`**
+**`PersonListCard.fxml`**
 
 ``` xml
 ...
