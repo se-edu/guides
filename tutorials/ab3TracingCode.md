@@ -156,7 +156,9 @@ Try it out in the sequence diagram below!
 
 1. After stepping in, we note that `MainWindow` has passed control to the `Logic` component.
 
-1. Specifically, We end up in `LogicManager#execute()` (not `Logic#execute` -- but this is expected because we know the `execute()` method in the `Logic` interface is actually implemented by the `LogicManager` class). Let’s take a look at the body of the method. Given below is the same code, with additional explanatory comments.
+1. Specifically, we end up in `LogicManager#execute()` 
+   * Not `Logic#execute` -- but this is expected because we know the `execute()` method in the `Logic` interface is actually implemented by the `LogicManager` class. 
+2. Let’s take a look at the body of the method. Given below is the same code, with additional explanatory comments.
 
    **LogicManager\#execute().**
 
@@ -191,7 +193,7 @@ Try it out in the sequence diagram below!
 1. _Step over_ the logging code since it is of no interest to us now.
    ![StepOver](images/tracing/StepOver.png)
 
-1. _Step into_ the line where user input in parsed from a String to a Command, which should bring you to the `AddressBookParser#parseCommand()` method (partial code given below):
+1. _Step into_ the line where user input is parsed from a String to a Command, which should bring you to the `AddressBookParser#parseCommand()` method (partial code given below):
 
    ```java
    public Command parseCommand(String userInput) throws ParseException {
@@ -253,9 +255,7 @@ Try it out in the sequence diagram below!
 1. The rest of the method seems to exhaustively check for the existence of each possible parameter of the `edit` command and store any possible changes in an `EditPersonDescriptor`. Recall that we can verify the contents of `editPersonDesciptor` through the 'Variables' window.<br>
    ![EditCommand](images/tracing/EditCommandAnnotated.png)
 
-1. Note the index and the contents of `EditPersonDescriptor`.
-   In this case, since the argument contains only name, only the `Name` field of
-   `EditPersonDescriptor` is set.
+1. Note the index and the contents of `EditPersonDescriptor`. In this case, since the argument contains only name, only the `Name` field of `EditPersonDescriptor` is set.
 
 1. A `EditCommand` with parsed index and created `EditPersonDescriptor` from the parsed arguments is created and returned, annotated with [label 5](#4-editcommandparser-editcommand).
 
@@ -301,12 +301,9 @@ Try it out in the sequence diagram below!
      <pic src="https://se-education.org/addressbook-level3/images/ModelClassDiagram.png" width="450" /><br>
    * {{ dg_ref }} This is a good time to read through the [**_Model component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#model-component)
 
-1. As you step through the rest of the statements in the `EditCommand#execute()` method,
-   you'll see that it creates a `CommandResult` object
-   (containing information about the result of the execution) and returns it to `LogicManager`.<br>
+1. As you step through the rest of the statements in the `EditCommand#execute()` method, you'll see that it creates a `CommandResult` object (containing information about the result of the execution) and returns it to `LogicManager`.<br>
 
-
-   Advancing the debugger by one more step should take you back to the middle of the `LogicManager#execute()` method.<br>
+1. Advancing the debugger by one more step should take you back to the middle of the `LogicManager#execute()` method.<br>
 
 1. Given that you have already seen quite a few classes in the `Logic` component in action, see if you can identify in this partial class diagram some of the classes you've encountered so far, and see how they fit into the class structure of the `Logic` component:
     <pic src="https://se-education.org/addressbook-level3/images/LogicClassDiagram.png" width="550"/>
@@ -350,6 +347,8 @@ Try it out in the sequence diagram below!
    * {{ dg_ref }} This is a good time to read through the [**_Storage component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#storage-component)
 
 ### 7. Returning to MainWindow
+
+<puml style="display: none;" src="images/tracing/LogicSequenceDiagramOnlyWithMainWindow.puml"/>
 
 <annotate src="images/tracing/LogicSequenceDiagramOnlyWithMainWindow.png" alt="Returning to Main Window">
     <a-point x="19%" y="84%" content="`CommandResult` is further returned to `MainWindow`. This allows us to now display feedback to the user on the UI." color = "RED" label="<b>T10</b>"/>
