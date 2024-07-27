@@ -25,6 +25,8 @@
 <variable name="icon_Q"><md>:glyphicon-question-sign:</md></variable>
 <variable name="icon_Q_A">{{ icon_Q | safe }}:glyphicon-ok-sign:</variable>
 <variable name="icon_resource"><md>:fas-paperclip:</md></variable>
+<variable name="icon_run"><md>:fas-play:</md></variable>
+<variable name="icon_run_green"><span class="text-success">:fas-play:</span></variable>
 <variable name="icon_terminal"><smal><span class="badge bg-secondary">&gt;_</span></smal></variable>
 <variable name="icon_text"><md>:far-file-alt:</md></variable>
 <variable name="icon_tick"><md>:fas-check:</md></variable>
