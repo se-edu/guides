@@ -6,7 +6,6 @@ pageNav: 3
 
 # {{ title }}
 
-<link rel="stylesheet" href="images/tracing/static/tracing.css">
 > Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. …[Therefore,] making it easy to read makes it easier to write.
 >
 > —  Robert C. Martin Clean Code: A Handbook of Agile Software Craftsmanship
@@ -101,7 +100,6 @@ Bingo\! `MainWindow#executeCommand()` seems to be exactly what we’re looking f
 Now let’s set the breakpoint. First, double-click the item to reach the corresponding code. Once there, click on the left gutter to set a breakpoint, as shown below.
  ![LeftGutter](images/tracing/LeftGutter.png)
 
-
 ## Tracing the execution path
 
 At this point, you should have appreciated the general sequence diagram [**shown above**](#before-we-start)
@@ -128,10 +126,6 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
 **Tip:** Over the course of the debugging session, you will encounter every major component in the application. Try to keep track of what happens inside the component and where the execution transfers to another component.
 </box>
-
-
-
-
 
 ### 1. MainWindow -> LogicManager
 
@@ -211,7 +205,6 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
 ### 3. AddressBookParser -> EditCommandParser
 
-
 <annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
   <!-- Set Legend to both -->
   <a-point x="58%" y="26%"  label="3"/>
@@ -277,7 +270,6 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 1. As you just traced through some code involved in parsing a command, you can take a look at this class diagram to see where the various parsing-related classes you encountered fit into the design of the `Logic` component.
    <pic src="https://se-education.org/addressbook-level3/images/ParserClasses.png" width="600"/>
 
-
 ### 5. LogicManager -> EditCommand
 
 <annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
@@ -326,7 +318,6 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
    * {{ dg_ref }} This is a good time to read through the [**_Logic component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#logic-component)
 
-
 ### 6. LogicManager -> Storage
 
 1. Similar to before, you can step over/into statements in the `LogicManager#execute()` method to examine how the control is transferred to the `Storage` component and what happens inside that component.
@@ -363,7 +354,6 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
    * {{ dg_ref }} This is a good time to read through the [**_Storage component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#storage-component)
 
-
 ### 7. Returning to MainWindow
 
 <annotate src="images/tracing/LogicSequenceDiagramOnlyWithMainWindow.png" alt="Sample Image">
@@ -385,7 +375,6 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
 1. Finally, you can step through until you reach the end of`MainWindow#executeCommand()`.<br>
 {{ dg_ref }} This is a good time to read through the [**_UI component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#ui-component)
-
 
 ## Conclusion
 
