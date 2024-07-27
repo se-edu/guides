@@ -21,8 +21,7 @@ Before we jump into the code, it is useful to get an idea of the overall structu
 
 <pic src="https://se-education.org/addressbook-level3/images/ArchitectureDiagram.png" alt="ArchitectureDiagram" />
 
-It also has a sequence diagram (reproduced below)
-that tells us how a command propagates through the App.
+It also has a sequence diagram (reproduced below) that tells us how a command propagates through the App.
 
 <pic src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550" />
 
@@ -102,9 +101,6 @@ Now let’s set the breakpoint. First, double-click the item to reach the corres
 
 ## Tracing the execution path
 
-At this point, you should have appreciated the general sequence diagram [**shown above**](#before-we-start)
-
-
 For this code tracing,
 we will explore the `EditCommand` which is a feature that allows users to edit exising person fields in AB3.
 
@@ -114,9 +110,9 @@ we will explore the `EditCommand` which is a feature that allows users to edit e
 
 For this tutorial, we will be issuing the command <code>edit 1 n/Alice Yeoh</code>
 
-Specifically,
-we trace the following sequence diagram
-which explores the `Logic` component in more detail which will be paramount to understanding other commands as well!
+At this point, you should have understood the high-level overview of the sequence diagram which shows the general execution flows between the main components [**shown above**](##setting-a-breakpoint).
+
+We will begin to trace the following sequence diagram which explores the `Logic` component in more detail which will be paramount to understanding other commands as well!
 The diagrams will be reproduced with labels in their sections to highlight the pass of control between classes.
 
 <puml src="images/tracing/LogicSequenceDiagramWithMainWindow.puml" alt="Tracing an `edit` command with specific arguments"></puml>
