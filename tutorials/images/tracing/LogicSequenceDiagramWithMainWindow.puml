@@ -2,19 +2,18 @@
 !include ../style.puml
 skinparam ArrowFontStyle plain
 
-Participant ":MainWindow" as main LOGIC_COLOR
 Participant ":LogicManager" as logic LOGIC_COLOR
 Participant ":AddressBookParser" as abp LOGIC_COLOR
 Participant ":EditCommandParser" as ecp LOGIC_COLOR
 Participant "command:EditCommand" as ec LOGIC_COLOR
 
-main -> logic : execute(edit 1 n/Alice Yeoh)
+-> logic : execute(edit 1 n/Alice Yeoh)
 activate logic
 logic -> abp ++: parseCommand(edit 1 n/Alice Yeoh)
 create ecp
 abp -> ecp
 activate ecp
-ecp -> abp
+ecp --> abp
 deactivate ecp
 abp -> ecp ++: parse(1 n/Alice Yeoh)
 create ec
@@ -23,11 +22,11 @@ ec --> ecp --
 ecp --> abp --: command
 abp --> logic --: command
 
-logic --> ec : execute
+logic -> ec : execute
 activate ec
 ec --> logic : commandResult
 deactivate ec
 
-logic --> main --: commandResult
+<-- logic :commandResult
 
 @enduml
