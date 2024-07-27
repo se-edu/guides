@@ -113,7 +113,6 @@ public class Duke extends Application {
 
 If you do already have an existing constructor which takes arguments, you can proceed by creating an overloaded constructor with no arguments, passing the arguments to the existing constructor e.g.,
 
-
 ```java{highlight-lines="11-14"}
 //...
 private static final String DEFAULT_FILE_PATH = "duke/example.txt";
