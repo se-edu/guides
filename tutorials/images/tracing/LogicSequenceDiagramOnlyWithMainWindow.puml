@@ -5,7 +5,7 @@ skinparam ArrowFontStyle plain
 Participant ":MainWindow" as main LOGIC_COLOR
 Participant ":LogicManager" as logic LOGIC_COLOR
 
-main -> logic : execute(edit 1 n/Alice Yeoh)
+main -> logic : execute("edit 1 n/Alice Yeoh")
 activate logic
 
 logic --> : ...

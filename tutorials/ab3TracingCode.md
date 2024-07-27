@@ -115,8 +115,12 @@ At this point, you should have understood the high-level overview of the sequenc
 We will begin to trace the following sequence diagram which explores the `Logic` component in more detail which will be paramount to understanding other commands as well!
 The diagrams will be reproduced with labels in their sections to highlight the pass of control between classes.
 
-<puml src="images/tracing/LogicSequenceDiagramWithMainWindow.puml" alt="Tracing an `edit` command with specific arguments"></puml>
+Some of the labels can be clicked on to view additional description of the execution flow.
+Try it out in the sequence diagram below!
 
+<annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
+  <a-point x="0%" y="16%" content="Labels will be annotated as T(step). " label="<b>T0</b>"/>
+</annotate>
 
 <box type="tip" seamless>
 
@@ -125,9 +129,8 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
 ### 1. MainWindow -> LogicManager
 
-<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
-  <!-- Set Legend to both -->
-  <a-point x="24%" y="16%"  label="1"/>
+<annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
+  <a-point x="20.5%" y="16%" content="`MainWindow` passes control to `LogicManager` after user enters the edit command through the `execute` method" label="<b>T1</b>"/>
 </annotate>
 
 1. To start the debugging session, simply `Run` \> `Debug Main`
@@ -146,9 +149,8 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
 ### 2. LogicManager -> AddressBookParser
 
-<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
-  <!-- Set Legend to both -->
-  <a-point x="47.5%" y="23%"  label="2"/>
+<annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
+  <a-point x="46%" y="23%" content="`LogicManager` calls `parseCommand` of `AddressBookParser`. We delegate the parsing of the user command input to `AddressBookParser` now." label="<b>T2</b>"/>
 </annotate>
 
 
@@ -201,10 +203,9 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
 ### 3. AddressBookParser -> EditCommandParser
 
-<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
-  <!-- Set Legend to both -->
-  <a-point x="58%" y="26%"  label="3"/>
-  <a-point x="64%" y="44%"  label="4"/>
+<annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
+  <a-point x="56%" y="26%" content="First `EditCommandParser` is created"  label="<b>T3</b>"/>
+  <a-point x="63.5%" y="44%" content="Then the arguments are passed into `EditCommandParser`" label="<b>T4</b>"/>
 </annotate>
 
 
@@ -224,19 +225,18 @@ The diagrams will be reproduced with labels in their sections to highlight the p
     ...
     ```
 
-1. `EditCommandParser` is created first, annotated with [label 3](#3-addressbookparser-editcommandparser)
+1. `EditCommandParser` is created first, annotated with [label T3](#3-addressbookparser-editcommandparser)
 
 1. `AddressBookParser` now calls `parse(...)` of the newly created `EditCommandParser`, highlighted in the diagram as well, passing control to
-   `EditCommandParser`, annotated with [label 4](#3-addressbookparser-editcommandparser)
+   `EditCommandParser`, annotated with [label T4](#3-addressbookparser-editcommandparser)
 
 
 ### 4. EditCommandParser -> EditCommand
 
-<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
-  <!-- Set Legend to both -->
-<a-point x="82%" y="51%"  label="5"/>
-<a-point x="50%" y="64%"  color = "RED" label="6"/>
-<a-point x="26%" y="71%"  color = "RED" label="7"/>
+<annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
+<a-point x="81%" y="51%" content="`EditCommandParser` parses the user command input and retrieves the relevant fields such as index and changed fields. This will be used to create the `EditCommand` for future execution."  label="<b>T5</b>"/>
+<a-point x="48%" y="64%" content="The created `EditCommand` is then returned to `AddressBookParser`" color = "RED" label="<b>T6</b>"/>
+<a-point x="22%" y="71%" content="Which is then returned to `LogicManager`" color = "RED" label="<b>T7</b>"/>
 </annotate>
 
 
@@ -268,10 +268,9 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
 ### 5. LogicManager -> EditCommand
 
-<annotate src="images/tracing/LogicSequenceDiagramWithMainWindow.png" width="900" alt="Sample Image">
-  <!-- Set Legend to both -->
-  <a-point x="90%" y="79%"  label="8"/>
-<a-point x="26%" y="86.5%"  color = "RED" label="9"/>
+<annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
+  <a-point x="90%" y="79%"  label="<b>T8</b>"/>
+<a-point x="22%" y="86.5%" content="After executing the `EditCommand` it returns a `CommandResult` which contains feedback that will be displayed to the user later." color = "RED" label="<b>T9</b>"/>
 </annotate>
 
 1. Let’s continue stepping through until we return to `LogicManager#execute()`.
@@ -352,9 +351,8 @@ The diagrams will be reproduced with labels in their sections to highlight the p
 
 ### 7. Returning to MainWindow
 
-<annotate src="images/tracing/LogicSequenceDiagramOnlyWithMainWindow.png" alt="Sample Image">
-  <!-- Set Legend to both -->
-<a-point x="19%" y="84%"  color = "RED" label="9"/>
+<annotate src="images/tracing/LogicSequenceDiagramOnlyWithMainWindow.png" alt="Returning to Main Window">
+<a-point x="19%" y="84%" content="`CommandResult` is further returned to `MainWindow`. This allows us to now display feedback to the user on the UI." color = "RED" label="<b>T10</b>"/>
 </annotate>
 
 1. We can continue to step through until you reach the end of the `LogicManager#execute()` method and return to the `MainWindow#executeCommand()` method (the place where we put the original breakpoint).
