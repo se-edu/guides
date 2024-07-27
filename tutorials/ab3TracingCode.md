@@ -119,7 +119,7 @@ Some of the labels can be clicked on to view additional description of the execu
 Try it out in the sequence diagram below!
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-  <a-point x="0%" y="16%" content="Labels will be annotated as T(step). " label="<b>T0</b>"/>
+  <a-point x="0%" y="16%" content="Labels will be annotated as T(step)." label="<b>T0</b>"/>
 </annotate>
 
 <box type="tip" seamless>
@@ -130,7 +130,7 @@ Try it out in the sequence diagram below!
 ### 1. MainWindow -> LogicManager
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-  <a-point x="20.5%" y="16%" content="`MainWindow` passes control to `LogicManager` after user enters the edit command through the `execute` method" label="<b>T1</b>"/>
+  <a-point x="20.5%" y="16%" content="`MainWindow` passes control to `LogicManager` after user enters the edit command through the `execute` method." label="<b>T1</b>"/>
 </annotate>
 
 1. To start the debugging session, simply `Run` \> `Debug Main`
@@ -204,8 +204,8 @@ Try it out in the sequence diagram below!
 ### 3. AddressBookParser -> EditCommandParser
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-  <a-point x="56%" y="26%" content="First `EditCommandParser` is created"  label="<b>T3</b>"/>
-  <a-point x="63.5%" y="44%" content="Then the arguments are passed into `EditCommandParser`" label="<b>T4</b>"/>
+  <a-point x="56%" y="26%" content="First `EditCommandParser` is created."  label="<b>T3</b>"/>
+  <a-point x="63.5%" y="44%" content="Then the arguments are passed into `EditCommandParser`." label="<b>T4</b>"/>
 </annotate>
 
 
@@ -235,8 +235,8 @@ Try it out in the sequence diagram below!
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
 <a-point x="81%" y="51%" content="`EditCommandParser` parses the user command input and retrieves the relevant fields such as index and changed fields. This will be used to create the `EditCommand` for future execution."  label="<b>T5</b>"/>
-<a-point x="48%" y="64%" content="The created `EditCommand` is then returned to `AddressBookParser`" color = "RED" label="<b>T6</b>"/>
-<a-point x="22%" y="71%" content="Which is then returned to `LogicManager`" color = "RED" label="<b>T7</b>"/>
+<a-point x="48%" y="64%" content="The created `EditCommand` is then returned to `AddressBookParser`." color="RED" label="<b>T6</b>"/>
+<a-point x="22%" y="71%" content="Which is then returned to `LogicManager`." color = "RED" label="<b>T7</b>"/>
 </annotate>
 
 
@@ -269,8 +269,8 @@ Try it out in the sequence diagram below!
 ### 5. LogicManager -> EditCommand
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-  <a-point x="90%" y="79%"  label="<b>T8</b>"/>
-<a-point x="22%" y="86.5%" content="After executing the `EditCommand` it returns a `CommandResult` which contains feedback that will be displayed to the user later." color = "RED" label="<b>T9</b>"/>
+    <a-point x="90%" y="79%"  label="<b>T8</b>"/>
+    <a-point x="22%" y="86.5%" content="After executing the `EditCommand` it returns a `CommandResult` which contains feedback that will be displayed to the user later." color = "RED" label="<b>T9</b>"/>
 </annotate>
 
 1. Let’s continue stepping through until we return to `LogicManager#execute()`.
@@ -352,7 +352,7 @@ Try it out in the sequence diagram below!
 ### 7. Returning to MainWindow
 
 <annotate src="images/tracing/LogicSequenceDiagramOnlyWithMainWindow.png" alt="Returning to Main Window">
-<a-point x="19%" y="84%" content="`CommandResult` is further returned to `MainWindow`. This allows us to now display feedback to the user on the UI." color = "RED" label="<b>T10</b>"/>
+    <a-point x="19%" y="84%" content="`CommandResult` is further returned to `MainWindow`. This allows us to now display feedback to the user on the UI." color = "RED" label="<b>T10</b>"/>
 </annotate>
 
 1. We can continue to step through until you reach the end of the `LogicManager#execute()` method and return to the `MainWindow#executeCommand()` method (the place where we put the original breakpoint).
