@@ -44,6 +44,8 @@ This tutorial covers basics of the Intellij IDEA's debugging features.
 * **To recall how to use a specific feature,** you can use the sections below.
 
 <!-- ========================================================================== -->
+<div id="intellij-debugger-setting-breakpoints">
+
 
 ## Setting breakpoints
 
@@ -63,7 +65,9 @@ To remove the breakpoint, click the red dot again.
 
 {{ show_intellij_page("https://www.jetbrains.com/help/idea/using-breakpoints.html") }}
 
+</div>
 <!-- ========================================================================== -->
+<div id="intellij-debugger-mode">
 
 ## Running the code in 'debugger mode'
 
@@ -75,7 +79,9 @@ To remove the breakpoint, click the red dot again.
 {{ show_video("3", "53", "4", "00") }}
 {{ show_intellij_page("https://www.jetbrains.com/help/idea/starting-the-debugger-session.html") }}
 
+</div>
 <!-- ========================================================================== -->
+<div id="intellij-debugger-examining-state">
 
 ## Examining the state of the suspended program
 
@@ -84,10 +90,19 @@ To remove the breakpoint, click the red dot again.
 **How:** Use the Debugger tool window (the bottom part of the screenshot below). Ccurrent value of each variable is listed in the panel on the bottom right.
 
 {{ show_screenshot("images/intellijDebugger/showingExecutionPoint.png", "LaunchCode") }}
+
+<box type="tip" id="show-execution-point" seamless>
+
+**_Show execution point_ feature** can be used to jump to the line of code that the debugger has stopped at (in case the line is not currently visible in the code editor):
+
+![ShowExecutionPoint](images/intellijDebugger/ShowExecutionPoint.png)
+</box>
 {{ show_video("4", "41", "6", "06") }}
 {{ show_intellij_page("https://www.jetbrains.com/help/idea/examining-suspended-program.html") }}
 
+</div>
 <!-- ========================================================================== -->
+<div id="intellij-debugger-step-through">
 
 ## Stepping through code
 
@@ -95,11 +110,13 @@ To remove the breakpoint, click the red dot again.
 
 **How:** Click the `Step Over` button in the debugger toolbar, as shown below.
 
-{{ show_screenshot("images/intellijDebugger/stepOverCode.png", "LaunchCode") }}
+{{ show_screenshot("images/intellijDebugger/stepOver.png", "se-edu") }}
 {{ show_video("7", "30", "7", "55") }}
 {{ show_intellij_page("https://www.jetbrains.com/help/idea/stepping-through-the-program.html") }}
 
+</div>
 <!-- ========================================================================== -->
+<div id="intellij-debugger-step-into">
 
 ## Stepping _into_ a method
 
@@ -107,11 +124,19 @@ To remove the breakpoint, click the red dot again.
 
 **How:** Click the `Step Into` button in the debugger toolbar, as shown below.
 
-{{ show_screenshot("images/intellijDebugger/stepIntoCode.png", "LaunchCode") }}
+{{ show_screenshot("images/intellijDebugger/stepInto.png", "se-edu") }}
 {{ show_video("13", "05", "13", "35") }}
+
+<box type="tip" id="choosing-which-method-to-step-into" seamless>
+
+When trying to step into a statement such as `storage.saveAddressBook(model.getAddressBook())` which contains multiple method calls, Intellij will let you choose (by clicking) which one you want to step into.
+</box>
+
 {{ show_intellij_page("https://www.jetbrains.com/help/idea/stepping-through-the-program.html#step-into") }}
 
+</div>
 <!-- ========================================================================== -->
+<div id="intellij-debugger-step-out">
 
 ## Stepping out of a method
 
@@ -124,6 +149,7 @@ Used when you've stepped into a method, stepped through some of it, and now want
 {{ show_video("13", "45", "13", "55") }}
 {{ show_intellij_page("https://www.jetbrains.com/help/idea/stepping-through-the-program.html#step-out") }}
 
+</div>
 <!-- ========================================================================== -->
 
 ## Setting a conditional breakpoint
