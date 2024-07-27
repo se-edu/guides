@@ -69,6 +69,14 @@ If you have multiple versions of Java installed, you can switch between them usi
   sdk default java <version>
   ```
 
+<!-- ======================================================================= -->
+
+## Resources
+
+* [SDKMAN Documentation](https://sdkman.io/)
+
+* [SDKMAN Video Installation Guide](https://www.youtube.com/watch?v=5cc8IZRvRcI&t=32s)
+
 --------------------------------------------------------------------------------
 
 **Authors:**
