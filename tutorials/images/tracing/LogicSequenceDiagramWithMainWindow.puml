@@ -28,5 +28,6 @@ ec --> logic : commandResult
 deactivate ec
 
 <-- logic :commandResult
+deactivate logic
 
 @enduml
