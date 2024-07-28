@@ -8,7 +8,7 @@ Participant ":LogicManager" as logic LOGIC_COLOR
 main -> logic : execute("edit 1 n/Alice Yeoh")
 activate logic
 
-logic --> : ...
+logic -> : ...
 logic <-- : commandResult
 logic --> main --: commandResult
 deactivate logic

@@ -20,12 +20,18 @@ create ec
 ecp -> ec ++: 1, editPersonDescriptor
 ec --> ecp --
 ecp --> abp --: command
+ecp -[hidden]-> abp --: command
+destroy ecp
+
+
 abp --> logic --: command
 
 logic -> ec : execute
 activate ec
 ec --> logic : commandResult
 deactivate ec
+ec -[hidden]-> logic : commandResult
+destroy ec
 
 <-- logic :commandResult
 deactivate logic

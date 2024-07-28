@@ -122,7 +122,7 @@ Some of the labels can be clicked on to view additional description of the execu
 Try it out in the sequence diagram below!
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-  <a-point x="0%" y="16%" content="Labels will be annotated as T(step)." label="<b>T0</b>"/>
+  <a-point x="0%" y="14%" content="Labels will be annotated as T(step)." label="<b>T0</b>"/>
 </annotate>
 
 <box type="tip" seamless>
@@ -133,7 +133,7 @@ Try it out in the sequence diagram below!
 ### 1. MainWindow -> LogicManager
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-  <a-point x="20.5%" y="16%" content="After user enters the command, `MainWindow` passes control to `LogicManager` through the `execute` method." label="<b>T1</b>"/>
+  <a-point x="20.5%" y="14%" content="After user enters the command, `MainWindow` passes control to `LogicManager` through the `execute` method." label="<b>T1</b>"/>
 </annotate>
 
 1. To start the debugging session, simply `Run` \> `Debug Main`
@@ -155,7 +155,7 @@ Try it out in the sequence diagram below!
 ### 2. LogicManager -> AddressBookParser
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-  <a-point x="46%" y="23%" content="`LogicManager` now delegates the parsing of the user command input to `AddressBookParser` by calling it's `parseCommand`." label="<b>T2</b>"/>
+  <a-point x="46%" y="21%" content="`LogicManager` now delegates the parsing of the user command input to `AddressBookParser` by calling it's `parseCommand`." label="<b>T2</b>"/>
 </annotate>
 
 
@@ -211,8 +211,8 @@ Try it out in the sequence diagram below!
 ### 3. AddressBookParser -> EditCommandParser
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-  <a-point x="56%" y="26%" content="First `EditCommandParser` is created."  label="<b>T3</b>"/>
-  <a-point x="63.5%" y="44%" content="Then the arguments are passed into `EditCommandParser`." label="<b>T4</b>"/>
+  <a-point x="56%" y="23%" content="First `EditCommandParser` is created."  label="<b>T3</b>"/>
+  <a-point x="63.5%" y="38%" content="Then the arguments are passed into `EditCommandParser`." label="<b>T4</b>"/>
 </annotate>
 
 1. Now, `LogicManager` has passed control to `AddressBookParser`
@@ -240,9 +240,9 @@ Try it out in the sequence diagram below!
 ### 4. EditCommandParser -> EditCommand
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-<a-point x="81%" y="51%" content="`EditCommandParser` parses the user command input and retrieves the relevant fields such as index and changed fields. These are used to create the `EditCommand` for future execution."  label="<b>T5</b>"/>
-<a-point x="48%" y="64%" content="The created `EditCommand` is then returned to `AddressBookParser`." color="RED" label="<b>T6</b>"/>
-<a-point x="22%" y="71%" content="Which is then returned to `LogicManager`." color = "RED" label="<b>T7</b>"/>
+<a-point x="81%" y="44%" content="`EditCommandParser` parses the user command input and retrieves the relevant fields such as index and changed fields. These are used to create the `EditCommand` for future execution."  label="<b>T5</b>"/>
+<a-point x="48%" y="56%" content="The created `EditCommand` is then returned to `AddressBookParser`." color="RED" label="<b>T6</b>"/>
+<a-point x="22%" y="69%" content="Which is then returned to `LogicManager`." color = "RED" label="<b>T7</b>"/>
 </annotate>
 
 1. Let’s see what `EditCommandParser#parse()` does by stepping into it. You might have to click the 'step into' button multiple times here because there are two method calls in that statement: `EditCommandParser()` and `parse()`.
@@ -272,8 +272,8 @@ As you just traced through some code involved in parsing a command, you can take
 ### 5. LogicManager -> EditCommand
 
 <annotate src="images/tracing/LogicSequenceDiagramImproved.png" width="900" alt="Tracing edit command">
-    <a-point x="90%" y="79%"  label="<b>T8</b>"/>
-    <a-point x="22%" y="86.5%" content="After executing the `EditCommand` it returns a `CommandResult` which contains feedback that will be displayed to the user later." color = "RED" label="<b>T9</b>"/>
+    <a-point x="90%" y="75%"  label="<b>T8</b>"/>
+    <a-point x="22%" y="81.5%" content="After executing the `EditCommand` it returns a `CommandResult` which contains feedback that will be displayed to the user later." color = "RED" label="<b>T9</b>"/>
 </annotate>
 
 1. Let’s continue stepping through until we return to `LogicManager#execute()`.
