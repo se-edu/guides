@@ -10,7 +10,7 @@ This guide explains how to install the **==[Java 17 JDK+FX Azul distribution](ht
 
 **Why this specific version of JDK?**
 
-* This version comes with <tooltip content="a Java framework used to develop Java GUI programs">JavaFX</tooltip> (which is not included in most <tooltip content="different versions or implementations of the Java Development Kit (JDK), for example, Oracle JDK and OpenJDK">JDK distros</tooltip>).
+* This version comes with <tooltip content="a Java framework used to develop Java GUI programs">JavaFX</tooltip> (which is not included in most <popover content="distros' is a shorter term for 'distributions'. So, 'JDK distros' are different versions or implementations of the Java Development Kit (JDK) e.g., Oracle JDK, OpenJDK, Azul JDKs etc.">JDK distros</popover>).
 * This version is resilient to <tooltip content="e.g., a GUI created using an ARM Mac might not work on an Intel Mac, and vice versa">compatibility issues between Mac ARM and Mac Intel computers</tooltip>  when creating/running Java GUI applications built using JavaFX.
 
 **Why SDKMAN**? [SDKMAN](https://sdkman.io/) simplifies the process of installing, switching between, and managing multiple versions of <tooltip content="Software Development Kits e.g., JDK for Java">SDKs</tooltip> on Unix-based systems.
