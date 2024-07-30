@@ -11,10 +11,10 @@ Let's walk you through the implementation of a new command — `remark`.
 This command allows users of the AddressBook application to add optional remarks to people in their address book and edit it if required. The command should have the following format:
 
 `remark INDEX r/REMARK`
-* `INDEX` refers to the list position of the person you want to add a remark to.
-* `REMARK` is the note you wish to attach to their entry.
+* `INDEX`: Refers to the position of the person in the currently displayed list on the GUI.
+* `REMARK`: Is the note you wish to attach to their entry.
 
-For example, `remark 2 r/Likes baseball` adds the remark “Likes baseball” to the current person at index 2 of the observable list.
+For example, `remark 2 r/Likes baseball` adds the remark “Likes baseball” to the person at position 2 in the currently displayed list.
 
 We’ll assume that you have already set up the development environment as outlined in the Developer’s Guide.
 
