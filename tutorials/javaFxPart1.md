@@ -109,6 +109,34 @@ public class Duke extends Application {
 }
 ```
 
+<box type="tip" seamless>
+
+If you do already have an existing constructor which takes arguments, you can proceed by creating an overloaded constructor with no arguments, passing the arguments to the existing constructor e.g.,
+
+```java{highlight-lines="11-14"}
+//...
+private static final String DEFAULT_FILE_PATH = "duke/example.txt";
+
+public class Duke extends Application {
+
+    // Existing constructor
+    public Duke(String filePath) {
+        // ...
+    }
+
+    // Overloaded constructor
+    public Duke() {
+        this(DEFAULT_FILE_PATH);
+    }
+
+    // ...
+}
+```
+
+This approach enables JavaFX to create the `Application` instance using the newly defined no-argument constructor, while preserving the functionality of the existing constructor.
+
+</box>
+
 Now, run `Launcher` and you should see something like this:
 
 ![Hello World](images/javafx/HelloWorld.png)
