@@ -1,4 +1,5 @@
 {% set title="AB3 Tutorial: Tracing Code" %}
+{% from 'scripts/macros.njk' import embed with context %}
 ---
 title: "{{ title }}"
 pageNav: 3
@@ -11,7 +12,9 @@ pageNav: 3
 >
 > —  Robert C. Martin Clean Code: A Handbook of Agile Software Craftsmanship
 
-When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. In this tutorial, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command.
+When trying to understand an unfamiliar code base, one common strategy used is to _trace_ some representative execution path through the code base. One easy way to trace an execution path is to use a debugger to step through the code. In this tutorial, you will be using the IntelliJ IDEA’s debugger to trace the execution path of a specific user command to:  
+**(a) learn how to use a debugger to trace code**, and  
+**(b) get a preliminary sense of how AB3's code works**.
 
 
 ## Before we start
@@ -95,8 +98,10 @@ Next, let's find out which statement(s) in the `UI` code is calling this method,
 
 Bingo\! `MainWindow#executeCommand()` seems to be exactly what we’re looking for\!
 
-Now let’s set the breakpoint. First, double-click the item to reach the corresponding code. Once there, click on the left gutter to set a breakpoint, as shown below.
+Now let’s set the breakpoint. First, double-click the item to reach the corresponding code. Once there, set a breakpoint, as shown below.
  ![LeftGutter](images/tracing/LeftGutter.png)
+
+{{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Setting breakpoints**", "intellijDebugger.md#intellij-debugger-setting-breakpoints", indent=0) }}
 
 ## Tracing the execution path
 
@@ -108,20 +113,22 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 </box>
 
 1. To start the debugging session, simply `Run` \> `Debug Main`
+   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Running the code in debugger mode**", "intellijDebugger.md#intellij-debugger-mode", indent=1) }}
 
-1. When the GUI appears, enter `edit 1 n/Alice Yeoh` into the command box and press `Enter`.
+2. When the GUI appears, enter `edit 1 n/Alice Yeoh` into the command box and press `Enter`.
 
-1. The Debugger tool window should show up and show something like this:<br>
+3. The Debugger tool window should show up and show something like this:<br>
    ![DebuggerStep1](images/tracing/DebuggerStep1.png)
+   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Examining the state of the suspended program**", "intellijDebugger.md#intellij-debugger-examining-state", indent=1) }}
 
-1. Use the _Show execution point_ feature to jump to the line of code that we stopped at:<br>
-   ![ShowExecutionPoint](images/tracing/ShowExecutionPoint.png)<br>
-   `CommandResult commandResult = logic.execute(commandText);` is the line that you end up at (i.e., the place where we put the breakpoint).
+4. Use the _Show execution point_ feature to jump to the line of code that we stopped at (which should be
+   `CommandResult commandResult = logic.execute(commandText);`{.java}, as that is where we put the breakpoint).
+   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Show execution point**", "intellijDebugger.md#show-execution-point", indent=1) }}
 
-1. We are interested in the `logic.execute(commandText)` portion of that line so let’s _Step in_ into that method call:<br>
-    ![StepInto](images/tracing/StepInto.png)
+5. We are interested in the `logic.execute(commandText)` portion of that line so let’s _Step in_ into that method call:<br>
+   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Stepping into a method**", "intellijDebugger.md#intellij-debugger-step-into", indent=1) }}
 
-1. We end up in `LogicManager#execute()` (not `Logic#execute` -- but this is expected because we know the `execute()` method in the `Logic` interface is actually implemented by the `LogicManager` class). Let’s take a look at the body of the method. Given below is the same code, with additional explanatory comments.
+6. We end up in `LogicManager#execute()` (not `Logic#execute` -- but this is expected because we know the `execute()` method in the `Logic` interface is actually implemented by the `LogicManager` class). Let’s take a look at the body of the method. Given below is the same code, with additional explanatory comments.
 
    **LogicManager\#execute().**
 
@@ -151,12 +158,12 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
     }
    ```
 
-1. `LogicManager#execute()` appears to delegate most of the heavy lifting to other components. Let’s take a closer look at each one.
+7. `LogicManager#execute()` appears to delegate most of the heavy lifting to other components. Let’s take a closer look at each one.
 
-1. _Step over_ the logging code since it is of no interest to us now.
-   ![StepOver](images/tracing/StepOver.png)
+8. _Step over_ the logging code since it is of no interest to us now.
+   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Stepping through the code**", "intellijDebugger.md#intellij-debugger-step-through", indent=1) }}
 
-1. _Step into_ the line where user input is parsed from a String to a Command, which should bring you to the `AddressBookParser#parseCommand()` method (partial code given below):
+9. _Step into_ the line where user input is parsed from a String to a Command, which should bring you to the `AddressBookParser#parseCommand()` method (partial code given below):
    ```java
    public Command parseCommand(String userInput) throws ParseException {
        ...
@@ -165,12 +172,12 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
        ...
    ```
 
-1. _Step over_ the statements in that method until you reach the `switch` statement. The 'Variables' window now shows the value of both `commandWord` and `arguments`:<br>
+10. _Step over_ the statements in that method until you reach the `switch` statement. The 'Variables' window now shows the value of both `commandWord` and `arguments`:<br>
     ![Variables](images/tracing/Variables.png)
 
-1. We see that the value of `commandWord` is now `edit` but `arguments` is still not processed in any meaningful way.
+11. We see that the value of `commandWord` is now `edit` but `arguments` is still not processed in any meaningful way.
 
-1. Stepping through the `switch` block, we end up at a call to `EditCommandParser().parse()` as expected (because the command we typed is an edit command).
+12. Stepping through the `switch` block, we end up at a call to `EditCommandParser().parse()` as expected (because the command we typed is an edit command).
 
     ```java
     ...
@@ -179,27 +186,28 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
     ...
     ```
 
-1. Let’s see what `EditCommandParser#parse()` does by stepping into it. You might have to click the 'step into' button multiple times here because there are two method calls in that statement: `EditCommandParser()` and `parse()`.
+13. Let’s see what `EditCommandParser#parse()` does by stepping into it. You might have to click the 'step into' button multiple times here because there are two method calls in that statement: `EditCommandParser()` and `parse()`.
 
-   <box type="tip" seamless>
+<box type="tip" seamless>
 
-   **Intellij Tip:** Sometimes, you might end up stepping into functions that are not of interest. Simply use the `step out` button to get out of them!
-   </box>
+**Intellij Tip:** Sometimes, you might end up stepping into functions that are not of interest. Simply use the `step out` button to get out of them!
+   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Stepping out of a method**", "intellijDebugger.md#intellij-debugger-step-out", indent=1) }}
+</box>
 
-1. Stepping through the method shows that it calls `ArgumentTokenizer#tokenize()` and `ParserUtil#parseIndex()` to obtain the arguments and index required.
+14. Stepping through the method shows that it calls `ArgumentTokenizer#tokenize()` and `ParserUtil#parseIndex()` to obtain the arguments and index required.
 
-1. The rest of the method seems to exhaustively check for the existence of each possible parameter of the `edit` command and store any possible changes in an `EditPersonDescriptor`. Recall that we can verify the contents of `editPersonDesciptor` through the 'Variables' window.<br>
+15. The rest of the method seems to exhaustively check for the existence of each possible parameter of the `edit` command and store any possible changes in an `EditPersonDescriptor`. Recall that we can verify the contents of `editPersonDesciptor` through the 'Variables' window.<br>
    ![EditCommand](images/tracing/EditCommand.png)
 
-1. As you just traced through some code involved in parsing a command, you can take a look at this class diagram to see where the various parsing-related classes you encountered fit into the design of the `Logic` component.
+16. As you just traced through some code involved in parsing a command, you can take a look at this class diagram to see where the various parsing-related classes you encountered fit into the design of the `Logic` component.
    <pic src="https://se-education.org/addressbook-level3/images/ParserClasses.png" width="600"/>
 
-1. Let’s continue stepping through until we return to `LogicManager#execute()`.
+17. Let’s continue stepping through until we return to `LogicManager#execute()`.
 
     The sequence diagram below shows the details of the execution path through the Logic component. Does the execution path you traced in the code so far match the diagram?<br>
     <puml src="images/tracing/LogicSequenceDiagram.puml" alt="Tracing an `edit` command through the Logic component"/>
 
-1. Now, step over until you read the statement that calls the `execute()` method of the `EditCommand` object received, and step into that `execute()` method (partial code given below):
+18. Now, step over until you read the statement that calls the `execute()` method of the `EditCommand` object received, and step into that `execute()` method (partial code given below):
 
    **`EditCommand#execute()`:**
    ```java
@@ -217,7 +225,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
    }
    ```
 
-1. As suspected, `command#execute()` does indeed make changes to the `model` object. Specifically,
+19. As suspected, `command#execute()` does indeed make changes to the `model` object. Specifically,
    * it uses the `setPerson()` method (defined in the interface `Model` and implemented in `ModelManager` as per the usual pattern) to update the person data.
    * it uses the `updateFilteredPersonList` method to ask the `Model` to populate the 'filtered list' with _all_ persons.<br>
      FYI, The 'filtered list' is the list of persons resulting from the most recent operation that will be shown to the user immediately after. For the `edit` command, we populate it with all the persons so that the user can see the edited person along with all other persons. If this was a `find` command, we would be setting that list to contain the search results instead.<br>
@@ -225,22 +233,22 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
      <pic src="https://se-education.org/addressbook-level3/images/ModelClassDiagram.png" width="450" /><br>
    * {{ dg_ref }} This is a good time to read through the [**_Model component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#model-component)
 
-1. As you step through the rest of the statements in the `EditCommand#execute()` method, you'll see that it creates a `CommandResult` object (containing information about the result of the execution) and returns it.<br>
+20. As you step through the rest of the statements in the `EditCommand#execute()` method, you'll see that it creates a `CommandResult` object (containing information about the result of the execution) and returns it.<br>
    Advancing the debugger by one more step should take you back to the middle of the `LogicManager#execute()` method.<br>
 
-1. Given that you have already seen quite a few classes in the `Logic` component in action, see if you can identify in this partial class diagram some of the classes you've encountered so far, and see how they fit into the class structure of the `Logic` component:
+21. Given that you have already seen quite a few classes in the `Logic` component in action, see if you can identify in this partial class diagram some of the classes you've encountered so far, and see how they fit into the class structure of the `Logic` component:
     <pic src="https://se-education.org/addressbook-level3/images/LogicClassDiagram.png" width="550"/>
 
    * {{ dg_ref }} This is a good time to read through the [**_Logic component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#logic-component)
 
-1. Similar to before, you can step over/into statements in the `LogicManager#execute()` method to examine how the control is transferred to the `Storage` component and what happens inside that component.
+22. Similar to before, you can step over/into statements in the `LogicManager#execute()` method to examine how the control is transferred to the `Storage` component and what happens inside that component.
 
-   <box type="tip" seamless>
+<box type="tip" header="If the statement has multiple method calls, how to step into a specific method"seamless>
 
-   **Intellij Tip:** When trying to step into a statement such as `storage.saveAddressBook(model.getAddressBook())` which contains multiple method calls, Intellij will let you choose (by clicking) which one you want to step into.
-   </box>
+{{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Choosing which method to step into**", "intellijDebugger.md#choosing-which-method-to-step-into", indent=1) }}
+</box>
 
-1. As you step through the code inside the `Storage` component, you will eventually arrive at the `JsonAddressBook#saveAddressBook()` method which calls the `JsonSerializableAddressBook` constructor, to create an object that can be _serialized_ (i.e., stored in storage medium) in JSON format. That constructor is given below (with added line breaks for easier readability):
+23. As you step through the code inside the `Storage` component, you will eventually arrive at the `JsonAddressBookStorage#saveAddressBook()` method which calls the `JsonSerializableAddressBook` constructor, to create an object that can be _serialized_ (i.e., stored in storage medium) in JSON format. That constructor is given below (with added line breaks for easier readability):
 
     **`JsonSerializableAddressBook` constructor:**
     ```java
