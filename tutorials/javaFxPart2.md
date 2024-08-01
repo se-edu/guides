@@ -66,6 +66,10 @@ Label -up-> VBox
 @enduml
 </puml>
 
+This structure, when reflected on the actual Mockup UI, is as follows:
+
+![ImageView](images/javafx/DukeMockupLabeled.png)
+
 To get that layout, we create a new `AnchorPane` and add our controls to it. Similarly, we create a new `VBox` to hold the contents of the `ScrollPane`. The code should look something like this:
 
 ```java
