@@ -120,8 +120,8 @@ Image|Filename
 ```java
 public class Duke extends Application {
     // ...
-    private Image user = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
-    private Image duke = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
+    private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
+    private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
     // ...
 }
 ```
@@ -142,8 +142,8 @@ private void handleUserInput() {
     String userText = userInput.getText();
     String dukeText = getResponse(userInput.getText());
     dialogContainer.getChildren().addAll(
-            new DialogBox(userText, user),
-            new DialogBox(dukeText, duke)
+            new DialogBox(userText, userImage),
+            new DialogBox(dukeText, dukeImage)
     );
     userInput.clear();
 }
