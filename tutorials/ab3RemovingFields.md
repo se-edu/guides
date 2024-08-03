@@ -108,7 +108,15 @@ In `src/test/data/`, data meant for testing purposes are stored. While keeping t
   } ]
 }
 ```
-
 You can go through each individual `json` file and manually remove the `address` field.
+
+## Additional Resources and Further Reading
+
+For those interested in learning more about refactoring techniques, IntelliJ IDEA, and related topics, here are some resources to explore:
+
+* [IntelliJ IDEA Official Documentation on Refactoring](https://www.jetbrains.com/help/idea/refactoring-source-code.html)
+* [Refactoring Guru - Refactoring Techniques](https://refactoring.guru/refactoring)
+* [JetBrains Academy - IntelliJ IDEA Tutorials](https://www.jetbrains.com/academy/)
+
 
 [:fas-arrow-left: Previous](ab3AddRemark.md) | [:fas-arrow-up: **ToC**](ab3.md)
