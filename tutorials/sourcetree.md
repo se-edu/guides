@@ -22,6 +22,11 @@
 1. In the `Pick tools to download and install`, you will be asked to choose whether to install Git and <tooltip content="another revision control software similar to Git">Mercurial</tooltip>. You can unselect Mercurial, as we will be using Git instead.
 1. If prompted to set up an SSL key, you can click `No`, but you are free to set of an SSL key if you are familiar with SSL key usage.
 
+<box type="info" seamless>
+
+   Sourcetree owner Atlassian's documentation on Sourcetree usage can be found [here](https://confluence.atlassian.com/get-started-with-sourcetree/install-and-set-up-sourcetree-847359043.html).
+</box>
+
 <!-- ==================================================================================================== -->
 
 ## Connecting Sourcetree to Your GitHub Account
@@ -61,16 +66,24 @@ If you did not connect your SourceTree to your GitHub account during the install
 **Option 3:**
 
 1. [Open the Windows Credential Manager](https://support.microsoft.com/en-gb/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0).
-2. For each credentials related to GitHub (if the name mentions GitHub) in `Web Credentials` or `Windows Credentials` categories,<br>
+2. For each credential related to GitHub (if the name mentions GitHub) in `Web Credentials` or `Windows Credentials` categories,<br>
    (a) edit it and replace the password field with a GitHub PAT.<br>
    (b) If the above didn't work, delete those credential altogether and try Option 1 or 2 again.
 
 ### On a Mac
 
-Try this guide from Medium: [Connecting Mac Sourcetree with your GitHub account](https://eekayonline.medium.com/connecting-mac-sourcetree-with-your-github-account-b6b3bb3c5a66).
+* **Option 1:** Try this YouTube guide from Nick Graham:
 
-If the above doesn't work, try this guide (also from Medium): [Using Sourcetree to connect to GitHub without password](https://medium.com/geekculture/using-personal-access-token-in-sourcetree-to-connect-to-github-3702a29554d3).<br>
+  @[youtube](otRHRPnHDeI)
+
+<p/>
+
+* **Option 2:** If the above doesn't work, try this guide (from Medium): [Using Sourcetree to connect to GitHub without password](https://medium.com/geekculture/using-personal-access-token-in-sourcetree-to-connect-to-github-3702a29554d3).<br>
 It gives two methods. Recommended to try method 2 first.
 
+<box header="Caching GitHub credentials" type="tip" seamless>
+
+If you are prompted to enter GitHub credentials everytime you connect to GitHub using Sourcetree, you can cache GitHub credentials by following the guide given [here](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git?platform=mac) (recommended: use the Git Credentials Manager option, not the GitHub CLI option).
+</box>
 <!-- ==================================================================================================== -->
 
