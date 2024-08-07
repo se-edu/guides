@@ -281,6 +281,6 @@ with(this){return _c('p',[_v("This concludes the tutorial for adding a new "),_c
 with(this){return _c('p',[_c('a',{attrs:{"href":"/guides/tutorials/ab3TracingCode.html"}},[_c('span',{staticClass:"fas fa-arrow-left",attrs:{"aria-hidden":"true"}}),_v(" Previous")]),_v(" | "),_c('a',{attrs:{"href":"/guides/tutorials/ab3.html"}},[_c('span',{staticClass:"fas fa-arrow-up",attrs:{"aria-hidden":"true"}}),_v(" "),_c('strong',[_v("ToC")])]),_v(" | "),_c('span',{staticClass:"badge rounded-pill bg-primary"},[_c('strong',[_c('span',{staticClass:"large"},[_v("What's next?")])])]),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/ab3RemovingFields.html"}},[_c('span',{staticClass:"fas fa-arrow-right",attrs:{"aria-hidden":"true"}}),_v(" "),_c('strong',[_v("Removing Fields")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Tue, 30 Jul 2024, 23:50:37 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 7 Aug 2024, 15:47:04 GMT+8]")])])])}
 }];
   
