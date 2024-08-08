@@ -94,6 +94,18 @@ public class Launcher {
 }
 ```
 
+Now that we have changed the entry point to our application, we need to update the `mainClass`attribute in `build.gradle` accordingly to point at the `Launcher` class.
+
+```groovy{highlight-lines="3-5"}
+// ...
+
+application {
+   mainClass.set("Launcher")
+}
+
+// ...
+```
+
 JavaFX creates the `Application` instance by calling the no-argument constructor. So, you need to define a no-argument constructor in the `Duke` class (i.e., the `Application` subclass you use) if you don't have one already e.g.,
 
 ```java{highlight-lines="5-7"}
