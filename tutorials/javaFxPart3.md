@@ -77,6 +77,7 @@ Let’s create our custom control `DialogBox`:
 ```java
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
@@ -85,9 +86,9 @@ public class DialogBox extends HBox {
     private Label text;
     private ImageView displayPicture;
 
-    public DialogBox(Label l, ImageView iv) {
-        text = l;
-        displayPicture = iv;
+    public DialogBox(String s, Image i) {
+        text = new Label(s);
+        displayPicture = new ImageView(i);
 
         text.setWrapText(true);
         displayPicture.setFitWidth(100.0);
@@ -119,8 +120,8 @@ Image|Filename
 ```java
 public class Duke extends Application {
     // ...
-    private Image user = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
-    private Image duke = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
+    private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
+    private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
     // ...
 }
 ```
@@ -138,11 +139,11 @@ Add a new method to handle user input:
  * the dialog container. Clears the user input after processing.
  */
 private void handleUserInput() {
-    Label userText = new Label(userInput.getText());
-    Label dukeText = new Label(getResponse(userInput.getText()));
+    String userText = userInput.getText();
+    String dukeText = getResponse(userInput.getText());
     dialogContainer.getChildren().addAll(
-            new DialogBox(userText, new ImageView(user)),
-            new DialogBox(dukeText, new ImageView(duke))
+            new DialogBox(userText, userImage),
+            new DialogBox(dukeText, dukeImage)
     );
     userInput.clear();
 }
