@@ -45,6 +45,17 @@ This guide explains how to install the **==[Java 17 JDK+FX Azul distribution](ht
    java -version
    ```
 
+<box type="info" seamless>
+
+If you encountered issues following the above instructions, you can also watch the video below for a more visual explanation (note that the JDK version it uses is not the one we want -- so, adapt accordingly).
+
+<panel type="seamless" header="video: using SDKMAN to install multiple Java versions" peek>
+
+@[youtube](5cc8IZRvRcI)
+
+</panel>
+<p/>
+
 <!-- ======================================================================= -->
 
 ## Switching between Java versions
