@@ -5,17 +5,22 @@
 
 # JavaFX tutorial part 3 – Interacting with the user
 
-Picking up from where we left off last tutorial, we have successfully achieved the desired layout. Now let’s make the application respond to user input.
+Picking up from where we left off last tutorial, we have successfully achieved the desired layout. Now let’s make the application respond to user input. Rather than doing everything in one try, let’s iterate and build up towards our final goal.
 
-JavaFX has an _event-driven architecture style_. As such, we programmatically define _handler_ methods to execute as a response to certain _events_. "Events" refers to the [Event class](https://openjfx.io/javadoc/17/javafx.base/javafx/event/Event.html). Two of the most commonly used subclasses are [ActionEvent](https://openjfx.io/javadoc/17/javafx.base/javafx/event/ActionEvent.html) (such as a button fired or a key frame finished) and [InputEvent](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/input/InputEvent.html) (such as a mouse click).
-All UI components have a set of methods to define handlers with respect to different events. Some of these methods are unique to the component, but most are inherited from the parent classes `Node`, `Control`, etc.
-For example, the [Button](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/Button.html) class inherits <tooltip content="sets the response when the button is fired">`setOnAction`</tooltip> from parent [ButtonBase](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/ButtonBase.html#setOnAction(javafx.event.EventHandler)) and <tooltip content = "sets the response when a mouse click on the component is detected ">`setOnMouseClicked`</tooltip> from [Node](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/Node.html). Either one fulfills the functionality of Duke.
+But first, here's some useful background info on how JavaFX works:
+<box seamless>
 
-We pass in a function (the "response") as an argument of these methods to define the behavior of each component.
+JavaFX works in an _event-driven_ style -- that is, we programmatically define _handler_ methods to execute as a response to certain _events_.
 
-When an event is detected, JavaFX will call the respective handlers.
+"Events" are represented as objects of the [Event class](https://openjfx.io/javadoc/17/javafx.base/javafx/event/Event.html). Two of the most commonly used subclasses are [ActionEvent](https://openjfx.io/javadoc/17/javafx.base/javafx/event/ActionEvent.html) (e.g., a button press) and [InputEvent](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/input/InputEvent.html) (e.g., a mouse click).
 
-Rather than doing everything in one try, let’s iterate and build up towards our final goal.
+All UI components have a set of _set-handler-for-event_ methods to define handlers with respect to different events, which takes a handler method as the argument. Some of these methods are unique to the component, but most are inherited from the parent classes `Node`, `Control`, etc.
+For example, the [Button](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/Button.html) class inherits <tooltip content="sets the response when the button is fired">`setOnAction`</tooltip> from parent [ButtonBase](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/ButtonBase.html#setOnAction(javafx.event.EventHandler)) and <tooltip content = "sets the response when a mouse click on the component is detected ">`setOnMouseClicked`</tooltip> from [Node](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/Node.html).
+
+When an event is detected, JavaFX will call the respective handlers that was previously 'set' for that event.
+
+</box>
+
 
 ## Iteration 1 – Echoing the user
 
