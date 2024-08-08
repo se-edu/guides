@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 5.5.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Best practices for reviewing PRs</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><header sticky=""><div data-v-7c0fd418><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-7c0fd418><div class="container-fluid" data-v-7c0fd418><div class="navbar-left" data-v-7c0fd418><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-7c0fd418></span> <strong data-v-7c0fd418><strong data-v-7c0fd418>SE-EDU</strong></strong></span></a></div> <div class="navbar-default" data-v-7c0fd418><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-7c0fd418> <li data-v-7c0fd418><a href="/guides/index.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>Home</strong></span></a></li> <li data-v-7c0fd418><a href="/guides/about.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>About</strong></span></a></li> <li data-v-7c0fd418><a href="https://github.com/se-edu/guides" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fab fa-github" data-v-7c0fd418></span></span></a></li></ul></div> <ul class="navbar-nav navbar-right" data-v-7c0fd418><li class="nav-link" data-v-7c0fd418><form class="navbar-form" data-v-7c0fd418><div class="dropdown" style="position:relative;" data-v-cea1a814><input data-bs-toggle="dropdown" type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control" data-v-cea1a814> <div class="form-control placeholder-div-hidden" data-v-cea1a814>
+      Search this site
+    </div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-cea1a814></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-7c0fd418><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="best-practices-for-reviewing-prs">Best practices for reviewing PRs<a href="#best-practices-for-reviewing-prs" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div class="lead"><p>Reviewing PRs is not just about the code or the tools, <strong>the way you phrase your comments matters too</strong>, especially if you are a peer reviewer.</p></div> <h2 id="best-practices-for-reviewers">Best practices for reviewers<a href="#best-practices-for-reviewers" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ul><li><strong>Add specific comments at relevant places of the code</strong>, rather than give one overall comment for the entire PR.
+<ul><li>It is typical for the comment to be added right below the code line it refers to.<br>
+It is possible to <a href="https://twitter.com/natfriedman/status/1179097330097643521">mark multiple lines</a> as linked to the comment too.</li> <li>You can use Markdown (specifically, <a href="https://guides.github.com/features/mastering-markdown/">GitHub-Flavored Markdown</a>) in your comments.</li></ul></li> <li><mark><strong>It's best to phrase comments as questions</strong></mark>, especially if you are a peer reviewer.<br>
+e.g., <code class="hljs inline no-lang">Should this be extracted out?</code> rather than <code class="hljs inline no-lang">Extract this out</code> or <code class="hljs inline no-lang">This should be extracted out</code>.</li> <li><strong>Say 'I like', not 'good/bad'</strong>. Consider these two alternatives:<br>
+Option 1: <code class="hljs inline no-lang">This separation of X from Y is good</code> (or <code class="hljs inline no-lang">correct</code> or <code class="hljs inline no-lang">wrong</code> or <code class="hljs inline no-lang">bad</code>)<br>
+Option 2: <code class="hljs inline no-lang">I like how you separated X from Y</code> (or <code class="hljs inline no-lang">didn't like</code> or <code class="hljs inline no-lang">Not sure I like</code>)<br>
+The second one is less judgemental and less likely to cause the author to become defensive.</li> <li><strong>Feel free to ask for more info from the author</strong>, to help you understand the code/design. For example, you can ask why the author chose to write the code in a specific way.</li> <li><strong>You can also suggest alternatives for the author to consider.</strong><br>
+Combining this with the previous point, you can ask <code class="hljs inline no-lang">Any reason why you did it this way instead of that way?</code></li> <li><strong>Feel free to compliment the author when appropriate</strong> instead of focusing on negative things only.<br> <span class="dimmed">e.g., <em>hey, I like how clean this bit of code is</em> 👍</span></li> <li><strong>Say please, but don't say <em>please</em></strong>. Beware of overusing 'please' as it can be interpreted as a condescending tone. For example, someone can interpret <code class="hljs inline no-lang">Please use better variable names</code> as <code class="hljs inline no-lang">Please for the love of God can you use better variable names?</code>. Instead, you can say <code class="hljs inline no-lang">Perhaps a more intuitive variable name here?</code> which doesn't run any risk of misinterpretation.</li> <li><strong>No need to repeat the same comment <em>many</em> times</strong>. It's not the job of the reviewer to clean up after a sloppy author. If you notice the same problem in multiple places, after commenting an a few of them, you can simply say <code class="hljs inline no-lang">... I noticed the same issue in several other places too</code>.</li> <li><strong>Remember the <em>other</em> readers</strong>. PR comments can be read by people other than the reviewer and the author e.g., future programmers. Use regular English and avoid slang, colloquialisms, cultural references etc.</li></ul> <p><strong><strong>Further readings</strong></strong>:</p> <ul><li>Read the blog post <a href="https://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like/"><strong>10 tips for reviewing code you don’t like</strong></a> - by David Lloyd (a Red Hat developer).</li></ul> <h2 id="best-practices-for-authors">Best practices for authors<a href="#best-practices-for-authors" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ul><li><strong>Don't get into arguments with reviewers.</strong> If you disagree with the reviewer, you can explain your own view in a non-confrontational way without trying to prove your way is better.</li> <li>Thank reviewers for their inputs.</li></ul><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#best-practices-for-reviewing-prs" data-v-e6005420>Best practices for reviewing PRs‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#best-practices-for-reviewers" data-v-e6005420>Best practices for reviewers‎</a> <a class="nav-link py-1" href="#best-practices-for-authors" data-v-e6005420>Best practices for authors‎</a></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.2</a> on Fri, 9 Aug 2024, 1:46:29 GMT+8]</small></div></footer></div>
+</body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
+<script src="/guides/markbind/js/polyfill.min.js"></script>
+<script src="/guides/markbind/js/vue.min.js"></script>
+<script src="/guides/markbind/js/markbind.min.js"></script>
+<script src="PRs-reviewing.page-vue-render.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>

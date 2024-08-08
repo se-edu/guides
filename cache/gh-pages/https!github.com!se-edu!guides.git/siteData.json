@@ -1,0 +1,657 @@
+{
+  "enableSearch": true,
+  "pages": [
+    {
+      "src": "README.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "about.md",
+      "title": "About Us",
+      "headings": {
+        "about-us": "About Us",
+        "contact": "Contact",
+        "license": "License",
+        "contributing": "Contributing",
+        "acknowledgements": "Acknowledgements"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/csharp.md",
+      "title": "C# coding standard",
+      "headings": {
+        "c-coding-standard": "C# coding standard",
+        "file-organization": "File Organization",
+        "formatting": "Formatting",
+        "layout": "Layout",
+        "indentation": "Indentation",
+        "white-space": "White Space",
+        "naming": "Naming",
+        "commenting": "Commenting",
+        "language-conventions": "Language Conventions",
+        "references": "References"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/css.md",
+      "title": "CSS coding standard",
+      "headings": {
+        "css-coding-standard": "CSS coding standard",
+        "general": "General",
+        "css-files": "CSS Files",
+        "selectors": "Selectors",
+        "selector-formatting": "Selector Formatting",
+        "use-of-efficient-selectors": "Use of Efficient Selectors",
+        "classes": "Classes",
+        "naming-classes": "Naming Classes",
+        "attributes": "Attributes",
+        "order-of-attributes": "Order of Attributes",
+        "attribute-formatting": "Attribute Formatting",
+        "general-details": "General Details",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/files.md",
+      "title": "Conventions for file/folder naming",
+      "headings": {
+        "conventions-for-file-folder-naming": "Conventions for file/folder naming",
+        "files-folders": "Files/Folders"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/git.md",
+      "title": "Git conventions",
+      "headings": {
+        "git-conventions": "Git conventions",
+        "commit-message-subject": "Commit message: Subject",
+        "commit-message-body": "Commit message: Body",
+        "branch-names": "Branch names"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/github.md",
+      "title": "GitHub conventions",
+      "headings": {
+        "github-conventions": "GitHub conventions",
+        "prs": "PRs",
+        "pr-name": "PR name",
+        "pr-description": "PR description",
+        "pr-merge-commit": "PR merge commit",
+        "issues": "Issues"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/html.md",
+      "title": "HTML coding standard",
+      "headings": {
+        "html-coding-standard": "HTML coding standard",
+        "document-properties": "Document Properties",
+        "tags": "Tags",
+        "attributes": "Attributes",
+        "naming": "Naming",
+        "indentation": "Indentation",
+        "miscellaneous": "Miscellaneous"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/java/basic.md",
+      "title": "Java coding standard",
+      "headings": {
+        "java-coding-standard-basic": "Java coding standard (basic)",
+        "naming": "Naming",
+        "layout": "Layout",
+        "statements": "Statements",
+        "package-and-import-statements": "Package and Import Statements",
+        "types": "Types",
+        "loops": "Loops",
+        "conditionals": "Conditionals",
+        "comments": "Comments",
+        "references": "References",
+        "contributors": "Contributors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/java/index.md",
+      "title": "Java coding standard",
+      "headings": {
+        "java-coding-standard-all": "Java coding standard (all)",
+        "naming": "Naming",
+        "layout": "Layout",
+        "statements": "Statements",
+        "package-and-import-statements": "Package and Import Statements",
+        "classes-and-interfaces": "Classes and Interfaces",
+        "methods": "Methods",
+        "types": "Types",
+        "variables": "Variables",
+        "loops": "Loops",
+        "conditionals": "Conditionals",
+        "comments": "Comments",
+        "references": "References",
+        "contributors": "Contributors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/java/intermediate.md",
+      "title": "Java coding standard",
+      "headings": {
+        "java-coding-standard-basic-intermediate": "Java coding standard (basic + intermediate)",
+        "naming": "Naming",
+        "layout": "Layout",
+        "statements": "Statements",
+        "package-and-import-statements": "Package and Import Statements",
+        "types": "Types",
+        "variables": "Variables",
+        "loops": "Loops",
+        "conditionals": "Conditionals",
+        "comments": "Comments",
+        "references": "References",
+        "contributors": "Contributors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/java/logging.md",
+      "title": "Java logging conventions",
+      "headings": {
+        "java-logging-conventions": "Java logging conventions"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/javascript.md",
+      "title": "JavaScript coding standard",
+      "headings": {
+        "javascript-coding-standard": "JavaScript coding standard"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "conventions/markdown.md",
+      "title": "Markdown coding standard",
+      "headings": {
+        "markdown-coding-standard": "Markdown coding standard"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "guidelines/PRs-reviewing.md",
+      "title": "Best practices for reviewing PRs",
+      "headings": {
+        "best-practices-for-reviewing-prs": "Best practices for reviewing PRs",
+        "best-practices-for-reviewers": "Best practices for reviewers",
+        "best-practices-for-authors": "Best practices for authors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "guidelines/PRs.md",
+      "title": "Best practices for reviewing PRs",
+      "headings": {
+        "guidelines-for-working-with-prs": "Guidelines for working with PRs",
+        "selecting-what-to-work-on": "Selecting what to work on",
+        "scoping-a-pr": "Scoping a PR",
+        "submitting-a-pr": "Submitting a PR",
+        "reviewing-a-pr": "Reviewing a PR",
+        "merging-prs": "Merging PRs"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "guidelines/codeOfConduct.md",
+      "title": "Code of conduct for contributors",
+      "headings": {
+        "code-of-conduct-for-contributors": "Code of conduct for contributors",
+        "our-pledge": "Our pledge",
+        "our-standards": "Our standards",
+        "our-responsibilities": "Our responsibilities",
+        "scope": "Scope",
+        "enforcement": "Enforcement"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "guidelines/commits.md",
+      "title": "Working with Git",
+      "headings": {
+        "working-with-git": "Working with Git",
+        "organizing-commits": "Organizing commits",
+        "merging-branches": "Merging branches"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "guidelines/labels.md",
+      "title": "Working with GitHub labels",
+      "headings": {
+        "working-with-github-labels": "Working with GitHub labels",
+        "label-groups": "Label groups",
+        "common-labels": "Common labels",
+        "priority-p": "Priority (p.)",
+        "status-s": "Status (s.)",
+        "category-c": "Category (c.)",
+        "difficulty-d": "Difficulty (d.)",
+        "effort-e": "Effort (e.)",
+        "aspect-a": "Aspect (a-)",
+        "feature-f": "Feature (f-)",
+        "tech-t": "Tech (t-)",
+        "special-labels": "Special labels",
+        "other-guidelines": "Other guidelines"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "index.md",
+      "title": "Guides for Software Engineering Students",
+      "headings": {
+        "tutorials": " Tutorials",
+        "conventions": " Conventions",
+        "guidelines": " Guidelines"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/ab3.md",
+      "title": "AddressBook-Level3 (AB3) Tutorials",
+      "headings": {
+        "addressbook-level3-ab3-tutorials": "AddressBook-Level3 (AB3) Tutorials"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/ab3AddRemark.md",
+      "title": "AB3 Tutorial: Adding a Command",
+      "headings": {
+        "ab3-tutorial-adding-a-command": "AB3 Tutorial: Adding a Command",
+        "create-a-new-remark-command": "Create a new remark command",
+        "hook-remarkcommand-into-the-application": "Hook RemarkCommand into the application",
+        "run-the-application": "Run the application",
+        "change-remarkcommand-to-throw-an-exception": "Change RemarkCommand to throw an exception",
+        "enhancing-remarkcommand": "Enhancing RemarkCommand",
+        "make-the-command-accept-parameters": "Make the command accept parameters",
+        "parse-user-input": "Parse user input",
+        "add-remark-to-the-model": "Add Remark to the model",
+        "add-a-new-remark-class": "Add a new Remark class",
+        "make-use-of-remark": "Make use of Remark",
+        "add-a-placeholder-element-for-remark-to-the-ui": "Add a placeholder element for remark to the UI",
+        "modify-person-to-support-a-remark-field": "Modify Person to support a Remark field",
+        "modify-person": "Modify Person",
+        "update-other-usages-of-person": "Update other usages of Person",
+        "updating-storage": "Updating Storage",
+        "finalizing-the-ui": "Finalizing the UI",
+        "putting-everything-together": "Putting everything together",
+        "update-remarkcommand-and-remarkcommandparser": "Update RemarkCommand and RemarkCommandParser",
+        "writing-tests": "Writing tests",
+        "automatically-generating-tests": "Automatically generating tests",
+        "conclusion": "Conclusion"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/ab3RemovingFields.md",
+      "title": "AB3 Tutorial: Removing Fields",
+      "headings": {
+        "ab3-tutorial-removing-fields": "AB3 Tutorial: Removing Fields",
+        "safely-deleting-address": "Safely deleting Address",
+        "assisted-refactoring": "Assisted refactoring",
+        "manual-refactoring": "Manual refactoring",
+        "tidying-up": "Tidying up"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/ab3TracingCode.md",
+      "title": "AB3 Tutorial: Tracing Code",
+      "headings": {
+        "ab3-tutorial-tracing-code": "AB3 Tutorial: Tracing Code",
+        "before-we-start": "Before we start",
+        "setting-a-breakpoint": "Setting a breakpoint",
+        "tracing-the-execution-path": "Tracing the execution path",
+        "conclusion": "Conclusion"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/checkstyle.md",
+      "title": "Using Checkstyle",
+      "headings": {
+        "using-checkstyle": "Using Checkstyle",
+        "configuring-checkstyle": "Configuring Checkstyle",
+        "using-checkstyle-with-gradle": "Using Checkstyle with Gradle",
+        "using-checkstyle-idea-plugin": "Using Checkstyle-IDEA plugin",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/codecov.md",
+      "title": "Using Codecov",
+      "headings": {
+        "using-codecov": "Using Codecov",
+        "setting-up-codecov-with-github-actions": "Setting up Codecov with GitHub actions"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/githubActions.md",
+      "title": "Using GitHub Actions",
+      "headings": {
+        "using-github-actions": "Using GitHub Actions",
+        "setting-up-a-custom-workflow": "Setting up a custom workflow",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/gradle.md",
+      "title": "Gradle tutorial",
+      "headings": {
+        "gradle-tutorial": "Gradle tutorial",
+        "basics": "Basics",
+        "adding-gradle-to-the-project": "Adding Gradle to the project",
+        "running-gradle-tasks": "Running Gradle tasks",
+        "managing-plugins-and-dependencies": "Managing plugins and dependencies",
+        "using-gradle-to-do-some-common-project-activities": "Using Gradle to do some common project activities",
+        "running-the-application": "Running the application",
+        "cleaning-the-project": "Cleaning the project",
+        "running-checkstyle": "Running Checkstyle",
+        "running-tests": "Running tests",
+        "creating-jar-files": "Creating JAR files",
+        "compiling": "Compiling",
+        "enabling-assertions": "Enabling assertions",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijCodeStyle.md",
+      "title": "Intellij IDEA: Configuring the code style",
+      "headings": {
+        "intellij-idea-configuring-the-code-style": "Intellij IDEA: Configuring the code style",
+        "tweak-switch-case-style": "Tweak: switch-case style ",
+        "tweak-import-order": "Tweak: import order ",
+        "tweak-auto-remove-trailing-spaces": "Tweak: Auto-remove trailing spaces ",
+        "more-useful-settings": "More useful settings "
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijDebugger.md",
+      "title": "Intellij IDEA: Using the debugger",
+      "headings": {
+        "intellij-idea-using-the-debugger": "Intellij IDEA: Using the debugger",
+        "setting-breakpoints": "Setting breakpoints",
+        "running-the-code-in-debugger-mode": "Running the code in 'debugger mode'",
+        "examining-the-state-of-the-suspended-program": "Examining the state of the suspended program",
+        "stepping-through-code": "Stepping through code",
+        "stepping-into-a-method": "Stepping into a method",
+        "stepping-out-of-a-method": "Stepping out of a method",
+        "setting-a-conditional-breakpoint": "Setting a conditional breakpoint",
+        "evaluate-expression": "Evaluate expression",
+        "set-an-exception-breakpoint": "Set an exception breakpoint"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijImportGradleProject.md",
+      "title": "Intellij IDEA: Importing a Gradle project",
+      "headings": {
+        "intellij-idea-importing-a-gradle-project": "Intellij IDEA: Importing a Gradle project"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijJdk.md",
+      "title": "Intellij IDEA: Configuring the JDK",
+      "headings": {
+        "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijUsefulSettings.md",
+      "title": "Intellij IDEA: Useful settings",
+      "headings": {
+        "intellij-idea-useful-settings": "Intellij IDEA: Useful settings",
+        "enabling-assertions": "Enabling assertions",
+        "enabling-soft-wrapping": "Enabling soft wrapping"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/jar.md",
+      "title": "Working with JAR files",
+      "headings": {
+        "working-with-jar-files": "Working with JAR files",
+        "running-jar-files": "Running JAR files",
+        "fat-jar-files": "Fat JAR files",
+        "creating-jar-files": "Creating JAR files",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/javaFx.md",
+      "title": "JavaFX tutorial",
+      "headings": {
+        "javafx-tutorial": "JavaFX tutorial"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/javaFxPart1.md",
+      "title": "JavaFX tutorial part 1 – Introduction",
+      "headings": {
+        "javafx-tutorial-part-1-introduction": "JavaFX tutorial part 1 – Introduction",
+        "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX  application",
+        "setting-up-java-fx": "Setting up Java FX",
+        "writing-your-first-program": "Writing your first program",
+        "exercises": "Exercises"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/javaFxPart2.md",
+      "title": "JavaFX tutorial part 2 - Creating a GUI for Duke",
+      "headings": {
+        "javafx-tutorial-part-2-creating-a-gui-for-duke": "JavaFX tutorial part 2 - Creating a GUI for Duke",
+        "javafx-controls": "JavaFX controls",
+        "designing-the-layout": "Designing the Layout",
+        "styling-the-controls": "Styling the Controls",
+        "exercises": "Exercises"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/javaFxPart3.md",
+      "title": "JavaFX tutorial part 3 – Interacting with the user",
+      "headings": {
+        "javafx-tutorial-part-3-interacting-with-the-user": "JavaFX tutorial part 3 – Interacting with the user",
+        "iteration-1-echoing-the-user": "Iteration 1 – Echoing the user",
+        "iteration-2-adding-dialog-boxes": "Iteration 2 – Adding Dialog Boxes",
+        "iteration-3-adding-custom-behavior-to-dialogbox": "Iteration 3 – Adding custom behavior to DialogBox",
+        "exercises": "Exercises"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/javaFxPart4.md",
+      "title": "JavaFX tutorial part 4 – Using FXML",
+      "headings": {
+        "javafx-tutorial-part-4-using-fxml": "JavaFX tutorial part 4 – Using FXML",
+        "rebuilding-the-scene-using-fxml": "Rebuilding the Scene using FXML",
+        "using-controllers": "Using Controllers",
+        "using-fxml-in-our-application": "Using FXML in our application",
+        "exercises": "Exercises"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/javaFxPart5.md",
+      "title": "JavaFX tutorial part 5 – Tweaking the GUI",
+      "headings": {
+        "javafx-tutorial-part-5-tweaking-the-gui": "JavaFX tutorial part 5 – Tweaking the GUI",
+        "setting-the-dimensions": "Setting the dimensions",
+        "automatically-resize-elements": "Automatically Resize Elements",
+        "anchor-textfield": "Anchor TextField",
+        "anchor-send-button": "Anchor Send Button",
+        "anchor-scrollpane": "Anchor ScrollPane",
+        "setting-limit-to-window-size": "Setting limit to Window size",
+        "customize-with-javafx-css": "Customize with JavaFX CSS!",
+        "setting-up-and-linking-css-to-fxml": "Setting up and linking CSS to FXML",
+        "flipped-text-bubbles": "Flipped text bubbles",
+        "padding-and-margin": "Padding and Margin",
+        "borders": "Borders",
+        "color": "Color",
+        "rgb-or-rgba": "RGB or RGBA",
+        "hex": "HEX",
+        "looked-up-color": "Looked-up Color",
+        "gradient-color": "Gradient color",
+        "ladder": "Ladder",
+        "derive": "Derive",
+        "states": "States",
+        "image-and-shadows": "Image and shadows",
+        "java-css-reference-guide": "Java CSS Reference Guide",
+        "enhancements": "Enhancements",
+        "change-style-dynamically-based-on-command": "Change style dynamically based on command",
+        "set-image-as-background": "Set image as background",
+        "resize-image": "Resize Image",
+        "stretch-image": "Stretch Image",
+        "repeat-image": "Repeat Image",
+        "changing-and-quot-opacity-and-quot": "Changing &quot;Opacity&quot;",
+        "other-things-to-consider": "Other things to consider"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/javaInstallationMac.md",
+      "title": "Java 17 Installation Guide for Mac Users",
+      "headings": {
+        "java-17-installation-guide-for-mac-users": "Java 17 Installation Guide for Mac Users",
+        "installation": "Installation",
+        "switching-between-java-versions": "Switching between Java versions"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/jekyll.md",
+      "title": "Using Jekyll for project documentation",
+      "headings": {
+        "using-jekyll-for-project-documentation": "Using Jekyll for project documentation",
+        "setting-up-github-pages-for-jekyll": "Setting up GitHub Pages for Jekyll",
+        "updating-documents": "Updating documents",
+        "site-wide-settings": "Site-wide settings"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/junit.md",
+      "title": "Using JUnit",
+      "headings": {
+        "using-junit": "Using JUnit",
+        "conventions-to-follow": "Conventions to follow",
+        "adding-junit-support-to-your-project": "Adding JUnit support to your project",
+        "running-tests": "Running tests",
+        "writing-useful-junit-tests": "Writing useful JUnit tests",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/markbind-forked-sites.md",
+      "title": "Working with a forked MarkBind site",
+      "headings": {
+        "working-with-a-forked-markbind-site": "Working with a forked MarkBind site",
+        "initiating-the-site": "Initiating the site",
+        "site-wide-settings": "Site-wide settings",
+        "installing-markbind": "Installing MarkBind",
+        "updating-documents": "Updating documents",
+        "working-with-uml-diagrams": "Working with UML diagrams"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/markbind.md",
+      "title": "Using MarkBind for project documentation",
+      "headings": {
+        "using-markbind-for-project-documentation": "Using MarkBind for project documentation",
+        "installation": "Installation",
+        "updating-documents": "Updating documents",
+        "automating-pr-previews-deployments": "Automating PR previews, deployments"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/netlify.md",
+      "title": "Using Netlify",
+      "headings": {
+        "using-netlify": "Using Netlify",
+        "setting-up": "Setting up",
+        "changing-the-site-name": "Changing the site name"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/plantUml.md",
+      "title": "Using PlantUML",
+      "headings": {
+        "using-plantuml": "Using PlantUML",
+        "setting-up-plantuml": "Setting up PlantUML",
+        "creating-editing-exporting-diagrams": "Creating/editing/exporting diagrams",
+        "tips-and-tricks": "Tips and tricks",
+        "maintaining-consistency-in-formatting": "Maintaining consistency in formatting",
+        "repositioning-elements": "Repositioning elements"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/savingPdf.md",
+      "title": "Saving web documents as PDF files",
+      "headings": {
+        "saving-web-documents-as-pdf-files": "Saving web documents as PDF files"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/sourcetree.md",
+      "title": "Sourcetree Tips",
+      "headings": {
+        "sourcetree": "Sourcetree",
+        "installation": "Installation",
+        "connecting-sourcetree-to-your-github-account": "Connecting Sourcetree to Your GitHub Account",
+        "on-windows": "On Windows",
+        "on-a-mac": "On a Mac"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/textUiTesting.md",
+      "title": "Automating the testing of text UIs",
+      "headings": {
+        "automating-the-testing-of-text-uis": "Automating the testing of text UIs",
+        "setting-up": "Setting up",
+        "updating-tests-as-the-program-evolves": "Updating tests as the program evolves",
+        "troubleshooting": "Troubleshooting"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/vscode.md",
+      "title": "VS Code - Community Resources",
+      "headings": {
+        "vs-code-community-resources": "VS Code - Community Resources"
+      },
+      "headingKeywords": {}
+    }
+  ]
+}

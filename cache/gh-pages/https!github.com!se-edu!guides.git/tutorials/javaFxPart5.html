@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 5.5.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaFX tutorial part 5 – Tweaking the GUI</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><header sticky=""><div data-v-7c0fd418><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-7c0fd418><div class="container-fluid" data-v-7c0fd418><div class="navbar-left" data-v-7c0fd418><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-7c0fd418></span> <strong data-v-7c0fd418><strong data-v-7c0fd418>SE-EDU</strong></strong></span></a></div> <div class="navbar-default" data-v-7c0fd418><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-7c0fd418> <li data-v-7c0fd418><a href="/guides/index.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>Home</strong></span></a></li> <li data-v-7c0fd418><a href="/guides/about.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>About</strong></span></a></li> <li data-v-7c0fd418><a href="https://github.com/se-edu/guides" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fab fa-github" data-v-7c0fd418></span></span></a></li></ul></div> <ul class="navbar-nav navbar-right" data-v-7c0fd418><li class="nav-link" data-v-7c0fd418><form class="navbar-form" data-v-7c0fd418><div class="dropdown" style="position:relative;" data-v-cea1a814><input data-bs-toggle="dropdown" type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control" data-v-cea1a814> <div class="form-control placeholder-div-hidden" data-v-cea1a814>
+      Search this site
+    </div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-cea1a814></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-7c0fd418><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="javafx-tutorial-part-5-tweaking-the-gui">JavaFX tutorial part 5 – Tweaking the GUI<a href="#javafx-tutorial-part-5-tweaking-the-gui" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div style="color:gray;margin:0 0 20px 0;font-size:10px;">Last updated: 8/6/2024 </div> <p>This guide aims to help shorten the amount of time needed to learn some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. <a href="#setting-up-and-linking-css-to-fxml">This section</a> containing the CSS dummy code and linking it to SceneBuilder might be the most helpful.</p> <h1 id="setting-the-dimensions">Setting the dimensions<a href="#setting-the-dimensions" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p>As you may have noticed, some of the elements does not automatically follow the dimension of the app when resizing:</p> <ul><li><code class="hljs inline no-lang">TextField</code> does not automatically resize horizontally</li> <li><code class="hljs inline no-lang">Send Button</code> does not follow to bottom right of the app</li> <li><code class="hljs inline no-lang">ScrollPane</code> does not automatically resize both horizontally and vertically</li></ul> <video oncontextmenu="return false;" width="100%" autoplay="autoplay" muted="muted" loop="loop"><source src="videos/javafx/DoesNotFollowDimensionsDemo.mp4" type="video/mp4"></video> <p>To rectify this, we can use a mixture of the following two techniques:</p> <ol><li><a href="#automatically-resize-elements">Automatically anchor nodes to the dimensions</a></li> <li><a href="#setting-limit-to-window-size">Limit the user from resizing certain window dimensions</a></li></ol> <h2 id="automatically-resize-elements">Automatically Resize Elements<a href="#automatically-resize-elements" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>We want to <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/AnchorPane.html">anchor</a> the following nodes:</p> <ul><li><a href="#anchor-textfield">Anchor <code class="hljs inline no-lang">TextField</code></a> to the bottom while also automatically resize horizontally</li> <li><a href="#anchor-send-button">Anchor <code class="hljs inline no-lang">Send Button</code></a> to the bottom right of the app</li> <li><a href="#anchor-scrollpane">Anchor <code class="hljs inline no-lang">ScrollPane</code></a> to resize both horizontally and vertically</li></ul> <p>We can do this in FXML. Alternatively, we can do this in SceneBuilder, as shown in later sections.</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>MainWindows.fxml</strong></span></div><div class="code-block-content"><pre><code heading="**MainWindows.fxml**" class="line-numbers hljs"><span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</span><span>
+</span><span>&lt;?import javafx.scene.control.Button?&gt;
+</span><span>&lt;?import javafx.scene.control.ScrollPane?&gt;
+</span><span>&lt;?import javafx.scene.control.TextField?&gt;
+</span><span>&lt;?import javafx.scene.layout.AnchorPane?&gt;
+</span><span>&lt;?import javafx.scene.layout.VBox?&gt;
+</span><span>
+</span><span>&lt;AnchorPane maxHeight=&quot;-Infinity&quot; maxWidth=&quot;-Infinity&quot; minHeight=&quot;-Infinity&quot; minWidth=&quot;-Infinity&quot; prefHeight=&quot;600.0&quot; prefWidth=&quot;400.0&quot; xmlns=&quot;http://javafx.com/javafx/20.0.1&quot; xmlns:fx=&quot;http://javafx.com/fxml/1&quot; fx:controller=&quot;MainWindow&quot;&gt;
+</span><span>  &lt;children&gt;
+</span><span>    <span class="highlighted">&lt;TextField fx:id=&quot;userInput&quot; layoutY=&quot;558.0&quot; onAction=&quot;#handleUserInput&quot; prefHeight=&quot;41.0&quot; prefWidth=&quot;324.0&quot; AnchorPane.bottomAnchor=&quot;1.0&quot; AnchorPane.leftAnchor=&quot;0.0&quot; AnchorPane.rightAnchor=&quot;76.0&quot; /&gt;</span>
+</span><span>    <span class="highlighted">&lt;Button fx:id=&quot;sendButton&quot; layoutX=&quot;324.0&quot; layoutY=&quot;558.0&quot; mnemonicParsing=&quot;false&quot; onAction=&quot;#handleUserInput&quot; prefHeight=&quot;41.0&quot; prefWidth=&quot;76.0&quot; text=&quot;Send&quot; AnchorPane.bottomAnchor=&quot;1.0&quot; AnchorPane.rightAnchor=&quot;0.0&quot; /&gt;</span>
+</span><span>    <span class="highlighted">&lt;ScrollPane fx:id=&quot;scrollPane&quot; fitToWidth=&quot;true&quot; hbarPolicy=&quot;NEVER&quot; hvalue=&quot;1.0&quot; prefHeight=&quot;557.0&quot; prefWidth=&quot;400.0&quot; vvalue=&quot;1.0&quot; AnchorPane.bottomAnchor=&quot;43.0&quot; AnchorPane.leftAnchor=&quot;0.0&quot; AnchorPane.rightAnchor=&quot;0.0&quot; AnchorPane.topAnchor=&quot;0.0&quot;&gt;</span>
+</span><span>      &lt;content&gt;
+</span><span>        &lt;VBox fx:id=&quot;dialogContainer&quot; prefHeight=&quot;552.0&quot; prefWidth=&quot;388.0&quot; /&gt;
+</span><span>      &lt;/content&gt;
+</span><span>    &lt;/ScrollPane&gt;
+</span><span>  &lt;/children&gt;
+</span><span>&lt;/AnchorPane&gt;
+</span><span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><h3 id="anchor-textfield">Anchor TextField<a href="#anchor-textfield" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Open <code class="hljs inline no-lang">src/main/resources/view/MainWindow.fxml</code> in SceneBuilder and click on <code class="hljs inline no-lang">TextField</code>. On the right accordion pane you should be able to see the AnchorPane constraints of the <code class="hljs inline no-lang">TextField</code>.
+<a href="/guides/tutorials/images/javafx/TextFieldAnchorPaneConstraints1.png" target="_self"><img src="/guides/tutorials/images/javafx/TextFieldAnchorPaneConstraints1.png" alt="SceneBuilder opening MainWindow.fxml with Layout view" class="img-fluid"></a></p> <p>Children within <code class="hljs inline no-lang">AnchorPane</code> are able to &quot;anchor&quot; their edges to the <code class="hljs inline no-lang">AnchorPane</code> itself if a constraint is set.</p> <p>Since we want to automatically resize the <code class="hljs inline no-lang">TextField</code> horizontally (but not vertically) whenever we resize the window, we need to put an anchor constraint on the <strong>left and right edges</strong>. Click on the left and right boxes as shown below, and it will automatically set a value based on its current position relative to the AnchorPane. Note that the right side is set to 76 as this is the width of the button next to it.</p> <p><a href="/guides/tutorials/images/javafx/TextFieldAnchorPaneConstraints2.png" target="_self"><img src="/guides/tutorials/images/javafx/TextFieldAnchorPaneConstraints2.png" alt="Update AnchorPane constraints of TextField" class="img-fluid"></a></p> <p>Save <code class="hljs inline no-lang">MainWindow.fxml</code> and run to test your app out to see if it works when you resize the window.</p> <p><strong>Anchored <a href="#anchor-textfield">TextField</a>:</strong></p> <video oncontextmenu="return false;" width="100%" autoplay="autoplay" muted="muted" loop="loop"><source src="videos/javafx/AnchoredTextField.mp4" type="video/mp4"></video> <p>Alternatively, we can adjust in this line in the <a href="#automatically-resize-elements">FXML code</a> as highlighted (scroll to the right):</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>MainWindows.fxml</strong></span></div><div class="code-block-content"><pre><code heading="**MainWindows.fxml**" class="line-numbers hljs"><span><span>    &lt;TextField fx:id=&quot;userInput&quot; layoutY=&quot;558.0&quot; onAction=&quot;#handleUserInput&quot; prefHeight=&quot;41.0&quot; prefWidth=&quot;324.0&quot; <span class="highlighted">AnchorPane.bottomAnchor=&quot;1.0&quot; AnchorPane.leftAnchor=&quot;0.0&quot; AnchorPane.rightAnchor=&quot;76.0&quot;</span> /&gt;
+</span></span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><h3 id="anchor-send-button">Anchor Send Button<a href="#anchor-send-button" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Since we want to anchor the button to the bottom right corner of the window, we set the anchor values for the <strong>bottom and right</strong> side.</p> <p><a href="/guides/tutorials/images/javafx/SendButtonAnchorPaneConstraints.png" target="_self"><img src="/guides/tutorials/images/javafx/SendButtonAnchorPaneConstraints.png" alt="Update AnchorPane constraints of Send Button" class="img-fluid"></a></p> <p>Save <code class="hljs inline no-lang">MainWindow.fxml</code> and run to test your app out to see if it works when you resize the window.</p> <p><strong>Anchored <a href="#anchor-textfield">TextField</a> and <a href="#anchor-send-button">Send Button</a>:</strong></p> <video oncontextmenu="return false;" width="100%" autoplay="autoplay" muted="muted" loop="loop"><source src="videos/javafx/AnchoredSendButton.mp4" type="video/mp4"></video> <p>Alternatively, we can adjust in this line in the <a href="#automatically-resize-elements">FXML code</a> as highlighted (scroll to the right):</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>MainWindows.fxml</strong></span></div><div class="code-block-content"><pre><code heading="**MainWindows.fxml**" class="line-numbers hljs"><span><span>    &lt;Button fx:id=&quot;sendButton&quot; layoutX=&quot;324.0&quot; layoutY=&quot;558.0&quot; mnemonicParsing=&quot;false&quot; onAction=&quot;#handleUserInput&quot; prefHeight=&quot;41.0&quot; prefWidth=&quot;76.0&quot; text=&quot;Send&quot; <span class="highlighted">AnchorPane.bottomAnchor=&quot;1.0&quot; AnchorPane.rightAnchor=&quot;0.0&quot;</span> /&gt;
+</span></span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><h3 id="anchor-scrollpane">Anchor ScrollPane<a href="#anchor-scrollpane" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Since we want to resize the chat both horizontally and vertically, we set the anchor pane constraints to <strong>all</strong> edges.</p> <p>At the same time we <strong>enable Fit To Width</strong> so that the content within the <code class="hljs inline no-lang">ScrollPane</code> resize as well.</p> <p><a href="/guides/tutorials/images/javafx/ScrollPaneAnchorPaneConstraints.png" target="_self"><img src="/guides/tutorials/images/javafx/ScrollPaneAnchorPaneConstraints.png" alt="Update AnchorPane constraints of ScrollPane" class="img-fluid"></a></p> <p>Save <code class="hljs inline no-lang">MainWindow.fxml</code> and run to test your app out to see if it works when you resize the window.</p> <p><strong>Anchored <a href="#anchor-textfield">TextField</a>, <a href="#anchor-send-button">Send Button</a> and <a href="#anchor-scrollpane">ScrollPane</a>:</strong></p> <video oncontextmenu="return false;" width="100%" autoplay="autoplay" muted="muted" loop="loop"><source src="videos/javafx/AnchoredScrollPane.mp4" type="video/mp4"></video> <p>Alternatively, we can adjust in this line in the <a href="#automatically-resize-elements">FXML code</a> as highlighted (scroll to the right):</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>MainWindows.fxml</strong></span></div><div class="code-block-content"><pre><code heading="**MainWindows.fxml**" class="line-numbers hljs"><span><span>    &lt;ScrollPane fx:id=&quot;scrollPane&quot; <span class="highlighted">fitToWidth=&quot;true&quot;</span><span> hbarPolicy=&quot;NEVER&quot; hvalue=&quot;1.0&quot; prefHeight=&quot;557.0&quot; prefWidth=&quot;400.0&quot; vvalue=&quot;1.0&quot; <span class="highlighted">AnchorPane.bottomAnchor=&quot;43.0&quot; AnchorPane.leftAnchor=&quot;0.0&quot; AnchorPane.rightAnchor=&quot;0.0&quot; AnchorPane.topAnchor=&quot;0.0&quot;&gt;</span>
+</span></span></span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><h2 id="setting-limit-to-window-size">Setting limit to Window size<a href="#setting-limit-to-window-size" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>If you don't want the user to be able to resize the window below certain limits, you can set the minimum height and width.</p> <p>If you don't want to let the user resize horizontally, you can set the maximum width = minimum width.</p> <p>Update the <code class="hljs inline no-lang">start</code> method as shown below.</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>Main.java</strong></span></div><div class="code-block-content"><pre><code heading="**Main.java**" class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> </span>{
+</span><span>    <span class="hljs-keyword">try</span> {
+</span><span>        <span class="hljs-comment">// current code...</span>
+</span><span>        <span class="highlighted">stage.setMinHeight(<span class="hljs-number">220</span>);</span>
+</span><span>        <span class="highlighted">stage.setMinWidth(<span class="hljs-number">417</span>);</span>
+</span><span>        <span class="hljs-comment">// stage.setMaxWidth(417); // Add this if you didn't automatically resize elements</span>
+</span><span>        fxmlLoader.&lt;MainWindow&gt;getController().setDuke(duke);
+</span><span>        stage.show();
+</span><span>    } <span class="hljs-keyword">catch</span> (IOException e) {
+</span><span>        e.printStackTrace();
+</span><span>    }
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><h1 id="customize-with-javafx-css">Customize with JavaFX CSS!<a href="#customize-with-javafx-css" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p>Suppose you want to customize colors, shapes, borders, and other design elements.
+The most effective way to do this is through CSS, so this will be a mini <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html"><strong>JavaFX CSS</strong></a>
+introductory guide.</p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-success" data-v-6607c59e><i class="fas fa-lightbulb" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e>If you are new to CSS entirely, a quick way to learn the basics is either through this <a href="https://www.youtube.com/watch?v=o-lAsVuskKI" data-v-6607c59e>YouTube tutorial</a> or through this <a href="https://www.w3schools.com/css/css_intro.asp" data-v-6607c59e>quick guide</a>. Alternatively, you can look through all the syntax through this <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html" data-v-6607c59e>JavaFX CSS reference guide</a></p></div> <!----></div></div></div> <h2 id="setting-up-and-linking-css-to-fxml">Setting up and linking CSS to FXML<a href="#setting-up-and-linking-css-to-fxml" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Create the following files in <code class="hljs inline no-lang">src/main/resources/css</code>:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>main.css</strong></span></div><div class="code-block-content"><pre><code heading="**main.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.root</span> {
+</span><span>    <span class="hljs-selector-tag">main</span>-<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">237</span>, <span class="hljs-number">255</span>, <span class="hljs-number">242</span>);       <span class="hljs-comment">/* Create a looked-up color called &quot;main-color&quot; within root. */</span>
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: main-color;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.text-field</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#d9ffe2</span>;
+</span><span>    -fx-<span class="hljs-attribute">font</span>: <span class="hljs-number">20px</span> <span class="hljs-string">&quot;Arial&quot;</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.button</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: mediumspringgreen;
+</span><span>    -fx-<span class="hljs-attribute">font</span>: italic bold <span class="hljs-number">16px</span> <span class="hljs-string">&quot;Arial&quot;</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo">:hover</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>:cyan;
+</span><span>    -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.button</span>:pressed {
+</span><span>    -fx-background-color:orange;
+</span><span>    -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.scroll-pane</span>,
+</span><span><span class="hljs-selector-class">.scroll-pane</span> <span class="hljs-selector-class">.viewport</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: transparent;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.scroll-bar</span> {
+</span><span>    -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">10px</span>;  <span class="hljs-comment">/* Change width of scroll bar. */</span>
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: main-color;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.scroll-bar</span> <span class="hljs-selector-class">.thumb</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ff9cb4</span>;
+</span><span>    -fx-<span class="hljs-attribute">background</span>-radius: <span class="hljs-number">1em</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-comment">/* Hides the increment and decrement buttons. */</span>
+</span><span><span class="hljs-selector-class">.scroll-bar</span> <span class="hljs-selector-class">.increment-button</span>,
+</span><span><span class="hljs-selector-class">.scroll-bar</span> <span class="hljs-selector-class">.decrement-button</span> {
+</span><span>    -fx-pref-<span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+</span><span>    -fx-<span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span>;
+</span><span>}
+</span><span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>dialog-box.css</strong></span></div><div class="code-block-content"><pre><code heading="**dialog-box.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.label</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">linear-gradient</span>(to bottom right, <span class="hljs-number">#00ffbf</span>, <span class="hljs-number">#00ddff</span>);
+</span><span>    -fx-<span class="hljs-attribute">border-color</span>: <span class="hljs-number">#d55e00</span> <span class="hljs-number">#009e73</span> <span class="hljs-number">#cc79a7</span> <span class="hljs-number">#0072b2</span>;
+</span><span>    -fx-<span class="hljs-attribute">border-width</span>: <span class="hljs-number">2px</span>;
+</span><span>    -fx-<span class="hljs-attribute">background</span>-radius: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span> <span class="hljs-number">1em</span>;
+</span><span>    -fx-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span> <span class="hljs-number">1em</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.reply-label</span> {
+</span><span>    -fx-<span class="hljs-attribute">background</span>-radius: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span>;
+</span><span>    -fx-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-id">#displayPicture</span> {
+</span><span>    <span class="hljs-comment">/* Shadow effect on image. */</span>
+</span><span>    -fx-effect: <span class="hljs-built_in">dropshadow</span>(gaussian, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>), <span class="hljs-number">10</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+</span><span>
+</span><span>    <span class="hljs-comment">/* Change size of image. */</span>
+</span><span>    -fx-scale-x: <span class="hljs-number">1</span>;
+</span><span>    -fx-scale-y: <span class="hljs-number">1</span>;
+</span><span>
+</span><span>    <span class="hljs-comment">/* Rotate image clockwise by degrees. */</span>
+</span><span>    -fx-rotate: <span class="hljs-number">0</span>;
+</span><span>}
+</span><span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><p>Proceed with the following steps to link the CSS files to the FXML files through SceneBuilder.</p> <ol><li><p>Open <code class="hljs inline no-lang">MainWindow.fxml</code> in SceneBuilder, select the <code class="hljs inline no-lang">AnchorPane</code>.</p></li> <li><p>On the right accordion pane, click on the plus sign under Stylesheets within Properties as shown below and choose the previously created <code class="hljs inline no-lang">src/main/resources/css/main.css</code> file.
+<a href="/guides/tutorials/images/javafx/LinkCSSToFXML1.png" target="_self"><img src="/guides/tutorials/images/javafx/LinkCSSToFXML1.png" alt="Link CSS to MainWindow.fxml" class="img-fluid"></a></p></li> <li><p>If you don't see this updated view, try <strong>saving</strong>, then reopening the file with SceneBuilder again.</p> <div bold="" class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-danger" data-v-6607c59e><i class="fas fa-flag" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-danger" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e><strong data-v-6607c59e>Remember to save the <code class="hljs inline no-lang" data-v-6607c59e>.fxml</code> file after linking!</strong></p></div> <!----></div></div></div> <p><a href="/guides/tutorials/images/javafx/LinkCSSToFXML2.png" target="_self"><img src="/guides/tutorials/images/javafx/LinkCSSToFXML2.png" alt="Link CSS to MainWindow.fxml" class="img-fluid"></a></p></li> <li><p>Repeat steps 1-3 for <code class="hljs inline no-lang">DialogBox.fxml</code> with <code class="hljs inline no-lang">dialog-box.css</code>.
+<a href="/guides/tutorials/images/javafx/LinkCSSToFXML3.png" target="_self"><img src="/guides/tutorials/images/javafx/LinkCSSToFXML3.png" alt="Link CSS to DialogBox.fxml" class="img-fluid"></a></p></li> <li><p><strong>Save the FXML files</strong> and run the app to test it!
+<span class="image-wrapper"><img src="/guides/tutorials/images/javafx/DefaultDukeCSSApp.png" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span></p></li></ol> <h3 id="flipped-text-bubbles">Flipped text bubbles<a href="#flipped-text-bubbles" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>You may have noticed that the text bubbles are not facing the right direction for DaDuke.
+<span class="image-wrapper"><img src="/guides/tutorials/images/javafx/WrongTextBubbleDirectionForDaDuke.png" width="" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span></p> <p>We created a style class specifically for this case:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>dialog-box.css</strong></span></div><div class="code-block-content"><pre><code heading="**dialog-box.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.reply-label</span> {
+</span><span>    -fx-<span class="hljs-attribute">background</span>-radius: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span>;
+</span><span>    -fx-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span>;
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><p>We can add the <code class="hljs inline no-lang">.reply-label</code> style to the dialog box when we flip the message for DaDuke.</p> <p>Update the following code:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>DialogBox.java</strong></span></div><div class="code-block-content"><pre><code heading="**DialogBox.java**" class="line-numbers hljs java"><span> <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flip</span><span class="hljs-params">()</span> </span>{
+</span><span>     <span class="hljs-comment">// current code...</span>
+</span><span>     dialog.getStyleClass().add(<span class="hljs-string">&quot;reply-label&quot;</span>);
+</span><span> }
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><h2 id="padding-and-margin">Padding and Margin<a href="#padding-and-margin" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>In short, padding represents the space between the content and its border, while margin represents the invisible space around the border.</p> <p><a href="/guides/tutorials/images/javafx/PaddingAndMargin.png" target="_self"><img src="/guides/tutorials/images/javafx/PaddingAndMargin.png" alt="Padding and Margin" class="img-fluid"></a></p> <p>Let us play around with the padding and margin of the text bubble.</p> <p>Open <code class="hljs inline no-lang">DialogBox.fxml</code> in SceneBuilder. Click on <code class="hljs inline no-lang">Label</code>, and look at layout in the right accordion panel.</p> <p><a href="/guides/tutorials/images/javafx/PaddingAndMarginDemo.png" target="_self"><img src="/guides/tutorials/images/javafx/PaddingAndMarginDemo.png" alt="Padding and Margin Demo" class="img-fluid"></a></p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-success" data-v-6607c59e><i class="fas fa-lightbulb" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e>Default controls for zooming and zooming out in SceneBuilder</p> <p data-v-6607c59e>Zoom in: <code class="hljs inline no-lang" data-v-6607c59e>[CTRL] + [+]</code> or <code class="hljs inline no-lang" data-v-6607c59e>[ALT] + [⌘] + [=]</code></p> <p data-v-6607c59e>Zoom out: <code class="hljs inline no-lang" data-v-6607c59e>[CTRL] + [/]</code> or <code class="hljs inline no-lang" data-v-6607c59e>[ALT] + [⌘] + [-]</code></p></div> <!----></div></div></div> <p>Margin and padding used in this example:</p> <ul><li><code class="hljs inline no-lang">Margin</code>: 0, 7, 0, 7</li> <li><code class="hljs inline no-lang">Padding</code>: 6, 6, 6, 6</li></ul> <p><em>Alternatively</em>, we can update in the <strong>FXML code</strong>:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>view/DialogBox.fxml</strong></span></div><div class="code-block-content"><pre><code heading="**view/DialogBox.fxml**" class="line-numbers hljs"><span>    &lt;Label fx:id=&quot;dialog&quot; text=&quot;Label&quot; wrapText=&quot;true&quot;&gt;
+</span><span>         &lt;HBox.margin&gt;
+</span><span>            &lt;Insets left=&quot;7.0&quot; right=&quot;7.0&quot; /&gt;
+</span><span>         &lt;/HBox.margin&gt;
+</span><span>         &lt;padding&gt;
+</span><span>            &lt;Insets bottom=&quot;6.0&quot; left=&quot;6.0&quot; right=&quot;6.0&quot; top=&quot;6.0&quot; /&gt;
+</span><span>         &lt;/padding&gt;&lt;/Label&gt;
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><p><em>Alternatively alternatively</em>, we can update in the <strong>CSS code</strong>:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/dialog-box.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/dialog-box.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.label</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">linear-gradient</span>(to bottom right, <span class="hljs-number">#00ffbf</span>, <span class="hljs-number">#00ddff</span>);
+</span><span>    -fx-<span class="hljs-attribute">border-color</span>: <span class="hljs-number">#d55e00</span> <span class="hljs-number">#009e73</span> <span class="hljs-number">#cc79a7</span> <span class="hljs-number">#0072b2</span>;
+</span><span>    -fx-<span class="hljs-attribute">border-width</span>: <span class="hljs-number">2px</span>;
+</span><span>    -fx-<span class="hljs-attribute">background</span>-radius: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span> <span class="hljs-number">1em</span>;
+</span><span>    -fx-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span> <span class="hljs-number">1em</span>;
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">padding</span>: <span class="hljs-number">6px</span>;</span>
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">border</span>-insets: <span class="hljs-number">0px</span> <span class="hljs-number">7px</span> <span class="hljs-number">0px</span> <span class="hljs-number">7px</span>;</span>
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">background</span>-insets: <span class="hljs-number">0px</span> <span class="hljs-number">7px</span> <span class="hljs-number">0px</span> <span class="hljs-number">7px</span>;</span>
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-warning" data-v-6607c59e><i class="fas fa-exclamation" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-warning" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e>Unfortunately, there is no JavaFX CSS property for margin. We can combine <a href="#borders" data-v-6607c59e><code class="hljs inline no-lang" data-v-6607c59e>fx-border-insets</code></a> with <a href="https://stackoverflow.com/questions/42468235/what-does-the-property-fx-background-insets-mean-and-all-means-of-its-params" data-v-6607c59e><code class="hljs inline no-lang" data-v-6607c59e>fx-background-insets</code></a> to simulate margin.</p></div> <!----></div></div></div> <p>Play around with the padding and margin and find the parameters that is most suitable for you!</p> <p>To <strong>view the effects of the margin</strong>, you may either</p> <ul><li>Run the app</li> <li>Select both <code class="hljs inline no-lang">ImageView</code> and <code class="hljs inline no-lang">Label</code> to view the distance between them
+<a href="/guides/tutorials/images/javafx/ViewEffectsOfMargin.png" target="_self"><img src="/guides/tutorials/images/javafx/ViewEffectsOfMargin.png" alt="View effects of margin" class="img-fluid"></a></li></ul> <h2 id="borders">Borders<a href="#borders" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Labels, TextBoxes, Buttons, more or less all the nodes used so far are subclasses of <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#region">Region</a>, and hence share the following CSS properties for borders:</p> <div class="table-responsive"><table class="markbind-table table table-bordered table-striped"><thead><tr><th>CSS property</th> <th>Description</th></tr></thead> <tbody><tr><td><code class="hljs inline no-lang">-fx-border-color</code></td> <td>Set border color.</td></tr> <tr><td><code class="hljs inline no-lang">-fx-border-radius</code></td> <td>Set the &quot;roundedness&quot; of the border.</td></tr> <tr><td><code class="hljs inline no-lang">-fx-border-width</code></td> <td>Set border thickness.</td></tr> <tr><td><code class="hljs inline no-lang">-fx-border-style</code></td> <td>Set style of border (e.g., can be dashed or bolded).</td></tr> <tr><td><code class="hljs inline no-lang">-fx-border-insets</code></td> <td>Set space between the border and the outer edge of the region.</td></tr></tbody></table></div><p>For <em>all</em> of these properties, you can either set a single value to apply to all corners/sides, or you can set them individually on each corner/side. To demonstrate this, let us take a look at the following code for our text bubble:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/dialog-box.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/dialog-box.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.label</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">linear-gradient</span>(to bottom right, <span class="hljs-number">#00ffbf</span>, <span class="hljs-number">#00ddff</span>);
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">border-color</span>: <span class="hljs-number">#d55e00</span> <span class="hljs-number">#009e73</span> <span class="hljs-number">#cc79a7</span> <span class="hljs-number">#0072b2</span>;</span>
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">border-width</span>: <span class="hljs-number">2px</span>;</span>
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">background</span>-radius: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span> <span class="hljs-number">1em</span>;</span>
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span> <span class="hljs-number">1em</span>;</span>
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><p>For <code class="hljs inline no-lang">fx-border-width</code>, a single value is used, so the value <code class="hljs inline no-lang">2px</code> is applied to all sides.</p> <p>For <code class="hljs inline no-lang">fx-border-color</code>, <code class="hljs inline no-lang">fx-background-radius</code>, <code class="hljs inline no-lang">fx-border-radius</code>, there are 4 values used. The values are set in a <strong>clockwise</strong> manner starting from the <strong>top left corner/top edge</strong>.</p> <div style="text-align:center;"><img src="/guides/tutorials/images/javafx/BorderDemo.png" width="60%"></div> <h2 id="color">Color<a href="#color" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>There are a few ways to set a color.</p> <ol><li>Using <a href="#rgb-or-rgba"><code class="hljs inline no-lang">rgb</code> / <code class="hljs inline no-lang">rgba</code></a></li> <li>Using <a href="#HEX">HEX <code class="hljs inline no-lang">#ffffff</code></a></li> <li>Using an existing <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#typecolor">named color</a></li> <li>Using your own defined <a href="#looked-up-color">(looked-up) color</a></li> <li>Using <a href="#gradient-color">gradients</a></li> <li>Using a <a href="#ladder">ladder</a> to change color based on background</li> <li>Using <a href="#derive">derive</a> to get a brighter or darker version of selected color</li></ol> <p>These are the common JavaFX properties to set colors:</p> <ul><li><code class="hljs inline no-lang">-fx-border-color</code></li> <li><code class="hljs inline no-lang">-fx-text-fill</code> (set text color)</li> <li><code class="hljs inline no-lang">-fx-background-color</code></li></ul> <h3 id="rgb-or-rgba">RGB or RGBA<a href="#rgb-or-rgba" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>RGB represents Red Green Blue, and each color takes in a value <strong>between 0 and 255</strong>.</p> <pre><code class="hljs css"><span>-fx-text-fill: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">247</span>, <span class="hljs-number">124</span>, <span class="hljs-number">146</span>) /* Light pinkish red color */
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>RGBA on the other hand represents Red Green Blue Alpha, where <strong>alpha represents the opacity</strong>. And it takes in a value <strong>between 0 and 1</strong>.</p> <p>In this example, the opacity is set to 50% (0.5). You can test it out with <code class="hljs inline no-lang">.label</code> in <code class="hljs inline no-lang">dialog-box.css</code>!</p> <pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.5</span>) /* Black with opacity of <span class="hljs-number">0.5</span> */
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><h3 id="hex">HEX<a href="#hex" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Note that since each color (red, green, blue) values are from 0 to 255. This can be represented from <strong>0 to FF</strong>! You can learn more about hexadecimals <a href="https://byjus.com/maths/hexadecimal-number-system/">here</a>. The format for hex is <code class="hljs inline no-lang">#rrggbb</code>.</p> <pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#f77c92</span> /* Light pinkish red color */
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>You can also set with a <strong>shorter format</strong>.</p> <pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>:<span class="hljs-number">#fb2</span> /* Equivalent to <span class="hljs-number">#ffbb22</span> */
+</span><span>-fx-background-color:<span class="hljs-number">#fff</span> /* Equivalent to <span class="hljs-number">#ffffff</span> */
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><h3 id="looked-up-color">Looked-up Color<a href="#looked-up-color" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>You can <strong>define a color</strong> within the <code class="hljs inline no-lang">.root</code> selector, which can be referenced by other classes within the stylesheet.</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/main.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/main.css**" class="hljs css"><span><span class="hljs-selector-class">.root</span> {
+</span><span>    <span class="hljs-selector-tag">main</span>-<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">237</span>, <span class="hljs-number">255</span>, <span class="hljs-number">242</span>);     <span class="hljs-comment">/* Create a looked-up color called &quot;main-color&quot; within root */</span>
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: main-color;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.scroll-bar</span> {
+</span><span>    ...
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: main-color;   <span class="hljs-comment">/* Using looked-up color */</span>
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><h3 id="gradient-color">Gradient color<a href="#gradient-color" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>To set a <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#typepaint">gradient color</a>, we can either use linear or radial gradient.</p> <div style="overflow-x:auto;"><table style="margin:0 0 10px 0;border:none;"><tbody><tr><td style="border:none;"><p><strong>Linear Gradient</strong></p></td> <td style="border:none;"><img src="/guides/tutorials/images/javafx/LinearGradientDemo.png" width="100"></td> <td style="border:none;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">linear-gradient</span>(to bottom right, red, blue);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr> <tr><td style="border:none;"><p><strong>Radial Gradient</strong></p></td> <td style="border:none;"><img src="/guides/tutorials/images/javafx/RadialGradientDemo.png" width="100"></td> <td style="border:none;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">radial-gradient</span>(radius <span class="hljs-number">100%</span>, red, yellow, blue);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table></div> <h3 id="ladder">Ladder<a href="#ladder" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>We can also automatically change color based on the <strong>brightness level of a specific color</strong>. To demonstrate this, let us temporarily update the code:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/dialog-box.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/dialog-box.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.label</span> {
+</span><span>    <span class="highlighted"><span class="hljs-attribute">background</span>:white;</span>
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">background-color</span>: background;</span>
+</span><span>    -fx-<span class="hljs-attribute">border-color</span>: <span class="hljs-number">#d55e00</span> <span class="hljs-number">#009e73</span> <span class="hljs-number">#cc79a7</span> <span class="hljs-number">#0072b2</span>;
+</span><span>    -fx-<span class="hljs-attribute">border-width</span>: <span class="hljs-number">2px</span>;
+</span><span>    -fx-<span class="hljs-attribute">background</span>-radius: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span> <span class="hljs-number">1em</span>;
+</span><span>    -fx-<span class="hljs-attribute">border-radius</span>: <span class="hljs-number">1em</span> <span class="hljs-number">1em</span> <span class="hljs-number">0</span> <span class="hljs-number">1em</span>;
+</span><span>    <span class="highlighted">-fx-text-fill: <span class="hljs-built_in">ladder</span>(background, white <span class="hljs-number">49%</span>, black <span class="hljs-number">50%</span>);</span>
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><p>This line means that the font color will turn <span style="background:black;color:white;"><strong>white</strong></span> if the <strong>brightness</strong> of <code class="hljs inline no-lang">background</code> color is between <span style="color:#674ea7;"><strong>0%-49%</strong></span>, and it will turn <span style="background:white;color:black;"><strong>black</strong></span>  if the brightness level is between <span style="color:#a64d79;"><strong>50%-100%</strong></span>.</p> <p><a href="/guides/tutorials/images/javafx/LadderDemo.png" target="_self"><img src="/guides/tutorials/images/javafx/LadderDemo.png" alt="Ladder Demo" class="img-fluid"></a></p> <h3 id="derive">Derive<a href="#derive" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>We can set a <strong>brighter or darker</strong> color based on a specific color.</p> <div style="overflow-x:auto;"><table style="margin:0 0 10px 0;border:none;"><tbody><tr><td style="background:#00f;width:80px;height:80px;border:none;"></td> <td style="border:none;padding:0 70px 0 15px;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, <span class="hljs-number">0</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr> <tr><td style="background:#4c4cff;width:80px;border:none;"></td> <td style="border:none;padding:0 70px 0 15px;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, <span class="hljs-number">0.5</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td style="background:#0000b2;width:80px;height:80px;border:none;"></td> <td style="border:none;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, -<span class="hljs-number">0.5</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr> <tr><td style="background:#9999ff;width:80px;border:none;"></td> <td style="border:none;padding:0 70px 0 15px;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, <span class="hljs-number">1</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td style="background:#006;width:80px;height:80px;border:none;"></td> <td style="border:none;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, -<span class="hljs-number">1</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr> <tr><td style="background:#e5e5ff;width:80px;border:none;"></td> <td style="border:none;padding:0 70px 0 15px;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, <span class="hljs-number">1.5</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td style="background:#000019;width:80px;height:80px;border:none;"></td> <td style="border:none;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, -<span class="hljs-number">1.5</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr> <tr><th style="background:#FFF;width:80px;border:none;"></th> <td style="border:none;padding:0 70px 0 15px;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, <span class="hljs-number">2</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td style="background:#000;width:80px;height:80px;border:none;"></td> <td style="border:none;"><pre><code class="hljs css"><span>-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">derive</span>(blue, -<span class="hljs-number">2</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table></div> <h2 id="states">States<a href="#states" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>You can set different properties for different states of a node.</p> <p>For example, let us take a look at the send button:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/main.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/main.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.button</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>:springgreen;
+</span><span>    -fx-<span class="hljs-attribute">font</span>: italic bold <span class="hljs-number">16px</span> <span class="hljs-string">&quot;Arial&quot;</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.button</span><span class="hljs-selector-pseudo highlighted">:hover</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>:cyan;
+</span><span>    -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.button</span><span><span class="highlighted">:pressed</span> {
+</span></span><span>    -fx-background-color:orange;
+</span><span>    -fx-<span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><p>In this case, there are three different states:</p> <ul><li>Default, when nothing happens to the button</li> <li><code class="hljs inline no-lang">:hover</code>, when your mouse hovers the button</li> <li><code class="hljs inline no-lang">:pressed</code>, when you click on the button</li></ul> <video oncontextmenu="return false;" width="100%" autoplay="autoplay" muted="muted" loop="loop"><source src="videos/javafx/ButtonStatesDemo.mp4" type="video/mp4"></video> <p>This works for TextFields/Labels/Images as well.</p> <p>Other state(s) include:</p> <ul><li><code class="hljs inline no-lang">:focused</code>, when the node is selected (e.g., selecting the TextField)</li></ul> <h2 id="image-and-shadows">Image and shadows<a href="#image-and-shadows" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Since an ImageView is a <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#node">node</a>, we can play around with the size, opacity, rotation, and more. This also means that the following properties can also be used for other kind of nodes.</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/dialog-box.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/dialog-box.css**" class="line-numbers hljs css"><span><span class="hljs-selector-id">#displayPicture</span> {
+</span><span>    <span class="hljs-comment">/* Shadow effect on image. */</span>
+</span><span>    -fx-effect: <span class="hljs-built_in">dropshadow</span>(gaussian, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>), <span class="hljs-number">10</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+</span><span>
+</span><span>    <span class="hljs-comment">/* Change size of image. */</span>
+</span><span>    -fx-scale-x: <span class="hljs-number">1</span>;
+</span><span>    -fx-scale-y: <span class="hljs-number">1</span>;
+</span><span>
+</span><span>    <span class="hljs-comment">/* Rotate image clockwise by degrees. */</span>
+</span><span>    -fx-rotate: <span class="hljs-number">0</span>;
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-info" data-v-6607c59e><i class="fas fa-info" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e>Note that the <code class="hljs inline no-lang" data-v-6607c59e>#</code> symbol is used to select the node by its ID (or variable),
+meaning it applies the style to just <code class="hljs inline no-lang" data-v-6607c59e>displayPicture</code> and not to <code class="hljs inline no-lang" data-v-6607c59e>ImageView</code>s in general.
+This is different from using a class selector (which uses <code class="hljs inline no-lang" data-v-6607c59e>.</code>).</p></div> <!----></div></div></div> <p>There are 2 different types of <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#typeeffect">shadow effects</a>: <strong>Drop shadow</strong> and <strong>Inner shadow</strong>. Additionally, if you use an image with a transparent background (e.g., <a href="https://pixabay.com/illustrations/dachshund-dog-hot-dog-animals-6336468/">this doggy</a>), the shadow effect will not apply to the transparent areas.</p> <div style="overflow-x:auto;"><table style="margin:0 0 20px 0;border:none;"><tbody><tr><td style="border:none;"><p><strong>Drop Shadow</strong></p></td> <td style="border:none;"><img src="/guides/tutorials/images/javafx/DropShadowDemo.png" height="100px"> <img src="/guides/tutorials/images/javafx/DropShadowTransparentDemo.png" height="100px"></td> <td style="border:none;"><pre><code class="hljs css"><span>-fx-effect: <span class="hljs-built_in">dropshadow</span>(gaussian, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>), <span class="hljs-number">10</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr> <tr><td style="border:none;"><p><strong>Inner Shadow</strong></p></td> <td style="border:none;"><img src="/guides/tutorials/images/javafx/InnerShadowDemo.png" height="100px"></td> <td style="border:none;"><pre><code class="hljs css"><span>-fx-effect: <span class="hljs-built_in">innershadow</span>(gaussian, <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>), <span class="hljs-number">10</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table></div> <h2 id="java-css-reference-guide">Java CSS Reference Guide<a href="#java-css-reference-guide" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>The <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html">JavaFX CSS reference guide</a> is a very helpful way to find out what properties are used for different nodes. You can also see the name of the style classes, like <code class="hljs inline no-lang">.label</code> and
+<code class="hljs inline no-lang">.text-field</code>. Additionally, most elements/nodes (including panes) are <a href="https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#region">Regions</a>, so they inherit those properties as well.</p> <p>Some nodes don't have a style class name, like <code class="hljs inline no-lang">ImageView</code>. To customize such nodes, you can either:</p> <ul><li><a href="#flipped-text-bubbles">Create your own style class and the style class manually</a></li> <li><a href="#image-and-shadows">Apply style to just that specific node with the id (e.g., <code class="hljs inline no-lang">#displayPicture</code>) instead</a></li></ul> <h1 id="enhancements">Enhancements<a href="#enhancements" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <h2 id="change-style-dynamically-based-on-command">Change style dynamically based on command<a href="#change-style-dynamically-based-on-command" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Let's create different style classes for the following commands:</p> <ul><li>Add a task (includes <code class="hljs inline no-lang">todo</code>, <code class="hljs inline no-lang">deadline</code>, and <code class="hljs inline no-lang">event</code>)</li> <li><code class="hljs inline no-lang">mark</code> a task</li> <li><code class="hljs inline no-lang">delete</code> a task</li></ul> <ol><li><p>Create style classes for each type of commands in <code class="hljs inline no-lang">dialog-box.css</code>.</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/dialog-box.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/dialog-box.css**" class="hljs css"><span><span class="hljs-comment">/* Paste this below reply-label */</span>
+</span><span><span class="hljs-selector-class">.add-label</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: yellow;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.marked-label</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: palegreen;
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.delete-label</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: lightpink;
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div></li> <li><p>Update the code in <code class="hljs inline no-lang">Duke.java</code> so that we can grab and store the command type.</p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-warning" data-v-6607c59e><i class="fas fa-exclamation" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-warning" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e>Note that it may look different for your code, so use this as reference instead of copying.</p></div> <!----></div></div></div> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>Duke.java</strong></span></div><div class="code-block-content"><pre><code heading="**Duke.java**" class="hljs java"><span>    <span class="hljs-comment">// ...</span>
+</span><span class="highlighted">    <span class="hljs-keyword">private</span> String commandType;
+</span><span>    <span class="hljs-comment">// ...</span>
+</span><span>
+</span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getResponse</span><span class="hljs-params">(String input)</span> </span>{
+</span><span>     <span class="hljs-keyword">try</span> {
+</span><span>         Command c = Parser.parse(input);
+</span><span>         c.execute(tasks, ui, storage);
+</span><span class="highlighted">         commandType = c.getClass().getSimpleName();
+</span><span>         <span class="hljs-keyword">return</span> c.getString();
+</span><span>     } <span class="hljs-keyword">catch</span> (DukeException e) {
+</span><span>         <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Error: &quot;</span> + e.getMessage();
+</span><span>     }
+</span><span>    }
+</span><span class="highlighted">    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getCommandType</span><span class="hljs-params">()</span> </span>{
+</span><span class="highlighted">     <span class="hljs-keyword">return</span> commandType;
+</span><span class="highlighted">    }
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div></li> <li><p>Update the code in <code class="hljs inline no-lang">MainWindow.java</code> to pass the command type from <code class="hljs inline no-lang">Duke</code> to <code class="hljs inline no-lang">DialogContainer</code>.</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>MainWindow.java</strong></span></div><div class="code-block-content"><pre><code heading="**MainWindow.java**" class="hljs java"><span> <span class="hljs-meta">@FXML</span>
+</span><span> <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleUserInput</span><span class="hljs-params">()</span> </span>{
+</span><span>     String input = userInput.getText();
+</span><span>     String response = duke.getResponse(input);
+</span><span class="highlighted">     String commandType = duke.getCommandType();
+</span><span>     dialogContainer.getChildren().addAll(
+</span><span>             DialogBox.getUserDialog(input, userImage),
+</span><span class="highlighted">             DialogBox.getDukeDialog(response, dukeImage, commandType)
+</span><span>     );
+</span><span>     userInput.clear();
+</span><span> }
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div></li> <li><p>Update the code in <code class="hljs inline no-lang">DialogBox.java</code> to change the style of <code class="hljs inline no-lang">dialog</code> using <code class="hljs inline no-lang">changeDialogStyle</code>.</p> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-warning" data-v-6607c59e><i class="fas fa-exclamation" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-warning" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e>Note that it may look different for your code, so use this as reference instead of copying.</p></div> <!----></div></div></div> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>DialogBox.java</strong></span></div><div class="code-block-content"><pre><code heading="**DialogBox.java**" class="hljs java"><span class="highlighted"> <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">changeDialogStyle</span><span class="hljs-params">(String commandType)</span> </span>{
+</span><span class="highlighted">     <span class="hljs-keyword">switch</span>(commandType) {
+</span><span class="highlighted">     <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;AddCommand&quot;</span>:
+</span><span class="highlighted">         dialog.getStyleClass().add(<span class="hljs-string">&quot;add-label&quot;</span>);
+</span><span class="highlighted">         <span class="hljs-keyword">break</span>;
+</span><span class="highlighted">     <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ChangeMarkCommand&quot;</span>:
+</span><span class="highlighted">         dialog.getStyleClass().add(<span class="hljs-string">&quot;marked-label&quot;</span>);
+</span><span class="highlighted">         <span class="hljs-keyword">break</span>;
+</span><span class="highlighted">     <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;DeleteCommand&quot;</span>:
+</span><span class="highlighted">         dialog.getStyleClass().add(<span class="hljs-string">&quot;delete-label&quot;</span>);
+</span><span class="highlighted">         <span class="hljs-keyword">break</span>;
+</span><span class="highlighted">     <span class="hljs-keyword">default</span>:
+</span><span class="highlighted">         <span class="hljs-comment">// Do nothing</span>
+</span><span class="highlighted">     }
+</span><span class="highlighted"> }
+</span><span> <span class="hljs-comment">// ...</span>
+</span><span> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DialogBox <span class="hljs-title">getDukeDialog</span><span class="hljs-params">(String text, Image img, String commandType)</span> </span>{
+</span><span>     <span class="hljs-keyword">var</span> db = <span class="hljs-keyword">new</span> DialogBox(text, img);
+</span><span>     db.flip();
+</span><span>     db.changeDialogStyle(commandType);
+</span><span>     <span class="hljs-keyword">return</span> db;
+</span><span> }
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div></li> <li><p>Run and test it!</p> <video oncontextmenu="return false;" width="700px" autoplay="autoplay" muted="muted" loop="loop"><source src="videos/javafx/DynamicStyleDemo.mp4" type="video/mp4"></video></li></ol> <h2 id="set-image-as-background">Set image as background<a href="#set-image-as-background" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>We can set an image using CSS. Let's set the background image (in <code class="hljs inline no-lang">src/main/resources/images/</code>) for our <code class="hljs inline no-lang">AnchorPane</code> as follows:</p> <h3 id="resize-image">Resize Image<a href="#resize-image" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Resizing but keeping the aspect ratio of the image.</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/main.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/main.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.root</span> {
+</span><span>    <span class="hljs-selector-tag">main</span>-<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">237</span>, <span class="hljs-number">255</span>, <span class="hljs-number">242</span>);
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: main-color;
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;../images/background.jpg&quot;</span>); <span class="hljs-comment">/* Set image */</span></span>
+</span><span>    -fx-<span class="hljs-attribute">background-size</span>: cover;
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><video oncontextmenu="return false;" width="700px" autoplay="autoplay" muted="muted" loop="loop"><source src="videos/javafx/ResizeDemo.mp4" type="video/mp4"></video> <h3 id="stretch-image">Stretch Image<a href="#stretch-image" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Stretching the background image according to window size.</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/main.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/main.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.root</span> {
+</span><span>    <span class="hljs-selector-tag">main</span>-<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">237</span>, <span class="hljs-number">255</span>, <span class="hljs-number">242</span>);
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: main-color;
+</span><span>    -fx-<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;../images/background.jpg&quot;</span>); <span class="hljs-comment">/* Set image */</span>
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">background-size</span>: stretch;</span>
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><video oncontextmenu="return false;" width="700px" autoplay="autoplay" muted="muted" loop="loop"><source src="videos/javafx/ResizeDemo.mp4" type="video/mp4"></video> <h3 id="repeat-image">Repeat Image<a href="#repeat-image" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>We have a few options for how we want to repeat our background image.</p> <div class="printable-tabs" data-v-70a68808><ul role="tablist" class="nav nav-tabs d-print-none nav-tabs" data-v-70a68808></ul> <div class="tab-content" data-v-70a68808><div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-661c1b61><div class="nav-tabs printable-tab-header" data-v-661c1b61><div class="nav-link active" data-v-661c1b61>Round</div></div>  <p data-v-661c1b61>Pictures only repeat when there is enough space in the background, otherwise it will stretch the pictures.</p> <div class="code-block" data-v-661c1b61><div class="code-block-heading inline-markdown-heading" data-v-661c1b61><span data-v-661c1b61><strong data-v-661c1b61>css/main.css</strong></span></div><div class="code-block-content" data-v-661c1b61><pre data-v-661c1b61><code heading="**css/main.css**" class="line-numbers hljs css" data-v-661c1b61><span data-v-661c1b61><span class="hljs-selector-class" data-v-661c1b61>.root</span> {
+</span><span data-v-661c1b61>    <span class="hljs-selector-tag" data-v-661c1b61>main</span>-<span class="hljs-attribute" data-v-661c1b61>color</span>: <span class="hljs-built_in" data-v-661c1b61>rgb</span>(<span class="hljs-number" data-v-661c1b61>237</span>, <span class="hljs-number" data-v-661c1b61>255</span>, <span class="hljs-number" data-v-661c1b61>242</span>);
+</span><span data-v-661c1b61>    -fx-<span class="hljs-attribute" data-v-661c1b61>background-color</span>: main-color;
+</span><span data-v-661c1b61>    -fx-<span class="hljs-attribute" data-v-661c1b61>background-image</span>: <span class="hljs-built_in" data-v-661c1b61>url</span>(<span class="hljs-string" data-v-661c1b61>&quot;../images/background.jpg&quot;</span>);
+</span><span data-v-661c1b61>    <span class="highlighted" data-v-661c1b61>-fx-<span class="hljs-attribute" data-v-661c1b61>background-size</span>: <span class="hljs-number" data-v-661c1b61>400px</span> <span class="hljs-number" data-v-661c1b61>600px</span>;</span>
+</span><span data-v-661c1b61>    <span class="highlighted" data-v-661c1b61>-fx-<span class="hljs-attribute" data-v-661c1b61>background-repeat</span>: round;</span>
+</span><span data-v-661c1b61>}
+</span></code><div class="function-btn-container" data-v-661c1b61><button onclick="copyCodeBlock(this)" class="function-btn d-print-none" data-v-661c1b61>
+    <div class="function-btn-body" data-v-661c1b61>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-661c1b61>
+    <g id="surface1" data-v-661c1b61>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-661c1b61></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-warning" data-v-6607c59e><i class="fas fa-exclamation" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-warning" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e>If the window is smaller than the <code class="hljs inline no-lang" data-v-6607c59e>-fx-background-size</code>, the background picture will disappear.</p></div> <!----></div></div></div> <video oncontextmenu="return false;" width="700px" autoplay="autoplay" muted="muted" loop="loop" data-v-661c1b61><source src="videos/javafx/RoundDemo.mp4" type="video/mp4" data-v-661c1b61></video> <hr data-v-661c1b61></div> <div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-661c1b61><div class="nav-tabs printable-tab-header" data-v-661c1b61><div class="nav-link active" data-v-661c1b61>Space</div></div> 
+   Pictures only repeat when there is enough space in the background, otherwise it won't appear. 
+<div class="code-block" data-v-661c1b61><div class="code-block-heading inline-markdown-heading" data-v-661c1b61><span data-v-661c1b61><strong data-v-661c1b61>css/main.css</strong></span></div><div class="code-block-content" data-v-661c1b61><pre data-v-661c1b61><code heading="**css/main.css**" class="line-numbers hljs css" data-v-661c1b61><span data-v-661c1b61><span class="hljs-selector-class" data-v-661c1b61>.root</span> {
+</span><span data-v-661c1b61>    <span class="hljs-selector-tag" data-v-661c1b61>main</span>-<span class="hljs-attribute" data-v-661c1b61>color</span>: <span class="hljs-built_in" data-v-661c1b61>rgb</span>(<span class="hljs-number" data-v-661c1b61>237</span>, <span class="hljs-number" data-v-661c1b61>255</span>, <span class="hljs-number" data-v-661c1b61>242</span>);
+</span><span data-v-661c1b61>    -fx-<span class="hljs-attribute" data-v-661c1b61>background-color</span>: main-color;
+</span><span data-v-661c1b61>    -fx-<span class="hljs-attribute" data-v-661c1b61>background-image</span>: <span class="hljs-built_in" data-v-661c1b61>url</span>(<span class="hljs-string" data-v-661c1b61>&quot;../images/background.jpg&quot;</span>);
+</span><span data-v-661c1b61>    <span class="highlighted" data-v-661c1b61>-fx-<span class="hljs-attribute" data-v-661c1b61>background-size</span>: <span class="hljs-number" data-v-661c1b61>400px</span> <span class="hljs-number" data-v-661c1b61>600px</span>;</span>
+</span><span data-v-661c1b61>    <span class="highlighted" data-v-661c1b61>-fx-<span class="hljs-attribute" data-v-661c1b61>background-repeat</span>: space;</span>
+</span><span data-v-661c1b61>}
+</span></code><div class="function-btn-container" data-v-661c1b61><button onclick="copyCodeBlock(this)" class="function-btn d-print-none" data-v-661c1b61>
+    <div class="function-btn-body" data-v-661c1b61>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-661c1b61>
+    <g id="surface1" data-v-661c1b61>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-661c1b61></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div> <video oncontextmenu="return false;" width="700px" autoplay="autoplay" muted="muted" loop="loop" data-v-661c1b61><source src="videos/javafx/SpaceDemo.mp4" type="video/mp4" data-v-661c1b61></video> <hr data-v-661c1b61></div> <div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-661c1b61><div class="nav-tabs printable-tab-header" data-v-661c1b61><div class="nav-link active" data-v-661c1b61>Repeat</div></div> 
+   Pictures repeating on both axis.
+<div class="code-block" data-v-661c1b61><div class="code-block-heading inline-markdown-heading" data-v-661c1b61><span data-v-661c1b61><strong data-v-661c1b61>css/main.css</strong></span></div><div class="code-block-content" data-v-661c1b61><pre data-v-661c1b61><code heading="**css/main.css**" class="line-numbers hljs css" data-v-661c1b61><span data-v-661c1b61><span class="hljs-selector-class" data-v-661c1b61>.root</span> {
+</span><span data-v-661c1b61>    <span class="hljs-selector-tag" data-v-661c1b61>main</span>-<span class="hljs-attribute" data-v-661c1b61>color</span>: <span class="hljs-built_in" data-v-661c1b61>rgb</span>(<span class="hljs-number" data-v-661c1b61>237</span>, <span class="hljs-number" data-v-661c1b61>255</span>, <span class="hljs-number" data-v-661c1b61>242</span>);
+</span><span data-v-661c1b61>    -fx-<span class="hljs-attribute" data-v-661c1b61>background-color</span>: main-color;
+</span><span data-v-661c1b61>    -fx-<span class="hljs-attribute" data-v-661c1b61>background-image</span>: <span class="hljs-built_in" data-v-661c1b61>url</span>(<span class="hljs-string" data-v-661c1b61>&quot;../images/background.jpg&quot;</span>);
+</span><span data-v-661c1b61>    <span class="highlighted" data-v-661c1b61>-fx-<span class="hljs-attribute" data-v-661c1b61>background-size</span>: <span class="hljs-number" data-v-661c1b61>400px</span> <span class="hljs-number" data-v-661c1b61>600px</span>;</span>
+</span><span data-v-661c1b61>    <span class="highlighted" data-v-661c1b61>-fx-<span class="hljs-attribute" data-v-661c1b61>background-repeat</span>: repeat;</span>
+</span><span data-v-661c1b61>}
+</span></code><div class="function-btn-container" data-v-661c1b61><button onclick="copyCodeBlock(this)" class="function-btn d-print-none" data-v-661c1b61>
+    <div class="function-btn-body" data-v-661c1b61>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-661c1b61>
+    <g id="surface1" data-v-661c1b61>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-661c1b61></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div> <video oncontextmenu="return false;" width="700px" autoplay="autoplay" muted="muted" loop="loop" data-v-661c1b61><source src="videos/javafx/RepeatDemo.mp4" type="video/mp4" data-v-661c1b61></video> <hr data-v-661c1b61></div> <div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-661c1b61><div class="nav-tabs printable-tab-header" data-v-661c1b61><div class="nav-link active" data-v-661c1b61>Repeat with Stretch (Combination example)</div></div> 
+   Pictures repeating only on the x-axis while stretching on the y-axis.
+<div class="code-block" data-v-661c1b61><div class="code-block-heading inline-markdown-heading" data-v-661c1b61><span data-v-661c1b61><strong data-v-661c1b61>css/main.css</strong></span></div><div class="code-block-content" data-v-661c1b61><pre data-v-661c1b61><code heading="**css/main.css**" class="line-numbers hljs css" data-v-661c1b61><span data-v-661c1b61><span class="hljs-selector-class" data-v-661c1b61>.root</span> {
+</span><span data-v-661c1b61>    <span class="hljs-selector-tag" data-v-661c1b61>main</span>-<span class="hljs-attribute" data-v-661c1b61>color</span>: <span class="hljs-built_in" data-v-661c1b61>rgb</span>(<span class="hljs-number" data-v-661c1b61>237</span>, <span class="hljs-number" data-v-661c1b61>255</span>, <span class="hljs-number" data-v-661c1b61>242</span>);
+</span><span data-v-661c1b61>    -fx-<span class="hljs-attribute" data-v-661c1b61>background-color</span>: main-color;
+</span><span data-v-661c1b61>    -fx-<span class="hljs-attribute" data-v-661c1b61>background-image</span>: <span class="hljs-built_in" data-v-661c1b61>url</span>(<span class="hljs-string" data-v-661c1b61>&quot;../images/background.jpg&quot;</span>);
+</span><span data-v-661c1b61>    <span class="highlighted" data-v-661c1b61>-fx-<span class="hljs-attribute" data-v-661c1b61>background-size</span>: <span class="hljs-number" data-v-661c1b61>400px</span> <span class="hljs-number" data-v-661c1b61>100%</span>;</span>
+</span><span data-v-661c1b61>    <span class="highlighted" data-v-661c1b61>-fx-<span class="hljs-attribute" data-v-661c1b61>background-repeat</span>: repeat stretch;</span>
+</span><span data-v-661c1b61>}
+</span></code><div class="function-btn-container" data-v-661c1b61><button onclick="copyCodeBlock(this)" class="function-btn d-print-none" data-v-661c1b61>
+    <div class="function-btn-body" data-v-661c1b61>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-661c1b61>
+    <g id="surface1" data-v-661c1b61>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-661c1b61></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div> <div class="alert box-container seamless" data-v-6607c59e><!----> <div class="header-and-body" data-v-6607c59e><!----> <div class="box-body-wrapper" data-v-6607c59e><div class="icon-wrapper  text-warning" data-v-6607c59e><i class="fas fa-exclamation" data-v-6607c59e></i></div> <div aria-hidden="true" class="vertical-divider alert-warning" data-v-6607c59e></div> <div class="contents" data-v-6607c59e><p data-v-6607c59e>Remember to put 100% when stretching in that particular axis!</p></div> <!----></div></div></div> <video oncontextmenu="return false;" width="700px" autoplay="autoplay" muted="muted" loop="loop" data-v-661c1b61><source src="videos/javafx/RepeatWithStretchDemo.mp4" type="video/mp4" data-v-661c1b61></video> <hr data-v-661c1b61></div></div></div> <h3 id="changing-and-quot-opacity-and-quot">Changing &quot;Opacity&quot;<a href="#changing-and-quot-opacity-and-quot" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>We can't directly adjust the opacity of the background image in <code class="hljs inline no-lang">.root</code>. However, we can set a <a href="#rgb-or-rgba">colored, translucent background</a> in <code class="hljs inline no-lang">.scroll-pane</code> (note that <code class="hljs inline no-lang">.scroll-pane</code> is above <code class="hljs inline no-lang">AnchorPane</code>) to simulate the image opacity. Separate the 2 style classes in <code class="hljs inline no-lang">main.css</code> as follows:</p> <div class="code-block"><div class="code-block-heading inline-markdown-heading"><span><strong>css/main.css</strong></span></div><div class="code-block-content"><pre><code heading="**css/main.css**" class="line-numbers hljs css"><span><span class="hljs-selector-class">.scroll-pane</span> {
+</span><span>    <span class="highlighted">-fx-<span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,.<span class="hljs-number">5</span>);</span>
+</span><span>}
+</span><span>
+</span><span><span class="hljs-selector-class">.scroll-pane</span> <span class="hljs-selector-class">.viewport</span> {
+</span><span>    -fx-<span class="hljs-attribute">background-color</span>: transparent;
+</span><span>}
+</span><span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div></div><p><a href="/guides/tutorials/images/javafx/ImageOpacityDemo.png" target="_self"><img src="/guides/tutorials/images/javafx/ImageOpacityDemo.png" alt="Image Opacity Demo" class="img-fluid"></a></p> <h2 id="other-things-to-consider">Other things to consider<a href="#other-things-to-consider" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>Here are other things you can do with your app to make it more personalized:</p> <ul><li>Add a <a href="https://stackoverflow.com/questions/23363222/how-to-set-placeholder-in-javafx">placeholder</a> for <code class="hljs inline no-lang">TextField</code> e.g., (&quot;Type here...&quot;)</li> <li>Change <a href="#change-style-dynamically-based-on-command">style for error messages</a></li> <li>Change the <a href="https://www.youtube.com/watch?v=UZKKaI8OnjY">title and icon</a> of your app</li> <li>Change the send button to an <a href="https://edencoding.com/how-to-add-an-image-to-a-button/">icon</a></li> <li>Make profile pictures <a href="https://stackoverflow.com/questions/42116313/how-to-set-an-image-in-a-circle">circular</a></li> <li>Set GIF as profile pictures</li> <li>Add <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/media/AudioClip.html">sound effects</a> when sending messages</li></ul> <p><a href="/guides/tutorials/javaFxPart4.html"><span aria-hidden="true" class="fas fa-arrow-left"></span> Previous</a> | <a href="/guides/tutorials/javaFx.html"><span aria-hidden="true" class="fas fa-arrow-up"></span> <strong>ToC</strong></a></p> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Debbie Hii (@flexibo)</li></ul><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#javafx-tutorial-part-5-tweaking-the-gui" data-v-e6005420>JavaFX tutorial part 5 – Tweaking the GUI‎</a> <a class="nav-link py-1" href="#setting-the-dimensions" data-v-e6005420>Setting the dimensions‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#automatically-resize-elements" data-v-e6005420>Automatically Resize Elements‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#anchor-textfield" data-v-e6005420>Anchor TextField‎</a> <a class="nav-link py-1" href="#anchor-send-button" data-v-e6005420>Anchor Send Button‎</a> <a class="nav-link py-1" href="#anchor-scrollpane" data-v-e6005420>Anchor ScrollPane‎</a></nav> <a class="nav-link py-1" href="#setting-limit-to-window-size" data-v-e6005420>Setting limit to Window size‎</a></nav> <a class="nav-link py-1" href="#customize-with-javafx-css" data-v-e6005420>Customize with JavaFX CSS!‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#setting-up-and-linking-css-to-fxml" data-v-e6005420>Setting up and linking CSS to FXML‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#flipped-text-bubbles" data-v-e6005420>Flipped text bubbles‎</a></nav> <a class="nav-link py-1" href="#padding-and-margin" data-v-e6005420>Padding and Margin‎</a> <a class="nav-link py-1" href="#borders" data-v-e6005420>Borders‎</a> <a class="nav-link py-1" href="#color" data-v-e6005420>Color‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#rgb-or-rgba" data-v-e6005420>RGB or RGBA‎</a> <a class="nav-link py-1" href="#hex" data-v-e6005420>HEX‎</a> <a class="nav-link py-1" href="#looked-up-color" data-v-e6005420>Looked-up Color‎</a> <a class="nav-link py-1" href="#gradient-color" data-v-e6005420>Gradient color‎</a> <a class="nav-link py-1" href="#ladder" data-v-e6005420>Ladder‎</a> <a class="nav-link py-1" href="#derive" data-v-e6005420>Derive‎</a></nav> <a class="nav-link py-1" href="#states" data-v-e6005420>States‎</a> <a class="nav-link py-1" href="#image-and-shadows" data-v-e6005420>Image and shadows‎</a> <a class="nav-link py-1" href="#java-css-reference-guide" data-v-e6005420>Java CSS Reference Guide‎</a></nav> <a class="nav-link py-1" href="#enhancements" data-v-e6005420>Enhancements‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#change-style-dynamically-based-on-command" data-v-e6005420>Change style dynamically based on command‎</a> <a class="nav-link py-1" href="#set-image-as-background" data-v-e6005420>Set image as background‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#resize-image" data-v-e6005420>Resize Image‎</a> <a class="nav-link py-1" href="#stretch-image" data-v-e6005420>Stretch Image‎</a> <a class="nav-link py-1" href="#repeat-image" data-v-e6005420>Repeat Image‎</a> <a class="nav-link py-1" href="#changing-and-quot-opacity-and-quot" data-v-e6005420>Changing &quot;Opacity&quot;‎</a></nav> <a class="nav-link py-1" href="#other-things-to-consider" data-v-e6005420>Other things to consider‎</a></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.2</a> on Fri, 9 Aug 2024, 1:46:29 GMT+8]</small></div></footer></div>
+</body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
+<script src="/guides/markbind/js/polyfill.min.js"></script>
+<script src="/guides/markbind/js/vue.min.js"></script>
+<script src="/guides/markbind/js/markbind.min.js"></script>
+<script src="javaFxPart5.page-vue-render.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>
