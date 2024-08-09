@@ -10,14 +10,18 @@ Let's walk you through the implementation of a new command — `remark`.
 
 This command allows users of the AddressBook application to add optional remarks to people in their address book and edit it if required. The command should have the following format:
 
-`remark INDEX r/REMARK` (e.g., `remark 2 r/Likes baseball`)
+`remark INDEX r/REMARK`
+* `INDEX`: Refers to the position of the person in the currently displayed list on the GUI.
+* `REMARK`: Is the note you wish to attach to their entry.
+
+For example, `remark 2 r/Likes baseball` adds the remark “Likes baseball” to the person at position 2 in the currently displayed list.
 
 We’ll assume that you have already set up the development environment as outlined in the Developer’s Guide.
 
 
 ## Create a new `remark` command
 
-Looking in the `logic.command` package, you will notice that each existing command have their own class. All the commands inherit from the abstract class `Command` which means that they must override `execute()`. Each `Command` returns an instance of `CommandResult` upon success and `CommandResult#feedbackToUser` is printed to the `ResultDisplay`.
+Looking in the `logic.commands` package, you will notice that each existing command have their own class. All the commands inherit from the abstract class `Command` which means that they must override `execute()`. Each `Command` returns an instance of `CommandResult` upon success and `CommandResult#feedbackToUser` is printed to the `ResultDisplay`.
 
 Let’s start by creating a new `RemarkCommand` class in the `src/main/java/seedu/address/logic/command` directory.
 
@@ -326,8 +330,7 @@ After the previous step, we notice a peculiar regression — we went from di
 
 ### Update `RemarkCommand` and `RemarkCommandParser`
 
-In this last step, we modify `RemarkCommand#execute()` to change the `Remark` of a `Person`. Since all fields in a `Person` are immutable, we create a new instance of a `Person` with the values that we want and
-save it with `Model#setPerson()`.
+In this last step, we modify `RemarkCommand#execute()` to change the `Remark` of a `Person`. Since all fields in a `Person` are immutable, we create a new instance of a `Person` with the values that we want and save it with `Model#setPerson()`.
 
 **`RemarkCommand.java`:**
 
@@ -362,7 +365,7 @@ save it with `Model#setPerson()`.
      */
     private String generateSuccessMessage(Person personToEdit) {
         String message = !remark.value.isEmpty() ? MESSAGE_ADD_REMARK_SUCCESS : MESSAGE_DELETE_REMARK_SUCCESS;
-        return String.format(message, personToEdit);
+        return String.format(message, Messages.format(personToEdit));
     }
 ```
 

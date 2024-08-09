@@ -119,7 +119,7 @@ If the above doesn't work, you may want to go to `File` > `Settings` and change 
 
 ****Using Gradle:****:
 
-* To run all tests in the project, run the Gradle task `test` ([more info on running Gradle tasks](gradle.html#running-gradle-tasks))
+* To run all tests in the project, run the Gradle task `test` ([more info on running Gradle tasks](gradle.md#running-gradle-tasks))
 * [If using Intellij UI to run the `test` task] The location of the `test` task in the Gradle task hierarchy is `Tasks -> verification -> test` (see screenshot below).<br>
     <pic src="images\junit\gradleTaskHierarchy.png" />
 

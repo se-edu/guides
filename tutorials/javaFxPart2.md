@@ -20,7 +20,9 @@ Mockup | Control
 ![Label](images/javafx/MockupLabel.png) | Label
 ![Button](images/javafx/MockupButton.png) | Button
 ![TextField](images/javafx/MockupTextField.png) | TextField
-![ScrollPane](images/javafx/MockupScrollPane.png) | ScrollPane
+<img src="images/javafx/MockupScrollPane.png" width="300" /> | ScrollPane | ScrollPane
+
+{{ icon_tip }} You may be wondering why a `ScrollPane` is a `Control` and not a `Pane`, as its name suggests. `ScrollPane` extends the `Control` class in JavaFX because it represents a UI "widget" that the user directly interacts with (such as `Label`, `Button`, and `TextField`), whereas a `Pane` is a mere container that holds other components. Of course, a `ScrollPane` has the functionality of a container, allowing it to show a <tooltip content="gives a rectangular view into a larger content which exceeds the available screen/stage area">viewport</tooltip> of its content. `Scrollpane` contains one node, whereas a `Pane` can contain multiple nodes.
 
 ## Designing the Layout
 
@@ -65,6 +67,10 @@ ImageView -up-> VBox
 Label -up-> VBox
 @enduml
 </puml>
+
+This structure, when reflected on the actual Mockup UI, is as follows:
+
+![ImageView](images/javafx/DukeMockupLabeled.png)
 
 To get that layout, we create a new `AnchorPane` and add our controls to it. Similarly, we create a new `VBox` to hold the contents of the `ScrollPane`. The code should look something like this:
 
