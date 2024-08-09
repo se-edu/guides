@@ -278,3 +278,51 @@ package "Rule Of Thumb";{
 
 Explicitly define all symbols to avoid any potential layout mishaps.
 </box>
+
+### Using reference frames
+
+<table>
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 30%" />
+</colgroup>
+
+<thead>
+<tr class="header">
+  <th>Source</th>
+  <th>Result</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr class="odd">
+<td>
+<pre>
+ref over MSLogic, TextUi : get minefield appearance
+</pre>
+</td>
+<td>
+<img src="images/plantuml/ParentReferenceFrameDiagram.png">
+</td>
+</tr>
+
+<tr class="even">
+<td>
+<pre>
+group sd get minefield appearance
+    'Contents of reference frame
+    TextUi -> MSLogic : getAppearanceOfCellAt(x, y)
+    activate MSLogic
+    MSLogic --> TextUi : cellAppearance
+    deactivate MSLogic
+end
+</pre>
+</td>
+<td>
+<img src="images/plantuml/ReferenceFrameDiagram.png">
+</td>
+</tr>
+
+</tbody>
+</table>
