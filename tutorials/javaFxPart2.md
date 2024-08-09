@@ -121,12 +121,13 @@ public class Duke extends Application {
     }
 }
 ```
-You might have noticed that the code above does not include the dialog boxes, which are HBoxes with a Label and an ImageView. For groups of components that are reused multiple times like this, it is often beneficial to create our own custom control.
+You might have noticed that the code above does not include the dialog boxes, which are HBoxes with a Label and an ImageView. For groups of components that are reused multiple times like this, it is often beneficial to create our own custom control. In the mockup of the UI, notice that the dialog boxes are composed of two different controls (`ImageView` and `Label`).
 
-Let’s create our custom control `DialogBox`:
+Let’s create our custom control `DialogBox` with these two components:
 ```java
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
@@ -135,15 +136,20 @@ public class DialogBox extends HBox {
     private Label text;
     private ImageView displayPicture;
 
-    public DialogBox(Label l, ImageView iv) {
-        text = l;
-        displayPicture = iv;
+    public DialogBox(String s, Image i) {
+        text = new Label(s);
+        displayPicture = new ImageView(i);
+        text.setWrapText(true);
+        displayPicture.setFitWidth(100.0);
+        displayPicture.setFitHeight(100.0);
+        
+        this.setAlignment(Pos.TOP_RIGHT);
         
         this.getChildren().addAll(text, displayPicture);
     }
 }
 ```
-We use this control just like any other control. To have a dialog box in the scene, we need to create a new DialogBox instance and pass two elements to it: a Label and an ImageView. For now, we can do this in `Duke.java`.
+We use this control just like any other control. To have a dialog box in the scene, we need to create a new DialogBox instance and pass two elements to it: a String and an Image. For now, we can do this in `Duke.java`.
 
 First, add these imports:
 
@@ -174,9 +180,8 @@ public class Duke extends Application {
     public void start(Stage stage) {
        //...
        //This part is to be removed later
-       Label text = new Label("Hello!");
-       ImageView displayPicture = new ImageView(user);
-       DialogBox dialogBox = new DialogBox(text, displayPicture);
+       String text = new Label("Hello!");
+       DialogBox dialogBox = new DialogBox(text, user);
        dialogContainer.getChildren().addAll(dialogBox);
        //...
     }
