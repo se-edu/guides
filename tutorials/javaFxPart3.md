@@ -81,7 +81,7 @@ public void start(Stage stage) {
 ```
 
 Verify that the `ScrollPane` scrolls as intended. Feel free to use the following long message to test your program:
-```java
+```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet dictum diam, eget venenatis ligula blandit sed. Pellentesque gravida, mauris ut consectetur porta, tellus odio porttitor purus, dignissim vehicula dui neque sit amet tellus. Donec ullamcorper odio eu urna hendrerit, et pharetra nisi vehicula. Vestibulum mattis faucibus nunc.amcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Maecenas gravida ante non erat iaculis, nec bibendum ligula porta. Donec sagittis ultrices justo, sed sollicitudin eros volutpat sit amet. Etiam hendrerit enim sed nibh volutpat, vel tincidunt augue vehicula. Suspendisse quis imperdiet felis, ut scelerisque nunc.
 ```
 
