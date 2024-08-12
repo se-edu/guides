@@ -454,8 +454,9 @@
       "headings": {
         "javafx-tutorial-part-1-introduction": "JavaFX tutorial part 1 – Introduction",
         "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX  application",
+        "setting-up-the-project": "Setting up the project",
         "setting-up-java-fx": "Setting up Java FX",
-        "writing-your-first-program": "Writing your first program",
+        "writing-your-first-java-fx-program": "Writing your first Java FX program",
         "exercises": "Exercises"
       },
       "headingKeywords": {}
@@ -478,7 +479,7 @@
       "headings": {
         "javafx-tutorial-part-3-interacting-with-the-user": "JavaFX tutorial part 3 – Interacting with the user",
         "iteration-1-echoing-the-user": "Iteration 1 – Echoing the user",
-        "iteration-2-adding-dialog-boxes": "Iteration 2 – Adding Dialog Boxes",
+        "iteration-2-adding-dialog-boxes-for-duke-s-response": "Iteration 2 – Adding dialog boxes for Duke's response",
         "iteration-3-adding-custom-behavior-to-dialogbox": "Iteration 3 – Adding custom behavior to DialogBox",
         "exercises": "Exercises"
       },
@@ -489,9 +490,8 @@
       "title": "JavaFX tutorial part 4 – Using FXML",
       "headings": {
         "javafx-tutorial-part-4-using-fxml": "JavaFX tutorial part 4 – Using FXML",
-        "rebuilding-the-scene-using-fxml": "Rebuilding the Scene using FXML",
-        "using-controllers": "Using Controllers",
-        "using-fxml-in-our-application": "Using FXML in our application",
+        "refactor-duke-to-use-fxml": "Refactor Duke to use FXML",
+        "using-scene-builder-to-tweak-the-gui": "Using Scene Builder to tweak the GUI",
         "exercises": "Exercises"
       },
       "headingKeywords": {}

@@ -11,7 +11,7 @@ with(this){return _c('h1',{attrs:{"id":"guides-for-se-student-projects"}},[_c('s
 with(this){return _c('h1',{attrs:{"id":"javafx-tutorial-part-5-tweaking-the-gui"}},[_v("JavaFX tutorial part 5 – Tweaking the GUI"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#javafx-tutorial-part-5-tweaking-the-gui","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("This guide aims to help shorten the amount of time needed to learn some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. "),_c('a',{attrs:{"href":"#setting-up-and-linking-css-to-fxml"}},[_v("This section")]),_v(" containing the CSS dummy code and linking it to SceneBuilder might be the most helpful.")])}
+with(this){return _c('p',[_v("This part of the tutorial aims to help you with some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. "),_c('a',{attrs:{"href":"#setting-up-and-linking-css-to-fxml"}},[_v("This section")]),_v(" containing the CSS dummy code and linking it to SceneBuilder might be the most helpful.")])}
 },function anonymous(
 ) {
 with(this){return _c('h1',{attrs:{"id":"setting-the-dimensions"}},[_v("Setting the dimensions"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#setting-the-dimensions","onclick":"event.stopPropagation()"}})])}
@@ -545,6 +545,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Debbie Hii (@flexibo)")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Fri, 9 Aug 2024, 2:17:17 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Tue, 13 Aug 2024, 1:41:52 GMT+8]")])])])}
 }];
   

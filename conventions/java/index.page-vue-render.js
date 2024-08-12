@@ -569,6 +569,6 @@ with(this){return _c('h2',{attrs:{"id":"contributors"}},[_v("Contributors"),_c('
 with(this){return _c('ul',[_c('li',[_v("Nimantha Baranasuriya - Initial draft")]),_v(" "),_c('li',[_v("Dai Thanh - Further tweaks")]),_v(" "),_c('li',[_v("Tong Chun Kit - Further tweaks")]),_v(" "),_c('li',[_v("Barnabas Tan - Converted from Google Docs to Markdown Document")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Fri, 9 Aug 2024, 2:17:17 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Tue, 13 Aug 2024, 1:41:52 GMT+8]")])])])}
 }];
   
