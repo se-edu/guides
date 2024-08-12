@@ -250,6 +250,7 @@ Style the `DialogBox` too:
 public DialogBox(Label l, ImageView iv) {
         text = l;
         displayPicture = iv;
+
         //styling the dialog box
         text.setWrapText(true);
         displayPicture.setFitWidth(100.0);
