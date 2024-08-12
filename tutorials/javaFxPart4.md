@@ -5,38 +5,26 @@
 
 # JavaFX tutorial part 4 – Using FXML
 
-While we have produced a fully functional prototype, there are a few major problems with our application.
+While we have produced a fully functional prototype, there are some problems with the way we implemented it, using Java code alone:
 
-1. The process of visually enhancing the GUI is long and painful:
-   * Does the `TextField` need to be 330px or 325px wide? 
-   * How much padding is enough padding to look good?
+1. The process of visually enhancing the GUI is long and painful. Every small change requires us to rebuild and run the application, just to see if the change gave the result we wanted.
+1. The `Duke` class attempts to do it all. Code for visual tweaks, listeners and even utility methods are all in one file. This makes it difficult to find and make changes to existing code.
 
-   Every small change requires us to rebuild and run the application.  
-
-1. Components are heavily dependent on each other:
-   Why does `Main` need to know that `DialogBox` needs a `Label`? 
-   What happens if we change the `Label` to a custom `ColoredLabel` in the future?  
-    
-    We need to minimize the amount of information each control needs to know about another.
-    Otherwise, making changes in the future will break existing features.
-
-1. The code is untidy and long:
-   Why is all the code in one place?
-
-   The `Main` class attempts to do it all. 
-   Code for visual tweaks, listeners and even utility methods are all in one file.
-   This makes it difficult to find and make changes to existing code.
-
-FXML is a XML-based language that allows us to define our user interface. Properties of JavaFX objects can be defined in the FXML file. For example:  
+An alternative approach (to hand-coding everything) is to use FXML -- an XML-based language that allows us to define UIs. Properties of JavaFX objects can be defined in the FXML file. For example consider the following FXML snippet that defines a TextField similar to the one that we programmatically defined previous in part 2.:
 ```xml
- <TextField fx:id="userInput" layoutY="558.0" onAction="#handleUserInput" prefHeight="41.0" prefWidth="324.0" AnchorPane.bottomAnchor="1.0" />
+ <TextField fx:id="userInput"
+            layoutY="558.0"
+            onAction="#handleUserInput"
+            prefHeight="41.0"
+            prefWidth="324.0"
+            AnchorPane.bottomAnchor="1.0" />
 ```
 
-The FXML snippet define a TextField similar to the one that we programmatically defined previous in Tutorial 2. Notice how concise FXML is compared to the plain Java version.
+Notice how concise FXML is compared to the plain Java version.
 
 Let's return to Duke and convert it to use FXML instead.
 
-# Rebuilding the Scene using FXML
+## Rebuilding the Scene using FXML
 
 Scene Builder is a tool developed by Oracle and currently maintained by Gluon. It is a What-You-See-Is-What-You-Get GUI creation tool. [Download](https://gluonhq.com/products/scene-builder/#download) the appropriate version for your OS and install it.
 
@@ -103,14 +91,14 @@ Without setting `minHeight` to **-Infinity**, text overrun may occur when the te
 
 1. Let’s explore the provided FXML files in Scene Builder. 
     
-    Running the tool brings up the main screen.
+    Running SceneBuilder brings up the main screen.
     Select `Open Project` > `src/main/resources/view/MainWindow.fxml`. Inspect each control and its properties.
 
    ![SceneBuilder opening MainWindow.fxml](images/javafx/SceneBuilder.png)
 
 1. On the right accordion pane, you can modify the properties of the control that you have selected. Try changing the various settings and see what they do!
  
-1. On the left accordion, you can see that we have set the controller class to `MainWindow`. 
+1. On the left accordion, when you expand the `Controller` panel at the bottom, you can see that we have set the controller class to `MainWindow`.
 We will get to that later.
  
    ![Controller for MainWindow](images/javafx/MainWindowController.png)

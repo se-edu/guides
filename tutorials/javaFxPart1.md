@@ -13,6 +13,14 @@ Imagine yourself as a director of a play. First you provision the props that you
 
 A JavaFX application is like a play you are directing. Instead of creating props, you create `Nodes` (`Nodes` are the fundamental building blocks of a JavaFX application), and place them onto a `Scene` (a scene is a graph of `Node`s). Then, you set your `Scene` on a `Stage` provided by JavaFX. When you call `Stage#show()` method, JavaFX renders a window with your `Stage` on it.
 
+Well, that's a very high-level view of how JavaFX works. The actual implementation of a Java FX is a bit more (ahem...) "involved". This tutorial takes you through the steps of building a typical Java FX application, using a chatbot application called Duke, as a running example. Given below is what the end result can look like.
+
+<video oncontextmenu="return false;" width="700px" autoplay muted loop>
+<source src="videos/javafx/DynamicStyleDemo.mp4" type="video/mp4">
+</video>
+
+Let's get started!
+
 ## Setting up Java FX
 
 Note: this tutorial assumes you will be using [Gradle](gradle.md) to manage dependencies of your project.
@@ -51,11 +59,11 @@ dependencies {
 After updating the `build.gradle` file, remember to reload the Gradle dependencies using your IDE UI, or by running the command `./gradlew clean build`. If using an IDE, you can restart the IDE for good measure.
 </box>
 
-## Writing your first program
+## Writing your first Java FX program
 
 As customary, let’s start off with a simple “Hello World” program. Let's say you have a class named `Duke` that you want make a GUI. First, modify the `Duke` class to extend `javafx.application.Application`. This requires you to override the `Application#start()` method and provide a concrete implementation. Notice that the method signature for `Application#start()` has a parameter `Stage`. This is the _primary stage_ that JavaFX provides.
 
-```java
+```java{heading="Duke.java"}
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -78,10 +86,11 @@ public class Duke extends Application {
 
 Note how we have created a `Label` to contain the text that we want to show. We then create the `Scene` and set its content. Finally, we set the stage and show it.
 
-Next, we create another Java class, `Launcher`, as an entry point to our application.
+Next, we create another Java class, `Launcher`, as an entry point to our application (this class is needed to work around a classpath issue -- we can ignore the reason for now).
+
 The `Launcher` class is reproduced below in its entirety.
 
-```java
+```java{heading="Launcher.java"}
 import javafx.application.Application;
 
 /**
@@ -96,7 +105,7 @@ public class Launcher {
 
 Now that we have changed the entry point to our application, we need to update the `mainClass`attribute in `build.gradle` accordingly to point at the `Launcher` class.
 
-```groovy{highlight-lines="3-5"}
+```groovy{highlight-lines="3-5" heading="build.gradle"}
 // ...
 
 application {
@@ -108,7 +117,7 @@ application {
 
 JavaFX creates the `Application` instance by calling the no-argument constructor. So, you need to define a no-argument constructor in the `Duke` class (i.e., the `Application` subclass you use) if you don't have one already e.g.,
 
-```java{highlight-lines="5-7"}
+```java{highlight-lines="5-7" heading="Duke.java"}
 //...
 
 public class Duke extends Application {
@@ -125,7 +134,7 @@ public class Duke extends Application {
 
 If you do already have an existing constructor which takes arguments, you can proceed by creating an overloaded constructor with no arguments, passing the arguments to the existing constructor e.g.,
 
-```java{highlight-lines="11-14"}
+```java{highlight-lines="11-14" heading="Duke.java"}
 //...
 private static final String DEFAULT_FILE_PATH = "duke/example.txt";
 

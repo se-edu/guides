@@ -5,14 +5,14 @@
 
 # JavaFX tutorial part 2 - Creating a GUI for Duke
 
-In this tutorial, we will be creating a GUI for Duke from scratch based on the following mockup.
+In this part of the tutorial, we will be creating a GUI for Duke from scratch based on the following mockup.
 
-![Mockup for Duke](images/javafx/DukeMockup.png)
+<pic src="images/javafx/DukeMockup.png" width="450" />
 
 ## JavaFX controls
 
 Controls are reusable UI elements. Refer to the [JavaFX's official documentation](https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/package-summary.html) for a list of controls available.
-From the mockup above, can you identify the controls that we will need to use?
+From the mockup above, can you identify the controls that we will need to use?  Here they are:
 
 Mockup | Control
 ------ | :---: |
@@ -22,14 +22,17 @@ Mockup | Control
 ![TextField](images/javafx/MockupTextField.png) | TextField
 <img src="images/javafx/MockupScrollPane.png" width="300" /> | ScrollPane | ScrollPane
 
-{{ icon_tip }} You may be wondering why a `ScrollPane` is a `Control` and not a `Pane`, as its name suggests. `ScrollPane` extends the `Control` class in JavaFX because it represents a UI "widget" that the user directly interacts with (such as `Label`, `Button`, and `TextField`), whereas a `Pane` is a mere container that holds other components. Of course, a `ScrollPane` has the functionality of a container, allowing it to show a <tooltip content="gives a rectangular view into a larger content which exceeds the available screen/stage area">viewport</tooltip> of its content. `Scrollpane` contains one node, whereas a `Pane` can contain multiple nodes.
+<box type="info" seamless>
+
+ You may be wondering why a `ScrollPane` is a `Control` and not a `Pane`, as its name suggests. `ScrollPane` extends the `Control` class in JavaFX because it represents a UI "widget" that the user directly interacts with (such as `Label`, `Button`, and `TextField`), whereas a `Pane` is a mere container that holds other components. Of course, a `ScrollPane` has the functionality of a container, allowing it to show a <tooltip content="gives a rectangular view into a larger content which exceeds the available screen/stage area">viewport</tooltip> of its content. `Scrollpane` contains one node, whereas a `Pane` can contain multiple nodes.
+</box>
 
 ## Designing the Layout
 
 Now that we know what controls we need to implement our UI, let’s start programming! We quickly run into a problem: how do we show all of them on the screen at once?
 
-Each scene is initialized with a root `Node`. In the previous tutorial, our root `Node` was a `Label`.
-What happens when we need to display more than one `Node` on the `Scene`? For that, we need to understand the JavaFX hierarchy. Recall from the previous tutorial:
+Each scene is initialized with a root `Node`. In part 1 of the tutorial, our root `Node` was a `Label`.
+What happens when we need to display more than one `Node` on the `Scene`? For that, we need to understand the JavaFX hierarchy. Recall from part 1:
 
 <puml src="images/javafx/JavaFxHierarchy.puml" />
 
@@ -37,7 +40,10 @@ From the diagram, you see that the root `Node` can contain many other `Nodes` an
 
 But how do we get the exact layout we want in the UI? JavaFX provides that functionality in the form of **layout panes** in `javafx.scene.layouts`. Each layout pane follows a _layout policy_ to decide how to arrange its children. For example, the `VBox` lays out its children in a single vertical column and its counterpart, the `HBox` lays out its children in a single horizontal row.
 
-:bulb: A comprehensive list of layouts and how they behave is available here from the [official documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html).
+<box type="tip" seamless>
+
+A comprehensive list of layouts and how they behave is available here from the [official documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html).
+</box>
 
 One way to obtain the layout in the mockup is as follows.
 
@@ -70,11 +76,11 @@ Label -up-> VBox
 
 This structure, when reflected on the actual Mockup UI, is as follows:
 
-![ImageView](images/javafx/DukeMockupLabeled.png)
+<pic src="images/javafx/DukeMockupLabeled.png" width="450" />
 
 To get that layout, we create a new `AnchorPane` and add our controls to it. Similarly, we create a new `VBox` to hold the contents of the `ScrollPane`. The code should look something like this:
 
-```java
+```java{heading="Duke.java"}
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -99,7 +105,7 @@ public class Duke extends Application {
 
     @Override
     public void start(Stage stage) {
-         //Step 1. Setting up required components
+         //Setting up required components
 
          //The container for the content of the chat to scroll.
          scrollPane = new ScrollPane();
@@ -121,10 +127,16 @@ public class Duke extends Application {
     }
 }
 ```
-You might have noticed that the code above does not include the dialog boxes, which are HBoxes with a Label and an ImageView. For groups of components that are reused multiple times like this, it is often beneficial to create our own custom control. In the mockup of the UI, notice that the dialog boxes are composed of two different controls (`ImageView` and `Label`).
+You might have noticed that the code above does not include code for the dialog boxes (i.e., chat messages) -- a dialog box is an `HBox` containing an `ImageView` and a `Label`, as shown in the mockup of the UI given below.
 
-Let’s create our custom control `DialogBox` with these two components:
-```java
+<annotate src="images/javafx/DukeMockupLabeled.png" width="450">
+<a-point x="79%" y="50%" content="dialog box" opacity="0.3" size="40" color="yellow"><span class="text-danger"><md>:fas-left-long: this is the **dialog box**</md></span></a-point>
+</annotate>
+<p/>
+
+For groups of components that are reused multiple times like this, it is often beneficial to create our own custom control. Let’s create our custom control `DialogBox` with these two components:
+
+```java{heading="DialogBox.java"}
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -139,29 +151,14 @@ public class DialogBox extends HBox {
     public DialogBox(String s, Image i) {
         text = new Label(s);
         displayPicture = new ImageView(i);
-        text.setWrapText(true);
-        displayPicture.setFitWidth(100.0);
-        displayPicture.setFitHeight(100.0);
-        
-        this.setAlignment(Pos.TOP_RIGHT);
-        
         this.getChildren().addAll(text, displayPicture);
     }
 }
 ```
-We use this control just like any other control. To have a dialog box in the scene, we need to create a new DialogBox instance and pass two elements to it: a String and an Image. For now, we can do this in `Duke.java`.
+We use this control just like any other control. To have a dialog box in the scene, we need to create a new `DialogBox` instance and pass two elements to it: a `String` and an `Image`. For now, we can do this in `Duke.java`.
 
-First, add these imports:
-
-```java
-import duke.ui.DialogBox;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
-```
-Next, add two images to the `main/resources/images` folder.
-For this tutorial, we have two images `DaUser.png` and `DaDuke.png` to represent the user avatar and Duke's avatar respectively but you can use any image you want.
+First, add two images to the `main/resources/images` folder.
+For this tutorial, we have two images `DaUser.png` and `DaDuke.png` to represent the user avatar and Duke's avatar respectively, but you can use any image you want.
 
 Image|Filename
 ---|---
@@ -170,20 +167,25 @@ Image|Filename
 
 Then, create an example DialogBox with a simple message.
 
-```java
+```java{highlight-lines="1, 5-6, 14-16" heading="Duke.java"}
+import javafx.scene.image.Image;
+
 public class Duke extends Application {
     // ...
     private Image user = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
     private Image duke = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
     // ...
+
     @Override
     public void start(Stage stage) {
-       //...
-       //This part is to be removed later
-       String text = new Label("Hello!");
-       DialogBox dialogBox = new DialogBox(text, user);
-       dialogContainer.getChildren().addAll(dialogBox);
-       //...
+        //...
+        sendButton = new Button("Send");  // existing code
+
+        DialogBox dialogBox = new DialogBox("Hello!", user);
+        dialogContainer.getChildren().addAll(dialogBox);
+
+        AnchorPane mainLayout = new AnchorPane();  // existing code
+        //...
     }
 }
 ```
@@ -194,24 +196,28 @@ Note the image location (e.g., `/images/DaUser.png`) is given relative to the `m
 
 Run the application and you should see something like this:
 
-![Duke's raw layout](images/javafx/RawLayout.png)
+<pic src="images/javafx/RawLayout.png" width="200" />
 
-That is not what we were expecting, what did we forget to do?
+That is not what we were expecting, as the elements are not in the layout we wanted. Next, let's see how to fix that.
 
 ## Styling the Controls
 
-Almost every JavaFX object offer properties that you can set to customize its look and feel. For example, the `Stage` allows you to set its preferred size and title. Again, refer to the official JavaFX documentation for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:
+Almost every JavaFX object offer properties that you can set to customize its look and feel. For example, the `Stage` allows you to set its preferred size and title. Again, refer to the official [JavaFX documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html) for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:
 
 Add the following code to the bottom of the `start` method. You'll have to add `import javafx.scene.layout.Region;` to the imports too.
 
-```java
+```java{highlight-lines="1, 10-39" heading="Duke.java"}
+import javafx.scene.layout.Region
+// ...
+
     @Override
     public void start(Stage stage) {
-        //Step 1. Setting up required components
+        //Setting up required components
 
         //...
 
-        //Step 2. Formatting the window to look as expected
+        //Formatting the window to look as expected
+
         stage.setTitle("Duke");
         stage.setResizable(false);
         stage.setMinHeight(600.0);
@@ -226,7 +232,6 @@ Add the following code to the bottom of the `start` method. You'll have to add `
         scrollPane.setVvalue(1.0);
         scrollPane.setFitToWidth(true);
 
-        //You will need to import `javafx.scene.layout.Region` for this.
         dialogContainer.setPrefHeight(Region.USE_COMPUTED_SIZE);
 
         userInput.setPrefWidth(325.0);
@@ -244,26 +249,27 @@ Add the following code to the bottom of the `start` method. You'll have to add `
         //More code to be added here later
     }
 ```
+
 Style the `DialogBox` too:
 
-```java
-public DialogBox(Label l, ImageView iv) {
-        text = l;
-        displayPicture = iv;
+```java{highlight-lines="5-9" heading="DialogBox.java"}
+    public DialogBox(String s, Image i) {
+        text = new Label(s);
+        displayPicture = new ImageView(i);
 
-        //styling the dialog box
+        //Styling the dialog box
         text.setWrapText(true);
         displayPicture.setFitWidth(100.0);
         displayPicture.setFitHeight(100.0);
         this.setAlignment(Pos.TOP_RIGHT);
-        
+
         this.getChildren().addAll(text, displayPicture);
     }
 ```
 
 Run the application again. It should now look like this:
 
-![Duke's Final layout](images/javafx/FinalLayout.png)
+<pic src="images/javafx/FinalLayout.png" width="450"/>
 
 ## Exercises
 
