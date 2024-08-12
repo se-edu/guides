@@ -33,7 +33,7 @@ public void start(Stage stage) {
     //Step 1 code here
 
     //Step 2 code here
-    //Delete or comment off the following section
+    //////Delete the following section//////
     //Label text = new Label("Hello!");
     //ImageView displayPicture = new ImageView(user);
     //DialogBox dialogBox = new DialogBox(text, displayPicture);
