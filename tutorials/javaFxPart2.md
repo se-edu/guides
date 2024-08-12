@@ -236,7 +236,7 @@ Add the following code to the bottom of the `start` method. You'll have to add `
         AnchorPane.setTopAnchor(scrollPane, 1.0);
 
         AnchorPane.setBottomAnchor(sendButton, 1.0);
-        AnchorPane.setRightAnchor(  
+        AnchorPane.setRightAnchor(sendButton, 1.0);
 
         AnchorPane.setLeftAnchor(userInput , 1.0);
         AnchorPane.setBottomAnchor(userInput, 1.0);
