@@ -13,13 +13,17 @@ Imagine yourself as a director of a play. First you provision the props that you
 
 A JavaFX application is like a play you are directing. Instead of creating props, you create `Nodes` (`Nodes` are the fundamental building blocks of a JavaFX application), and place them onto a `Scene` (a scene is a graph of `Node`s). Then, you set your `Scene` on a `Stage` provided by JavaFX. When you call `Stage#show()` method, JavaFX renders a window with your `Stage` on it.
 
-Well, that's a very high-level view of how JavaFX works. The actual implementation of a Java FX is a bit more (ahem...) "involved". This tutorial takes you through the steps of building a typical Java FX application, using a chatbot application called Duke, as a running example. Given below is what the end result can look like.
+Well, that's a very high-level view of how JavaFX works. The actual implementation of a Java FX is a bit more (ahem...) "involved". This tutorial takes you through the steps of building a typical Java FX application, using a chatbot application called Duke, as a running example. Given below is what the end result can look like, if you follow this tutorial until the end.
 
 <video oncontextmenu="return false;" width="700px" autoplay muted loop>
 <source src="videos/javafx/DynamicStyleDemo.mp4" type="video/mp4">
 </video>
 
 Let's get started!
+
+## Setting up the project
+
+To start, clone [this starter repo](https://github.com/se-edu/javafx-tutorial) to your computer, and open it in your favorite editor. As usual, configure the IDE to use the correct JDK version as well ([example](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk)).
 
 ## Setting up Java FX
 
