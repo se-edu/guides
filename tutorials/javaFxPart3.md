@@ -69,7 +69,7 @@ Run the program and give it a whirl!
 
 At first glance everything appears to work perfectly. However, when the `VBox` stretches beyond the confines of the `ScrollPane`, the `ScrollPane` does not scroll down automatically as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
 
-Update the `Duke.start` method as shown below.
+Update the `Duke#start` method as shown below.
 
 ```java
 public void start(Stage stage) {
