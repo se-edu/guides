@@ -61,17 +61,15 @@ After updating the `build.gradle` file, remember to reload the Gradle dependenci
 
 ## Writing your first Java FX program
 
-As customary, let’s start off with a simple “Hello World” program. Let's say you have a class named `Duke` that you want make a GUI. First, modify the `Duke` class to extend `javafx.application.Application`. This requires you to override the `Application#start()` method and provide a concrete implementation. Notice that the method signature for `Application#start()` has a parameter `Stage`. This is the _primary stage_ that JavaFX provides.
+As customary, let’s start off with a simple “Hello World” program. Let's say you have a class named `Duke` that you want to make a GUI for. Let's call this GUI class `Main`. When using Java FX, this GUI class needs to extend `javafx.application.Application` which in turn requires you to override the abstract `Application#start(Stage)` method and provide a concrete implementation. The parameter `Stage` is the _primary stage_ that JavaFX provides.
 
-```java{heading="Duke.java"}
+```java{heading="Main.java"}
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class Duke extends Application {
-
-    // ...
+public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
@@ -98,7 +96,7 @@ import javafx.application.Application;
  */
 public class Launcher {
     public static void main(String[] args) {
-        Application.launch(Duke.class, args);
+        Application.launch(Main.class, args);
     }
 }
 ```
@@ -115,38 +113,26 @@ application {
 // ...
 ```
 
-JavaFX creates the `Application` instance by calling the no-argument constructor. So, you need to define a no-argument constructor in the `Duke` class (i.e., the `Application` subclass you use) if you don't have one already e.g.,
-
-```java{highlight-lines="5-7" heading="Duke.java"}
-//...
-
-public class Duke extends Application {
-
-    public Duke() {
-        // ...
-    }
-
-    // ...
-}
-```
 
 <box type="tip" seamless>
 
-If you do already have an existing constructor which takes arguments, you can proceed by creating an overloaded constructor with no arguments, passing the arguments to the existing constructor e.g.,
+JavaFX creates the `Application` instance by calling the no-argument constructor. If there is no other constructor in the class (such as the `Main` we created above), there is no need to provide such a constructor because Java automatically provides a no-argument constructor when there are no other constructors.
 
-```java{highlight-lines="11-14" heading="Duke.java"}
+But if you already have an existing constructor which takes arguments in that class (in which case Java will not provide a no-argument constructor automatically), you need to create an overloaded constructor with no arguments yourself. An example given below.
+
+```java{highlight-lines="11-14" heading="Main.java"}
 //...
 private static final String DEFAULT_FILE_PATH = "duke/example.txt";
 
-public class Duke extends Application {
+public class Main extends Application {
 
     // Existing constructor
-    public Duke(String filePath) {
+    public Main(String filePath) {
         // ...
     }
 
     // Overloaded constructor
-    public Duke() {
+    public Main() {
         this(DEFAULT_FILE_PATH);
     }
 

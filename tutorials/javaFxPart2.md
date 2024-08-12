@@ -56,13 +56,15 @@ skinparam ClassFontSize 16
 skinparam ClassFontName Arial
 
 class Stage
+class Scene
 class AnchorPane
 class ScrollPane
 class VBox
 class ImageView
 class Label
 
-AnchorPane -up-> Stage
+Scene -up-> Stage
+AnchorPane -up-> Scene
 ScrollPane -up-> AnchorPane
 
 TextField -up-> AnchorPane
@@ -80,7 +82,7 @@ This structure, when reflected on the actual Mockup UI, is as follows:
 
 To get that layout, we create a new `AnchorPane` and add our controls to it. Similarly, we create a new `VBox` to hold the contents of the `ScrollPane`. The code should look something like this:
 
-```java{heading="Duke.java"}
+```java{heading="Main.java"}
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -91,7 +93,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 
-public class Duke extends Application {
+public class Main extends Application {
 
     private ScrollPane scrollPane;
     private VBox dialogContainer;
@@ -99,15 +101,10 @@ public class Duke extends Application {
     private Button sendButton;
     private Scene scene;
 
-    public static void main(String[] args) {
-        // ...
-    }
-
     @Override
     public void start(Stage stage) {
          //Setting up required components
 
-         //The container for the content of the chat to scroll.
          scrollPane = new ScrollPane();
          dialogContainer = new VBox();
          scrollPane.setContent(dialogContainer);
@@ -155,7 +152,7 @@ public class DialogBox extends HBox {
     }
 }
 ```
-We use this control just like any other control. To have a dialog box in the scene, we need to create a new `DialogBox` instance and pass two elements to it: a `String` and an `Image`. For now, we can do this in `Duke.java`.
+We use this control just like any other control. To have a dialog box in the scene, we need to create a new `DialogBox` instance and pass two elements to it: a `String` and an `Image`. For now, we can do this in `Main.java`.
 
 First, add two images to the `main/resources/images` folder.
 For this tutorial, we have two images `DaUser.png` and `DaDuke.png` to represent the user avatar and Duke's avatar respectively, but you can use any image you want.
@@ -167,13 +164,13 @@ Image|Filename
 
 Then, create an example DialogBox with a simple message.
 
-```java{highlight-lines="1, 5-6, 14-16" heading="Duke.java"}
+```java{highlight-lines="1, 5-6, 14-16" heading="Main.java"}
 import javafx.scene.image.Image;
 
-public class Duke extends Application {
+public class Main extends Application {
     // ...
-    private Image user = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
-    private Image duke = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
+    private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
+    private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
     // ...
 
     @Override
@@ -181,7 +178,7 @@ public class Duke extends Application {
         //...
         sendButton = new Button("Send");  // existing code
 
-        DialogBox dialogBox = new DialogBox("Hello!", user);
+        DialogBox dialogBox = new DialogBox("Hello!", userImage);
         dialogContainer.getChildren().addAll(dialogBox);
 
         AnchorPane mainLayout = new AnchorPane();  // existing code
@@ -206,7 +203,7 @@ Almost every JavaFX object offer properties that you can set to customize its lo
 
 Add the following code to the bottom of the `start` method. You'll have to add `import javafx.scene.layout.Region;` to the imports too.
 
-```java{highlight-lines="1, 10-39" heading="Duke.java"}
+```java{highlight-lines="1, 10-39" heading="Main.java"}
 import javafx.scene.layout.Region
 // ...
 
@@ -286,4 +283,4 @@ Run the application again. It should now look like this:
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
-* Editors: Zhang Lanyu
+* Contributors: Zhang Lanyu

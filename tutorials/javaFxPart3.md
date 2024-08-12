@@ -24,11 +24,11 @@ When an event is detected, JavaFX will call the respective handlers that was pre
 
 ## Iteration 1 – Echoing the user
 
-For Duke, there are two events that we want to respond to, namely the user pressing `Enter` in the `TextField` and left-clicking the `Button`. These are the `onAction` event for the `TextField` and the `onMouseClicked` event for the `Button`, respectively.
+For Duke, there are two events that we want to respond to, namely the user pressing <kbd>Enter</kbd> key in the text box  and clicking the `Send` button. These map to the `onAction` event for the `TextField` and the `onMouseClicked` event for the `Button`, respectively.
 
 First, let's #r#delete the following two lines## that shows a dialog box by default.
 
-```java{heading="Duke.java" highlight-lines="8-9"}
+```java{heading="Main.java" highlight-lines="7-8"}
 
     @Override
     public void start(Stage stage) {
@@ -49,7 +49,7 @@ First, let's #r#delete the following two lines## that shows a dialog box by defa
 
 Then, add the following code.
 
-```java{heading="Duke.java"}
+```java{highlight-lines="8-16,19-26" heading="Main.java"}
     @Override
     public void start(Stage stage) {
         //Setting up required components
@@ -69,7 +69,6 @@ Then, add the following code.
     }
 
     /**
-     * Iteration 1:
      * Creates a dialog box containing user input, and appends it to
      * the dialog container. Clears the user input after processing.
      */
@@ -79,56 +78,77 @@ Then, add the following code.
     }
 ```
 
-Run the program and give it a whirl!
+Run the program and give it a whirl! Ensure the GUI responds correctly to both ways of input i.e., hitting <kbd>Enter</kbd> after text entry, and hitting the `Send` button after text entry.
 
 <pic src="images/javafx/EchoNotScrolling.png" width="450" />
+<p/>
 
-At first glance everything appears to work perfectly. However, when the `VBox` stretches beyond the confines of the `ScrollPane`, the `ScrollPane` does not scroll down automatically as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
+At first glance everything appears to work perfectly. Keep entering more text entries (or longer text entries) until the visible area fills up. You'll notice that when the chat entries fills up beyond scroll pane's display area, it does not scroll down automatically to show the latest entry, as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
 
-Update the `Duke.start` method as shown below.
+Update the `Main#start` method as shown below.
 
-```java
-public void start(Stage stage) {
-    // current code ...
+```java{highlight-lines="6-7" heading="Main.java"}
+    @Override
+    public void start(Stage stage) {
 
-    //Scroll down to the end every time dialogContainer's height changes.
-    dialogContainer.heightProperty().addListener((observable) -> scrollPane.setVvalue(1.0));
-}
+        // current code ...
+
+        //Scroll down to the end every time dialogContainer's height changes.
+        dialogContainer.heightProperty().addListener((observable) -> scrollPane.setVvalue(1.0));
+    }
 ```
 
-Verify that the `ScrollPane` scrolls as intended. Feel free to use the following long message to test your program:
-```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet dictum diam, eget venenatis ligula blandit sed. Pellentesque gravida, mauris ut consectetur porta, tellus odio porttitor purus, dignissim vehicula dui neque sit amet tellus. Donec ullamcorper odio eu urna hendrerit, et pharetra nisi vehicula. Vestibulum mattis faucibus nunc.amcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Maecenas gravida ante non erat iaculis, nec bibendum ligula porta. Donec sagittis ultrices justo, sed sollicitudin eros volutpat sit amet. Etiam hendrerit enim sed nibh volutpat, vel tincidunt augue vehicula. Suspendisse quis imperdiet felis, ut scelerisque nunc.
-```
+Verify that the scroll pane now scrolls as intended.
+
 
 ## Iteration 2 – Adding dialog boxes for Duke's response
 
 The next step is to enable Duke to respond to sent messages. On top of showing what the user sent, we need to take the response generated my the program and pass it to the UI components.
 
-Update the `handleUserInput()` as follows, and add a `getResponse()` method to generate the duke's response.
+Now, let's add a method to  `Duke.java`, to generate responses for user messages. For the time being, let's keep the logic simple: Duke simply echos the user input, with the prefix `Duke heard: `.
 
-```java
-    /**
-     * Iteration 2:
-     * Creates two dialog boxes, one echoing user input and the other containing Duke's reply and then
-     * appends them to the dialog container. Clears the user input after processing.
-     */
-    private void handleUserInput() {
-        String userText = userInput.getText();
-        String dukeText = getResponse(userInput.getText());
-        dialogContainer.getChildren().addAll(
-                new DialogBox(userText, user),
-                new DialogBox(dukeText, duke)
-        );
-        userInput.clear();
+```java{highlight-lines="6-11" heading="Duke.java"}
+public class Duke {
+    public static void main(String[] args) {
+        System.out.println("Hello!");
     }
 
     /**
-     * You should have your own function to generate a response to user input.
-     * Replace this stub with your completed method.
+     * Generates a response for the user's chat message.
      */
-    private String getResponse(String input) {
+    public String getResponse(String input) {
         return "Duke heard: " + input;
+    }
+}
+```
+
+Next, let's create an instance of this Duke object in the `Main` (to be used for generating responses to user input).
+```java{highlight-lines="9" heading="Main.java"}
+//imports...
+
+public class Main extends Application {
+
+    //other variables
+
+    private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
+    private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
+    private Duke duke = new Duke();
+
+    //...
+}
+````
+
+Now, we can update the `handleUserInput()` as follows, to generate the response using the `duke` object.
+
+```java{heading="Main.java"}
+    private void handleUserInput() {
+        String userText = userInput.getText();
+        String dukeText = duke.getResponse(userInput.getText());
+        dialogContainer.getChildren().addAll(
+                new DialogBox(userText, userImage),
+                new DialogBox(dukeText, dukeImage)
+        );
+        userInput.clear();
     }
 ```
 
@@ -138,14 +158,13 @@ Run the program and see how it works.
 
 ## Iteration 3 – Adding custom behavior to DialogBox
 
-One additional benefit of defining a custom control is that we can add behavior specific to our `DialogBox`. Let’s add a method to flip a dialog box such that the image on the left to differentiate between user input and Duke’s output.
+One additional benefit of defining a custom control is that we can add behavior specific to our `DialogBox`. Let’s add a method to flip a dialog box such that it appears on the left edge, to differentiate between user input and Duke’s output.
 
-```java{highlight-lines="1,2,4,9-27" heading="DialogBox.java"}
+```java{highlight-lines="1-3" heading="DialogBox.java"}
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
+//previous imports
 
 //...
 
@@ -171,15 +190,15 @@ import javafx.scene.layout.HBox;
 //...
 ```
 
-Now, we can go back to the `Duke` class and change the event handler to use our new ways of creating `DialogBox` instances.
+Now, we can go back to the `Main` class and change the event handler to use our new ways of creating `DialogBox` instances.
 
-```java{highlight-lines="5-6" heading="Duke.java"}
+```java{highlight-lines="5-6" heading="Main.java"}
     private void handleUserInput() {
         String userText = userInput.getText();
         String dukeText = getResponse(userInput.getText());
         dialogContainer.getChildren().addAll(
-                DialogBox.getUserDialog(userText, user),
-                DialogBox.getDukeDialog(dukeText, duke)
+                DialogBox.getUserDialog(userText, userImage),
+                DialogBox.getDukeDialog(dukeText, dukeImage)
         );
         userInput.clear();
     }
@@ -209,4 +228,4 @@ You have successfully implemented a fully functional GUI for Duke! But there's m
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
-* Editors: Zhang Lanyu
+* Contributors: Zhang Lanyu
