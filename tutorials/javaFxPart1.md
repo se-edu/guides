@@ -153,7 +153,7 @@ This approach enables JavaFX to create the `Application` instance using the newl
 
 </box>
 
-Now, run `Launcher` and you should see something like this:
+Now, run the application (e.g., run `./gradlew run` command in the terminal) and you should see something like this:
 
 ![Hello World](images/javafx/HelloWorld.png)
 
