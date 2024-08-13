@@ -36,7 +36,7 @@ What happens when we need to display more than one `Node` on the `Scene`? For th
 
 <puml src="images/javafx/JavaFxHierarchy.puml" />
 
-From the diagram, you see that the root `Node` can contain many other `Nodes` and similarly, each of those `Nodes` can contain many other `Nodes`. This means that if we can find a _container_ to set as our root `Node`, we can place all our other `Nodes` in it.
+From the diagram, you see that the root `Node` can contain many other `Node`s and similarly, each of those `Node`s can contain many other `Node`s. This means that if we can find a _container_ to set as our root `Node`, we can place all our other `Node`s in it.
 
 But how do we get the exact layout we want in the UI? JavaFX provides that functionality in the form of **layout panes** in `javafx.scene.layouts`. Each layout pane follows a _layout policy_ to decide how to arrange its children. For example, the `VBox` lays out its children in a single vertical column and its counterpart, the `HBox` lays out its children in a single horizontal row.
 
