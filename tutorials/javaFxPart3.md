@@ -73,7 +73,7 @@ Then, add the following code:
      * the dialog container. Clears the user input after processing.
      */
     private void handleUserInput() {
-        dialogContainer.getChildren().addAll(new DialogBox(userInput.getText(), user));
+        dialogContainer.getChildren().addAll(new DialogBox(userInput.getText(), userImage));
         userInput.clear();
     }
 ```
