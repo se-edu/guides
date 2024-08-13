@@ -22,7 +22,7 @@ Notice how concise FXML is compared to the plain Java version.
 **Problem 2:** The process of visually enhancing the GUI is long and painful. Every small change requires us to rebuild and run the application, just to see if the change gave the result we wanted.<br>
 **A possible solution:** Once we switch over to using FXML, we can use a tool such as Scene Builder (a tool developed by Oracle and currently maintained by Gluon) to inspect and tweak the GUI design in a <tooltip content="What-You-See-Is-What-You-Get">WYSIWYG</tooltip> fashion.
 
-Let's return to Duke and convert it to use FXML instead, with give Scene Builder a try as well.
+Let's return to Duke and convert it to use FXML instead, and give Scene Builder a try as well.
 
 ## Refactor Duke to use FXML
 
@@ -174,7 +174,7 @@ Note that for `Label`, we set `wrapText` to **true** and `minHeight` to **-Infin
 
 ![Set minHeight for Label](images/javafx/NoOverrunDialogBox.png)
 
-Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and end with `...` instead:
+Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and ends with `...` instead:
 
 ![No minHeight for Label](images/javafx/OverrunDialogBox.png)
 
