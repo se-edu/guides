@@ -174,7 +174,7 @@ Note that for `Label`, we set `wrapText` to **true** and `minHeight` to **-Infin
 
 ![Set minHeight for Label](images/javafx/NoOverrunDialogBox.png)
 
-Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and end with `...` instead:
+Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and ends with `...` instead:
 
 ![No minHeight for Label](images/javafx/OverrunDialogBox.png)
 
