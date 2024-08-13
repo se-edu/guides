@@ -291,7 +291,7 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
 
 1. Let’s use Scene Builder to explore FXML files we created earlier.
     
-    Running SceneBuilder brings up the main screen.
+    Running Scene Builder brings up the main screen.
     Select `Open Project` > `src/main/resources/view/MainWindow.fxml`. Inspect each control and its properties.
 
    ![SceneBuilder opening MainWindow.fxml](images/javafx/SceneBuilder.png)
