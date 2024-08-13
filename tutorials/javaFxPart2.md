@@ -162,7 +162,7 @@ Image|Filename
 ![DaDuke](images/javafx/DaUser.png) | `DaUser.png`
 ![DaUser](images/javafx/DaDuke.png) | `DaDuke.png`
 
-Then, create an example `DialogBox` with a simple message.
+Then, create a sample `DialogBox` with a simple message.
 
 ```java{highlight-lines="1, 5-6, 14-16" heading="Main.java"}
 import javafx.scene.image.Image;
