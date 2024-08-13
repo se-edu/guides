@@ -23,7 +23,12 @@ Let's get started!
 
 ## Setting up the project
 
-To start, clone [this starter repo](https://github.com/se-edu/javafx-tutorial) to your computer, and open it in your favorite editor. As usual, configure the IDE to use the correct JDK version as well ([example](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk)).
+To start, fork [this starter repo](https://github.com/se-edu/javafx-tutorial), and clone it onto your computer. Next, open it in your favorite editor. Configure the IDE to use JDK 17 ([how to configure JDK in Intellij IDEA](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk)).
+
+<box type="tip" seamless>
+
+If you are following this tutorial to learn how to add a GUI to an existing app, we suggest that you follow this tutorial using the above repo first, without mixing tutorial code with your existing project code. Once you are happy with the GUI you've built following this tutorial, you can copy over the GUI code to your existing project, and adapt it to fit that project.
+</box>
 
 ## Setting up Java FX
 
@@ -148,7 +153,7 @@ This approach enables JavaFX to create the `Application` instance using the newl
 
 </box>
 
-Now, run `Launcher` and you should see something like this:
+Now, run the application (e.g., run `./gradlew run` command in the terminal) and you should see something like this:
 
 ![Hello World](images/javafx/HelloWorld.png)
 
