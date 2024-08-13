@@ -5,7 +5,7 @@
 
 # JavaFX tutorial part 3 – Interacting with the user
 
-In part 3, we achieved the desired layout. Now let’s make the application respond to user input. Rather than doing everything in one try, let’s iterate and build up towards our final goal.
+In part 2, we achieved the desired layout. Now let’s make the application respond to user input. Rather than doing everything in one try, let’s iterate and build up towards our final goal.
 
 But first, here's some useful background info on how JavaFX deals with user interactions (e.g., a button click):
 <box seamless>
