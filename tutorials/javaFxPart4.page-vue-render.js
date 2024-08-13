@@ -86,7 +86,7 @@ with(this){return _c('h2',{attrs:{"id":"using-scene-builder-to-tweak-the-gui"}},
 with(this){return _c('p',[_v("Next, let us explore how we can use the Scene Builder tool to tweak the GUI visually. "),_c('a',{attrs:{"href":"https://gluonhq.com/products/scene-builder/#download"}},[_v("Download")]),_v(" the appropriate version for your OS and install it.")])}
 },function anonymous(
 ) {
-with(this){return _c('li',[_c('p',[_v("Let’s use Scene Builder to explore FXML files we created earlier.")]),_v(" "),_c('p',[_v("Running SceneBuilder brings up the main screen.\nSelect "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Open Project")]),_v(" > "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("src/main/resources/view/MainWindow.fxml")]),_v(". Inspect each control and its properties.")]),_v(" "),_c('p',[_c('a',{attrs:{"href":"/guides/tutorials/images/javafx/SceneBuilder.png","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/guides/tutorials/images/javafx/SceneBuilder.png","alt":"SceneBuilder opening MainWindow.fxml"}})])])])}
+with(this){return _c('li',[_c('p',[_v("Let’s use Scene Builder to explore FXML files we created earlier.")]),_v(" "),_c('p',[_v("Running Scene Builder brings up the main screen.\nSelect "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Open Project")]),_v(" > "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("src/main/resources/view/MainWindow.fxml")]),_v(". Inspect each control and its properties.")]),_v(" "),_c('p',[_c('a',{attrs:{"href":"/guides/tutorials/images/javafx/SceneBuilder.png","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/guides/tutorials/images/javafx/SceneBuilder.png","alt":"SceneBuilder opening MainWindow.fxml"}})])])])}
 },function anonymous(
 ) {
 with(this){return _c('li',[_c('p',[_v("On the right accordion pane, you can modify the properties of the control that you have selected. Try changing the various settings and see what they do!")])])}
@@ -125,6 +125,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Jeffry Lum")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Tue, 13 Aug 2024, 23:01:03 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Tue, 13 Aug 2024, 23:06:55 GMT+8]")])])])}
 }];
   
