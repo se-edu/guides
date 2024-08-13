@@ -4,21 +4,20 @@
 </frontmatter>
 
 # JavaFX tutorial part 5 – Tweaking the GUI
-<div style="color:gray; margin:0 0 20px 0; font-size:10px">Last updated: 8/6/2024 </div>
 
 This part of the tutorial aims to help you with some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. [This section](#setting-up-and-linking-css-to-fxml) containing the CSS dummy code and linking it to SceneBuilder might be the most helpful.
 
 # Setting the dimensions
-As you may have noticed, some of the elements does not automatically follow the dimension of the app when resizing:
+As you may have noticed, some of the elements do not automatically follow the dimension of the app when resizing:
 - `TextField` does not automatically resize horizontally
 - `Send Button` does not follow to bottom right of the app
-- `ScrollPane` does not automatically resize both horizontally and vertically
+- `ScrollPane` does not automatically resize either horizontally and vertically
 
 <video oncontextmenu="return false;" width="100%" autoplay muted loop>
    <source src="videos/javafx/DoesNotFollowDimensionsDemo.mp4" type="video/mp4">
 </video>
 
-To rectify this, we can use a mixture of the following two techniques:
+To rectify this, we can use a combination of the following two techniques:
 1) [Automatically anchor nodes to the dimensions](#automatically-resize-elements)
 2) [Limit the user from resizing certain window dimensions](#setting-limit-to-window-size)
 
@@ -26,7 +25,7 @@ To rectify this, we can use a mixture of the following two techniques:
 ## Automatically Resize Elements
 
 We want to [anchor](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/layout/AnchorPane.html) the following nodes:
-- [Anchor `TextField`](#anchor-textfield) to the bottom while also automatically resize horizontally
+- [Anchor `TextField`](#anchor-textfield) to the bottom while also automatically resizing horizontally
 - [Anchor `Send Button`](#anchor-send-button) to the bottom right of the app
 - [Anchor `ScrollPane`](#anchor-scrollpane) to resize both horizontally and vertically
 
@@ -100,7 +99,7 @@ Alternatively, we can adjust in this line in the [FXML code](#automatically-resi
 ### Anchor ScrollPane
 Since we want to resize the chat both horizontally and vertically, we set the anchor pane constraints to **all** edges.
 
-At the same time we **enable Fit To Width** so that the content within the `ScrollPane` resize as well.
+At the same time we **enable Fit To Width** so that the contents within the `ScrollPane` resize as well.
 
 ![Update AnchorPane constraints of ScrollPane](images/javafx/ScrollPaneAnchorPaneConstraints.png)
 
@@ -346,7 +345,7 @@ To **view the effects of the margin**, you may either
 
 ## Borders
 
-Labels, TextBoxes, Buttons, more or less all the nodes used so far are subclasses of [Region](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#region), and hence share the following CSS properties for borders:
+`Label`s, `TextBox`es, `Button`s, more or less all the nodes used so far are subclasses of [Region](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#region), and hence share the following CSS properties for borders:
 
 | CSS property        | Description                                                    | 
 |---------------------|----------------------------------------------------------------|
@@ -384,8 +383,8 @@ There are a few ways to set a color.
 3. Using an existing [named color](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#typecolor)
 4. Using your own defined [(looked-up) color](#looked-up-color)
 5. Using [gradients](#gradient-color)
-6. Using a [ladder](#ladder) to change color based on background
-7. Using [derive](#derive) to get a brighter or darker version of selected color
+6. Using a [ladder](#ladder) to change color based on the background
+7. Using [derive](#derive) to get a brighter or darker version of a selected color
 
 These are the common JavaFX properties to set colors:
 - `-fx-border-color`
@@ -614,16 +613,15 @@ In this case, there are three different states:
    <source src="videos/javafx/ButtonStatesDemo.mp4" type="video/mp4">
 </video>
 
-This works for TextFields/Labels/Images as well.
+This works for `TextField`s/`Label`s/`Image`s as well.
 
 Other state(s) include:
 
-- `:focused`, when the node is selected (e.g., selecting the TextField)
-
+- `:focused`, when the node is selected (e.g., selecting the `TextField`)
 
 ## Image and shadows
 
-Since an ImageView is a [node](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#node), we can play around with the size, opacity, rotation, and more. This also means that the following properties can also be used for other kind of nodes.
+Since an `ImageView` is a [node](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#node), we can play around with the size, opacity, rotation, and more. This also means that the following properties can also be used for other kind of nodes.
 
 
 ```css {heading="**css/dialog-box.css**" start-from=14}
@@ -695,7 +693,7 @@ The [JavaFX CSS reference guide](https://docs.oracle.com/javafx/2/api/javafx/sce
 `.text-field`. Additionally, most elements/nodes (including panes) are [Regions](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#region), so they inherit those properties as well. 
 
 Some nodes don't have a style class name, like `ImageView`. To customize such nodes, you can either:
-- [Create your own style class and the style class manually](#flipped-text-bubbles)
+- [Create your own style class manually](#flipped-text-bubbles)
 - [Apply style to just that specific node with the id (e.g., `#displayPicture`) instead](#image-and-shadows)
 
 # Enhancements
@@ -707,7 +705,7 @@ Let's create different style classes for the following commands:
 - `mark` a task
 - `delete` a task
 
-1. Create style classes for each type of commands in `dialog-box.css`.
+1. Create style classes for each type of command in `dialog-box.css`.
    ```css {heading="**css/dialog-box.css**"}
    /* Paste this below reply-label */
    .add-label {
@@ -800,7 +798,7 @@ Let's create different style classes for the following commands:
 
 ## Set image as background
 
-We can set an image using CSS. Let's set the background image (in `src/main/resources/images/`) for our `AnchorPane` as follows:
+We can set a background image using CSS. Let's set the background image (in `src/main/resources/images/`) for our `AnchorPane` as follows:
 
 ### Resize Image
 
@@ -882,7 +880,7 @@ We have a few options for how we want to repeat our background image.
    </video>
    </tab>
    <tab header="Repeat">
-   Pictures repeating on both axis.
+   Pictures repeating on both axes.
 
    ```css {heading="**css/main.css**" start-from=1 highlight-lines=5-6}
    .root {
@@ -948,7 +946,7 @@ Here are other things you can do with your app to make it more personalized:
 - Change the [title and icon](https://www.youtube.com/watch?v=UZKKaI8OnjY) of your app
 - Change the send button to an [icon](https://edencoding.com/how-to-add-an-image-to-a-button/)
 - Make profile pictures [circular](https://stackoverflow.com/questions/42116313/how-to-set-an-image-in-a-circle)
-- Set GIF as profile pictures
+- Set GIFs as profile pictures
 - Add [sound effects](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/media/AudioClip.html) when sending messages
 
 [:fas-arrow-left: Previous](javaFxPart4.md) | [:fas-arrow-up: **ToC**](javaFx.md)
