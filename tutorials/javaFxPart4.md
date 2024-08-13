@@ -142,7 +142,7 @@ Even private methods like `handleUserInput` can be referenced from an FXML file 
 The FXML runtime will map a control with a `fx:id` defined in FXML to a variable with the same name in its controller.
 Notice how in `MainWindow`, we can invoke `userInput.clear()` just as we did in the previous non-FXML version of Duke (this is enabled by the `<TextField fx:id="userInput" ... />` in the `MainWindow.fxml`).
 
-Similarly, let's create an FXML file for the DialogBox (to be placed in `src/main/resources/view/`):
+Similarly, let's create an FXML file for the `DialogBox` (to be placed in `src/main/resources/view/`):
 
 ```xml{heading="DialogBox.fxml"}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -170,17 +170,17 @@ Similarly, let's create an FXML file for the DialogBox (to be placed in `src/mai
 ```
 <box type="info" seamless>
 
-Note that for `Label`, we set `wrapText` to **true** and `minHeight` to **-Infinity**. This configuration wraps the text within the label, removes the minimum height constraint, and allows the label to grow vertically as needed.
+Note that for `Label`, we set `wrapText` to **true** and `minHeight` to **-Infinity**. This configuration wraps the text within the label, removes the minimum height constraint, and allows the label to grow vertically as needed:
 
 ![Set minHeight for Label](images/javafx/NoOverrunDialogBox.png)
 
-Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and end with `...` instead.
+Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and end with `...` instead:
 
 ![No minHeight for Label](images/javafx/OverrunDialogBox.png)
 
 </box>
 
-With that, we can trim down the `DialogBox.java` to contain only the _controller_ aspect.
+With that, we can trim down the `DialogBox.java` to contain only the _controller_ aspect:
 
 ```java{heading="DialogBox.java"}
 import java.io.IOException;
