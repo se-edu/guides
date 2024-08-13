@@ -204,7 +204,7 @@ Almost every JavaFX object offer properties that you can set to customize its lo
 Add the following code to the bottom of the `start` method. You'll have to add `import javafx.scene.layout.Region;` to the imports too:
 
 ```java{highlight-lines="1, 10-39" heading="Main.java"}
-import javafx.scene.layout.Region
+import javafx.scene.layout.Region;
 // ...
 
     @Override

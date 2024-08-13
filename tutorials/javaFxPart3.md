@@ -35,7 +35,7 @@ First, let's #r#delete the following two lines## that show a dialog box by defau
         //Setting up required components
         // ...
 
-        DialogBox dialogBox = new DialogBox("Hello!", user);
+        DialogBox dialogBox = new DialogBox("Hello!", userImage);
         dialogContainer.getChildren().addAll(dialogBox);
 
         // ...
