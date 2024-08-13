@@ -283,4 +283,3 @@ Run the application again. It should now look like this:
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
-* Contributors: Zhang Lanyu

@@ -228,4 +228,3 @@ You have successfully implemented a fully functional GUI for Duke! But there's m
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
-* Contributors: Zhang Lanyu

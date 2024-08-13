@@ -180,4 +180,3 @@ Congratulations! You have created your first GUI application!
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
-* Contributors: Zhang Lanyu
