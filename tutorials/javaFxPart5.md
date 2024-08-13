@@ -5,7 +5,7 @@
 
 # JavaFX tutorial part 5 – Tweaking the GUI
 
-This part of the tutorial aims to help you with some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. [This section](#setting-up-and-linking-css-to-fxml) containing the CSS dummy code and linking it to SceneBuilder might be the most helpful.
+This part of the tutorial aims to help you with some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. [This section](#setting-up-and-linking-css-to-fxml) containing the CSS dummy code and linking it to Scene Builder might be the most helpful.
 
 # Setting the dimensions
 As you may have noticed, some of the elements do not automatically follow the dimension of the app when resizing:
@@ -29,7 +29,7 @@ We want to [anchor](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/lay
 - [Anchor `Send Button`](#anchor-send-button) to the bottom right of the app
 - [Anchor `ScrollPane`](#anchor-scrollpane) to resize both horizontally and vertically
 
-We can do this in FXML. Alternatively, we can do this in SceneBuilder, as shown in later sections.
+We can do this in FXML. Alternatively, we can do this in Scene Builder, as shown in later sections.
 
 ```fxml {heading="**MainWindows.fxml**" start-from=1 highlight-lines="11, 12, 13"}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -55,7 +55,7 @@ We can do this in FXML. Alternatively, we can do this in SceneBuilder, as shown 
 ```
 
 ### Anchor TextField
-Open `src/main/resources/view/MainWindow.fxml` in SceneBuilder and click on `TextField`. On the right accordion pane you should be able to see the AnchorPane constraints of the `TextField`.
+Open `src/main/resources/view/MainWindow.fxml` in Scene Builder and click on `TextField`. On the right accordion pane you should be able to see the AnchorPane constraints of the `TextField`.
 ![SceneBuilder opening MainWindow.fxml with Layout view](images/javafx/TextFieldAnchorPaneConstraints1.png)
 
 Children within `AnchorPane` are able to "anchor" their edges to the `AnchorPane` itself if a constraint is set.
@@ -231,14 +231,14 @@ Create the following files in `src/main/resources/css`:
 
 ```
 
-Proceed with the following steps to link the CSS files to the FXML files through SceneBuilder.
+Proceed with the following steps to link the CSS files to the FXML files through Scene Builder.
 
-1. Open `MainWindow.fxml` in SceneBuilder, select the `AnchorPane`.
+1. Open `MainWindow.fxml` in Scene Builder, select the `AnchorPane`.
 
 2. On the right accordion pane, click on the plus sign under Stylesheets within Properties as shown below and choose the previously created `src/main/resources/css/main.css` file.
    ![Link CSS to MainWindow.fxml](images/javafx/LinkCSSToFXML1.png)
 
-3. If you don't see this updated view, try **saving**, then reopening the file with SceneBuilder again.
+3. If you don't see this updated view, try **saving**, then reopening the file with Scene Builder again.
    <box type="important" seamless bold>
 
    **Remember to save the `.fxml` file after linking!**
@@ -287,13 +287,13 @@ In short, padding represents the space between the content and its border, while
 
 Let us play around with the padding and margin of the text bubble.
 
-Open `DialogBox.fxml` in SceneBuilder. Click on `Label`, and look at layout in the right accordion panel.
+Open `DialogBox.fxml` in Scene Builder. Click on `Label`, and look at layout in the right accordion panel.
 
 ![Padding and Margin Demo](images/javafx/PaddingAndMarginDemo.png)
 
 <box type="tip" seamless>
 
-Default controls for zooming and zooming out in SceneBuilder
+Default controls for zooming and zooming out in Scene Builder
 
 Zoom in: `[CTRL] + [+]` or `[ALT] + [⌘] + [=]`
 
