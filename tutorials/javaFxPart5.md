@@ -346,7 +346,7 @@ To **view the effects of the margin**, you may either
 
 ## Borders
 
-`Label`s, `TextBoxe`s, `Button`s, more or less all the nodes used so far are subclasses of [Region](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#region), and hence share the following CSS properties for borders:
+`Label`s, `TextBox`es, `Button`s, more or less all the nodes used so far are subclasses of [Region](https://docs.oracle.com/javafx/2/api/javafx/scene/doc-files/cssref.html#region), and hence share the following CSS properties for borders:
 
 | CSS property        | Description                                                    | 
 |---------------------|----------------------------------------------------------------|
