@@ -4,7 +4,6 @@
 </frontmatter>
 
 # JavaFX tutorial part 2 - Creating a GUI for Duke
-<div style="color:gray; margin:0 0 20px 0; font-size:10px">Last updated: 13/8/2024 </div>
 
 In this part of the tutorial, we will be creating a GUI for Duke from scratch based on the following mockup.
 

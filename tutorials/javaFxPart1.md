@@ -4,7 +4,6 @@
 </frontmatter>
 
 # JavaFX tutorial part 1 – Introduction
-<div style="color:gray; margin:0 0 20px 0; font-size:10px">Last updated: 13/8/2024 </div>
 
 ## Lifecycle of a JavaFX  application
 

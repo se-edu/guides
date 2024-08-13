@@ -4,7 +4,6 @@
 </frontmatter>
 
 # JavaFX tutorial part 4 – Using FXML
-<div style="color:gray; margin:0 0 20px 0; font-size:10px">Last updated: 13/8/2024 </div>
 
 While we have produced a fully functional prototype in part 3, there are some problems with the way we implemented it, using Java code alone:
 

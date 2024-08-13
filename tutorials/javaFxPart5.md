@@ -4,7 +4,7 @@
 </frontmatter>
 
 # JavaFX tutorial part 5 – Tweaking the GUI
-<div style="color:gray; margin:0 0 20px 0; font-size:10px">Last updated: 13/8/2024 </div>
+<div style="color:gray; margin:0 0 20px 0; font-size:10px">Last updated: 8/6/2024 </div>
 
 This part of the tutorial aims to help you with some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. [This section](#setting-up-and-linking-css-to-fxml) containing the CSS dummy code and linking it to SceneBuilder might be the most helpful.
 

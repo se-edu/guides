@@ -4,7 +4,6 @@
 </frontmatter>
 
 # JavaFX tutorial part 3 – Interacting with the user
-<div style="color:gray; margin:0 0 20px 0; font-size:10px">Last updated: 13/8/2024 </div>
 
 In part 3, we achieved the desired layout. Now let’s make the application respond to user input. Rather than doing everything in one try, let’s iterate and build up towards our final goal.
 
