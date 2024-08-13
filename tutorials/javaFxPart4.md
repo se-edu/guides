@@ -8,7 +8,7 @@
 While we have produced a fully functional prototype in part 3, there are some problems with the way we implemented it, using Java code alone:
 
 **Problem 1:** The `MainWindow` class attempts to do it all. Code for visual tweaks, listeners and even utility methods are all in one file. This makes it difficult to find and make changes to existing code.<br>
-**A possible solution:** An alternative approach (to hand-coding everything) is to use FXML -- an XML-based language that allows us to define UIs. Properties of JavaFX objects can be defined in the FXML file. For example consider the following FXML snippet that defines a TextField similar to the one that we programmatically defined previous in part 2.:
+**A possible solution:** An alternative approach (to hand-coding everything) is to use FXML -- an XML-based language that allows us to define UIs. Properties of JavaFX objects can be defined in the FXML file. For example consider the following FXML snippet that defines a `TextField` similar to the one that we programmatically defined previous in part 2:
 ```xml
  <TextField fx:id="userInput"
             layoutY="558.0"
@@ -20,13 +20,13 @@ While we have produced a fully functional prototype in part 3, there are some pr
 Notice how concise FXML is compared to the plain Java version.
 
 **Problem 2:** The process of visually enhancing the GUI is long and painful. Every small change requires us to rebuild and run the application, just to see if the change gave the result we wanted.<br>
-**A possible solution:** Once we switch over to using FXML, we can use a tool such as Scene Builder (a tool developed by Oracle and currently maintained by Gluon) to inspect and tweak the GUI design in a <tooltip content="What-You-See-Is-What-You-Get">WYSIWYG</tooltip>) fashion.
+**A possible solution:** Once we switch over to using FXML, we can use a tool such as Scene Builder (a tool developed by Oracle and currently maintained by Gluon) to inspect and tweak the GUI design in a <tooltip content="What-You-See-Is-What-You-Get">WYSIWYG</tooltip> fashion.
 
 Let's return to Duke and convert it to use FXML instead, with give Scene Builder a try as well.
 
 ## Refactor Duke to use FXML
 
-FXML allows you to separate the GUI design (the so-called _view_), from the code that controls the GUI (the so-called _controllers_). First, lets extract out a `MainWindow` class to contain the _controller_ aspect of the main GUI.
+FXML allows you to separate the GUI design (the so-called _view_), from the code that controls the GUI (the so-called _controllers_). First, lets extract out a `MainWindow` class to contain the _controller_ aspect of the main GUI:
 
 ```java{heading="MainWindow.java"}
 import javafx.fxml.FXML;
@@ -174,7 +174,7 @@ Note that for `Label`, we set `wrapText` to **true** and `minHeight` to **-Infin
 
 ![Set minHeight for Label](images/javafx/NoOverrunDialogBox.png)
 
-Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and ending with `...` instead.
+Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and end with `...` instead.
 
 ![No minHeight for Label](images/javafx/OverrunDialogBox.png)
 
@@ -243,7 +243,7 @@ public class DialogBox extends HBox {
 }
 ```
 
-When we create a new instance of `DialogBox` (i.e., in the `DialogBox` constructor), we set both the controller and root Node to `DialogBox`. From this point onwards we can interact with `DialogBox` as we did in the non-FXML verison of Duke. Note that this is another way of connecting up the fxml view file with the Java controller file (different from the `fx:controller` technique we used to link up the `MainWindow.fxml` with the `MainWindow.java`).
+When we create a new instance of `DialogBox` (i.e., in the `DialogBox` constructor), we set both the controller and root `Node` to `DialogBox`. From this point onwards we can interact with `DialogBox` as we did in the non-FXML verison of Duke. Note that this is another way of connecting up the fxml view file with the Java controller file (different from the `fx:controller` technique we used to link up the `MainWindow.fxml` with the `MainWindow.java`).
 
 All that remains to do now is to trim the `Main` class, as follows:
 

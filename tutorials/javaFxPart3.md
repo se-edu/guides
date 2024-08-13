@@ -26,7 +26,7 @@ When an event is detected, JavaFX will call the respective handlers that was pre
 
 For Duke, there are two events that we want to respond to, namely the user pressing <kbd>Enter</kbd> key in the text box  and clicking the `Send` button. These map to the `onAction` event for the `TextField` and the `onMouseClicked` event for the `Button`, respectively.
 
-First, let's #r#delete the following two lines## that shows a dialog box by default.
+First, let's #r#delete the following two lines## that show a dialog box by default:
 
 ```java{heading="Main.java" highlight-lines="7-8"}
 
@@ -47,7 +47,7 @@ First, let's #r#delete the following two lines## that shows a dialog box by defa
 
 ```
 
-Then, add the following code.
+Then, add the following code:
 
 ```java{highlight-lines="8-16,19-26" heading="Main.java"}
     @Override
@@ -85,7 +85,7 @@ Run the program and give it a whirl! Ensure the GUI responds correctly to both w
 
 At first glance everything appears to work perfectly. Keep entering more text entries (or longer text entries) until the visible area fills up. You'll notice that when the chat entries fills up beyond scroll pane's display area, it does not scroll down automatically to show the latest entry, as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
 
-Update the `Main#start` method as shown below.
+Update the `Main#start` method as shown below:
 
 ```java{highlight-lines="6-7" heading="Main.java"}
     @Override
@@ -122,7 +122,7 @@ public class Duke {
 }
 ```
 
-Next, let's create an instance of this Duke object in the `Main` (to be used for generating responses to user input).
+Next, let's create an instance of this Duke object in the `Main` class (to be used for generating responses to user input).
 ```java{highlight-lines="9" heading="Main.java"}
 //imports...
 
@@ -214,10 +214,10 @@ You have successfully implemented a fully functional GUI for Duke! But there's m
 ## Exercises
 
 1. While the GUI looks similar to the mockup, there are still parts that need to be refined. Try your hand at some of these tasks:
-   * Add padding between each DialogBox
-   * Add padding between each ImageView and its Label
-   * Clip the ImageView into a circle
-   * Add background color to each dialog box
+   * Add padding between each `DialogBox`
+   * Add padding between each `ImageView` and its `Label`
+   * Clip the `ImageView` into a circle
+   * Add background color to each `DialogBox`
 
 1. After attempting the changes, reflect critically on the following:
    * What was the development workflow like?

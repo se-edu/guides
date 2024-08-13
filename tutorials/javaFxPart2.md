@@ -45,7 +45,7 @@ But how do we get the exact layout we want in the UI? JavaFX provides that funct
 A comprehensive list of layouts and how they behave is available here from the [official documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html).
 </box>
 
-One way to obtain the layout in the mockup is as follows.
+One way to obtain the layout in the mockup is as follows:
 
 <puml>
 @startuml
@@ -162,7 +162,7 @@ Image|Filename
 ![DaDuke](images/javafx/DaUser.png) | `DaUser.png`
 ![DaUser](images/javafx/DaDuke.png) | `DaDuke.png`
 
-Then, create an example DialogBox with a simple message.
+Then, create an example `DialogBox` with a simple message.
 
 ```java{highlight-lines="1, 5-6, 14-16" heading="Main.java"}
 import javafx.scene.image.Image;
@@ -188,7 +188,7 @@ public class Main extends Application {
 ```
 <box type="important" seamless>
 
-Note the image location (e.g., `/images/DaUser.png`) is given relative to the `main/resources` folder and there is a `/` in front. Follow the same for similar cases of using `getResourceAsStream` method in later parts of this tutorial.
+Note the image location (e.g., `/images/DaUser.png`) is given relative to the `main/resources` folder and there is a `/` in front. Do the same for similar cases of using `getResourceAsStream` method in later parts of this tutorial.
 </box>
 
 Run the application and you should see something like this:
@@ -201,7 +201,7 @@ That is not what we were expecting, as the elements are not in the layout we wan
 
 Almost every JavaFX object offer properties that you can set to customize its look and feel. For example, the `Stage` allows you to set its preferred size and title. Again, refer to the official [JavaFX documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html) for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:
 
-Add the following code to the bottom of the `start` method. You'll have to add `import javafx.scene.layout.Region;` to the imports too.
+Add the following code to the bottom of the `start` method. You'll have to add `import javafx.scene.layout.Region;` to the imports too:
 
 ```java{highlight-lines="1, 10-39" heading="Main.java"}
 import javafx.scene.layout.Region

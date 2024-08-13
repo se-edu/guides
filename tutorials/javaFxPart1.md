@@ -7,13 +7,13 @@
 
 ## Lifecycle of a JavaFX  application
 
-Imagine yourself as a director of a play. First you provision the props that you will feature in your play. These can be hand props for your actors to interact with or even set dressings just to liven up the background. You then decide where to layout the props for every scene. With a proper script in hand, you can finally approach a theatre and request for a stage. There on, it’s just a matter of pulling the curtains on your masterpiece.
+Imagine yourself as a director of a play. First you provision the props that you will feature in your play. These can be hand props for your actors to interact with or even set dressings just to liven up the background. You then decide where to place the props for every scene. With a proper script in hand, you can finally approach a theatre and request for a stage. Thereafter, it’s just a matter of pulling the curtains on your masterpiece.
 
 <puml src="images/javafx/JavaFxHierarchy.puml" />
 
-A JavaFX application is like a play you are directing. Instead of creating props, you create `Nodes` (`Nodes` are the fundamental building blocks of a JavaFX application), and place them onto a `Scene` (a scene is a graph of `Node`s). Then, you set your `Scene` on a `Stage` provided by JavaFX. When you call `Stage#show()` method, JavaFX renders a window with your `Stage` on it.
+A JavaFX application is like a play you are directing. Instead of creating props, you create `Node`s (`Node`s are the fundamental building blocks of a JavaFX application), and place them onto a `Scene` (a scene is a graph of `Node`s). Then, you set your `Scene` on a `Stage` provided by JavaFX. When you call `Stage#show()` method, JavaFX renders a window with your `Stage` on it.
 
-Well, that's a very high-level view of how JavaFX works. The actual implementation of a Java FX is a bit more (ahem...) "involved". This tutorial takes you through the steps of building a typical Java FX application, using a chatbot application called Duke, as a running example. Given below is what the end result can look like, if you follow this tutorial until the end.
+Well, that's a very high-level view of how JavaFX works. The actual implementation of a Java FX is a bit more (ahem...) "involved". This tutorial takes you through the steps of building a typical Java FX application, using a chatbot application called Duke as a running example. Given below is what the end result can look like if you follow this tutorial until the end:
 
 <video oncontextmenu="return false;" width="700px" autoplay muted loop>
 <source src="videos/javafx/DynamicStyleDemo.mp4" type="video/mp4">
@@ -65,7 +65,7 @@ After updating the `build.gradle` file, remember to reload the Gradle dependenci
 
 ## Writing your first Java FX program
 
-As customary, let’s start off with a simple “Hello World” program. Let's say you have a class named `Duke` that you want to make a GUI for. Let's call this GUI class `Main`. When using Java FX, this GUI class needs to extend `javafx.application.Application` which in turn requires you to override the abstract `Application#start(Stage)` method and provide a concrete implementation. The parameter `Stage` is the _primary stage_ that JavaFX provides.
+As is customary, let’s start off with a simple “Hello World” program. Let's say you have a class named `Duke` that you want to make a GUI for. Let's call this GUI class `Main`. When using Java FX, this GUI class needs to extend `javafx.application.Application` which in turn requires you to override the abstract `Application#start(Stage)` method and provide a concrete implementation. The parameter `Stage` is the _primary stage_ that JavaFX provides.
 
 ```java{heading="Main.java"}
 import javafx.application.Application;
@@ -122,7 +122,7 @@ application {
 
 JavaFX creates the `Application` instance by calling the no-argument constructor. If there is no other constructor in the class (such as the `Main` we created above), there is no need to provide such a constructor because Java automatically provides a no-argument constructor when there are no other constructors.
 
-But if you already have an existing constructor which takes arguments in that class (in which case Java will not provide a no-argument constructor automatically), you need to create an overloaded constructor with no arguments yourself. An example given below.
+But if you already have an existing constructor which takes arguments in that class (in which case Java will not provide a no-argument constructor automatically), you need to create an overloaded constructor with no arguments yourself. An example given below:
 
 ```java{highlight-lines="11-14" heading="Main.java"}
 //...
@@ -172,7 +172,7 @@ Congratulations! You have created your first GUI application!
    1. Try changing the `Label` to have a font of Arial at size 50.
 
 1. You’ve learnt that a `Stage` can be thought of as a window.
-   1. Can you have more than one `Stage` an application?
+   1. Can you have more than one `Stage` in an application?
    1. Try creating another stage and showing it! What happens?
 
 [:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 2 - **Creating a GUI for Duke**](javaFxPart2.md)
@@ -180,3 +180,4 @@ Congratulations! You have created your first GUI application!
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
+* Contributors: Zhang Lanyu
