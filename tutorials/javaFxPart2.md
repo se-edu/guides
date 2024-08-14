@@ -273,7 +273,6 @@ Run the application again. It should now look like this:
 1. In the tutorial, we used an `AnchorPane` to achieve the desired layout.
    1. Can you find other ways to obtain a similar layout?
    1. What are the advantages and disadvantages of your layout?
-
 1. Try interacting with the application
    1. What happens when you press the `Enter` key or left-click the send button?
    1. Why?

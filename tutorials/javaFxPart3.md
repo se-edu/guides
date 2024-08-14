@@ -218,7 +218,6 @@ You have successfully implemented a fully functional GUI for Duke! But there's m
    * Add padding between each `ImageView` and its `Label`
    * Clip the `ImageView` into a circle
    * Add background color to each `DialogBox`
-
 1. After attempting the changes, reflect critically on the following:
    * What was the development workflow like?
    * Is the code base well-organized?
