@@ -274,7 +274,7 @@ Run the application again. It should now look like this:
    1. Can you find other ways to obtain a similar layout?
    1. What are the advantages and disadvantages of your layout?
 1. Try interacting with the application
-   1. What happens when you press the `Enter` key or left-click the send button?
+   1. What happens when you press the <kbd>Enter</kbd> key or click the `Send` button?
    1. Why?
 
 [:fas-arrow-left: Previous](javaFxPart1.md) | [:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 3 - **Interacting with the user**](javaFxPart3.md)

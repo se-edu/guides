@@ -5,12 +5,12 @@
 
 # JavaFX tutorial part 5 – Tweaking the GUI
 
-This part of the tutorial aims to help you with some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. [This section](#setting-up-and-linking-css-to-fxml) containing the CSS dummy code and linking it to Scene Builder might be the most helpful.
+This part of the tutorial aims to help you with some of the layout/CSS related aspects so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interest you. [This section](#setting-up-and-linking-css-to-fxml) containing the CSS dummy code and linking it to Scene Builder might be the most helpful.
 
 # Setting the dimensions
 As you may have noticed, some of the elements do not automatically follow the dimension of the app when resizing:
 - `TextField` does not automatically resize horizontally
-- `Send Button` does not follow to bottom right of the app
+- `Send` button does not follow to the bottom right of the app
 - `ScrollPane` does not automatically resize either horizontally and vertically
 
 <video oncontextmenu="return false;" width="100%" autoplay muted loop>

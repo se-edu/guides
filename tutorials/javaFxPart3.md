@@ -195,7 +195,7 @@ Now, we can go back to the `Main` class and change the event handler to use our 
 ```java{highlight-lines="5-6" heading="Main.java"}
     private void handleUserInput() {
         String userText = userInput.getText();
-        String dukeText = getResponse(userInput.getText());
+        String dukeText = duke.getResponse(userInput.getText());
         dialogContainer.getChildren().addAll(
                 DialogBox.getUserDialog(userText, userImage),
                 DialogBox.getDukeDialog(dukeText, dukeImage)
