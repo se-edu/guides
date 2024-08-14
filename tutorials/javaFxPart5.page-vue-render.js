@@ -11,13 +11,13 @@ with(this){return _c('h1',{attrs:{"id":"guides-for-se-student-projects"}},[_c('s
 with(this){return _c('h1',{attrs:{"id":"javafx-tutorial-part-5-tweaking-the-gui"}},[_v("JavaFX tutorial part 5 – Tweaking the GUI"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#javafx-tutorial-part-5-tweaking-the-gui","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("This part of the tutorial aims to help you with some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interests you. "),_c('a',{attrs:{"href":"#setting-up-and-linking-css-to-fxml"}},[_v("This section")]),_v(" containing the CSS dummy code and linking it to Scene Builder might be the most helpful.")])}
+with(this){return _c('p',[_v("This part of the tutorial aims to help you with some of the layout/CSS related stuff so that you may focus more on designing your own GUI. As this guide is kind of long, it can feel daunting to get started, especially for the CSS sections. Therefore, feel free to only look at the sections that interest you. "),_c('a',{attrs:{"href":"#setting-up-and-linking-css-to-fxml"}},[_v("This section")]),_v(" containing the CSS dummy code and linking it to Scene Builder might be the most helpful.")])}
 },function anonymous(
 ) {
 with(this){return _c('h1',{attrs:{"id":"setting-the-dimensions"}},[_v("Setting the dimensions"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#setting-the-dimensions","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("TextField")]),_v(" does not automatically resize horizontally")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Send Button")]),_v(" does not follow to bottom right of the app")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ScrollPane")]),_v(" does not automatically resize either horizontally and vertically")])])}
+with(this){return _c('ul',[_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("TextField")]),_v(" does not automatically resize horizontally")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Send")]),_v(" button does not follow to the bottom right of the app")]),_v(" "),_c('li',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ScrollPane")]),_v(" does not automatically resize either horizontally and vertically")])])}
 },function anonymous(
 ) {
 with(this){return _c('ol',[_c('li',[_c('a',{attrs:{"href":"#automatically-resize-elements"}},[_v("Automatically anchor nodes to the dimensions")])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"#setting-limit-to-window-size"}},[_v("Limit the user from resizing certain window dimensions")])])])}
@@ -548,6 +548,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Debbie Hii (@flexibo)")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 14 Aug 2024, 0:48:54 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 14 Aug 2024, 14:44:31 GMT+8]")])])])}
 }];
   
