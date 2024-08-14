@@ -98,7 +98,7 @@ with(this){return _c('code',{pre:true,attrs:{"heading":"DialogBox.java","class":
 with(this){return _c('h2',{attrs:{"id":"exercises"}},[_v("Exercises"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#exercises","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_v("In the tutorial, we used an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AnchorPane")]),_v(" to achieve the desired layout.\n"),_c('ol',[_c('li',[_v("Can you find other ways to obtain a similar layout?")]),_v(" "),_c('li',[_v("What are the advantages and disadvantages of your layout?")])])]),_v(" "),_c('li',[_v("Try interacting with the application\n"),_c('ol',[_c('li',[_v("What happens when you press the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Enter")]),_v(" key or click the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Send")]),_v(" button?")]),_v(" "),_c('li',[_v("Why?")])])])])}
+with(this){return _c('ol',[_c('li',[_v("In the tutorial, we used an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AnchorPane")]),_v(" to achieve the desired layout.\n"),_c('ol',[_c('li',[_v("Can you find other ways to obtain a similar layout?")]),_v(" "),_c('li',[_v("What are the advantages and disadvantages of your layout?")])])]),_v(" "),_c('li',[_v("Try interacting with the application\n"),_c('ol',[_c('li',[_v("What happens when you press the "),_c('kbd',[_v("Enter")]),_v(" key or click the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Send")]),_v(" button?")]),_v(" "),_c('li',[_v("Why?")])])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('a',{attrs:{"href":"/guides/tutorials/javaFxPart1.html"}},[_c('span',{staticClass:"fas fa-arrow-left",attrs:{"aria-hidden":"true"}}),_v(" Previous")]),_v(" | "),_c('a',{attrs:{"href":"/guides/tutorials/javaFx.html"}},[_c('span',{staticClass:"fas fa-arrow-up",attrs:{"aria-hidden":"true"}}),_v(" "),_c('strong',[_v("ToC")])]),_v(" | "),_c('span',{staticClass:"badge rounded-pill bg-primary"},[_c('strong',[_c('span',{staticClass:"large"},[_v("What's next?")])])]),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/javaFxPart3.html"}},[_c('span',{staticClass:"fas fa-arrow-right",attrs:{"aria-hidden":"true"}}),_v(" JavaFX tutorial part 3 - "),_c('strong',[_v("Interacting with the user")])])])}
@@ -110,6 +110,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Jeffry Lum")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 14 Aug 2024, 14:45:50 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 14 Aug 2024, 14:50:09 GMT+8]")])])])}
 }];
   

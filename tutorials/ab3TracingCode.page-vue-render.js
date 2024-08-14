@@ -68,7 +68,7 @@ with(this){return _c('p',[_v("Recall from the User Guide that the "),_c('code',{
 with(this){return _c('ol',[_c('li',[_v("To start the debugging session, simply "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Run")]),_v(" > "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Debug Main")])])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',{attrs:{"start":"2"}},[_c('li',[_c('p',[_v("When the GUI appears, enter "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 1 n/Alice Yeoh")]),_v(" into the command box and press "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Enter")]),_v(".")])]),_v(" "),_c('li',[_c('p',[_v("The Debugger tool window should show up and show something like this:"),_c('br'),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/images/tracing/DebuggerStep1.png","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/guides/tutorials/images/tracing/DebuggerStep1.png","alt":"DebuggerStep1"}})])])])])}
+with(this){return _c('ol',{attrs:{"start":"2"}},[_c('li',[_c('p',[_v("When the GUI appears, enter "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 1 n/Alice Yeoh")]),_v(" into the command box and press "),_c('kbd',[_v("Enter")]),_v(".")])]),_v(" "),_c('li',[_c('p',[_v("The Debugger tool window should show up and show something like this:"),_c('br'),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/images/tracing/DebuggerStep1.png","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/guides/tutorials/images/tracing/DebuggerStep1.png","alt":"DebuggerStep1"}})])])])])}
 },function anonymous(
 ) {
 with(this){return _c('ol',{attrs:{"start":"4"}},[_c('li',[_v("Use the "),_c('em',[_v("Show execution point")]),_v(" feature to jump to the line of code that we stopped at (which should be\n"),_c('code',{pre:true,attrs:{"class":"hljs inline java"}},[_v("CommandResult commandResult = logic.execute(commandText);")]),_v(", as that is where we put the breakpoint).")])])}
@@ -191,6 +191,6 @@ with(this){return _c('ol',[_c('li',[_c('p',[_v("In this tutorial, we traced the 
 with(this){return _c('p',[_c('a',{attrs:{"href":"/guides/tutorials/ab3.html"}},[_c('span',{staticClass:"fas fa-arrow-up",attrs:{"aria-hidden":"true"}}),_v(" "),_c('strong',[_v("ToC")])]),_v(" | "),_c('span',{staticClass:"badge rounded-pill bg-primary"},[_c('strong',[_c('span',{staticClass:"large"},[_v("What's next?")])])]),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/ab3AddRemark.html"}},[_c('span',{staticClass:"fas fa-arrow-right",attrs:{"aria-hidden":"true"}}),_v(" "),_c('strong',[_v("Adding a Command")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 14 Aug 2024, 14:45:50 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 14 Aug 2024, 14:50:09 GMT+8]")])])])}
 }];
   
