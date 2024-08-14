@@ -115,7 +115,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 1. To start the debugging session, simply `Run` \> `Debug Main`
    {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Running the code in debugger mode**", "intellijDebugger.md#intellij-debugger-mode", indent=1) }}
 
-2. When the GUI appears, enter `edit 1 n/Alice Yeoh` into the command box and press `Enter`.
+2. When the GUI appears, enter `edit 1 n/Alice Yeoh` into the command box and press <kbd>Enter</kbd>.
 
 3. The Debugger tool window should show up and show something like this:<br>
    ![DebuggerStep1](images/tracing/DebuggerStep1.png)
