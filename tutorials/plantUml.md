@@ -281,48 +281,9 @@ Explicitly define all symbols to avoid any potential layout mishaps.
 
 ### Using reference frames
 
-<table>
-<colgroup>
-<col style="width: 70%" />
-<col style="width: 30%" />
-</colgroup>
+Reference frames in PlantUML sequence diagrams allow you to group and reuse sequences of interactions. They help improve diagram readability and reduce repetition in complex scenarios. Here's how to use them effectively:
 
-<thead>
-<tr class="header">
-  <th>Source</th>
-  <th>Result</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr class="odd">
-<td>
-<pre>
-ref over MSLogic, TextUi : get minefield appearance
-</pre>
-</td>
-<td>
-<img src="images/plantuml/ParentReferenceFrameDiagram.png">
-</td>
-</tr>
-
-<tr class="even">
-<td>
-<pre>
-group sd get minefield appearance
-    'Contents of reference frame
-    TextUi -> MSLogic : getAppearanceOfCellAt(x, y)
-    activate MSLogic
-    MSLogic --> TextUi : cellAppearance
-    deactivate MSLogic
-end
-</pre>
-</td>
-<td>
-<img src="images/plantuml/ReferenceFrameDiagram.png">
-</td>
-</tr>
-
-</tbody>
-</table>
+| Source                                                                                                                                                                                                                                                                                   | Result                                                      |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
+| <pre>ref over MSLogic, TextUi : get minefield appearance</pre>                                                                                                                                                                                                                           | <img src="images/plantuml/ParentReferenceFrameDiagram.png"> |
+| <pre>group sd get minefield appearance<br>&emsp;&emsp;'Contents of reference frame <br>&emsp;&emsp;TextUi -> MSLogic : getAppearanceOfCellAt(x, y) <br>&emsp;&emsp;activate MSLogic <br>&emsp;&emsp;MSLogic --> TextUi : cellAppearance <br>&emsp;&emsp;deactivate MSLogic <br>end</pre> | <img src="images/plantuml/ReferenceFrameDiagram.png">       |
