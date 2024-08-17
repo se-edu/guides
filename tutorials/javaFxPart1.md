@@ -1,10 +1,11 @@
 <frontmatter>
-  title: "JavaFX tutorial part 1 – Introduction"
+  title: "JavaFX tutorial part 1 – Getting started"
   pageNav: 2
 </frontmatter>
 
-# JavaFX tutorial part 1 – Introduction
 {% from "scripts/macros.njk" import embed with context %}
+
+# JavaFX tutorial part 1 – Getting started
 
 ## Lifecycle of a JavaFX  application
 
