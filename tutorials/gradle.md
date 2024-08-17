@@ -171,6 +171,15 @@ repositories {
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 ```
+
+<box type="tip" id="after-updating-build-file" seamless>
+
+**After updating the `build.gradle` file,**
+
+* if you are using an IDE: Use the IDE UI to reload dependencies based on the updated file. For example, if using Intellij  IDEA, you can click the <img src="images/gradle/RefreshGradleIcon.png" /> icon in the Gradle tool window to reload the file.<br>
+  For good measure, you can restart the IDE too.
+* if not using an IDE: Run `.\gradlew clean build` to rebuild everything based on the updated file.
+</box>
 <!-- ==================================================================================================== -->
 
 ## Using Gradle to do some common project activities

@@ -4,6 +4,7 @@
 </frontmatter>
 
 # JavaFX tutorial part 1 – Introduction
+{% from "scripts/macros.njk" import embed with context %}
 
 ## Lifecycle of a JavaFX  application
 
@@ -63,10 +64,9 @@ dependencies {
 
 </div>
 
-<box type="tip" seamless>
+Also note the following:
 
-After updating the `build.gradle` file, remember to reload the Gradle dependencies using your IDE UI, or by running the command `./gradlew clean build`. If using an IDE, you can restart the IDE for good measure.
-</box>
+{{ embed("Gradle Tutorial →  After updating the `build.gradle` file (extract)", "gradle.md#after-updating-build-file") }}
 
 ## Writing your first Java FX program
 
