@@ -450,9 +450,9 @@
     },
     {
       "src": "tutorials/javaFxPart1.md",
-      "title": "JavaFX tutorial part 1 – Introduction",
+      "title": "JavaFX tutorial part 1 – Getting started",
       "headings": {
-        "javafx-tutorial-part-1-introduction": "JavaFX tutorial part 1 – Introduction",
+        "javafx-tutorial-part-1-getting-started": "JavaFX tutorial part 1 – Getting started",
         "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX  application",
         "setting-up-the-project": "Setting up the project",
         "setting-up-java-fx": "Setting up Java FX",

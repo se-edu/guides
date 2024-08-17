@@ -11,6 +11,6 @@ with(this){return _c('h1',{attrs:{"id":"guides-for-se-student-projects"}},[_c('s
 with(this){return _c('h1',{attrs:{"id":"vs-code-community-resources"}},[_v("VS Code - Community Resources"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#vs-code-community-resources","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 14 Aug 2024, 14:50:09 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sat, 17 Aug 2024, 15:06:38 GMT+8]")])])])}
 }];
   
