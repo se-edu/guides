@@ -269,7 +269,7 @@ Then insert the following into [`main/resources/view/PersonListCard.fxml`](https
 
 That’s it! Fire up the application again and you should see something like this:
 
-![$remark shows up in each entry](../images/add-remark/$Remark.png)
+![$remark shows up in each entry](images/add-remark/\$Remark.png)
 
 ## Modify `Person` to support a `Remark` field
 
