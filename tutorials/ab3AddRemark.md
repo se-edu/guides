@@ -411,9 +411,9 @@ You must delete AddressBook’s storage file located at `/data/addressbook.json`
 
 </box>
 
-<box type="info" seamless>
+<panel header="Update `Person` objects for testing">
 
-`TypicalPersons.java` is used to create various Person objects for testing. Add the remark field for these Person objects!
+`TypicalPersons.java` is used to create various `Person` objects for testing. Add the remark field for these `Person` objects!
 
 ```java
 public static final Person ALICE = new PersonBuilder()
@@ -424,7 +424,7 @@ public static final Person ALICE = new PersonBuilder()
     .withTags("friends").build();
 ```
 
-</box>
+</panel>
 
 Check out [this commit](https://github.com/se-edu/addressbook-level3/commit/556cbd0e03ff224d7a68afba171ad2eb0ce56bbf)
 to see what the changes entail.
