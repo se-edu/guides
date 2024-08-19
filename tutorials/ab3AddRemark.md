@@ -11,13 +11,18 @@ Let's walk you through the implementation of a new command — `remark`.
 This command allows users of the AddressBook application to add optional remarks to people in their address book and edit it if required. The command should have the following format:
 
 `remark INDEX r/REMARK`
-* `INDEX`: Refers to the position of the person in the currently displayed list on the GUI.
-* `REMARK`: Is the note you wish to attach to their entry.
+
+- `INDEX`: Refers to the position of the person in the currently displayed list on the GUI.
+- `REMARK`: Is the note you wish to attach to their entry.
 
 For example, `remark 2 r/Likes baseball` adds the remark “Likes baseball” to the person at position 2 in the currently displayed list.
 
 We’ll assume that you have already set up the development environment as outlined in the Developer’s Guide.
 
+<panel header="Writing tests">
+
+We will also write tests to ensure that the changes are working as expected. You will find the implementation details of these tests in panels like this one.
+</panel>
 
 ## Create a new `remark` command
 
@@ -51,6 +56,25 @@ public class RemarkCommand extends Command {
 ### Hook `RemarkCommand` into the application
 
 Now that we have our `RemarkCommand` ready to be executed, we need to update `AddressBookParser#parseCommand()` to recognize the `remark` keyword. Add the new command to the `switch` block by creating a new `case` that returns a new instance of `RemarkCommand`.
+
+<panel header="Create `RemarkCommandTest`">
+
+- Since we created a new file RemarkCommand, we should also create a `RemarkCommandTest` file. JUnit tests are annotated with `@Test`. For now, we expect `execute` in `RemarkCommand` to fail. Thus, the test will reflect this expectation.
+
+- ```java
+    assertCommandFailure(new RemarkCommand(), model, MESSAGE_NOT_IMPLEMENTED_YET);
+  ```
+
+- Don’t forget to include a test case in `AddressBookParserTest` to ensure that a `RemarkCommand` is created when the command is parsed successfully.
+
+- ```java
+    @Test
+    public void parseCommand_remark() throws Exception {
+        assertTrue(parser.parseCommand(RemarkCommand.COMMAND_WORD) instanceof RemarkCommand);
+    }
+  ```
+
+</panel>
 
 You can refer to the changes in this [diff](https://github.com/se-edu/addressbook-level3/commit/35eb7286f18a029d39cb7a29df8f172a001e4fd8#diff-399c284cb892c20b7c04a69116fcff6ccc0666c5230a1db8e4a9145def8fa4ee).
 
@@ -141,6 +165,47 @@ public class RemarkCommand extends Command {
 }
 ```
 
+<panel header="Update construction of `RemarkCommand` in `RemarkCommandTest`">
+
+- Since `RemarkCommand`’s constructor now accepts arguments, the tests will reflect that.
+- ```java
+    new RemarkCommand(INDEX_FIRST_PERSON, VALID_REMARK_AMY)
+  ```
+
+- Note: you can use `CommandTestUtil.java` to include constant test values for greater reusability.
+- ```java
+    public static final String VALID_REMARK_AMY = "Like skiing.";
+    public static final String VALID_REMARK_BOB = "Favourite pastime: Eating";
+  ```
+- Additionally, we can add tests for the `equals` method for various inputs, like objects of the different values or types.
+- ```java
+    @Test
+    public void equals() {
+        final RemarkCommand standardCommand = new RemarkCommand(INDEX_FIRST_PERSON, VALID_REMARK_AMY);
+
+        // same values -> returns true
+        RemarkCommand commandWithSameValues = new RemarkCommand(INDEX_FIRST_PERSON, VALID_REMARK_AMY);
+        assertTrue(standardCommand.equals(commandWithSameValues));
+
+        // same object -> returns true
+        assertTrue(standardCommand.equals(standardCommand));
+
+        // null -> returns false
+        assertFalse(standardCommand.equals(null));
+
+        // different types -> returns false
+        assertFalse(standardCommand.equals(new ClearCommand()));
+
+        // different index -> returns false
+        assertFalse(standardCommand.equals(new RemarkCommand(INDEX_SECOND_PERSON, VALID_REMARK_AMY)));
+
+        // different remark -> returns false
+        assertFalse(standardCommand.equals(new RemarkCommand(INDEX_FIRST_PERSON, VALID_REMARK_BOB)));
+    }
+  ```
+
+</panel>
+
 Your code should look something like [this](https://github.com/se-edu/addressbook-level3/commit/dc6d5139d08f6403da0ec624ea32bd79a2ae0cbf#diff-a8e35af8f9c251525063fae36c9852922a7e7195763018eacec60f3a4d87c594) after you are done.
 
 ### Parse user input
@@ -222,8 +287,40 @@ public RemarkCommand parse(String args) throws ParseException {
 <box type="info" seamless>
 
 Don’t forget to update `AddressBookParser` to use our new `RemarkCommandParser`!
-
 </box>
+
+<panel header="Adding `RemarkCommandParserTest`">
+
+`RemarkCommandParserTest` should also be included to ensure that `RemarkCommandParser` works as we expect. Write test cases that cover a wide range of user inputs, such as presence of index and fields.
+
+```java
+@Test
+public void parse_indexSpecified_success() {
+    // have remark
+    Index targetIndex = INDEX_FIRST_PERSON;
+    String userInput = targetIndex.getOneBased() + " " + PREFIX_REMARK + nonEmptyRemark;
+    RemarkCommand expectedCommand = new RemarkCommand(INDEX_FIRST_PERSON, nonEmptyRemark);
+    assertParseSuccess(parser, userInput, expectedCommand);
+
+    // no remark
+    userInput = targetIndex.getOneBased() + " " + PREFIX_REMARK;
+    expectedCommand = new RemarkCommand(INDEX_FIRST_PERSON, "");
+    assertParseSuccess(parser, userInput, expectedCommand);
+}
+
+@Test
+public void parse_missingCompulsoryField_failure() {
+    String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, RemarkCommand.MESSAGE_USAGE);
+
+    // no parameters
+    assertParseFailure(parser, RemarkCommand.COMMAND_WORD, expectedMessage);
+
+    // no index
+    assertParseFailure(parser, RemarkCommand.COMMAND_WORD + " " + nonEmptyRemark, expectedMessage);
+}
+```
+
+</panel>
 
 If you are stuck, check out the sample
 [here](https://github.com/se-edu/addressbook-level3/commit/dc6d5139d08f6403da0ec624ea32bd79a2ae0cbf#diff-8bf239e8e9529369b577701303ddd96af93178b4ed6735f91c2d8488b20c6b4a).
@@ -256,14 +353,13 @@ Simply add the following to [`seedu.address.ui.PersonCard`](https://github.com/s
 private Label remark;
 ```
 
-
 `@FXML` is an annotation that marks a private or protected field and makes it accessible to FXML. It might sound like Greek to you right now, don’t worry — we will get back to it later.
 
 Then insert the following into [`main/resources/view/PersonListCard.fxml`](https://github.com/se-edu/addressbook-level3/commit/850b78879582f38accb05dd20c245963c65ea599#diff-d44c4f51c24f6253c277a2bb9bc440b8064d9c15ad7cb7ceda280bca032efce9).
 
 **`PersonListCard.fxml`:**
 
-``` xml
+```xml
 <Label fx:id="remark" styleClass="cell_small_label" text="\$remark" />
 ```
 
@@ -289,8 +385,19 @@ Use the `Find Usages` feature in IntelliJ IDEA on the `Person` class to find the
 
 </box>
 
-Refer to [this commit](https://github.com/se-edu/addressbook-level3/commit/ce998c37e65b92d35c91d28c7822cd139c2c0a5c) and check that you have got everything in order!
+<panel header= "Update default `Person` in tests">
 
+`PersonBuilder.java` is used to create a default `Person` object for testing purposes. Don’t forget to include a remark field in this default Person too!
+
+```java
+public Person build() {
+    return new Person(name, phone, email, address, remark, tags);
+}
+```
+
+</panel>
+
+Refer to [this commit](https://github.com/se-edu/addressbook-level3/commit/ce998c37e65b92d35c91d28c7822cd139c2c0a5c) and check that you have got everything in order!
 
 ## Updating Storage
 
@@ -301,6 +408,21 @@ While the changes to code may be minimal, the test data will have to be updated 
 <box type="warning" seamless>
 
 You must delete AddressBook’s storage file located at `/data/addressbook.json` before running it! Not doing so will cause AddressBook to default to an empty address book!
+
+</box>
+
+<box type="info" seamless>
+
+`TypicalPersons.java` is used to create various Person objects for testing. Add the remark field for these Person objects!
+
+```java
+public static final Person ALICE = new PersonBuilder()
+    .withName("Alice Pauline")
+    .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
+    .withPhone("94351253")
+    .withPhone("94351253").withRemark("She likes aardvarks.")
+    .withTags("friends").build();
+```
 
 </box>
 
