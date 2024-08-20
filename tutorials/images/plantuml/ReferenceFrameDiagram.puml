@@ -8,9 +8,9 @@ participant ":MSLogic" as MSLogic #90EE90
 group sd get minefield appearance
     'Contents of reference frame
     TextUi -> MSLogic : getAppearanceOfCellAt(x, y)
-    activate MSLogic
+    MSLogic -> TextUi : getConfig()
+    TextUi --> MSLogic : config
     MSLogic --> TextUi : cellAppearance
-    deactivate MSLogic
 end
 
 @enduml
