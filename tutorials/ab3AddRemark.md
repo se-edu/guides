@@ -62,7 +62,10 @@ Now that we have our `RemarkCommand` ready to be executed, we need to update `Ad
 - Since we created a new file RemarkCommand, we should also create a `RemarkCommandTest` file. JUnit tests are annotated with `@Test`. For now, we expect `execute` in `RemarkCommand` to fail. Thus, the test will reflect this expectation.
 
 - ```java
-    assertCommandFailure(new RemarkCommand(), model, MESSAGE_NOT_IMPLEMENTED_YET);
+    @Test
+    public void execute() {
+        assertCommandFailure(new RemarkCommand(), model, MESSAGE_NOT_IMPLEMENTED_YET);
+    }
   ```
 
 - Don’t forget to include a test case in `AddressBookParserTest` to ensure that a `RemarkCommand` is created when the command is parsed successfully.
@@ -167,9 +170,15 @@ public class RemarkCommand extends Command {
 
 <panel header="Update construction of `RemarkCommand` in `RemarkCommandTest`">
 
-- Since `RemarkCommand`’s constructor now accepts arguments, the tests will reflect that.
+- Since `RemarkCommand` now requires both an index and a remark for instantiation, the tests should be updated accordingly. Additionally, the execution of the command has been updated, so the tests should be adjusted to reflect these changes.
 - ```java
-    new RemarkCommand(INDEX_FIRST_PERSON, VALID_REMARK_AMY)
+    @Test
+    public void execute() {
+    final String remark = "Some remark";
+
+    assertCommandFailure(new RemarkCommand(INDEX_FIRST_PERSON, remark), model,
+            String.format(MESSAGE_ARGUMENTS, INDEX_FIRST_PERSON.getOneBased(), remark));
+    }
   ```
 
 - Note: you can use `CommandTestUtil.java` to include constant test values for greater reusability.
