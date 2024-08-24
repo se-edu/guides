@@ -83,7 +83,7 @@ Run the program and give it a whirl! Ensure the GUI responds correctly to both w
 <pic src="images/javafx/EchoNotScrolling.png" width="450" />
 <p/>
 
-At first glance everything appears to work perfectly. Keep entering more text entries (or longer text entries) until the visible area fills up. You'll notice that when the chat entries fill up beyond scroll pane's display area, it does not scroll down automatically to show the latest entry, as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
+At first glance everything appears to work perfectly. Keep entering more text entries (or longer text entries) until the visible area fills up. You'll notice that when the chat entries fill up beyond `ScrollPane`'s display area, it does not scroll down automatically to show the latest entry, as expected. We can remedy this by attaching a handler on the `VBox` to react to its own size changing and scrolling the `ScrollPane` down.
 
 Update the `Main#start` method as shown below:
 
@@ -98,7 +98,7 @@ Update the `Main#start` method as shown below:
     }
 ```
 
-Verify that the scroll pane now scrolls as intended.
+Verify that the `ScrollPane` now scrolls as intended.
 
 
 ## Iteration 2 – Adding dialog boxes for Duke's response
