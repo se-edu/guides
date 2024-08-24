@@ -7,7 +7,7 @@
 
 While we have produced a fully functional prototype in part 3, there are some problems with the way we implemented it, using Java code alone:
 
-**Problem 1:** The `MainWindow` class attempts to do it all. Code for visual tweaks, listeners and even utility methods are all in one file. This makes it difficult to find and make changes to existing code.<br>
+**Problem 1:** The `Main` class attempts to do it all. Code for visual tweaks, listeners and even utility methods are all in one file. This makes it difficult to find and make changes to existing code.<br>
 **A possible solution:** An alternative approach (to hand-coding everything) is to use FXML -- an XML-based language that allows us to define UIs. Properties of JavaFX objects can be defined in the FXML file. For example consider the following FXML snippet that defines a `TextField` similar to the one that we programmatically defined previous in part 2:
 ```xml
  <TextField fx:id="userInput"
