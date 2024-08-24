@@ -138,7 +138,7 @@ public class Main extends Application {
 }
 ````
 
-Now, we can update the `handleUserInput()` as follows, to generate the response using the `duke` object.
+Now, we can update the `handleUserInput()` method as follows, to generate the response using the `duke` object.
 
 ```java{heading="Main.java"}
     private void handleUserInput() {
