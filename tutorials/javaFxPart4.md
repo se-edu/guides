@@ -303,6 +303,7 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
    ![Controller for MainWindow](images/javafx/MainWindowController.png)
 
 1. Let’s now open `DialogBox.fxml` in Scene Builder (open it the same way you opened the previous file), and expand the `Controller` panel on the left-side accordion.<br>
+   ![Settings for DialogBox](images/javafx/DialogBoxController.png)<br>
    The main difference you can see here is that DialogBox ticks `Use fx:root construct` and _does not define a controller class_. Ticking this enables the use of the `fx:root` element, allowing you to reference a root element, which can be set by calling the `setRoot()` method. The controller (which is shown as empty) can be programmatically set using the `setController()` method. This is exactly what we did in the constructor of the `DialogBox.java` earlier.
    ```java{highlight-lines="4-5" heading="DialogBox.java"}
        private DialogBox(String text, Image img) {
@@ -322,7 +323,6 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
    
    More about `fx:root` on the documentation [Introduction to FXML | JavaFX 2.2](https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html#root_elements).
 
-   ![Settings for DialogBox](images/javafx/DialogBoxController.png)
 
 
 
