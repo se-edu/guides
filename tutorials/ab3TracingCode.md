@@ -383,11 +383,11 @@ Here are some quick questions you can try to answer based on your execution path
 * No exception thrown.
 * Reason: The command is correctly formatted and will edit the tags of the person at index 1 to "one", "two" and "three".
 
-    <panel header="Why didn’t the second tag with value “one” get added?">
+    <box type="info" header="Why aren't there two tags with value &quot;one&quot; after this command is executed?">
   
-    Duplicate values are handled by the `ParserUtil#parseTags()` method because tags are added to a HashSet. The HashSet class inherently handles duplicates by not allowing any equal elements to be added. Therefore, any duplicate tags are not added.<br>
-    Read more on the `add` method of the HashSet class <a href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html#add-E-">here</a>.
-    </panel>
+    Duplicate values are handled by the `ParserUtil#parseTags()` method when tags are added to a HashSet. The HashSet class inherently handles duplicates by not allowing any equal elements to be added. Therefore, any duplicate tags are not added.<br>
+    Read more on the `add` method of the HashSet class [here](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html#add-E-).
+    </box>
 
 </panel>
 
@@ -416,7 +416,7 @@ Here are some quick questions you can try to answer based on your execution path
 
    <box type="info" seamless>
   
-      Remember to update other usages of `DeleteCommand` class to handle the change in type of Index.
+      Remember to update other usages of `DeleteCommand` class to handle the change in type of argument.
    </box>
 </panel>
 
