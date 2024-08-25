@@ -32,7 +32,7 @@ with(this){return _c('p',[_c('strong',[_v("Would like to try the above yourself?
 with(this){return _c('h2',{attrs:{"id":"fat-jar-files"}},[_v("Fat JAR files"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#fat-jar-files","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('div',[_c('p',[_c('strong',[_v("A normal JAR file contains only the classes and resources that you created for your app.")]),_v(" If you app has "),_c('em',[_v("dependencies")]),_v(" (i.e., third party libraries that your app depends on), the JAR file will not work unless the person running the JAR file also has those dependencies in their computer. This is not ideal.")]),_v(" "),_c('p',[_c('strong',[_v("A "),_c('em',[_v("fat")]),_v(" JAR (aka "),_c('em',[_v("uber")]),_v(" JAR) file solves the above problem by including all the dependencies inside the JAR file")]),_v(" itself "),_c('span',{staticClass:"dimmed"},[_v("(which makes the JAR file bigger than usual, hence the term "),_c('em',[_v("fat")]),_v(")")]),_v(".")])])}
+with(this){return _c('div',[_c('p',[_c('strong',[_v("A normal JAR file contains only the classes and resources that you created for your app.")]),_v(" If your app has "),_c('em',[_v("dependencies")]),_v(" (i.e., third party libraries that your app depends on), the JAR file will not work unless the person running the JAR file also has those dependencies in their computer. This is not ideal.")]),_v(" "),_c('p',[_c('strong',[_v("A "),_c('em',[_v("fat")]),_v(" JAR (aka "),_c('em',[_v("uber")]),_v(" JAR) file solves the above problem by including all the dependencies inside the JAR file")]),_v(" itself "),_c('span',{staticClass:"dimmed"},[_v("(which makes the JAR file bigger than usual, hence the term "),_c('em',[_v("fat")]),_v(")")]),_v(".")])])}
 },function anonymous(
 ) {
 with(this){return _c('h2',{attrs:{"id":"creating-jar-files"}},[_v("Creating JAR files"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#creating-jar-files","onclick":"event.stopPropagation()"}})])}
@@ -44,6 +44,6 @@ with(this){return _c('h2',{attrs:{"id":"resources"}},[_v("Resources"),_c('a',{st
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://docs.oracle.com/javase/tutorial/deployment/jar/basicsindex.html"}},[_v("Oracle's tutorial on JAR files")])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow"}},[_v("Gradle documentation for the Shadow plugin")])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://imperceptiblethoughts.com/shadow/introduction/"}},[_v("Shadow plugin homepage")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sat, 24 Aug 2024, 13:54:10 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sun, 25 Aug 2024, 23:40:51 GMT+8]")])])])}
 }];
   
