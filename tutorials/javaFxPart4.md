@@ -7,7 +7,7 @@
 
 While we have produced a fully functional prototype in part 3, there are some problems with the way we implemented it, using Java code alone:
 
-**Problem 1:** The `MainWindow` class attempts to do it all. Code for visual tweaks, listeners and even utility methods are all in one file. This makes it difficult to find and make changes to existing code.<br>
+**Problem 1:** The `Main` class attempts to do it all. Code for visual tweaks, listeners and even utility methods are all in one file. This makes it difficult to find and make changes to existing code.<br>
 **A possible solution:** An alternative approach (to hand-coding everything) is to use FXML -- an XML-based language that allows us to define UIs. Properties of JavaFX objects can be defined in the FXML file. For example consider the following FXML snippet that defines a `TextField` similar to the one that we programmatically defined previous in part 2:
 ```xml
  <TextField fx:id="userInput"
@@ -303,6 +303,7 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
    ![Controller for MainWindow](images/javafx/MainWindowController.png)
 
 1. Let’s now open `DialogBox.fxml` in Scene Builder (open it the same way you opened the previous file), and expand the `Controller` panel on the left-side accordion.<br>
+   ![Settings for DialogBox](images/javafx/DialogBoxController.png)<br>
    The main difference you can see here is that DialogBox ticks `Use fx:root construct` and _does not define a controller class_. Ticking this enables the use of the `fx:root` element, allowing you to reference a root element, which can be set by calling the `setRoot()` method. The controller (which is shown as empty) can be programmatically set using the `setController()` method. This is exactly what we did in the constructor of the `DialogBox.java` earlier.
    ```java{highlight-lines="4-5" heading="DialogBox.java"}
        private DialogBox(String text, Image img) {
@@ -322,7 +323,6 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
    
    More about `fx:root` on the documentation [Introduction to FXML | JavaFX 2.2](https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html#root_elements).
 
-   ![Settings for DialogBox](images/javafx/DialogBoxController.png)
 
 
 

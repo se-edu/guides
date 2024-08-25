@@ -60,6 +60,7 @@ class Scene
 class AnchorPane
 class ScrollPane
 class VBox
+class HBox
 class ImageView
 class Label
 
@@ -71,8 +72,9 @@ TextField -up-> AnchorPane
 Button -up-> AnchorPane
 
 VBox -up-> ScrollPane
-ImageView -up-> VBox
-Label -up-> VBox
+HBox -up-> VBox
+ImageView -up-> HBox
+Label -up-> HBox
 @enduml
 </puml>
 
