@@ -1,0 +1,61 @@
+@startuml
+!include ../style.puml
+skinparam ArrowFontStyle plain
+
+box Logic LOGIC_COLOR_T1
+participant ":EditCommand" as EditCommand LOGIC_COLOR
+participant "r:CommandResult" as CommandResult LOGIC_COLOR
+end box
+
+participant "filteredPersons:FilteredList<Person>" as ObservableList MODEL_COLOR
+box Model MODEL_COLOR_T1
+participant "model:ModelManager" as Model MODEL_COLOR
+end box
+
+-> EditCommand : execute(model)
+activate EditCommand
+
+
+
+EditCommand -> Model : getFilteredPersonList()
+activate Model
+Model --> EditCommand : filteredPersons
+deactivate Model
+
+
+EditCommand -> ObservableList : get(index)
+activate ObservableList
+ObservableList --> EditCommand : personToEdit
+deactivate ObservableList
+
+EditCommand -> EditCommand : createEditedPerson(...)
+activate EditCommand
+EditCommand --> EditCommand: editedPerson
+deactivate EditCommand
+
+EditCommand -> EditCommand : check for duplicates
+activate EditCommand
+deactivate EditCommand
+
+EditCommand -> Model : setPerson(...)
+activate Model
+Model --> EditCommand
+deactivate Model
+
+EditCommand -> Model : updateFilteredPersonList(...)
+activate Model
+deactivate ObservableList
+Model --> EditCommand
+deactivate Model
+
+
+create CommandResult
+EditCommand -> CommandResult
+activate CommandResult
+CommandResult --> EditCommand
+deactivate CommandResult
+
+[<-- EditCommand: r
+deactivate EditCommand
+
+@enduml
