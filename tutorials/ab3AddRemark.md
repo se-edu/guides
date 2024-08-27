@@ -21,7 +21,7 @@ We’ll assume that you have already set up the development environment as outli
 
 <panel header="Writing tests">
 
-We will also write tests to ensure that the changes are working as expected. You will find the implementation details of these tests in panels like this one.
+We will also write tests to ensure that the changes are working as expected. You will find the implementation details of these tests in panels like this one. For more information about JUnit, refer to the documentation [here](https://junit.org/junit5/docs/current/user-guide/).
 </panel>
 
 ## Create a new `remark` command
