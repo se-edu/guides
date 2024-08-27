@@ -21,7 +21,7 @@ We’ll assume that you have already set up the development environment as outli
 
 <panel header="Writing tests">
 
-We will also write tests to ensure that the changes are working as expected. You will find the implementation details of these tests in panels like this one. For more information about JUnit, refer to [this](http://se-education.org/guides/tutorials/junit.html).
+It’s crucial to ensure that our code behaves as expected. This is why we write tests at each step of the process. These tests not only verify that the new functionality works correctly but also help prevent future changes from inadvertently breaking the code. You will find the implementation details of these tests in panels like this one. For more information about JUnit, refer to [this](http://se-education.org/guides/tutorials/junit.html).
 </panel>
 
 ## Create a new `remark` command
