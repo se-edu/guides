@@ -20,6 +20,6 @@ with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"/guides/conventions/c
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"/guides/guidelines/codeOfConduct.html"}},[_c('strong',[_v("Code of conduct")])]),_c('br')]),_v(" "),_c('li',[_c('a',{attrs:{"href":"/guides/guidelines/commits.html"}},[_c('strong',[_v("Working with Git")])])]),_v(" "),_c('li',[_c('strong',[_v("GitHub:")]),_v(" "),_c('ul',[_c('li',[_c('a',{attrs:{"href":"/guides/guidelines/PRs.html"}},[_v("Working with "),_c('strong',[_v("PRs")])]),_v(" "),_c('ul',[_c('li',[_c('a',{attrs:{"href":"/guides/guidelines/PRs-reviewing.html"}},[_v("Best practices for "),_c('strong',[_v("reviewing PRs")])])])])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"/guides/guidelines/labels.html"}},[_v("Working with "),_c('strong',[_v("labels")])])])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 28 Aug 2024, 15:12:29 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Fri, 30 Aug 2024, 19:36:54 GMT+8]")])])])}
 }];
   
