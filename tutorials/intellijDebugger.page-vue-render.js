@@ -131,6 +131,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: "),_c('a',{attrs:{"href":"https://github.com/ruishanteo"}},[_v("@ruishanteo")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Fri, 30 Aug 2024, 19:36:54 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Sat, 31 Aug 2024, 18:02:27 GMT+8]")])])])}
 }];
   
