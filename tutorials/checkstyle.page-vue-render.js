@@ -77,6 +77,6 @@ with(this){return _c('h2',{attrs:{"id":"resources"}},[_v("Resources"),_c('a',{st
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://checkstyle.sourceforge.io/"}},[_v("Checkstyle home page")])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://docs.gradle.org/current/userguide/checkstyle_plugin.html"}},[_v("Gradle documentation for the Checkstyle plugin")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Mon, 2 Sept 2024, 23:18:52 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Wed, 4 Sept 2024, 18:37:04 GMT+8]")])])])}
 }];
   
