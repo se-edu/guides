@@ -101,6 +101,6 @@ with(this){return _c('ul',[_c('li',[_c('strong',[_v("Before approving a PR, "),_
 with(this){return _c('h2',{attrs:{"id":"merging-prs"}},[_v("Merging PRs"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#merging-prs","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Fri, 6 Sept 2024, 13:36:17 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.2")]),_v(" on Fri, 6 Sept 2024, 13:55:17 GMT+8]")])])])}
 }];
   
