@@ -297,6 +297,16 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
    ![SceneBuilder opening MainWindow.fxml](images/javafx/SceneBuilder.png)
 
 1. On the right accordion pane, you can modify the properties of the control that you have selected. Try changing the various settings and see what they do!
+
+   <box type="info" seamless>
+
+   Note that when you change something in Scene Builder and saves it, Scene Builder will change the JavaFX version in the `.fxml` file to the latest JavaFX. Example:
+   ```diff {heading="MainWindow.fxml"}
+   - <fx:root ... xmlns="http://javafx.com/javafx/17" ... ">
+   + <fx:root ... xmlns="http://javafx.com/javafx/22" ... ">
+   ```
+   This will cause a version incompatibility warning when you run the application. As a workaround, you can manually change back the version to the original value after you are done tweaking the UI.
+   </box>
  
 1. On the left accordion, when you expand the `Controller` panel at the bottom, you can see that we have set the controller class to `MainWindow`.
  
