@@ -5,6 +5,11 @@ title: "{{ title }}"
 pageNav: 3
 ---
 
+<box type="important" icon=":fas-bug:" seamless>
+
+**Noticed any bugs/issues or unclear areas** while following this tutorial? Help us improve it by reporting it at [our issue tracker](https://github.com/se-edu/guides/issues).
+</box>
+
 # {{ title }}
 
 
@@ -291,42 +296,238 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 {{ dg_ref }} This is a good time to read through the [**_UI component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#ui-component)
 
 
-## Conclusion
-
-In this tutorial, we traced a valid edit command from raw user input to the result being displayed to the user. From this tutorial, you learned more about how the various components work together to produce a response to a user command.
+## More things to try
 
 Here are some quick questions you can try to answer based on your execution path tracing. In some cases, you can do further tracing for the given commands to find exactly what happens.
 
-1.  In this tutorial, we traced the "happy path" (i.e., no errors). What
-    do you think will happen if we traced the following commands
-    instead? What exceptions do you think will be thrown (if any), where
-    will the exceptions be thrown and where will they be handled?
+**[A]** In this tutorial, we traced the "happy path" (i.e., no errors). What do you think will happen if we traced the following commands instead? What exceptions do you think will be thrown (if any), where will the exceptions be thrown and where will they be handled?
 
-    1.  `redit 1 n/Alice Yu`
+<panel header="A1. `redit 1 n/Alice Yu`">
 
-    2.  `edit 0 n/Alice Yu`
+* Exception Thrown: ParseException
+* Reason: Unknown command as the command word `redit` is not recognized.
+* Where the exception is thrown: `AddressBookParser#parseCommand()`
 
-    3.  `edit 1 n/Alex Yeoh`
+  ```java {highlight-lines="7"}
+      public Command parseCommand(String userInput) throws ParseException {
+          ...
+          switch (commandWord) {
+          ...
+          default:
+              logger.finer("This user input caused a ParseException: " + userInput);
+              throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
+          }
+      }
+   ```
 
-    4.  `edit 1`
+* Where the exception is handled: `MainWindow#executeCommand()`
 
-    5.  `edit 1 n/アリス ユー`
+  ```java {highlight-lines="3"}
+      private CommandResult executeCommand(String commandText) throws CommandException, ParseException {
+          ...
+          } catch (CommandException | ParseException e) {
+              logger.info("An error occurred while executing command: " + commandText);
+              resultDisplay.setFeedbackToUser(e.getMessage());
+              throw e;
+          }
+      }
+  ```
+</panel>
 
-    6.  `edit 1 t/one t/two t/three t/one`
+<panel header="A2. `edit 0 n/Alice Yu`">
 
-2.  What components will you have to modify to perform the following
-    enhancements to the application?
+* Exception Thrown: ParseException
+* Reason: Invalid command format as index 0 is not a non-zero unsigned integer.
+* Where the exception is thrown: `EditCommandParser#parse()`
 
-    1.  Make command words case-insensitive
+  ```java {highlight-lines="6"}
+      public EditCommand parse(String args) throws ParseException {
+         ...
+         try {
+             index = ParserUtil.parseIndex(argMultimap.getPreamble());
+         } catch (ParseException pe) {
+             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE), pe);
+         }
+         ...
+      }
+  ```
 
-    2.  Allow `delete` to remove more than one index at a time
+* Where the exception is handled: `MainWindow#executeCommand()`
+</panel>
 
-    3.  Save the address book in the CSV format instead
+<panel header="A3. `edit 1 n/Alex Yeoh`">
 
-    4.  Add a new command
+* No exception thrown.
+* Reason: "1" is a valid index in the person list. The command is correctly formatted and will edit the name of the person at index 1 to "Alex Yeoh".
+</panel>
 
-    5.  Add a new field to `Person`
+<panel header="A4. `edit 1`">
 
-    6.  Add a new entity to the address book
+* Exception Thrown: ParseException
+* Reason: At least one field to edit must be provided.
+* Where the exception is thrown: `EditCommandParser#parse()`
+
+  ```java {highlight-lines="4"}
+      public EditCommand parse(String args) throws ParseException {
+          ...
+          if (!editPersonDescriptor.isAnyFieldEdited()) {
+              throw new ParseException(EditCommand.MESSAGE_NOT_EDITED);
+          }
+          ...
+      }
+  ```
+
+* Where the exception is handled: `MainWindow#executeCommand()`
+</panel>
+
+<panel header="A5. `edit 1 n/アリス ユー`">
+
+* Exception Thrown: ParseException
+* Reason: Names should only contain alphanumeric characters and spaces, and it should not be blank.
+* Where the exception is thrown: `ParserUtil#parseName()`
+
+  ```java {.line-numbers highlight-lines="4"}
+      public static Name parseName(String name) throws ParseException {
+          ...
+          if (!Name.isValidName(trimmedName)) {
+              throw new ParseException(Name.MESSAGE_CONSTRAINTS);
+          }
+          ...
+      }
+  ```
+
+* Where the exception is handled: `MainWindow#executeCommand()`
+</panel>
+
+<panel header="A6. `edit 1 t/one t/two t/three t/one`">
+
+* No exception thrown.
+* Reason: The command is correctly formatted and will edit the tags of the person at index 1 to "one", "two" and "three".
+
+  <box type="info" seamless header="Why aren't there two tags with value &quot;one&quot; after this command is executed?">
+
+  Duplicate values are handled by the `ParserUtil#parseTags()` method when tags are added to a HashSet. The HashSet class inherently handles duplicates by not allowing any equal elements to be added. Therefore, any duplicate tags are not added.<br>
+    Read more on the `add` method of the HashSet class [here](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html#add-E-).
+  </box>
+
+</panel>
+
+<br>
+
+**[B]** What components will you have to modify to perform the following enhancements to the application?
+
+<panel header="B1. Make command words case-insensitive">
+
+1. Modify `AddressBookParser#parseCommand()` to convert command words to lowercase before parsing.
+
+   ```java {highlight-lines="3['.toLowerCase()']"}
+       public Command parseCommand(String userInput) throws ParseException {
+           ...
+           final String commandWord = matcher.group("commandWord").toLowerCase();
+           final String arguments = matcher.group("arguments");
+       }
+   ```
+</panel>
+
+<panel header="B2. Allow `delete` to remove more than one index at a time">
+
+1. Modify `DeleteCommandParser` to parse a list of indices.
+2. Update `DeleteCommand` to take in a list of indices.
+
+   <box type="info" seamless>
+
+      Remember to update other usages of `DeleteCommand` class to handle the change in type of argument.
+   </box>
+</panel>
+
+<panel header="B3. Save the address book in the CSV format instead">
+
+1. Import the following classes:
+   ```java
+   import java.io.FileWriter;
+   import java.io.PrintWriter;
+   ```
+1. Modify the `JsonAddressBookStorage#saveAddressBook()` method
+   ```java
+       public void saveAddressBook(ReadOnlyAddressBook addressBook, Path filePath) throws IOException {
+            requireNonNull(addressBook);
+            requireNonNull(filePath);
+
+            FileUtil.createIfMissing(filePath);
+
+            try (PrintWriter out = new PrintWriter(new FileWriter(filePath.toFile()))) {
+                out.println("Name,Phone,Email,Address,Tags"); // CSV header
+                addressBook.getPersonList().forEach(person -> {
+                    out.println(
+                            escapeField(person.getName().toString()) + "," +
+                            escapeField(person.getPhone().toString()) + "," +
+                            escapeField(person.getEmail().toString()) + "," +
+                            escapeField(person.getAddress().toString()) + "," +
+                            escapeField(person.getTags().toString())
+                    );
+                });
+            } catch (IOException e) {
+                logger.severe("Failed to save address book to " + filePath + ": " + e.getMessage());
+                throw e;
+            }
+       }
+   ```
+1. Add a helper method to handle special characters in the fields for Person.
+   ```java
+       private String escapeField(String field) {
+           if (field.contains(",") || field.contains("\"")) {
+                field = field.replace("\"", "\"\"");
+                field = "\"" + field + "\"";
+            }
+            return field;
+       }
+   ```
+</panel>
+
+<panel header="B4. Add a new field to `Person`">
+
+1. Add a new class for the field in [`seedu.address.model.person`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/model/person).
+2. Update the [`Person`](https://github.com/se-edu/addressbook-level3/blob/master/src/main/java/seedu/address/model/person/Person.java) class to include the new field.
+3. Update the [`JsonAdaptedPerson`](https://github.com/se-edu/addressbook-level3/blob/master/src/main/java/seedu/address/storage/JsonAdaptedPerson.java) class in [`seedu.address.storage`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage) to include the new field.
+
+   <box type="info" seamless>
+
+      Remember to update other usages of `Person` class to handle the new field.
+   </box>
+</panel>
+
+<panel header="B5. Add a new entity to the address book">
+
+For instance, if we are adding `Event` as the new entity to the address book:
+
+1. Add a new class `Event` in `seedu.address.model.event` to represent an Event entity.
+1. Add a new class `AddEventCommand` in [`seedu.address.logic.commands`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/commands) that is similar to AddCommand.
+1. Implement a `AddEventCommandParser` parser in [`seedu.address.logic.parser`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/parser) to parse the relevant arguments.
+1. Update the [`Model`](https://github.com/se-edu/addressbook-level3/blob/master/src/main/java/seedu/address/model/Model.java) interface to add in new methods such as `addEvent` and `hasEvent`.
+1. Update the [`ModelManager`](https://github.com/se-edu/addressbook-level3/blob/master/src/main/java/seedu/address/model/ModelManager.java) to implement these new methods.
+1. Update the [`AddressBook`](https://github.com/se-edu/addressbook-level3/blob/master/src/main/java/seedu/address/model/AddressBook.java) class to create methods like `setEvent` or `getEventList` etc.
+1. Create a `UniqueEventList` class in `seedu.address.model.event` to handle a list of unique events.
+1. Implement a `JsonAdaptedEvent` in [`seedu.address.storage`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/storage) to save the data in JSON format.
+</panel>
+
+
+<panel header="B6. Add a new command">
+
+1. Add a class for your new command in the [`logic.commands`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/commands) package.
+1. Add a class for your parser to parse the new command in the [`seedu.address.logic.parser`](https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic/parser) package.
+1. Update `AddressBookParser` to use the new parser.
+
+<box type="info" seamless>
+For a more detailed explanation, refer to <a href="https://se-education.org/guides/tutorials/ab3AddRemark.html">[AB3 Tutorial: Adding a Command]</a>
+</box>
+</panel>
+<br>
 
 [:fas-arrow-up: **ToC**](ab3.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: **Adding a Command**](ab3AddRemark.md)
+
+
+--------------------------------------------------------------------------------
+**Authors:**
+* Initial Version: Jeffry Lum
+* Contributors:
+  * Ruth Lim (@ruth-lim): Added answers to questions in the 'More things to try' section
