@@ -278,3 +278,92 @@ package "Rule Of Thumb";{
 
 Explicitly define all symbols to avoid any potential layout mishaps.
 </box>
+
+### Using reference frames
+
+Reference frames in PlantUML sequence diagrams allow you to **group and reuse sequences** of interactions, which helps improve readability and reduce repetition in complex scenarios. By encapsulating sequences into reference frames, you can also **reduce complexity**, making it easier to manage and understand the overall flow of interactions within your diagrams.
+
+Refer to the following example:
+```
+@startuml
+
+hide footbox
+skinparam sequenceReferenceBackgroundColor #f7807c
+
+actor Player
+
+participant ":TextUi" as TextUi #EE82EE
+participant ":MSLogic" as MSLogic #90EE90
+
+Player -> TextUi : mark x y
+TextUi -> MSLogic : markCellAt(x, y)
+return
+
+TextUi -> MSLogic : getAppearanceOfCellAt(x, y)
+MSLogic -> TextUi : getConfig()
+TextUi --> MSLogic : config
+MSLogic --> TextUi : cellAppearance
+
+TextUi --> Player : Show updated minefield
+
+@enduml
+```
+<puml src="images/plantuml/OriginalSequenceDiagram.puml" width=500 />
+
+The sequence diagram illustrates two main actions: marking a cell and retrieving its appearance. We can simplify the diagram by moving the latter into a new reference frame.
+
+First we update the original diagram as follows:
+
+```{highlight-lines="15-17"}
+@startuml
+
+hide footbox
+skinparam sequenceReferenceBackgroundColor #f7807c
+
+actor Player
+
+participant ":TextUi" as TextUi #EE82EE
+participant ":MSLogic" as MSLogic #90EE90
+
+Player -> TextUi : mark x y
+TextUi -> MSLogic : markCellAt(x, y)
+return
+
+ref over TextUi, MSLogic
+    get minefield appearance
+end ref
+
+TextUi --> Player : Show updated minefield
+
+@enduml
+```
+
+<puml src="images/plantuml/ParentReferenceFrameDiagram.puml" width=300 />
+
+Then, we create a new diagram for the reference frame.
+
+```
+@startuml
+
+hide footbox
+
+participant ":TextUi" as TextUi #EE82EE
+participant ":MSLogic" as MSLogic #90EE90
+
+group sd get minefield appearance
+    TextUi -> MSLogic : getAppearanceOfCellAt(x, y)
+    MSLogic -> TextUi : getConfig()
+    TextUi --> MSLogic : config
+    MSLogic --> TextUi : cellAppearance
+end
+
+@enduml
+```
+<puml src="images/plantuml/ReferenceFrameDiagram.puml" width=300 />
+
+
+--------------------------------------------------------------------------------
+**Authors:**
+* Initial Version: Jeffry Lum
+* Contributors:
+  * MUHAMMAD FIKRI BIN ABDUL KALAM (@mfjkri): added the part on SD reference frames
