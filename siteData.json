@@ -542,6 +542,16 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/javaInstallationWindows.md",
+      "title": "Java 17 Installation Guide for Windows Users",
+      "headings": {
+        "java-17-installation-guide-for-windows-users": "Java 17 Installation Guide for Windows Users",
+        "installation": "Installation",
+        "switching-between-java-versions": "Switching between Java versions"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/jekyll.md",
       "title": "Using Jekyll for project documentation",
       "headings": {
