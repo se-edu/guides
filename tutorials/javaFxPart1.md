@@ -163,6 +163,10 @@ Now, run the application (e.g., run `./gradlew run` command in the terminal) and
 The following warning issued by Java runtime can be ignored. This warning appears when you use a later JavaFX version (e.g., 17) with a JDK version that doesn't support the _modules_ feature yet (e.g., Java 11).
 
 >WARNING: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @...
+
+Similarly, the warning about the different versions (if any) can be ignored as well.
+
+>WARNING: Loading FXML document with JavaFX API of version ___ by JavaFX runtime of version ___
 </box>
 
 Congratulations! You have created your first GUI application!
