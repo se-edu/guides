@@ -19,6 +19,11 @@
       "headingKeywords": {}
     },
     {
+      "src": "common/common-fragments.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
       "src": "conventions/csharp.md",
       "title": "C# coding standard",
       "headings": {
@@ -290,10 +295,7 @@
         "updating-storage": "Updating Storage",
         "finalizing-the-ui": "Finalizing the UI",
         "putting-everything-together": "Putting everything together",
-        "update-remarkcommand-and-remarkcommandparser": "Update RemarkCommand and RemarkCommandParser",
-        "writing-tests": "Writing tests",
-        "automatically-generating-tests": "Automatically generating tests",
-        "conclusion": "Conclusion"
+        "update-remarkcommand-and-remarkcommandparser": "Update RemarkCommand and RemarkCommandParser"
       },
       "headingKeywords": {}
     },
