@@ -1,0 +1,24 @@
+@startuml
+
+hide footbox
+skinparam sequenceReferenceBackgroundColor #f7807c
+
+actor Player
+
+participant ":TextUi" as TextUi #EE82EE
+participant ":MSLogic" as MSLogic #90EE90
+
+Player -> TextUi : mark x y
+TextUi -> MSLogic : markCellAt(x, y)
+return
+
+'This sequence can be abstracted into a reference frame for simplicity
+TextUi -> MSLogic : getAppearanceOfCellAt(x, y)
+MSLogic -> TextUi : getConfig()
+TextUi --> MSLogic : config
+MSLogic --> TextUi : cellAppearance
+'---
+
+TextUi --> Player : Show updated minefield
+
+@enduml
