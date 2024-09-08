@@ -1,8 +1,10 @@
 {% set title="AB3 Tutorial: Adding a Command" %}
+{% set testing_header="++#g#:fas-vial-circle-check:##++ Updating tests to match ..." %}
 ---
 title: "{{ title }}"
 pageNav: 3
 ---
+<include src="../common/common-fragments.md#report-bugs" />
 
 # {{ title }}
 
@@ -11,8 +13,9 @@ Let's walk you through the implementation of a new command — `remark`.
 This command allows users of the AddressBook application to add optional remarks to people in their address book and edit it if required. The command should have the following format:
 
 `remark INDEX r/REMARK`
-* `INDEX`: Refers to the position of the person in the currently displayed list on the GUI.
-* `REMARK`: Is the note you wish to attach to their entry.
+
+- `INDEX`: Refers to the position of the person in the currently displayed list on the GUI.
+- `REMARK`: Is the note you wish to attach to their entry.
 
 For example, `remark 2 r/Likes baseball` adds the remark “Likes baseball” to the person at position 2 in the currently displayed list.
 
@@ -52,7 +55,32 @@ public class RemarkCommand extends Command {
 
 Now that we have our `RemarkCommand` ready to be executed, we need to update `AddressBookParser#parseCommand()` to recognize the `remark` keyword. Add the new command to the `switch` block by creating a new `case` that returns a new instance of `RemarkCommand`.
 
-You can refer to the changes in this [diff](https://github.com/se-edu/addressbook-level3/commit/35eb7286f18a029d39cb7a29df8f172a001e4fd8#diff-399c284cb892c20b7c04a69116fcff6ccc0666c5230a1db8e4a9145def8fa4ee).
+**Optionally, if you wish to keep your tests updated** as you go, you can also follow the instructions given in panels such as the one below:
+
+<panel type="seamless" header="{{ testing_header }}">
+
+Since we created a new file RemarkCommand, we should also create a `RemarkCommandTest` file. For now, we expect `execute` in `RemarkCommand` to fail. Thus, the test will reflect this expectation.
+
+```java
+    @Test
+    public void execute() {
+        assertCommandFailure(new RemarkCommand(), model, MESSAGE_NOT_IMPLEMENTED_YET);
+    }
+```
+
+Don’t forget to include a test case in `AddressBookParserTest` to ensure that a `RemarkCommand` is created when the command is parsed successfully.
+
+```java
+    @Test
+    public void parseCommand_remark() throws Exception {
+        assertTrue(parser.parseCommand(RemarkCommand.COMMAND_WORD) instanceof RemarkCommand);
+    }
+```
+
+</panel>
+<p/>
+
+You can see the changes mentioned above in this [diff](https://github.com/se-edu/addressbook-level3/commit/35eb7286f18a029d39cb7a29df8f172a001e4fd8#diff-399c284cb892c20b7c04a69116fcff6ccc0666c5230a1db8e4a9145def8fa4ee).
 
 ### Run the application
 
@@ -141,6 +169,57 @@ public class RemarkCommand extends Command {
 }
 ```
 
+<panel type="seamless" header="{{ testing_header }}">
+
+Since `RemarkCommand` now requires both an index and a remark for instantiation, the tests should be updated accordingly. Additionally, the execution of the command has been updated, so the tests should be adjusted to reflect these changes.
+
+```java
+    @Test
+    public void execute() {
+        final String remark = "Some remark";
+
+        assertCommandFailure(new RemarkCommand(INDEX_FIRST_PERSON, remark), model,
+            String.format(MESSAGE_ARGUMENTS, INDEX_FIRST_PERSON.getOneBased(), remark));
+    }
+```
+
+Note: you can use `CommandTestUtil.java` to include constant test values for greater reusability.
+
+```java
+    public static final String VALID_REMARK_AMY = "Like skiing.";
+    public static final String VALID_REMARK_BOB = "Favourite pastime: Eating";
+```
+
+Additionally, we can add tests for the `equals` method for various inputs, like objects of the different values or types.
+
+```java
+    @Test
+    public void equals() {
+        final RemarkCommand standardCommand = new RemarkCommand(INDEX_FIRST_PERSON, VALID_REMARK_AMY);
+
+        // same values -> returns true
+        RemarkCommand commandWithSameValues = new RemarkCommand(INDEX_FIRST_PERSON, VALID_REMARK_AMY);
+        assertTrue(standardCommand.equals(commandWithSameValues));
+
+        // same object -> returns true
+        assertTrue(standardCommand.equals(standardCommand));
+
+        // null -> returns false
+        assertFalse(standardCommand.equals(null));
+
+        // different types -> returns false
+        assertFalse(standardCommand.equals(new ClearCommand()));
+
+        // different index -> returns false
+        assertFalse(standardCommand.equals(new RemarkCommand(INDEX_SECOND_PERSON, VALID_REMARK_AMY)));
+
+        // different remark -> returns false
+        assertFalse(standardCommand.equals(new RemarkCommand(INDEX_FIRST_PERSON, VALID_REMARK_BOB)));
+    }
+```
+</panel>
+<p/>
+
 Your code should look something like [this](https://github.com/se-edu/addressbook-level3/commit/dc6d5139d08f6403da0ec624ea32bd79a2ae0cbf#diff-a8e35af8f9c251525063fae36c9852922a7e7195763018eacec60f3a4d87c594) after you are done.
 
 ### Parse user input
@@ -222,8 +301,41 @@ public RemarkCommand parse(String args) throws ParseException {
 <box type="info" seamless>
 
 Don’t forget to update `AddressBookParser` to use our new `RemarkCommandParser`!
-
 </box>
+
+<panel type="seamless" header="{{ testing_header }}">
+
+`RemarkCommandParserTest` should also be included to ensure that `RemarkCommandParser` works as we expect. Write test cases that cover a wide range of user inputs, such as presence of index and fields.
+
+```java
+@Test
+public void parse_indexSpecified_success() {
+    // have remark
+    Index targetIndex = INDEX_FIRST_PERSON;
+    String userInput = targetIndex.getOneBased() + " " + PREFIX_REMARK + nonEmptyRemark;
+    RemarkCommand expectedCommand = new RemarkCommand(INDEX_FIRST_PERSON, nonEmptyRemark);
+    assertParseSuccess(parser, userInput, expectedCommand);
+
+    // no remark
+    userInput = targetIndex.getOneBased() + " " + PREFIX_REMARK;
+    expectedCommand = new RemarkCommand(INDEX_FIRST_PERSON, "");
+    assertParseSuccess(parser, userInput, expectedCommand);
+}
+
+@Test
+public void parse_missingCompulsoryField_failure() {
+    String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, RemarkCommand.MESSAGE_USAGE);
+
+    // no parameters
+    assertParseFailure(parser, RemarkCommand.COMMAND_WORD, expectedMessage);
+
+    // no index
+    assertParseFailure(parser, RemarkCommand.COMMAND_WORD + " " + nonEmptyRemark, expectedMessage);
+}
+```
+
+</panel>
+<p/>
 
 If you are stuck, check out the sample
 [here](https://github.com/se-edu/addressbook-level3/commit/dc6d5139d08f6403da0ec624ea32bd79a2ae0cbf#diff-8bf239e8e9529369b577701303ddd96af93178b4ed6735f91c2d8488b20c6b4a).
@@ -256,14 +368,13 @@ Simply add the following to [`seedu.address.ui.PersonCard`](https://github.com/s
 private Label remark;
 ```
 
-
 `@FXML` is an annotation that marks a private or protected field and makes it accessible to FXML. It might sound like Greek to you right now, don’t worry — we will get back to it later.
 
 Then insert the following into [`main/resources/view/PersonListCard.fxml`](https://github.com/se-edu/addressbook-level3/commit/850b78879582f38accb05dd20c245963c65ea599#diff-d44c4f51c24f6253c277a2bb9bc440b8064d9c15ad7cb7ceda280bca032efce9).
 
 **`PersonListCard.fxml`:**
 
-``` xml
+```xml
 <Label fx:id="remark" styleClass="cell_small_label" text="\$remark" />
 ```
 
@@ -289,8 +400,20 @@ Use the `Find Usages` feature in IntelliJ IDEA on the `Person` class to find the
 
 </box>
 
-Refer to [this commit](https://github.com/se-edu/addressbook-level3/commit/ce998c37e65b92d35c91d28c7822cd139c2c0a5c) and check that you have got everything in order!
+<panel type="seamless" header="{{ testing_header }}">
 
+`PersonBuilder.java` is used to create a default `Person` object for testing purposes. Don’t forget to include a remark field in this default Person too!
+
+```java
+    public Person build() {
+        return new Person(name, phone, email, address, remark, tags);
+    }
+```
+
+</panel>
+<p/>
+
+Refer to [this commit](https://github.com/se-edu/addressbook-level3/commit/ce998c37e65b92d35c91d28c7822cd139c2c0a5c) and check that you have got everything in order!
 
 ## Updating Storage
 
@@ -303,6 +426,22 @@ While the changes to code may be minimal, the test data will have to be updated 
 You must delete AddressBook’s storage file located at `/data/addressbook.json` before running it! Not doing so will cause AddressBook to default to an empty address book!
 
 </box>
+
+<panel type="seamless" header="{{ testing_header }}">
+
+`TypicalPersons.java` is used to create various `Person` objects for testing. Add the remark field for these `Person` objects!
+
+```java
+    public static final Person ALICE = new PersonBuilder()
+        .withName("Alice Pauline")
+        .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
+        .withPhone("94351253")
+        .withPhone("94351253").withRemark("She likes aardvarks.")
+        .withTags("friends").build();
+```
+
+</panel>
+<p/>
 
 Check out [this commit](https://github.com/se-edu/addressbook-level3/commit/556cbd0e03ff224d7a68afba171ad2eb0ce56bbf)
 to see what the changes entail.
@@ -371,37 +510,19 @@ In this last step, we modify `RemarkCommand#execute()` to change the `Remark` of
 
 <pic src="images/add-remark/RemarkComplete.png" />
 
-## Writing tests
-
-Tests are crucial to ensuring that bugs don’t slip into the codebase unnoticed. This is especially true for large code bases where a change might lead to unintended behavior.
-
-Let’s verify the correctness of our code by writing some tests!
-
-Of course you can simply add the test cases manually, like you've been doing all along this tutorial. The result would be like the test cases in [here](https://github.com/se-edu/addressbook-level3/commit/fac8f3fd855d55831ca0cc73313b5943d49d4d6e#diff-ff58f7c10338b34f76645df49b71ecb2bafaf7611b20e7ff59ebc98475538a01). Alternatively, you can get the help of IntelliJ to generate the skeletons of the test cases, as explained in the next section.
-
-### Automatically generating tests
-
-The goal is to write effective and efficient tests to ensure that `RemarkCommand#execute()` behaves as expected.
-
-The convention for test names is `methodName_testScenario_expectedResult`. An example would be
-`execute_filteredList_success`.
-
-Let’s create a test for `RemarkCommand#execute()` to test that adding a remark works. On `IntelliJ IDEA` you can bring up the context menu and choose to `Go To` \> `Test` or use the appropriate keyboard shortcut.
-
-<pic src="images/add-remark/ContextMenu.png" />
-
-Then, create a test for the `execute` method.
-
-<pic src="images/add-remark/CreateTest.png" />
-
-Following convention, let’s change the name of the generated method to `execute_addRemarkUnfilteredList_success`.
+<panel type="seamless" header="{{ testing_header }}">
 
 Let’s use the utility functions provided in `CommandTestUtil`. The functions ensure that commands produce the expected `CommandResult` and output the correct message. In this case, `CommandTestUtil#assertCommandSuccess` is the best fit as we are testing that a `RemarkCommand` will successfully add a `Remark`.
 
 You should end up with a test that looks something like [this](https://github.com/se-edu/addressbook-level3/commit/fac8f3fd855d55831ca0cc73313b5943d49d4d6e#diff-ff58f7c10338b34f76645df49b71ecb2bafaf7611b20e7ff59ebc98475538a01R36-R49).
-
-## Conclusion
-
-This concludes the tutorial for adding a new `Command` to AddressBook.
+</panel>
+<p/>
 
 [:fas-arrow-left: Previous](ab3TracingCode.md) | [:fas-arrow-up: **ToC**](ab3.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: **Removing Fields**](ab3RemovingFields.md)
+
+
+--------------------------------------------------------------------------------
+**Authors:**
+* Initial Version: Jeffry Lum
+* Contributors:
+  * Rui Shan Teo (@ruishanteo): Added more explanations for writing tests
