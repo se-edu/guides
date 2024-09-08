@@ -34,10 +34,10 @@ Note how the diagram shows only the execution flows _between_ the main component
 {% set dg_ref %}<span class="badge rounded-pill bg-info">:fas-arrow-right-long: DG</span>{% endset %}
 
 Before we proceed, ensure that you have done the following:
-1. As we go through this tutorial, we will be referring you to read corresponding sections of the AB3 Developer Guide, so that you can mentally connect the code you encounter with corresponding design descriptions. Given below is the first of such DG cross-references.<br>
-   {{ dg_ref }} Read the [**_Architecture_ section** of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture).
-1. Set up the project in Intellij IDEA.
-1. Learn [basic debugging features of Intellij IDEA](intellijDebugger.md):
+1. **Learn the AB3 architecture**: As we go through this tutorial, we will be referring you to read corresponding sections of the AB3 Developer Guide, so that you can mentally connect the code you encounter with corresponding design descriptions. Given below is the first of such DG cross-references that you need to read.<br>
+   {{ dg_ref }} Read the [**_Architecture_ section** of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture) (no need to read the other sections yet).
+1. **Set up your AB3 project** (i.e., the one you cloned to your computer) in Intellij IDEA.
+1. **Learn [basic debugging features of Intellij IDEA](intellijDebugger.md)**:
    * If you are using a different IDE, we'll leave it to you to figure out the equivalent feature to use in your IDE.
    * If you are not using an IDE, we'll let you figure out how to achieve the same using your coding toolchain.
 
