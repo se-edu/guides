@@ -323,14 +323,13 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
    
    More about `fx:root` on the documentation [Introduction to FXML | JavaFX 2.2](https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html#root_elements).
 
-
-
-
+<!--
 ## Exercises
 
 1. Convert `MainWindow` to use the `fx:root` construct.
 1. Extend `MainWindow` to have a `Stage` as a root Node.
 1. Customize the appearance of the application further with CSS.
+-->
 
 [:fas-arrow-left: Previous](javaFxPart3.md) | [:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 5 - **Tweaking the GUI**](javaFxPart5.md)
 

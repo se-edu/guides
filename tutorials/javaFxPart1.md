@@ -171,6 +171,7 @@ Similarly, the warning about the different versions (if any) can be ignored as w
 
 Congratulations! You have created your first GUI application!
 
+<!--
 ## Exercises
 
 1. We mentioned that `Node`s are the fundamental building blocks of JavaFX and used a `Label` as our root node in the HelloWorld application.
@@ -182,6 +183,7 @@ Congratulations! You have created your first GUI application!
 1. You’ve learnt that a `Stage` can be thought of as a window.
    1. Can you have more than one `Stage` in an application?
    1. Try creating another stage and showing it! What happens?
+-->
 
 [:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 2 - **Creating a GUI for Duke**](javaFxPart2.md)
 

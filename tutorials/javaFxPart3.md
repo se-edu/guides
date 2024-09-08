@@ -211,6 +211,7 @@ Run the application and play around with it.
 Congratulations!
 You have successfully implemented a fully functional GUI for Duke! But there's more. Continue to the next section to find out.
 
+<!--
 ## Exercises
 
 1. While the GUI looks similar to the mockup, there are still parts that need to be refined. Try your hand at some of these tasks:
@@ -221,6 +222,7 @@ You have successfully implemented a fully functional GUI for Duke! But there's m
 1. After attempting the changes, reflect critically on the following:
    * What was the development workflow like?
    * Is the code base well-organized?
+-->
 
 [:fas-arrow-left: Previous](javaFxPart2.md) | [:fas-arrow-up: **ToC**](javaFx.md) | <span class="badge rounded-pill bg-primary">**++What's next?++**</span> [:fas-arrow-right: JavaFX tutorial part 4 - **Using FXML**](javaFxPart4.md)
 
