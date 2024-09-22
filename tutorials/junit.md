@@ -57,10 +57,20 @@ dependencies {
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.10.0'
 }
 ```
-Next, add the following, to tell Gradle that JUnit is to be used as the testing tool.
+Next, add the following, to tell Gradle that JUnit is to be used as the testing tool (and to configure a few aspects of how Gradle handles JUnit tests).
 ```groovy {heading="build.gradle"}
 test {
     useJUnitPlatform()
+
+    testLogging {
+        events "passed", "skipped", "failed"
+
+        showExceptions true
+        exceptionFormat "full"
+        showCauses true
+        showStackTraces true
+        showStandardStreams = false
+    }
 }
 ```
 
