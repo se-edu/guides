@@ -40,14 +40,18 @@ This guide explains how to install the **==[Java 17 JDK+FX Azul distribution](ht
      ```bash
      sdk default java 17.0.11.fx-zulu
      ```
+   <box type="tip" seamless>
+
+   **If your installation terminated prematurely** (e.g., due to a network connectivity issue), it can result in an incomplete installation that will get in the way of future re-installations (i.e., `sdk install` command will give the error `HTTP server doesn't seem to support byte ranges. Cannot resume.`).<br>
+     Remedy: Run the `sdk flush` command to purge the previous incomplete installation.
+   </box>
+
 * **Verify installation** by running the following command. You should see the version information for Java 17.0.11.fx-zulu.
    ```bash
    java -version
    ```
 
-<box type="info" seamless>
-
-If you encountered issues following the above instructions, you can also watch the video below for a more visual explanation (note that the JDK version it uses is not the one we want -- so, adapt accordingly).
+If you encountered issues while following the above instructions, you can also watch the video below for a more visual explanation (note that the JDK version it uses is not the one we want -- so, adapt accordingly).
 
 <panel type="seamless" header="video: using SDKMAN to install multiple Java versions" peek>
 
