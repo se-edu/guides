@@ -116,7 +116,7 @@ with(this){return _c('li',[_c('p',[_v("Let’s see what "),_c('code',{pre:true,a
 with(this){return _c('li',[_c('p',[_v("Stepping through the method shows that it calls "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ArgumentTokenizer#tokenize()")]),_v(" and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ParserUtil#parseIndex()")]),_v(" to obtain the arguments and index required.")])])}
 },function anonymous(
 ) {
-with(this){return _c('li',[_c('p',[_v("The rest of the method seems to exhaustively check for the existence of each possible parameter of the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" command and store any possible changes in an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EditPersonDescriptor")]),_v(". Recall that we can verify the contents of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editPersonDesciptor")]),_v(" through the 'Variables' window."),_c('br'),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/images/tracing/EditCommand.png","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/guides/tutorials/images/tracing/EditCommand.png","alt":"EditCommand"}})])])])}
+with(this){return _c('li',[_c('p',[_v("The rest of the method seems to exhaustively check for the existence of each possible parameter of the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit")]),_v(" command and store any possible changes in an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EditPersonDescriptor")]),_v(". Recall that we can verify the contents of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("editPersonDescriptor")]),_v(" through the 'Variables' window."),_c('br'),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/images/tracing/EditCommand.png","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/guides/tutorials/images/tracing/EditCommand.png","alt":"EditCommand"}})])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("Let’s continue stepping through until we return to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("LogicManager#execute()")]),_v(".")])}
@@ -200,6 +200,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Jeffry Lum")]),_v(" "),_c('li',[_v("Contributors:\n"),_c('ul',[_c('li',[_v("Ruth Lim (@ruth-lim): Added answers to questions in the 'More things to try' section")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Mon, 23 Sept 2024, 13:23:33 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Tue, 24 Sept 2024, 23:18:52 GMT+8]")])])])}
 }];
   
