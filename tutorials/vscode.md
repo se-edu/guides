@@ -1,7 +1,7 @@
 {% set title="VS Code - Community Resources" %}
 <frontmatter>
-title: "{{ title }}"
-pageNav: 0
+  title: "{{ title }}"
+  pageNav: 0
 </frontmatter>
 
 # {{ title }}
