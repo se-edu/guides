@@ -15,6 +15,13 @@ Imagine yourself as a director of a play. First you provision the props that you
 
 A JavaFX application is like a play you are directing. Instead of creating props, you create `Node`s (`Node`s are the fundamental building blocks of a JavaFX application), and place them onto a `Scene` (a scene is a graph of `Node`s). Then, you set your `Scene` on a `Stage` provided by JavaFX. When you call `Stage#show()` method, JavaFX renders a window with your `Stage` on it.
 
+<box type="tip" seamless>
+The `Stage` is like a window in a desktop application. It is the top-level container for a JavaFX application. 
+A `Scene` is a container for `Node`s. 
+A `Node` is a component that can be added to a `Scene`. `Node`s can be simple controls like `Label`, `Button`, etc., or complex controls like `TableView`, `TreeView`, etc.
+A `Root Node` is the topmost `Node` in a `Scene`, the parent of all other `Node`s. It is usually a pane like `StackPane`, `BorderPane`, etc.
+</box>
+
 Well, that's a very high-level view of how JavaFX works. The actual implementation of a Java FX is a bit more (ahem...) "involved". This tutorial takes you through the steps of building a typical Java FX application, using a chatbot application called Duke as a running example. Given below is what the end result can look like if you follow this tutorial until the end:
 
 <video oncontextmenu="return false;" width="700px" autoplay muted loop>
