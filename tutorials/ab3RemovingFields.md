@@ -113,7 +113,7 @@ In `src/test/data/`, data meant for testing purposes are stored. While keeping t
 
 You can go through each individual `json` file and manually remove the `address` field.
 
-Once you've finished, you can cross-check your changes with this [diff](https://github.com/mfjkri/addressbook-level3/commit/3e658057198ca9e1ff0fce2ce1b353df78e0be86).
+After you've manually removed the address field from each relevant JSON file, you can cross-check your changes with this [diff](https://github.com/mfjkri/addressbook-level3/commit/3e658057198ca9e1ff0fce2ce1b353df78e0be86). This link provides a complete overview of all changes made throughout the guide, including the removal of the address field from various parts of AB3.
 
 [:fas-arrow-left: Previous](ab3AddRemark.md) | [:fas-arrow-up: **ToC**](ab3.md)
 
