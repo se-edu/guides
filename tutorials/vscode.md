@@ -67,4 +67,4 @@ If the Gradle icon doesn't appear after restarting VS Code, add `"gradle.nestedP
 
 4. After the importing of the project is complete (which could take a few minutes), you will see the Gradle Tab in the VSCode interface e.g., look for the elephant icon on the left and click it.
 
-<img width="258" alt="grade-icon-vscode" src="https://github.com/user-attachments/assets/1280c200-8301-4a5d-8e37-5bbafb321541">
+![Gradle vscode icon](images/vscode/vscode_gradle_icon.jpg)
