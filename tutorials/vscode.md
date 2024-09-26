@@ -45,7 +45,7 @@ Go to `Extensions` → Search `Extension Pack for Java` → Install.
 
     <panel header="VSCode: Setting the JVM for Gradle">
 
-    1. Install the Gradle Extension: Search for "Gradle" in the Extensions view (`Ctrl+Shift+X`), and install a Gradle extension if you haven’t already (e.g., Gradle for Java).
+    1. Install the Gradle Extension: Search for "Gradle" in the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`), and install a Gradle extension if you haven’t already (e.g., [Gradle for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle)).
     2. Open settings.json: You can find it by opening the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P`), then typing "Preferences: Open User Settings (JSON)".
     3. Add or modify the following settings to configure the JVM for Gradle:
 
