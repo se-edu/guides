@@ -37,7 +37,7 @@ Go to `Extensions` → Search `Extension Pack for Java` → Install.
 
     ii. Type "Java: Configure Java Runtime" and select it.
 
-    iii. Check that the JDK version matches the one required for your project. If not, you can install the required JDK and configure it.
+    iii. Check that the JDK version matches the one required for your project. If not, you can install the required JDK and configure it. (For installation guides, click [here](https://se-education.org/guides/tutorials/javaInstallationMac.html) for Mac and [here](https://se-education.org/guides/tutorials/javaInstallationWindows.html) for Windows)
 
     **Note:** MacOS users need to download Azul Zulu compatible with their machine and Java 17, with the Java Package specified as JDK FX.
 
