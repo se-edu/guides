@@ -51,6 +51,13 @@ Any changes you make in editor pane on the left will be reflected in the preview
   * The `PlantUML integration` plugin allows you to export individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
   * You will have to `git add` any new diagrams generated!
 
+<panel type="seamless" header="Using PlantUML with Jekyll and MarkBind">
+
+* **MarkBind**: Follow the [MarkBind guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#plantuml-diagrams) to automatically generate diagrams.
+* **Jekyll**: Use the plugin mentioned above to export and manually embed your diagrams as images.
+
+</panel>
+
 <!-- --------------------------------------------------------------------------------------------------------- -->
 
 ## Tips and tricks
