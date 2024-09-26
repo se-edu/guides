@@ -61,6 +61,8 @@ Go to `Extensions` → Search `Extension Pack for Java` → Install.
         }
         ```
 
+If the Gradle icon doesn't appear after restarting VS Code, add `"gradle.nestedProjects": true` to your `settings.json` file.
+
     </panel>
 
 4. After the importing of the project is complete (which could take a few minutes), you will see the Gradle Tab in the VSCode interface e.g., look for the elephant icon on the left and click it.
