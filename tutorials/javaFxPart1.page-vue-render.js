@@ -50,7 +50,7 @@ with(this){return _c('code',{pre:true,attrs:{"heading":"Main.java","class":"hljs
 with(this){return _c('p',[_v("Note how we have created a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Label")]),_v(" to contain the text that we want to show. We then create the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Scene")]),_v(" and set its content. Finally, we set the stage and show it.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Next, we create another Java class, "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Launcher")]),_v(", as an entry point to our application (this class is needed to work around a classpath issue -- we can ignore the reason for now).")])}
+with(this){return _c('p',[_v("Next, we create another Java class, "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Launcher")]),_v(", as an entry point to our application (this class is needed to work around a classpath issue -- we can ignore the reason for now, "),_c('span',{staticClass:"dimmed"},[_v("but if you want to know more, you can refer to "),_c('a',{attrs:{"href":"https://github.com/se-edu/addressbook-level3/commit/12bb91903e71ea1109e04f7369c2169f1c7be39a"}},[_v("this commit from another project")])]),_v(").")])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Launcher")]),_v(" class is reproduced below in its entirety.")])}
@@ -86,6 +86,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Jeffry Lum")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Fri, 27 Sept 2024, 15:57:55 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Fri, 27 Sept 2024, 23:28:09 GMT+8]")])])])}
 }];
   
