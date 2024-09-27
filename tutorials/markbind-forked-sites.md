@@ -62,7 +62,7 @@ When adapting the documentation to a new fork that evolves/morphs the upstream p
 
 1. Go to the {{ show_as_rounded_tab(":octicon-gear: Settings ") }} &nbsp;tab of your fork (not the org, as you did in step 1).
 1. Click {{ show_as_tab("Pages") }} on the menu on the left edge of page.
-1. Set the `Source` as: {{ show_as_button('Deploy from a branch :octicon-triangle-down:') }} branch{{ show_as_button(':octicon-git-branch: gh-pages :octicon-triangle-down:') }} branch and {{ show_as_button(':octicon-file-directory: /root :octicon-triangle-down:') }} folder (assuming project documentation is in that folder) and click {{ show_as_button('Save') }}.
+1. Set the `Source` as: {{ show_as_button('Deploy from a branch :octicon-triangle-down:') }} branch{{ show_as_button(':octicon-git-branch: gh-pages :octicon-triangle-down:') }} branch and {{ show_as_button(':octicon-file-directory: /docs :octicon-triangle-down:') }} folder (assuming project documentation is in that folder) and click {{ show_as_button('Save') }}.
 1. After CI has run (which might take 1-2 minutes), your MarkBind site will be available at `http(s)://<organization_name_in_lower_case>.github.io/<repository>` e.g., `https://ay2324s2-csxxxx-f18.github.io/tp`
 
 {{ step('...', "Next") }} **Update content, commit, and push**. For future updates to the site, all you need to do is update content (usually, in `*.md` files), commit the changes, and push to your fork. The published MarkBind site will be updated automatically after the CI has run.
