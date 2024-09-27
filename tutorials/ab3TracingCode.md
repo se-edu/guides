@@ -36,8 +36,12 @@ Note how the diagram shows only the execution flows _between_ the main component
 Before we proceed, ensure that you have done the following:
 1. **Learn the AB3 architecture**: As we go through this tutorial, we will be referring you to read corresponding sections of the AB3 Developer Guide, so that you can mentally connect the code you encounter with corresponding design descriptions. Given below is the first of such DG cross-references that you need to read.<br>
    {{ dg_ref }} Read the [**_Architecture_ section** of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture) (no need to read the other sections yet).
-1. **Set up your AB3 project** (i.e., the one you cloned to your computer) in Intellij IDEA.
-1. **Learn [basic debugging features of Intellij IDEA](intellijDebugger.md)**:
+1. **Set up your AB3 project** (i.e., the one you cloned to your computer) in Intellij IDEA, and confirm the setup is correct by doing the following two checks:
+   * Run `./gradlew run` -- AB3 app should launch, and you should be able to interact with it.<br>
+     If this step doesn't go as expected, ensure the default Java version is set correctly (more info: [:fab-apple: Mac](javaInstallationMac.html) | [:fab-windows: Windows](javaInstallationWindows.html)). {texts="['2.1', '2.2', '2.3']"}
+   * Run AB3 using Intellij UI (i.e., use the {{ icon_run_green }} button to run `src\main\java\seedu\address\Main.java`) and ensure the app launches.<br>
+     If the first check worked but this check doesn't, ensure you have set Intellij to use the correct JDK version (more info: [here](intellijJdk.md)).
+1. **Learn basic debugging features of Intellij IDEA** given [here](intellijDebugger.md):
    * If you are using a different IDE, we'll leave it to you to figure out the equivalent feature to use in your IDE.
    * If you are not using an IDE, we'll let you figure out how to achieve the same using your coding toolchain.
 

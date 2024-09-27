@@ -4,4 +4,9 @@
 
 # Intellij IDEA: Configuring the JDK
 
-Please refer to Intellij's own documentation [here](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk).
+<box type="info" seamless>
+
+Note: step (b) is needed only if your project is using Gradle (i.e., if there is a `build.gradle` file in the project root folder).
+</box>
+
+<include src="intellijImportGradleProject.md#configure-intellij-sdk" />
