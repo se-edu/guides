@@ -94,7 +94,7 @@ public class Main extends Application {
 
 Note how we have created a `Label` to contain the text that we want to show. We then create the `Scene` and set its content. Finally, we set the stage and show it.
 
-Next, we create another Java class, `Launcher`, as an entry point to our application (this class is needed to work around a classpath issue -- we can ignore the reason for now).
+Next, we create another Java class, `Launcher`, as an entry point to our application (this class is needed to work around a classpath issue -- we can ignore the reason for now, %%but if you want to know more, you can refer to [this commit from another project](https://github.com/se-edu/addressbook-level3/commit/12bb91903e71ea1109e04f7369c2169f1c7be39a)%%).
 
 The `Launcher` class is reproduced below in its entirety.
 
