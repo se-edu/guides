@@ -38,7 +38,7 @@ Before we proceed, ensure that you have done the following:
    {{ dg_ref }} Read the [**_Architecture_ section** of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture) (no need to read the other sections yet).
 1. **Set up your AB3 project** (i.e., the one you cloned to your computer) in Intellij IDEA, and confirm the setup is correct by doing the following two checks:
    * Run `./gradlew run` -- AB3 app should launch, and you should be able to interact with it.<br>
-     If this step doesn't go as expected, ensure the default Java version is set correctly (more info: [:fab-apple: Mac](javaInstallationMac.html) | [:fab-windows: Windows](javaInstallationWindows.html)). {texts="['2.1', '2.2', '2.3']"}
+     If this step doesn't go as expected, ensure the default Java version is set correctly, as given in [here](javaInstallation.html). {texts="['2.1', '2.2', '2.3']"}
    * Run AB3 using Intellij UI (i.e., use the {{ icon_run_green }} button to run `src\main\java\seedu\address\Main.java`) and ensure the app launches.<br>
      If the first check worked but this check doesn't, ensure you have set Intellij to use the correct JDK version (more info: [here](intellijJdk.md)).
 1. **Learn basic debugging features of Intellij IDEA** given [here](intellijDebugger.md):
