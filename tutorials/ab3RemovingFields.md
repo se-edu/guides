@@ -113,6 +113,8 @@ In `src/test/data/`, data meant for testing purposes are stored. While keeping t
 
 You can go through each individual `json` file and manually remove the `address` field.
 
+After you've manually removed the address field from each relevant JSON file, you can cross-check your changes in this [commit](https://github.com/se-edu/addressbook-level3/commit/3e658057198ca9e1ff0fce2ce1b353df78e0be86).
+
 [:fas-arrow-left: Previous](ab3AddRemark.md) | [:fas-arrow-up: **ToC**](ab3.md)
 
 --------------------------------------------------------------------------------
