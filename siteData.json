@@ -455,7 +455,7 @@
       "title": "JavaFX tutorial part 1 – Getting started",
       "headings": {
         "javafx-tutorial-part-1-getting-started": "JavaFX tutorial part 1 – Getting started",
-        "lifecycle-of-a-javafx-application": "Lifecycle of a JavaFX  application",
+        "the-structure-of-a-javafx-gui": "The structure of a JavaFX  GUI",
         "setting-up-the-project": "Setting up the project",
         "setting-up-java-fx": "Setting up Java FX",
         "writing-your-first-java-fx-program": "Writing your first Java FX program"
