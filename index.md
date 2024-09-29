@@ -34,6 +34,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Configuring the code style](tutorials/intellijCodeStyle.html)
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
+* [**Visual Studio Code**](tutorials/vscode.html)
 * [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
