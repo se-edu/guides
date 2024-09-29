@@ -53,3 +53,34 @@ This guide is for those who prefer to use [Visual Studio Code](https://code.visu
   * If the Gradle icon doesn't appear after restarting VS Code, add `"gradle.nestedProjects": true` to your `settings.json` file.
 * **Confirm you can access the Gradle tool window**. After the importing of the project is complete (which could take a few minutes), you will see the Gradle Tab in the VSCode interface e.g., look for the elephant icon on the left and click it.<br>
    <pic src="images/vscode/vscode_gradle_icon.jpg" width="400" />
+
+
+## Setting up Checkstyle
+
+Given below are the steps to set up a Checkstyle plugin in VS Code so that VS Code can alert you about code style problems as you write code.
+
+* **Verify prerequisites:**: {{ step_numbers }}
+  * The two Checkstyle config files (`checkstyle.xml` and `suppressions.xml`) should be in the `./config/checkstyle` directory, as mentioned [here](checkstyle.md). {{ abcd_numbers }}
+  * You have downloaded the _Extension Pack for Java_, as mentioned in the section [Preparing VS Code for Java projects](#preparing-vs-code-for-java-projects) above. This is required as the Checkstyle for Java extension is dependent on [Language Support for Java by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java), one of the extensions in this extension pack, to work properly.
+* Open VS Code.
+* Download the [Checkstyle for Java](https://marketplace.visualstudio.com/items?itemName=shengchen.vscode-checkstyle) extension by author ShengChen using `Extensions` -> Search `Checkstyle for Java` -> Install (the first entry).<br>
+   ![install checkstyle extension in VS Code](images/vscode/checkstyle-extension-install.png)
+* Open the project directory in VS Code using `File -> Open Folder...`.
+* Set up the extension to use the project's Checkstyle files as follows:
+  * Check if the `./.vscode/settings.json` file exists. If not, create a folder `.vscode` in the project root directory and add a file `settings.json` within the `.vscode` folder. This file contains configuration settings for projects in VS Code. {{ abcd_numbers }}
+   * Add these configuration settings to the `settings.json` file. These settings ensure that the Checkstyle extension uses the correct configuration files in the `./config/checkstyle` directory:
+     ```json { heading="settings.json" }
+      {
+        "java.checkstyle.configuration": "${workspaceFolder}/config/checkstyle/checkstyle.xml",
+        "java.checkstyle.properties": {
+          "config_loc": "${workspaceFolder}/config/checkstyle"
+        }
+      }    
+      ```
+* Add `.vscode` to your `.gitignore` if you haven't done so by adding these few lines to the end of `.gitignore`:
+  ```sh { heading=".gitignore" }
+  # VS Code
+  /.vscode/
+  ```
+* Now you should be able to edit your code with Checkstyle violations being detected as you edit them in the `Problems` tab in VS Code. For example, after changing the code to add a wildcard import, you can see that the wildcard import on line 11 has been detected by the Checkstyle extension:<br>
+  <pic src="images/vscode/checkstyle-vscode-example.png" width="600" />
