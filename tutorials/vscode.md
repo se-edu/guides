@@ -26,7 +26,9 @@ This guide is for those who prefer to use [Visual Studio Code](https://code.visu
 
 ## Importing a Gradle project
 
-* **Verify the project has support for Gradle:** If it does, you will see a `build.gradle` file in your project root.{{ step_numbers }}
+* **Verify prerequisites:** {{ step_numbers }}
+  * Ensure you followed the section [Preparing VS Code for Java projects](#preparing-vs-code-for-java-projects) above.
+  * Verify the project has support for Gradle. If it does, you will see a `build.gradle` file in your project root.
 * **Open the project in VS Code**, as follows:
   * Open VS Code.{{ abcd_numbers }}
   * If you are in the welcome screen, Click `Open`. Otherwise, click `File` -> `Open`.
@@ -59,9 +61,9 @@ This guide is for those who prefer to use [Visual Studio Code](https://code.visu
 
 Given below are the steps to set up a Checkstyle plugin in VS Code so that VS Code can alert you about code style problems as you write code.
 
-* **Verify prerequisites:**: {{ step_numbers }}
+* **Verify prerequisites:** {{ step_numbers }}
+  * Ensure you followed the section [Preparing VS Code for Java projects](#preparing-vs-code-for-java-projects) above.
   * The two Checkstyle config files (`checkstyle.xml` and `suppressions.xml`) should be in the `./config/checkstyle` directory, as mentioned [here](checkstyle.md). {{ abcd_numbers }}
-  * You have downloaded the _Extension Pack for Java_, as mentioned in the section [Preparing VS Code for Java projects](#preparing-vs-code-for-java-projects) above. This is required as the Checkstyle for Java extension is dependent on [Language Support for Java by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java), one of the extensions in this extension pack, to work properly.
 * Open VS Code.
 * Download the [Checkstyle for Java](https://marketplace.visualstudio.com/items?itemName=shengchen.vscode-checkstyle) extension by author ShengChen using `Extensions` -> Search `Checkstyle for Java` -> Install (the first entry).<br>
    ![install checkstyle extension in VS Code](images/vscode/checkstyle-extension-install.png)
