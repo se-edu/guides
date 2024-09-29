@@ -17,7 +17,7 @@ A JavaFX application is like a play you are directing. Instead of creating props
 
 <box type="tip" seamless>
 The `Stage` is like a window in a desktop application. It is the top-level container for a JavaFX application. 
-A `Scene` is a container for `Node`s. 
+A `Scene` is a container for `Node`s. A stage contains multiple scenes, and shows different scenes at different times based on programme state, user actions, etc.
 A `Node` is a component that can be added to a `Scene`. `Node`s can be simple controls like `Label`, `Button`, etc., or complex controls like `TableView`, `TreeView`, etc.
 A `Root Node` is the topmost `Node` in a `Scene`, the parent of all other `Node`s. It is usually a pane like `StackPane`, `BorderPane`, etc.
 </box>
