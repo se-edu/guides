@@ -532,6 +532,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/javaInstallation.md",
+      "title": "Java Installation Guides",
+      "headings": {
+        "java-installation-guides": "Java Installation Guides"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/javaInstallationMac.md",
       "title": "Java 17 Installation Guide for Mac Users",
       "headings": {
@@ -658,7 +666,10 @@
       "src": "tutorials/vscode.md",
       "title": "VS Code - Community Resources",
       "headings": {
-        "vs-code-community-resources": "VS Code - Community Resources"
+        "vs-code-community-resources": "VS Code - Community Resources",
+        "preparing-vs-code-for-java-projects": "Preparing VS Code for Java projects",
+        "importing-a-gradle-project": "Importing a Gradle project",
+        "setting-up-checkstyle": "Setting up Checkstyle"
       },
       "headingKeywords": {}
     }
