@@ -46,7 +46,7 @@ Any changes you make in editor pane on the left will be reflected in the preview
 ****Saving the Diagram as an image****
 
 * **When using MarkBind** as the site generation tool:
-  * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you.
+  * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you. Refer to [this section of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#plantuml-diagrams) for more details.
 * **When using Jekyll** as the site generation tool:
   * The `PlantUML integration` plugin allows you to export individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
   * You will have to `git add` any new diagrams generated!
