@@ -47,6 +47,6 @@ with(this){return _c('h2',{attrs:{"id":"changing-the-site-name"}},[_v("Changing 
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Click on "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Settings")]),_v(".")])]),_v(" "),_c('li',[_c('p',[_v("Then click "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Change site name")]),_v(" and fill in your desired site name."),_c('br'),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/images/netlify/change_site_name.png","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/guides/tutorials/images/netlify/change_site_name.png","alt":"Change site name"}})])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Sun, 29 Sept 2024, 22:03:01 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Mon, 30 Sept 2024, 18:37:52 GMT+8]")])])])}
 }];
   
