@@ -6,7 +6,7 @@
 
 # {{ title }}
 
-This guide explains how to install the **==[OpenJDK Java 17](https://openjdk-sources.osci.io/openjdk17/)==** on Linux. This guide was created using Ubuntu 22.04 but the steps for other Debian based Linux distros should be similar.
+This guide explains how to install the **==[OpenJDK Java 17](https://openjdk-sources.osci.io/openjdk17/)==** on Linux using the command line. This guide was created using Ubuntu 22.04 but the steps for other Debian based Linux distros should be similar.
 
 
 ## Installation
