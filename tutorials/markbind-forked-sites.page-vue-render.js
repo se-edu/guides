@@ -86,6 +86,6 @@ with(this){return _c('p',[_c('strong',[_v("MarkBind has built-in support for Pla
 with(this){return _c('p',[_v("Also see "),_c('a',{attrs:{"href":"https://se-education.org/guides/tutorials/plantUml.html"}},[_c('em',[_v("se-edu/guides "),_c('strong',[_v("Using PlantUML")])])]),_v(" for useful info on using PlantUML in a project such as AB3.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Mon, 30 Sept 2024, 18:37:52 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Thu, 3 Oct 2024, 15:57:51 GMT+8]")])])])}
 }];
   

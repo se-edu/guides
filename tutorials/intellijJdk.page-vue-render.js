@@ -14,6 +14,6 @@ with(this){return _c('h1',{attrs:{"id":"intellij-idea-configuring-the-jdk"}},[_v
 with(this){return _c('p',[_v("(a) Confirm the project JDK is set to the one you are supposed to use for the project, as explained "),_c('a',{attrs:{"href":"https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk"}},[_v("here")]),_v("."),_c('br'),_v("\n(b) Confirm the correct JVM is used for Gradle, as given in the panel below:")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Mon, 30 Sept 2024, 18:37:52 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Thu, 3 Oct 2024, 15:57:51 GMT+8]")])])])}
 }];
   
