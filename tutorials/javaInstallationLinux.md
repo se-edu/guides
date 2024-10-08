@@ -62,3 +62,4 @@ If you have multiple versions of Java installed, you can switch between them usi
 
 **Authors:**
 * Initial Version: Drustan Yeo ([@drustanyjt](https://github.com/drustanyjt))
+* Fikri ([@mfjkri](https://github.com/mfjkri))
