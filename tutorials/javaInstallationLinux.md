@@ -7,10 +7,10 @@
 # {{ title }}
 
 This guide explains how to install the **==[OpenJDK Java 17](https://openjdk-sources.osci.io/openjdk17/)==** on Linux using the command line. This guide was created using Ubuntu 22.04 but the steps for other Debian based Linux distros should be similar.
+This guide assumes you have super user access.
 
 
 ## Installation
-This should be the default option for users with admin access to their system.
 
 * **Update APT repositories** {{ step_numbers }}
    * First we need to ensure our apt repositories are updated. Enter the following command in your terminal: 
