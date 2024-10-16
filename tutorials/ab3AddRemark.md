@@ -82,6 +82,11 @@ Don’t forget to include a test case in `AddressBookParserTest` to ensure that 
 
 You can see the changes mentioned above in this [diff](https://github.com/se-edu/addressbook-level3/commit/35eb7286f18a029d39cb7a29df8f172a001e4fd8#diff-399c284cb892c20b7c04a69116fcff6ccc0666c5230a1db8e4a9145def8fa4ee).
 
+<box type="warning" seamless>
+
+**Code given in the diff's cited here (such as the one above) might be slightly outdated** compared to the current AB3 code. If you copy over the code from such a diff, you need to verify the code is working as expected, and fix up the outdated parts as necessary.
+</box>
+
 ### Run the application
 
 Run `Main#main` and try out your new `RemarkCommand`. If everything went well, you should see something like this:
