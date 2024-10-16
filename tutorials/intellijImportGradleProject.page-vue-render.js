@@ -20,6 +20,6 @@ with(this){return _c('p',[_v("(a) Confirm the project JDK is set to the one you 
 with(this){return _c('ol',{attrs:{"start":"4"}},[_c('li',[_v("After the importing of the project is complete (which could take a few minutes), you will see the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Gradle Toolbar")]),_v(" in the IDEA interface "),_c('span',{staticClass:"dimmed"},[_v("e.g., look for the elephant icon (on Windows, this appears on the right-edge of the IDE window) and click it")]),_v("."),_c('br'),_v(" "),_c('a',{attrs:{"href":"/guides/tutorials/images/gradle/GradleIcon.png","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"/guides/tutorials/images/gradle/GradleIcon.png","alt":"Gradle icon"}})])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Fri, 4 Oct 2024, 19:10:29 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Thu, 17 Oct 2024, 2:07:42 GMT+8]")])])])}
 }];
   

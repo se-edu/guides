@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 5.5.3">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Java 17 Installation Guide for Linux Users</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><header sticky=""><div data-v-7c0fd418><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-7c0fd418><div class="container-fluid" data-v-7c0fd418><div class="navbar-left" data-v-7c0fd418><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-7c0fd418></span> <strong data-v-7c0fd418><strong data-v-7c0fd418>SE-EDU</strong></strong></span></a></div> <div class="navbar-default" data-v-7c0fd418><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-7c0fd418> <li data-v-7c0fd418><a href="/guides/index.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>Home</strong></span></a></li> <li data-v-7c0fd418><a href="/guides/about.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>About</strong></span></a></li> <li data-v-7c0fd418><a href="https://github.com/se-edu/guides" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fab fa-github" data-v-7c0fd418></span></span></a></li></ul></div> <ul class="navbar-nav navbar-right" data-v-7c0fd418><li class="nav-link" data-v-7c0fd418><form class="navbar-form" data-v-7c0fd418><div class="dropdown" style="position:relative;" data-v-4f6e9aec><input data-bs-toggle="dropdown" type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control" data-v-4f6e9aec> <div class="form-control placeholder-div-hidden" data-v-4f6e9aec>
+      Search this site
+    </div> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-4f6e9aec></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-7c0fd418><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="java-17-installation-guide-for-linux-users">Java 17 Installation Guide for Linux Users<a href="#java-17-installation-guide-for-linux-users" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p>This guide explains how to install the <strong><mark><a href="https://openjdk-sources.osci.io/openjdk17/">OpenJDK Java 17</a></mark></strong> on Linux using the command line. This guide was created using Ubuntu 22.04 but the steps for other Debian based Linux distros should be similar.
+This guide assumes you have super user access.</p> <h2 id="installation">Installation<a href="#installation" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <ul style="list-style-type:none;padding-inline-start:0px;"><li texts="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']" style="display:flex;"><span aria-hidden="true" class="badge rounded-pill bg-primary text-white" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">1</span><div><strong>Update APT repositories</strong> <ul><li>First we need to ensure our apt repositories are updated. Enter the following command in your terminal:<pre><code class="hljs bash"><span>sudo apt update &amp;&amp; sudo apt upgrade
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre>Enter your password if prompted.</li></ul></div></li> <li style="display:flex;"><span aria-hidden="true" class="badge rounded-pill bg-primary text-white" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">2</span><div><strong>Install JDK</strong> <ul><li>Install the Java 17 OpenJDK version by running:<pre><code class="hljs bash"><span>sudo apt install openjdk-17-jdk 
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre>Note that the default installation location is usually <code class="hljs inline no-lang">/usr/lib/jvm/</code>.</li></ul></div></li> <li style="display:flex;"><span aria-hidden="true" class="badge rounded-pill bg-primary text-white" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">3</span><div><strong>Verify Installation</strong> <ul><li>To verify the installation, run:<pre><code class="hljs bash"><span>java -version
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li></ul></div></li></ul> <h2 id="switching-between-java-versions">Switching between Java versions<a href="#switching-between-java-versions" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>If you have multiple versions of Java installed, you can switch between them using <code class="hljs inline no-lang">update-alternatives</code>.</p> <ul><li><p><strong>To see the currently active Java version</strong> run,</p> <pre><code class="hljs bash"><span>java -version
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><p><strong>To switch to a different installed version</strong>, run the following command.</p> <pre><code class="hljs bash"><span>sudo update-alternatives --config java
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>You should see terminal output like this:
+<img src="/guides/tutorials/images/javaInstallationLinux/update_alternatives_java.png" style="padding:10px;"></p> <p>Follow the instructions to change to your desired version.
+For example, to use Java 11 in the image above, type <code class="hljs inline no-lang">1</code> into the terminal.</p></li> <li><p><strong>If you don't have the desired version installed</strong>, you can search for it by running the following command:</p> <pre><code class="hljs bash"><span>sudo apt-cache search openjdk | grep <span class="hljs-string">&quot;\-jdk&quot;</span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>You should see the available OpenJDK Java versions listed like so:
+<img src="/guides/tutorials/images/javaInstallationLinux/list_openjdk_versions.png" style="padding:10px;"></p> <p>Decide on one of the available versions and follow the same steps as above to install your desired Java version.</p></li></ul> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Drustan Yeo (<a href="https://github.com/drustanyjt">@drustanyjt</a>)</li></ul><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#java-17-installation-guide-for-linux-users" data-v-e6005420>Java 17 Installation Guide for Linux Users‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#installation" data-v-e6005420>Installation‎</a> <a class="nav-link py-1" href="#switching-between-java-versions" data-v-e6005420>Switching between Java versions‎</a></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.3</a> on Thu, 17 Oct 2024, 2:07:42 GMT+8]</small></div></footer></div>
+</body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
+<script src="/guides/markbind/js/polyfill.min.js"></script>
+<script src="/guides/markbind/js/vue.min.js"></script>
+<script src="/guides/markbind/js/markbind.min.js"></script>
+<script src="javaInstallationLinux.page-vue-render.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>

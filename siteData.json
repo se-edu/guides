@@ -540,6 +540,16 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/javaInstallationLinux.md",
+      "title": "Java 17 Installation Guide for Linux Users",
+      "headings": {
+        "java-17-installation-guide-for-linux-users": "Java 17 Installation Guide for Linux Users",
+        "installation": "Installation",
+        "switching-between-java-versions": "Switching between Java versions"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/javaInstallationMac.md",
       "title": "Java 17 Installation Guide for Mac Users",
       "headings": {
