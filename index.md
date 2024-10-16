@@ -18,7 +18,7 @@ Tutorials, how-to guides, getting-started guides, ...
 * [**Checkstyle**](tutorials/checkstyle.html)
 * [**Codecov**](tutorials/codecov.html)
 * **Java**:
-  * **[Installation](javaInstallation.html)**
+  * **[Installation](tutorials/javaInstallation.html)**
     * [**:fab-apple: Mac**](tutorials/javaInstallationMac.html)
     * [**:fab-windows: Windows**](tutorials/javaInstallationWindows.html)
   * [**JAR files**](tutorials/jar.html)
