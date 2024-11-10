@@ -119,8 +119,8 @@ Intellij uses Gradle to run your application by default. If you would like to ru
 
 You can open a terminal, navigate to the project root, and type the following command in the terminal.
 
-* On Windows: `gradlew <task1> <task2> …`​ e.g. `gradlew clean test`
-* On Mac/Linux: `./gradlew <task1> <task2> …`​ e.g. `./gradlew clean test`
+* On Windows: `gradlew <task1> <task2> …` e.g. `gradlew clean test`
+* On Mac/Linux: `./gradlew <task1> <task2> …` e.g. `./gradlew clean test`
 </tab>
 <p/>
 <!-- ==================================================================================================== -->
