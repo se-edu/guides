@@ -16,7 +16,7 @@ Gradle is a _build automation tool_ used to automate build processes, and it can
 
 ## Basics
 
-You use a _build file_ (named `build.gradle`) to describe how Gradle should behave for a project, using the the following three mechanisms.
+You use a _build file_ (named `build.gradle`) to describe how Gradle should behave for a project, using the following three mechanisms.
 
 1. **Plugins** extend the functionality of Gradle. For example, the `java` plugin adds support for `Java` projects.
 
