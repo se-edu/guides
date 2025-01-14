@@ -428,6 +428,23 @@ default:
     break;
 }
 ```
+Lambda-style `switch` statements/expressions can have indented `case` blocks (as shown below):
+```java
+switch (condition) {
+    case ABC -> method("1");
+    case DEF -> method("2");
+    case XYZ -> method("3");
+    default -> method("0");
+}
+```
+```java
+int size = switch (condition) {
+    case ABC -> 1;
+    case DEF -> 2;
+    case XYZ -> 3;
+    default -> 0;
+}
+```
 
 The explicit `//Fallthrough` comment should be included whenever there is a `case` statement without a break statement.
 
