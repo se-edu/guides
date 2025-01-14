@@ -45,7 +45,7 @@ Line, AudioSystem
 line, audioSystem
 ```
 
-**{{ icon_level_basic }} Constant names must be all uppercase using underscore to separate words (aka SCREAMING_SNAKE_CASE).**
+**{{ icon_level_basic }} Constant names must be all uppercase using underscore to separate words (aka SCREAMING_SNAKE_CASE).** To find what exactly are considered _constants_, refer to [this page in the Google Java Style Guide](https://google.github.io/styleguide/javaguide.html#s5.2.4-constant-names).
 
 ```java
 MAX_ITERATIONS, COLOR_RED
