@@ -7,20 +7,7 @@
 
 # JavaFX tutorial part 1 – Getting started
 
-## The structure of a JavaFX  GUI
-
-A JavaFX application is like a play you are directing. Instead of creating props, you create `Node`s (`Node`s are the fundamental building blocks of a JavaFX application), and place them onto a `Scene` (a scene is a graph of `Node`s). Then, you set your `Scene` on a `Stage` provided by JavaFX. When you call `Stage#show()` method, JavaFX renders a window with your `Stage` on it.
-
-<puml src="images/javafx/JavaFxHierarchy.puml" />
-
-More specifically,
-
-* the `Stage` is like a window in a desktop application. It is the top-level container for a JavaFX application.
-* a `Scene` is a container for `Node`s. A stage contains multiple scenes, and shows different scenes at different times based on programme state, user actions, etc.
-* a `Node` is a component that can be added to a `Scene`. `Node`s can be simple controls like `Label`, `Button`, etc., or complex controls like `TableView`, `TreeView`, etc. A `Node` can contain other `Node`s too.
-* a `Root Node` is the topmost `Node` in a `Scene`, the parent of all other `Node`s. It is usually a pane like `StackPane`, `BorderPane`, etc.
-
-Well, that's a very high-level view of how JavaFX works. The actual implementation of a Java FX is a bit more (ahem...) "involved". This tutorial takes you through the steps of building a typical Java FX application, using a chatbot application called Duke as a running example. Given below is what the end result can look like if you follow this tutorial until the end:
+ This tutorial takes you through the steps of building a typical Java FX application, using a chatbot application called Duke as a running example. Given below is what the end result can look like if you follow this tutorial until the end:
 
 <video oncontextmenu="return false;" width="700px" autoplay muted loop>
 <source src="videos/javafx/DynamicStyleDemo.mp4" type="video/mp4">
@@ -78,6 +65,19 @@ Also note the following:
 {{ embed("Gradle Tutorial →  After updating the `build.gradle` file (extract)", "gradle.md#after-updating-build-file") }}
 
 ## Writing your first Java FX program
+
+A JavaFX application is like a play you are directing. Instead of creating props, you create `Node`s (`Node`s are the fundamental building blocks of a JavaFX application), and place them onto a `Scene` (a scene is a graph of `Node`s). Then, you set your `Scene` on a `Stage` provided by JavaFX. When you call `Stage#show()` method, JavaFX renders a window with your `Stage` on it.
+
+<puml src="images/javafx/JavaFxHierarchy.puml" />
+
+More specifically,
+
+* the `Stage` is like a window in a desktop application. It is the top-level container for a JavaFX application.
+* a `Scene` is a container for `Node`s. A stage contains multiple scenes, and shows different scenes at different times based on programme state, user actions, etc.
+* a `Node` is a component that can be added to a `Scene`. `Node`s can be simple controls like `Label`, `Button`, etc., or complex controls like `TableView`, `TreeView`, etc. A `Node` can contain other `Node`s too.
+* a `Root Node` is the topmost `Node` in a `Scene`, the parent of all other `Node`s. It is usually a pane like `StackPane`, `BorderPane`, etc.
+
+Well, that's a very high-level view of how JavaFX works. The actual implementation of a Java FX is a bit more (ahem...) "involved". Not to worry; we'll tackle that one step at a time.
 
 As is customary, let’s start off with a simple “Hello World” program. Let's say you have a class named `Duke` that you want to make a GUI for. Let's call this GUI class `Main`. When using Java FX, this GUI class needs to extend `javafx.application.Application` which in turn requires you to override the abstract `Application#start(Stage)` method and provide a concrete implementation. The parameter `Stage` is the _primary stage_ that JavaFX provides.
 
