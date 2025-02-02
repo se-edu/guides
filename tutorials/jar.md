@@ -57,7 +57,7 @@ Second, ensure the following property is configured correctly, so that Shadow kn
 mainClassName = 'seedu.duke.Main'
 ```
 
-The task **`shadowJar`** (e.g., running the command `gradlew shadowJar` or `gradlew clean shadowJar`) creates a JAR file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and puts it in the `builds/libs` folder. This output file name/location can be tweaked further using the properties `destinationDir`, `archiveBaseName`, `archiveVersion` in the `build.gradle` file. e.g.,
+The task **`shadowJar`** (e.g., running the command `gradlew shadowJar` or `gradlew clean shadowJar`) creates a JAR file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and puts it in the `build/libs` folder. This output file name/location can be tweaked further using the properties `destinationDir`, `archiveBaseName`, `archiveVersion` in the `build.gradle` file. e.g.,
 
 ```groovy{heading="build.gradle"}
 shadowJar {
