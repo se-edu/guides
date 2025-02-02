@@ -920,7 +920,7 @@ Note in particular:
 - Punctuation behind each parameter description.
 - No blank line between the documentation block and the method/class.
 - `@return` can be omitted if the method does not return anything or the return value is obvious from the rest of the comment.
-- `@params` can be omitted if _all_ parameters of a method have self-explanatory names or already explained in the main part of the comment i.e., when adding `@param`s to the comment does not add any value. This means the comment will have `@param` for all its parameters, or none.
+- `@param`s can be omitted if _all_ parameters of a method have self-explanatory names, or they are already explained in the main part of the comment i.e., if none of the `@param`s add  any value. This means the comment will have `@param` for all its parameters, or none.
 - When writing Javadocs for overridden methods, the `@inheritDoc` tag can be used to reuse the header comment from the parent method but with further modifications e.g., when the method has a slightly different behavior from the parent method.
 
 Javadoc of class members can be specified on a single line as follows:
