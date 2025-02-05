@@ -305,9 +305,32 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
    - <fx:root ... xmlns="http://javafx.com/javafx/17" ... ">
    + <fx:root ... xmlns="http://javafx.com/javafx/22" ... ">
    ```
-   This will cause a version incompatibility warning when you run the application. As a workaround, you can manually change back the version to the original value after you are done tweaking the UI.
+   This will cause a version incompatibility warning when you run the application. As a workaround, you can manually change back the version to the original value after you are done tweaking the UI. Alternatively, you can do to following (more permanent) fix:
+
+   1. Locate the `SceneBuilder.cfg` file (<trigger trigger="click" for="modal:javafx4-locateConfig">where is that file?</trigger>).
+   1. Add/update the JavaFX version specified in it (found under the `[JavaOptions]` section), as follows:
+      ```
+      java-options=-Djavafx.version=17
+      ```
+   1. Restart the SceneBuilder.
    </box>
- 
+
+<modal large header="" id="modal:javafx4-locateConfig">
+<tabs>
+<tab header=":fab-windows: Windows">
+
+1. Locate Scene Builder's installation path. By default, this should be `C:/Users/{user}/AppData/Local/SceneBuilder`.
+   * If you cannot find `AppData`, go to View > Show > Hidden Items in File Explorer, or Win+R and run `%localappdata%`.
+   * If Scene Builder is installed somewhere else, you may locate it by finding it through the Start Menu and selecting "Open file location". If this opens a location with Scene Builder as a shortcut, right-click on it and select "Open file location" again.
+2. Navigate to `app/` and `SceneBuilder.cfg` should be there.
+</tab>
+<tab header=":fab-apple: Mac">
+
+`SceneBuilder.cfg` is usually found in the `~/Applications/SceneBuilder.app/Contents/app/` folder.
+</tab>
+</tabs>
+</modal>
+
 1. On the left accordion, when you expand the `Controller` panel at the bottom, you can see that we have set the controller class to `MainWindow`.
  
    ![Controller for MainWindow](images/javafx/MainWindowController.png)
@@ -346,3 +369,4 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
+* Contributions: Samuel Neo ([@samuelneo](https://github.com/samuelneo))
