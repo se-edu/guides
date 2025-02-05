@@ -107,10 +107,10 @@ Scratch variables used for temporary storage or indices can be kept short. A pro
 **{{ icon_level_basic }} Boolean variables/methods should be named to sound like booleans**
 
 ```java
-//variables
+// variables
 isSet, isVisible, isFinished, isFound, isOpen, hasData, wasOpen
 
-//methods
+// methods
 boolean hasLicense();
 boolean canEvaluate();
 boolean shouldAbort = false;
@@ -446,7 +446,7 @@ int size = switch (condition) {
 }
 ```
 
-The explicit `//Fallthrough` comment should be included whenever there is a `case` statement without a break statement.
+The explicit `// Fallthrough` comment should be included whenever there is a `case` statement without a break statement.
 
 %%{{ icon_info }} Rationale: Leaving out the `break` is a common error, and it must be made clear that it is intentional when it is not there.%%
 
@@ -885,7 +885,7 @@ ii. When overriding methods (provided the parent method's Javadoc applies exactl
 
 **{{ icon_level_advanced }} All non-trivial private methods should carry header comments.**
 
-%%{{ icon_info }} Rationale: Writing header comments will hep novice programmers to self-detect abstraction problems. e.g. If it is hard to describe the method succinctly, there is something wrong with the method abstraction.%%
+%%{{ icon_info }} Rationale: Writing header comments will help programmers to self-detect abstraction problems. e.g. If it is hard to describe the method succinctly, there is something wrong with the method abstraction.%%
 
 </div>
 <div tags="level--intermediate-only">{{ pagebreak }}</div>
@@ -906,7 +906,7 @@ ii. When overriding methods (provided the parent method's Javadoc applies exactl
  */
 public double computeLocation(double x, double y, int zone)
         throws IllegalArgumentException {
-    //...
+    // ...
 }
 ```
 
