@@ -54,7 +54,7 @@ plugins {
 ```
 Second, ensure the following property is configured correctly, so that Shadow know which class is the entry point to the application:
 ```groovy{heading="build.gradle"}
-mainClassName = 'seedu.duke.Main'
+mainClass.set("seedu.duke.Main")
 ```
 
 The task **`shadowJar`** (e.g., running the command `gradlew shadowJar` or `gradlew clean shadowJar`) creates a JAR file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and puts it in the `build/libs` folder. This output file name/location can be tweaked further using the properties `destinationDir`, `archiveBaseName`, `archiveVersion` in the `build.gradle` file. e.g.,
