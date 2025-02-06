@@ -38,13 +38,13 @@ with(this){return _c('code',{pre:true,attrs:{"class":"hljs bash"}},[_c('span',[_
 with(this){return _c('p',[_c('strong',[_v("Install JDK using SDKMAN")])])}
 },function anonymous(
 ) {
-with(this){return _c('code',{pre:true,attrs:{"class":"hljs bash"}},[_c('span',[_v("sdk install java 17.0.11.fx-zulu\n")])])}
+with(this){return _c('code',{pre:true,attrs:{"class":"hljs bash"}},[_c('span',[_v("sdk install java 17.0.14.fx-zulu\n")])])}
 },function anonymous(
 ) {
-with(this){return _c('code',{pre:true,attrs:{"class":"hljs bash"}},[_c('span',[_v("sdk default java 17.0.11.fx-zulu\n")])])}
+with(this){return _c('code',{pre:true,attrs:{"class":"hljs bash"}},[_c('span',[_v("sdk default java 17.0.14.fx-zulu\n")])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('strong',[_v("Verify installation")]),_v(" by running the following command. You should see the version information for Java 17.0.11.fx-zulu.")])}
+with(this){return _c('p',[_c('strong',[_v("Verify installation")]),_v(" by running the following command. You should see the version information for Java 17.0.14.fx-zulu.")])}
 },function anonymous(
 ) {
 with(this){return _c('code',{pre:true,attrs:{"class":"hljs bash"}},[_c('span',[_v("java -version\n")])])}
@@ -71,6 +71,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Jay Hong ("),_c('a',{attrs:{"href":"https://github.com/hjungwoo01"}},[_v("@hjungwoo01")]),_v(")")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Thu, 6 Feb 2025, 0:11:28 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Thu, 6 Feb 2025, 19:02:04 GMT+8]")])])])}
 }];
   
