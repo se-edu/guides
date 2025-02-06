@@ -34,11 +34,11 @@ This guide explains how to install the **==[Java 17 JDK+FX Azul distribution](ht
 * **Install JDK using SDKMAN**
    * Install the Java 17 JDK FX version (codename Zulu) by running:{{ abcd_numbers }}
      ```bash
-     sdk install java 17.0.11.fx-zulu
+     sdk install java 17.0.14.fx-zulu
      ```
    * This version should be automatically set as the default, but if it is not, set it as the default by running:
      ```bash
-     sdk default java 17.0.11.fx-zulu
+     sdk default java 17.0.14.fx-zulu
      ```
    <box type="tip" seamless>
 
@@ -46,7 +46,7 @@ This guide explains how to install the **==[Java 17 JDK+FX Azul distribution](ht
      Remedy: Run the `sdk flush` command to purge the previous incomplete installation.
    </box>
 
-* **Verify installation** by running the following command. You should see the version information for Java 17.0.11.fx-zulu.
+* **Verify installation** by running the following command. You should see the version information for Java 17.0.14.fx-zulu.
    ```bash
    java -version
    ```
