@@ -139,10 +139,10 @@ JavaFX creates the `Application` instance by calling the no-argument constructor
 But if you already have an existing constructor which takes arguments in that class (in which case Java will not provide a no-argument constructor automatically), you need to create an overloaded constructor with no arguments yourself. An example given below:
 
 ```java{highlight-lines="11-14" heading="Main.java"}
-//...
-private static final String DEFAULT_FILE_PATH = "duke/example.txt";
-
 public class Main extends Application {
+
+    private static final String DEFAULT_FILE_PATH = "duke/example.txt";
+    // ...
 
     // Existing constructor
     public Main(String filePath) {
