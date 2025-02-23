@@ -35,6 +35,6 @@ with(this){return _c('li',[_c('strong',[_v("Configure Codecov for the specific f
 with(this){return _c('li',[_c('strong',[_v("Display the Codecov badge:")]),_v(" If your fork has a badge showing the Codecov status (e.g, "),_c('a',{attrs:{"href":"https://codecov.io/gh/se-edu/addressbook-level3/branch/master/graph/badge.svg","target":"_self"}},[_c('img',{staticClass:"img-fluid",attrs:{"src":"https://codecov.io/gh/se-edu/addressbook-level3/branch/master/graph/badge.svg","alt":"codecov"}})]),_v("), get the Markdown code for the Codecov badge provided in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("https://app.codecov.io/gh/{YOUR_ORG}/{YOUR_FORK}/config/badge")]),_v(" (e.g., "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("https://app.codecov.io/gh/se-edu/addressbook-level3/config/badge")]),_v(") and update the appropriate page in your fork.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Fri, 21 Feb 2025, 1:25:44 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Mon, 24 Feb 2025, 2:21:49 GMT+8]")])])])}
 }];
   
