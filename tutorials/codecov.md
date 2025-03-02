@@ -31,11 +31,18 @@ Given below are the steps for achieving the above, recommended to be done by som
      * But you still need to do `Step 2: Select an upload token to add as a secret on GitHub`. In that step, choose the `Repository Token` option
      * Proceed to `Step 3: add token as repository secret`, and configure the `CODECOV_TOKEN` secret as instructed there.
      * You can skip steps 4 and 5.
-1. **Check for coverage status:** Go to your repo and re-run the most recent CI run. If you set up Codecov correctly, this CI run should upload the coverage data to Codecov. Go back to [your Codecov home page](https://app.codecov.io/gh), choose the org from the dropdown and ==click on the repo name== (ignore the `no data` label, if any). In the next page, you should see the code coverage details. Here is an example:
+1. **Check for coverage status:** Go to your repo and re-run the most recent CI run (<trigger trigger="click" for="modal:codecode-noCiRuns">What to do if there are no CI runs in the repo?</trigger>). If you set up Codecov correctly, this CI run should upload the coverage data to Codecov. Go back to [your Codecov home page](https://app.codecov.io/gh), choose the org from the dropdown and ==click on the repo name== (ignore the `no data` label, if any). In the next page, you should see the code coverage details. Here is an example:
    <pic src="images/codecov/coverage-example.png"/>
-1. **Display the Codecov badge:** If your fork has a badge showing the Codecov status (e.g, ![codecov](https://codecov.io/gh/se-edu/addressbook-level3/branch/master/graph/badge.svg)), get the Markdown code for the Codecov badge provided in `https://app.codecov.io/gh/{YOUR_ORG}/{YOUR_FORK}/settings/badge` (e.g., `https://app.codecov.io/gh/se-edu/addressbook-level3/settings/badge`) and update the appropriate page in your fork.
+1. **Display the Codecov badge:** If your fork has a badge showing the Codecov status (e.g, ![codecov](https://codecov.io/gh/se-edu/addressbook-level3/branch/master/graph/badge.svg)), get the Markdown code for the Codecov badge provided in `https://app.codecov.io/gh/{YOUR_ORG}/{YOUR_FORK}/config/badge` (e.g., `https://app.codecov.io/gh/se-edu/addressbook-level3/config/badge`) and update the appropriate page in your fork.
 
 <box type="tip" seamless>
 
 **You can control if CI still passes even if Codecov task fails** using the line<br> `fail_ci_if_error: true` or `fail_ci_if_error: false` in `.github/workflows/gradle.yml`, under the section related to Codecov.
 </box>
+
+
+
+<modal large header="" id="modal:codecode-noCiRuns">
+
+**If there are no CI runs in your repo yet**, you can either trigger one by pushing an empty/trivial commit to the repo, or wait till there are some new commits in the repo -- setting up Codecov is not urgent, as Codecov only comes into play when you start updating functional code in the repo.
+</modal>
