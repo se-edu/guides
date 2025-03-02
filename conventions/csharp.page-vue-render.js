@@ -269,6 +269,6 @@ with(this){return _c('h2',{attrs:{"id":"references"}},[_v("References"),_c('a',{
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://msdn.microsoft.com/en-us/library/ff926074.aspx"}},[_v("C# Coding Conventions (C# Programming Guide)")]),_v(" -- From Microsoft")]),_v(" "),_c('li',[_c('a',{attrs:{"href":"http://www.icsharpcode.net/TechNotes/SharpDevelopCodingStyle03.pdf"}},[_v("C# Coding Style Guide")]),_v(" -- By Mike Krüger")]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://github.com/dennisdoomen/CSharpGuidelines"}},[_v("CSharpGuidelines")]),_v(" -- From Aviva Solutions")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Mon, 24 Feb 2025, 2:21:49 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Sun, 2 Mar 2025, 11:41:30 GMT+8]")])])])}
 }];
   

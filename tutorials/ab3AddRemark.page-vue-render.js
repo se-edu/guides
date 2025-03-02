@@ -149,7 +149,7 @@ with(this){return _c('h3',{attrs:{"id":"add-a-new-remark-class"}},[_v("Add a new
 with(this){return _c('p',[_v("Create a new "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" in "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("seedu.address.model.person")]),_v(". Since a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" is a field that is similar to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Address")]),_v(", we can reuse a significant bit of code.")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("A copy-paste and search-replace later, you should have something like "),_c('a',{attrs:{"href":"https://github.com/se-edu/addressbook-level3/commit/6da0fc1cf53f8b2758e04c56c5217e6f7fb8d118#diff-41bb13c581e280c686198251ad6cc337cd5e27032772f06ed9bf7f1440995ece"}},[_v("this")]),_v(". Note how "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" has no constrains and thus does not require input\nvalidation.")])}
+with(this){return _c('p',[_v("A copy-paste and search-replace later, you should have something like "),_c('a',{attrs:{"href":"https://github.com/se-edu/addressbook-level3/commit/6da0fc1cf53f8b2758e04c56c5217e6f7fb8d118#diff-41bb13c581e280c686198251ad6cc337cd5e27032772f06ed9bf7f1440995ece"}},[_v("this")]),_v(". Note how "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_v(" has no constraints and thus does not require input\nvalidation.")])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"make-use-of-remark"}},[_v("Make use of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Remark")]),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#make-use-of-remark","onclick":"event.stopPropagation()"}})])}
@@ -161,7 +161,7 @@ with(this){return _c('p',[_v("Let’s change "),_c('code',{pre:true,attrs:{"clas
 with(this){return _c('h2',{attrs:{"id":"add-a-placeholder-element-for-remark-to-the-ui"}},[_v("Add a placeholder element for remark to the UI"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#add-a-placeholder-element-for-remark-to-the-ui","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Without getting too deep into "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("fxml")]),_v(", let’s go on a 5 minute adventure to get some placeholder text to show up for each person.")])}
+with(this){return _c('p',[_v("Without getting too deep into "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("fxml")]),_v(", let’s go on a 5-minute adventure to get some placeholder text to show up for each person.")])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("Simply add the following to "),_c('a',{attrs:{"href":"https://github.com/se-edu/addressbook-level3/commit/826bab13348c7544ad0ed98c927baad4608a470a#diff-639834f1e05afe2276a86372adf0fe5f69314642c2d93cfa543d614ce5a76688"}},[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("seedu.address.ui.PersonCard")])]),_v(".")])}
@@ -173,7 +173,7 @@ with(this){return _c('p',[_c('strong',[_c('code',{pre:true,attrs:{"class":"hljs 
 with(this){return _c('code',{pre:true,attrs:{"class":"hljs java"}},[_c('span',[_c('span',{pre:true,attrs:{"class":"hljs-meta"}},[_v("@FXML")]),_v("\n")]),_c('span',[_c('span',{pre:true,attrs:{"class":"hljs-keyword"}},[_v("private")]),_v(" Label remark;\n")])])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("@FXML")]),_v(" is an annotation that marks a private or protected field and makes it accessible to FXML. It might sound like Greek to you right now, don’t worry — we will get back to it later.")])}
+with(this){return _c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("@FXML")]),_v(" is an annotation that marks a private or protected field and makes it accessible to FXML. It might sound like Greek to you right now, don’t worry — we will get back to it later.")])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("Then insert the following into "),_c('a',{attrs:{"href":"https://github.com/se-edu/addressbook-level3/commit/826bab13348c7544ad0ed98c927baad4608a470a#diff-d44c4f51c24f6253c277a2bb9bc440b8064d9c15ad7cb7ceda280bca032efce9"}},[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("main/resources/view/PersonListCard.fxml")])]),_v(".")])}
@@ -260,6 +260,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Jeffry Lum")]),_v(" "),_c('li',[_v("Contributors:\n"),_c('ul',[_c('li',[_v("Rui Shan Teo (@ruishanteo): Added more explanations for writing tests")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Mon, 24 Feb 2025, 2:21:49 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Sun, 2 Mar 2025, 11:41:30 GMT+8]")])])])}
 }];
   
