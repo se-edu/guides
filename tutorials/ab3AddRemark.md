@@ -353,7 +353,7 @@ Now that we have all the information that we need, let’s lay the groundwork fo
 
 Create a new `Remark` in `seedu.address.model.person`. Since a `Remark` is a field that is similar to `Address`, we can reuse a significant bit of code.
 
-A copy-paste and search-replace later, you should have something like [this](https://github.com/se-edu/addressbook-level3/commit/6da0fc1cf53f8b2758e04c56c5217e6f7fb8d118#diff-41bb13c581e280c686198251ad6cc337cd5e27032772f06ed9bf7f1440995ece). Note how `Remark` has no constrains and thus does not require input
+A copy-paste and search-replace later, you should have something like [this](https://github.com/se-edu/addressbook-level3/commit/6da0fc1cf53f8b2758e04c56c5217e6f7fb8d118#diff-41bb13c581e280c686198251ad6cc337cd5e27032772f06ed9bf7f1440995ece). Note how `Remark` has no constraints and thus does not require input
 validation.
 
 ### Make use of `Remark`
@@ -362,7 +362,7 @@ Let’s change `RemarkCommand` and `RemarkCommandParser` to use the new `Remark`
 
 ## Add a placeholder element for remark to the UI
 
-Without getting too deep into `fxml`, let’s go on a 5 minute adventure to get some placeholder text to show up for each person.
+Without getting too deep into `fxml`, let’s go on a 5-minute adventure to get some placeholder text to show up for each person.
 
 Simply add the following to [`seedu.address.ui.PersonCard`](https://github.com/se-edu/addressbook-level3/commit/826bab13348c7544ad0ed98c927baad4608a470a#diff-639834f1e05afe2276a86372adf0fe5f69314642c2d93cfa543d614ce5a76688).
 
@@ -373,7 +373,7 @@ Simply add the following to [`seedu.address.ui.PersonCard`](https://github.com/s
 private Label remark;
 ```
 
-`@FXML` is an annotation that marks a private or protected field and makes it accessible to FXML. It might sound like Greek to you right now, don’t worry — we will get back to it later.
+`@FXML` is an annotation that marks a private or protected field and makes it accessible to FXML. It might sound like Greek to you right now, don’t worry — we will get back to it later.
 
 Then insert the following into [`main/resources/view/PersonListCard.fxml`](https://github.com/se-edu/addressbook-level3/commit/826bab13348c7544ad0ed98c927baad4608a470a#diff-d44c4f51c24f6253c277a2bb9bc440b8064d9c15ad7cb7ceda280bca032efce9).
 
