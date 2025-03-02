@@ -87,7 +87,7 @@ To remove the breakpoint, click the red dot again.
 
 **Purpose:** To examine variable values at a specific step of the execution.
 
-**How:** Use the Debugger tool window (the bottom part of the screenshot below). Ccurrent value of each variable is listed in the panel on the bottom right.
+**How:** Use the Debugger tool window (the bottom part of the screenshot below). Current value of each variable is listed in the panel on the bottom right.
 
 {{ show_screenshot("images/intellijDebugger/showingExecutionPoint.png", "LaunchCode") }}
 
