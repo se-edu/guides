@@ -26,10 +26,10 @@ with(this){return _c('p',[_v("For example, "),_c('code',{pre:true,attrs:{"class"
 with(this){return _c('h2',{attrs:{"id":"create-a-new-remark-command"}},[_v("Create a new "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("remark")]),_v(" command"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#create-a-new-remark-command","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Looking in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("logic.commands")]),_v(" package, you will notice that each existing command have their own class. All the commands inherit from the abstract class "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" which means that they must override "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("execute()")]),_v(". Each "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" returns an instance of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandResult")]),_v(" upon success and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandResult#feedbackToUser")]),_v(" is printed to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ResultDisplay")]),_v(".")])}
+with(this){return _c('p',[_v("Looking in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("logic.commands")]),_v(" package, you will notice that each command has its own class. All the commands inherit from the abstract class "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" which means that they must override "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("execute()")]),_v(". Each "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Command")]),_v(" returns an instance of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandResult")]),_v(" upon success and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandResult#feedbackToUser")]),_v(" is printed to the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ResultDisplay")]),_v(".")])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("Let’s start by creating a new "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("RemarkCommand")]),_v(" class in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("src/main/java/seedu/address/logic/command")]),_v(" directory.")])}
+with(this){return _c('p',[_v("Let’s start by creating a new "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("RemarkCommand")]),_v(" class in the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("src/main/java/seedu/address/logic/commands")]),_v(" directory.")])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("For now, let’s keep "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("RemarkCommand")]),_v(" as simple as possible and print some output. We accomplish that by returning a "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("CommandResult")]),_v(" with an accompanying message.")])}
@@ -260,6 +260,6 @@ with(this){return _c('p',[_c('strong',[_v("Authors:")])])}
 with(this){return _c('ul',[_c('li',[_v("Initial Version: Jeffry Lum")]),_v(" "),_c('li',[_v("Contributors:\n"),_c('ul',[_c('li',[_v("Rui Shan Teo (@ruishanteo): Added more explanations for writing tests")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Sun, 2 Mar 2025, 11:41:30 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("[Powered by "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(" on Thu, 6 Mar 2025, 21:39:40 GMT+8]")])])])}
 }];
   
