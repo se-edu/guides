@@ -35,6 +35,12 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Configuring the code style](tutorials/intellijCodeStyle.html)
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
+* **Visual Studio Code**:
+  * [Configuring the JDK](tutorials/vscJdk.html)
+  * [Importing a Gradle project](tutorials/vscImportGradleProject.html)
+  * [Configuring the code style](tutorials/vscCodeStyle.html)
+  * [Using the debugger](tutorials/vscDebugger.html)
+  * [Useful settings](tutorials/vscUsefulSettings.html)
 * [**Visual Studio Code**](tutorials/vscode.html)
 * [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**
