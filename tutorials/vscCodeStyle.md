@@ -10,7 +10,7 @@
 Given below are the steps to set up a Checkstyle plugin in VS Code so that VS Code can alert you about code style problems as you write code.
 
 * **Verify prerequisites:** {{ step_numbers }}
-  * Ensure you followed the section [Preparing VS Code for Java projects](#preparing-vs-code-for-java-projects) above.
+  * Ensure you followed the section [Preparing VS Code for Java projects](vscImportGradleProject.html#preparing-vs-code-for-java-projects).
   * The two Checkstyle config files (`checkstyle.xml` and `suppressions.xml`) should be in the `./config/checkstyle` directory, as mentioned [here](checkstyle.md). {{ abcd_numbers }}
 * Open VS Code.
 * Download the [Checkstyle for Java](https://marketplace.visualstudio.com/items?itemName=shengchen.vscode-checkstyle) extension by author ShengChen using `Extensions` -> Search `Checkstyle for Java` -> Install (the first entry).<br>
