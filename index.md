@@ -36,7 +36,9 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
 * [**Visual Studio Code**](tutorials/vscode.html)
-  * [Setting up a Java Project](tutorials/vscodeSettingUpJavaProject.html)
+  * [Setting up a Java project](tutorials/vscodeJavaSetup.html)
+  * [Importing a Gradle project](vscodeGradleImport.html)
+  * [Setting up Checkstyle](vscodeCheckstyle.html)
 * [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
