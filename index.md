@@ -36,6 +36,9 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
 * [**Visual Studio Code**](tutorials/vscode.html)
+  * [Signing up for GitHub Copilot](tutorials/copilotSignUp.html)
+  * [Setting up GitHub Copilot](tutorials/vscCopilotSetup.html)
+  * [Using GitHub Copilot](tutorials/vscCopilotUsage.html)
 * [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
