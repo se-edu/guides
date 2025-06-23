@@ -15,11 +15,11 @@
         }
     }
     ```
-  * GitHub Copilot will automatically suggest code to complete the comment.<br>
+  * GitHub Copilot will automatically suggest code to complete or implement the comment.<br>
     <pic src="images\vscCopilotUsage\basicCodeCompletion.png" width="400" />
   * Press `Tab` to accept the suggestion, or continue typing to refine it.
   <box type="tip" seamless>
-    The more descriptive your comment, the better Copilot can understand what you want to achieve.
+    The more descriptive your comment or method signatures, the better Copilot can understand what you want to implement.
     </box>
 
 ## Copilot Chat
