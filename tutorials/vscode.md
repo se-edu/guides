@@ -21,4 +21,4 @@ This guide is for those who prefer to use [Visual Studio Code](https://code.visu
 * [**Preparing VS Code for Java projects**](vscPreparingForJava.md)
 * [**Importing a Gradle project**](vscImportingGradleProject.md)
 * [**Setting up Checkstyle**](vscSettingUpCheckstyle.md)
-
+* [**Using GitHub Copilot**](vscCopilot.md)

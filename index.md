@@ -39,6 +39,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Preparing VS Code for Java projects](tutorials/vscPreparingForJava.md)
   * [Importing a Gradle project](tutorials/vscImportingGradleProject.md)
   * [Setting up Checkstyle](tutorials/vscSettingUpCheckstyle.md)
+  * [Using GitHub Copilot](tutorials/vscCopilot.md)
 * [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
