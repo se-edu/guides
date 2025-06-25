@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 5.5.3">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaFX tutorial part 3 – Interacting with the user</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="generator" content="MarkBind 6.0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>JavaFX tutorial part 3 – Interacting with the user</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
@@ -12,10 +12,10 @@
   const baseUrl = '/guides'
 </script>
 <body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
-<div id="app" data-server-rendered="true"><header sticky=""><div data-v-7c0fd418><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-7c0fd418><div class="container-fluid" data-v-7c0fd418><div class="navbar-left" data-v-7c0fd418><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-7c0fd418></span> <strong data-v-7c0fd418><strong data-v-7c0fd418>SE-EDU</strong></strong></span></a></div> <div class="navbar-default" data-v-7c0fd418><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-7c0fd418> <li data-v-7c0fd418><a href="/guides/index.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>Home</strong></span></a></li> <li data-v-7c0fd418><a href="/guides/about.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>About</strong></span></a></li> <li data-v-7c0fd418><a href="https://github.com/se-edu/guides" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fab fa-github" data-v-7c0fd418></span></span></a></li></ul></div> <ul class="navbar-nav navbar-right" data-v-7c0fd418><li class="nav-link" data-v-7c0fd418><form class="navbar-form" data-v-7c0fd418><div class="dropdown" style="position:relative;" data-v-4f6e9aec><input data-bs-toggle="dropdown" type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control" data-v-4f6e9aec> <div class="form-control placeholder-div-hidden" data-v-4f6e9aec>
-      Search this site
-    </div> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-4f6e9aec></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-7c0fd418><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="javafx-tutorial-part-3-interacting-with-the-user">JavaFX tutorial part 3 – Interacting with the user<a href="#javafx-tutorial-part-3-interacting-with-the-user" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p>In part 2, we achieved the desired layout. Now let’s make the application respond to user input. Rather than doing everything in one try, let’s iterate and build up towards our final goal.</p> <p>But first, here's some useful background info on how JavaFX deals with user interactions (e.g., a button click):</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><!----> <div aria-hidden="true" class="vertical-divider alert-default" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec>JavaFX works in an <em data-v-474166ec>event-driven</em> style -- that is, we programmatically define <em data-v-474166ec>handler</em> methods to execute as a response to certain <em data-v-474166ec>events</em>.</p> <p data-v-474166ec>&quot;Events&quot; are represented as objects of the <a href="https://openjfx.io/javadoc/17/javafx.base/javafx/event/Event.html" data-v-474166ec>Event class</a>. Two of the most commonly used subclasses are <a href="https://openjfx.io/javadoc/17/javafx.base/javafx/event/ActionEvent.html" data-v-474166ec>ActionEvent</a> (e.g., a button press) and <a href="https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/input/InputEvent.html" data-v-474166ec>InputEvent</a> (e.g., a mouse click).</p> <p data-v-474166ec>All UI components have a set of <em data-v-474166ec>set-handler-for-event</em> methods to define handlers with respect to different events, which takes a handler method as the argument. Some of these methods are unique to the component, but most are inherited from the parent classes <code class="hljs inline no-lang" data-v-474166ec>Node</code>, <code class="hljs inline no-lang" data-v-474166ec>Control</code>, etc.
-For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/Button.html" data-v-474166ec>Button</a> class inherits <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----><!----></span> from parent <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/ButtonBase.html#setOnAction(javafx.event.EventHandler)" data-v-474166ec>ButtonBase</a> and <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----><!----></span> from <a href="https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/Node.html" data-v-474166ec>Node</a>.</p> <p data-v-474166ec>When an event is detected, JavaFX will call the respective handlers that was previously 'set' for that event.</p></div> <!----></div></div></div> <h2 id="iteration-1-echoing-the-user">Iteration 1 – Echoing the user<a href="#iteration-1-echoing-the-user" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>For Duke, there are two events that we want to respond to, namely the user pressing <kbd>Enter</kbd> key in the text box  and clicking the <code class="hljs inline no-lang">Send</code> button. These map to the <code class="hljs inline no-lang">onAction</code> event for the <code class="hljs inline no-lang">TextField</code> and the <code class="hljs inline no-lang">onMouseClicked</code> event for the <code class="hljs inline no-lang">Button</code>, respectively.</p> <p>First, let's <span class="mkb-text-red">delete the following two lines</span> that show a dialog box by default:</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span>
+<div id="app"><!--[--><header sticky><div data-v-2dc82f13><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-2dc82f13><div class="container-fluid" data-v-2dc82f13><div class="navbar-left" data-v-2dc82f13><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-2dc82f13><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-2dc82f13><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><ul class="navbar-nav navbar-right" data-v-2dc82f13><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-00e26d0a><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-00e26d0a><div class="form-control placeholder-div-hidden" data-v-00e26d0a>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-00e26d0a><!--[--><!--]--></ul></div></form></li><!--]--></ul></div></nav><div style="display:none;" class="lower-navbar-container" data-v-2dc82f13><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><h1 id="javafx-tutorial-part-3-interacting-with-the-user">JavaFX tutorial part 3 – Interacting with the user<a class="fa fa-anchor" href="#javafx-tutorial-part-3-interacting-with-the-user" onclick="event.stopPropagation()"></a></h1> <p>In part 2, we achieved the desired layout. Now let’s make the application respond to user input. Rather than doing everything in one try, let’s iterate and build up towards our final goal.</p> <p>But first, here&#39;s some useful background info on how JavaFX deals with user interactions (e.g., a button click):</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><!----><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-default vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>JavaFX works in an <em>event-driven</em> style -- that is, we programmatically define <em>handler</em> methods to execute as a response to certain <em>events</em>.</p> <p>&quot;Events&quot; are represented as objects of the <a href="https://openjfx.io/javadoc/17/javafx.base/javafx/event/Event.html">Event class</a>. Two of the most commonly used subclasses are <a href="https://openjfx.io/javadoc/17/javafx.base/javafx/event/ActionEvent.html">ActionEvent</a> (e.g., a button press) and <a href="https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/input/InputEvent.html">InputEvent</a> (e.g., a mouse click).</p> <p>All UI components have a set of <em>set-handler-for-event</em> methods to define handlers with respect to different events, which takes a handler method as the argument. Some of these methods are unique to the component, but most are inherited from the parent classes <code class="hljs inline no-lang">Node</code>, <code class="hljs inline no-lang">Control</code>, etc.
+For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/Button.html">Button</a> class inherits <span class="trigger" data-mb-component-type="tooltip" tabindex="0"><!----><!-- do not delete this comment, it is for the stray space issue (#2419)
+ --><!----></span> from parent <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/scene/control/ButtonBase.html#setOnAction(javafx.event.EventHandler)">ButtonBase</a> and <span class="trigger" data-mb-component-type="tooltip" tabindex="0"><!----><!-- do not delete this comment, it is for the stray space issue (#2419)
+ --><!----></span> from <a href="https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/Node.html">Node</a>.</p> <p>When an event is detected, JavaFX will call the respective handlers that was previously &#39;set&#39; for that event.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="iteration-1-echoing-the-user">Iteration 1 – Echoing the user<a class="fa fa-anchor" href="#iteration-1-echoing-the-user" onclick="event.stopPropagation()"></a></h2> <p>For Duke, there are two events that we want to respond to, namely the user pressing <kbd>Enter</kbd> key in the text box  and clicking the <code class="hljs inline no-lang">Send</code> button. These map to the <code class="hljs inline no-lang">onAction</code> event for the <code class="hljs inline no-lang">TextField</code> and the <code class="hljs inline no-lang">onMouseClicked</code> event for the <code class="hljs inline no-lang">Button</code>, respectively.</p> <p>First, let&#39;s <span class="mkb-text-red">delete the following two lines</span> that show a dialog box by default:</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span>
 </span><span>    <span class="hljs-meta">@Override</span>
 </span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> </span>{
 </span><span>        <span class="hljs-comment">//Setting up required components</span>
@@ -32,6 +32,8 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </span><span>    }
 </span><span>
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -46,6 +48,7 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
     </g>
 </svg>
 
+    </div>
     </div>
     </button></div></pre></div></div><p>Then, add the following code:</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span>    <span class="hljs-meta">@Override</span>
 </span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> </span>{
@@ -74,6 +77,8 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </span><span>        <span class="highlighted">userInput.clear();</span>
 </span><span>    <span class="highlighted">}</span>
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -89,15 +94,18 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </svg>
 
     </div>
-    </button></div></pre></div></div><p>Run the program and give it a whirl! Ensure the GUI responds correctly to both ways of input i.e., hitting <kbd>Enter</kbd> after text entry, and hitting the <code class="hljs inline no-lang">Send</code> button after text entry.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/javafx/EchoNotScrolling.png" width="450" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p></p> <p>At first glance everything appears to work perfectly. Keep entering more text entries (or longer text entries) until the visible area fills up. You'll notice that when the chat entries fill up beyond <code class="hljs inline no-lang">ScrollPane</code>'s display area, it does not scroll down automatically to show the latest entry, as expected. We can remedy this by attaching a handler on the <code class="hljs inline no-lang">VBox</code> to react to its own size changing and scrolling the <code class="hljs inline no-lang">ScrollPane</code> down.</p> <p>Update the <code class="hljs inline no-lang">Main#start</code> method as shown below:</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span>    <span class="hljs-meta">@Override</span>
+    </div>
+    </button></div></pre></div></div><p>Run the program and give it a whirl! Ensure the GUI responds correctly to both ways of input i.e., hitting <kbd>Enter</kbd> after text entry, and hitting the <code class="hljs inline no-lang">Send</code> button after text entry.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/javafx/EchoNotScrolling.png" width="450" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <p></p> <p>At first glance everything appears to work perfectly. Keep entering more text entries (or longer text entries) until the visible area fills up. You&#39;ll notice that when the chat entries fill up beyond <code class="hljs inline no-lang">ScrollPane</code>&#39;s display area, it does not scroll down automatically to show the latest entry, as expected. We can remedy this by attaching a handler on the <code class="hljs inline no-lang">VBox</code> to react to its own size changing and scrolling the <code class="hljs inline no-lang">ScrollPane</code> down.</p> <p>Update the <code class="hljs inline no-lang">Main#start</code> method as shown below:</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span>    <span class="hljs-meta">@Override</span>
 </span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage stage)</span> </span>{
 </span><span>
 </span><span>        <span class="hljs-comment">// current code ...</span>
 </span><span>
-</span><span>        <span class="highlighted"><span class="hljs-comment">//Scroll down to the end every time dialogContainer's height changes.</span></span>
+</span><span>        <span class="highlighted"><span class="hljs-comment">//Scroll down to the end every time dialogContainer&#39;s height changes.</span></span>
 </span><span>        <span class="highlighted">dialogContainer.heightProperty().addListener((observable) -&gt; scrollPane.setVvalue(<span class="hljs-number">1.0</span>));</span>
 </span><span>    }
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -113,19 +121,22 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </svg>
 
     </div>
-    </button></div></pre></div></div><p>Verify that the <code class="hljs inline no-lang">ScrollPane</code> now scrolls as intended.</p> <h2 id="iteration-2-adding-dialog-boxes-for-duke-s-response">Iteration 2 – Adding dialog boxes for Duke's response<a href="#iteration-2-adding-dialog-boxes-for-duke-s-response" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>The next step is to enable Duke to respond to sent messages. On top of showing what the user sent, we need to take the response generated by the program and pass it to the UI components.</p> <p>Now, let's add a method to  <code class="hljs inline no-lang">Duke.java</code>, to generate responses for user messages. For the time being, let's keep the logic simple: Duke simply echos the user input, with the prefix <code class="hljs inline no-lang">Duke heard: </code>.</p> <div class="code-block"><div class="code-block-heading"><span>Duke.java</span></div><div class="code-block-content"><pre><code heading="Duke.java" class="hljs java"><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duke</span> </span>{
+    </div>
+    </button></div></pre></div></div><p>Verify that the <code class="hljs inline no-lang">ScrollPane</code> now scrolls as intended.</p> <h2 id="iteration-2-adding-dialog-boxes-for-duke-s-response">Iteration 2 – Adding dialog boxes for Duke&#39;s response<a class="fa fa-anchor" href="#iteration-2-adding-dialog-boxes-for-duke-s-response" onclick="event.stopPropagation()"></a></h2> <p>The next step is to enable Duke to respond to sent messages. On top of showing what the user sent, we need to take the response generated by the program and pass it to the UI components.</p> <p>Now, let&#39;s add a method to  <code class="hljs inline no-lang">Duke.java</code>, to generate responses for user messages. For the time being, let&#39;s keep the logic simple: Duke simply echos the user input, with the prefix <code class="hljs inline no-lang">Duke heard: </code>.</p> <div class="code-block"><div class="code-block-heading"><span>Duke.java</span></div><div class="code-block-content"><pre><code heading="Duke.java" class="hljs java"><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duke</span> </span>{
 </span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 </span><span>        System.out.println(<span class="hljs-string">&quot;Hello!&quot;</span>);
 </span><span>    }
 </span><span>
 </span><span>    <span class="highlighted"><span class="hljs-comment">/**</span></span>
-</span><span><span class="highlighted"><span class="hljs-comment">     * Generates a response for the user's chat message.</span></span>
+</span><span><span class="highlighted"><span class="hljs-comment">     * Generates a response for the user&#39;s chat message.</span></span>
 </span><span><span class="highlighted"><span class="hljs-comment">     */</span></span>
 </span><span>    <span class="highlighted"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getResponse</span><span class="hljs-params">(String input)</span> </span>{</span>
 </span><span>        <span class="highlighted"><span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Duke heard: &quot;</span> + input;</span>
 </span><span>    <span class="highlighted">}</span>
 </span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -141,7 +152,8 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </svg>
 
     </div>
-    </button></div></pre></div></div><p>Next, let's create an instance of this Duke object in the <code class="hljs inline no-lang">Main</code> class (to be used for generating responses to user input).</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span><span class="hljs-comment">//imports...</span>
+    </div>
+    </button></div></pre></div></div><p>Next, let&#39;s create an instance of this Duke object in the <code class="hljs inline no-lang">Main</code> class (to be used for generating responses to user input).</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span><span class="hljs-comment">//imports...</span>
 </span><span>
 </span><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Application</span> </span>{
 </span><span>
@@ -154,6 +166,8 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </span><span>    <span class="hljs-comment">//...</span>
 </span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -168,6 +182,7 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
     </g>
 </svg>
 
+    </div>
     </div>
     </button></div></pre></div></div><p>Now, we can update the <code class="hljs inline no-lang">handleUserInput()</code> method as follows, to generate the response using the <code class="hljs inline no-lang">duke</code> object.</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleUserInput</span><span class="hljs-params">()</span> </span>{
 </span><span>        String userText = userInput.getText();
@@ -179,6 +194,8 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </span><span>        userInput.clear();
 </span><span>    }
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -194,7 +211,8 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </svg>
 
     </div>
-    </button></div></pre></div></div><p>Run the program and see how it works.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/javafx/DialogBoxesIteration2.png" width="450" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <h2 id="iteration-3-adding-custom-behavior-to-dialogbox">Iteration 3 – Adding custom behavior to DialogBox<a href="#iteration-3-adding-custom-behavior-to-dialogbox" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <p>One additional benefit of defining a custom control is that we can add behavior specific to our <code class="hljs inline no-lang">DialogBox</code>. Let’s add a method to flip a dialog box such that it appears on the left edge, to differentiate between user input and Duke’s output.</p> <div class="code-block"><div class="code-block-heading"><span>DialogBox.java</span></div><div class="code-block-content"><pre><code heading="DialogBox.java" class="hljs java"><span><span class="highlighted"><span class="hljs-keyword">import</span> javafx.collections.FXCollections;</span>
+    </div>
+    </button></div></pre></div></div><p>Run the program and see how it works.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/javafx/DialogBoxesIteration2.png" width="450" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <h2 id="iteration-3-adding-custom-behavior-to-dialogbox">Iteration 3 – Adding custom behavior to DialogBox<a class="fa fa-anchor" href="#iteration-3-adding-custom-behavior-to-dialogbox" onclick="event.stopPropagation()"></a></h2> <p>One additional benefit of defining a custom control is that we can add behavior specific to our <code class="hljs inline no-lang">DialogBox</code>. Let’s add a method to flip a dialog box such that it appears on the left edge, to differentiate between user input and Duke’s output.</p> <div class="code-block"><div class="code-block-heading"><span>DialogBox.java</span></div><div class="code-block-content"><pre><code heading="DialogBox.java" class="hljs java"><span><span class="highlighted"><span class="hljs-keyword">import</span> javafx.collections.FXCollections;</span>
 </span><span><span class="highlighted"><span class="hljs-keyword">import</span> javafx.collections.ObservableList;</span>
 </span><span><span class="highlighted"><span class="hljs-keyword">import</span> javafx.scene.Node;</span>
 </span><span><span class="hljs-comment">//previous imports</span>
@@ -222,6 +240,8 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </span><span>    }
 </span><span><span class="hljs-comment">//...</span>
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -236,6 +256,7 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
     </g>
 </svg>
 
+    </div>
     </div>
     </button></div></pre></div></div><p>Now, we can go back to the <code class="hljs inline no-lang">Main</code> class and change the event handler to use our new ways of creating <code class="hljs inline no-lang">DialogBox</code> instances.</p> <div class="code-block"><div class="code-block-heading"><span>Main.java</span></div><div class="code-block-content"><pre><code heading="Main.java" class="hljs java"><span>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleUserInput</span><span class="hljs-params">()</span> </span>{
 </span><span>        String userText = userInput.getText();
@@ -247,6 +268,8 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </span><span>        userInput.clear();
 </span><span>    }
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -262,11 +285,12 @@ For example, the <a href="https://openjfx.io/javadoc/17/javafx.controls/javafx/s
 </svg>
 
     </div>
-    </button></div></pre></div></div><p>Run the application and play around with it.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/javafx/DialogBoxesIteration3.png" width="450" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>Congratulations!
-You have successfully implemented a fully functional GUI for Duke! But there's more. Continue to the next section to find out.</p> <p><a href="/guides/tutorials/javaFxPart2.html"><span aria-hidden="true" class="fas fa-arrow-left"></span> Previous</a> | <a href="/guides/tutorials/javaFx.html"><span aria-hidden="true" class="fas fa-arrow-up"></span> <strong>ToC</strong></a> | <span class="badge rounded-pill bg-primary"><strong><span class="large">What's next?</span></strong></span> <a href="/guides/tutorials/javaFxPart4.html"><span aria-hidden="true" class="fas fa-arrow-right"></span> JavaFX tutorial part 4 - <strong>Using FXML</strong></a></p> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Jeffry Lum</li></ul><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#javafx-tutorial-part-3-interacting-with-the-user" data-v-e6005420>JavaFX tutorial part 3 – Interacting with the user‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#iteration-1-echoing-the-user" data-v-e6005420>Iteration 1 – Echoing the user‎</a> <a class="nav-link py-1" href="#iteration-2-adding-dialog-boxes-for-duke-s-response" data-v-e6005420>Iteration 2 – Adding dialog boxes for Duke's response‎</a> <a class="nav-link py-1" href="#iteration-3-adding-custom-behavior-to-dialogbox" data-v-e6005420>Iteration 3 – Adding custom behavior to DialogBox‎</a></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.3</a> on Thu, 6 Mar 2025, 21:39:40 GMT+8]</small></div></footer></div>
+    </div>
+    </button></div></pre></div></div><p>Run the application and play around with it.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/javafx/DialogBoxesIteration3.png" width="450" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <p>Congratulations!
+You have successfully implemented a fully functional GUI for Duke! But there&#39;s more. Continue to the next section to find out.</p> <p><a href="/guides/tutorials/javaFxPart2.html"><span aria-hidden="true" class="fas fa-arrow-left"></span> Previous</a> | <a href="/guides/tutorials/javaFx.html"><span aria-hidden="true" class="fas fa-arrow-up"></span> <strong>ToC</strong></a> | <span class="badge rounded-pill bg-primary"><strong><span class="large">What&#39;s next?</span></strong></span> <a href="/guides/tutorials/javaFxPart4.html"><span aria-hidden="true" class="fas fa-arrow-right"></span> JavaFX tutorial part 4 - <strong>Using FXML</strong></a></p> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Jeffry Lum</li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#javafx-tutorial-part-3-interacting-with-the-user">JavaFX tutorial part 3 – Interacting with the user‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#iteration-1-echoing-the-user">Iteration 1 – Echoing the user‎</a> <a class="nav-link py-1" href="#iteration-2-adding-dialog-boxes-for-duke-s-response">Iteration 2 – Adding dialog boxes for Duke&#39;s response‎</a> <a class="nav-link py-1" href="#iteration-3-adding-custom-behavior-to-dialogbox">Iteration 3 – Adding custom behavior to DialogBox‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.0.1</a> on Thu, 26 Jun 2025, 0:16:46 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
-<script src="/guides/markbind/js/vue.min.js"></script>
+<script src="/guides/markbind/js/vue.global.prod.min.js"></script>
 <script src="/guides/markbind/js/markbind.min.js"></script>
 <script src="javaFxPart3.page-vue-render.js"></script>
 <script>
@@ -276,6 +300,8 @@ You have successfully implemented a fully functional GUI for Duke! But there's m
     function copyCodeBlock(element) {
         const pre = element.parentElement.parentElement;
         const codeElement = pre.querySelector('code');
+        const copyButtonBody = element.querySelector('.function-btn-body');
+        const tooltipText = element.querySelector(".tooltiptext");
 
         // create dummy text element to select() the text field
         const textElement = document.createElement('textarea');
@@ -285,6 +311,36 @@ You have successfully implemented a fully functional GUI for Duke! But there's m
 
         document.execCommand('copy');
         document.body.removeChild(textElement);
+        copyButtonBody.innerHTML = `
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="2 2 22 22"
+  >
+    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875 
+    L 9 18.40625 L 9.71875 17.71875 L 20.71875 6.71875 Z"></path>
+  </svg>
+`;
+        console.log("Running tooltip");
+        tooltipText.innerText  = `Copied!`;
+        setTimeout(() => {
+            copyButtonBody.innerHTML = `
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "/>
+    </g>
+</svg>
+`;
+            tooltipText.innerText  = `Copy`;
+        }, 3000);
     }
     </script>
 </html>

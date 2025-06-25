@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 5.5.3">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Using PlantUML</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="generator" content="MarkBind 6.0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Using PlantUML</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
@@ -12,17 +12,17 @@
   const baseUrl = '/guides'
 </script>
 <body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
-<div id="app" data-server-rendered="true"><header sticky=""><div data-v-7c0fd418><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-7c0fd418><div class="container-fluid" data-v-7c0fd418><div class="navbar-left" data-v-7c0fd418><a href="https://se-education.org" title="SE-EDU" class="navbar-brand" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fas fa-chevron-circle-left" data-v-7c0fd418></span> <strong data-v-7c0fd418><strong data-v-7c0fd418>SE-EDU</strong></strong></span></a></div> <div class="navbar-default" data-v-7c0fd418><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-7c0fd418> <li data-v-7c0fd418><a href="/guides/index.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>Home</strong></span></a></li> <li data-v-7c0fd418><a href="/guides/about.html" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><strong data-v-7c0fd418>About</strong></span></a></li> <li data-v-7c0fd418><a href="https://github.com/se-edu/guides" class="nav-link" data-v-7c0fd418><span data-v-7c0fd418><span aria-hidden="true" class="fab fa-github" data-v-7c0fd418></span></span></a></li></ul></div> <ul class="navbar-nav navbar-right" data-v-7c0fd418><li class="nav-link" data-v-7c0fd418><form class="navbar-form" data-v-7c0fd418><div class="dropdown" style="position:relative;" data-v-4f6e9aec><input data-bs-toggle="dropdown" type="text" placeholder="Search this site" autocomplete="off" value="" class="form-control" data-v-4f6e9aec> <div class="form-control placeholder-div-hidden" data-v-4f6e9aec>
-      Search this site
-    </div> <ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-4f6e9aec></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-7c0fd418><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a href="#guides-for-se-student-projects" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <p></p><h1 id="using-plantuml">Using PlantUML<a href="#using-plantuml" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div class="lead"><p><strong><a href="http://plantuml.com/">PlantUML</a> is a tool for specifying various diagrams in a textual form.</strong> It is particularly useful in software projects where you want to update the diagrams incrementally, as the project evolves over time.</p></div> <p>The sections below explains how to use PlantUML in a project.</p> <h2 id="setting-up-plantuml">Setting up PlantUML<a href="#setting-up-plantuml" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <div class="alert box-container alert-info" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <!----> <div class="contents" data-v-474166ec><p data-v-474166ec>This section explains how to install the <code class="hljs inline no-lang" data-v-474166ec>PlantUML integration</code> plugin in IntelliJ IDEA. If you are not using Intellij IDEA, you can refer to <a href="https://plantuml.com/starting" data-v-474166ec>this guide</a> on how to use PlantUML locally.</p></div> <!----></div></div></div> <ol><li><p>Go to <code class="hljs inline no-lang">File</code> &gt; <code class="hljs inline no-lang">Settings</code> to access the <code class="hljs inline no-lang">Settings</code> page.</p></li> <li><p>Go to <code class="hljs inline no-lang">Settings</code> &gt; <code class="hljs inline no-lang">Plugins</code> &gt; <code class="hljs inline no-lang">Marketplace</code> and install the plugin <code class="hljs inline no-lang">PlantUML integration</code>.</p></li> <li><p>Then go to <code class="hljs inline no-lang">Settings</code> &gt; <code class="hljs inline no-lang">Languages &amp; Frameworks</code> &gt; <code class="hljs inline no-lang">PlantUML</code> or search for PlantUML. You can also use a specific version of PlantUML from the <a href="https://github.com/plantuml/plantuml/releases">releases page</a>.
-<a href="/guides/tutorials/images/plantuml/ConfiguringSettings.png" target="_self"><img src="/guides/tutorials/images/plantuml/ConfiguringSettings.png" alt="Settings - Other Settings - PlantUML: location of PlantUML.jar" class="img-fluid"></a></p></li></ol> <h2 id="creating-editing-exporting-diagrams">Creating/editing/exporting diagrams<a href="#creating-editing-exporting-diagrams" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <div class="alert box-container alert-info" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <!----> <div class="contents" data-v-474166ec><p data-v-474166ec>This section is for those using the <code class="hljs inline no-lang" data-v-474166ec>PlantUML integration</code> plugin in IntelliJ IDEA. Others can refer to <a href="https://plantuml.com/starting" data-v-474166ec>this guide</a> on how to use PlantUML locally.</p></div> <!----></div></div></div> <p>After installing the <code class="hljs inline no-lang">PlantUML integration</code> plugin, simply create or open any <code class="hljs inline no-lang">.puml</code> file to start editing it.</p> <p><a href="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" alt="Editing `DeleteSequenceDiagram.puml`" class="img-fluid"></a></p> <p>Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes <em>will not</em> be reflected in your actual documentation until you export the diagram.</p> <p><strong><strong>Saving the Diagram as an image</strong></strong></p> <ul><li><strong>When using MarkBind</strong> as the site generation tool:
+<div id="app"><!--[--><header sticky><div data-v-2dc82f13><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-2dc82f13><div class="container-fluid" data-v-2dc82f13><div class="navbar-left" data-v-2dc82f13><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-2dc82f13><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-2dc82f13><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><ul class="navbar-nav navbar-right" data-v-2dc82f13><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-00e26d0a><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-00e26d0a><div class="form-control placeholder-div-hidden" data-v-00e26d0a>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-00e26d0a><!--[--><!--]--></ul></div></form></li><!--]--></ul></div></nav><div style="display:none;" class="lower-navbar-container" data-v-2dc82f13><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><h1 id="using-plantuml">Using PlantUML<a class="fa fa-anchor" href="#using-plantuml" onclick="event.stopPropagation()"></a></h1> <div class="lead"><p><strong><a href="http://plantuml.com/">PlantUML</a> is a tool for specifying various diagrams in a textual form.</strong> It is particularly useful in software projects where you want to update the diagrams incrementally, as the project evolves over time.</p></div> <p>The sections below explains how to use PlantUML in a project.</p> <h2 id="setting-up-plantuml">Setting up PlantUML<a class="fa fa-anchor" href="#setting-up-plantuml" onclick="event.stopPropagation()"></a></h2> <div class="alert box-container alert-info" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><!----><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>This section explains how to install the <code class="hljs inline no-lang">PlantUML integration</code> plugin in IntelliJ IDEA. If you are not using Intellij IDEA, you can refer to <a href="https://plantuml.com/starting">this guide</a> on how to use PlantUML locally.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <ol><li><p>Go to <code class="hljs inline no-lang">File</code> &gt; <code class="hljs inline no-lang">Settings</code> to access the <code class="hljs inline no-lang">Settings</code> page.</p></li> <li><p>Go to <code class="hljs inline no-lang">Settings</code> &gt; <code class="hljs inline no-lang">Plugins</code> &gt; <code class="hljs inline no-lang">Marketplace</code> and install the plugin <code class="hljs inline no-lang">PlantUML integration</code>.</p></li> <li><p>Then go to <code class="hljs inline no-lang">Settings</code> &gt; <code class="hljs inline no-lang">Languages &amp; Frameworks</code> &gt; <code class="hljs inline no-lang">PlantUML</code> or search for PlantUML. You can also use a specific version of PlantUML from the <a href="https://github.com/plantuml/plantuml/releases">releases page</a>.
+<a href="/guides/tutorials/images/plantuml/ConfiguringSettings.png" target="_self"><img src="/guides/tutorials/images/plantuml/ConfiguringSettings.png" alt="Settings - Other Settings - PlantUML: location of PlantUML.jar" class="img-fluid"></a></p></li></ol> <h2 id="creating-editing-exporting-diagrams">Creating/editing/exporting diagrams<a class="fa fa-anchor" href="#creating-editing-exporting-diagrams" onclick="event.stopPropagation()"></a></h2> <div class="alert box-container alert-info" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><!----><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>This section is for those using the <code class="hljs inline no-lang">PlantUML integration</code> plugin in IntelliJ IDEA. Others can refer to <a href="https://plantuml.com/starting">this guide</a> on how to use PlantUML locally.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <p>After installing the <code class="hljs inline no-lang">PlantUML integration</code> plugin, simply create or open any <code class="hljs inline no-lang">.puml</code> file to start editing it.</p> <p><a href="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/EditingDeleteSequenceDiagram.png" alt="Editing `DeleteSequenceDiagram.puml`" class="img-fluid"></a></p> <p>Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes <em>will not</em> be reflected in your actual documentation until you export the diagram.</p> <p><strong><strong>Saving the Diagram as an image</strong></strong></p> <ul><li><strong>When using MarkBind</strong> as the site generation tool:
 <ul><li>MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you. Refer to <a href="https://markbind.org/userGuide/components/imagesAndDiagrams.html#plantuml-diagrams">this section of the MarkBind User Guide</a> for more details.</li></ul></li> <li><strong>When using Jekyll</strong> as the site generation tool:
-<ul><li>The <code class="hljs inline no-lang">PlantUML integration</code> plugin allows you to export individual diagrams to a location of your choosing. Click the <code class="hljs inline no-lang">Save Current Diagram Only</code> button and choose the location to export the image file.</li> <li>You will have to <code class="hljs inline no-lang">git add</code> any new diagrams generated!</li></ul></li></ul> <h2 id="tips-and-tricks">Tips and tricks<a href="#tips-and-tricks" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <h3 id="maintaining-consistency-in-formatting">Maintaining consistency in formatting<a href="#maintaining-consistency-in-formatting" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>It is highly recommended to consistently color your UML diagrams as an visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.</p> <p>For example, you can create a <code class="hljs inline no-lang">Style.puml</code> with the contents:</p> <p><strong>Style.puml.</strong></p> <pre><code class="hljs"><span>!define LOGIC_COLOR #3333C4
+<ul><li>The <code class="hljs inline no-lang">PlantUML integration</code> plugin allows you to export individual diagrams to a location of your choosing. Click the <code class="hljs inline no-lang">Save Current Diagram Only</code> button and choose the location to export the image file.</li> <li>You will have to <code class="hljs inline no-lang">git add</code> any new diagrams generated!</li></ul></li></ul> <h2 id="tips-and-tricks">Tips and tricks<a class="fa fa-anchor" href="#tips-and-tricks" onclick="event.stopPropagation()"></a></h2> <h3 id="maintaining-consistency-in-formatting">Maintaining consistency in formatting<a class="fa fa-anchor" href="#maintaining-consistency-in-formatting" onclick="event.stopPropagation()"></a></h3> <p>It is highly recommended to consistently color your UML diagrams as an visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.</p> <p>For example, you can create a <code class="hljs inline no-lang">Style.puml</code> with the contents:</p> <p><strong>Style.puml.</strong></p> <pre><code class="hljs"><span>!define LOGIC_COLOR #3333C4
 </span><span>!define LOGIC_COLOR_T1 #7777DB
 </span><span>!define LOGIC_COLOR_T2 #5252CE
 </span><span>!define LOGIC_COLOR_T3 #1616B0
 </span><span>!define LOGIC_COLOR_T4 #101086
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -37,6 +37,7 @@
     </g>
 </svg>
 
+    </div>
     </div>
     </button></div></pre><p>Then you can use it in another PlantUML file like this:</p> <p><strong>UndoSequenceDiagram.puml.</strong></p> <pre><code class="hljs"><span>!include Style.puml
 </span><span>
@@ -46,6 +47,8 @@
 </span><span>participant &quot;:UndoCommand&quot; as UndoCommand LOGIC_COLOR
 </span><span>end box
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -61,7 +64,8 @@
 </svg>
 
     </div>
-    </button></div></pre><p>You can fine-tune the formatting of PlantUML diagrams with the <code class="hljs inline no-lang">skinparam</code> command. For example, <code class="hljs inline no-lang">skinparam backgroundColor transparent</code> turns the background of the diagram transparent.</p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-success" data-v-474166ec><i class="fas fa-lightbulb" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec>For a comprehensive list of <code class="hljs inline no-lang" data-v-474166ec>skinparam</code>s, see <a href="https://plantuml-documentation.readthedocs.io/en/latest/" data-v-474166ec>unofficial PlantUML skinparam documentation</a>.</p></div> <!----></div></div></div> <h3 id="repositioning-elements">Repositioning elements<a href="#repositioning-elements" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>While PlantUML’s automatic layout engine usually produces satisfactory results, at times the result can be less than ideal, especially on larger diagrams. Here is an example where the default layout generated by PlantUML has a lot of overlapping lines that are hard to decipher:</p> <p><a href="/guides/tutorials/images/plantuml/RawUiDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/RawUiDiagram.png" alt="The UI class diagram without additional formatting" class="img-fluid"></a></p> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-info" data-v-474166ec><i class="fas fa-info" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-info" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec>In most cases, you should consider decomposing the diagram into smaller ones or focusing on a more specific portion of the diagram.</p></div> <!----></div></div></div> <p>Here are some techniques you can use to obtain a more palatable diagram.</p> <h4 id="link-lengths">Link lengths<a href="#link-lengths" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>By default, a short link (<code class="hljs inline no-lang">-&gt;</code>) points to right and a long link (<code class="hljs inline no-lang">--&gt;</code>) points downwards. you can extend any link to make it longer (<code class="hljs inline no-lang">---&gt;</code>).</p> <p><a href="/guides/tutorials/images/plantuml/ArrowLength.png" target="_self"><img src="/guides/tutorials/images/plantuml/ArrowLength.png" alt="Length of arrows and its effects" class="img-fluid"></a></p> <h4 id="link-directions">Link directions<a href="#link-directions" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h4> <p>Clever usage of arrow directions will resolve most layout issues. For example, the table below shows how the way in which you specify arrows can results in drastically different layouts for the same diagram.</p> <table><caption>Table: Link directions</caption> <colgroup><col style="width:40%;"> <col style="width:60%;"></colgroup> <thead><tr class="header"><th>Source</th> <th>Result</th></tr></thead> <tbody><tr class="odd"><td><pre>A --&gt; Z
+    </div>
+    </button></div></pre><p>You can fine-tune the formatting of PlantUML diagrams with the <code class="hljs inline no-lang">skinparam</code> command. For example, <code class="hljs inline no-lang">skinparam backgroundColor transparent</code> turns the background of the diagram transparent.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-success" style="" data-v-19514615><!--[--><i class="fas fa-lightbulb" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-success vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>For a comprehensive list of <code class="hljs inline no-lang">skinparam</code>s, see <a href="https://plantuml-documentation.readthedocs.io/en/latest/">unofficial PlantUML skinparam documentation</a>.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h3 id="repositioning-elements">Repositioning elements<a class="fa fa-anchor" href="#repositioning-elements" onclick="event.stopPropagation()"></a></h3> <p>While PlantUML’s automatic layout engine usually produces satisfactory results, at times the result can be less than ideal, especially on larger diagrams. Here is an example where the default layout generated by PlantUML has a lot of overlapping lines that are hard to decipher:</p> <p><a href="/guides/tutorials/images/plantuml/RawUiDiagram.png" target="_self"><img src="/guides/tutorials/images/plantuml/RawUiDiagram.png" alt="The UI class diagram without additional formatting" class="img-fluid"></a></p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>In most cases, you should consider decomposing the diagram into smaller ones or focusing on a more specific portion of the diagram.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <p>Here are some techniques you can use to obtain a more palatable diagram.</p> <h4 id="link-lengths">Link lengths<a class="fa fa-anchor" href="#link-lengths" onclick="event.stopPropagation()"></a></h4> <p>By default, a short link (<code class="hljs inline no-lang">-&gt;</code>) points to right and a long link (<code class="hljs inline no-lang">--&gt;</code>) points downwards. you can extend any link to make it longer (<code class="hljs inline no-lang">---&gt;</code>).</p> <p><a href="/guides/tutorials/images/plantuml/ArrowLength.png" target="_self"><img src="/guides/tutorials/images/plantuml/ArrowLength.png" alt="Length of arrows and its effects" class="img-fluid"></a></p> <h4 id="link-directions">Link directions<a class="fa fa-anchor" href="#link-directions" onclick="event.stopPropagation()"></a></h4> <p>Clever usage of arrow directions will resolve most layout issues. For example, the table below shows how the way in which you specify arrows can results in drastically different layouts for the same diagram.</p> <table><caption>Table: Link directions</caption> <colgroup><col style="width:40%;"> <col style="width:60%;"></colgroup> <thead><tr class="header"><th>Source</th> <th>Result</th></tr></thead> <tbody><tr class="odd"><td><pre>A --&gt; Z
 B --&gt; Z
 C --&gt; Z
 D --&gt; Z
@@ -69,52 +73,20 @@ D --&gt; Z
 B --&gt; 2
 C --&gt; 3
 D --&gt; 4</p>
-<div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </button></div></pre></td> <td><img src="/guides/tutorials/images/plantuml/AllDown.png"></td></tr> <tr class="even"><td><pre>'default is down
+</pre></td> <td><img src="/guides/tutorials/images/plantuml/AllDown.png"></td></tr> <tr class="even"><td><pre>&#39;default is down
 A --&gt; Z
-'specify down
+&#39;specify down
 B -down-&gt; Z
-'shorthand for down
+&#39;shorthand for down
 C -d-&gt; Z
-'arrow lengths take priority
+&#39;arrow lengths take priority
 D -down&gt; Z
 
 A -up-&gt; 1
 B -up-&gt; 2
 C -up-&gt; 3
 D -up-&gt; 4
-<div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </button></div></pre></td> <td><img src="/guides/tutorials/images/plantuml/UpAndDown.png"></td></tr> <tr class="odd"><td><pre>A -up-&gt; Z
+</pre></td> <td><img src="/guides/tutorials/images/plantuml/UpAndDown.png"></td></tr> <tr class="odd"><td><pre>A -up-&gt; Z
 B -up-&gt; Z
 C -up-&gt; Z
 D -up-&gt; Z
@@ -124,87 +96,23 @@ B --&gt; 2
 C --&gt; 3
 D --&gt; 4
 
-'Force A B C D
+&#39;Force A B C D
 A -right[hidden]- B
 B -right[hidden]- C
 C -right[hidden]- D
-<div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </button></div></pre></td> <td><img src="/guides/tutorials/images/plantuml/HiddenArrows.png"></td></tr></tbody></table> <p><strong>Another technique you can use to influence the layout is to reorder definitions.</strong> The layout engine will attempt to order objects in the order in which they are defined. If there is no formal definition, the objects is taken to be declared upon its first usage.</p> <table><caption>Table: Definition ordering and outcomes</caption> <colgroup><col style="width:70%;"> <col style="width:30%;"></colgroup> <thead><tr class="header"><th>Source</th> <th>Result</th></tr></thead> <tbody><tr class="odd"><td><pre>A --&gt; B
+</pre></td> <td><img src="/guides/tutorials/images/plantuml/HiddenArrows.png"></td></tr></tbody></table> <p><strong>Another technique you can use to influence the layout is to reorder definitions.</strong> The layout engine will attempt to order objects in the order in which they are defined. If there is no formal definition, the objects is taken to be declared upon its first usage.</p> <table><caption>Table: Definition ordering and outcomes</caption> <colgroup><col style="width:70%;"> <col style="width:30%;"></colgroup> <thead><tr class="header"><th>Source</th> <th>Result</th></tr></thead> <tbody><tr class="odd"><td><pre>A --&gt; B
 C --&gt; D
-<div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </button></div></pre></td> <td><img src="/guides/tutorials/images/plantuml/ABeforeC.png"></td></tr> <tr class="even"><td><pre>'Class C is defined before A
+</pre></td> <td><img src="/guides/tutorials/images/plantuml/ABeforeC.png"></td></tr> <tr class="even"><td><pre>&#39;Class C is defined before A
 Class C
 
 A --&gt; B
 C --&gt; D
-<div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </button></div></pre></td> <td><img src="/guides/tutorials/images/plantuml/CBeforeA.png"></td></tr> <tr class="odd"><td><pre>package &quot;Rule Of Thumb&quot;;{
+</pre></td> <td><img src="/guides/tutorials/images/plantuml/CBeforeA.png"></td></tr> <tr class="odd"><td><pre>package &quot;Rule Of Thumb&quot;;{
     Class C
     A --&gt; B
     C --&gt; D
 }
-<div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </button></div></pre></td> <td><img src="/guides/tutorials/images/plantuml/PackagesAndConsistency.png"></td></tr></tbody></table> <div class="alert box-container seamless" data-v-474166ec><!----> <div class="header-and-body" data-v-474166ec><!----> <div class="box-body-wrapper" data-v-474166ec><div class="icon-wrapper  text-success" data-v-474166ec><i class="fas fa-lightbulb" data-v-474166ec></i></div> <div aria-hidden="true" class="vertical-divider alert-success" data-v-474166ec></div> <div class="contents" data-v-474166ec><p data-v-474166ec>Explicitly define all symbols to avoid any potential layout mishaps.</p></div> <!----></div></div></div> <h3 id="using-reference-frames">Using reference frames<a href="#using-reference-frames" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Reference frames in PlantUML sequence diagrams allow you to <strong>group and reuse sequences</strong> of interactions, which helps improve readability and reduce repetition in complex scenarios. By encapsulating sequences into reference frames, you can also <strong>reduce complexity</strong>, making it easier to manage and understand the overall flow of interactions within your diagrams.</p> <p>Refer to the following example:</p> <pre><code class="hljs"><span>@startuml
+</pre></td> <td><img src="/guides/tutorials/images/plantuml/PackagesAndConsistency.png"></td></tr></tbody></table> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-success" style="" data-v-19514615><!--[--><i class="fas fa-lightbulb" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-success vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>Explicitly define all symbols to avoid any potential layout mishaps.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h3 id="using-reference-frames">Using reference frames<a class="fa fa-anchor" href="#using-reference-frames" onclick="event.stopPropagation()"></a></h3> <p>Reference frames in PlantUML sequence diagrams allow you to <strong>group and reuse sequences</strong> of interactions, which helps improve readability and reduce repetition in complex scenarios. By encapsulating sequences into reference frames, you can also <strong>reduce complexity</strong>, making it easier to manage and understand the overall flow of interactions within your diagrams.</p> <p>Refer to the following example:</p> <pre><code class="hljs"><span>@startuml
 </span><span>
 </span><span>hide footbox
 </span><span>skinparam sequenceReferenceBackgroundColor #f7807c
@@ -227,6 +135,8 @@ C --&gt; D
 </span><span>
 </span><span>@enduml
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -242,7 +152,8 @@ C --&gt; D
 </svg>
 
     </div>
-    </button></div></pre><span class="image-wrapper"><img src="/guides/tutorials/images/plantuml/OriginalSequenceDiagram.png" width="500" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>The sequence diagram illustrates two main actions: marking a cell and retrieving its appearance. We can simplify the diagram by moving the latter into a new reference frame.</p> <p>First we update the original diagram as follows:</p> <pre><code class="hljs"><span>@startuml
+    </div>
+    </button></div></pre><span class="image-wrapper"><img src="/guides/tutorials/images/plantuml/OriginalSequenceDiagram.png" width="500" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <p>The sequence diagram illustrates two main actions: marking a cell and retrieving its appearance. We can simplify the diagram by moving the latter into a new reference frame.</p> <p>First we update the original diagram as follows:</p> <pre><code class="hljs"><span>@startuml
 </span><span>
 </span><span>hide footbox
 </span><span>skinparam sequenceReferenceBackgroundColor #f7807c
@@ -264,6 +175,8 @@ C --&gt; D
 </span><span>
 </span><span>@enduml
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -279,7 +192,8 @@ C --&gt; D
 </svg>
 
     </div>
-    </button></div></pre><span class="image-wrapper"><img src="/guides/tutorials/images/plantuml/ParentReferenceFrameDiagram.png" width="300" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <p>Then, we create a new diagram for the reference frame.</p> <pre><code class="hljs"><span>@startuml
+    </div>
+    </button></div></pre><span class="image-wrapper"><img src="/guides/tutorials/images/plantuml/ParentReferenceFrameDiagram.png" width="300" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <p>Then, we create a new diagram for the reference frame.</p> <pre><code class="hljs"><span>@startuml
 </span><span>
 </span><span>hide footbox
 </span><span>
@@ -295,6 +209,8 @@ C --&gt; D
 </span><span>
 </span><span>@enduml
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
     <div class="function-btn-body">
     
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
@@ -310,11 +226,12 @@ C --&gt; D
 </svg>
 
     </div>
-    </button></div></pre><span class="image-wrapper"><img src="/guides/tutorials/images/plantuml/ReferenceFrameDiagram.png" width="300" height="" loading="eager" class="img-fluid rounded"> <span class="image-caption"></span></span> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Jeffry Lum</li> <li>Contributors:
-<ul><li>MUHAMMAD FIKRI BIN ABDUL KALAM (@mfjkri): added the part on SD reference frames</li></ul></li></ul><p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-e6005420><div class="nav-component slim-scroll" data-v-e6005420><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#using-plantuml" data-v-e6005420>Using PlantUML‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#setting-up-plantuml" data-v-e6005420>Setting up PlantUML‎</a> <a class="nav-link py-1" href="#creating-editing-exporting-diagrams" data-v-e6005420>Creating/editing/exporting diagrams‎</a> <a class="nav-link py-1" href="#tips-and-tricks" data-v-e6005420>Tips and tricks‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e6005420><a class="nav-link py-1" href="#maintaining-consistency-in-formatting" data-v-e6005420>Maintaining consistency in formatting‎</a> <a class="nav-link py-1" href="#repositioning-elements" data-v-e6005420>Repositioning elements‎</a> <a class="nav-link py-1" href="#using-reference-frames" data-v-e6005420>Using reference frames‎</a></nav></nav> <!----></nav></div> <!----></nav> <div aria-hidden="true" class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;"><i class="fas fa-arrow-circle-up"></i></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 5.5.3</a> on Thu, 6 Mar 2025, 21:39:40 GMT+8]</small></div></footer></div>
+    </div>
+    </button></div></pre><span class="image-wrapper"><img src="/guides/tutorials/images/plantuml/ReferenceFrameDiagram.png" width="300" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Jeffry Lum</li> <li>Contributors:
+<ul><li>MUHAMMAD FIKRI BIN ABDUL KALAM (@mfjkri): added the part on SD reference frames</li></ul></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#using-plantuml">Using PlantUML‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#setting-up-plantuml">Setting up PlantUML‎</a> <a class="nav-link py-1" href="#creating-editing-exporting-diagrams">Creating/editing/exporting diagrams‎</a> <a class="nav-link py-1" href="#tips-and-tricks">Tips and tricks‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#maintaining-consistency-in-formatting">Maintaining consistency in formatting‎</a> <a class="nav-link py-1" href="#repositioning-elements">Repositioning elements‎</a> <a class="nav-link py-1" href="#using-reference-frames">Using reference frames‎</a></nav></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.0.1</a> on Thu, 26 Jun 2025, 0:16:46 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
-<script src="/guides/markbind/js/vue.min.js"></script>
+<script src="/guides/markbind/js/vue.global.prod.min.js"></script>
 <script src="/guides/markbind/js/markbind.min.js"></script>
 <script src="plantUml.page-vue-render.js"></script>
 <script>
@@ -324,6 +241,8 @@ C --&gt; D
     function copyCodeBlock(element) {
         const pre = element.parentElement.parentElement;
         const codeElement = pre.querySelector('code');
+        const copyButtonBody = element.querySelector('.function-btn-body');
+        const tooltipText = element.querySelector(".tooltiptext");
 
         // create dummy text element to select() the text field
         const textElement = document.createElement('textarea');
@@ -333,6 +252,36 @@ C --&gt; D
 
         document.execCommand('copy');
         document.body.removeChild(textElement);
+        copyButtonBody.innerHTML = `
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="2 2 22 22"
+  >
+    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875 
+    L 9 18.40625 L 9.71875 17.71875 L 20.71875 6.71875 Z"></path>
+  </svg>
+`;
+        console.log("Running tooltip");
+        tooltipText.innerText  = `Copied!`;
+        setTimeout(() => {
+            copyButtonBody.innerHTML = `
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "/>
+    </g>
+</svg>
+`;
+            tooltipText.innerText  = `Copy`;
+        }, 3000);
     }
     </script>
 </html>
