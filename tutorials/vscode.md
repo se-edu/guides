@@ -33,7 +33,7 @@ To effectively use VS Code for Java development, you will need to set up your en
 
 * **Command Palette**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
 * **Extensions View**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+X` | {{ icon_apple }} `Cmd+Shift+X`
-* **Run Program**: `F5` (debug mode) or click Run button
+* **Run Program**: Click Run button or `F5` (debug mode)
 * **Save File**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+S` | {{ icon_apple }} `Cmd+S`
 
 ### Key Java commands in VS Code

@@ -15,7 +15,7 @@ This guide will help you import and work with existing Java projects in VS Code.
 
 <box type="tip" seamless>
 
-**Need help with setup?** Check out our [Preparing VS Code for Java](vscodeJavaPrep.html) guide first.
+**Need help with setup?** Check out our [Preparing VS Code for Java](vscodeJavaSetup.html) guide first.
 </box>
 
 ## Importing an existing Java project
@@ -41,64 +41,60 @@ After the project loads:
 2. **Test IntelliSense** - Try typing in a Java file to see if code completion works
 3. **Look for error indicators** - VS Code will underline syntax errors in red
 
-## Troubleshooting common issues
+## Configure your JDK
 
-### Java Language Server not starting
+<box type="tip" seamless>
 
-If the Java Language Server fails to start:
+If you already have Java installed, VS Code should automatically detect and configure it when you create your project.
+</box>
 
-1. **Check JDK configuration**:
-   - Open Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
-   - Type `Java: Configure Java Runtime` and verify JDK is detected
+After creating your project, you may need to verify and configure VS Code to use the correct JDK version.
 
-2. **Reload the window**:
-   - Open Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
-   - Type `Developer: Reload Window`
+1. **Open the Command Palette**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
+2. **Type** `Java: Configure Java Runtime` and select it
+3. **Verify your JDK** appears in the dropdown list and is selected
+4. **Select the appropriate JDK** if you have multiple versions installed
 
-### Missing dependencies
+![VS Code Java: Configure Java Runtime](images/vscodeNewJavaProject/VSCodeJavaConfigureJavaRuntime.png)
 
-If your project has missing dependencies:
+## Configure project settings
 
-1. **For Gradle projects**: Check the Gradle build file and refresh dependencies
-2. **For Maven projects**: Check the `pom.xml` file and refresh dependencies
-3. **For plain Java projects**: Manually add JAR files to the project
+### Manual Configuration
 
-### Wrong Java version
+To view and modify project settings:
 
-If VS Code is using the wrong Java version:
+1. **Open the Command Palette**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
+2. **Type** `Java: Open Project Settings` and select it
+3. **Configure** as needed:
+   * **Source paths** - Directories where your Java source files are located
+   * **Output path** - Directory where compiled `.class` files will be stored
+   * **Libraries** - External JAR files or libraries your project depends on
+   * **JDK version** - The JDK version to use for compilation and runtime
 
-1. **Open Command Palette**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
-2. **Type** `Java: Configure Java Runtime`
-3. **Select the correct JDK** for your project requirements
+![VS Code Java Project Settings](images/vscodeNewJavaProject/VSCodeJavaProjectSettings.png)
 
-## Configuring project settings
+### Using `.vscode/settings.json`
 
-### Manual configuration
-
-For projects that need custom configuration:
-
-1. **Open Command Palette**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
-2. **Type** `Java: Project Settings` and select it
-3. **Configure**:
-   - Source paths
-   - Output paths
-   - Referenced libraries
-   - JDK version
-
-### Using .vscode/settings.json
-
-You can also configure project settings manually by creating a `.vscode/settings.json` file:
+You can also configure project settings by creating a `.vscode/settings.json` file in the root directory:
 
 ```json
 {
     "java.project.sourcePaths": [
         "src"
     ],
+    "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ]
 }
 ```
+
+## Running imported projects
+
+1. **Locate the main class** with a `main` method
+2. **Click the "Run" button** that appears above the `main` method or at the top right corner of the editor, or
+3. **Press** `F5` to run in debug mode
+4. **Check the terminal output** to see your program's output
 
 ## Best practices
 
@@ -114,15 +110,8 @@ Add the following to your `.gitignore` if not already present:
 .vscode/
 ```
 
-## Running imported projects
-
-1. **Locate the main class** with a `main` method
-2. **Click the "Run" button** that appears above the `main` method
-3. **Or press** `F5` to run in debug mode
-4. **Check build tool commands** if it's a Gradle/Maven project
-
 ## Next steps
 
-Once you have successfully imported your project:
+Once you have successfully imported your project, you might want to:
 
 * [Configure code formatting](vscodeCodeStyle.html) to match team standards
