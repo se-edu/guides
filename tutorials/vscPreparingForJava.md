@@ -13,7 +13,18 @@
 This tutorial is adapted from the [official VS Code Java Tutorial](https://code.visualstudio.com/docs/java/java-tutorial).
 </box>
 
-This guide will help you set up VS Code for Java development by installing the necessary extensions and configuring the Java Development Kit (JDK).
+This guide will help you set up VS Code for Java development by installing the Java Development Kit (JDK), VS Code and the necessary extensions.
+
+## Install Java Development Kit (JDK)
+
+Before you can develop Java applications, you need to have a Java Development Kit (JDK) installed.
+
+Check out our [Java Installation guide](javaInstallation.html) for detailed installation and setup instructions for Windows, macOS, and Linux.
+
+<box type="info" seamless>
+
+**Note:** After [installing the Extension Pack for Java](#install-the-extension-pack-for-java), VS Code Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` also offers a `Java: Install New JDK` command to install and configure JDK versions through its integrated tools. However, we recommend following our [Java Installation guide](javaInstallation.html) to install the JDK separately.
+</box>
 
 ## Install VS Code
 
@@ -63,24 +74,6 @@ To verify that the [Extension Pack for Java](https://marketplace.visualstudio.co
 
 ![VS Code Java: Tips for Beginners](images/vscodeJavaSetup/VSCodeJavaTipsForBeginners.png)
 </box>
-
-## Install Java Development Kit (JDK)
-
-Before you can develop Java applications in VS Code, you need to have a Java Development Kit (JDK) installed.
-
-Check out our [Java Installation guide](javaInstallation.html) for detailed installation and setup instructions for Windows, macOS, and Linux.
-
-### Alternative: Install JDK through VS Code
-
-VS Code can also help you install and configure additional JDK versions through its integrated tools. This method is particularly useful when you need to manage multiple JDK versions or want VS Code to handle the installation automatically.
-
-1. **Open the Command Palette**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
-2. **Type** `Java: Install New JDK` and select it
-![VS Code Command Palette "Java: Install New JDK"](images/vscodeJavaSetup/VSCodeCommandPaletteJavaInstallNewJDK.png)
-3. **Choose a JDK version** from the available options
-4. **Download and follow the installation prompts**
-
-![VS Code Java: Install New JDK](images/vscodeJavaSetup/VSCodeJavaInstallNewJDK.png)
 
 ## Next steps
 
