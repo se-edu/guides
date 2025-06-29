@@ -18,10 +18,7 @@ Tutorials, how-to guides, getting-started guides, ...
 * [**Checkstyle**](tutorials/checkstyle.html)
 * [**Codecov**](tutorials/codecov.html)
 * **Java**:
-  * **[Installation](tutorials/javaInstallation.html)**
-    * [**:fab-apple: Mac**](tutorials/javaInstallationMac.html)
-    * [**:fab-windows: Windows**](tutorials/javaInstallationWindows.html)
-    * [**:fab-linux: Linux**](tutorials/javaInstallationLinux.html)
+  * **[Installation](tutorials/javaInstallation.html)**: [:fab-apple: Mac](tutorials/javaInstallationMac.html) | [:fab-windows: Windows](tutorials/javaInstallationWindows.html) | [:fab-linux: Linux](tutorials/javaInstallationLinux.html)
   * [**JAR files**](tutorials/jar.html)
   * [**JavaFX**](tutorials/javaFx.html):
     * [Part 1: Getting started](tutorials/javaFxPart1.html)
@@ -36,11 +33,12 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
 * [**Visual Studio Code**](tutorials/vscode.html)
-  * [Preparing VS Code for Java](tutorials/vscodeJavaSetup.html)
+  * [Preparing VS Code for Java projects](tutorials/vscPreparingForJava.md)
   * [Creating a new Java project](tutorials/vscodeNewJavaProject.html)
   * [Importing existing Java projects](tutorials/vscodeImportJavaProject.html)
-  * [Importing a Gradle project](tutorials/vscodeGradleImport.html)
-  * [Setting up Checkstyle](tutorials/vscodeCheckstyle.html)
+  * [Importing a Gradle project](tutorials/vscImportingGradleProject.md)
+  * [Setting up Checkstyle](tutorials/vscSettingUpCheckstyle.md)
+  * [Using GitHub Copilot](tutorials/vscCopilot.md)
 * [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
