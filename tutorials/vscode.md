@@ -19,6 +19,8 @@
 This guide is for those who prefer to use [Visual Studio Code](https://code.visualstudio.com/) (VS Code) for their Java projects.
 
 * [**Preparing VS Code for Java projects**](vscPreparingForJava.md)
+* [**Creating a new Java project**](vscCreatingNewJavaProject.md)
+* [**Importing existing Java projects**](vscImportingJavaProject.md)
 * [**Importing a Gradle project**](vscImportingGradleProject.md)
 * [**Setting up Checkstyle**](vscSettingUpCheckstyle.md)
 * [**Using GitHub Copilot**](vscCopilot.md)

@@ -34,6 +34,8 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Useful settings](tutorials/intellijUsefulSettings.html)
 * [**Visual Studio Code**](tutorials/vscode.html)
   * [Preparing VS Code for Java projects](tutorials/vscPreparingForJava.md)
+  * [Creating a new Java project](tutorials/vscCreatingNewJavaProject.md)
+  * [Importing existing Java projects](tutorials/vscImportingJavaProject.md)
   * [Importing a Gradle project](tutorials/vscImportingGradleProject.md)
   * [Setting up Checkstyle](tutorials/vscSettingUpCheckstyle.md)
   * [Using GitHub Copilot](tutorials/vscCopilot.md)
