@@ -4,6 +4,8 @@
   pageNav: 2
 </frontmatter>
 
+<include src="vscode.md#wip-warning" />
+
 # {{ title }}
 
 This guide will walk you through creating a new Java project in VS Code from scratch.
@@ -157,4 +159,4 @@ Add the following to your `.gitignore` file:
 
 Once you have your project created, you might want to:
 
-* [Configure code formatting](vscodeCodeStyle.html)
+* [Configure code formatting](vscSettingUpCheckstyle.html)

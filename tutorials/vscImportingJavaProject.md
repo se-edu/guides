@@ -4,6 +4,8 @@
   pageNav: 2
 </frontmatter>
 
+<include src="vscode.md#wip-warning" />
+
 # {{ title }}
 
 This guide will help you import and work with existing Java projects in VS Code.
@@ -114,4 +116,4 @@ Add the following to your `.gitignore` if not already present:
 
 Once you have successfully imported your project, you might want to:
 
-* [Configure code formatting](vscodeCodeStyle.html) to match team standards
+* [Configure code formatting](vscSettingUpCheckstyle.html) to match team standards
