@@ -12,13 +12,7 @@ This guide will help you import and work with existing Java projects in VS Code.
 
 ## Prerequisites
 
-* VS Code with the Extension Pack for Java installed
-* Java Development Kit (JDK) installed
-
-<box type="tip" seamless>
-
-**Need help with setup?** Check out our [Preparing VS Code for Java](vscodeJavaSetup.html) guide first.
-</box>
+<include src="vscCreatingNewJavaProject.md#vsc-java-prereq" />
 
 ## Importing an existing Java project
 
