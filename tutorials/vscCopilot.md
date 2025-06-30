@@ -60,7 +60,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 * **Sign in to GitHub Copilot**
   * Open Visual Studio Code.
   * Click on the GitHub Copilot icon at the top.<br>
-    <pic src="images\vscCopilotSetup\copilotLogin.png" width="800" />
+    <pic src="images/vscCopilotSetup/copilotLogin.png" width="800" />
   * Click on `Sign in` in the pop up.
   * You will be redirected to GitHub login page, where you can login or select the account linked to GitHub Education.
   * It should prompt you with `Open Visual Studio Code?` and click `Open Visual Studio Code`.
@@ -69,7 +69,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 * **Verifying the installation of GitHub Copilot**
   * Open a new text file using `File` → `New File` or {{ icon_windows }}/{{ icon_linux}} `Ctrl+N` | {{ icon_apple }} `Cmd+N`.
   * You should see an automatic suggestion appear in the empty text file.<br>
-    <pic src="images\vscCopilotSetup\copilotSuggestion.png" width="800" />
+    <pic src="images/vscCopilotSetup/copilotSuggestion.png" width="800" />
 
 ## Using GitHub Copilot in Visual Studio Code
 
@@ -83,7 +83,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
     }
     ```
   * GitHub Copilot will automatically suggest code to complete or implement the comment.<br>
-    <pic src="images\vscCopilotUsage\basicCodeCompletion.png" width="400" />
+    <pic src="images/vscCopilotUsage/basicCodeCompletion.png" width="400" />
   * Press `Tab` to accept the suggestion, or continue typing to refine it.
   <box type="tip" seamless>
     The more descriptive your comment or method signatures, the better Copilot can understand what you want to implement.
@@ -93,17 +93,17 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
   * Open the Copilot Chat using {{ icon_windows }}/{{ icon_linux}} `Ctrl+Alt+I` | {{ icon_apple }} `Cmd+Alt+I` or using the Copilot icon.
   * Ask something like: "Write a main method that calculates the factorial of N".
   * Copilot will generate a response in the chat window.<br>
-    <pic src="images\vscCopilotUsage\copilotChat.png" width="400" />
+    <pic src="images/vscCopilotUsage/copilotChat.png" width="400" />
   * You can directly insert or copy code chunks using the buttons in the top right corner.
   * From left to right: Insert automatically into the current file, Insert at cursor, Copy to clipboard.<br>
-    <pic src="images\vscCopilotUsage\copilotChatButtons.png" width="100" />
+    <pic src="images/vscCopilotUsage/copilotChatButtons.png" width="100" />
 
 ### Copilot Inline Chat
   * Go to the line or section where you want to ask Copilot for assistance.
   * Use the inline chat feature using the shortcut {{ icon_windows }}/{{ icon_linux}} `Ctrl+I` | {{ icon_apple }} `Cmd+I`.
   * Type your request such as "Add a print log here" and press `Enter`.
   * The generated lines of code will be highlighted in yellow, and you can insert them by clicking on `accept`.<br>
-    <pic src="images\vscCopilotUsage\copilotInline.png" width="600" />
+    <pic src="images/vscCopilotUsage/copilotInline.png" width="600" />
 
 ---
 
