@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 6.0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>VS Code - Creating a New Java Project</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app"><!--[--><header sticky><div data-v-2dc82f13><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-2dc82f13><div class="container-fluid" data-v-2dc82f13><div class="navbar-left" data-v-2dc82f13><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-2dc82f13><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-2dc82f13><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><ul class="navbar-nav navbar-right" data-v-2dc82f13><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-00e26d0a><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-00e26d0a><div class="form-control placeholder-div-hidden" data-v-00e26d0a>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-00e26d0a><!--[--><!--]--></ul></div></form></li><!--]--></ul></div></nav><div style="display:none;" class="lower-navbar-container" data-v-2dc82f13><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><div><div class="alert box-container border-warning alert-border-left" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><!----><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>Caution: VS Code guides section is a work-in-progress, containing content contributed by students.</strong></p> <ul><li>If you notice any bugs or suggestions for improvements, please report at <a href="https://github.com/se-edu/guides/issues">https://github.com/se-edu/guides/issues</a></li> <li>You are welcome to contribute by sending a PRs to <a href="https://github.com/se-edu/guides/pulls">https://github.com/se-edu/guides/pulls</a> too.</li></ul><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></div> <h1 id="vs-code-creating-a-new-java-project">VS Code - Creating a New Java Project<a class="fa fa-anchor" href="#vs-code-creating-a-new-java-project" onclick="event.stopPropagation()"></a></h1> <p>This guide will walk you through creating a new Java project in VS Code from scratch.</p> <h2 id="prerequisites">Prerequisites<a class="fa fa-anchor" href="#prerequisites" onclick="event.stopPropagation()"></a></h2> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-success" style="" data-v-19514615><!--[--><i class="fas fa-lightbulb" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-success vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>Need help with following prerequisites?</strong> Check out our <a href="/guides/tutorials/vscodeJavaSetup.html">Preparing VS Code for Java</a> guide first.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <ul><li>VS Code with the Extension Pack for Java installed</li> <li>Java Development Kit (JDK) installed</li></ul> <h2 id="creating-a-new-project">Creating a new project<a class="fa fa-anchor" href="#creating-a-new-project" onclick="event.stopPropagation()"></a></h2> <p>There are two methods you can use to create a new Java project:</p> <ul><li>Method 1: Use VS Code&#39;s project wizard</li> <li>Method 2: Create project manually</li></ul> <h3 id="method-1-use-vs-code-s-project-wizard">Method 1: Use VS Code&#39;s project wizard<a class="fa fa-anchor" href="#method-1-use-vs-code-s-project-wizard" onclick="event.stopPropagation()"></a></h3> <p>The easiest way to create a new Java project is using VS Code&#39;s built-in project wizard.</p> <ol><li><strong>Open the Command Palette</strong>: <span><span aria-hidden="true" class="fab fa-windows"></span></span>/<span><span aria-hidden="true" class="fab fa-linux"></span></span> <code class="hljs inline no-lang">Ctrl+Shift+P</code> | <span><span aria-hidden="true" class="fab fa-apple"></span></span> <code class="hljs inline no-lang">Cmd+Shift+P</code></li> <li><strong>Type</strong> <code class="hljs inline no-lang">Java: Create Java Project</code> and select it
+<a href="/guides/tutorials/images/vscodeNewJavaProject/VSCodeCommandPaletteJavaCreateJavaProject.png" target="_self"><img src="/guides/tutorials/images/vscodeNewJavaProject/VSCodeCommandPaletteJavaCreateJavaProject.png" alt="VS Code Command Palette &quot;Java: Create Java Project&quot;" class="img-fluid"></a></li> <li><strong>Select</strong> the desired build tool:
+<ul><li><strong>No build tool</strong> - For simple projects</li> <li><strong>Gradle</strong> - For projects that will use Gradle build system</li> <li><strong>Maven</strong> - For projects that will use Maven build system</li></ul></li> <li><strong>Choose the location</strong> and <strong>enter the project name</strong> as prompted</li> <li><strong>VS Code will create</strong> the basic project structure for you</li></ol> <h3 id="method-2-create-project-manually">Method 2: Create project manually<a class="fa fa-anchor" href="#method-2-create-project-manually" onclick="event.stopPropagation()"></a></h3> <p>If you prefer more control over the project setup, you can create a project manually.</p> <ul style="list-style-type:none;padding-inline-start:0px;"><li texts="[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;, &#39;10&#39;]" style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;" class="badge rounded-pill bg-primary text-white">1</span><div><p><strong><strong>Step 1: Create a workspace folder</strong></strong></p> <ul style="list-style-type:none;padding-inline-start:0px;"><li texts="[&#39;a)&#39;, &#39;b)&#39;, &#39;c)&#39;, &#39;d)&#39;, &#39;e)&#39;, &#39;f)&#39;, &#39;g)&#39;, &#39;h)&#39;]" style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">a)</span><div><strong>Create a project folder</strong> on your computer (e.g., <code class="hljs inline no-lang">MyJavaProject</code>)</div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">b)</span><div><strong>Open VS Code</strong> and select <code class="hljs inline no-lang">File</code> → <code class="hljs inline no-lang">Open Folder...</code></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">c)</span><div><strong>Navigate to and select</strong> your project folder</div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">d)</span><div><strong>Click &quot;Select Folder&quot;</strong> to open it as a workspace</div></li></ul> <p></p></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;" class="badge rounded-pill bg-primary text-white">2</span><div><p><strong><strong>Step 2: Set up the project structure</strong></strong></p> <p>Create the following simple folder structure:</p> <pre><code class="hljs text"><span>MyJavaProject/
+</span><span>└── src/
+</span><span>    └── (your Java source files will go here)
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><ul style="list-style-type:none;padding-inline-start:0px;"><li texts="[&#39;a)&#39;, &#39;b)&#39;, &#39;c)&#39;, &#39;d)&#39;, &#39;e)&#39;, &#39;f)&#39;, &#39;g)&#39;, &#39;h)&#39;]" style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">a)</span><div><p><strong>Open the Explorer panel</strong>: <span><span aria-hidden="true" class="fab fa-windows"></span></span>/<span><span aria-hidden="true" class="fab fa-linux"></span></span> <code class="hljs inline no-lang">Ctrl+Shift+E</code> | <span><span aria-hidden="true" class="fab fa-apple"></span></span>   *md+Shift+E`</p></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">b)</span><div><p><strong>Right-click in the Explorer panel</strong></p></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">c)</span><div><p><strong>Select</strong> <code class="hljs inline no-lang">New Folder</code></p></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">d)</span><div><p><strong>Name it</strong> <code class="hljs inline no-lang">src</code></p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>VS Code automatically handles compilation, so you do not need separate folders for compiled <code class="hljs inline no-lang">.class</code>     files.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></div></li></ul></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;" class="badge rounded-pill bg-primary text-white">3</span><div><p><strong><strong>Step 3: Create your first Java class</strong></strong></p> <ul style="list-style-type:none;padding-inline-start:0px;"><li texts="[&#39;a)&#39;, &#39;b)&#39;, &#39;c)&#39;, &#39;d)&#39;, &#39;e)&#39;, &#39;f)&#39;, &#39;g)&#39;, &#39;h)&#39;]" style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">a)</span><div><p><strong>Right-click</strong> on the <code class="hljs inline no-lang">src</code> folder</p></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">b)</span><div><p><strong>Select</strong> <code class="hljs inline no-lang">New File</code></p></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">c)</span><div><p><strong>Name it</strong> <code class="hljs inline no-lang">HelloWorld.java</code></p></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">d)</span><div><p><strong>Add the following code:</strong></p> <pre><code class="hljs java"><span><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> </span>{
+</span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+</span><span>        System.out.println(<span class="hljs-string">&quot;Hello, World!&quot;</span>);
+</span><span>    }
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre></div></li> <li style="display:flex;"><span aria-hidden="true" style="line-height:unset;margin-inline-end:0.35em;align-self:flex-start;flex-shrink:0;">e)</span><div><p><strong>Save the file</strong>: <span><span aria-hidden="true" class="fab fa-windows"></span></span>/<span><span aria-hidden="true" class="fab fa-linux"></span></span> <code class="hljs inline no-lang">Ctrl+S</code> | <span><span aria-hidden="true" class="fab fa-apple"></span></span> <code class="hljs inline no-lang">Cmd+S</code></p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>VS Code will automatically compile the Java file when you save it.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></div></li></ul></div></li></ul> <h2 id="configuring-your-jdk">Configuring your JDK<a class="fa fa-anchor" href="#configuring-your-jdk" onclick="event.stopPropagation()"></a></h2> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-success" style="" data-v-19514615><!--[--><i class="fas fa-lightbulb" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-success vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>If you already have Java installed, VS Code should automatically detect and configure it when you create your project.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <p>After creating your project, you may need to verify and configure VS Code to use the correct JDK version.</p> <ol><li><strong>Open the Command Palette</strong>: <span><span aria-hidden="true" class="fab fa-windows"></span></span>/<span><span aria-hidden="true" class="fab fa-linux"></span></span> <code class="hljs inline no-lang">Ctrl+Shift+P</code> | <span><span aria-hidden="true" class="fab fa-apple"></span></span> <code class="hljs inline no-lang">Cmd+Shift+P</code></li> <li><strong>Type</strong> <code class="hljs inline no-lang">Java: Configure Java Runtime</code> and select it</li> <li><strong>Verify your JDK</strong> appears in the dropdown list and is selected</li> <li><strong>Select the appropriate JDK</strong> if you have multiple versions installed</li></ol> <p><a href="/guides/tutorials/images/vscodeNewJavaProject/VSCodeJavaConfigureJavaRuntime.png" target="_self"><img src="/guides/tutorials/images/vscodeNewJavaProject/VSCodeJavaConfigureJavaRuntime.png" alt="VS Code Java: Configure Java Runtime" class="img-fluid"></a></p> <h2 id="configuring-project-settings">Configuring project settings<a class="fa fa-anchor" href="#configuring-project-settings" onclick="event.stopPropagation()"></a></h2> <h3 id="manual-configuration">Manual Configuration<a class="fa fa-anchor" href="#manual-configuration" onclick="event.stopPropagation()"></a></h3> <p>To view and modify project settings:</p> <ol><li><strong>Open the Command Palette</strong>: <span><span aria-hidden="true" class="fab fa-windows"></span></span>/<span><span aria-hidden="true" class="fab fa-linux"></span></span> <code class="hljs inline no-lang">Ctrl+Shift+P</code> | <span><span aria-hidden="true" class="fab fa-apple"></span></span> <code class="hljs inline no-lang">Cmd+Shift+P</code></li> <li><strong>Type</strong> <code class="hljs inline no-lang">Java: Open Project Settings</code> and select it</li> <li><strong>Configure</strong> as needed:
+<ul><li><strong>Source paths</strong> - Directories where your Java source files are located</li> <li><strong>Output path</strong> - Directory where compiled <code class="hljs inline no-lang">.class</code> files will be stored</li> <li><strong>Libraries</strong> - External JAR files or libraries your project depends on</li> <li><strong>JDK version</strong> - The JDK version to use for compilation and runtime</li></ul></li></ol> <p><a href="/guides/tutorials/images/vscodeNewJavaProject/VSCodeJavaProjectSettings.png" target="_self"><img src="/guides/tutorials/images/vscodeNewJavaProject/VSCodeJavaProjectSettings.png" alt="VS Code Java Project Settings" class="img-fluid"></a></p> <h3 id="using-vscode-settings-json">Using <code class="hljs inline no-lang">.vscode/settings.json</code><a class="fa fa-anchor" href="#using-vscode-settings-json" onclick="event.stopPropagation()"></a></h3> <p>You can also configure project settings by creating a <code class="hljs inline no-lang">.vscode/settings.json</code> file in the root directory:</p> <pre><code class="hljs json"><span>{
+</span><span>    <span class="hljs-attr">&quot;java.project.sourcePaths&quot;</span>: [
+</span><span>        <span class="hljs-string">&quot;src&quot;</span>
+</span><span>    ],
+</span><span>    <span class="hljs-attr">&quot;java.project.outputPath&quot;</span>: <span class="hljs-string">&quot;bin&quot;</span>,
+</span><span>    <span class="hljs-attr">&quot;java.project.referencedLibraries&quot;</span>: [
+</span><span>        <span class="hljs-string">&quot;lib/**/*.jar&quot;</span>
+</span><span>    ]
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><h2 id="configuring-git">Configuring Git<a class="fa fa-anchor" href="#configuring-git" onclick="event.stopPropagation()"></a></h2> <p>If you are using Git to version control the project, you may want to add the following to your <code class="hljs inline no-lang">.gitignore</code> file:</p> <pre><code class="hljs"><span># Compiled class files
+</span><span>*.class
+</span><span>
+</span><span># VS Code workspace settings
+</span><span>.vscode/
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><h2 id="running-your-project">Running your project<a class="fa fa-anchor" href="#running-your-project" onclick="event.stopPropagation()"></a></h2> <ol><li><strong>Open your Java file</strong> with a <code class="hljs inline no-lang">main</code> method</li> <li><strong>To run the code, click the &quot;Run&quot; button</strong> that appears above the <code class="hljs inline no-lang">main</code> method or in the top right corner of the editor</li> <li><strong>Check the terminal output</strong> to see your program&#39;s output</li></ol> <hr> <p><strong>Contributors</strong>: John Wong (<a href="https://github.com/Johnwz123">@Johnwz123</a>)</p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#vs-code-creating-a-new-java-project">VS Code - Creating a New Java Project‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#prerequisites">Prerequisites‎</a> <a class="nav-link py-1" href="#creating-a-new-project">Creating a new project‎</a> <a class="nav-link py-1" href="#configuring-your-jdk">Configuring your JDK‎</a> <a class="nav-link py-1" href="#configuring-project-settings">Configuring project settings‎</a> <a class="nav-link py-1" href="#configuring-git">Configuring Git‎</a> <a class="nav-link py-1" href="#running-your-project">Running your project‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.0.1</a> on Tue, 1 Jul 2025, 1:33:45 GMT+8]</small></div></footer><!--]--></div>
+</body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
+<script src="/guides/markbind/js/polyfill.min.js"></script>
+<script src="/guides/markbind/js/vue.global.prod.min.js"></script>
+<script src="/guides/markbind/js/markbind.min.js"></script>
+<script src="vscCreatingNewJavaProject.page-vue-render.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+        const copyButtonBody = element.querySelector('.function-btn-body');
+        const tooltipText = element.querySelector(".tooltiptext");
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+        copyButtonBody.innerHTML = `
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="2 2 22 22"
+  >
+    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875 
+    L 9 18.40625 L 9.71875 17.71875 L 20.71875 6.71875 Z"></path>
+  </svg>
+`;
+        console.log("Running tooltip");
+        tooltipText.innerText  = `Copied!`;
+        setTimeout(() => {
+            copyButtonBody.innerHTML = `
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "/>
+    </g>
+</svg>
+`;
+            tooltipText.innerText  = `Copy`;
+        }, 3000);
+    }
+    </script>
+</html>

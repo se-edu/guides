@@ -686,6 +686,24 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/vscCreatingNewJavaProject.md",
+      "title": "VS Code - Creating a New Java Project",
+      "headings": {
+        "vs-code-creating-a-new-java-project": "VS Code - Creating a New Java Project",
+        "prerequisites": "Prerequisites",
+        "creating-a-new-project": "Creating a new project",
+        "method-1-use-vs-code-s-project-wizard": "Method 1: Use VS Code's project wizard",
+        "method-2-create-project-manually": "Method 2: Create project manually",
+        "configuring-your-jdk": "Configuring your JDK",
+        "configuring-project-settings": "Configuring project settings",
+        "manual-configuration": "Manual Configuration",
+        "using-vscode-settings-json": "Using .vscode/settings.json",
+        "configuring-git": "Configuring Git",
+        "running-your-project": "Running your project"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/vscImportingGradleProject.md",
       "title": "VS Code - Importing a Gradle project",
       "headings": {
@@ -694,10 +712,35 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/vscImportingJavaProject.md",
+      "title": "VS Code - Importing Existing Java Projects",
+      "headings": {
+        "vs-code-importing-existing-java-projects": "VS Code - Importing Existing Java Projects",
+        "prerequisites": "Prerequisites",
+        "importing-an-existing-java-project": "Importing an existing Java project",
+        "step-1-open-the-project-folder": "Step 1: Open the project folder",
+        "step-2-let-vs-code-detect-the-project": "Step 2: Let VS Code detect the project",
+        "step-3-verify-project-configuration": "Step 3: Verify project configuration",
+        "configure-your-jdk": "Configure your JDK",
+        "configure-project-settings": "Configure project settings",
+        "manual-configuration": "Manual Configuration",
+        "using-vscode-settings-json": "Using .vscode/settings.json",
+        "running-imported-projects": "Running imported projects",
+        "best-practices": "Best practices",
+        "version-control": "Version control"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/vscPreparingForJava.md",
       "title": "VS Code - Preparing for Java Projects",
       "headings": {
-        "vs-code-preparing-for-java-projects": "VS Code - Preparing for Java Projects"
+        "vs-code-preparing-for-java-projects": "VS Code - Preparing for Java Projects",
+        "install-java-development-kit-jdk": "Install Java Development Kit (JDK)",
+        "install-vs-code": "Install VS Code",
+        "install-the-extension-pack-for-java": "Install the Extension Pack for Java",
+        "installation-steps": "Installation steps",
+        "verify-installation": "Verify installation"
       },
       "headingKeywords": {}
     },
