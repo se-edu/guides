@@ -119,7 +119,7 @@ At each breakpoint, you can see:
 
 <div id="vscode-stepping-through-code">
 
-# Stepping through code
+## Stepping through code
 
 **Purpose:** To move through code line by line and observe how it is executed
 
