@@ -18,10 +18,11 @@
 
 This guide is for those who prefer to use [Visual Studio Code](https://code.visualstudio.com/) (VS Code) for their Java projects.
 
-* [**Preparing VS Code for Java projects**](vscPreparingForJava.md)
-* [**Creating a new Java project**](vscCreatingNewJavaProject.md)
-* [**Importing existing Java projects**](vscImportingJavaProject.md)
-* [**Importing a Gradle project**](vscImportingGradleProject.md)
-* [**Setting up Checkstyle**](vscSettingUpCheckstyle.md)
-* [**Using the Debugger**](vscDebugger.md)
-* [**Using GitHub Copilot**](vscCopilot.md)
+* [Preparing VS Code for Java projects]({{ baseUrl }}/tutorials/vscPreparingForJava.md)
+* [Creating a new Java project]({{ baseUrl }}/tutorials/vscCreatingNewJavaProject.md)
+* [Importing existing Java projects]({{ baseUrl }}/tutorials/vscImportingJavaProject.md)
+* [Importing a Gradle project]({{ baseUrl }}/tutorials/vscImportingGradleProject.md)
+* [Setting up Checkstyle]({{ baseUrl }}/tutorials/vscSettingUpCheckstyle.md)
+* [Using the Debugger]({{ baseUrl }}/tutorials/vscDebugger.md)
+* AI Tool Integrations: [GitHub Copilot]({{ baseUrl }}/tutorials/vscCopilot.md) | [Windsurf]({{ baseUrl }}/tutorials/vscWindsurf.md)
+

@@ -4,7 +4,9 @@
   pageNav: 2
 </frontmatter>
 
-# { title }
+<include src="vscode.md#wip-warning" />
+
+# {{ title }}
 
 GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both tools are from the same parent company (Microsoft).
 
