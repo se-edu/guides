@@ -704,6 +704,23 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/vscDebugger.md",
+      "title": "VS Code - Using the Debugger",
+      "headings": {
+        "vs-code-using-the-debugger": "VS Code - Using the Debugger",
+        "prerequisites": "Prerequisites:",
+        "adding-breakpoints": "Adding breakpoints",
+        "running-the-code-in-debug-mode": "Running the code in Debug mode",
+        "examining-the-state-of-the-suspended-programme": "Examining the state of the suspended programme:",
+        "stepping-through-code": "Stepping through code",
+        "stepping-into-a-method": "Stepping into a method:",
+        "stepping-out-of-a-method": "Stepping out of a method:",
+        "setting-a-conditional-breakpoint": "Setting a Conditional Breakpoint:",
+        "evaluate-expression": "Evaluate Expression:"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/vscImportingGradleProject.md",
       "title": "VS Code - Importing a Gradle project",
       "headings": {
