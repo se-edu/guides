@@ -38,6 +38,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Importing existing Java projects](tutorials/vscImportingJavaProject.md)
   * [Importing a Gradle project](tutorials/vscImportingGradleProject.md)
   * [Setting up Checkstyle](tutorials/vscSettingUpCheckstyle.md)
+  * [Using the Debugger](tutorials/vscDebugger.md)
   * [Using GitHub Copilot](tutorials/vscCopilot.md)
 * [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**

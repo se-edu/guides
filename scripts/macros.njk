@@ -37,3 +37,31 @@
 {% macro show_as_tab(text, icon) %}<span class="border">&nbsp;{{ icon }} {{ text }}&nbsp;</span>{% endmacro %}
 
 {% macro show_as_rounded_tab(text) %}<span class="border border-secondary border-bottom-0 pr-1 pl-1 mr-1 ml-1 rounded-top"><small>{{ text }}</small></span>{% endmacro %}
+
+{% macro show_youtube_video_segment(video_id, start_m, start_s, end_m, end_s, heading="") %}
+{% set start_in_seconds = (start_m | int)*60 + (start_s | int) %}
+{% set end_in_seconds = (end_m | int)*60 + (end_s | int) %}
+<box type="important" icon=":fab-youtube:" seamless>
+
+Video segment %%--{{ start_m }}.{{ start_s }} - {{ end_m }}.{{ end_s }}--%% : {{ heading }}
+<panel header="click here" minimized><iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video_id }}?start={{ start_in_seconds }}&end={{ end_in_seconds }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></panel>
+</box>
+{% endmacro %}
+
+
+{% macro show_screenshot(src, credit="VS Code Docs", width="600") %}
+<div class="indented">
+<pic src="{{ src }}" width="{{ width }}" /><br>
+
+----%%[image credit: {{ credit }}]%%----
+</div>
+{% endmacro %}
+
+{% macro show_docs_page_link(src, doc) %}
+<box type="info" icon=":fas-book:" seamless>
+
+More info from {{ doc }} is <a href="{{ src }}" target="_blank">here</a>.
+</box>
+{% endmacro %}
+
+

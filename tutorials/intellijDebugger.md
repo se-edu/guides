@@ -4,14 +4,10 @@ title: "{{ title }}"
 pageNav: 3
 ---
 
-{% macro show_video(start_m, start_s, end_m, end_s, heading="") %}
-{% set start_in_seconds = (start_m | int)*60 + (start_s | int) %}
-{% set end_in_seconds = (end_m | int)*60 + (end_s | int) %}
-<box type="important" icon=":fab-youtube:" seamless>
+{% from 'scripts/macros.njk' import show_docs_page_link, show_screenshot, show_youtube_video_segment with context %}
+{% set video_id = "1bCgzjatcr4" %}
+{% set credit = "Intellij Docs" %}
 
-Video segment %%--{{ start_m }}.{{ start_s }} - {{ end_m }}.{{ end_s }}--%% : {{ heading }} <panel header="click here" minimized><iframe width="560" height="315" src="https://www.youtube.com/embed/1bCgzjatcr4?si=kQCMnmebYVV1QOwu&amp;start={{ start_in_seconds }}&amp;end={{ end_in_seconds }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></panel>
-</box>
-{% endmacro %}
 
 {% macro show_screenshot(src, credit="Intelli") %}
 <div class="indented">
@@ -53,7 +49,7 @@ This tutorial covers basics of the Intellij IDEA's debugging features.
 
 **How:** Click on the left gutter of the editor pane, at the line where you want to breakpoint. A red dot will appear to indicate the breakpoint.
 
-{{ show_screenshot("https://resources.jetbrains.com/help/img/idea/2024.1/debug_line_breakpoint.png") }}
+{{ show_screenshot("https://resources.jetbrains.com/help/img/idea/2024.1/debug_line_breakpoint.png", credit) }}
 <p/>
 
 <box type="tip" seamless>
@@ -61,9 +57,9 @@ This tutorial covers basics of the Intellij IDEA's debugging features.
 To remove the breakpoint, click the red dot again.
 </box>
 
-{{ show_video("3", "09", "3", "30") }}
+{{ show_youtube_video_segment(video_id, "3", "09", "3", "30") }}
 
-{{ show_intellij_page("https://www.jetbrains.com/help/idea/using-breakpoints.html") }}
+{{ show_docs_page_link("https://www.jetbrains.com/help/idea/using-breakpoints.html", credit) }}
 
 </div>
 <!-- ========================================================================== -->
@@ -75,9 +71,9 @@ To remove the breakpoint, click the red dot again.
 
 **How:** There are several ways. One of them is to click the {{ icon_run_green }}  icon in the gutter near the class with the `main()` method and select `Debug`.
 
-{{ show_screenshot("https://resources.jetbrains.com/help/img/idea/2024.1/debug_run_menu.png") }}
-{{ show_video("3", "53", "4", "00") }}
-{{ show_intellij_page("https://www.jetbrains.com/help/idea/starting-the-debugger-session.html") }}
+{{ show_screenshot("https://resources.jetbrains.com/help/img/idea/2024.1/debug_run_menu.png", credit) }}
+{{ show_youtube_video_segment(video_id, "3", "53", "4", "00") }}
+{{ show_docs_page_link("https://www.jetbrains.com/help/idea/starting-the-debugger-session.html", credit) }}
 
 </div>
 <!-- ========================================================================== -->
@@ -97,8 +93,8 @@ To remove the breakpoint, click the red dot again.
 
 ![ShowExecutionPoint](images/intellijDebugger/ShowExecutionPoint.png)
 </box>
-{{ show_video("4", "41", "6", "06") }}
-{{ show_intellij_page("https://www.jetbrains.com/help/idea/examining-suspended-program.html") }}
+{{ show_youtube_video_segment(video_id, "4", "41", "6", "06") }}
+{{ show_docs_page_link("https://www.jetbrains.com/help/idea/examining-suspended-program.html", credit) }}
 
 </div>
 <!-- ========================================================================== -->
@@ -111,8 +107,8 @@ To remove the breakpoint, click the red dot again.
 **How:** Click the `Step Over` button in the debugger toolbar, as shown below.
 
 {{ show_screenshot("images/intellijDebugger/stepOverCode.png", "se-edu") }}
-{{ show_video("7", "30", "7", "55") }}
-{{ show_intellij_page("https://www.jetbrains.com/help/idea/stepping-through-the-program.html") }}
+{{ show_youtube_video_segment(video_id, "7", "30", "7", "55") }}
+{{ show_docs_page_link("https://www.jetbrains.com/help/idea/stepping-through-the-program.html", credit) }}
 
 </div>
 <!-- ========================================================================== -->
@@ -125,14 +121,14 @@ To remove the breakpoint, click the red dot again.
 **How:** Click the `Step Into` button in the debugger toolbar, as shown below.
 
 {{ show_screenshot("images/intellijDebugger/stepIntoCode.png", "se-edu") }}
-{{ show_video("13", "05", "13", "35") }}
+{{ show_youtube_video_segment(video_id, "13", "05", "13", "35") }}
 
 <box type="tip" id="choosing-which-method-to-step-into" seamless>
 
 When trying to step into a statement such as `storage.saveAddressBook(model.getAddressBook())` which contains multiple method calls, Intellij will let you choose (by clicking) which one you want to step into.
 </box>
 
-{{ show_intellij_page("https://www.jetbrains.com/help/idea/stepping-through-the-program.html#step-into") }}
+{{ show_docs_page_link("https://www.jetbrains.com/help/idea/stepping-through-the-program.html#step-into", credit) }}
 
 </div>
 <!-- ========================================================================== -->
@@ -146,8 +142,8 @@ Used when you've stepped into a method, stepped through some of it, and now want
 **How:** Click the `Step Out` button in the debugger toolbar, as shown below.
 
 {{ show_screenshot("images/intellijDebugger/stepOutCode.png", "LaunchCode") }}
-{{ show_video("13", "45", "13", "55") }}
-{{ show_intellij_page("https://www.jetbrains.com/help/idea/stepping-through-the-program.html#step-out") }}
+{{ show_youtube_video_segment(video_id, "13", "45", "13", "55") }}
+{{ show_docs_page_link("https://www.jetbrains.com/help/idea/stepping-through-the-program.html#step-out", credit) }}
 
 </div>
 <!-- ========================================================================== -->
@@ -159,7 +155,7 @@ Used when you've stepped into a method, stepped through some of it, and now want
 **How:** Right-click on a breakpoint and enter a condition %%(e.g., `i == 5`)%%
 
 {{ show_screenshot("images/intellijDebugger/conditionalBreakpoint.png", "LaunchCode") }}
-{{ show_video("15", "20", "16", "45") }}
+{{ show_youtube_video_segment(video_id, "15", "20", "16", "45") }}
 
 <!-- ========================================================================== -->
 
@@ -171,7 +167,7 @@ Used when you've stepped into a method, stepped through some of it, and now want
 **How:** Enter it in the `Evaluate expression` field in the Variables pane (shown below) and press <kbd>Enter</kbd>.
 
 {{ show_screenshot("images/intellijDebugger/evaluateExpression.png", "Tom Gregory Tech") }}
-{{ show_intellij_page("https://www.jetbrains.com/help/idea/examining-suspended-program.html#evaluating-expressions") }}
+{{ show_docs_page_link("https://www.jetbrains.com/help/idea/examining-suspended-program.html#evaluating-expressions", credit) }}
 
 <!-- ========================================================================== -->
 
@@ -182,7 +178,7 @@ Used when you've stepped into a method, stepped through some of it, and now want
 **How:** Choose `Run` > `View Breakpoints` from the main menu, and use the :fas-plus: icon to add an exception breakpoint, as shown below.
 
 {{ show_screenshot("images/intellijDebugger/exceptionBreakpoint.png", "Tom Gregory Tech") }}
-{{ show_intellij_page("https://www.jetbrains.com/help/idea/using-breakpoints.html#exception-breakpoints") }}
+{{ show_docs_page_link("https://www.jetbrains.com/help/idea/using-breakpoints.html#exception-breakpoints", credit) }}
 
 --------------------------------------------------------------------------------
 **Authors:**
