@@ -37,6 +37,19 @@ Check out our [Java Installation guide](javaInstallation.html) for detailed inst
 
 <box type="tip" seamless>
 
+**Launch VS Code from the command line**
+
+You can quickly open a file or folder in VS Code by typing `code <path>` in your terminal or command prompt. For example, `code .` opens the current directory in VS Code.
+
+* **macOS** users must first run the command `Shell Command: Install 'code' command in PATH` from the Command Palette {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` to enable this feature. See the [macOS setup guide](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line) for details.
+* **Windows and Linux** installations should add the `code` command to your system path automatically.
+
+For more command line options and tips, see the [official VS Code Command Line Interface guide](https://code.visualstudio.com/docs/configure/command-line).
+
+</box>
+
+<box type="tip" seamless>
+
 **First time using VS Code?**
 
 Take a few minutes to explore the interface and try the built-in tutorials by opening the Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` and typing `Welcome: Open Walkthrough`.
