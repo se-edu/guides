@@ -16,6 +16,16 @@ This tutorial is adapted from the [official VS Code Java tutorial for Gradle bui
 
 This guide will help you import and work with existing Gradle projects in VS Code.
 
+**If you are new to working with Gradle in VS Code**, we recommend watching the video below for an introduction to the features of VS Code Gradle extension. 
+
+<panel header=":fab-youtube: Get started with VS Code Gradle extension" peek >
+
+@[youtube](dfiaqZX-504)
+
+</panel>
+
+**To recall how to use a specific feature**, you can refer to the sections below.
+
 ## Prerequisites
 
 <box type="tip" seamless>
