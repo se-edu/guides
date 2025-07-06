@@ -41,10 +41,10 @@ After the project loads:
 
 <box type="tip" seamless>
 
-If you already have Java installed, VS Code should automatically detect and configure it when you create your project.
+If you already have Java installed, VS Code should automatically detect and configure it when you open your project.
 </box>
 
-After creating your project, you may need to verify and configure VS Code to use the correct JDK version.
+After opening your project, you may need to verify and configure VS Code to use the correct JDK version.
 
 1. **Open the Command Palette**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
 2. **Type** `Java: Configure Java Runtime` and select it
