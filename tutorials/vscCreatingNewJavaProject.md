@@ -14,13 +14,7 @@ This guide will walk you through creating a new Java project in VS Code from scr
 
 <div id="vsc-java-prereq">
 
-<box type="tip" seamless>
-
-**Need help with following prerequisites?** Check out our [Preparing VS Code for Java](vscPreparingForJava.html) guide first.
-</box>
-
-* VS Code with the Extension Pack for Java installed
-* Java Development Kit (JDK) installed
+Ensure you have followed our guide on [Preparing VS Code for Java](vscPreparingForJava.html).
 </div>
 
 ## Creating a new project
