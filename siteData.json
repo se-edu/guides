@@ -584,10 +584,11 @@
       "title": "Using JUnit",
       "headings": {
         "using-junit": "Using JUnit",
-        "conventions-to-follow": "Conventions to follow",
-        "adding-junit-support-to-your-project": "Adding JUnit support to your project",
-        "running-tests": "Running tests",
-        "writing-useful-junit-tests": "Writing useful JUnit tests",
+        "conventions-to-follow": "Conventions to Follow",
+        "configuring-gradle-for-junit": "Configuring Gradle for JUnit",
+        "writing-the-first-junit-test": "Writing the First JUnit Test",
+        "running-tests": "Running Tests",
+        "writing-useful-junit-tests": "Writing Useful JUnit Tests",
         "resources": "Resources"
       },
       "headingKeywords": {}
@@ -746,6 +747,21 @@
         "running-imported-projects": "Running imported projects",
         "best-practices": "Best practices",
         "version-control": "Version control"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/vscJUnitTesting.md",
+      "title": "VS Code - Testing with JUnit",
+      "headings": {
+        "vs-code-testing-with-junit": "VS Code - Testing with JUnit",
+        "prerequisites": "Prerequisites",
+        "configuring-gradle-for-junit": "Configuring Gradle for JUnit",
+        "conventions-to-follow": "Conventions to Follow",
+        "writing-the-first-junit-test": "Writing the First JUnit Test",
+        "running-tests": "Running Tests",
+        "checking-test-coverage": "Checking Test Coverage",
+        "writing-useful-junit-tests": "Writing Useful JUnit Tests"
       },
       "headingKeywords": {}
     },
