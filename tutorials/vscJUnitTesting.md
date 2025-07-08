@@ -27,7 +27,7 @@ This tutorial covers the basics of using VS Code’s JUnit.
 
 As JUnit is a third-party library, you need to explicitly add support for it in your project.
 
-> **Tip:** If your project isn’t using Gradle yet, follow our [Gradle Tutorial](vscGradleSetup.html) first.
+> **Tip:** If your project isn’t using Gradle yet, follow our [Gradle Tutorial](gradle.html) first. While it is possible to add JUnit to your project without Gradle, we recommend using Gradle as it can make things easier in the long run.
 
 ### Step 1: Add the Java plugin
 
