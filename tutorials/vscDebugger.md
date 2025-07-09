@@ -132,7 +132,7 @@ At each breakpoint, you can see:
 **Purpose:** To pause the execution at a certain breakpoint only when a certain condition is met (E.g. when i == 100)
 
 **How:** 
-* Right-click in the editor margin and select Add Conditional Breakpoint
+* Right-click in the editor margin and select Edit Breakpoint
 * Choose the type of condition you want to set (expression, hit count, or wait for breakpoint)
 
 {{ show_screenshot("images/vscodeDebugger/vsc_cond_breakpoint.png", credit) }}
