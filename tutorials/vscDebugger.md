@@ -132,7 +132,7 @@ At each breakpoint, you can see:
 **Purpose:** To pause the execution at a certain breakpoint only when a certain condition is met (E.g. when i == 100)
 
 **How:** 
-* Right-click in the editor margin and select Edit Breakpoint
+* Right-click in the editor margin and select "Edit Breakpoint"
 * Choose the type of condition you want to set (expression, hit count, or wait for breakpoint)
 
 {{ show_screenshot("images/vscodeDebugger/vsc_cond_breakpoint.png", credit) }}
@@ -147,10 +147,24 @@ At each breakpoint, you can see:
 
 **How:** 
 * First, run the application and break on a normal breakpoint
-* Then pick a field in the `VARIABLES` view and set a data breakpoint
+* Then pick a field in the VARIABLES view and set a data breakpoint
 
 {{ show_screenshot("images/vscodeDebugger/vsc_data_breakpoint.png", credit) }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_breakpoint-data-breakpoint", credit) }}
+</div>
+<!-- ========================================================================== -->
+<div id="vscode-logpoint">
+
+## Setting a Logpoint: 
+
+**Purpose:** To send output to the Debug Console without editing code, and without stopping execution flow
+
+**How:** 
+* Right click in the editor margin and select "Add Logpoint" 
+* Enter the value that you want to be output in the Debug Console (e.g. the value of results.size() in a loop)
+
+{{ show_screenshot("images/vscodeDebugger/vsc_logpoint.png", credit) }}
+{{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_breakpoint-logpoints", credit) }}
 </div>
 <!-- ========================================================================== -->
 <div id="vscode-evaluate-expression">
