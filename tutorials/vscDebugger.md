@@ -6,7 +6,7 @@ pageNav: 2
 
 
 {% from 'scripts/macros.njk' import show_docs_page_link, show_screenshot, show_youtube_video_segment with context %}
-{% set video_id = "3HiLLByBWkg" %}
+{% set video_id = "R1F5ihQKL4U" %}
 {% set credit = "VS Code Docs" %}
 
 <!-- ========================================================================== -->
@@ -19,9 +19,9 @@ This tutorial covers the basics of using VS Code’s debugger for Java features.
 
 * **If you are new to using an IDE-based debugger**, we recommend watching the video below for an introduction to the features of VS Code Java debugger. 
 
-  <panel header=":fab-youtube: Debugging in VS Code" peek >
+  <panel header=":fab-youtube: Debugging Java in VS Code" peek >
 
-  @[youtube](3HiLLByBWkg)
+  @[youtube](R1F5ihQKL4U)
 
   </panel>
 
@@ -50,7 +50,7 @@ To remove the breakpoint, click the red dot again.
 * The Debugger for Java supports various breakpoints, including line breakpoints, conditional breakpoints, data breakpoints, and logpoints.
 * Different types of breakpoints can be added by **right-clicking in the left margin** and selecting which type of breakpoint you want to add (line breakpoints, conditional breakpoints, and logpoints).
 
-{{ show_youtube_video_segment(video_id, "0", "30", "0", "50") }}
+{{ show_youtube_video_segment(video_id, "4", "57", "6", "04") }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_breakpoints", credit) }}
 </div>
 <!-- ========================================================================== -->
@@ -66,7 +66,7 @@ To remove the breakpoint, click the red dot again.
 * By default, the debugger will run out-of-box by automatically finding the main class and generating a default launch configuration in memory to launch your application.
 
 {{ show_screenshot("images/vscodeDebugger/vsc_debug_mode.png", credit) }}
-{{ show_youtube_video_segment(video_id, "0", "44", "1", "10") }}
+{{ show_youtube_video_segment(video_id, "4", "34", "5", "05") }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_run-and-debug", credit) }}
 </div>
 <!-- ========================================================================== -->
@@ -84,7 +84,7 @@ At each breakpoint, you can see:
 * Breakpoints: Lists all active breakpoints.
 
 {{ show_screenshot("images/vscodeDebugger/vsc_prog_state.png", credit) }}
-{{ show_youtube_video_segment(video_id, "1", "10", "1", "48") }}
+{{ show_youtube_video_segment(video_id, "8", "19", "8", "47") }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/debugtest/debugging#_data-inspection", credit) }}
 </div>
 <!-- ========================================================================== -->
@@ -97,7 +97,7 @@ At each breakpoint, you can see:
 **How:** Click the Step Over button (curved arrow) in the debug toolbar, or press `F10`
 
 {{ show_screenshot("images/vscodeDebugger/vsc_stepthrough.png", credit, width="250") }}
-{{ show_youtube_video_segment(video_id, "1", "54", "2", "09") }}
+{{ show_youtube_video_segment(video_id, "8", "00", "8", "19") }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_step-filtering", credit) }}
 </div>
 <!-- ========================================================================== -->
@@ -107,10 +107,9 @@ At each breakpoint, you can see:
 
 **Purpose:** To enter a method being called on the current line to see how it behaves
 
-**How:** Click the Step into button (down arrow), or press `F11`
+**How:** Click the Step Into button (down arrow), or press `F11`
 
 {{ show_screenshot("images/vscodeDebugger/vsc_stepthrough.png", credit, width="250") }}
-{{ show_youtube_video_segment(video_id, "2", "09", "2", "13") }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_step-filtering", credit) }}
 </div>
 <!-- ========================================================================== -->
@@ -120,10 +119,9 @@ At each breakpoint, you can see:
 
 **Purpose:** To finish executing the current method and return to its caller, without stepping through the rest of it. 
 
-**How:** Click the Step out button (up arrow), or press `Shift+F11`
+**How:** Click the Step Out button (up arrow), or press `Shift+F11`
 
 {{ show_screenshot("images/vscodeDebugger/vsc_stepthrough.png", credit, width="250") }}
-{{ show_youtube_video_segment(video_id, "2", "13", "2", "22") }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_step-filtering", credit) }}
 </div>
 <!-- ========================================================================== -->
