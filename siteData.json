@@ -710,15 +710,21 @@
       "title": "VS Code - Using the Debugger",
       "headings": {
         "vs-code-using-the-debugger": "VS Code - Using the Debugger",
-        "prerequisites": "Prerequisites:",
+        "prerequisites": "Prerequisites",
         "adding-breakpoints": "Adding breakpoints",
         "running-the-code-in-debug-mode": "Running the code in Debug mode",
-        "examining-the-state-of-the-suspended-programme": "Examining the state of the suspended programme:",
+        "examining-the-state-of-the-suspended-programme": "Examining the state of the suspended programme",
         "stepping-through-code": "Stepping through code",
-        "stepping-into-a-method": "Stepping into a method:",
-        "stepping-out-of-a-method": "Stepping out of a method:",
-        "setting-a-conditional-breakpoint": "Setting a Conditional Breakpoint:",
-        "evaluate-expression": "Evaluate Expression:"
+        "stepping-into-a-method": "Stepping into a method",
+        "stepping-out-of-a-method": "Stepping out of a method",
+        "setting-a-conditional-breakpoint": "Setting a Conditional Breakpoint",
+        "setting-a-data-breakpoint": "Setting a Data Breakpoint",
+        "setting-a-logpoint": "Setting a Logpoint",
+        "evaluating-expressions": "Evaluating Expressions",
+        "advanced-debugging-features": "Advanced Debugging Features",
+        "hot-code-replace": "Hot-Code Replace",
+        "configuration-options": "Configuration Options",
+        "troubleshooting": "Troubleshooting"
       },
       "headingKeywords": {}
     },
