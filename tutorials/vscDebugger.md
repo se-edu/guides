@@ -178,6 +178,30 @@ At each breakpoint, you can see:
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_expression-evaluation", credit) }}
 </div>
 <!-- ========================================================================== -->
+<div id="vscode-advanced-features">
+
+## Advanced debugging features: 
+
+### Hot-Code Replace
+
+**Purpose:** Allows you to change and recompile code without restarting the debugging session, while paused at a breakpoint
+
+{{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_hot-code-replace", credit) }}
+
+### Configuration options:
+
+**Purpose:** You can configure the debugger using the options and settings. JVM arguments and environment variables is easily done with launch options.
+
+{{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_configuration-options", credit) }}
+
+### Troubleshooting:
+
+**Purpose:** Understand common issues faced during debugging, so that you can debug successfully
+
+{{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_troubleshooting", credit) }}
+
+</div>
+<!-- ========================================================================== -->
 
 ---
 
