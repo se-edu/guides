@@ -139,6 +139,20 @@ At each breakpoint, you can see:
 {{ show_docs_page_link("https://code.visualstudio.com/docs/debugtest/debugging#_conditional-breakpoints", credit) }}
 </div>
 <!-- ========================================================================== -->
+<div id="vscode-data-breakpoint">
+
+## Setting a Data Breakpoint: 
+
+**Purpose:** To pause the execution at a certain breakpoint when a variable changes its value
+
+**How:** 
+* First, run the application and break on a normal breakpoint
+* Then pick a field in the `VARIABLES` view and set a data breakpoint
+
+{{ show_screenshot("images/vscodeDebugger/vsc_data_breakpoint.png", credit) }}
+{{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_breakpoint-data-breakpoint", credit) }}
+</div>
+<!-- ========================================================================== -->
 <div id="vscode-evaluate-expression">
 
 ## Evaluate Expression: 
