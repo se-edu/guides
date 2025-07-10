@@ -100,6 +100,8 @@ If you prefer more control over the project setup, you can create a project manu
 
 ## Configuring your JDK
 
+<div id="vsc-java-configure-jdk">
+
 <box type="tip" seamless>
 
 If you already have Java installed, VS Code should automatically detect and configure it when you create your project.
@@ -114,7 +116,11 @@ After creating your project, you may need to verify and configure VS Code to use
 
 ![VS Code Java: Configure Java Runtime](images/vscodeNewJavaProject/VSCodeJavaConfigureJavaRuntime.png)
 
+</div>
+
 ## Configuring project settings
+
+<div id="vsc-java-configure-project-settings">
 
 ### Manual Configuration
 
@@ -146,6 +152,8 @@ You can also configure project settings by creating a `.vscode/settings.json` fi
 }
 ```
 
+</div>
+
 ## Configuring Git
 
 If you are using Git to version control the project, you may want to add the following to your `.gitignore` file:
@@ -160,9 +168,13 @@ If you are using Git to version control the project, you may want to add the fol
 
 ## Running your project
 
+<div id="vsc-java-run-project">
+
 1. **Open your Java file** with a `main` method
 1. **To run the code, click the "Run" button** that appears above the `main` method or in the top right corner of the editor
 1. **Check the terminal output** to see your program's output
+
+</div>
 
 ---
 
