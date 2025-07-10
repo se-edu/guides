@@ -4,7 +4,6 @@
   pageNav: 2
 </frontmatter>
 
-
 <include src="vscode.md#wip-warning" />
 
 # {{ title }}
@@ -28,31 +27,29 @@ This guide will help you import and work with existing Gradle projects in VS Cod
 
 ## Prerequisites
 
-<box type="tip" seamless>
+<include src="vscCreatingNewJavaProject.md#vsc-java-prereq" />
 
-**Need help with following prerequisites?** Check out our [Preparing VS Code for Java](vscPreparingForJava.html) guide first.
+The [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) includes the [Gradle for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle) extension, which provides Gradle support in VS Code.
+
+<box type="important" seamless>
+
+Verify the project has support for Gradle. If it does, there should be a `build.gradle` file in your project root.
 </box>
-
-Before proceeding, ensure the following are installed:
-
-* VS Code with the [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack), which includes the [Gradle for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle) extension
-* Java Development Kit (JDK)
-* Verify the project has support for Gradle. If it does, there should be a `build.gradle` file in your project root.
 
 ## Importing an existing Gradle project
 
 ### Step 1: Open the project folder
 
 1. **Open VS Code**
-2. **Select** `File` → `Open Folder...`
-3. **Navigate to your existing Gradle project** folder
-4. **Click "Select Folder"** to open it as a workspace
+1. **Select** `File` → `Open Folder...`
+1. **Navigate to your existing Gradle project** folder
+1. **Click "Select Folder"** to open it as a workspace
 
 ### Step 2: Let VS Code detect the project
 
 1. **VS Code will automatically detect** the Java and Gradle files and set up the workspace
-2. **Wait for the Java Language Server and Gradle Build Server** to initialize (progress shown in status bar)
-3. **Check the status bar** at the bottom for any initialization messages
+1. **Wait for the Java Language Server and Gradle Build Server** to initialize (progress shown in status bar)
+1. **Check the status bar** at the bottom for any initialization messages
 
 ### Step 3: Configure your JDK
 
@@ -64,9 +61,9 @@ If you already have Java installed, VS Code should automatically detect and conf
 After opening your project, you may need to verify and configure VS Code to use the correct JDK version.
 
 1. **Open the Command Palette**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`
-2. **Type** `Java: Configure Java Runtime` and select it
-3. **Verify your JDK** appears in the dropdown list and is selected. Check that the JDK version matches the one required for your project, as specified in the `build.gradle` file.
-4. **Select the appropriate JDK** if you have multiple versions installed
+1. **Type** `Java: Configure Java Runtime` and select it
+1. **Verify your JDK** appears in the dropdown list and is selected. Check that the JDK version matches the one required for your project, as specified in the `build.gradle` file.
+1. **Select the appropriate JDK** if you have multiple versions installed
 
 <box type="info" seamless>
 
@@ -79,7 +76,7 @@ You may also need to verify and configure the Gradle Build Server to use the cor
 
 1. Open the project's `./vscode/settings.json` file. Create the file if it does not exists yet.
     * To configure the following settings globally, open VS Code's `settings.json` file instead. You can find it by opening the Command Palette ({{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`), then typing `Preferences: Open User Settings (JSON)`.
-2. Add or modify the following settings to configure the JVM for Gradle. Here's an example for Mac (Replace the JDK name and path as necessary):
+1. Add or modify the following settings to configure the JVM for Gradle. Here's an example for Mac (Replace the JDK name and path as necessary):
     ```json { heading="settings.json" }
     {
       "java.configuration.runtimes": [
@@ -97,8 +94,8 @@ You may also need to verify and configure the Gradle Build Server to use the cor
 After the project loads:
 
 1. **Check syntax highlighting** - Java files should have proper syntax highlighting
-2. **Test IntelliSense** - Try typing in a Java file to see if code completion works
-3. **Look for error indicators** - VS Code will underline syntax errors in red
+1. **Test IntelliSense** - Try typing in a Java file to see if code completion works
+1. **Look for error indicators** - VS Code will underline syntax errors in red
 
 **Confirm you can access the Gradle tool window**. After the importing of the project is complete (which could take a few minutes), you will see the Gradle Tab in the VS Code interface (Look for the elephant icon on the left and click it).
 
