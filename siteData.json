@@ -732,7 +732,20 @@
       "src": "tutorials/vscImportingGradleProject.md",
       "title": "VS Code - Importing a Gradle project",
       "headings": {
-        "vs-code-importing-a-gradle-project": "VS Code - Importing a Gradle project"
+        "vs-code-importing-a-gradle-project": "VS Code - Importing a Gradle project",
+        "prerequisites": "Prerequisites",
+        "importing-an-existing-gradle-project": "Importing an existing Gradle project",
+        "step-1-open-the-project-folder": "Step 1: Open the project folder",
+        "step-2-let-vs-code-detect-the-project": "Step 2: Let VS Code detect the project",
+        "step-3-configure-your-jdk": "Step 3: Configure your JDK",
+        "step-4-verify-project-configuration": "Step 4: Verify project configuration",
+        "gradle-tasks": "Gradle Tasks",
+        "testing": "Testing",
+        "editing-build-files": "Editing build files",
+        "syntax-highlighting": "Syntax Highlighting",
+        "outline-view": "Outline view",
+        "problems-view": "Problems view",
+        "autocompletion": "Autocompletion"
       },
       "headingKeywords": {}
     },
