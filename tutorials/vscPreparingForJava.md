@@ -29,11 +29,24 @@ Check out our [Java Installation guide](javaInstallation.html) for detailed inst
 ## Install VS Code
 
 1. **Visit the official VS Code website**: [https://code.visualstudio.com/](https://code.visualstudio.com/)
-2. **Click the "Download" button** - The website will automatically detect your operating system
-3. Refer to the [official VS Code Setup Overview](https://code.visualstudio.com/docs/setup/setup-overview) for system-specific installation instructions.
+1. **Click the "Download" button** - The website will automatically detect your operating system
+1. Refer to the [official VS Code Setup Overview](https://code.visualstudio.com/docs/setup/setup-overview) for system-specific installation instructions.
     * [**:fab-apple: Mac**](https://code.visualstudio.com/docs/setup/mac#_install-vs-code-on-macos)
     * [**:fab-windows: Windows**](https://code.visualstudio.com/docs/setup/windows#_install-vs-code-on-windows)
     * [**:fab-linux: Linux**](https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux)
+
+<box type="tip" seamless>
+
+**Launch VS Code from the command line**
+
+You can quickly open a file or folder in VS Code by typing `code <path>` in your terminal or command prompt. For example, `code .` opens the current directory in VS Code.
+
+* **macOS** users must first run the command `Shell Command: Install 'code' command in PATH` from the Command Palette {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` to enable this feature. See the [macOS setup guide](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line) for details.
+* **Windows and Linux** installations should add the `code` command to your system path automatically.
+
+For more command line options and tips, see the [official VS Code Command Line Interface guide](https://code.visualstudio.com/docs/configure/command-line).
+
+</box>
 
 <box type="tip" seamless>
 
@@ -55,8 +68,8 @@ The [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemNam
 ### Installation steps
 
 1. **Open the Extensions View**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+X` | {{ icon_apple }} `Cmd+Shift+X`
-2. **Search for** `Extension Pack for Java`
-3. **Click** `Install` on the extension by Microsoft
+1. **Search for** `Extension Pack for Java`
+1. **Click** `Install` on the extension by Microsoft
 
 ![VS Code Extension Pack for Java](images/vscodeJavaSetup/VSCodeExtensionPackForJava.png)
 
