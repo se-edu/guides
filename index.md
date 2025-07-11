@@ -54,6 +54,9 @@ Tutorials, how-to guides, getting-started guides, ...
   * [**Netlify**](tutorials/netlify.html)
   * [**PlantUML**](tutorials/plantUml.html)
   * [**Saving** web documents as PDF files](tutorials/savingPdf.html)
+* **AI Coding Tools**:
+  * [**Using Copilot in GitHub**](tutorials/githubCopilot.html)
+  * [**Using Copilot in Terminal**](tutorials/copilotTerminal.html)
 
 ## {{ thumbnail(":fas-file-code:") }} Conventions
 
