@@ -376,6 +376,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/intellijCodeNavigation.md",
+      "title": "Intellij IDEA: Code navigation",
+      "headings": {
+        "intellij-idea-code-navigation": "Intellij IDEA: Code navigation"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/intellijCodeStyle.md",
       "title": "Intellij IDEA: Configuring the code style",
       "headings": {
@@ -417,6 +425,30 @@
       "title": "Intellij IDEA: Configuring the JDK",
       "headings": {
         "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijProductivityShortcuts.md",
+      "title": "Intellij IDEA: Productvity shortcuts",
+      "headings": {
+        "intellij-idea-productvity-shortcuts": "Intellij IDEA: Productvity shortcuts"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijProjectSetup.md",
+      "title": "Intellij IDEA: Configuring the JDK",
+      "headings": {
+        "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijRefactoring.md",
+      "title": "Intellij IDEA: Refactoring",
+      "headings": {
+        "intellij-idea-refactoring": "Intellij IDEA: Refactoring"
       },
       "headingKeywords": {}
     },
