@@ -27,9 +27,12 @@ Tutorials, how-to guides, getting-started guides, ...
     * [Part 4: Using FXML](tutorials/javaFxPart4.html)
     * [Part 5: Tweaking the GUI](tutorials/javaFxPart5.html)
 * **Intellij IDEA**:
-  * [Configuring the JDK](tutorials/intellijJdk.html)
+  * [Setting up your first project](tutorials/intellijProjectSetup.html)
   * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
   * [Configuring the code style](tutorials/intellijCodeStyle.html)
+  * [Code Navigation](tutorials/intellijCodeNavigation.html)
+  * [Refactoring](tutorials/intellijRefactoring.html)
+  * [Productivity shortcuts](tutorials/intellijProductivityShortcuts.html)
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
 * [**Visual Studio Code**](tutorials/vscode.html)
