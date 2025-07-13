@@ -33,14 +33,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
 * [**Visual Studio Code**](tutorials/vscode.html)
-  * [Preparing VS Code for Java projects](tutorials/vscPreparingForJava.md)
-  * [Creating a new Java project](tutorials/vscCreatingNewJavaProject.md)
-  * [Importing existing Java projects](tutorials/vscImportingJavaProject.md)
-  * [Importing a Gradle project](tutorials/vscImportingGradleProject.md)
-  * [Setting up Checkstyle](tutorials/vscSettingUpCheckstyle.md)
-  * [Using the Debugger](tutorials/vscDebugger.md)
-  * [Using Junit](tutorials/vscJUnitTesting.md)
-  * AI Tool Integrations: [GitHub Copilot](tutorials/vscCopilot.md) | [Windsurf](tutorials/vscWindsurf.md)
+  <include src="tutorials/vscode.md#vscode-sub-topics" />
 * [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
