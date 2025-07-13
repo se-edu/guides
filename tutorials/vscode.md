@@ -27,5 +27,6 @@ This guide is for those who prefer to use [Visual Studio Code](https://code.visu
 * [Setting up Checkstyle]({{ baseUrl }}/tutorials/vscSettingUpCheckstyle.md)
 * [Using the Debugger]({{ baseUrl }}/tutorials/vscDebugger.md)
 * [Using Junit](tutorials/vscJUnitTesting.md)
+* [Useful Plugins]({{ baseUrl }}/tutorials/vscUsefulPlugins.md)
 * AI Tool Integrations: [GitHub Copilot]({{ baseUrl }}/tutorials/vscCopilot.md) | [Windsurf]({{ baseUrl }}/tutorials/vscWindsurf.md)
 </div>
