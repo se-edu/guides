@@ -26,7 +26,7 @@ This guide is for those who prefer to use [Visual Studio Code](https://code.visu
 * [Importing a Gradle project]({{ baseUrl }}/tutorials/vscImportingGradleProject.md)
 * [Setting up Checkstyle]({{ baseUrl }}/tutorials/vscSettingUpCheckstyle.md)
 * [Using the Debugger]({{ baseUrl }}/tutorials/vscDebugger.md)
-* [Using Junit](tutorials/vscJUnitTesting.md)
+* [Using Junit]({{ baseUrl }}/tutorials/vscJUnitTesting.md)
 * [Useful Plugins]({{ baseUrl }}/tutorials/vscUsefulPlugins.md)
 * AI Tool Integrations: [GitHub Copilot]({{ baseUrl }}/tutorials/vscCopilot.md) | [Windsurf]({{ baseUrl }}/tutorials/vscWindsurf.md)
 </div>
