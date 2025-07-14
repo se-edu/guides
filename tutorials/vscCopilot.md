@@ -1,4 +1,4 @@
-{% set title="VS Code: Using GitHub Copilot" %}
+{% set title="VS Code - Using GitHub Copilot" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2

@@ -1,4 +1,4 @@
-{% set title="VS Code: Using Windsurf" %}
+{% set title="VS Code - Using Windsurf" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
