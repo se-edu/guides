@@ -107,6 +107,36 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
   * The generated lines of code will be highlighted in yellow, and you can insert them by clicking on `accept`.<br>
     <pic src="images/vscCopilotUsage/copilotInline.png" width="600" />
 
+### Prompting Copilot in the Terminal
+* Open a terminal in Visual Studio Code.
+* Press `Ctrl+I` to bring up Copilot’s terminal prompt input.<br>
+    <pic src="images/vscCopilotUsage/copilotTerminal.png" width="600" />
+* Some common project-related prompts you might find useful.
+    * Run the checkstyle  
+    * Compile and run the Java program  
+    * Run JUnit tests
+* Some common Git related prompts you might find useful.
+    * Add all changes to Git  
+    * Git commit with message `First commit!`  
+    * Push current branch to `origin`  
+    * Create and checkout a new branch named `feature/login`  
+    * Pull the latest changes from `origin/main`
+* Made a mistake? Here are some fix and recovery prompts.
+    * Undo last Git commit (keep changes in working directory)  
+    * Revert a specific file to the last committed version  
+    * Discard all uncommitted changes  
+    * Abort an in-progress Git merge
+* Clean up prompts.
+    * Delete local branch `<branch-name>`  
+    * Delete remote branch `feature/old-ui`
+* Here are some advanced Git prompts.
+    * Rebase current branch onto `origin/main`  
+    * Steps to resolve Git rebase conflicts  
+    * Squash the last 3 commits into one
+* After typing your prompt, Copilot will generate a suggested command.<br>
+    <pic src="images/vscCopilotUsage/copilotSuggestion.png" width="600" />
+* If the suggestion looks correct, click `Run` to execute the command in your terminal.
+
 ---
 
 **Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh ))
