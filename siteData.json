@@ -355,6 +355,18 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/githubCopilot.md",
+      "title": "AI Coding Tools: Using Copilot in GitHub",
+      "headings": {
+        "ai-coding-tools-using-copilot-in-github": "AI Coding Tools: Using Copilot in GitHub",
+        "pre-requisites": "Pre-requisites",
+        "issue-creation": "Issue Creation",
+        "pull-request-creation-summary": "Pull Request Creation Summary",
+        "pull-request-review": "Pull Request Review"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/gradle.md",
       "title": "Gradle tutorial",
       "headings": {
@@ -706,16 +718,17 @@
     },
     {
       "src": "tutorials/vscCopilot.md",
-      "title": "VS Code: Using GitHub Copilot",
+      "title": "VS Code - Using GitHub Copilot",
       "headings": {
-        "vs-code-using-github-copilot": "VS Code: Using GitHub Copilot",
+        "vs-code-using-github-copilot": "VS Code - Using GitHub Copilot",
         "signing-up-for-github-copilot": "Signing Up for GitHub Copilot",
         "installing-github-copilot-in-visual-studio-code": "Installing GitHub Copilot in Visual Studio Code",
         "signing-in-to-github-copilot": "Signing in to GitHub Copilot",
         "using-github-copilot-in-visual-studio-code": "Using GitHub Copilot in Visual Studio Code",
         "basic-code-completion": "Basic Code Completion",
         "copilot-chat": "Copilot Chat",
-        "copilot-inline-chat": "Copilot Inline Chat"
+        "copilot-inline-chat": "Copilot Inline Chat",
+        "prompting-copilot-in-the-terminal": "Prompting Copilot in the Terminal"
       },
       "headingKeywords": {}
     },
@@ -839,9 +852,9 @@
     },
     {
       "src": "tutorials/vscWindsurf.md",
-      "title": "VS Code: Using Windsurf",
+      "title": "VS Code - Using Windsurf",
       "headings": {
-        "vs-code-using-windsurf": "VS Code: Using Windsurf",
+        "vs-code-using-windsurf": "VS Code - Using Windsurf",
         "setting-up": "Setting Up",
         "using-windsurf-in-vs-code": "Using Windsurf in VS Code",
         "basic-code-completion": "Basic Code Completion",
