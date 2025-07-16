@@ -92,6 +92,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
     </box>
 
 ### Copilot Chat
+
   * Open the Copilot Chat using {{ icon_windows }}/{{ icon_linux}} `Ctrl+Alt+I` | {{ icon_apple }} `Cmd+Alt+I` or using the Copilot icon.
   * Ask something like: "Write a main method that calculates the factorial of N".
   * Copilot will generate a response in the chat window.<br>
@@ -101,11 +102,25 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
     <pic src="images/vscCopilotUsage/copilotChatButtons.png" width="100" />
 
 ### Copilot Inline Chat
+
   * Go to the line or section where you want to ask Copilot for assistance.
   * Use the inline chat feature using the shortcut {{ icon_windows }}/{{ icon_linux}} `Ctrl+I` | {{ icon_apple }} `Cmd+I`.
   * Type your request such as "Add a print log here" and press `Enter`.
   * The generated lines of code will be highlighted in yellow, and you can insert them by clicking on `accept`.<br>
     <pic src="images/vscCopilotUsage/copilotInline.png" width="600" />
+
+### Prompting Copilot in the Terminal
+
+1. Open a terminal in Visual Studio Code.
+1. Press `Ctrl+I` to bring up Copilot’s terminal prompt input.<br>
+    <pic src="images/vscCopilotUsage/copilotTerminal.png" width="600" />
+
+Some common project-related prompts you might find useful:
+
+* Run the checkstyle
+* Compile and run the Java program
+* Run JUnit tests
+* ~~Perform Git operations~~ (possible but #r#not recommended##; if you are new to Git, we discourage using Git inside the IDE -- it is better for beginners to learn Git independent of other tools)
 
 ---
 
