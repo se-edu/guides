@@ -15,8 +15,15 @@ This website contains a collection of tutorials, standards, guides, best practic
 Tutorials, how-to guides, getting-started guides, ...
 
 * [**AddressBook Level-3 (AB3)**](tutorials/ab3.html)
+* **AI Coding Tools**:
+  * [**Using Copilot in GitHub**](tutorials/githubCopilot.html)
 * [**Checkstyle**](tutorials/checkstyle.html)
 * [**Codecov**](tutorials/codecov.html)
+* **Git and GitHub**:
+  * [Authentication](tutorials/githubAuthentication.html)
+  * [GitHub Actions](tutorials/githubActions.html)
+  * [Sourcetree](tutorials/sourcetree.html)
+* [**Gradle**](tutorials/gradle.html)
 * **Java**:
   * **[Installation](tutorials/javaInstallation.html)**: [:fab-apple: Mac](tutorials/javaInstallationMac.html) | [:fab-windows: Windows](tutorials/javaInstallationWindows.html) | [:fab-linux: Linux](tutorials/javaInstallationLinux.html)
   * [**JAR files**](tutorials/jar.html)
@@ -26,7 +33,7 @@ Tutorials, how-to guides, getting-started guides, ...
     * [Part 3: Interacting with the user](tutorials/javaFxPart3.html)
     * [Part 4: Using FXML](tutorials/javaFxPart4.html)
     * [Part 5: Tweaking the GUI](tutorials/javaFxPart5.html)
-* **Intellij IDEA**:
+* **IDE: Intellij IDEA**:
   * [Setting up your first project](tutorials/intellijProjectSetup.html)
   * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
   * [Configuring the code style](tutorials/intellijCodeStyle.html)
@@ -35,14 +42,11 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Productivity shortcuts](tutorials/intellijProductivityShortcuts.html)
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful settings](tutorials/intellijUsefulSettings.html)
-* [**Visual Studio Code**](tutorials/vscode.html)
+* [**IDE: Visual Studio Code**](tutorials/vscode.html)
   <include src="tutorials/vscode.md#vscode-sub-topics" />
-* [**Sourcetree**](tutorials/sourcetree.html)
 * **Testing**
   * [Automated testing of text UIs](tutorials/textUiTesting.html)
   * [**JUnit**](tutorials/junit.html)
-* [**GitHub Actions**](tutorials/githubActions.html)
-* [**Gradle**](tutorials/gradle.html)
 * **Project documentation**:
   * [**Jekyll**](tutorials/jekyll.html)
   * [**MarkBind**](tutorials/markbind.html)
@@ -50,8 +54,6 @@ Tutorials, how-to guides, getting-started guides, ...
   * [**Netlify**](tutorials/netlify.html)
   * [**PlantUML**](tutorials/plantUml.html)
   * [**Saving** web documents as PDF files](tutorials/savingPdf.html)
-* **AI Coding Tools**:
-  * [**Using Copilot in GitHub**](tutorials/githubCopilot.html)
 
 ## {{ thumbnail(":fas-file-code:") }} Conventions
 

@@ -1,5 +1,5 @@
 <frontmatter>
-  title: "Sourcetree Tips"
+  title: "Sourcetree"
   pageNav: 3
 </frontmatter>
 
