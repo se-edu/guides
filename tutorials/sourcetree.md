@@ -16,7 +16,7 @@
 1. Download Sourcetree from [their website](https://www.sourcetreeapp.com/) and run it.
 1. When prompted to `Login to your Atlassian account`, you can try to skip that step. If the installer doesn't allow skipping, you can create an Atlassian account as directed.
 1. In the next step, you will be prompted to `Connect an Account`. ==Choose to skip== (we'll be connecting Sourcetree to GitHub later).
-1. In the `Pick tools to download and install`, you will be asked to choose whether to install Git and <tooltip content="another revision control software similar to Git">Mercurial</tooltip>. You can unselect Mercurial, as we will be using Git instead.
+1. In the `Pick tools to download and install`, you will be asked to choose whether to install Git and <tooltip content="another revision control software similar to Git">Mercurial</tooltip>. Unselect Mercurial. Assuming you have installed Git already, when prompted, choose to use the system Git instead of the Git that come with Sourcetree.
 1. If prompted to set up an SSL key, you can click `No`, but you are free to set of an SSL key if you are familiar with SSL key usage.
 1. Now you can proceed to connect Sourcetree to your GitHub account, as explained in the sections below.
 
