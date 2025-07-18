@@ -356,9 +356,11 @@
     },
     {
       "src": "tutorials/githubAuthentication.md",
-      "title": "Setting GitHub Authentication",
+      "title": "Setting up GitHub Authentication",
       "headings": {
-        "setting-github-authentication": "Setting GitHub Authentication"
+        "setting-up-github-authentication": "Setting up GitHub Authentication",
+        "using-https-for-authentication": "Using HTTPS for authentication",
+        "using-ssh-for-authentication": "Using SSH for authentication"
       },
       "headingKeywords": {}
     },
