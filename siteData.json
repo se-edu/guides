@@ -851,6 +851,18 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/vscUsefulPlugins.md",
+      "title": "VS Code - Useful Plugins",
+      "headings": {
+        "vs-code-useful-plugins": "VS Code - Useful Plugins",
+        "markdown-all-in-one": "Markdown All in One",
+        "installing-the-plugin": "Installing the plugin",
+        "previewing-markdown": "Previewing Markdown",
+        "additional-features": "Additional Features"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/vscWindsurf.md",
       "title": "VS Code - Using Windsurf",
       "headings": {
