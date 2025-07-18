@@ -355,6 +355,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/githubAuthentication.md",
+      "title": "Setting GitHub Authentication",
+      "headings": {
+        "setting-github-authentication": "Setting GitHub Authentication"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/githubCopilot.md",
       "title": "AI Coding Tools: Using Copilot in GitHub",
       "headings": {
@@ -695,7 +703,7 @@
     },
     {
       "src": "tutorials/sourcetree.md",
-      "title": "Sourcetree Tips",
+      "title": "Sourcetree",
       "headings": {
         "sourcetree": "Sourcetree",
         "installation": "Installation",
