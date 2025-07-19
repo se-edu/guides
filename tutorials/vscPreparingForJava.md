@@ -21,9 +21,9 @@ Before you can develop Java applications, you need to have a Java Development Ki
 
 Check out our [Java Installation guide](javaInstallation.html) for detailed installation and setup instructions for Windows, macOS, and Linux.
 
-<box type="info" seamless>
+<box type="tip" seamless>
 
-**Note:** After [installing the Extension Pack for Java](#install-the-extension-pack-for-java), VS Code Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` also offers a `Java: Install New JDK` command to install and configure JDK versions through its integrated tools. However, we recommend following our [Java Installation guide](javaInstallation.html) to install the JDK separately.
+If VS Code does not detect your JDK after installation, try restarting VS Code or manually setting the `JAVA_HOME` environment variable.
 </box>
 
 ## Install VS Code
@@ -39,13 +39,12 @@ Check out our [Java Installation guide](javaInstallation.html) for detailed inst
 
 **Launch VS Code from the command line**
 
-You can quickly open a file or folder in VS Code by typing `code <path>` in your terminal or command prompt. For example, `code .` opens the current directory in VS Code.
+You can quickly open a file or folder in VS Code by typing `code <path>` in your terminal or command prompt. For example, `code .` opens the folder you are currently in, inside VS Code.
 
-* **macOS** users must first run the command `Shell Command: Install 'code' command in PATH` from the Command Palette {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` to enable this feature. See the [macOS setup guide](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line) for details.
+* **macOS** users must first run the command `Shell Command: Install 'code' command in PATH` from the Command Palette {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` and restart the terminal to enable this feature. See the [macOS setup guide](https://code.visualstudio.com/docs/setup/mac#_launch-vs-code-from-the-command-line) for details.
 * **Windows and Linux** installations should add the `code` command to your system path automatically.
 
 For more command line options and tips, see the [official VS Code Command Line Interface guide](https://code.visualstudio.com/docs/configure/command-line).
-
 </box>
 
 <box type="tip" seamless>
@@ -71,17 +70,32 @@ The [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemNam
 1. **Search for** `Extension Pack for Java`
 1. **Click** `Install` on the extension by Microsoft
 
+<box type="warning" seamless>
+
+Ensure that the publisher is **Microsoft**. Other similarly named extensions and extension packs may appear but they may not include all the required extensions.
+</box>
+
 ![VS Code Extension Pack for Java](images/vscodeJavaSetup/VSCodeExtensionPackForJava.png)
 
 ### Verify installation
 
-To verify that the [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) was installed correctly, open the Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` and type `Java:` to see available commands
-
-![VS Code Command Palette Java commands](images/vscodeJavaSetup/VSCodeCommandPaletteJava.png)
+To verify that the [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) was installed correctly, open the Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` and type `Java:` to see available commands.
 
 <box type="tip" seamless>
 
-**Quick tip:** After installation, open the Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`, type `Java: Tips for Beginners` and open it for helpful information to get started.
+If you do not see any Java commands, make sure the Extension Pack was installed correctly and try reloading VS Code (Open the Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`, then type and select `Developer: Reload Window`)
+</box>
+
+![VS Code Command Palette Java commands](images/vscodeJavaSetup/VSCodeCommandPaletteJava.png)
+
+<box type="info" seamless>
+
+After installation, VS Code Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` also offers a `Java: Install New JDK` command to install and configure JDK versions through its integrated tools. However, we recommend following our [Java Installation guide](javaInstallation.html) to install the JDK separately.
+</box>
+
+<box type="tip" seamless>
+
+After installation, open the Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`, type `Java: Tips for Beginners` and open it for helpful information to get started.
 
 ![VS Code Command Palette "Java: Tips for Beginners"](images/vscodeJavaSetup/VSCodeCommandPaletteJavaTipsForBeginners.png)
 
