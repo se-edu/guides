@@ -39,6 +39,11 @@ After the project loads:
 1. **Test IntelliSense** - Try typing in a Java file to see if code completion works
 1. **Look for error indicators** - VS Code will underline syntax errors in red
 
+<box type="info" seamless>
+
+If Java features like syntax highlighting or IntelliSense are not working, ensure the Java Extension Pack is installed and VS Code has fully initialized.
+</box>
+
 </div>
 
 ## Configure your JDK
