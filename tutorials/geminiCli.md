@@ -1,10 +1,14 @@
-{% set title="AI Coding Tools: Using Copilot in GitHub" %}
+{% set title="AI Coding Tools - Gemini CLI" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
 </frontmatter>
 
 <include src="vscode.md#wip-warning" />
+
+# {{ title }}
+
+This section shows how to use Gemini CLI, a command-line interface for Google Gemini, to assist with various coding tasks directly in your terminal.
 
 ## Prerequisites
 
