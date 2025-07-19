@@ -54,6 +54,8 @@ Tutorials, how-to guides, getting-started guides, ...
   * [**Netlify**](tutorials/netlify.html)
   * [**PlantUML**](tutorials/plantUml.html)
   * [**Saving** web documents as PDF files](tutorials/savingPdf.html)
+* **AI Coding Tools**
+  * [**Gemini CLI**](tutorials/geminiCli.md)
 
 ## {{ thumbnail(":fas-file-code:") }} Conventions
 
