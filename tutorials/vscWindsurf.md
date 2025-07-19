@@ -61,7 +61,7 @@ Windsurf is an AI assistant that integrates smoothly with Visual Studio Code and
     <pic src="images/vscWindsurf/windsurfCommands.png" width="500" />
   * Refactor command
     * Click `Windsurf: Refactor` to open a menu with refactoring options.<br>
-    <pic src="images/vscWindsurf/windsurfrefactor.png" width="500" />
+    <pic src="images/vscWindsurf/windsurfRefactor.png" width="500" />
     * Choose a command, then click `Accept` ({{ icon_windows }}/{{ icon_linux}}/{{ icon_apple }} `Alt+A`) or `Reject` ({{ icon_windows }}/{{ icon_linux}}/{{ icon_apple }} `Alt+R`) to confirm or dismiss the generated code.
   * Explain command
     * Click the `Explain` button above a code block to have Windsurf explain it.
