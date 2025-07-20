@@ -64,7 +64,7 @@ This can also be done through modifying `.vscode/settings.json`:
     ```
     {
         // ...
-    "editor.trimAutoWhitespace": true
+        "editor.trimAutoWhitespace": true
         // ...
     }
     ```
@@ -84,8 +84,8 @@ This can also be done through modifying `.vscode/settings.json`:
     ```
     {
         // ...
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true
         // ...
     }
     ```
