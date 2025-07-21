@@ -55,7 +55,7 @@ If you prefer more control over the project setup, you can create a project manu
 
     <box type="info" seamless>
 
-    After opening the project folder, VS Code may ask if you want to open it as a workspace.If prompted, click ‘Yes’ when asked to open the folder as a workspace.
+    After opening the project folder, VS Code may ask if you want to open it as a workspace. If prompted, click ‘Yes’ when asked to open the folder as a workspace.
     </box>
 
 * ****Step 2: Set up the project structure****
