@@ -16,7 +16,7 @@ Tutorials, how-to guides, getting-started guides, ...
 
 * [**AddressBook Level-3 (AB3)**](tutorials/ab3.html)
 * **AI Coding Tools**:
-  * [**Using Copilot in GitHub**](tutorials/githubCopilot.html)
+  * [**Copilot in GitHub**](tutorials/githubCopilot.html) | [**Gemini CLI**](tutorials/geminiCli.md)
 * [**Checkstyle**](tutorials/checkstyle.html)
 * [**Codecov**](tutorials/codecov.html)
 * **Git and GitHub**:
@@ -54,6 +54,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [**Netlify**](tutorials/netlify.html)
   * [**PlantUML**](tutorials/plantUml.html)
   * [**Saving** web documents as PDF files](tutorials/savingPdf.html)
+
 
 ## {{ thumbnail(":fas-file-code:") }} Conventions
 
