@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 6.0.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>VS Code: Configuring the code style: Advanced</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app"><!--[--><header sticky><div data-v-2dc82f13><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-2dc82f13><div class="container-fluid" data-v-2dc82f13><div class="navbar-left" data-v-2dc82f13><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-2dc82f13><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-2dc82f13><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><ul class="navbar-nav navbar-right" data-v-2dc82f13><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-00e26d0a><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-00e26d0a><div class="form-control placeholder-div-hidden" data-v-00e26d0a>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-00e26d0a><!--[--><!--]--></ul></div></form></li><!--]--></ul></div></nav><div style="display:none;" class="lower-navbar-container" data-v-2dc82f13><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><div><div class="alert box-container border-warning alert-border-left" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><!----><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>Caution: VS Code guides section is a work-in-progress, containing content contributed by students.</strong></p> <ul><li>If you notice any bugs or suggestions for improvements, please report at <a href="https://github.com/se-edu/guides/issues">https://github.com/se-edu/guides/issues</a></li> <li>You are welcome to contribute by sending a PRs to <a href="https://github.com/se-edu/guides/pulls">https://github.com/se-edu/guides/pulls</a> too.</li></ul><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></div> <h1 id="vs-code-configuring-the-code-style-advanced">VS Code: Configuring the code style: Advanced<a class="fa fa-anchor" href="#vs-code-configuring-the-code-style-advanced" onclick="event.stopPropagation()"></a></h1> <p>While the Visual Studio Code Editor has configurable general settings for indent size, trailing whitespaces, and more, Visual Studio Code does not come with a built-in formatter for all languages. Instead, it relies on language-specific extensions to provide formatting functionality.</p> <p>For this tutorial, we will be using the Eclipse Java Formatter. This is included in the Red Hat Java Language Support extension, which you should already have installed if you followed <a href="/guides/tutorials/vscPreparingForJava.html">VS Code - Preparing for Java Projects Tutorial</a> tutorial.</p> <h2 id="set-up-eclipse-java-formatter">Set up Eclipse Java Formatter<a class="fa fa-anchor" href="#set-up-eclipse-java-formatter" onclick="event.stopPropagation()"></a></h2> <p>Eclipse Java Formatter requires a <code class="hljs inline no-lang">.xml</code> file to define our formatting rules. Copy the following <code class="hljs inline no-lang">eclipse-java-formatter.xml</code> template and place it at the root of your project.</p> <pre><code class="hljs"><span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</span><span>&lt;profiles version=&quot;12&quot;&gt;
+</span><span>    &lt;profile kind=&quot;CodeFormatterProfile&quot; name=&quot;SE-EDU&quot; version=&quot;12&quot;&gt;
+</span><span>        &lt;!-- Replace this comment with actual formatter rules --&gt;
+</span><span>    &lt;/profile&gt;
+</span><span>&lt;/profiles&gt;
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><p>Configure settings to use our <code class="hljs inline no-lang">eclipse-java-formatter.xml</code> through Settings:</p> <ol><li><p>Open Settings by going to <code class="hljs inline no-lang">File</code> → <code class="hljs inline no-lang">Preferences</code> → <code class="hljs inline no-lang">Settings</code> (Windows), or <code class="hljs inline no-lang">Code</code> → <code class="hljs inline no-lang">Preferences</code> → <code class="hljs inline no-lang">Settings</code> (macOS).</p></li> <li><p>Go to <code class="hljs inline no-lang">Extensions</code> → <code class="hljs inline no-lang">Language Support for Java(TM) by Red Hat</code> → <code class="hljs inline no-lang">Formatting</code> tab.</p></li> <li><p>Check the checkbox for <code class="hljs inline no-lang">Java &gt; Format: Enabled</code> to allow the formatter to be selected as default (see screenshot below).</p></li> <li><p>Enter the path to your <code class="hljs inline no-lang">eclipse-java-formatter.xml</code> under <code class="hljs inline no-lang">Java</code> → <code class="hljs inline no-lang">Format</code> → <code class="hljs inline no-lang">Settings: Url</code>. Since we placed it at the root, this value would be <code class="hljs inline no-lang">eclipse-java-formatter.xml</code> (see screenshot below).</p></li> <li><p>Enter the profile name, which we have set to <code class="hljs inline no-lang">SE-EDU</code> in our <code class="hljs inline no-lang">eclipse-java-formatter.xml</code> (see screenshot below).</p> <p><a href="/guides/tutorials/images/vscode/settings-java-formater-eclipse.png" target="_self"><img src="/guides/tutorials/images/vscode/settings-java-formater-eclipse.png" alt class="img-fluid"></a></p></li></ol> <p>This can also be done through modifying <code class="hljs inline no-lang">.vscode/settings.json</code>:</p> <ol><li>Add the following properties to settings.json:<pre><code class="hljs"><span>&quot;java.format.settings.url&quot;: &quot;eclipse-java-formatter.xml&quot;,
+</span><span>&quot;java.format.settings.profile&quot;: &quot;SE-EDU&quot;
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre></li></ol> <p>If you have installed any other Java extensions, VS Code may use that extension&#39;s formatter instead. To ensure our formatting is being applied, we will set Red Hat Java Language Support extension’s formatter as the default.</p> <p>Configure this through Settings:</p> <ol><li><p>Search for <code class="hljs inline no-lang">Default Formatter</code> with the filter <code class="hljs inline no-lang">@lang:java</code>.</p></li> <li><p>Ensure that <code class="hljs inline no-lang">Language Support for Java(TM) by Red Hat</code> is selected as default (see screenshot below).</p> <p><a href="/guides/tutorials/images/vscode/settings-default-formatter.png" target="_self"><img src="/guides/tutorials/images/vscode/settings-default-formatter.png" alt class="img-fluid"></a></p></li></ol> <p>This can also be done through modifying <code class="hljs inline no-lang">.vscode/settings.json</code>:</p> <ol><li><p>Add the following properties to settings.json:</p> <pre><code class="hljs"><span>&quot;[java]&quot;: {
+</span><span>    &quot;editor.defaultFormatter&quot;: &quot;redhat.java&quot;
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre></li></ol> <h2 id="tweak-switch-case-indent">Tweak: Switch-case indent<a class="fa fa-anchor" href="#tweak-switch-case-indent" onclick="event.stopPropagation()"></a></h2> <p>To format switch-case statements based on coding standards, add the following settings to <code class="hljs inline no-lang">eclipse-java-formatter.xml</code> within the profile tag.</p> <pre><code class="hljs"><span>&lt;!-- ... --&gt;
+</span><span>&lt;profile kind=&quot;CodeFormatterProfile&quot; name=&quot;SE-EDU&quot; version=&quot;12&quot;&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_switch&quot; value=&quot;false&quot;/&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_cases&quot; value=&quot;true&quot;/&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>&lt;/profile&gt;
+</span><span>&lt;!-- ... --&gt;
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><h2 id="tweak-line-limit">Tweak: Line limit<a class="fa fa-anchor" href="#tweak-line-limit" onclick="event.stopPropagation()"></a></h2> <p>To enforce line length to be max 120 characters based on coding standards, add the following settings to <code class="hljs inline no-lang">eclipse-java-formatter.xml</code>.</p> <pre><code class="hljs"><span>&lt;!-- ... --&gt;
+</span><span>&lt;profile kind=&quot;CodeFormatterProfile&quot; name=&quot;SE-EDU&quot; version=&quot;12&quot;&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.lineSplit&quot; value=&quot;120&quot;/&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>&lt;/profile&gt;
+</span><span>&lt;!-- ... --&gt;
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><h2 id="tweak-indent-size-tab-spaces">Tweak: Indent size/Tab spaces<a class="fa fa-anchor" href="#tweak-indent-size-tab-spaces" onclick="event.stopPropagation()"></a></h2> <p>To format indent size based on coding standards, add the following settings to <code class="hljs inline no-lang">eclipse-java-formatter.xml</code>.</p> <pre><code class="hljs"><span>&lt;!-- ... --&gt;
+</span><span>&lt;profile kind=&quot;CodeFormatterProfile&quot; name=&quot;SE-EDU&quot; version=&quot;12&quot;&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>    &lt;!-- Use spaces, not tabs --&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.tabulation.char&quot; value=&quot;space&quot;/&gt;
+</span><span>    &lt;!-- Tab size = 4 spaces --&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.tabulation.size&quot; value=&quot;4&quot;/&gt;
+</span><span>    &lt;!-- One indent level = 4 spaces --&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.indentation.size&quot; value=&quot;4&quot;/&gt;
+</span><span>    &lt;!-- Wrapped lines indent = 8 spaces --&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.continuation_indentation&quot; value=&quot;8&quot;/&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>&lt;/profile&gt;
+</span><span>&lt;!-- ... --&gt;
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><h2 id="tweak-add-newline-n-to-end-of-file">Tweak: Add newline (\n) to end of file<a class="fa fa-anchor" href="#tweak-add-newline-n-to-end-of-file" onclick="event.stopPropagation()"></a></h2> <p>To ensure there is a newline at the end of each file, add the following settings to <code class="hljs inline no-lang">eclipse-java-formatter.xml</code>.</p> <pre><code class="hljs"><span>&lt;!-- ... --&gt;
+</span><span>&lt;profile kind=&quot;CodeFormatterProfile&quot; name=&quot;SE-EDU&quot; version=&quot;12&quot;&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.insert_new_line_at_end_of_file_if_missing&quot; value=&quot;true&quot;/&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>&lt;/profile&gt;
+</span><span>&lt;!-- ... --&gt;
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><h2 id="tweak-import-order">Tweak: Import Order<a class="fa fa-anchor" href="#tweak-import-order" onclick="event.stopPropagation()"></a></h2> <p>To format the import order based on coding standards:</p> <ol><li>Add the following settings to <code class="hljs inline no-lang">eclipse-java-formatter.xml</code>.<pre><code class="hljs"><span>&lt;profile kind=&quot;CodeFormatterProfile&quot; name=&quot;SE-EDU&quot; version=&quot;12&quot;&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.importOrder&quot; value=&quot;java,javax,org,com&quot;/&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.importOrderStatic&quot; value=&quot;java,javax,org,com&quot;/&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.sort_static_imports_separately&quot; value=&quot;true&quot;/&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.imports_static_on_top&quot; value=&quot;true&quot;/&gt;
+</span><span>    &lt;setting id=&quot;org.eclipse.jdt.core.formatter.insert_new_line_between_import_groups&quot; value=&quot;true&quot;/&gt;
+</span><span>    &lt;!-- ... --&gt;
+</span><span>&lt;/profile&gt;
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre></li> <li>Add the following properties to <code class="hljs inline no-lang">.vscode/settings.json</code><pre><code class="hljs"><span>{
+</span><span>    // ...
+</span><span>    &quot;java.saveActions.organizeImports&quot;: true,
+</span><span>    &quot;editor.codeActionsOnSave&quot;: {
+</span><span>        &quot;source.organizeImports&quot;: &quot;explicit&quot;,
+</span><span>    }
+</span><span>    // ...
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre></li></ol> <h2 id="applying-format">Applying format<a class="fa fa-anchor" href="#applying-format" onclick="event.stopPropagation()"></a></h2> <p>To apply the format settings made in the above sections to a file, right click within the file and click <code class="hljs inline no-lang">Format Document</code>.</p> <p><a href="/guides/tutorials/images/vscode/file-format-document.png" target="_self"><img src="/guides/tutorials/images/vscode/file-format-document.png" alt class="img-fluid"></a></p> <p>To make formatting more convenient, you can enable formatting every time you save the file, and also automatically format pasted code.</p> <ol><li><p>Open Settings by going to <code class="hljs inline no-lang">File</code> → <code class="hljs inline no-lang">Preferences</code> → <code class="hljs inline no-lang">Settings</code> (Windows), or <code class="hljs inline no-lang">Code</code> → <code class="hljs inline no-lang">Preferences</code> → <code class="hljs inline no-lang">Settings</code> (macOS)</p></li> <li><p>Go to <code class="hljs inline no-lang">Text Editor</code> → <code class="hljs inline no-lang">Formatting</code> and enable <code class="hljs inline no-lang">Format On Paste</code> and/or <code class="hljs inline no-lang">Format On Save</code> to automatically format code that is pasted, and to format the document everytime you save respectively (see screenshot below).</p> <p><a href="/guides/tutorials/images/vscode/settings-format-on-save-on-paste.png" target="_self"><img src="/guides/tutorials/images/vscode/settings-format-on-save-on-paste.png" alt class="img-fluid"></a></p></li></ol> <h2 id="more-useful-settings">More useful settings<a class="fa fa-anchor" href="#more-useful-settings" onclick="event.stopPropagation()"></a></h2> <p>The tweaks given above are specific to code style. A few more useful settings (not related to the code style) can be found <a href="/guides/tutorials/vscUsefulSettings.html">here</a>.</p> <hr> <p><strong>Contributors</strong>: Tan Guan Qun (<a href="https://github.com/monobeartae">@monobeartae</a>)</p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#vs-code-configuring-the-code-style-advanced">VS Code: Configuring the code style: Advanced‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#set-up-eclipse-java-formatter">Set up Eclipse Java Formatter‎</a> <a class="nav-link py-1" href="#tweak-switch-case-indent">Tweak: Switch-case indent‎</a> <a class="nav-link py-1" href="#tweak-line-limit">Tweak: Line limit‎</a> <a class="nav-link py-1" href="#tweak-indent-size-tab-spaces">Tweak: Indent size/Tab spaces‎</a> <a class="nav-link py-1" href="#tweak-add-newline-n-to-end-of-file">Tweak: Add newline (\n) to end of file‎</a> <a class="nav-link py-1" href="#tweak-import-order">Tweak: Import Order‎</a> <a class="nav-link py-1" href="#applying-format">Applying format‎</a> <a class="nav-link py-1" href="#more-useful-settings">More useful settings‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.0.2</a> on Tue, 22 Jul 2025, 2:31:52 GMT+8]</small></div></footer><!--]--></div>
+</body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
+<script src="/guides/markbind/js/polyfill.min.js"></script>
+<script src="/guides/markbind/js/vue.global.prod.min.js"></script>
+<script src="/guides/markbind/js/markbind.min.js"></script>
+<script src="vscCodeStyleAdvanced.page-vue-render.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+        const copyButtonBody = element.querySelector('.function-btn-body');
+        const tooltipText = element.querySelector(".tooltiptext");
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+        copyButtonBody.innerHTML = `
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="2 2 22 22"
+  >
+    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875 
+    L 9 18.40625 L 9.71875 17.71875 L 20.71875 6.71875 Z"></path>
+  </svg>
+`;
+        console.log("Running tooltip");
+        tooltipText.innerText  = `Copied!`;
+        setTimeout(() => {
+            copyButtonBody.innerHTML = `
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "/>
+    </g>
+</svg>
+`;
+            tooltipText.innerText  = `Copy`;
+        }, 3000);
+    }
+    </script>
+</html>

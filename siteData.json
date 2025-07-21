@@ -740,6 +740,37 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/vscCodeStyle.md",
+      "title": "VS Code: Configuring the code style",
+      "headings": {
+        "vs-code-configuring-the-code-style": "VS Code: Configuring the code style",
+        "modifying-visual-studio-code-settings": "Modifying Visual Studio Code Settings",
+        "tweak-indent-size-tab-spaces": "Tweak: Indent size/Tab spaces",
+        "tweak-auto-remove-trailing-whitespaces": "Tweak: Auto-remove trailing whitespaces",
+        "tweak-add-newline-n-to-end-of-file": "Tweak: Add newline (\\n) to end of file",
+        "applying-format": "Applying format",
+        "more-advanced-settings": "More advanced settings",
+        "more-useful-settings": "More useful settings"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/vscCodeStyleAdvanced.md",
+      "title": "VS Code: Configuring the code style: Advanced",
+      "headings": {
+        "vs-code-configuring-the-code-style-advanced": "VS Code: Configuring the code style: Advanced",
+        "set-up-eclipse-java-formatter": "Set up Eclipse Java Formatter",
+        "tweak-switch-case-indent": "Tweak: Switch-case indent",
+        "tweak-line-limit": "Tweak: Line limit",
+        "tweak-indent-size-tab-spaces": "Tweak: Indent size/Tab spaces",
+        "tweak-add-newline-n-to-end-of-file": "Tweak: Add newline (\\n) to end of file",
+        "tweak-import-order": "Tweak: Import Order",
+        "applying-format": "Applying format",
+        "more-useful-settings": "More useful settings"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/vscCopilot.md",
       "title": "VS Code - Using GitHub Copilot",
       "headings": {
@@ -882,6 +913,21 @@
         "installing-the-plugin": "Installing the plugin",
         "previewing-markdown": "Previewing Markdown",
         "additional-features": "Additional Features"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/vscUsefulSettings.md",
+      "title": "VS Code: Useful settings",
+      "headings": {
+        "vs-code-useful-settings": "VS Code: Useful settings",
+        "modifying-visual-studio-code-settings": "Modifying Visual Studio Code Settings",
+        "enabling-word-wrap": "Enabling word wrap",
+        "show-rulers": "Show rulers",
+        "enabling-assertions": "Enabling assertions",
+        "rename-symbol": "Rename symbol",
+        "reload-window": "Reload window",
+        "editor-color-themes": "Editor color themes"
       },
       "headingKeywords": {}
     },
