@@ -345,6 +345,19 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/geminiCli.md",
+      "title": "AI Coding Tools - Gemini CLI",
+      "headings": {
+        "ai-coding-tools-gemini-cli": "AI Coding Tools - Gemini CLI",
+        "prerequisites": "Prerequisites",
+        "installing-gemini-cli": "Installing Gemini CLI",
+        "using-gemini-cli-in-your-projects": "Using Gemini CLI in your projects",
+        "popular-commands": "Popular Commands",
+        "relevant-resources": "Relevant Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/githubActions.md",
       "title": "Using GitHub Actions",
       "headings": {
