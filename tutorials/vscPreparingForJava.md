@@ -62,7 +62,11 @@ You can also refer to the [official VS Code Getting Started guide](https://code.
 
 VS Code uses **extensions** to add programming language support and development tools. An **extension pack** is a bundle that contains multiple related extensions, making it easy to install everything you need for a specific programming language with just one click.
 
-The [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) is Microsoft's official bundle that includes all the essential extensions for Java development. Instead of installing each extension individually, you can simply install this pack to get everything you need for Java development in VS Code.
+The [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) is Microsoft's official bundle that includes all the essential extensions for Java development. Instead of installing each extension individually, you can simply install this pack to get everything you need for Java development in VS Code. Among others, it includes the following extensions:
+
+* [Debugger for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)
+* [Test Runner for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test)
+* [Gradle for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle)
 
 ### Installation steps
 
