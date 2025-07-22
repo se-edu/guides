@@ -48,6 +48,372 @@ To preview the Markdown side-by-side with your `.md` file:
 
 For more information, view the **_Markdown All in One_ documentation [here](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one&ssr=false#user-content-keyboard-shortcuts-1)**.
 
+## PlantUML
+
+**[PlantUML](http://plantuml.com/) is a tool for specifying various diagrams in a textual form.** It is particularly useful in software projects where you want to update the diagrams incrementally, as the project evolves over time.
+
+The sections below explains how to install and use PlantUML in a project.
+
+<!-- --------------------------------------------------------------------------------------------------------- -->
+
+### Setting up PlantUML
+
+
+1. Go to `Extentions` \> Search `PlantUML` \> Install the **PlantUML plugin by jebbs**
+
+    * Alternatively Launch VS Code Quick Open {{ icon_windows }}/{{ icon_linux}} `Ctrl+P` | {{ icon_apple }} `Cmd+P`, paste the following command, and press enter:
+<br>`ext install plantuml`
+
+1. Install Graphviz (for best compatibility to render diagrams)
+   * **Windows:** download from [Graphviz](https://graphviz.org/download/) and add it to `PATH`
+   * **MacOS:** `brew install graphviz`
+   * **Linux:** `sudo apt install graphviz`
+
+2. Configure PlantUML in VS Code
+   * Open VSCode Settings
+   * Search for "PlantUML"
+   * Set the path to `java` (if not auto-detected):
+      * **Windows** `plantuml.java: "C:\\Program Files\\Java\\jdk-11\\bin\\java.exe"` 
+      * **Linux/MacOS** `plantuml.java: "/usr/bin/java"` 
+   * (Optional) Set PlantUML Server (if not using local rendering):
+`Add plantuml.server: "https://www.plantuml.com/plantuml"`
+
+<!-- --------------------------------------------------------------------------------------------------------- -->
+
+### Creating/editing/exporting diagrams
+
+
+After installing the `PlantUML integration` plugin, simply create or open any `.puml` file to start editing it.
+
+![Editing `DeleteSequenceDiagram.puml`](images/plantuml/EditingDeleteSequenceDiagram.png)
+
+Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes *will not* be reflected in your actual documentation until you export the diagram.
+
+****Saving the Diagram as an image****
+
+* **When using MarkBind** as the site generation tool:
+  * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you. Refer to [this section of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#plantuml-diagrams) for more details.
+* **When Using Other Tools (e.g. Jekyll, Static Site Generators, or Docs):**
+
+  * **Export Individual Diagrams:**
+    1. Open the PlantUML preview ({{ icon_windows }}/{{ icon_linux }}`Alt+D`| {{ icon_apple }}`option+D` or right-click → Preview Current Diagram)
+    2. Right-click the preview and select  "Export Current Diagram"
+    3. Choose the format (PNG/SVG/PDF) and save to your desired location (e.g. `/docs/images/`).
+  * **Export All Diagrams in a File:**
+    * Use the Command Palette ({{ icon_windows }}/{{ icon_linux }}`Ctrl+Shift+P`| {{ icon_apple }}`Cmd+Shift+P`) → PlantUML: Export All Diagrams.
+  * **Git Tracking:**
+    * Remember to `git add` newly exported image files if they’re part of your repo.
+
+<!-- --------------------------------------------------------------------------------------------------------- -->
+
+## Tips and tricks
+
+### Maintaining consistency in formatting
+
+It is highly recommended to consistently color your UML diagrams as an visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.
+
+For example, you can create a `Style.puml` with the contents:
+
+**Style.puml.**
+
+```puml
+!define LOGIC_COLOR #3333C4
+!define LOGIC_COLOR_T1 #7777DB
+!define LOGIC_COLOR_T2 #5252CE
+!define LOGIC_COLOR_T3 #1616B0
+!define LOGIC_COLOR_T4 #101086
+```
+
+
+Then you can use it in another PlantUML file like this:
+
+**UndoSequenceDiagram.puml.**
+
+```puml
+!include Style.puml
+
+box Logic LOGIC_COLOR_T2
+participant ":LogicManager" as LogicManager LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":UndoCommand" as UndoCommand LOGIC_COLOR
+end box
+```
+
+You can fine-tune the formatting of PlantUML diagrams with the `skinparam` command. For example, `skinparam backgroundColor transparent` turns the background of the diagram transparent.
+
+<box type="tip" seamless>
+
+For a comprehensive list of `skinparam`s, see [unofficial PlantUML skinparam documentation](https://plantuml-documentation.readthedocs.io/en/latest/).
+</box>
+
+
+### Repositioning elements
+
+While PlantUML’s auto-layout engine usually produces satisfactory results, at times the result can be less than ideal, especially on larger diagrams. Here is an example where the default layout generated by PlantUML has a lot of overlapping lines that are hard to decipher:
+
+![The UI class diagram without additional formatting](images/plantuml/RawUiDiagram.png)
+
+<box type="info" seamless>
+
+In most cases, you should consider decomposing the diagram into smaller ones or focusing on a more specific portion of the diagram.
+
+</box>
+
+Here are some techniques you can use to obtain a more palatable diagram.
+
+#### Link lengths
+
+By default, a short link (`->`) points to right and a long link (`-->`) points downwards. you can extend any link to make it longer (`--->`).
+
+![Length of arrows and its effects](images/plantuml/ArrowLength.png)
+
+#### Link directions
+
+Clever usage of arrow directions will resolve most layout issues. For example, the table below shows how the way in which you specify arrows can results in drastically different layouts for the same diagram.
+
+<table>
+<caption>Table: Link directions</caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>
+<pre>
+A --> Z
+B --> Z
+C --> Z
+D --> Z
+
+A --> 1
+B --> 2
+C --> 3
+D --> 4
+</pre>
+</td>
+<td>
+
+<img src="images/plantuml/AllDown.png">
+
+</td>
+</tr>
+<tr class="even">
+<td>
+
+<pre>
+'default is down
+A --> Z
+'specify down
+B -down-> Z
+'shorthand for down
+C -d-> Z
+'arrow lengths take priority
+D -down> Z
+
+A -up-> 1
+B -up-> 2
+C -up-> 3
+D -up-> 4
+</pre>
+
+</td>
+<td>
+
+<img src="images/plantuml/UpAndDown.png">
+
+</td>
+</tr>
+<tr class="odd">
+<td>
+
+<pre>
+A -up-> Z
+B -up-> Z
+C -up-> Z
+D -up-> Z
+
+A --> 1
+B --> 2
+C --> 3
+D --> 4
+
+'Force A B C D
+A -right[hidden]- B
+B -right[hidden]- C
+C -right[hidden]- D
+</pre>
+
+</td>
+<td>
+
+<img src="images/plantuml/HiddenArrows.png">
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Another technique you can use to influence the layout is to reorder definitions.** The layout engine will attempt to order objects in the order in which they are defined. If there is no formal definition, the objects is taken to be declared upon its first usage.
+
+<table>
+<caption>Table: Definition ordering and outcomes</caption>
+<colgroup>
+<col style="width: 70%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+  <th>Source</th>
+  <th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>
+
+<pre>
+A --> B
+C --> D
+</pre>
+
+</td>
+<td>
+
+<img src="images/plantuml/ABeforeC.png">
+
+</td>
+</tr>
+<tr class="even">
+<td>
+
+<pre>
+'Class C is defined before A
+Class C
+
+A --> B
+C --> D
+</pre>
+</td>
+<td>
+
+<img src="images/plantuml/CBeforeA.png">
+
+</td>
+</tr>
+<tr class="odd">
+<td>
+
+<pre>
+package "Rule Of Thumb";{
+    Class C
+    A --> B
+    C --> D
+}
+</pre>
+
+</td>
+<td>
+
+<img src="images/plantuml/PackagesAndConsistency.png">
+</td>
+</tr>
+</tbody>
+</table>
+
+<box type="tip" seamless>
+
+Explicitly define all symbols to avoid any potential layout mishaps.
+</box>
+
+### Using reference frames
+
+Reference frames in PlantUML sequence diagrams allow you to **group and reuse sequences** of interactions, which helps improve readability and reduce repetition in complex scenarios. By encapsulating sequences into reference frames, you can also **reduce complexity**, making it easier to manage and understand the overall flow of interactions within your diagrams.
+
+Refer to the following example:
+```
+@startuml
+
+hide footbox
+skinparam sequenceReferenceBackgroundColor #f7807c
+
+actor Player
+
+participant ":TextUi" as TextUi #EE82EE
+participant ":MSLogic" as MSLogic #90EE90
+
+Player -> TextUi : mark x y
+TextUi -> MSLogic : markCellAt(x, y)
+return
+
+TextUi -> MSLogic : getAppearanceOfCellAt(x, y)
+MSLogic -> TextUi : getConfig()
+TextUi --> MSLogic : config
+MSLogic --> TextUi : cellAppearance
+
+TextUi --> Player : Show updated minefield
+
+@enduml
+```
+<puml src="images/plantuml/OriginalSequenceDiagram.puml" width=500 />
+
+The sequence diagram illustrates two main actions: marking a cell and retrieving its appearance. We can simplify the diagram by moving the latter into a new reference frame.
+
+First we update the original diagram as follows:
+
+```{highlight-lines="15-17"}
+@startuml
+
+hide footbox
+skinparam sequenceReferenceBackgroundColor #f7807c
+
+actor Player
+
+participant ":TextUi" as TextUi #EE82EE
+participant ":MSLogic" as MSLogic #90EE90
+
+Player -> TextUi : mark x y
+TextUi -> MSLogic : markCellAt(x, y)
+return
+
+ref over TextUi, MSLogic
+    get minefield appearance
+end ref
+
+TextUi --> Player : Show updated minefield
+
+@enduml
+```
+
+<puml src="images/plantuml/ParentReferenceFrameDiagram.puml" width=300 />
+
+Then, we create a new diagram for the reference frame.
+
+```
+@startuml
+
+hide footbox
+
+participant ":TextUi" as TextUi #EE82EE
+participant ":MSLogic" as MSLogic #90EE90
+
+group sd get minefield appearance
+    TextUi -> MSLogic : getAppearanceOfCellAt(x, y)
+    MSLogic -> TextUi : getConfig()
+    TextUi --> MSLogic : config
+    MSLogic --> TextUi : cellAppearance
+end
+
+@enduml
+```
+<puml src="images/plantuml/ReferenceFrameDiagram.puml" width=300 />
+
 
 ---
 
