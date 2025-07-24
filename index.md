@@ -53,6 +53,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [**MarkBind**](tutorials/markbind.html)
     * [Working with forked MarkBind sites](tutorials/markbind-forked-sites.html)
   * [**Netlify**](tutorials/netlify.html)
+  * [**PlantUML**](tutorials/plantUml.html)
   * [**Saving** web documents as PDF files](tutorials/savingPdf.html)
 
 
