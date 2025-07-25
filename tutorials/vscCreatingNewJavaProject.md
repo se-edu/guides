@@ -96,7 +96,7 @@ If you prefer more control over the project setup, you can create a project manu
   *  **Save the file**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+S` | {{ icon_apple }} `Cmd+S`
      <box type="info" seamless>
 
-     To compile and run your Java program, click the Run (▶️) button or use the 'Run' menu. You may not see a .class file appear in your workspace, as VS Code may compile your code in the background or store the output in a hidden folder. If you see 'Hello, World!' (or your program's expected output), your environment is set up correctly!
+     To compile and run your Java program, click the `Run` (:fas-play:) button or use the `Run` menu. You may not see a `.class` file appear in your workspace, as VS Code may compile your code in the background or store the output in a hidden folder. If you see `Hello, World!` (or your program's expected output), your environment is set up correctly!
      </box>
 
 ## Configuring your JDK
