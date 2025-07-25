@@ -59,7 +59,7 @@ If you have multiple versions of Java installed, you can switch between them by 
       
         <img src="images/javaInstallationWindows/new_path_button.png" style="padding: 10px;">
   
-   * Click OK to save your changes and close the windows.
+   * Click OK on both "Edit Environment Variable" and "Environment Variables" windows to save your changes and close the windows.
 * **Verify Version Change** by running the following command in a new terminal window (note: if the terminal window was already open before you changed the system variables, you need to restart the terminal window for it to be able to 'see' the updated system variables):
    ```bash
    java -version
