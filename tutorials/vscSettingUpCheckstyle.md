@@ -9,10 +9,9 @@
 
 # {{ title }}
 
-<panel header="**What is checkstyle?**" type="light" minimized>
-Checkstyle is a development tool that helps you write clean, consistent, and readable Java code by automatically checking your source code against a set of predefined coding standards. VS Code highlights these issues in real time as you type, making it easier to follow best practices without waiting for reviews or CI checks.
-</panel>
-
+<box type="info" seamless>
+    Checkstyle is a development tool that helps you write clean, consistent, and readable Java code by automatically checking your source code against a set of predefined coding standards.
+</box>
 
 Given below are the steps to set up a Checkstyle plugin in VS Code so that VS Code can alert you about code style problems as you write code.
 
