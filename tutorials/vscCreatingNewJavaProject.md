@@ -55,7 +55,7 @@ If you prefer more control over the project setup, you can create a project manu
 
     <box type="info" seamless>
 
-    After opening the project folder, VS Code may ask if you want to open it as a workspace.If prompted, click ‘Yes’ when asked to open the folder as a workspace.
+    After opening the project folder, VS Code may ask if you want to open it as a workspace. If prompted, click ‘Yes’ when asked to open the folder as a workspace.
     </box>
 
 * ****Step 2: Set up the project structure****
@@ -96,7 +96,7 @@ If you prefer more control over the project setup, you can create a project manu
   *  **Save the file**: {{ icon_windows }}/{{ icon_linux}} `Ctrl+S` | {{ icon_apple }} `Cmd+S`
      <box type="info" seamless>
 
-     VS Code will automatically compile the Java file when you save it.
+     To compile and run your Java program, click the Run (▶️) button or use the 'Run' menu. You may not see a .class file appear in your workspace, as VS Code may compile your code in the background or store the output in a hidden folder. If you see 'Hello, World!' (or your program's expected output), your environment is set up correctly!
      </box>
 
 ## Configuring your JDK
