@@ -15,7 +15,9 @@ This guide explains how to install the **==[Oracle Java 17 JDK](https://www.orac
    * Choose **JDK 17** &rarr; **Windows**.
    * Download the **x64 Installer**:
    <pic src="images/javaInstallationWindows/java_installer_windows.png" width="800">
-
+   * Go ahead and sign in if you are prompted, or register an `Oracle` account if you haven't done so.
+  <br>
+  <br>
 
 * **Install JDK**
    * Run the downloaded installer and follow the instructions to complete the installation. {{ abcd_numbers }}
