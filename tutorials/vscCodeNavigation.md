@@ -4,6 +4,8 @@
   pageNav: 2
 </frontmatter>
 
+<include src="vscode.md#wip-warning" />
+
 # {{ title }}
 
 This guide covers the essential features in VS Code for navigating Java source code efficiently.
@@ -97,3 +99,7 @@ You can collapse or expand code blocks to focus on relevant sections of your cod
 * **Unfold All** (`Ctrl+K Ctrl+J`) unfolds all regions in the editor.
 
 <video src="https://code.visualstudio.com/assets/docs/java/java-editing/folding-range.mp4" controls width="700px">Your browser does not support the video tag.</video>
+
+---
+
+**Contributors**: John Wong ([@Johnwz123](https://github.com/Johnwz123))
