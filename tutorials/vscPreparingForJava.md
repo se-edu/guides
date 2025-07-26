@@ -51,9 +51,13 @@ For more command line options and tips, see the [official VS Code Command Line I
 
 **First time using VS Code?**
 
-Take a few minutes to explore the interface and try the built-in tutorials by opening the Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` and typing `Welcome: Open Walkthrough`.
+Take a few minutes to explore the interface and try the built-in tutorials by opening the Command Palette: {{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P` and typing `Welcome: Open Walkthrough`, then executing it: {{ icon_windows }}/{{ icon_linux}} `Enter` | {{ icon_apple }} `Return`.
 
 ![VS Code Command Palette "Welcome: Open Walkthrough"](images/vscodeJavaSetup/VSCodeOpenWalkthrough.png)
+
+After executing the command, you will see a dropdown of VS Code walkthroughs. You can select any of them to start learning.
+
+![VS Code Command Palette: Walkthrough Dropdown](images/vscodeJavaSetup/VSCodeWalkthroughDropdown.png)
 
 You can also refer to the [official VS Code Getting Started guide](https://code.visualstudio.com/docs/getstarted/getting-started) for a comprehensive tutorial.
 </box>
