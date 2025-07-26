@@ -8,7 +8,6 @@
 
 # {{ title }}
 
-
 ## Markdown All in One
 
 ****Markdown All in One**** **plugin can be used to preview `.md` files in real-time while editing them in VS Code.** This is useful for editing README files, documentation, and tutorial content.
@@ -48,6 +47,69 @@ To preview the Markdown side-by-side with your `.md` file:
 
 For more information, view the **_Markdown All in One_ documentation [here](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one&ssr=false#user-content-keyboard-shortcuts-1)**.
 
+## PlantUML
+
+**[PlantUML](http://plantuml.com/) is a tool for specifying various diagrams in a textual form.** It is particularly useful in software projects where you want to update the diagrams incrementally, as the project evolves over time.
+
+The sections below explain how to install PlantUML. For more tips on **using PlantUML in a project**, click **[here](plantUml.html)**
+
+<!-- --------------------------------------------------------------------------------------------------------- -->
+<div id="plantuml-setting-up">
+
+### Setting up PlantUML in VS Code
+
+
+1. Go to `Extentions` \> Search `PlantUML` \> Install the **PlantUML plugin by jebbs**
+
+    * Alternatively Launch VS Code Quick Open {{ icon_windows }}/{{ icon_linux}} `Ctrl+P` | {{ icon_apple }} `Cmd+P`, paste the following command, and press enter:
+<br>`ext install plantuml`
+
+1. Install Graphviz (for best compatibility to render diagrams)
+   * **Windows:** download from [Graphviz](https://graphviz.org/download/) and add it to `PATH`
+   * **MacOS:** `brew install graphviz`
+   * **Linux:** `sudo apt install graphviz`
+
+2. Configure PlantUML in VS Code
+   * Open VSCode Settings
+   * Search for "PlantUML"
+   * Set the path to `java` (if not auto-detected):
+      * **Windows** `plantuml.java: "C:\\Program Files\\Java\\jdk-11\\bin\\java.exe"` 
+      * **Linux/MacOS** `plantuml.java: "/usr/bin/java"` 
+   * (Optional) Set PlantUML Server (if not using local rendering):
+`Add plantuml.server: "https://www.plantuml.com/plantuml"`
+</div>
+<!-- --------------------------------------------------------------------------------------------------------- -->
+<div id="plantuml-usage">
+
+### Working with PlantUML in VS Code
+
+
+After installing the `PlantUML integration` plugin, simply create or open any `.puml` file to start editing it.
+
+![Editing `DeleteSequenceDiagram.puml`](images/plantuml/EditingDeleteSequenceDiagram.png)
+
+Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes *will not* be reflected in your actual documentation until you export the diagram.
+
+****Saving the Diagram as an image****
+
+* **When using MarkBind** as the site generation tool:
+  * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you. Refer to [this section of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#plantuml-diagrams) for more details.
+* **When Using Other Tools (e.g. Jekyll, Static Site Generators, or Docs):**
+
+  * **Export Individual Diagrams:**
+    1. Open the PlantUML preview ({{ icon_windows }}/{{ icon_linux }}`Alt+D`| {{ icon_apple }}`option+D` or right-click → Preview Current Diagram)
+    2. Right-click the preview and select  "Export Current Diagram"
+    3. Choose the format (PNG/SVG/PDF) and save to your desired location (e.g. `/docs/images/`).
+  * **Export All Diagrams in a File:**
+    * Use the Command Palette ({{ icon_windows }}/{{ icon_linux }}`Ctrl+Shift+P`| {{ icon_apple }}`Cmd+Shift+P`) → PlantUML: Export All Diagrams.
+  * **Git Tracking:**
+    * Remember to `git add` newly exported image files if they’re part of your repo.
+</div>
+<!-- --------------------------------------------------------------------------------------------------------- -->
+
+### PlantUML Tips and Tricks
+
+You can refer to [this se-edu guide](plantUml.html#tips-and-tricks) to learn some tips and tricks useful for getting the diagrams to fit your needs.
 
 ---
 
