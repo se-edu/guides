@@ -488,6 +488,18 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/intellijUsefulPlugins.md",
+      "title": "Intellij IDEA: Useful Plugins",
+      "headings": {
+        "intellij-idea-useful-plugins": "Intellij IDEA: Useful Plugins",
+        "plantuml": "PlantUML",
+        "setting-up-plantuml-in-intellij-idea": "Setting up PlantUML in IntelliJ IDEA",
+        "working-with-plantuml-in-intellij-idea": "Working with PlantUML in IntelliJ IDEA",
+        "plantuml-tips-and-tricks": "PlantUML Tips and Tricks"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/intellijUsefulSettings.md",
       "title": "Intellij IDEA: Useful settings",
       "headings": {
@@ -699,8 +711,11 @@
       "title": "Using PlantUML",
       "headings": {
         "using-plantuml": "Using PlantUML",
-        "setting-up-plantuml": "Setting up PlantUML",
-        "creating-editing-exporting-diagrams": "Creating/editing/exporting diagrams",
+        "ide-integrations": "IDE Integrations",
+        "setting-up-plantuml-in-intellij-idea": "Setting up PlantUML in IntelliJ IDEA",
+        "working-with-plantuml-in-intellij-idea": "Working with PlantUML in IntelliJ IDEA",
+        "setting-up-plantuml-in-vs-code": "Setting up PlantUML in VS Code",
+        "working-with-plantuml-in-vs-code": "Working with PlantUML in VS Code",
         "tips-and-tricks": "Tips and tricks",
         "maintaining-consistency-in-formatting": "Maintaining consistency in formatting",
         "repositioning-elements": "Repositioning elements",
@@ -912,7 +927,11 @@
         "markdown-all-in-one": "Markdown All in One",
         "installing-the-plugin": "Installing the plugin",
         "previewing-markdown": "Previewing Markdown",
-        "additional-features": "Additional Features"
+        "additional-features": "Additional Features",
+        "plantuml": "PlantUML",
+        "setting-up-plantuml-in-vs-code": "Setting up PlantUML in VS Code",
+        "working-with-plantuml-in-vs-code": "Working with PlantUML in VS Code",
+        "plantuml-tips-and-tricks": "PlantUML Tips and Tricks"
       },
       "headingKeywords": {}
     },
