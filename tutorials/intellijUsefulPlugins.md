@@ -4,6 +4,7 @@
   pageNav: 3
 </frontmatter>
 
+<include src="../common/common-fragments.md#wip-warning" />
 
 # {{ title }}
 

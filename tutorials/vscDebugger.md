@@ -11,7 +11,7 @@ pageNav: 2
 
 <!-- ========================================================================== -->
 
-<include src="vscode.md#wip-warning" />
+<include src="../common/common-fragments.md#wip-warning" />
 
 # {{ title }}
 
