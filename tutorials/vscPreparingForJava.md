@@ -57,7 +57,7 @@ Take a few minutes to explore the interface and try the built-in tutorials by op
 
 After executing the command, you will see a dropdown of VS Code walkthroughs. You can select any of them to start learning.
 
-![VS Code Command Palette: Walkthrough Dropdown](images/vscodeJavaSetup/VSCodeExecuteWalkthrough.png)
+![VS Code Command Palette: Walkthrough Dropdown](images/vscodeJavaSetup/VSCodeWalkthroughDropdown.png)
 
 You can also refer to the [official VS Code Getting Started guide](https://code.visualstudio.com/docs/getstarted/getting-started) for a comprehensive tutorial.
 </box>
