@@ -57,7 +57,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 
 ## Signing in to GitHub Copilot
 
-* **Verify prerequisies** {{ step_numbers }}
+* **Verify Prerequisites** {{ step_numbers }}
   * Ensure you followed the section [Installing GitHub Copilot in Visual Studio Code](#installing-github-copilot-in-visual-studio-code) above.
 * **Sign in to GitHub Copilot**
   * Open Visual Studio Code.
