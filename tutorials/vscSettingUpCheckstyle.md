@@ -65,4 +65,4 @@ If you are using macOS and it does not seem to work, it may be due to macOS perm
 
 ---
 
-**Contributors**: Brendon Koh ([@brein62](https://github.com/brein62))
+**Contributors**: Brendon Koh ([@brein62](https://github.com/brein62)), Gabrielle Tan ([@gabriellegtw](https://github.com/gabriellegtw))
