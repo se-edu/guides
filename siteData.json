@@ -755,6 +755,24 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/vscCodeNavigation.md",
+      "title": "VS Code - Code Navigation",
+      "headings": {
+        "vs-code-code-navigation": "VS Code - Code Navigation",
+        "prerequisites": "Prerequisites",
+        "code-navigation": "Code Navigation",
+        "outline-view": "Outline view",
+        "projects-view": "Projects view",
+        "search-for-symbols": "Search for Symbols",
+        "go-to-definition": "Go to Definition",
+        "go-to-super-implementation": "Go to Super Implementation",
+        "call-hierarchy": "Call Hierarchy",
+        "type-hierarchy": "Type Hierarchy",
+        "folding-regions": "Folding Regions"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/vscCodeStyle.md",
       "title": "VS Code: Configuring the code style",
       "headings": {
