@@ -30,7 +30,7 @@ GitHub Copilot is an AI-powered coding assistant that integrates smoothly with I
 
 ## Signing in to GitHub Copilot
 
-* **Verify prerequisites** {{ step_numbers }}
+* **Verify Prerequisites** {{ step_numbers }}
   * Ensure you followed the section [Installing GitHub Copilot in IntelliJ IDEA](#installing-github-copilot-in-intellij-idea) above.
 * **Sign in to GitHub Copilot**
   * Open IntelliJ IDEA.
