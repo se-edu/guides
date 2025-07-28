@@ -38,7 +38,7 @@ This guide explains how to install the **==[Oracle Java 17 JDK](https://www.orac
    <br>
    <br>
 
-* **Verify installation** by running the following command in your terminal (e.g. Command Prompt, PowerShell). You should see the version information for Java 17.0.12. 
+* **Verify installation** by running the following command in your terminal (e.g. Command Prompt, PowerShell). You should see the version information for Java 17.0.16. 
   ```bash
    java -version
    ```
