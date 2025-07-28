@@ -7,52 +7,29 @@
 
 <div class="lead">
 
+
 **[PlantUML](http://plantuml.com/) is a tool for specifying various diagrams in a textual form.** It is particularly useful in software projects where you want to update the diagrams incrementally, as the project evolves over time.
 </div>
 
-The sections below explains how to use PlantUML in a project.
+<!-- --------------------------------------------------------------------------------------------------------- -->
+## IDE Integrations
+
+**Some IDEs provide PlantUML plugins** that you can use to work with plantUML diagrams seamlessly inside the IDE. Given below are two examples:
+
+<tabs>
+  <tab header="**++IntelliJ IDEA++**">
+
+<include src="intellijUsefulPlugins.md#plantuml-setting-up" />
+<include src="intellijUsefulPlugins.md#plantuml-usage" />
+  </tab>
+  <tab header="**++VS Code++**">
+
+<include src="vscUsefulPlugins.md#plantuml-setting-up" />
+<include src="vscUsefulPlugins.md#plantuml-usage" />
+</tab>
+</tabs>
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
-
-## Setting up PlantUML
-
-<box type="info">
-
-This section explains how to install the `PlantUML integration` plugin in IntelliJ IDEA. If you are not using Intellij IDEA, you can refer to [this guide](https://plantuml.com/starting) on how to use PlantUML locally.
-</box>
-
-1. Go to `File` \> `Settings` to access the `Settings` page.
-
-1. Go to `Settings` \> `Plugins` \> `Marketplace` and install the plugin `PlantUML integration`.
-
-1. Then go to `Settings` \> `Languages & Frameworks` \> `PlantUML` or search for PlantUML. You can also use a specific version of PlantUML from the [releases page](https://github.com/plantuml/plantuml/releases).
-    ![Settings - Other Settings - PlantUML: location of PlantUML.jar](images/plantuml/ConfiguringSettings.png)
-
-<!-- --------------------------------------------------------------------------------------------------------- -->
-
-## Creating/editing/exporting diagrams
-
-<box type="info">
-
-This section is for those using the `PlantUML integration` plugin in IntelliJ IDEA. Others can refer to [this guide](https://plantuml.com/starting) on how to use PlantUML locally.
-</box>
-
-After installing the `PlantUML integration` plugin, simply create or open any `.puml` file to start editing it.
-
-![Editing `DeleteSequenceDiagram.puml`](images/plantuml/EditingDeleteSequenceDiagram.png)
-
-Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes *will not* be reflected in your actual documentation until you export the diagram.
-
-****Saving the Diagram as an image****
-
-* **When using MarkBind** as the site generation tool:
-  * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you. Refer to [this section of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#plantuml-diagrams) for more details.
-* **When using Jekyll** as the site generation tool:
-  * The `PlantUML integration` plugin allows you to export individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
-  * You will have to `git add` any new diagrams generated!
-
-<!-- --------------------------------------------------------------------------------------------------------- -->
-
 ## Tips and tricks
 
 ### Maintaining consistency in formatting
