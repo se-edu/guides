@@ -19,6 +19,11 @@ This guide explains how to install the **==[Oracle Java 17 JDK](https://www.orac
    <box type="tip" seamless>
 
    Go ahead and sign in if you are prompted by `Oracle`, or register an account if you haven't done so.
+
+   You may also take a look at the JDK distributors here which do not require an account to install.
+   * [**Amazon**](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)
+   * [**Microsoft**](https://learn.microsoft.com/en-my/java/openjdk/download)
+   * [**Temurin**](https://adoptium.net/temurin/releases/?version=17)
    </box>
 
 * **Install JDK**
