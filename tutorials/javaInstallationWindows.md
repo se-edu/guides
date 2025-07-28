@@ -34,7 +34,7 @@ This guide explains how to install the **==[Oracle Java 17 JDK](https://www.orac
 
 * **Install JDK**
    * Run the downloaded installer and follow the instructions to complete the installation. {{ abcd_numbers }}
-   * Suppose the JDK was installed in the directory `C:\Program Files\Java\jdk-17` (this is the default location for Oracle, please check with the installation directory within the installer for other distributors).
+   * Suppose the JDK was installed in the directory `C:\Program Files\Java\jdk-17` (this is the default location for **Oracle**, please check the installation directory within the installer for other distributors).
    <br>
    <br>
 
