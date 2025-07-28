@@ -18,17 +18,23 @@ This guide explains how to install the **==[Oracle Java 17 JDK](https://www.orac
    
    <box type="tip" seamless>
 
-   Go ahead and sign in if you are prompted by `Oracle`, or register an account if you haven't done so.
+   Go ahead and sign in if you are prompted by Oracle, or register an account if you haven't done so.
 
    You may also take a look at the JDK distributors here which do not require an account to install.
-   * [**Amazon**](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)
-   * [**Microsoft**](https://learn.microsoft.com/en-my/java/openjdk/download)
-   * [**Temurin**](https://adoptium.net/temurin/releases/?version=17)
+
+   Similar to Oracle, download the **x64 Installer** of **JDK 17** for **Windows**.
+
+   * [**Amazon**](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)<br>
+   <pic src="images/javaInstallationWindows/java_installer_amazon.png" width="700" style="padding: 10px;">
+   * [**Microsoft**](https://learn.microsoft.com/en-my/java/openjdk/download)<br>
+   <pic src="images/javaInstallationWindows/java_installer_microsoft.png" width="800" style="padding: 10px;">
+   * [**Temurin**](https://adoptium.net/temurin/releases/?version=17)<br>
+   <pic src="images/javaInstallationWindows/java_installer_temurin.png" width="800" style="padding: 10px;">
    </box>
 
 * **Install JDK**
    * Run the downloaded installer and follow the instructions to complete the installation. {{ abcd_numbers }}
-   * Suppose the JDK was installed in the directory `C:\Program Files\Java\jdk-17` (this is the default location).
+   * Suppose the JDK was installed in the directory `C:\Program Files\Java\jdk-17` (this is the default location for Oracle, please check with the installation directory within the installer for other distributors).
    <br>
    <br>
 
