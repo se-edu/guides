@@ -25,11 +25,8 @@ This guide explains how to install the **==[Oracle Java 17 JDK](https://www.orac
    Similar to Oracle, download the **x64 Installer** of **JDK 17** for **Windows**.
 
    * [**Amazon**](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)<br>
-   <pic src="images/javaInstallationWindows/java_installer_amazon.png" width="700" style="padding: 10px;">
    * [**Microsoft**](https://learn.microsoft.com/en-my/java/openjdk/download)<br>
-   <pic src="images/javaInstallationWindows/java_installer_microsoft.png" width="800" style="padding: 10px;">
    * [**Temurin**](https://adoptium.net/temurin/releases/?version=17)<br>
-   <pic src="images/javaInstallationWindows/java_installer_temurin.png" width="800" style="padding: 10px;">
    </box>
 
 * **Install JDK**
