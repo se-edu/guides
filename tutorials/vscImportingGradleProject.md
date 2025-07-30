@@ -15,6 +15,8 @@ This tutorial is adapted from the [official VS Code Java tutorial for Gradle bui
 
 This guide will help you import and work with existing Gradle projects in VS Code.
 
+💡 VS Code offers good Gradle support through extensions, though some manual steps may still be needed for a smooth experience.
+
 **If you are new to working with Gradle in VS Code**, we recommend watching the video below for an introduction to the features of VS Code Gradle extension.
 
 <panel header=":fab-youtube: Get started with VS Code Gradle extension" peek >
@@ -31,7 +33,18 @@ This guide will help you import and work with existing Gradle projects in VS Cod
 
 The [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) includes the [Gradle for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle) extension, which provides Gradle support in VS Code.
 
+💡 Gradle support is included by default in the Java Extension Pack, so no separate Gradle installation is usually required.
+
 <box type="important" seamless>
+
+### 🗂 Typical Gradle Project Structure
+
+A typical Gradle project includes:
+- `build.gradle` or `build.gradle.kts`
+- `settings.gradle`
+- `src/main/java`
+- `src/test/java`
+
 
 Verify the project has support for Gradle. If it does, there should be a `build.gradle` file in your project root.
 </box>
@@ -44,6 +57,8 @@ Verify the project has support for Gradle. If it does, there should be a `build.
 1. **Select** `File` → `Open Folder...`
 1. **Navigate to your existing Gradle project** folder
 1. **Click "Select Folder"** to open it as a workspace
+
+💡 When prompted, click "Yes" to trust the workspace so that Gradle tasks and extensions can run correctly.
 
 ### Step 2: Let VS Code detect the project
 
@@ -59,6 +74,9 @@ Verify the project has support for Gradle. If it does, there should be a `build.
 
 Check that the JDK version matches the one required for your project, as specified in the `build.gradle` file. If you have not yet installed the required JDK, check out our [Java Installation guide](javaInstallation.html) for detailed installation and setup instructions for Windows, macOS, and Linux.
 </box>
+
+❗ If Gradle is not detected or build fails, open a terminal and run `gradle -version` to verify your Gradle setup.  
+Ensure `JAVA_HOME` is correctly configured and restart VS Code if needed.
 
 You may also need to verify and configure the Gradle Build Server to use the correct JVM.
 
@@ -83,12 +101,28 @@ You may also need to verify and configure the Gradle Build Server to use the cor
 
 **Confirm you can access the Gradle tool window**. After the importing of the project is complete (which could take a few minutes), you will see the Gradle Tab in the VS Code interface (Look for the elephant icon on the left and click it).
 
+You can access Gradle tasks in the sidebar via the **Gradle Tasks Panel** (elephant icon).  
+[Learn more here](https://code.visualstudio.com/docs/java/java-build#_gradle-support)
+
 <box type="tip" seamless>
 
 If the Gradle icon doesn't appear after restarting VS Code, add `"gradle.nestedProjects": true` to your `settings.json` file.
 </box>
 
 <pic src="images/vscode/vscode_gradle_icon.jpg" width="400" />
+
+## 🛠️ Troubleshooting
+
+❌ **Error**: "Could not determine Java version" or "No JVM found"  
+✅ **Fix**:
+- Ensure a JDK is installed  
+- Set the `JAVA_HOME` environment variable correctly  
+- Restart VS Code after changing environment variables
+
+❌ **Gradle not detected or build fails**  
+✅ **Fix**:
+- Run `gradle -version` in your terminal to confirm setup  
+- Ensure `java.import.gradle.java.home` in `settings.json` points to a valid JDK
 
 ## Gradle Tasks
 
