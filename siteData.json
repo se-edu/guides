@@ -930,6 +930,22 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/vscRefactoring.md",
+      "title": "VS Code - Refactoring",
+      "headings": {
+        "vs-code-refactoring": "VS Code - Refactoring",
+        "invoking-refactoring": "Invoking Refactoring",
+        "refactoring-actions": "Refactoring Actions",
+        "extract-method": "Extract Method",
+        "rename": "Rename",
+        "refactor-preview": "Refactor Preview",
+        "source-actions": "Source Actions",
+        "organize-imports": "Organize Imports",
+        "generate-tostring-method": "Generate toString() Method"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/vscSettingUpCheckstyle.md",
       "title": "VS Code - Setting up Checkstyle",
       "headings": {
