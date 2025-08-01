@@ -44,7 +44,7 @@ This tutorial covers the basics of using VS Code’s debugger for Java features.
 <p/>
 
 <box type="tip" seamless>
-To remove the breakpoint, click the red dot again.
+To remove the breakpoint, click the red dot again. Remember to remove breakpoints after you are done debugging that section, so they do not interfere when debugging other parts of the code later.
 </box>
 
 * The Debugger for Java supports various breakpoints, including line breakpoints, conditional breakpoints, data breakpoints, and logpoints.
