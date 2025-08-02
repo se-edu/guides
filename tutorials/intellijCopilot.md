@@ -81,3 +81,7 @@ GitHub Copilot is an AI-powered coding assistant that integrates smoothly with I
   * Type your request such as "Add a print log here" and press `Enter`.
   * You can insert the generated lines of code by hovering over the code block and clicking on `Insert Code Block at Cursor`.<br>
     <pic src="images/intellijCopilot/copilotInline.png" width="600" />
+
+---
+
+**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh ))
