@@ -143,4 +143,4 @@ Some common project-related prompts you might find useful:
 
 ---
 
-**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh ))
+**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh )), Luoqi Xu ([@Luoq1-Xu](https://github.com/Luoq1-Xu))
