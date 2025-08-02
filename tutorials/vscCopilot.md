@@ -10,6 +10,10 @@
 
 GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both tools are from the same parent company (Microsoft).
 
+<box type="info" seamless>
+To use GitHub Copilot for free as a student, you'll need to (1) sign up for GitHub, (2) enable two-factor authentication (2FA), and (3) verify your student status. This guide walks you through those steps.
+</box>
+
 ## Signing Up for GitHub Copilot
 
 * **Filling in your billing information** {{ step_numbers }}
@@ -75,6 +79,12 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 
 ## Using GitHub Copilot in Visual Studio Code
 
+The Copilot extension offers multiple ways to interact with AI assistance in VS Code:
+
+- **Copilot Chat** – for general-purpose questions or help
+- **Inline Chat** – for editing or explaining specific code blocks
+- **Terminal Prompts** – for quick commands like `/explain`, `/fix` from the terminal
+
 ### Basic Code Completion
   * In a Java file, type a comment like `// print Hello World` inside the main method.
     ```java
@@ -121,6 +131,12 @@ Some common project-related prompts you might find useful:
 * Compile and run the Java program
 * Run JUnit tests
 * ~~Perform Git operations~~ (possible but #r#not recommended##; if you are new to Git, we discourage using Git inside the IDE -- it is better for beginners to learn Git independent of other tools)
+
+<box type="tip" seamless>
+**Troubleshooting Tips**
+- Copilot not showing up? → Ensure you are in a Java file and that the extension is installed and enabled.
+- Copilot panel missing? → Try restarting VS Code or reinstalling the extension.
+</box>
 
 ---
 
