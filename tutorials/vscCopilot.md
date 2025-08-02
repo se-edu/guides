@@ -10,7 +10,43 @@
 
 GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both tools are from the same parent company (Microsoft).
 
+<<<<<<< HEAD
 <include src="copilotGithub.md#prereq" />
+=======
+<box type="info" seamless>
+To use GitHub Copilot for free as a student, you'll need to (1) sign up for GitHub, (2) enable two-factor authentication (2FA), and (3) verify your student status. This guide walks you through those steps.
+</box>
+
+## Signing Up for GitHub Copilot
+
+* **Filling in your billing information** {{ step_numbers }}
+  * Go to the [billing information for your GitHub account](https://github.com/settings/billing/payment_information).
+  * Fill in only your billing information (Payment method and other details are not required).<br>
+    <pic src="images/copilotSignUp/billingInformation.png" width="400" />
+  * Click on `Save billing information` to save.
+* **Enabling Two-Factor Authentication (2FA)**. You can skip this step if you have already done so.
+  * Go to the [Two-factor authentication page](https://github.com/settings/security) for your GitHub account.
+  * Click on `Enable two-factor authentication`.
+  * Open the [Microsoft Authenticator App](https://www.microsoft.com/en-us/security/mobile-authenticator-app) on your phone.
+  * Tap the scan QR code button at the bottom right.<br>
+    <pic src="images/copilotSignUp/scanQrCode.png" width="400" />
+  * Scan the QR code displayed on the GitHub page.
+  * Complete the remaining setup steps.
+  * You should see the following page when 2FA is enabled.<br>
+    <pic src="images/copilotSignUp/2faEnabled.png" width="400" />
+* **Linking your university email to GitHub** (for Education benefits).
+  * Go to the [emails settings page](https://github.com/settings/emails) in GitHub account.
+  * Add your university-issued email under the `Add email address` field.
+  * Verify your email using the link sent to your inbox.
+  * Once verified, you will see your school email in the list of emails.
+* **Applying for GitHub Education benefits**
+  * Go to the [GitHub Education page](https://github.com/settings/education/benefits).
+  * Click on `Start an application`.
+  * Select your role as `Student`.
+  * Choose university as your school %%(e.g., National University of Singapore)%%.
+  * Follow the instructions and complete the application form.
+  * Once your application is approved, it will show that you have a current student coupon applied.
+>>>>>>> 22a85324 (docs: clarify Copilot setup flow and add student-focused tips)
 
 ## Installing GitHub Copilot in Visual Studio Code
 
@@ -46,6 +82,12 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
     <pic src="images/vscCopilotSetup/copilotSuggestion.png" width="800" />
 
 ## Using GitHub Copilot in Visual Studio Code
+
+The Copilot extension offers multiple ways to interact with AI assistance in VS Code:
+
+- **Copilot Chat** – for general-purpose questions or help
+- **Inline Chat** – for editing or explaining specific code blocks
+- **Terminal Prompts** – for quick commands like `/explain`, `/fix` from the terminal
 
 ### Basic Code Completion
 
@@ -122,6 +164,12 @@ Some common project-related prompts you might find useful:
 * Compile and run the Java program
 * Run JUnit tests
 * ~~Perform Git operations~~ (possible but #r#not recommended##; if you are new to Git, we discourage using Git inside the IDE -- it is better for beginners to learn Git independent of other tools)
+
+<box type="tip" seamless>
+**Troubleshooting Tips**
+- Copilot not showing up? → Ensure you are in a Java file and that the extension is installed and enabled.
+- Copilot panel missing? → Try restarting VS Code or reinstalling the extension.
+</box>
 
 ---
 
