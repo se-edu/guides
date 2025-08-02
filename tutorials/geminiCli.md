@@ -32,6 +32,7 @@ This section shows how to use Gemini CLI, a command-line interface for Google Ge
 * Open a new terminal using 
   * VSC: `Ctrl+Shift+\` or go to **Terminal → New Terminal**
   * IntelliJ: `Alt+F12` or go to **View → Tool Windows → Terminal**
+  * Or, use your system's terminal (e.g., Command Prompt, PowerShell, Terminal.app, or bash/zsh)
 * Run `gemini` to start a Gemini CLI session.  
 * For more accurate responses, specify context files using `@path/to/file`. Typing `@` allows you to select files using arrow keys and `Enter`.  
 * When prompted to allow execution, select `Yes, allow once` or `Yes, allow always`, then press `Enter`.
