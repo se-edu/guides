@@ -93,7 +93,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 
   * To disable automatic code completion, look for the Copilot icon in the bottom right of vscode:<br>
   <pic src="images/vscCopilotUsage/copilotIconBottomBar.png" width="400" /><br>
-  Uncheck the necessary boxes (`All files` disables code completion for all files, while the checkbox below it disables code completion for the currently open file type.)
+  Uncheck the necessary boxes (`All files` disables code completion for all files, while the checkbox below it disables code completion for the currently open file type.) If you have access to Copilot Pro, you can also monitor your Copilot Premium Requests usage here.
   <pic src="images/vscCopilotUsage/copilotDisableCodeCompletion.png" width="400" />
 
 
@@ -112,7 +112,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
     1. You can toggle between 3 different modes, **ask** (ask a question and copilot generates an answer), **edit** (ask copilot to edit a select number of files) and **agent** (ask copilot to execute autonomously with a high level prompt). Find out more about the different modes [here](https://github.blog/ai-and-ml/github-copilot/copilot-ask-edit-and-agent-modes-what-they-do-and-when-to-use-them/).
     2. By default, only the currently opened file will be included in the chat context ("visible" to Copilot). Include additional context by pressing the **Add Context** button, which will open up a window at the top that allows you to select files to add to Copilot Chat's context. <br>
     <pic src="images/vscCopilotUsage/copilotChatAddContext.png" width="600" />
-    3. You can select between different AI models to use.
+    3. You can choose between different AI models to use. If you have access to [Copilot Pro](https://docs.github.com/en/copilot/how-tos/manage-your-account/get-free-access-to-copilot-pro) (which comes with Github Education), you can select premium models.
     4. You can use mentions, by typing `@` followed by the participant's name, or clicking on the `@` icon. This allows you to invoke certain chat participants that are optimized to answer questions about their respective domains. One useful mention is `@workspace`, which answers questions about your entire repository.
 
   <box type="tip" seamless markdown>
