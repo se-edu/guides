@@ -16,3 +16,10 @@
 </box>
 </div>
 
+<div id="windows-restart-terminal">
+<box type="info" icon=":fab-windows:" seamless>
+
+**Windows users:** You might need to close and reopen the terminal for it to recognise changes done elsewhere in the computer (e.g., newly-installed software, changed to system variables, etc.)
+</box>
+</div>
+

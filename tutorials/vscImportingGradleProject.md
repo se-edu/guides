@@ -15,7 +15,9 @@ This tutorial is adapted from the [official VS Code Java tutorial for Gradle bui
 
 This guide will help you import and work with existing Gradle projects in VS Code.
 
-💡 VS Code offers good Gradle support through extensions, though some manual steps may still be needed for a smooth experience.
+<span class="fas fa-lightbulb"></span> > [!TIP]  
+> For general Gradle setup guidance, see [our Gradle tutorial](https://se-education.org/guides/tutorials/gradle.html).
+
 
 **If you are new to working with Gradle in VS Code**, we recommend watching the video below for an introduction to the features of VS Code Gradle extension.
 
@@ -51,14 +53,14 @@ Verify the project has support for Gradle. If it does, there should be a `build.
 
 ## Importing an existing Gradle project
 
-### Step 1: Open the project folder
+### ### Step 1: Open the Project Folder
 
 1. **Open VS Code**
 1. **Select** `File` → `Open Folder...`
 1. **Navigate to your existing Gradle project** folder
 1. **Click "Select Folder"** to open it as a workspace
 
-💡 When prompted, click "Yes" to trust the workspace so that Gradle tasks and extensions can run correctly.
+💡 When prompted, click `Yes` to trust the workspace so that Gradle tasks and extensions can run correctly.
 
 ### Step 2: Let VS Code detect the project
 
@@ -111,7 +113,7 @@ If the Gradle icon doesn't appear after restarting VS Code, add `"gradle.nestedP
 
 <pic src="images/vscode/vscode_gradle_icon.jpg" width="400" />
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ❌ **Error**: "Could not determine Java version" or "No JVM found"  
 ✅ **Fix**:
