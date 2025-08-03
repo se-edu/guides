@@ -140,4 +140,4 @@ Some common project-related prompts you might find useful:
 
 ---
 
-**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh ))
+**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh )), Arshin Sikka ([@arshinsikka ](https://github.com/arshinsikka ))
