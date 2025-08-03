@@ -85,9 +85,9 @@ To use GitHub Copilot for free as a student, you'll need to (1) sign up for GitH
 
 The Copilot extension offers multiple ways to interact with AI assistance in VS Code:
 
-- **Copilot Chat** – for general-purpose questions or help
-- **Inline Chat** – for editing or explaining specific code blocks
-- **Terminal Prompts** – for quick commands like `/explain`, `/fix` from the terminal
+- **Copilot Chat** – chat panel for general questions, help, and slash commands (e.g., `/explain`, `/fix`)
+- **Inline Chat** – ask Copilot to edit/explain code in place; also supports slash commands
+- **Terminal Prompts** – invoke Copilot from the integrated terminal; best for build/run/shell tasks (slash commands work here too)
 
 ### Basic Code Completion
 
@@ -158,14 +158,19 @@ If you have access to Copilot Pro, you can also monitor your Copilot Premium Req
 1. Press `Ctrl+I` to bring up Copilot’s terminal prompt input.<br>
     <pic src="images/vscCopilotUsage/copilotTerminal.png" width="600" />
 
+    <box type="tip" seamless>
+    Slash commands like `/explain` and `/fix` also work in Copilot Chat** and Inline Chat, not just the terminal.
+    </box>
+
+
 Some common project-related prompts you might find useful:
 
 * Run the checkstyle
 * Compile and run the Java program
 * Run JUnit tests
-* ~~Perform Git operations~~ (possible but #r#not recommended##; if you are new to Git, we discourage using Git inside the IDE -- it is better for beginners to learn Git independent of other tools)
-
+* ~~Perform Git operations~~ (possible but **not recommended**; if you are new to Git, we discourage using Git inside the IDE — it’s better for beginners to learn Git independent of other tools)
 <box type="tip" seamless>
+
 **Troubleshooting Tips**
 - Copilot not showing up? → Ensure you are in a Java file and that the extension is installed and enabled.
 - Copilot panel missing? → Try restarting VS Code or reinstalling the extension.
