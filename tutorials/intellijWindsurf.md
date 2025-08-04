@@ -8,7 +8,7 @@
 
 # {{ title }}
 
-Windsurf is an AI assistant that integrates smoothly with Visual Studio Code and serves as a practical alternative to GitHub Copilot, especially for users seeking a free, non-Microsoft solution.
+Windsurf is an AI assistant that integrates smoothly with Intellij IDEA and serves as a practical alternative to GitHub Copilot, especially for users seeking a free, non-Microsoft solution.
 
 ## Setting Up
 * **Create a Windsurf account**, if you don't have one yet. {{ step_numbers }}
@@ -30,7 +30,7 @@ Windsurf is an AI assistant that integrates smoothly with Visual Studio Code and
   * You can close the web page and proceed back to IntelliJ IDEA.
   * Windsurf will now be signed in within IntelliJ IDEA.
 
-## Using Windsurf in VS Code
+## Using Windsurf in Intellij IDEA
 
 ### Basic Code Completion
 * In a Java file, type a comment like `// print Hello World!` inside the main method.<br>
