@@ -14,7 +14,6 @@ This tutorial covers the basics of setting up and using JUnit with IntelliJ.
 
 ## Prerequisites
 
-<include src="vscCreatingNewJavaProject.md#vsc-java-prereq" />
 
 <include src="junit.md#junit-use-gradle" />
 
@@ -34,7 +33,7 @@ If your project doesn’t yet use Gradle, follow the [Gradle Tutorial](https://s
 
 <box type="tip" seamless>
 
-Press <kbd>⌘Cmd</kbd> <kbd>⇧Shift</kbd> <kbd>O</kbd> and search for `build.gradle` to locate it quickly.
+Press <kbd>Ctrl</kbd> <kbd>⇧Shift</kbd> <kbd>O</kbd> in Windows (or <kbd>⌘Cmd</kbd> <kbd>⇧Shift</kbd> <kbd>O</kbd> on Mac) and search for `build.gradle` to locate it quickly.
 
 </box>
 
@@ -42,7 +41,7 @@ Press <kbd>⌘Cmd</kbd> <kbd>⇧Shift</kbd> <kbd>O</kbd> and search for `build.g
 
 3. After editing `build.gradle`, refresh your Gradle project:
 
-* Press <kbd>⌘Cmd</kbd> <kbd>⇧Shift</kbd> <kbd>I</kbd>, or  
+* Press <kbd>Ctrl</kbd> <kbd>⇧Shift</kbd> <kbd>I</kbd> in Windows (or <kbd>⌘Cmd</kbd> <kbd>⇧Shift</kbd> <kbd>I</kbd> on Mac), or  
 * In the Gradle tool window, click **Reimport All Gradle Projects**.
 
 <!-- ======================================================== -->
@@ -52,7 +51,7 @@ Press <kbd>⌘Cmd</kbd> <kbd>⇧Shift</kbd> <kbd>O</kbd> and search for `build.g
 You can write test classes manually by following [this guide](https://se-education.org/guides/tutorials/vscJUnitTesting.html#conventions-to-follow). Alternatively, you can let IntelliJ generate test templates for you:
 
 1. Place your cursor on the class name you want to test.
-2. Press <kbd>⌥</kbd> <kbd>↩</kbd> (or right-click and choose **Show Context Actions**).
+2. Press <kbd>Alt</kbd> <kbd>Enter</kbd> on Windows (or <kbd>⌥</kbd> <kbd>↩</kbd> on Mac) or right-click and choose **Show Context Actions**.
 3. Select **Create Test** from the menu.
 ![Create Test option in menu](./images/intellij/create-test.png)
 4. Choose the methods to generate tests for.
@@ -82,7 +81,7 @@ After running tests, the results will be shown in the **Run** tool window.
 If you want more control over how tests are executed:
 
 1. Go to **Run > Edit Configurations** from the main menu.
-2. Click <kbd>+</kbd> (or press <kbd>⌘</kbd> <kbd>N</kbd>).
+2. Click <kbd>+</kbd> (or press <kbd>Ctrl</kbd> <kbd>N</kbd> in Windows or press <kbd>⌘Cmd</kbd> <kbd>N</kbd> in Mac).
 3. Select **JUnit** from the configuration templates.
 4. Configure options as desired.
 
