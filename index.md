@@ -43,6 +43,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Using the debugger](tutorials/intellijDebugger.html)
   * [Useful Settings](tutorials/intellijUsefulSettings.html)
   * [Useful Plugins](tutorials/intellijUsefulPlugins.html)
+  * AI Tool Integrations: [Windsurf](tutorials/intellijWindsurf.html)
 * [**IDE: Visual Studio Code**](tutorials/vscode.html)
   <include src="tutorials/vscode.md#vscode-sub-topics" />
 * **Testing**
