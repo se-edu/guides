@@ -8,7 +8,7 @@
 
 # {{ title }}
 
-<include src="./windsurfContent.md#title-id" />
+<include src="./windsurfContent.md#title-id" var-ide="IntelliJ IDEA"/>
 <br/>
 
 <include src="./windsurfContent.md#setting-up-id" />
