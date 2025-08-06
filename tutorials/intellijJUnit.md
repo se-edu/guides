@@ -51,7 +51,7 @@ Press <kbd>Ctrl</kbd> <kbd>⇧Shift</kbd> <kbd>O</kbd> in Windows (or <kbd>⌘Cm
 You can write test classes manually by following [this guide](https://se-education.org/guides/tutorials/vscJUnitTesting.html#conventions-to-follow). Alternatively, you can let IntelliJ generate test templates for you:
 
 1. Place your cursor on the class name you want to test.
-2. Press <kbd>Alt</kbd> <kbd>Enter</kbd> on Windows (or <kbd>⌥</kbd> <kbd>↩</kbd> on Mac) or right-click and choose **Show Context Actions**.
+2. Press <kbd>Alt</kbd> <kbd>Enter</kbd> on Windows (or <kbd>Option</kbd> <kbd>Enter</kbd> on Mac) or right-click and choose **Show Context Actions**.
 3. Select **Create Test** from the menu.
 ![Create Test option in menu](./images/intellij/create-test.png)
 4. Choose the methods to generate tests for.
