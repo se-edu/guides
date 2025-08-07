@@ -60,6 +60,13 @@ To search for a symbol **in the current file**, **Quick Open** (`Ctrl+P` / `Cmd+
 
 <video src="https://code.visualstudio.com/assets/docs/java/java-editing/search-in-file.mp4" controls width="700px">Your browser does not support the video tag.</video>
 
+<box type="tip" seamless>
+You can enhance your use of **Quick Open** (`Ctrl+P` / `Cmd+P`) by using these special prefixes:
+- `@` — Search symbols in the current file  
+- `#` — Search symbols in the entire workspace  
+- `:` — Go to a specific line number  
+</box>
+
 ## Go to Definition
 
 You can quickly view or navigate to the definition of a class, method, or variable in your code to understand and trace how different parts of your project are connected.
@@ -79,6 +86,7 @@ You can trace class implementations and overriding methods by hovering over the 
 ## Call Hierarchy
 
 You can view all calls from or to a function to understand the flow of your code and dependencies between functions. This is useful for understanding how your functions are connected and which parts of the code may affect each other.
+
 
 
 To view the call hierarchy of a function, right-click on the function and select **Peek > Peek Call Hierarchy** to open in an inline panel, or select **Show Call Hierarchy** to open in the sidebar.
