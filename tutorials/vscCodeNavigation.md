@@ -40,16 +40,16 @@ Symbol search helps you quickly locate and jump to methods, classes, and variabl
 
 You can search for symbols in the current file or workspace to navigate your code more quickly.
 
-To search for a symbol **in the current workspace**, press `Ctrl+T` and enter the name of the symbol, then select from the list of matches to navigate to its location.
+To search for a symbol **in the current workspace**, press `Ctrl+T` (`Cmd+T` on Mac) and enter the name of the symbol, then select from the list of matches to navigate to its location.
 
 <box type="info" seamless>
 
-You can also use **Quick Open** (`Ctrl+P`), then enter `#` to search the current workspace. `Ctrl+T` is simply the shortcut.
+You can also use **Quick Open** (`Ctrl+P` / `Cmd+P` on Mac), then enter `#` to search the current workspace. `Ctrl+T` is simply the shortcut.
 </box>
 
 <video src="https://code.visualstudio.com/assets/docs/java/java-editing/search-in-workspace.mp4" controls width="700px">Your browser does not support the video tag.</video>
 
-To search for a symbol **in the current file**, **Quick Open** (`Ctrl+P`) and enter `@` before entering the name of the symbol, then select from the list of matches to navigate to its location.
+To search for a symbol **in the current file**, **Quick Open** (`Ctrl+P` / `Cmd+P` on Mac) and enter `@` before entering the name of the symbol, then select from the list of matches to navigate to its location.
 
 <video src="https://code.visualstudio.com/assets/docs/java/java-editing/search-in-file.mp4" controls width="700px">Your browser does not support the video tag.</video>
 
