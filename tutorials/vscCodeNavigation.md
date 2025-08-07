@@ -120,4 +120,23 @@ You can collapse or expand code blocks to focus on relevant sections of your cod
 
 ---
 
-**Contributors**: John Wong ([@Johnwz123](https://github.com/Johnwz123))
+## Summary of Shortcuts
+
+The following table summarizes the key keyboard shortcuts introduced in this guide:
+
+| Feature                      | Windows/Linux           | Mac                   |
+|-----------------------------|--------------------------|------------------------|
+| Search Symbols (Workspace)  | `Ctrl+T`                 | `Cmd+T`               |
+| Search Symbols (File)       | `Ctrl+P`, `@`            | `Cmd+P`, `@`          |
+| Peek Definition             | `Alt+F12`                | `Option+F12`          |
+| Go to Definition            | `F12`                    | `F12`                 |
+| Go to Super Implementation  | Right-click menu         | Right-click menu      |
+| Call Hierarchy              | Right-click > Peek Call Hierarchy | Same         |
+| Type Hierarchy              | Right-click > Show Type Hierarchy | Same         |
+| Toggle Fold                 | `Ctrl+K Ctrl+L`          | `Cmd+K Cmd+L`         |
+| Fold Recursively            | `Ctrl+K Ctrl+[`          | `Cmd+K Cmd+[`         |
+| Unfold Recursively          | `Ctrl+K Ctrl+]`          | `Cmd+K Cmd+]`         |
+| Fold All                    | `Ctrl+K Ctrl+0`          | `Cmd+K Cmd+0`         |
+| Unfold All                  | `Ctrl+K Ctrl+J`          | `Cmd+K Cmd+J`         |
+
+**Contributors**: John Wong ([@Johnwz123](https://github.com/Johnwz123)), Arshin Sikka ([@arshinsikka](https://github.com/arshinsikka))
