@@ -33,6 +33,13 @@ The Java Projects view gives you an overview of your Java projects and their dep
 The Java Projects view should appear at the bottom of the Explorer view by default. If you do not see it, try clicking the `...` (Views and More Actions...) button at the top right in the EXPLORER title bar and select **Projects**.
 </box>
 
+<box type="tip" seamless>
+If the Java Projects or Outline view does not appear, ensure that:
+- A Java file is currently open
+- The Java Extension Pack is installed from the Extensions Marketplace
+- Your project follows a recognized structure (e.g., `src/main/java`)
+</box>
+
 ![Projects view](https://code.visualstudio.com/assets/docs/java/java-project/projectmanager-overview.png)
 
 ## Search for Symbols
