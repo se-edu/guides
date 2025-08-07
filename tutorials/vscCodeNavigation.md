@@ -36,6 +36,7 @@ The Java Projects view should appear at the bottom of the Explorer view by defau
 ![Projects view](https://code.visualstudio.com/assets/docs/java/java-project/projectmanager-overview.png)
 
 ## Search for Symbols
+Symbol search helps you quickly locate and jump to methods, classes, and variables across your codebase.
 
 You can search for symbols in the current file or workspace to navigate your code more quickly.
 
@@ -54,9 +55,9 @@ To search for a symbol **in the current file**, **Quick Open** (`Ctrl+P`) and en
 
 ## Go to Definition
 
-You can view or navigate to where a class, method, or variable is defined in your code to understand and trace how different parts of your project are connected.
+You can quickly view or navigate to the definition of a class, method, or variable in your code to understand and trace how different parts of your project are connected.
 
-To view a symbol's definition without leaving your current location, place your cursor on the symbol and press `Alt+F12`. Alternatively, right-click on the symbol and select **Peek > Peek Definition** from the context menu.
+To view a symbol's definition without leaving your current location, place your cursor on the symbol and press `Alt+F12` (`Option+F12` on Mac). Alternatively, right-click on the symbol and select **Peek > Peek Definition** from the context menu.
 
 To navigate to a symbol's definition, place your cursor on the symbol and press `F12`. Alternatively, right-click on the symbol and select **Go to Definition** from the context menu. If there are multiple definitions, you will be prompted to select the definition that you wish to navigate to.
 
@@ -70,7 +71,8 @@ You can trace class implementations and overriding methods by hovering over the 
 
 ## Call Hierarchy
 
-You can view all calls from or to a function to understand the flow of your code and dependencies between functions.
+You can view all calls from or to a function to understand the flow of your code and dependencies between functions. This is useful for understanding how your functions are connected and which parts of the code may affect each other.
+
 
 To view the call hierarchy of a function, right-click on the function and select **Peek > Peek Call Hierarchy** to open in an inline panel, or select **Show Call Hierarchy** to open in the sidebar.
 
@@ -80,7 +82,8 @@ To view the call hierarchy of a function, right-click on the function and select
 
 ## Type Hierarchy
 
-You can explore the inheritance relationships between classes and interfaces in your code to understand and navigate complex type hierarchies between Java Objects.
+You can explore the inheritance relationships between classes and interfaces in your code to understand and navigate complex type hierarchies between Java Objects. Use this to visualize how your classes relate through inheritance, especially when working with abstract classes or interfaces.
+
 
 To view the call hierarchy of a class or interface, right-click on the class or interface and select **Show Type Hierarchy** to open in the sidebar.
 
