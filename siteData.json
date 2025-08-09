@@ -456,6 +456,20 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/intellijJUnit.md",
+      "title": "IntelliJ - Using the JUnit",
+      "headings": {
+        "intellij-using-the-junit": "IntelliJ - Using the JUnit",
+        "prerequisites": "Prerequisites",
+        "setting-up-junit-with-gradle": "Setting Up JUnit with Gradle",
+        "writing-tests": "Writing Tests",
+        "running-tests": "Running Tests",
+        "writing-useful-junit-tests": "Writing Useful JUnit Tests",
+        "optional-create-a-junit-run-configuration": "Optional: Create a JUnit Run Configuration"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/intellijJdk.md",
       "title": "Intellij IDEA: Configuring the JDK",
       "headings": {
