@@ -345,6 +345,26 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/copilotGithub.md",
+      "title": "AI Coding Tools: Using Copilot in GitHub",
+      "headings": {
+        "ai-coding-tools-using-copilot-in-github": "AI Coding Tools: Using Copilot in GitHub",
+        "pre-requisites": "Pre-requisites",
+        "issue-creation": "Issue Creation",
+        "pull-request-creation-summary": "Pull Request Creation Summary",
+        "pull-request-review": "Pull Request Review"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/copilotSignup.md",
+      "title": "Signing Up for GitHub Copilot",
+      "headings": {
+        "signing-up-for-github-copilot": "Signing Up for GitHub Copilot"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/geminiCli.md",
       "title": "AI Coding Tools - Gemini CLI",
       "headings": {
@@ -374,18 +394,6 @@
         "setting-up-github-authentication": "Setting up GitHub Authentication",
         "using-https-for-authentication": "Using HTTPS for authentication",
         "using-ssh-for-authentication": "Using SSH for authentication"
-      },
-      "headingKeywords": {}
-    },
-    {
-      "src": "tutorials/githubCopilot.md",
-      "title": "AI Coding Tools: Using Copilot in GitHub",
-      "headings": {
-        "ai-coding-tools-using-copilot-in-github": "AI Coding Tools: Using Copilot in GitHub",
-        "pre-requisites": "Pre-requisites",
-        "issue-creation": "Issue Creation",
-        "pull-request-creation-summary": "Pull Request Creation Summary",
-        "pull-request-review": "Pull Request Review"
       },
       "headingKeywords": {}
     },
@@ -427,6 +435,21 @@
         "tweak-import-order": "Tweak: import order ",
         "tweak-auto-remove-trailing-spaces": "Tweak: Auto-remove trailing spaces ",
         "more-useful-settings": "More useful settings "
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijCopilot.md",
+      "title": "Intellij IDEA: Using GitHub Copilot",
+      "headings": {
+        "intellij-idea-using-github-copilot": "Intellij IDEA: Using GitHub Copilot",
+        "pre-requisites": "Pre-requisites",
+        "installing-github-copilot-in-intellij-idea": "Installing GitHub Copilot in IntelliJ IDEA",
+        "signing-in-to-github-copilot": "Signing in to GitHub Copilot",
+        "using-github-copilot-in-intellij-idea": "Using GitHub Copilot in IntelliJ IDEA",
+        "basic-code-completion": "Basic Code Completion",
+        "copilot-chat": "Copilot Chat",
+        "copilot-inline-chat": "Copilot Inline Chat"
       },
       "headingKeywords": {}
     },
@@ -823,7 +846,7 @@
       "title": "VS Code - Using GitHub Copilot",
       "headings": {
         "vs-code-using-github-copilot": "VS Code - Using GitHub Copilot",
-        "signing-up-for-github-copilot": "Signing Up for GitHub Copilot",
+        "pre-requisites": "Pre-requisites",
         "installing-github-copilot-in-visual-studio-code": "Installing GitHub Copilot in Visual Studio Code",
         "signing-in-to-github-copilot": "Signing in to GitHub Copilot",
         "using-github-copilot-in-visual-studio-code": "Using GitHub Copilot in Visual Studio Code",
