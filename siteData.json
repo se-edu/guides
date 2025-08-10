@@ -543,7 +543,8 @@
       "headings": {
         "intellij-idea-useful-settings": "Intellij IDEA: Useful settings",
         "enabling-assertions": "Enabling assertions",
-        "enabling-soft-wrapping": "Enabling soft wrapping"
+        "enabling-soft-wrapping": "Enabling soft wrapping",
+        "enabling-automatic-selection-of-open-file": "Enabling automatic selection of open file"
       },
       "headingKeywords": {}
     },
