@@ -53,8 +53,35 @@ Any changes you make in editor pane on the left will be reflected in the preview
 
 You can refer to [this se-edu guide](plantUml.html#tips-and-tricks) to learn some tips and tricks useful for getting the diagrams to fit your needs.
 
+
+## Code With Me
+
+
+**Code With Me** is a collaborative development service in IntelliJ IDEA that allows multiple developers to work together on the same codebase in **real-time**. It enables you to share your IDE session with others so they can view/edit your code and even run applications together.
+
+Official documentation: [Code With Me](https://www.jetbrains.com/help/idea/code-with-me.html)
+
+If you prefer a video tutorial, here's a video covering the basics of Code With Me feature:
+
+<panel header="IntelliJ IDEA Code With Me - Basics" peek>
+
+@[youtube](3D4ypTcQXfc)
+
+</panel>
+
+
+Here's another video with an in-depth walkthrough of Code With Me:
+
+<panel header="IntelliJ IDEA Code With Me - In-depth Walkthrough" peek>
+
+@[youtube](BXUai0IIlRw)
+
+</panel>
+
+
 --------------------------------------------------------------------------------
 **Authors:**
 * Initial Version: Jeffry Lum
 * Contributors:
   * MUHAMMAD FIKRI BIN ABDUL KALAM (@mfjkri): added the part on SD reference frames
+  * [@lihongong](https://github.com/lihongong): added Code With Me Tutorial

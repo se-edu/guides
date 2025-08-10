@@ -11,9 +11,11 @@
 <include src="./windsurfContent.md#title-id" var-ide="IntelliJ IDEA"/>
 <br/>
 
-<include src="./windsurfContent.md#setting-up-id" />
+<include src="windsurfContent.md#prereq" />
 
-* **Install the [Extension Pack for Windsurf](https://plugins.jetbrains.com/plugin/20540-windsurf-plugin-formerly-codeium-for-python-js-java-go--)**
+## Setting Up
+
+* **Install the [Extension Pack for Windsurf](https://plugins.jetbrains.com/plugin/20540-windsurf-plugin-formerly-codeium-for-python-js-java-go--)** {{ step_numbers }}
   * Open IntelliJ.
   * Go to `File` → `Settings` → `Plugins` → `Marketplace`.
   * Search for Windsurf.

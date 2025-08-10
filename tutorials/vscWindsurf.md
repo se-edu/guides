@@ -11,9 +11,11 @@
 <include src="./windsurfContent.md#title-id" var-ide="Visual Studio Code"/>
 <br/>
 
-<include src="./windsurfContent.md#setting-up-id" />
+<include src="windsurfContent.md#prereq" />
 
-* **Install the [Extension Pack for Windsurf](https://marketplace.visualstudio.com/items?itemName=Codeium.codeium)**
+## Setting Up
+
+* **Install the [Extension Pack for Windsurf](https://marketplace.visualstudio.com/items?itemName=Codeium.codeium)** {{ step_numbers }}
   * Click on the extension link above.
   * Click the `Install` button on the page that opens.
   * It should prompt you with `Open Visual Studio Code?` and click `Open Visual Studio Code`.

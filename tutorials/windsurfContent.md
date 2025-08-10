@@ -3,14 +3,19 @@ Windsurf is an AI assistant that integrates smoothly with {{ ide }} and serves a
 
 </div>
 
-<div id="setting-up-id">
+<div id="prereq">
 
-## Setting Up
-* **Create a Windsurf account**, if you don't have one yet.
-  * Go to the [Windsurf registration page](https://windsurf.com/account/register).
-  * Sign up using your email, Google account, or GitHub account.
-  * Verify your account through the email sent to your inbox.
+## Pre-requisites
+
+If you have not signed up for a Windsurf account, follow the guide in the panel below:
+
+<panel type="info" header="**Signing Up for Windsurf**" popup-url="windsurfSignup.html" peek>
+
+<include src="windsurfSignup.md#body" />
+</panel>
+<p/>
 </div>
+
 
 <div id="basic-code-completion-id">
 
