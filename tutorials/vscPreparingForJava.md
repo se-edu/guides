@@ -15,12 +15,12 @@ This tutorial is adapted from the [official VS Code Java Tutorial](https://code.
 
 This guide will help you set up VS Code for Java development by installing the Java Development Kit (JDK), VS Code and the necessary extensions.
 
+## Install Java Development Kit (JDK)
+
 <box type="tip" seamless>
 
 A **JDK** is a software package that provides the tools needed to develop and run Java applications. It includes the Java compiler, Java Runtime Environment (JRE), and various development tools like `javac`, `java`, and `javadoc`.
 </box>
-
-## Install Java Development Kit (JDK)
 
 Before you can develop Java applications, you need to have a Java Development Kit (JDK) installed.
 
