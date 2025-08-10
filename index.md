@@ -17,6 +17,7 @@ Tutorials, how-to guides, getting-started guides, ...
 * [**AddressBook Level-3 (AB3)**](tutorials/ab3.html)
 * **AI Coding Tools**:
   * **Copilot:** [Signing up](tutorials/copilotSignup.html) | [Use with GitHub](tutorials/copilotGithub.html)
+  * **Windsurf:** [Signing up](tutorials/windsurfSignup.html)
   * [**Gemini CLI**](tutorials/geminiCli.md)
 * [**Checkstyle**](tutorials/checkstyle.html)
 * [**Codecov**](tutorials/codecov.html)
@@ -45,7 +46,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Using JUnit](tutorials/intellijJUnit.html)
   * [Useful Settings](tutorials/intellijUsefulSettings.html)
   * [Useful Plugins](tutorials/intellijUsefulPlugins.html)
-  * AI Tool Integrations: [GitHub Copilot](tutorials/intellijCopilot.html)
+  * AI Tool Integrations: [GitHub Copilot](tutorials/intellijCopilot.html) | [Windsurf](tutorials/intellijWindsurf.html)
 * [**IDE: Visual Studio Code**](tutorials/vscode.html)
   <include src="tutorials/vscode.md#vscode-sub-topics" />
 * **Testing**
