@@ -10,43 +10,7 @@
 
 GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both tools are from the same parent company (Microsoft).
 
-<<<<<<< HEAD
-<include src="copilotGithub.md#prereq" />
-=======
-<box type="info" seamless>
-To use GitHub Copilot for free as a student, you'll need to (1) sign up for GitHub, (2) enable two-factor authentication (2FA), and (3) verify your student status. This guide walks you through those steps.
-</box>
-
-## Signing Up for GitHub Copilot
-
-* **Filling in your billing information** {{ step_numbers }}
-  * Go to the [billing information for your GitHub account](https://github.com/settings/billing/payment_information).
-  * Fill in only your billing information (Payment method and other details are not required).<br>
-    <pic src="images/copilotSignUp/billingInformation.png" width="400" />
-  * Click on `Save billing information` to save.
-* **Enabling Two-Factor Authentication (2FA)**. You can skip this step if you have already done so.
-  * Go to the [Two-factor authentication page](https://github.com/settings/security) for your GitHub account.
-  * Click on `Enable two-factor authentication`.
-  * Open the [Microsoft Authenticator App](https://www.microsoft.com/en-us/security/mobile-authenticator-app) on your phone.
-  * Tap the scan QR code button at the bottom right.<br>
-    <pic src="images/copilotSignUp/scanQrCode.png" width="400" />
-  * Scan the QR code displayed on the GitHub page.
-  * Complete the remaining setup steps.
-  * You should see the following page when 2FA is enabled.<br>
-    <pic src="images/copilotSignUp/2faEnabled.png" width="400" />
-* **Linking your university email to GitHub** (for Education benefits).
-  * Go to the [emails settings page](https://github.com/settings/emails) in GitHub account.
-  * Add your university-issued email under the `Add email address` field.
-  * Verify your email using the link sent to your inbox.
-  * Once verified, you will see your school email in the list of emails.
-* **Applying for GitHub Education benefits**
-  * Go to the [GitHub Education page](https://github.com/settings/education/benefits).
-  * Click on `Start an application`.
-  * Select your role as `Student`.
-  * Choose university as your school %%(e.g., National University of Singapore)%%.
-  * Follow the instructions and complete the application form.
-  * Once your application is approved, it will show that you have a current student coupon applied.
->>>>>>> 22a85324 (docs: clarify Copilot setup flow and add student-focused tips)
+<include src="copilotGitHub.md#prereq" />
 
 ## Installing GitHub Copilot in Visual Studio Code
 
@@ -110,7 +74,7 @@ The Copilot extension offers multiple ways to interact with AI assistance in VS 
 
 **To disable automatic code completion**,
 
-1. Look for the Copilot icon in the bottom right of vscode:<br>
+1. Look for the Copilot icon in the bottom-right of VS Code:<br
 <pic src="images/vscCopilotUsage/copilotIconBottomBar.png" width="300" /><br>
 1. Uncheck the necessary boxes (`All files` disables code completion for all files, while the checkbox below it disables code completion for the currently open file type.)
 
@@ -156,7 +120,11 @@ If you have access to Copilot Pro, you can also monitor your Copilot Premium Req
 
 1. Open a terminal in Visual Studio Code.
 1. Press `Ctrl+I` to bring up Copilot’s terminal prompt input.<br>
-    <pic src="images/vscCopilotUsage/copilotTerminal.png" width="600" />
+    <box type="tip" seamless>
+
+    Slash commands like `/explain` and `/fix` also work in **Copilot Chat** and **Inline Chat**, not just the terminal.
+    </box>
+
 
     <box type="tip" seamless>
     Slash commands like `/explain` and `/fix` also work in Copilot Chat** and Inline Chat, not just the terminal.
@@ -178,4 +146,4 @@ Some common project-related prompts you might find useful:
 
 ---
 
-**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh )), Luoqi Xu ([@Luoq1-Xu](https://github.com/Luoq1-Xu))
+**Contributors**: Norbert Loh ([@NorbertLoh](https://github.com/NorbertLoh)), Luoqi Xu ([@Luoq1-Xu](https://github.com/Luoq1-Xu)), Arshin Sikka ([@arshinsikka](https://github.com/arshinsikka))
