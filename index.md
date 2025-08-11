@@ -41,6 +41,7 @@ Tutorials, how-to guides, getting-started guides, ...
   * [Refactoring](tutorials/intellijRefactoring.html)
   * [Productivity shortcuts](tutorials/intellijProductivityShortcuts.html)
   * [Using the debugger](tutorials/intellijDebugger.html)
+  * [Using GitHub Copilot](tutorials/intellijCopilot.md)
   * [Useful Settings](tutorials/intellijUsefulSettings.html)
   * [Useful Plugins](tutorials/intellijUsefulPlugins.html)
 * [**IDE: Visual Studio Code**](tutorials/vscode.html)

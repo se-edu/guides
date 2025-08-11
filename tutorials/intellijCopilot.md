@@ -3,6 +3,8 @@ title: "IntelliJ IDEA – Using GitHub Copilot"
 pageNav: 2
 </frontmatter>
 
+<include src="../common/common-fragments.md#wip-warning" />
+
 # IntelliJ IDEA – Using GitHub Copilot
 
 GitHub Copilot is an AI-powered code assistant that helps you write, test, and refactor code faster. In this tutorial, you’ll learn how to set up and use Copilot in IntelliJ IDEA — perfect for students in CS2103/T, CS2113, and other Java-heavy modules.
@@ -63,7 +65,6 @@ This guide walks you through setting up Copilot access and using it in IntelliJ 
 4. Search for **GitHub Copilot**.  
 <img src="images/intellijcopilot/intellij-search-copilot.png" alt="Search GitHub Copilot Plugin" width="60%" />
 5. Click **Install**, then **Restart IDE** when prompted.
-<img src="images/intellijcopilot/intellij-restart-prompt.png" alt="Restart Prompt" width="60%" />
 
 
 ---
@@ -89,11 +90,10 @@ This guide walks you through setting up Copilot access and using it in IntelliJ 
 // print Hello World
 ```
 
-3. Wait 2–3 seconds — a gray suggestion appears.  
+3. Wait 2–3 seconds — a gray suggestion appears (see below).
 4. Press **Tab** to accept the suggestion.
 
 <img src="images/intellijcopilot/copilot-suggestion-visible.png" alt="Copilot Suggestion Appears" width="60%" />
-<img src="images/intellijcopilot/copilot-accepted-fixed.png" alt="Copilot Suggestion Example" width="60%" />
 
 <box type="tip" seamless>
 Copilot works best with clear, descriptive comments.
@@ -131,4 +131,5 @@ Write a function to reverse a string in Java.
 
 ---
 
-**Contributors:** Arshin Sikka (@arshinsikka)
+**Contributors**: Arshin Sikka ([@arshinsikka](https://github.com/arshinsikka))
+
