@@ -15,8 +15,10 @@ This tutorial is adapted from the [official VS Code Java tutorial for Gradle bui
 
 This guide will help you import and work with existing Gradle projects in VS Code.
 
-<span class="fas fa-lightbulb"></span> > [!TIP]  
-> For general Gradle setup guidance, see [our Gradle tutorial](https://se-education.org/guides/tutorials/gradle.html).
+<box type="tip" seamless>
+For general Gradle setup guidance, see <a href="https://se-education.org/guides/tutorials/gradle.html" target="_blank">our Gradle tutorial</a>.
+</box>
+
 
 
 **If you are new to working with Gradle in VS Code**, we recommend watching the video below for an introduction to the features of VS Code Gradle extension.
@@ -41,21 +43,9 @@ Gradle support is included by default in the Java Extension Pack, so no separate
 
 <box type="important" seamless>
 
-### Typical Gradle Project Structure
-
-A typical Gradle project includes:
-- `build.gradle` or `build.gradle.kts`
-- `settings.gradle`
-- `src/main/java`
-- `src/test/java`
-
-
-Verify the project has support for Gradle. If it does, there should be a `build.gradle` file in your project root.
-</box>
-
 ## Importing an existing Gradle project
 
-### ### Step 1: Open the Project Folder
+### Step 1: Open the Project Folder
 
 1. **Open VS Code**
 1. **Select** `File` → `Open Folder...`
@@ -72,6 +62,10 @@ When prompted, click `Yes` to trust the workspace so that Gradle tasks and exten
 1. **Wait for the Java Language Server and Gradle Build Server** to initialize (progress shown in status bar)
 1. **Check the status bar** at the bottom for any initialization messages
 
+<box type="tip" seamless>
+If your project uses Gradle, you should see a `build.gradle` or `build.gradle.kts` in the project root.
+</box>
+
 ### Step 3: Configure your JDK
 
 <include src="vscCreatingNewJavaProject.md#vsc-java-configure-jdk" />
@@ -86,7 +80,7 @@ Ensure `JAVA_HOME` is correctly configured and restart VS Code if needed.
 
 You may also need to verify and configure the Gradle Build Server to use the correct JVM.
 
-1. Open the project's `.vscode/settings.json` file. Create the file if it does not exists yet.
+1. Open the project's `.vscode/settings.json` file. Create the file if it does not exist yet.
     * To configure the following settings globally, open VS Code's `settings.json` file instead. You can find it by opening the Command Palette ({{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`), then typing `Preferences: Open User Settings (JSON)`.
 1. Add or modify the following settings to configure the JVM for Gradle. Here's an example for Mac (Replace the JDK name and path as necessary):
     ```json { heading="settings.json" }
@@ -105,17 +99,15 @@ You may also need to verify and configure the Gradle Build Server to use the cor
 
 <include src="vscImportingJavaProject.md#vsc-java-verify-project-configuration" />
 
-**Confirm you can access the Gradle tool window**. After the importing of the project is complete (which could take a few minutes), you will see the Gradle Tab in the VS Code interface (Look for the elephant icon on the left and click it).
-
-You can access Gradle tasks in the sidebar via the **Gradle Tasks Panel** (elephant icon).  
-[Learn more here](https://code.visualstudio.com/docs/java/java-build#_gradle-support)
+<box type="info" seamless>
+Open the **Gradle** view from the Activity Bar (elephant icon) to browse and run tasks.  
+See: <a href="https://code.visualstudio.com/docs/java/java-build#_gradle-support" target="_blank">VS Code: Java — Build with Gradle</a>.
+</box>
 
 <box type="tip" seamless>
 
 If the Gradle icon doesn't appear after restarting VS Code, add `"gradle.nestedProjects": true` to your `settings.json` file.
 </box>
-
-<pic src="images/vscode/vscode_gradle_icon.jpg" width="400" />
 
 ## Troubleshooting
 
