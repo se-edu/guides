@@ -23,37 +23,8 @@ This guide walks you through setting up Copilot access and using it in IntelliJ 
 
 ## 1. Setting Up GitHub Copilot Access
 
-### Step 1: Fill in Billing Information
-
-1. Visit the [GitHub billing settings page](https://github.com/settings/billing).  
-2. Fill in only your billing address (no charges will occur if you qualify for student access).  
-3. Click **Save billing information**.
-
-<img src="images/intellijcopilot/copilot-billing-settings.jpeg" alt="Billing Settings Page" width="60%" />
-
-### Step 2: Enable Two-Factor Authentication (2FA)
-
-1. Go to [GitHub security settings](https://github.com/settings/security).  
-2. Click **Enable two-factor authentication** and follow the prompts.  
-3. Use an authenticator app (e.g., Google Authenticator, Microsoft Authenticator) to complete setup.
-
-<img src="images/intellijcopilot/github-2fa-settings.jpeg" alt="2FA Settings Page" width="60%" />
-
-### Step 3: Link Your University Email
-
-1. Go to [GitHub email settings](https://github.com/settings/emails).  
-2. Add your university email (e.g., yourname@u.nus.edu).  
-3. Verify via the confirmation link sent to your inbox.
-
-<pic src="tutorials/images/intellijcopilot/link-university-email.png" width="500" />
-
-### Step 4: Apply for GitHub Student Developer Pack
-
-1. Visit the [GitHub Education Pack page](https://education.github.com/pack).  
-2. Click **Get student benefits** and complete the application.  
-3. After approval, you’ll see a message like “You already have the Student Developer Pack.”
-
-<img src="images/intellijcopilot/copilot-education-pack.jpeg" alt="Student Pack Confirmation" width="60%" />
+Before using Copilot in IntelliJ, ensure your GitHub account has Copilot access (Student Developer Pack + 2FA).  
+Follow the steps in the [Copilot access prerequisites](githubCopilot.md#prereq), then return here.
 
 ---
 
