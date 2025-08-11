@@ -103,4 +103,3 @@ Write a function to reverse a string in Java.
 ---
 
 **Contributors**: Arshin Sikka ([@arshinsikka](https://github.com/arshinsikka))
-
