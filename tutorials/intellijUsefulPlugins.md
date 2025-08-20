@@ -78,6 +78,39 @@ Here's another video with an in-depth walkthrough of Code With Me:
 
 </panel>
 
+## Key Promoter X
+**Key Promoter X** helps you learn essential shortcuts when you work. It **tracks** mouse point-and-click actions you make and **recommends shortcuts**, increasing productivity. 
+
+<box type="tip" seamless>
+    Learning IntelliJ shortcuts early saves significant time when working on large-scale project.
+</box>
+
+### Installing Key Promoter X
+
+1. Go to `File` \> `Settings` to access the `Settings` page.
+
+2. Go to `Settings` \> `Plugins` \> `Marketplace` and install the plugin `Key Promoter X` by **Hal's Corner**.
+
+Once installed, the plugin will automatically start monitoring your actions.
+![Install Key Promoter X plugin](images/intellijUsefulPlugins/keypromoter.png)
+
+### How it Works
+Whenever you perform an action using the mouse, **Key Promoter X** will:
+
+* Show a small popup notification displaying the **corresponding keyboard shortcut**
+* Provide an **option to execute the shortcut directly** instead
+* Track the actions where you use the mouse frequently, so you know which shortcuts to prioritize learning
+* Provide a 'hit-list' of **frequently used mouse actions** and recommended shortcuts to increase efficiency
+* Prompts you to **create shortcuts** for actions you perform repeatedly (e.g. creating a constructor)
+
+![Sample Usage](images/intellijUsefulPlugins/keypromoterUsage.gif)
+
+### Benefits
+
+* Learn IntelliJ shortcuts **organically** while coding
+* Improve productivity by **reducing mouse dependency**
+* **Customise** shortcuts tailored to your workflow
+
 
 --------------------------------------------------------------------------------
 **Authors:**
@@ -85,3 +118,4 @@ Here's another video with an in-depth walkthrough of Code With Me:
 * Contributors:
   * MUHAMMAD FIKRI BIN ABDUL KALAM (@mfjkri): added the part on SD reference frames
   * [@lihongong](https://github.com/lihongong): added Code With Me Tutorial
+  * Sulaksha Muthukrishnan [(@crmlatte)](https://github.com/crmlatte): added Key Promoter X tutorial
