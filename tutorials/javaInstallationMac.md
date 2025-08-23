@@ -50,6 +50,15 @@ This guide explains how to install the **==[Java 17 JDK+FX Azul distribution](ht
    ```bash
    java -version
    ```
+   <box type="tip" seamless>
+
+   To find where the currently-active JDK is located, you can run the `which java` command (it is typically somewhere inside `~/.sdkman/candidates/java/` folder).
+   ```bash
+   which java
+
+   ~/.sdkman/candidates/java/current/bin/java
+   ```
+   </box>
 
 If you encountered issues while following the above instructions, you can also watch the video below for a more visual explanation (note that the JDK version it uses is not the one we want -- so, adapt accordingly).
 
