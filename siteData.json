@@ -419,6 +419,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/intellij.md",
+      "title": "Intellij - Community Resources",
+      "headings": {
+        "intellij-community-resources": "Intellij - Community Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/intellijCodeNavigation.md",
       "title": "Intellij IDEA: Code navigation",
       "headings": {
@@ -533,7 +541,11 @@
         "setting-up-plantuml-in-intellij-idea": "Setting up PlantUML in IntelliJ IDEA",
         "working-with-plantuml-in-intellij-idea": "Working with PlantUML in IntelliJ IDEA",
         "plantuml-tips-and-tricks": "PlantUML Tips and Tricks",
-        "code-with-me": "Code With Me"
+        "code-with-me": "Code With Me",
+        "key-promoter-x": "Key Promoter X",
+        "installing-key-promoter-x": "Installing Key Promoter X",
+        "how-it-works": "How it Works",
+        "benefits": "Benefits"
       },
       "headingKeywords": {}
     },
@@ -545,6 +557,21 @@
         "enabling-assertions": "Enabling assertions",
         "enabling-soft-wrapping": "Enabling soft wrapping",
         "enabling-automatic-selection-of-open-file": "Enabling automatic selection of open file"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/intellijWindsurf.md",
+      "title": "Intellij IDEA: Using Windsurf",
+      "headings": {
+        "intellij-idea-using-windsurf": "Intellij IDEA: Using Windsurf",
+        "pre-requisites": "Pre-requisites",
+        "setting-up": "Setting Up",
+        "using-windsurf-in-intellij-idea": "Using Windsurf in Intellij IDEA",
+        "basic-code-completion": "Basic Code Completion",
+        "windsurf-chat": "Windsurf Chat",
+        "windsurf-inline-chat": "Windsurf Inline Chat",
+        "windsurf-default-commands": "Windsurf Default Commands"
       },
       "headingKeywords": {}
     },
@@ -1028,6 +1055,7 @@
       "title": "VS Code - Using Windsurf",
       "headings": {
         "vs-code-using-windsurf": "VS Code - Using Windsurf",
+        "pre-requisites": "Pre-requisites",
         "setting-up": "Setting Up",
         "using-windsurf-in-vs-code": "Using Windsurf in VS Code",
         "basic-code-completion": "Basic Code Completion",
@@ -1042,6 +1070,24 @@
       "title": "VS Code - Community Resources",
       "headings": {
         "vs-code-community-resources": "VS Code - Community Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/windsurfContent.md",
+      "headings": {
+        "pre-requisites": "Pre-requisites",
+        "basic-code-completion": "Basic Code Completion",
+        "windsurf-inline-chat": "Windsurf Inline Chat",
+        "windsurf-default-commands": "Windsurf Default Commands"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "tutorials/windsurfSignup.md",
+      "title": "Signing Up for Windsurf",
+      "headings": {
+        "signing-up-for-windsurf": "Signing Up for Windsurf"
       },
       "headingKeywords": {}
     }
