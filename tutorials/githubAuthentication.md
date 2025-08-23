@@ -67,16 +67,15 @@ git config --global credential.helper cache
 
 When you perform your first Git operation that contacts GitHub (like pushing or pulling), Git will prompt you for a username and password.
 * Enter your **GitHub username** as the username.
-* Paste the **PAT** as the password.
+* Paste the **PAT** ==#r#(not your GitHub password)##== as the password.
 
-<box type="tip" seamless>
-
-To trigger the above step, you can attempt to access a remote private repository:
+**To trigger the above step**, you can attempt to access a remote private repository:
 ```bash{.no-line-numbers}
 git clone https://github.com/se-edu/samplerepo-private.git
 ```
 The operation will fail, but it will trigger the authentication mechanism which will ask for your credentials, and cache them for future use.
-</box>
+
+**To confirm the caching was successful**, run the above command a second time. It will fail this time too, but it will not ask for your credentials this time (it will use the cached credentials instead).
 
 <!-- ============================================== -->
 
