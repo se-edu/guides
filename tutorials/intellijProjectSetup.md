@@ -5,7 +5,7 @@
 
 # {{ title }}
 
-1. **Ensure you have installed a suitable JDK**, as explained in our [Java Installation Guides](javaInstallation.html).
+1. **Ensure you have installed a suitable {{ jdk_popover }}**, as explained in our [Java Installation Guides](javaInstallation.html).
 
 1. **Install IntelliJ IDEA**: You can get it from [here](https://www.jetbrains.com/idea/download). Either the Community Edition (free) or the Ultimate Edition (free for students) will do.
 

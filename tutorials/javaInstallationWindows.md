@@ -6,7 +6,7 @@ pageNav: 2
 
 # {{ title }}
 
-This guide explains how to install the **==[Oracle Java 17 JDK](https://www.oracle.com/java/technologies/downloads/#java17)== on Windows**.
+This guide explains how to install the **==[Oracle Java 17 {{ jdk_popover }}](https://www.oracle.com/java/technologies/downloads/#java17)== on Windows**.
 
 ## Installation
 

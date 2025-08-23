@@ -6,7 +6,7 @@
 
 # {{ title }}
 
-This guide explains how to install the **==[Java 17 JDK+FX Azul distribution](https://www.azul.com/downloads/?version=java-17-lts&os=macos&package=jdk-fx#zulu)== on macOS using SDKMAN**.
+This guide explains how to install the {{ jdk_popover}} (specifically, **==[Java 17 JDK+FX Azul distribution](https://www.azul.com/downloads/?version=java-17-lts&os=macos&package=jdk-fx#zulu)==) on macOS using SDKMAN**.
 
 **Why this specific version of JDK?**
 
