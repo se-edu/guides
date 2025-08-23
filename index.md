@@ -34,18 +34,8 @@ Tutorials, how-to guides, getting-started guides, ...
     * [Part 3: Interacting with the user](tutorials/javaFxPart3.html)
     * [Part 4: Using FXML](tutorials/javaFxPart4.html)
     * [Part 5: Tweaking the GUI](tutorials/javaFxPart5.html)
-* **IDE: Intellij IDEA**:
-  * [Setting up your first project](tutorials/intellijProjectSetup.html)
-  * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
-  * [Configuring the code style](tutorials/intellijCodeStyle.html)
-  * [Code Navigation](tutorials/intellijCodeNavigation.html)
-  * [Refactoring](tutorials/intellijRefactoring.html)
-  * [Productivity shortcuts](tutorials/intellijProductivityShortcuts.html)
-  * [Using the debugger](tutorials/intellijDebugger.html)
-  * [Using JUnit](tutorials/intellijJUnit.html)
-  * [Useful Settings](tutorials/intellijUsefulSettings.html)
-  * [Useful Plugins](tutorials/intellijUsefulPlugins.html)
-  * AI Tool Integrations: [GitHub Copilot](tutorials/intellijCopilot.html)
+* [**IDE: Intellij IDEA**](tutorials/intellij.html):
+  <include src="tutorials/intellij.md#idea-sub-topics" />
 * [**IDE: Visual Studio Code**](tutorials/vscode.html)
   <include src="tutorials/vscode.md#vscode-sub-topics" />
 * **Testing**
