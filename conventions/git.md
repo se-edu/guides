@@ -39,10 +39,11 @@ Rationale: Some tools show only a limited number of characters from the commit m
 
 <box type="tip" seamless>
 
-You can use `scope: change` format or `category: change` (when applicable).
-* e.g. `Person class: remove static imports`<br>
+You may add a `<scope>:` or `<category>:` in front, when applicable.
+* e.g. `Person class: Remove static imports`<br>
   `Main.java: Remove blank lines`<br>
-  `bug fix: Add space after name`
+  `bug fix: Add space after name`<br>
+  `chore: Update release date`
 
 </box>
 
