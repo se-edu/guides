@@ -84,6 +84,10 @@ Refer to [IntelliJ documentation](https://www.jetbrains.com/help/idea/creating-a
 
 <!-- ======================================================== -->
 
+<include src="junit.md#troubleshooting-junit" />
+
+<!-- ======================================================== -->
+
 ---
 
 **Contributors**: Song Yuexi ([@YosieSYX](https://github.com/YosieSYX))

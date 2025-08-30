@@ -186,6 +186,17 @@ To learn how to write useful JUnit test cases, refer to [this section](https://s
 
 <!-- ======================================================== -->
 
+<div id="troubleshooting-junit">
+
+## Troubleshooting JUnit
+
+* **Problem:** Tests fail with at `ClassNotFoundException` error, although the supposedly-missing class is present.<br>
+  **Solution:** Ensure the path of source and test files have Unicode characters (e.g., Chinese characters). Gradle sometimes fail to find files in a path that has Unicode characters.
+
+</div>
+
+<!-- ======================================================== -->
+
 ## Resources
 
 * [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
