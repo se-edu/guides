@@ -496,7 +496,8 @@
         "writing-tests": "Writing Tests",
         "running-tests": "Running Tests",
         "writing-useful-junit-tests": "Writing Useful JUnit Tests",
-        "optional-create-a-junit-run-configuration": "Optional: Create a JUnit Run Configuration"
+        "optional-create-a-junit-run-configuration": "Optional: Create a JUnit Run Configuration",
+        "troubleshooting-junit": "Troubleshooting JUnit"
       },
       "headingKeywords": {}
     },
@@ -979,7 +980,8 @@
         "writing-the-first-junit-test": "Writing the First JUnit Test",
         "running-tests": "Running Tests",
         "checking-test-coverage": "Checking Test Coverage",
-        "writing-useful-junit-tests": "Writing Useful JUnit Tests"
+        "writing-useful-junit-tests": "Writing Useful JUnit Tests",
+        "troubleshooting-junit": "Troubleshooting JUnit"
       },
       "headingKeywords": {}
     },
