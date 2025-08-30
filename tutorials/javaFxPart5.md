@@ -304,21 +304,22 @@ Margin and padding used in this example:
 - `Margin`: 0, 7, 0, 7
 - `Padding`: 6, 6, 6, 6
 
-_Alternatively_, we can update in the **FXML code**:
+Alternatively, we can update in the **FXML code**:
 
-```fxml {heading="**view/DialogBox.fxml**" start-from=10}
+```fxml {heading="**view/DialogBox.fxml**" start-from=10 highlight-lines="11-16"}
     <Label fx:id="dialog" text="Label" wrapText="true">
          <HBox.margin>
             <Insets left="7.0" right="7.0" />
          </HBox.margin>
          <padding>
             <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
-         </padding></Label>
+         </padding>
+    </Label>
 ```
 
-_Alternatively alternatively_, we can update in the **CSS code**:
+Alternatively, we can update in the **CSS code**:
 
-```css {heading="**css/dialog-box.css**" start-from=1 highlight-lines=7,8,9}
+```css {heading="**css/dialog-box.css**" start-from=1 highlight-lines="7,8,9"}
 .label {
     -fx-background-color: linear-gradient(to bottom right, #00ffbf, #00ddff);
     -fx-border-color: #d55e00 #009e73 #cc79a7 #0072b2;
