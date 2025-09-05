@@ -324,6 +324,20 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/aiAssistedCoding.md",
+      "title": "AI-Assisted Coding",
+      "headings": {
+        "ai-assisted-coding": "AI-Assisted Coding",
+        "ideas-for-using-ai-tools-in-coding": "Ideas for Using AI Tools in Coding",
+        "a-asking-an-llm": "A: Asking an LLM",
+        "b-use-ide-integrations-an-auto-completion-tool": "B: Use IDE-Integrations an auto-completion tool",
+        "c-collaborate-with-an-ai-coding-agent": "C: Collaborate with an AI coding agent",
+        "d-generate-whole-apps": "D: Generate whole apps",
+        "resources": "Resources"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/checkstyle.md",
       "title": "Using Checkstyle",
       "headings": {
