@@ -1,4 +1,4 @@
-{% set title="AI Coding Tools - Gemini CLI" %}
+{% set title="AI-Assisted Coding - Gemini CLI" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2

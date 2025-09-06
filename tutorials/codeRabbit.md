@@ -1,4 +1,4 @@
-{% set title="AI Coding Tools - CodeRabbit" %}
+{% set title="AI-Assisted Coding - CodeRabbit" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2

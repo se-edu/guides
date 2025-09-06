@@ -1,4 +1,4 @@
-{% set title="AI Coding Tools: Using Copilot in GitHub" %}
+{% set title="AI-Assisted Coding: Using Copilot in GitHub" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
