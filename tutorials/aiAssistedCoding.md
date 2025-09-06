@@ -48,5 +48,6 @@ AI tools can create an entire application (e.g., Web apps, mobile apps) based on
 * **Copilot:** [Signing up]({{ baseUrl }}/tutorials/copilotSignup.html) | [Use with GitHub]({{ baseUrl }}/tutorials/copilotGithub.html) | [Use in Intellij]({{ baseUrl }}/tutorials/intellijCopilot.html) | [Use in VS Code]({{ baseUrl }}/tutorials/vscCopilot.html)
 * **Windsurf:** [Signing up]({{ baseUrl }}/tutorials/windsurfSignup.html) | [Use in Intellij]({{ baseUrl }}/tutorials/intellijWindsurf.html) | [Use in VS Code]({{ baseUrl }}/tutorials/vscWindsurf.html)
 * [**Gemini CLI**]({{ baseUrl }}/tutorials/geminiCli.md)
+* [**CodeRabbit**]({{ baseUrl }}/tutorials/codeRabbit.md)
 
 </div>
