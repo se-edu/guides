@@ -25,7 +25,7 @@ Given below are the steps to set up a Checkstyle plugin in VS Code so that VS Co
 * Open the project directory in VS Code using `File -> Open Folder...`.
 * Set up the extension to use the project's Checkstyle files as follows:
   * Check if the `./.vscode/settings.json` file exists. If not, create a folder `.vscode` in the project root directory and add a file `settings.json` within the `.vscode` folder. This file contains configuration settings for projects in VS Code. {{ abcd_numbers }}
-   * Add these configuration settings to the `settings.json` file. These settings ensure that the Checkstyle extension uses the correct configuration files in the `./config/checkstyle` directory.:
+   * Copy-paste the following configuration settings into the `settings.json` file. These settings ensure that the Checkstyle extension uses the correct configuration files in the `./config/checkstyle` directory.:
      ```json { heading="settings.json" }
       {
         "java.checkstyle.configuration": "${workspaceFolder}/config/checkstyle/checkstyle.xml",
@@ -36,7 +36,7 @@ Given below are the steps to set up a Checkstyle plugin in VS Code so that VS Co
       ```
       <box type="tip" seamless>
 
-      `workspaceFolder` refers to the root folder of the project (i.e., the folder you selected when you used File → Open Folder...)
+      `workspaceFolder` refers to the root folder of the project (i.e., the folder you selected when you used File → Open Folder...). You can leave it as is when you copy-paste the above snippet to your `settings.json` file.
       </box>
 * Add `.vscode` to your `.gitignore` if you haven't done so by adding these few lines to the end of `gitignore`:
   ```sh { heading=".gitignore" }
