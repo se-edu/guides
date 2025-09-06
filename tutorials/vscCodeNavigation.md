@@ -47,21 +47,21 @@ Symbol search helps you quickly locate and jump to methods, classes, and variabl
 
 You can search for symbols in the current file or workspace to navigate your code more quickly.
 
-To search for a symbol **in the current workspace**, press `Ctrl+T` (`Cmd+T` on Mac) and enter the name of the symbol, then select from the list of matches to navigate to its location.
+To search for a symbol **in the current workspace**, press ({{ icon_windows }}/{{ icon_linux}} Ctrl+T | {{ icon_apple }} Cmd+T) and enter the name of the symbol, then select from the list of matches to navigate to its location.
 
 <box type="info" seamless>
-
-You can also use **Quick Open** (`Ctrl+P` / `Cmd+P` on Mac), then enter `#` to search the current workspace. `Ctrl+T` is simply the shortcut.
+You can also use **Quick Open** ({{ icon_windows }}/{{ icon_linux}} Ctrl+P | {{ icon_apple }} Cmd+P), then enter `#` to search the current workspace. `Ctrl+T` is simply the shortcut.
 </box>
+
 
 <video src="https://code.visualstudio.com/assets/docs/java/java-editing/search-in-workspace.mp4" controls width="700px">Your browser does not support the video tag.</video>
 
-To search for a symbol **in the current file**, **Quick Open** (`Ctrl+P` / `Cmd+P` on Mac) and enter `@` before entering the name of the symbol, then select from the list of matches to navigate to its location.
+To search for a symbol **in the current file**, open **Quick Open** ({{ icon_windows }}/{{ icon_linux}} Ctrl+P | {{ icon_apple }} Cmd+P) and enter `@` before the name of the symbol, then select from the list of matches to navigate to its location.
 
 <video src="https://code.visualstudio.com/assets/docs/java/java-editing/search-in-file.mp4" controls width="700px">Your browser does not support the video tag.</video>
 
 <box type="tip" seamless>
-You can enhance your use of **Quick Open** (`Ctrl+P` / `Cmd+P`) by using these special prefixes:
+You can enhance your use of **Quick Open** ({{ icon_windows }}/{{ icon_linux}} Ctrl+P | {{ icon_apple }} Cmd+P) by using these special prefixes:
 - `@` — Search symbols in the current file  
 - `#` — Search symbols in the entire workspace  
 - `:` — Go to a specific line number  
@@ -71,7 +71,7 @@ You can enhance your use of **Quick Open** (`Ctrl+P` / `Cmd+P`) by using these s
 
 You can quickly view or navigate to the definition of a class, method, or variable in your code to understand and trace how different parts of your project are connected.
 
-To view a symbol's definition without leaving your current location, place your cursor on the symbol and press `Alt+F12` (`Option+F12` on Mac). Alternatively, right-click on the symbol and select **Peek > Peek Definition** from the context menu.
+To view a symbol's definition without leaving your current location, place your cursor on the symbol and press ({{ icon_windows }}/{{ icon_linux}} Alt+F12 | {{ icon_apple }} Option+F12). Alternatively, right-click on the symbol and select **Peek > Peek Definition** from the context menu.
 
 To navigate to a symbol's definition, place your cursor on the symbol and press `F12`. Alternatively, right-click on the symbol and select **Go to Definition** from the context menu. If there are multiple definitions, you will be prompted to select the definition that you wish to navigate to.
 
