@@ -1,4 +1,4 @@
-{% set title="AI Coding Tools: Using Copilot in GitHub" %}
+{% set title="AI-Assisted Coding: Using Copilot in GitHub" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
@@ -10,12 +10,19 @@
 
 This section shows how to use GitHub Copilot directly within GitHub to help draft issues, review pull requests, and streamline your development workflow.
 
+<div id="prereq">
+
 ## Pre-requisites
 
-* GitHub account
-* Access to GitHub Copilot (via subscription or educational benefits)
+If you have not enabled Copilot in your GitHub account, follow the guide in the panel below:
 
-Check out our [GitHub Copilot Sign Up guide](vscCopilot.html#signing-up-for-github-copilot) for detailed instructions on how to sign up for GitHub Copilot.
+<panel type="info" header="**Signing Up for GitHub Copilot**" popup-url="copilotSignup.html" peek>
+
+<include src="copilotSignup.md#body" />
+</panel>
+<p/>
+</div>
+
 
 ## Issue Creation
 
@@ -58,4 +65,3 @@ Copilot is a helpful assistant, but not a full replacement for human code review
 ---
 
 **Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh ))
-

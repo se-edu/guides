@@ -6,7 +6,7 @@
 
 # About Us
 
-This is a sub-project of the [se-education.org](https://se-education.org).
+This is a subproject of the [se-education.org](https://se-education.org).
 <span id="contact-info">
 
 ## Contact
@@ -25,6 +25,10 @@ This work is released under the [MIT OSS license](https://opensource.org/license
 ## Contributing
 
 PRs to improve/add content are welcome.
+
+It is best to propose the contribution in [our issue tracker](https://github.com/se-edu/guides/issues) first and wait for approval before starting on the PR.
+
+Each PR should be from a separate branch (not the `master` branch).
 
 This website uses MarkBind documentation tool. [This document](tutorials/markbind.html) has some guidance on how to use it when updating contents.
 

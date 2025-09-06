@@ -36,3 +36,16 @@ Luckily, **you can use the 'soft wrap' feature of Intellij to get the editor win
 
 Read [this](https://www.jetbrains.com/idea/guide/tips/enable-soft-wrap/) to find how to enable soft wraps.
 
+<!-- ==================================================================================================== -->
+
+## Enabling automatic selection of open file
+
+When working with a large repository, it can become quite tricky to keep track of files and where they are located. For example, you may be jumping across a few files while searching for a particular method or class and when you finally reach that class, you do not know which folder/subfolder it is located under! IntelliJ provides a setting that causes opened files to automatically show up in the Project tool window (on the left side of the IDE).
+
+Simply go to the Project tool window, select `options` (the three dots), select `behaviour`, then click `Always Select Opened File`.<br>
+
+<pic src="images/intellij/alwaysSelectOpenedFile.png"></pic>
+
+Now, whenever you select a file (e.g. by clicking on a method), the file will appear selected in the Project tool window, allowing you to quickly locate the file.<br>
+
+<pic src="images/intellij/selectedFileExample.png"></pic>

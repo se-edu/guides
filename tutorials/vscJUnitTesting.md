@@ -70,6 +70,10 @@ Restart VSCode after updating the `build.gradle` file, to ensure the changes tak
 
 <!-- ======================================================== -->
 
+<include src="junit.md#troubleshooting-junit" />
+
+<!-- ======================================================== -->
+
 ---
 
 **Contributors**: Song Yuexi ([@YosieSYX](https://github.com/YosieSYX))

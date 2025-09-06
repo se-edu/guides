@@ -15,8 +15,9 @@ This website contains a collection of tutorials, standards, guides, best practic
 Tutorials, how-to guides, getting-started guides, ...
 
 * [**AddressBook Level-3 (AB3)**](tutorials/ab3.html)
-* **AI Coding Tools**:
-  * [**Copilot in GitHub**](tutorials/githubCopilot.html) | [**Gemini CLI**](tutorials/geminiCli.md)
+* [**AI-Assisted Coding**](tutorials/aiAssistedCoding.html):
+  * [Ideas for Using AI Tools in Coding](tutorials/aiAssistedCoding.html)
+  <include src="tutorials/aiAssistedCoding.md#ai-assisted-coding-sub-topics" />
 * [**Checkstyle**](tutorials/checkstyle.html)
 * [**Codecov**](tutorials/codecov.html)
 * **Git and GitHub**:
@@ -33,17 +34,8 @@ Tutorials, how-to guides, getting-started guides, ...
     * [Part 3: Interacting with the user](tutorials/javaFxPart3.html)
     * [Part 4: Using FXML](tutorials/javaFxPart4.html)
     * [Part 5: Tweaking the GUI](tutorials/javaFxPart5.html)
-* **IDE: Intellij IDEA**:
-  * [Setting up your first project](tutorials/intellijProjectSetup.html)
-  * [Importing a Gradle project](tutorials/intellijImportGradleProject.html)
-  * [Configuring the code style](tutorials/intellijCodeStyle.html)
-  * [Code Navigation](tutorials/intellijCodeNavigation.html)
-  * [Refactoring](tutorials/intellijRefactoring.html)
-  * [Productivity shortcuts](tutorials/intellijProductivityShortcuts.html)
-  * [Using the debugger](tutorials/intellijDebugger.html)
-  * [Using GitHub Copilot](tutorials/intellijCopilot.md)
-  * [Useful Settings](tutorials/intellijUsefulSettings.html)
-  * [Useful Plugins](tutorials/intellijUsefulPlugins.html)
+* [**IDE: Intellij IDEA**](tutorials/intellij.html):
+  <include src="tutorials/intellij.md#idea-sub-topics" />
 * [**IDE: Visual Studio Code**](tutorials/vscode.html)
   <include src="tutorials/vscode.md#vscode-sub-topics" />
 * **Testing**

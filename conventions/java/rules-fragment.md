@@ -866,7 +866,8 @@ The body of the conditional should be wrapped by curly brackets irrespective of 
 
 **{{ icon_level_basic }} All comments should be written in English.**
 
-Furthermore, use American spelling and avoid local slang.
+Choose either American or British spelling and use it consistently.<br>
+Avoid local slang.
 
 %%{{ icon_info }} Rationale: The code is meant for an international audience.%%
 

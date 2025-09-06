@@ -10,35 +10,7 @@
 
 GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both tools are from the same parent company (Microsoft).
 
-## Signing Up for GitHub Copilot
-
-* **Filling in your billing information** {{ step_numbers }}
-  * Go to the [billing information for your GitHub account](https://github.com/settings/billing/payment_information).
-  * Fill in only your billing information (Payment method and other details are not required).<br>
-    <pic src="images/copilotSignUp/billingInformation.png" width="400" />
-  * Click on `Save billing information` to save.
-* **Enabling Two-Factor Authentication (2FA)**. You can skip this step if you have already done so.
-  * Go to the [Two-factor authentication page](https://github.com/settings/security) for your GitHub account.
-  * Click on `Enable two-factor authentication`.
-  * Open the [Microsoft Authenticator App](https://www.microsoft.com/en-us/security/mobile-authenticator-app) on your phone.
-  * Tap the scan QR code button at the bottom right.<br>
-    <pic src="images/copilotSignUp/scanQrCode.png" width="400" />
-  * Scan the QR code displayed on the GitHub page.
-  * Complete the remaining setup steps.
-  * You should see the following page when 2FA is enabled.<br>
-    <pic src="images/copilotSignUp/2faEnabled.png" width="400" />
-* **Linking your university email to GitHub** (for Education benefits).
-  * Go to the [emails settings page](https://github.com/settings/emails) in GitHub account.
-  * Add your university-issued email under the `Add email address` field.
-  * Verify your email using the link sent to your inbox.
-  * Once verified, you will see your school email in the list of emails.
-* **Applying for GitHub Education benefits**
-  * Go to the [GitHub Education page](https://github.com/settings/education/benefits).
-  * Click on `Start an application`.
-  * Select your role as `Student`.
-  * Choose university as your school %%(e.g., National University of Singapore)%%.
-  * Follow the instructions and complete the application form.
-  * Once your application is approved, it will show that you have a current student coupon applied.
+<include src="copilotGithub.md#prereq" />
 
 ## Installing GitHub Copilot in Visual Studio Code
 
@@ -76,7 +48,10 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 ## Using GitHub Copilot in Visual Studio Code
 
 ### Basic Code Completion
-  * In a Java file, type a comment like `// print Hello World` inside the main method.
+
+**To get Copilot to complete code based on a comment**:
+
+1. In a Java file, type a comment like `// print Hello World` inside the main method.
     ```java
     public class Main {
         public static void main(String[] args) {
@@ -84,12 +59,25 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
         }
     }
     ```
-  * GitHub Copilot will automatically suggest code to complete or implement the comment.<br>
-    <pic src="images/vscCopilotUsage/basicCodeCompletion.png" width="400" />
-  * Press `Tab` to accept the suggestion, or continue typing to refine it.
+1. GitHub Copilot will automatically suggest code to complete or implement the comment.<br>
+    <pic src="images/vscCopilotUsage/basicCodeCompletion.png" width="400" /><p/>
+1. Press `Tab` to accept the suggestion, or continue typing to refine it.
   <box type="tip" seamless>
     The more descriptive your comment or method signatures, the better Copilot can understand what you want to implement.
-    </box>
+  </box>
+
+**To disable automatic code completion**,
+
+1. Look for the Copilot icon in the bottom right of vscode:<br>
+<pic src="images/vscCopilotUsage/copilotIconBottomBar.png" width="300" /><br>
+1. Uncheck the necessary boxes (`All files` disables code completion for all files, while the checkbox below it disables code completion for the currently open file type.)
+
+<box type="tip" seamless>
+
+If you have access to Copilot Pro, you can also monitor your Copilot Premium Requests usage here.<br>
+<pic src="images/vscCopilotUsage/copilotDisableCodeCompletion.png" width="300" />
+</box>
+
 
 ### Copilot Chat
 
@@ -100,6 +88,19 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
   * You can directly insert or copy code chunks using the buttons in the top right corner.
   * From left to right: Insert automatically into the current file, Insert at cursor, Copy to clipboard.<br>
     <pic src="images/vscCopilotUsage/copilotChatButtons.png" width="100" />
+
+  * The Copilot Chat interface also contains a variety of useful features.<br>
+    <pic src="images/vscCopilotUsage/copilotChatInterface.png" width="400" />
+    1. You can toggle between 3 different modes, **ask** (ask a question and copilot generates an answer), **edit** (ask copilot to edit a select number of files) and **agent** (ask copilot to execute autonomously with a high level prompt). Find out more about the different modes [here](https://github.blog/ai-and-ml/github-copilot/copilot-ask-edit-and-agent-modes-what-they-do-and-when-to-use-them/).
+    2. By default, only the currently opened file will be included in the chat context (i.e. "visible" to Copilot). Include additional context by pressing the **Add Context** button, which will open up a window at the top that allows you to select files to add to Copilot Chat's context. <br>
+    <pic src="images/vscCopilotUsage/copilotChatAddContext.png" width="600" />
+    3. You can choose between different AI models to use. If you have access to [Copilot Pro](https://docs.github.com/en/copilot/how-tos/manage-your-account/get-free-access-to-copilot-pro) (which comes with Github Education), you can select premium models.
+    4. You can use mentions, by typing `@` followed by the participant's name, or clicking on the `@` icon. This allows you to invoke certain chat participants that are optimized to answer questions about their respective domains. One useful mention is `@workspace`, which answers questions about your entire repository.
+
+  <box type="tip" seamless markdown>
+    You can find out more about managing context for Copilot Chat <a href="https://code.visualstudio.com/docs/copilot/chat/copilot-chat-context">here</a>.
+  </box>
+
 
 ### Copilot Inline Chat
 
@@ -124,4 +125,4 @@ Some common project-related prompts you might find useful:
 
 ---
 
-**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh ))
+**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh )), Luoqi Xu ([@Luoq1-Xu](https://github.com/Luoq1-Xu))

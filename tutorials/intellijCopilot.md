@@ -1,34 +1,21 @@
+{% set title="Intellij IDEA: Using GitHub Copilot" %}
 <frontmatter>
-title: "IntelliJ IDEA – Using GitHub Copilot"
-pageNav: 2
+  title: "{{ title }}"
+  pageNav: 2
 </frontmatter>
 
 <include src="../common/common-fragments.md#wip-warning" />
 
-# IntelliJ IDEA – Using GitHub Copilot
+# {{ title }}
 
-GitHub Copilot is an AI-powered code assistant that helps you write, test, and refactor code faster. In this tutorial, you’ll learn how to set up and use Copilot in IntelliJ IDEA — perfect for students in CS2103/T, CS2113, and other Java-heavy modules.
+GitHub Copilot is an AI-powered code assistant that helps you write, test, and refactor code faster in IntelliJ IDEA.
 
-<box type="info" seamless>
-To use GitHub Copilot for free as a student, you must:
-
-1. Sign up for a GitHub account  
-2. Enable two-factor authentication (2FA)  
-3. Apply for the GitHub Student Developer Pack  
-
-This guide walks you through setting up Copilot access and using it in IntelliJ IDEA.
-</box>
+<!-- Do not duplicate generic setup; link to shared prerequisites instead -->
+<include src="copilotGithub.md#prereq" />
 
 ---
 
-## 1. Setting Up GitHub Copilot Access
-
-Before using Copilot in IntelliJ, ensure your GitHub account has Copilot access (Student Developer Pack + 2FA).  
-Follow the steps in the [Copilot access prerequisites](githubCopilot.md#prereq), then return here.
-
----
-
-## 2. Installing GitHub Copilot Plugin in IntelliJ IDEA
+## 1. Installing GitHub Copilot Plugin in IntelliJ IDEA
 
 1. Open IntelliJ IDEA.  
 2. On Mac: **IntelliJ IDEA > Preferences**. On Windows/Linux: **File > Settings**.  
@@ -40,7 +27,7 @@ Follow the steps in the [Copilot access prerequisites](githubCopilot.md#prereq),
 
 ---
 
-## 3. Signing In to GitHub
+## 2. Signing In to GitHub
 
 1. After restart, open **Settings > Languages & Frameworks > GitHub Copilot**.  
 2. Under **Authentication**, click **Manage GitHub Accounts**.  
@@ -52,7 +39,7 @@ Follow the steps in the [Copilot access prerequisites](githubCopilot.md#prereq),
 
 ---
 
-## 4. Verifying Copilot in Action
+## 3. Verifying Copilot in Action
 
 1. Create or open a Java file, e.g., `CopilotTest.java`.  
 2. Inside a `main` method, type:
@@ -72,7 +59,7 @@ Copilot works best with clear, descriptive comments.
 
 ---
 
-## 5. Using Copilot Chat *(if available)*
+## 4. Using Copilot Chat *(if available)*
 
 > Copilot Chat may be in beta or limited in IntelliJ.
 
@@ -89,7 +76,7 @@ Write a function to reverse a string in Java.
 
 ---
 
-## 6. Troubleshooting
+## 5. Troubleshooting
 
 <box type="tip" seamless>
 **Common Issues & Fixes**  

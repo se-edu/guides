@@ -31,6 +31,9 @@ This tutorial covers the basics of using VS Code’s debugger for Java features.
 
 <include src="vscCreatingNewJavaProject.md#vsc-java-prereq" />
 
+* In particular, ensure you have the **[Debugger for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug)** extension installed from VS Code Marketplace
+
+
 <!-- ========================================================================== -->
 <div id="vscode-debugger-adding-breakpoints">
 
@@ -44,7 +47,8 @@ This tutorial covers the basics of using VS Code’s debugger for Java features.
 <p/>
 
 <box type="tip" seamless>
-To remove the breakpoint, click the red dot again.
+
+To remove the breakpoint, click the red dot again. Remember to remove breakpoints after you are done debugging that section, so they do not interfere when debugging other parts of the code later.
 </box>
 
 * The Debugger for Java supports various breakpoints, including line breakpoints, conditional breakpoints, data breakpoints, and logpoints.
@@ -61,9 +65,14 @@ To remove the breakpoint, click the red dot again.
 
 **Purpose:** To get VS Code to run the code in the debugger mode, so that the debugger can direct the execution flow as needed by the debugging.
 
-**How:** There are multiple ways to run and debug your Java application using the extension. One way is to click on the dropdown arrow beside the play icon (top editor title bar) and select `Debug Java`
-* Alternatively, you can press F5
-* By default, the debugger will run out-of-box by automatically finding the main class and generating a default launch configuration in memory to launch your application.
+**How:** Here are some ways to launch the Debugger:
+* Click on the dropdown arrow beside the play icon (top editor title bar) and select `Debug Java`
+ * If 'Debug Java' isn’t visible, ensure your file contains a `main` method and that the Java debugger extension is installed and active.
+* Click on `Debug` option right above `main` method
+* Alternatively  {{ icon_windows }}/{{ icon_linux}} `F5` | {{ icon_apple }} `Fn+F5`
+
+By default, the debugger will run out-of-box by automatically finding the main class and generating a default launch configuration in memory to launch your application.
+
 
 {{ show_screenshot("images/vscodeDebugger/vsc_debug_mode.png", credit) }}
 {{ show_youtube_video_segment(video_id, "4", "34", "5", "05") }}
@@ -94,7 +103,7 @@ At each breakpoint, you can see:
 
 **Purpose:** To move through code line by line and observe how it is executed
 
-**How:** Click the Step Over button (curved arrow) in the debug toolbar, or press `F10`
+**How:** Click the Step Over button (curved arrow) in the debug toolbar ({{ icon_windows }}/{{ icon_linux}} `F10` | {{ icon_apple }} `Fn+F10`)
 
 {{ show_screenshot("images/vscodeDebugger/vsc_stepthrough.png", credit, width="250") }}
 {{ show_youtube_video_segment(video_id, "8", "00", "8", "19") }}
@@ -107,7 +116,7 @@ At each breakpoint, you can see:
 
 **Purpose:** To enter a method being called on the current line to see how it behaves
 
-**How:** Click the Step Into button (down arrow), or press `F11`
+**How:** Click the Step Into button (down arrow) ({{ icon_windows }}/{{ icon_linux}} `F11` | {{ icon_apple }} `Fn+F11`)
 
 {{ show_screenshot("images/vscodeDebugger/vsc_stepthrough.png", credit, width="250") }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_step-filtering", credit) }}
@@ -119,7 +128,7 @@ At each breakpoint, you can see:
 
 **Purpose:** To finish executing the current method and return to its caller, without stepping through the rest of it. 
 
-**How:** Click the Step Out button (up arrow), or press `Shift+F11`
+**How:** Click the Step Out button (up arrow) ({{ icon_windows }}/{{ icon_linux}} `Shift+F11` | {{ icon_apple }} `Fn+Shift+F11`)
 
 {{ show_screenshot("images/vscodeDebugger/vsc_stepthrough.png", credit, width="250") }}
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_step-filtering", credit) }}
@@ -157,7 +166,8 @@ At each breakpoint, you can see:
 
 ## Setting a Logpoint
 
-**Purpose:** To send output to the Debug Console without editing code, and without stopping execution flow
+**Purpose:** Logpoints are useful for printing debug messages without modifying your source code, especially in read-only files or production environments.
+* **E.g.** when calculating sums, logpoints allow you to keep track of the function without numerous `print` statements and keeping codebase clean!
 
 **How:** 
 * Right click in the editor margin and select "Add Logpoint" 
@@ -192,13 +202,37 @@ At each breakpoint, you can see:
 
 **Purpose:** You can configure the debugger using the options and settings. JVM arguments and environment variables is easily done with launch options.
 
+To customize how your program is launched (e.g. passing arguments or setting environment variables), you can modify the `.vscode/launch.json` file.
+
 {{ show_docs_page_link("https://code.visualstudio.com/docs/java/java-debugging#_configuration-options", credit) }}
 
 <!-- ========================================================================== -->
 
 ## Troubleshooting
 
-If you encounter issues when using the VS Code debugger, refer to the detailed troubleshooting guide given [here](https://github.com/microsoft/vscode-java-debug/blob/main/Troubleshooting.md).
+
+**Problem: Debugger won't start**, debugger process terminated abruptly<br>
+**Solution:**
+  *  Ensure JDK is installed (`java --version` and `javac --version`)
+  *  Verify `launch.json`: Correct mainClass path e.g. 'com.example.Main'
+
+---
+
+**Problem: Breakpoints not working**, code runs but does not pause at breakpoints<br>
+**Solution:**
+  *  Run `Clean/Rebuild` in VS Code ({{icon_windows}}/{{icon_linux}} `Ctrl+Shift+P` | {{icon_apple}} `Cmd+Shift+P` > "Java: Clean the Java Language Server Workspace").
+  *  For **Maven/Gradle:** `mvn clean compile` / `gradle clean build`
+
+---
+
+**Problem: Class not found** or Error: "Could not find or load main class"<br>
+**Solution:**
+  *  Ensure `src/main/java` exists
+  *  {{icon_windows}}/{{icon_linux}} `Ctrl+Shift+P` | {{icon_apple}} `Cmd+Shift+P` > "Java: List all Java source paths" to show all source paths recognized by the workspace.
+  *  Refresh the workspace: {{icon_windows}}/{{icon_linux}} `Ctrl+Shift+P` | {{icon_apple}} `Cmd+Shift+P` > "Java: Reload Projects".
+
+
+{{ icon_tip }} If you encounter other issues when using the VS Code debugger, refer to the detailed troubleshooting guide given [here](https://github.com/microsoft/vscode-java-debug/blob/main/Troubleshooting.md).
 
 
 </div>

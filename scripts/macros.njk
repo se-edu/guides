@@ -64,4 +64,8 @@ More info from {{ doc }} is <a href="{{ src }}" target="_blank">here</a>.
 </box>
 {% endmacro %}
 
+<!-- ------------------------------------------- -->
+
+{% macro show_keys(win_keys, mac_keys) %}<span class="badge bg-light text-dark p-2">:fab-windows: {{ win_keys }}</span>/<span class="badge bg-light text-dark p-1">:fab-apple: {{ mac_keys }}</span>{% endmacro %}
+
 

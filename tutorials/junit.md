@@ -180,7 +180,18 @@ If the above doesn't work, you may want to go to `File` > `Settings` and change 
 
 After you are able to run JUnit tests successfully using a dummy test class such as the above, you can add more tests and test classes as necessary.
 
-To learn how to write useful JUnit test cases, refer [this section](https://se-education.org/se-book/cppToJava/junit/basic/index.html) of our SE book. For a quick overview of more advance JUnit features, refer [this section](https://se-education.org/se-book/cppToJava/junit/intermediate/index.html).
+To learn how to write useful JUnit test cases, refer to [this section](https://se-education.org/se-book/cppToJava/junit/basic/index.html) of our SE book. For a quick overview of more advanced JUnit features, refer to [this section](https://se-education.org/se-book/cppToJava/junit/intermediate/index.html).
+
+</div>
+
+<!-- ======================================================== -->
+
+<div id="troubleshooting-junit">
+
+## Troubleshooting JUnit
+
+* **Problem:** Tests fail with at `ClassNotFoundException` error, although the supposedly-missing class is present.<br>
+  **Solution:** Ensure the path of source and test files have Unicode characters (e.g., Chinese characters). Gradle sometimes fail to find files in a path that has Unicode characters.
 
 </div>
 
