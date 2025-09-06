@@ -53,7 +53,7 @@
 <variable name="bad"><span style="color: red"><md>**:fas-thumbs-down: Bad**</md></span></variable>
 <variable name="good"><span style="color: green"><md>**:fas-thumbs-up: Good**</md></span></variable>
 
-<variable name="step_numbers">\{texts="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']" t-class="badge rounded-pill bg-primary text-white"\}</variable>
+<variable name="step_numbers">\{texts="['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']" t-class="badge rounded-pill bg-primary text-white m-1 pt-0 pb-0"\}</variable>
 <variable name="abcd_numbers">\{texts="['a)', 'b)', 'c)', 'd)', 'e)', 'f)', 'g)', 'h)']" \}</variable>
 <variable name="jdk_def">The **Java Development Kit (JDK)** is a software package that provides the tools needed to develop and run Java applications. It includes the Java compiler, Java Runtime Environment (JRE), and various development tools like `javac`, `java`, and `javadoc`.</variable>
 <variable name="jdk_popover"><popover content="{{ jdk_def }}">JDK</popover></variable>
