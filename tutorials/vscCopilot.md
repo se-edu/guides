@@ -10,7 +10,7 @@
 
 GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both tools are from the same parent company (Microsoft).
 
-<include src="copilotGithub.md#prereq" />
+<include src="copilotGitHub.md#prereq" />
 
 ## Installing GitHub Copilot in Visual Studio Code
 
@@ -47,6 +47,12 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 
 ## Using GitHub Copilot in Visual Studio Code
 
+The Copilot extension offers multiple ways to interact with AI assistance in VS Code:
+
+- **Copilot Chat** – chat panel for general questions, help, and slash commands (e.g., `/explain`, `/fix`)
+- **Inline Chat** – ask Copilot to edit/explain code in place; also supports slash commands
+- **Terminal Prompts** – invoke Copilot from the integrated terminal; best for build/run/shell tasks (slash commands work here too)
+
 ### Basic Code Completion
 
 **To get Copilot to complete code based on a comment**:
@@ -68,7 +74,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 
 **To disable automatic code completion**,
 
-1. Look for the Copilot icon in the bottom right of vscode:<br>
+1. Look for the Copilot icon in the bottom-right of VS Code:<br
 <pic src="images/vscCopilotUsage/copilotIconBottomBar.png" width="300" /><br>
 1. Uncheck the necessary boxes (`All files` disables code completion for all files, while the checkbox below it disables code completion for the currently open file type.)
 
@@ -114,15 +120,30 @@ If you have access to Copilot Pro, you can also monitor your Copilot Premium Req
 
 1. Open a terminal in Visual Studio Code.
 1. Press `Ctrl+I` to bring up Copilot’s terminal prompt input.<br>
-    <pic src="images/vscCopilotUsage/copilotTerminal.png" width="600" />
+    <box type="tip" seamless>
+
+    Slash commands like `/explain` and `/fix` also work in **Copilot Chat** and **Inline Chat**, not just the terminal.
+    </box>
+
+
+    <box type="tip" seamless>
+    Slash commands like `/explain` and `/fix` also work in Copilot Chat** and Inline Chat, not just the terminal.
+    </box>
+
 
 Some common project-related prompts you might find useful:
 
 * Run the checkstyle
 * Compile and run the Java program
 * Run JUnit tests
-* ~~Perform Git operations~~ (possible but #r#not recommended##; if you are new to Git, we discourage using Git inside the IDE -- it is better for beginners to learn Git independent of other tools)
+* ~~Perform Git operations~~ (possible but **not recommended**; if you are new to Git, we discourage using Git inside the IDE — it’s better for beginners to learn Git independent of other tools)
+<box type="tip" seamless>
+
+**Troubleshooting Tips**
+- Copilot not showing up? → Ensure you are in a Java file and that the extension is installed and enabled.
+- Copilot panel missing? → Try restarting VS Code or reinstalling the extension.
+</box>
 
 ---
 
-**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh )), Luoqi Xu ([@Luoq1-Xu](https://github.com/Luoq1-Xu))
+**Contributors**: Norbert Loh ([@NorbertLoh](https://github.com/NorbertLoh)), Luoqi Xu ([@Luoq1-Xu](https://github.com/Luoq1-Xu)), Arshin Sikka ([@arshinsikka](https://github.com/arshinsikka))
