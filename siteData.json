@@ -350,6 +350,14 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/codeRabbit.md",
+      "title": "AI-Assisted Coding - CodeRabbit",
+      "headings": {
+        "ai-assisted-coding-coderabbit": "AI-Assisted Coding - CodeRabbit"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/codecov.md",
       "title": "Using Codecov",
       "headings": {
@@ -360,9 +368,9 @@
     },
     {
       "src": "tutorials/copilotGithub.md",
-      "title": "AI Coding Tools: Using Copilot in GitHub",
+      "title": "AI-Assisted Coding: Using Copilot in GitHub",
       "headings": {
-        "ai-coding-tools-using-copilot-in-github": "AI Coding Tools: Using Copilot in GitHub",
+        "ai-assisted-coding-using-copilot-in-github": "AI-Assisted Coding: Using Copilot in GitHub",
         "pre-requisites": "Pre-requisites",
         "issue-creation": "Issue Creation",
         "pull-request-creation-summary": "Pull Request Creation Summary",
@@ -380,9 +388,9 @@
     },
     {
       "src": "tutorials/geminiCli.md",
-      "title": "AI Coding Tools - Gemini CLI",
+      "title": "AI-Assisted Coding - Gemini CLI",
       "headings": {
-        "ai-coding-tools-gemini-cli": "AI Coding Tools - Gemini CLI",
+        "ai-assisted-coding-gemini-cli": "AI-Assisted Coding - Gemini CLI",
         "prerequisites": "Prerequisites",
         "installing-gemini-cli": "Installing Gemini CLI",
         "using-gemini-cli-in-your-projects": "Using Gemini CLI in your projects",
