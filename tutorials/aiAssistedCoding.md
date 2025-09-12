@@ -39,8 +39,6 @@ Examples:
 
 AI tools can create an entire application (e.g., Web apps, mobile apps) based on prompts -- the so called 'vibe coding' tools.
 
-Here's a first draft, please let me know if there's anything that can be improved!
-
 ## Best Practices for AI-Assisted Coding
 
 To effectively leverage AI in your workflow, it's crucial to adopt a set of best practices. The following tips are non-exhaustive, and should be kept in mind regardless of which AI model you use.
