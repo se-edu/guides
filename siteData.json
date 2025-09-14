@@ -328,12 +328,16 @@
       "title": "AI-Assisted Coding",
       "headings": {
         "ai-assisted-coding": "AI-Assisted Coding",
-        "ideas-for-using-ai-tools-in-coding": "Ideas for Using AI Tools in Coding",
-        "a-asking-an-llm": "A: Asking an LLM",
-        "b-use-ide-integrations-an-auto-completion-tool": "B: Use IDE-Integrations an auto-completion tool",
-        "c-collaborate-with-an-ai-coding-agent": "C: Collaborate with an AI coding agent",
-        "d-generate-whole-apps": "D: Generate whole apps",
-        "resources": "Resources"
+        "a-tools-and-resources": "A: Tools and Resources",
+        "b-ideas-for-using-ai-tools-in-coding": "B: Ideas for Using AI Tools in Coding",
+        "b1-asking-an-llm": "B1: Asking an LLM",
+        "b2-use-ide-integrations-an-auto-completion-tool": "B2: Use IDE-Integrations an Auto-Completion Tool",
+        "b3-collaborate-with-an-ai-coding-agent": "B3: Collaborate with an AI Coding Agent",
+        "b4-generate-whole-apps": "B4: Generate Whole Apps",
+        "c-best-practices-for-ai-assisted-coding": "C: Best Practices for AI-Assisted Coding",
+        "c1-treat-the-ai-as-a-collaborator-not-a-replacement": "C1. Treat the AI as a Collaborator, Not a Replacement",
+        "c2-prompt-engineering": "C2. Prompt Engineering",
+        "c3-understand-ai-s-limitations": "C3. Understand AI's Limitations"
       },
       "headingKeywords": {}
     },
