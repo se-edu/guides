@@ -141,22 +141,14 @@ public class DukeTest {
 
 {% set play_button = '<span class="text-success">:fas-play:</span>' %}
 
-****In Intellij IDEA:****
+****Using IDE:****
 
-* To run a specific JUnit test class (e.g., `src/test/java/seedu/DukeTest.java`), right-click on the test class, and choose {{ play_button }} `Run {classname}`.
 
-<box type="tip" seamless>
+If you are using IntelliJ, you may refer to the tutorial [here](https://se-education.org/guides/tutorials/intellijJUnit.html#running-tests)
 
-If the above doesn't work, you may want to go to `File` > `Settings` and change the`Run tests using:` setting to `Intellij IDEA` (instead of `Gradle`), as shown below:
+If you are using VS Code, you may refer to the tutorial [here](https://se-education.org/guides/tutorials/vscJUnitTesting.html#running-tests)
 
-<panel header="Expand to see screenshot ..." peek no-close no-switch>
-
-![change Intellij settings to not use Gradle](images/gradle/intellijRunTestsUsingIntellij.png)
-</panel>
-</box>
-
-* To run all tests in a folder (e.g., `src/test/java` folder), right-click on the folder, and choose {{ play_button }} `Run Tests in '...'`.
-* Other supported IDEs (e.g., Eclipse, NetBeans, VS Code, etc.) have similar mechanisms.
+Other supported IDEs (e.g., Eclipse, NetBeans, etc.) have similar mechanisms.
 
 ****Using Gradle:****
 
