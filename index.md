@@ -16,6 +16,7 @@ Tutorials, how-to guides, getting-started guides, ...
 
 * [**AddressBook Level-3 (AB3)**](tutorials/ab3.html)
 * [**AI-Assisted Coding**](tutorials/aiAssistedCoding.html):
+  * [Introduction to AI Tools](tutorials/aiToolsIntroduction.md)
   * [Ideas for Using AI Tools in Coding](tutorials/aiAssistedCoding.html)
   <include src="tutorials/aiAssistedCoding.md#ai-assisted-coding-sub-topics" />
 * [**Checkstyle**](tutorials/checkstyle.html)
