@@ -16,38 +16,41 @@ This tutorial covers the basics of using VS Code’s JUnit.
 
 <include src="vscCreatingNewJavaProject.md#vsc-java-prereq" />
 
-## Setting Up JUnit with Gradle
 
-#### Add Gradle Support
-
-If your project doesn’t yet use Gradle, follow the [Gradle Tutorial](https://se-education.org/guides/tutorials/gradle.html) to set it up.
-
-#### Add JUnit as a Dependency
+<!-- ======================================================== -->
 
 This tutorial assumes you are using Gradle to manage JUnit.
 
+<include src="junit.md#junit-use-gradle" />
 
-Follow the instructions [here](https://se-education.org/guides/tutorials/junit.html#configuring-gradle-for-junit) to add the JUnit dependency.
+
+<!-- ======================================================== -->
+
+<include src="junit.md#add-junit-to-gradle" />
 
 <box type="tip" seamless>
 
 Restart VSCode after updating the `build.gradle` file, to ensure the changes take effect.
 </box>
 
-
-## Writing Tests
-
-You can create test classes in two ways:
-
-1. **Manually**  
-   Follow the [conventions](https://se-education.org/guides/tutorials/vscJUnitTesting.html#conventions-to-follow) and use the [sample test file](https://se-education.org/guides/tutorials/junit.html#writing-the-first-junit-test) as a reference.
-
-2. **Using VS Code’s Java extension to generate test skeletons**  
-   - **Right-click** in your Java file, select **`Source Action…`**, then choose **`Generate Tests…`**.  
-   - **If triggered from a main class file**: VS Code prompts you to select the methods to test, then generates skeleton test methods for you to complete.  
-   - **If triggered from an existing test file**: VS Code offers options to add various types of test methods, including lifecycle methods and standard test methods.
+<!-- ======================================================== -->
 
 
+<include src="junit.md#junit-conventions" />
+
+<include src="junit.md#first-unit-test" />
+
+<box type="tip" seamless> 
+You may also use VS Code’s Java extension to generate test skeletons
+
+   - Right-click in your Java file, select "Source Action…", then choose "Generate Tests…". 
+
+   - If triggered from a main class file: VS Code prompts you to select the methods to test, then generates skeleton test methods for you to complete.  
+
+   - If triggered from an existing test file**: VS Code offers options to add various types of test methods, including lifecycle methods and standard test methods.
+</box>
+
+<!-- ======================================================== -->
 
 ## Running Tests
 
@@ -57,7 +60,7 @@ You can create test classes in two ways:
    Open the Testing Explorer by clicking the beaker icon in the left Activity Bar. You can run/debug tests and view their results from there as well.
    ![VS Code Testing Explorer](images/vscJUnit/vscTestingExplorer.png)
 
-<!-- ======================================================== -->
+
 
 ## Checking Test Coverage
 

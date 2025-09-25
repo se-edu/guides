@@ -22,34 +22,21 @@ This tutorial assumes you are using Gradle to manage JUnit dependencies.
 
 <!-- ======================================================== -->
 
-## Setting Up JUnit with Gradle
+<include src="junit.md#add-junit-to-gradle" />
 
-#### Add Gradle Support
-
-If your project doesn’t yet use Gradle, follow the [Gradle Tutorial](https://se-education.org/guides/tutorials/gradle.html) to set it up.
-
-#### Add JUnit as a Dependency
-
-1. Open the `build.gradle` file in your project’s root directory.
-   <box type="tip" seamless>
-
-   Press {{ show_keys("<kbd>Ctrl</kbd> <kbd>⇧Shift</kbd> <kbd>O</kbd>", "<kbd>⌘Cmd</kbd> <kbd>⇧Shift</kbd> <kbd>O</kbd>") }} and search for `build.gradle` to locate it quickly.
-   </box>
-1. Follow the instructions [here](https://se-education.org/guides/tutorials/junit.html#configuring-gradle-for-junit) to add the JUnit dependency.
-1. After editing `build.gradle`, refresh your Gradle project:
+After editing `build.gradle`, refresh your Gradle project:
    * Press {{ show_keys("<kbd>Ctrl</kbd> <kbd>⇧Shift</kbd> <kbd>I</kbd>", "<kbd>⌘Cmd</kbd> <kbd>⇧Shift</kbd> <kbd>I</kbd>") }}. {texts="['3.1)', '3.2)']"}
    * In the Gradle tool window, click **Reimport All Gradle Projects**.
 
 <!-- ======================================================== -->
 
-## Writing Tests
+<include src="junit.md#junit-conventions" />
 
-You can write test classes in two ways:
+<include src="junit.md#first-unit-test" />
 
-1. **Manually**  
-   Follow [this guide](https://se-education.org/guides/tutorials/vscJUnitTesting.html#conventions-to-follow) to write your test classes following the recommended conventions.
+<box type="tip" seamless> 
 
-2. **Using IntelliJ to generate test templates**  
+You may also use IntelliJ to generate test templates  
    1. Place your cursor on the class name you want to test.  
    2. Press {{ show_keys("<kbd>Alt</kbd> <kbd>Enter</kbd>", "<kbd>Option</kbd> <kbd>Enter</kbd>") }} or **right-click** and choose `Show Context Actions`.  
    3. Select **`Create Test`** from the menu.  
@@ -58,7 +45,7 @@ You can write test classes in two ways:
       <pic src="./images/intellij/test-menu.png" width="450" />
 
 IntelliJ will automatically create the test class and navigate you to it.
-
+</box>
 
 <!-- ======================================================== -->
 
