@@ -945,7 +945,7 @@ Here are other things you can do with your app to make it more personalized:
 - Add a [placeholder](https://stackoverflow.com/questions/23363222/how-to-set-placeholder-in-javafx) for `TextField` e.g., ("Type here...")
 - Change [style for error messages](#change-style-dynamically-based-on-command) 
 - Change the [title and icon](https://www.youtube.com/watch?v=UZKKaI8OnjY) of your app
-- Change the send button to an [icon](https://edencoding.com/how-to-add-an-image-to-a-button/)
+- [Use an image for the button](https://www.tutorialspoint.com/how-to-add-an-image-to-a-button-action-in-javafx)
 - Make profile pictures [circular](https://stackoverflow.com/questions/42116313/how-to-set-an-image-in-a-circle)
 - Set GIFs as profile pictures
 - Add [sound effects](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/media/AudioClip.html) when sending messages
