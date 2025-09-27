@@ -60,6 +60,11 @@ dependencies {
 
 </div>
 
+<box type="warning" seamless>
+
+**Your `build.gradle` needs to include all JavaFX dependencies given above** (not just the lines matching your OS), for your app to work on all three OSes.
+</box>
+
 Also note the following:
 
 {{ embed("Gradle Tutorial →  After updating the `build.gradle` file (extract)", "gradle.md#after-updating-build-file") }}

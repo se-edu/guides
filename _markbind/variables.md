@@ -24,7 +24,7 @@
 <variable name="icon_level_basic"><md><span class="badge rounded-pill bg-danger">:far-star:</span></md></variable>
 <variable name="icon_level_intermediate"><md><span class="badge rounded-pill bg-warning text-white">:far-star::far-star:</span></md></variable>
 <variable name="icon_level_advanced"><md><span class="badge rounded-pill bg-success">:far-star::far-star::far-star:</span></md></variable>
-<variable name="icon_important_big_red"><font color="red"><big>:glyphicon-exclamation-sign:</big></font></variable>
+<variable name="icon_important_big_red">#r#++:glyphicon-exclamation-sign:++##</variable>
 <variable name="icon_important"><md>:glyphicon-exclamation-sign:</md></variable>
 <variable name="icon_new_window"><md>:glyphicon-new-window:</md></variable>
 <variable name="icon_outcome"><md>:fas-trophy:</md></variable>
