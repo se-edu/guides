@@ -19,8 +19,8 @@ Given below are the steps to set it up for a project.
 1. Create a folder to hold the relevant files e.g., `[project root]\text-ui-test`
 1. Add a `runtest.bat` (if you are on Windows) or `runtest.sh` (if you are on a *nix OS) into the folder, containing the script below.<br>
 
-   <tabs>
-   <tab header="`runtest.bat`">
+   <cv-tabgroup id="os">
+   <cv-tab id="windows" header="<code>runtest.bat</code>">
 
    ```bat
    @ECHO OFF
@@ -45,8 +45,8 @@ Given below are the steps to set it up for a project.
    REM compare the output to the expected output
    FC ACTUAL.TXT EXPECTED.TXT
    ```
-   </tab>
-   <tab header="`runtest.sh`">
+   </cv-tab>
+   <cv-tab id="mac" header="<code>runtest.sh</code>">
 
    ```sh
    #!/usr/bin/env bash
@@ -84,8 +84,8 @@ Given below are the steps to set it up for a project.
        exit 1
    fi
    ```
-   </tab>
-   </tabs>
+   </cv-tab>
+   </cv-tabgroup>
    <br>
 
 1. Update the `javac` and `java` commands in the script to match the name/location of your main class.<br>

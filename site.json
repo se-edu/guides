@@ -23,7 +23,7 @@
   "deploy": {
     "message": "Site Update."
   },
-  "plugins": ["filterTags", "codeBlockCopyButtons"],
+  "plugins": ["customviews", "filterTags", "codeBlockCopyButtons"],
   "pluginsContext": {
     "filterTags" : {
       "tags": []

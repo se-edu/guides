@@ -37,29 +37,28 @@ Use the matching URL based on the protocol you chose for authentication.
 
 To avoid having to enter username/PAT every time, you can ask Git to store it securely on your computer, as follows:
 
-<tabs>
-  <tab header=":fab-windows: Windows">
+<cv-tabgroup id="os" nav="auto">
+  <cv-tab id="windows" header=":fab-windows: Windows">
 
 Configure Git to use the built-in **Credential Manager** by running:
 
 ```bash{.no-line-numbers}
 git config --global credential.helper manager-core
 ```
-
-  </tab>
-  <tab header=":fab-apple: MacOS">
+  </cv-tab>
+  <cv-tab id="mac" header=":fab-apple: MacOS">
 
 macOS uses the Keychain by default, so your PAT is stored automatically after the first use. No further action needed.
-  </tab>
-  <tab header=":fab-linux: Linux">
+  </cv-tab>
+  <cv-tab id="linux" header=":fab-linux: Linux">
 
 Configure Git to use credential cache by running:
 
 ```bash{.no-line-numbers}
 git config --global credential.helper cache
 ```
-  </tab>
-</tabs>
+  </cv-tab>
+</cv-tabgroup>
 
 ---
 
@@ -82,8 +81,8 @@ The operation will fail, but it will trigger the authentication mechanism which 
 ## Using SSH for authentication
 
 
-<tabs>
-  <tab header=":fab-windows: Windows + Git Bash">
+<cv-tabgroup id="git-env" nav="auto">
+<cv-tab id="winbash" header=":fab-windows: Windows + Git Bash">
 
 ##### 1. Check for Existing SSH Keys
 
@@ -127,8 +126,8 @@ ssh -T git@github.com
 
 Say `yes` when prompted, and you should see a welcome message with your username.
 
-  </tab>
-  <tab header=":fab-windows: Windows + WSL">
+  </cv-tab>
+  <cv-tab id="wsl" header=":fab-windows: Windows + WSL">
 
 Perform these steps within your WSL distribution.
 
@@ -168,8 +167,8 @@ Paste the output into GitHub → Settings → SSH and GPG Keys.
 ```bash
 ssh -T git@github.com
 ```
-  </tab>
-  <tab header=":fab-apple: MacOS">
+  </cv-tab>
+  <cv-tab id="mac" header=":fab-apple: MacOS">
 
 
 ##### 1. Check for Existing SSH Keys
@@ -236,8 +235,8 @@ ssh -T git@github.com
 
 Type `yes` when prompted, and you should see a message with your username.
 
-  </tab>
-  <tab header=":fab-linux: Linux">
+  </cv-tab>
+  <cv-tab id="linux" header=":fab-linux: Linux">
 
 ##### 1. Check for Existing SSH Keys
 
@@ -276,8 +275,8 @@ Paste the output into GitHub → Settings → SSH and GPG Keys.
 ssh -T git@github.com
 ```
 
-  </tab>
-</tabs>
+  </cv-tab>
+</cv-tabgroup>
 
 -----
 

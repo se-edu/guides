@@ -1,0 +1,36 @@
+{
+  "config": {
+    "tabGroups": [
+      {
+        "id": "os",
+        "label": "OS that you normally use for development work:",
+        "default": "windows",
+        "tabs": [
+          { "id": "mac", "label": "MacOS" },
+          { "id": "windows", "label": "Windows" },
+          { "id": "linux", "label": "Linux" }
+        ]
+      },
+      {
+        "id": "git-env",
+        "label": "Your Git environment:",
+        "default": "winbash",
+        "tabs": [
+          { "id": "winbash", "label": "Windows + Git Bash" },
+          { "id": "wsl", "label": "Windows + WSL" },
+          { "id": "mac", "label": "MacOS" },
+          { "id": "linux", "label": "Linux" }
+        ]
+      }
+    ]
+  },
+  "baseUrl": "/guides",
+  "widget": {
+    "enabled": true,
+    "position": "middle-left",
+    "showReset": true,
+    "showWelcome": true,
+    "title": "Configure your view of our guides"
+  },
+  "showUrl": true
+}
