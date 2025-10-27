@@ -41,8 +41,10 @@ Before we proceed, ensure that you have done the following:
      If this step doesn't go as expected, ensure the default Java version is set correctly, as given in [here](javaInstallation.html). {texts="['2.1', '2.2', '2.3']"}
    * Run AB3 using Intellij UI (i.e., use the {{ icon_run_green }} button to run `src\main\java\seedu\address\Main.java`) and ensure the app launches.<br>
      If the first check worked but this check doesn't, ensure you have set Intellij to use the correct JDK version (more info: [here](intellijJdk.md)).
-1. **Learn basic debugging features of Intellij IDEA** given [here](intellijDebugger.md):
-   * If you are using a different IDE, we'll leave it to you to figure out the equivalent feature to use in your IDE.
+1. **Learn basic debugging features of your choice of IDE**:
+   * For IntelliJ IDEA, follow the tutorial [here](intellijDebugger.md)
+   * For Visual Studio Code, follow the tutorial [here](vscDebugger.md)
+   * If you are using another IDE, refer to its official documentation for equivalent debugging features.
    * If you are not using an IDE, we'll let you figure out how to achieve the same using your coding toolchain.
 
 ## Setting a breakpoint
