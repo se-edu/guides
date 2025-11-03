@@ -53,6 +53,12 @@ Given below are three scenarios of adding the Gradle wrapper to a project. Choos
 <include src="intellijImportGradleProject.md#importing-gradle-project" />
 
 </tab>
+<tab header="Using VS Code">
+<div class="ml-3">
+
+<include src="vscImportingGradleProject.md#importing-gradle-project" />
+
+</tab>
 <tab header="Not using an IDE">
 
 Run the `java -version` command in the same terminal you use for running Gradle commands, to ensure you are using the intended Java version for Gradle.
@@ -73,6 +79,20 @@ First, add the Gradle wrapper files to the project. e.g., if they are in a separ
 1. Delete the `.idea` folder.<br>
    {{ icon_info }} Note that some operating systems hides folders/files starting with `.` by default. If you can't see the `.idea` folder, you might need to configure the OS to 'un-hide' those files/folders.
 1. Open/import the project again, as explained in scenario 1 above.
+
+</tab>
+<tab header="Using VS Code">
+
+1. Close VS Code for this project.
+1. Add or merge the Gradle wrapper files (`gradlew`, `gradlew.bat`, `gradle/wrapper/gradle-wrapper.properties`, `gradle/wrapper/gradle-wrapper.jar`, and `build.gradle`).
+1. Clean old build artifacts that may conflict with Gradle: delete any `bin/`, `.classpath`, `.project`, or `.settings/` folders left over from earlier setups.
+1. Re-open the project folder in VS Code (`File` -> `Open Folder...`).
+   * When prompted, click "Trust" this workspace.
+   * If asked "Import Gradle project?", choose Yes.
+1. Check extensions: ensure *Extension Pack for Java* and *Gradle for Java* are installed and enabled.
+1. Wait for Gradle sync. When complete, you should see your project appear under the Gradle side panel with tasks like `build`, `test`, and `run`.<br>
+   {{ icon_info }} If the Gradle panel doesn't show tasks, open Command Palette and run `Gradle: Refresh Gradle Project`.<br>
+   {{ icon_info }} If you edited `build.gradle` or added new dependencies later, use "Refresh" again to re-sync.
 
 </tab>
 <tab header="Not using an IDE">
@@ -111,6 +131,32 @@ Intellij uses Gradle to run your application by default. If you would like to ru
 <panel header="Expand to see screenshot ..." peek no-close no-switch>
 
 ![change Intellij settings to not use Gradle](images/gradle/intellijRunUsingGradle.png)
+</panel>
+</box>
+
+</tab>
+<tab header="Using VS Code">
+
+There are several ways to run a Gradle task in VS Code. For example:
+* Expand the Gradle view in the Activity Bar, locate the task (e.g. `build`, `test`), and click the {{ icon_run_green }} **Run Task** icon next to it.
+* Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`), type **"Gradle: Run Task"**, and select the task you want to run.
+* Alternatively, you can also run Gradle tasks in the integrated terminal using the command line. Follow the instructions in the **Using the terminal** tab above.
+
+<box type="tip" seamless>
+
+You can access useful Gradle views from the Gradle side bar. The **Gradle Projects** view lists all detected Gradle projects in your workspace, allowing you to view, run, or debug any Gradle task.
+
+<panel header="Gradle Tasks" peek>
+<video src="https://code.visualstudio.com/assets/docs/java/java-build/gradle-tasks.mp4" controls width="100%">Your browser does not support the video tag.</video>
+</panel>
+</box>
+
+<box type="tip" seamless>
+
+If your workspace contains many Gradle tasks, you can **pin tasks** to easily find your frequently used ones. You can also check the **Recent Tasks** view to quickly find and rerun tasks you've recently executed.
+
+<panel header="Gradle Pinned and Recent Tasks" peek>
+<video src="https://code.visualstudio.com/assets/docs/java/java-build/gradle-pinned-recent-tasks.mp4" controls width="100%">Your browser does not support the video tag.</video>
 </panel>
 </box>
 
@@ -176,8 +222,9 @@ repositories {
 
 **After updating the `build.gradle` file,**
 
-* if you are using an IDE: Use the IDE UI to reload dependencies based on the updated file. For example, if using Intellij  IDEA, you can click the <img src="images/gradle/RefreshGradleIcon.png" /> icon in the Gradle tool window to reload the file.<br>
-  For good measure, you can restart the IDE too.
+* if you are using an IDE: Use the IDE UI to reload dependencies based on the updated file. For example:
+  * For Intellij IDEA, you can click the <img src="images/gradle/RefreshGradleIcon.png" /> icon in the Gradle tool window to reload the file. For good measure, you can restart the IDE too.
+  * For VS Code: open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) → run `Gradle: Refresh Gradle Project`, or click the refresh button in the Gradle side panel. You can also reload the window (`Developer: Reload Window`) if dependencies still don’t sync.
 * if not using an IDE: Run `.\gradlew clean build` to rebuild everything based on the updated file.
 </box>
 <!-- ==================================================================================================== -->

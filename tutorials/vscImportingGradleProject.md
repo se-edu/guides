@@ -38,6 +38,8 @@ Verify the project has support for Gradle. If it does, there should be a `build.
 
 ## Importing an existing Gradle project
 
+<div id="importing-gradle-project">
+
 ### Step 1: Open the project folder
 
 1. **Open VS Code**
@@ -89,6 +91,7 @@ If the Gradle icon doesn't appear after restarting VS Code, add `"gradle.nestedP
 </box>
 
 <pic src="images/vscode/vscode_gradle_icon.jpg" width="400" />
+</div>
 
 ## Gradle Tasks
 
