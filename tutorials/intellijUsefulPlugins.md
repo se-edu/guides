@@ -21,7 +21,7 @@ The sections below explain how to install PlantUML. For more tips on **using Pla
 
 1. Go to `File` \> `Settings` to access the `Settings` page.
 
-2. Go to `Settings` \> `Plugins` \> `Marketplace` and install the plugin `PlantUML integration`.
+2. Go to `Settings` \> `Plugins` \> `Marketplace` and install the plugin `plantuml4idea`.
 
 3. Then go to `Settings` \> `Languages & Frameworks` \> `PlantUML` or search for PlantUML. You can also use a specific version of PlantUML from the [releases page](https://github.com/plantuml/plantuml/releases).
     ![Settings - Other Settings - PlantUML: location of PlantUML.jar](images/plantuml/ConfiguringSettings.png)
@@ -32,7 +32,7 @@ The sections below explain how to install PlantUML. For more tips on **using Pla
 ### Working with PlantUML in IntelliJ IDEA
 
 
-After installing the `PlantUML integration` plugin, simply create or open any `.puml` file to start editing it.
+After installing the `plantuml4idea` plugin, simply create or open any `.puml` file to start editing it.
 
 ![Editing `DeleteSequenceDiagram.puml`](images/plantuml/EditingDeleteSequenceDiagram.png)
 
@@ -43,7 +43,7 @@ Any changes you make in editor pane on the left will be reflected in the preview
 * **When using MarkBind** as the site generation tool:
   * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you. Refer to [this section of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#plantuml-diagrams) for more details.
 * **When using Jekyll** as the site generation tool:
-  * The `PlantUML integration` plugin allows you to export individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
+  * The `plantuml4idea` plugin allows you to save individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
   * You will have to `git add` any new diagrams generated!
 
 </div>
