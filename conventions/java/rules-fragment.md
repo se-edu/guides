@@ -877,7 +877,8 @@ Avoid local slang.
 
 You MUST write header comments for all classes, public methods. But they _can_ be omitted for the following cases:<br>
 i. Getters/setters<br>
-ii. When overriding methods (provided the parent method's Javadoc applies exactly _as is_ to the overridden method)
+ii. When overriding methods (provided the parent method's Javadoc applies exactly _as is_ to the overridden method)<br>
+iii. In classes/methods used for testing
 
 %%{{ icon_info }} Rationale: `public` method are meant to be used by others and the users should not be forced to read the code of the method to understand its exact behavior. The code, even if it is self-explanatory, can only tell the reader HOW the code works, not WHAT the code is supposed to do.%%
 

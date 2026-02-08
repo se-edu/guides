@@ -172,11 +172,11 @@ Similarly, let's create an FXML file for the `DialogBox` (to be placed in `src/m
 
 Note that for `Label`, we set `wrapText` to **true** and `minHeight` to **-Infinity**. This configuration wraps the text within the label, removes the minimum height constraint, and allows the label to grow vertically as needed:
 
-![Set minHeight for Label](images/javafx/NoOverrunDialogBox.png)
+<img src="images/javafx/NoOverrunDialogBox.png" />
 
 Without setting `minHeight` to **-Infinity**, text overrun may occur when the text to be displayed exceeds the size of the label, causing the text to not be fully displayed and ends with `...` instead:
 
-![No minHeight for Label](images/javafx/OverrunDialogBox.png)
+<img src="images/javafx/OverrunDialogBox.png" />
 
 </box>
 
@@ -289,14 +289,12 @@ From the above refactoring, you can see how we can use FXML to separate _view_ a
 
 Next, let us explore how we can use the Scene Builder tool to tweak the GUI visually. [Download](https://gluonhq.com/products/scene-builder/#download) the appropriate version for your OS and install it.
 
-1. Let’s use Scene Builder to explore FXML files we created earlier.
-    
-    Running Scene Builder brings up the main screen.
-    Select `Open Project` > `src/main/resources/view/MainWindow.fxml`. Inspect each control and its properties.
+1. Let’s use Scene Builder to explore FXML files we created earlier.<br><br>
+   Running Scene Builder brings up the main screen.
+   Select `Open Project` > `src/main/resources/view/MainWindow.fxml`. Inspect each control and its properties.<br>
+   <img src="images/javafx/SceneBuilder.png" />
 
-   ![SceneBuilder opening MainWindow.fxml](images/javafx/SceneBuilder.png)
-
-1. On the right accordion pane, you can modify the properties of the control that you have selected. Try changing the various settings and see what they do!
+2. On the right accordion pane, you can modify the properties of the control that you have selected. Try changing the various settings and see what they do!
 
    <box type="info" seamless>
 
@@ -331,12 +329,11 @@ Next, let us explore how we can use the Scene Builder tool to tweak the GUI visu
 </tabs>
 </modal>
 
-1. On the left accordion, when you expand the `Controller` panel at the bottom, you can see that we have set the controller class to `MainWindow`.
- 
-   ![Controller for MainWindow](images/javafx/MainWindowController.png)
+3. On the left accordion, when you expand the `Controller` panel at the bottom, you can see that we have set the controller class to `MainWindow`.<br>
+   <img src="images/javafx/MainWindowController.png" />
 
-1. Let’s now open `DialogBox.fxml` in Scene Builder (open it the same way you opened the previous file), and expand the `Controller` panel on the left-side accordion.<br>
-   ![Settings for DialogBox](images/javafx/DialogBoxController.png)<br>
+4. Let’s now open `DialogBox.fxml` in Scene Builder (open it the same way you opened the previous file), and expand the `Controller` panel on the left-side accordion.<br>
+   <img src="images/javafx/DialogBoxController.png" /><br>
    The main difference you can see here is that DialogBox ticks `Use fx:root construct` and _does not define a controller class_. Ticking this enables the use of the `fx:root` element, allowing you to reference a root element, which can be set by calling the `setRoot()` method. The controller (which is shown as empty) can be programmatically set using the `setController()` method. This is exactly what we did in the constructor of the `DialogBox.java` earlier.
    ```java{highlight-lines="4-5" heading="DialogBox.java"}
        private DialogBox(String text, Image img) {

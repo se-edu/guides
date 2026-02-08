@@ -151,7 +151,10 @@ If the above doesn't work, you may want to go to `File` > `Settings` and change 
 
 <panel header="Expand to see screenshot ..." peek no-close no-switch>
 
-![change Intellij settings to not use Gradle](images/gradle/intellijRunTestsUsingIntellij.png)
+<annotate src="images/gradle/intellijRunTestsUsingIntellij.png">
+<a-point x="59%" y="69%"><md><span style="background-color: white;" class="text-danger p-0 opacity-100"><small><small>&nbsp;&nbsp;&nbsp;Intellij IDEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></small></span></md></a-point>
+</annotate>
+
 </panel>
 </box>
 
@@ -191,7 +194,7 @@ To learn how to write useful JUnit test cases, refer to [this section](https://s
 ## Troubleshooting JUnit
 
 * **Problem:** Tests fail with at `ClassNotFoundException` error, although the supposedly-missing class is present.<br>
-  **Solution:** Ensure the path of source and test files have Unicode characters (e.g., Chinese characters). Gradle sometimes fail to find files in a path that has Unicode characters.
+  **Solution:** Ensure the path of source and test files does not have Unicode characters (e.g., Chinese characters). Gradle sometimes fail to find files in a path that has Unicode characters.
 
 </div>
 

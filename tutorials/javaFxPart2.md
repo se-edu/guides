@@ -16,10 +16,10 @@ From the mockup above, can you identify the controls that we will need to use?  
 
 Mockup | Control
 ------ | :---: |
-![ImageView](images/javafx/MockupImageView.png) | ImageView
-![Label](images/javafx/MockupLabel.png) | Label
-![Button](images/javafx/MockupButton.png) | Button
-![TextField](images/javafx/MockupTextField.png) | TextField
+<img src="images/javafx/MockupImageView.png" />| ImageView
+<img src="images/javafx/MockupLabel.png" />| Label
+<img src="images/javafx/MockupButton.png" />| Button
+<img src="images/javafx/MockupTextField.png" />| TextField
 <img src="images/javafx/MockupScrollPane.png" width="300" /> | ScrollPane | ScrollPane
 
 <box type="info" seamless>
@@ -161,8 +161,8 @@ For this tutorial, we have two images `DaUser.png` and `DaDuke.png` to represent
 
 Image|Filename
 ---|---
-![DaDuke](images/javafx/DaUser.png) | `DaUser.png`
-![DaUser](images/javafx/DaDuke.png) | `DaDuke.png`
+<img src="images/javafx/DaUser.png" /> | `DaUser.png`
+<img src="images/javafx/DaDuke.png" /> | `DaDuke.png`
 
 Then, create a sample `DialogBox` with a simple message.
 
@@ -201,7 +201,7 @@ That is not what we were expecting, as the elements are not in the layout we wan
 
 ## Styling the Controls
 
-Almost every JavaFX object offer properties that you can set to customize its look and feel. For example, the `Stage` allows you to set its preferred size and title. Again, refer to the official [JavaFX documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html) for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:
+Almost every JavaFX object offers properties that you can set to customize its look and feel. For example, the `Stage` allows you to set its preferred size and title. Again, refer to the official [JavaFX documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html) for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:
 
 Add the following code to the bottom of the `start` method. You'll have to add `import javafx.scene.layout.Region;` to the imports too:
 

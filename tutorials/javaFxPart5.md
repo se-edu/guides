@@ -62,7 +62,7 @@ Children within `AnchorPane` are able to "anchor" their edges to the `AnchorPane
 
 Since we want to automatically resize the `TextField` horizontally (but not vertically) whenever we resize the window, we need to put an anchor constraint on the **left and right edges**. Click on the left and right boxes as shown below, and it will automatically set a value based on its current position relative to the AnchorPane. Note that the right side is set to 76 as this is the width of the button next to it.
 
-![Update AnchorPane constraints of TextField](images/javafx/TextFieldAnchorPaneConstraints2.png)
+<img src="images/javafx/TextFieldAnchorPaneConstraints2.png" />
 
 Save `MainWindow.fxml` and run to test your app out to see if it works when you resize the window.
 
@@ -283,7 +283,7 @@ Update the following code:
 
 In short, padding represents the space between the content and its border, while margin represents the invisible space around the border.
 
-![Padding and Margin](images/javafx/PaddingAndMargin.png)
+<img src="images/javafx/PaddingAndMargin.png" />
 
 Let us play around with the padding and margin of the text bubble.
 
@@ -341,8 +341,8 @@ Play around with the padding and margin and find the parameters that is most sui
 
 To **view the effects of the margin**, you may either
 - Run the app
-- Select both `ImageView` and `Label` to view the distance between them
-  ![View effects of margin](images/javafx/ViewEffectsOfMargin.png)
+- Select both `ImageView` and `Label` to view the distance between them<br>
+  <img src="images/javafx/ViewEffectsOfMargin.png" />
 
 ## Borders
 
@@ -495,7 +495,7 @@ We can also automatically change color based on the **brightness level of a spec
 
 This line means that the font color will turn <span style="background: black; color: white">**white**</span> if the **brightness** of `background` color is between <span style="color:#674ea7">**0%-49%**</span>, and it will turn <span style="background: white; color: black">**black**</span>  if the brightness level is between <span style="color:#a64d79">**50%-100%**</span>.
 
-![Ladder Demo](images/javafx/LadderDemo.png)
+<pic src="images/javafx/LadderDemo.png" />
 
 ### Derive
 
@@ -937,7 +937,7 @@ We can't directly adjust the opacity of the background image in `.root`. However
 
 ```
 
-![Image Opacity Demo](images/javafx/ImageOpacityDemo.png)
+<pic src="images/javafx/ImageOpacityDemo.png" />
 
 ## Other things to consider
 
