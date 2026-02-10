@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="MarkBind 6.2.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Working with JAR files</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Working with JAR files</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
@@ -37,6 +37,28 @@ use the <code class="hljs inline no-lang">java -jar</code>. For example, if the 
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre></div></div><p>Second, ensure the following property is configured correctly, so that Shadow know which class is the entry point to the application:</p> <div class="code-block"><div class="code-block-heading"><span>build.gradle</span></div><div class="code-block-content"><pre><code heading="build.gradle" class="hljs groovy"><span>mainClass.set(<span class="hljs-string">&quot;seedu.duke.Main&quot;</span>)
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
@@ -52,6 +74,28 @@ use the <code class="hljs inline no-lang">java -jar</code>. For example, if the 
       15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
       14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
       5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
     </g>
 </svg>
 
@@ -79,7 +123,29 @@ use the <code class="hljs inline no-lang">java -jar</code>. For example, if the 
 
     </div>
     </div>
-    </button></div></pre></div></div><p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> If you are using JavaFX, see the panel below to find what else you need to add to the <code class="hljs inline no-lang">build.gradle</code> to pack JavaFX libraries into the generated JAR file.</p> <div class="indented-level1"><span class="card-container" data-v-4484e25a><span class="morph" data-v-4484e25a><button class="morph-display-wrapper btn btn-outline-secondary" data-v-4484e25a><div class="minimal-caret-wrapper" data-v-4484e25a><span class="glyphicon glyphicon-chevron-right" data-v-4484e25a></span></div><span class="card-title" data-v-4484e25a><!--[--><!--[--><!--[--><p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Tutorials → JavaFX Tutorial Part 1 → If you are using Gradle</p><!--]--><!--]--><!--]--></span></button></span></span></div> <p></p><!--]--><hr data-v-65067870></div> <div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-65067870><div class="nav-tabs printable-tab-header" data-v-65067870><div class="nav-link active" data-v-65067870><!--[-->With Intellij IDEA<!--]--></div></div><!--[--> <p><strong><span><span aria-hidden="true" class="glyphicon glyphicon-facetime-video"></span></span> Creating a JAR file in Intellij</strong> - A video by Artur Spirin:</p> <div class="block-embed block-embed-service-youtube" style="position:relative;padding-bottom:60.9375%;"><iframe type="text/html" src="//www.youtube.com/embed/3Xo6zSBgdgk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> <p><strong>If your app uses third-party libraries</strong>, you are recommended to create a fat JAR file using Gradle instead.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>Although JUnit is a third-party library, you need not package it into a fat JAR file because JUnit is used only in the test code, not in the application code.</p> <p>But if you use JavaFX, you need to package the JavaFX libraries into a fat JAR file.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div><!--]--><hr data-v-65067870></div><!--]--></div></div> <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2> <ul><li><a href="https://docs.oracle.com/javase/tutorial/deployment/jar/basicsindex.html">Oracle&#39;s tutorial on JAR files</a></li> <li><a href="https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow">Gradle documentation for the Shadow plugin</a></li> <li><a href="https://imperceptiblethoughts.com/shadow/introduction/">Shadow plugin homepage</a></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#working-with-jar-files">Working with JAR files‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#running-jar-files">Running JAR files‎</a> <a class="nav-link py-1" href="#fat-jar-files">Fat JAR files‎</a> <a class="nav-link py-1" href="#creating-jar-files">Creating JAR files‎</a> <a class="nav-link py-1" href="#resources">Resources‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Sun, 8 Feb 2026, 22:48:04 GMT+8]</small></div></footer><!--]--></div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre></div></div><p><span><span aria-hidden="true" class="fas fa-info-circle"></span></span> If you are using JavaFX, see the panel below to find what else you need to add to the <code class="hljs inline no-lang">build.gradle</code> to pack JavaFX libraries into the generated JAR file.</p> <div class="indented-level1"><span class="card-container" data-v-4484e25a><span class="morph" data-v-4484e25a><button class="morph-display-wrapper btn btn-outline-secondary" data-v-4484e25a><div class="minimal-caret-wrapper" data-v-4484e25a><span class="glyphicon glyphicon-chevron-right" data-v-4484e25a></span></div><span class="card-title" data-v-4484e25a><!--[--><!--[--><!--[--><p><span><span aria-hidden="true" class="glyphicon glyphicon-log-in"></span></span> Tutorials → JavaFX Tutorial Part 1 → If you are using Gradle</p><!--]--><!--]--><!--]--></span></button></span></span></div> <p></p><!--]--><hr data-v-65067870></div> <div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-65067870><div class="nav-tabs printable-tab-header" data-v-65067870><div class="nav-link active" data-v-65067870><!--[-->With Intellij IDEA<!--]--></div></div><!--[--> <p><strong><span><span aria-hidden="true" class="glyphicon glyphicon-facetime-video"></span></span> Creating a JAR file in Intellij</strong> - A video by Artur Spirin:</p> <div class="block-embed block-embed-service-youtube" style="position:relative;padding-bottom:60.9375%;"><iframe type="text/html" src="//www.youtube.com/embed/3Xo6zSBgdgk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> <p><strong>If your app uses third-party libraries</strong>, you are recommended to create a fat JAR file using Gradle instead.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>Although JUnit is a third-party library, you need not package it into a fat JAR file because JUnit is used only in the test code, not in the application code.</p> <p>But if you use JavaFX, you need to package the JavaFX libraries into a fat JAR file.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div><!--]--><hr data-v-65067870></div><!--]--></div></div> <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2> <ul><li><a href="https://docs.oracle.com/javase/tutorial/deployment/jar/basicsindex.html">Oracle&#39;s tutorial on JAR files</a></li> <li><a href="https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow">Gradle documentation for the Shadow plugin</a></li> <li><a href="https://imperceptiblethoughts.com/shadow/introduction/">Shadow plugin homepage</a></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#working-with-jar-files">Working with JAR files‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#running-jar-files">Running JAR files‎</a> <a class="nav-link py-1" href="#fat-jar-files">Fat JAR files‎</a> <a class="nav-link py-1" href="#creating-jar-files">Creating JAR files‎</a> <a class="nav-link py-1" href="#resources">Resources‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Tue, 10 Feb 2026, 20:38:52 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
 <script src="/guides/markbind/js/vue.global.prod.min.js"></script>
@@ -133,6 +199,20 @@ use the <code class="hljs inline no-lang">java -jar</code>. For example, if the 
 `;
             tooltipText.innerText  = `Copy`;
         }, 3000);
+    }
+    </script>
+    <script>
+    function toggleCodeBlockWrap(element) {
+      const pre = element.parentElement.parentElement;
+      const tooltipText = element.querySelector(".tooltiptext");
+      const classList = pre.querySelector('code').classList; 
+      if (classList.contains('wrap')) {
+          classList.remove('wrap');
+          tooltipText.innerText  = `Wrap Text`;
+      } else {
+          classList.add('wrap')
+          tooltipText.innerText  = `Unwrap Text`;
+      }
     }
     </script>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="MarkBind 6.2.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>AB3 Tutorial: Adding a Command</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>AB3 Tutorial: Adding a Command</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
@@ -47,6 +47,28 @@
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre><h3 id="hook-remarkcommand-into-the-application">Hook <code class="hljs inline no-lang">RemarkCommand</code> into the application<a class="fa fa-anchor" href="#hook-remarkcommand-into-the-application" onclick="event.stopPropagation()"></a></h3> <p>Now that we have our <code class="hljs inline no-lang">RemarkCommand</code> ready to be executed, we need to update <code class="hljs inline no-lang">AddressBookParser#parseCommand()</code> to recognize the <code class="hljs inline no-lang">remark</code> keyword. Add the new command to the <code class="hljs inline no-lang">switch</code> block by creating a new <code class="hljs inline no-lang">case</code> that returns a new instance of <code class="hljs inline no-lang">RemarkCommand</code>.</p> <p><strong>Optionally, if you wish to keep your tests updated</strong> as you go, you can also follow the instructions given in panels such as the one below:</p> <div class="card-container" data-v-4484e25a><div class="card expandable-card card-seamless border-0" data-v-4484e25a><div class="card-header header-toggle bg-transparent border-0" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><span class="glyphicon glyphicon-chevron-right" data-v-4484e25a></span></div><div class="header-wrapper-seamless header-wrapper card-title bg-transparent" data-v-4484e25a><!--[--><!--[--><p><span class="large"><span class="mkb-text-green"><span aria-hidden="true" class="fas fa-vial-circle-check"></span></span></span> Updating tests to match ...</p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-light" style="display:none;" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-outline-light seamless-button close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-light seamless-button popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-collapse" data-v-4484e25a><!----><hr style="" data-v-4484e25a></div><!----></div></div> <p></p> <p>You can see the changes mentioned above in this <a href="https://github.com/se-edu/addressbook-level3/commit/0b11fdac00e19fedf3a8defc2a4f6b57d2708103#diff-399c284cb892c20b7c04a69116fcff6ccc0666c5230a1db8e4a9145def8fa4ee">diff</a>.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-warning vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>Code given in the diff&#39;s cited here (such as the one above) might be slightly outdated</strong> compared to the current AB3 code. If you copy over the code from such a diff, you need to verify the code is working as expected, and fix up the outdated parts as necessary.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h3 id="run-the-application">Run the application<a class="fa fa-anchor" href="#run-the-application" onclick="event.stopPropagation()"></a></h3> <p>Run <code class="hljs inline no-lang">Main#main</code> and try out your new <code class="hljs inline no-lang">RemarkCommand</code>. If everything went well, you should see something like this:</p> <span class="image-wrapper"><img src="/guides/tutorials/images/add-remark/RemarkHello.png" alt="AB3 GUI" width="" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <h2 id="change-remarkcommand-to-throw-an-exception">Change <code class="hljs inline no-lang">RemarkCommand</code> to throw an exception<a class="fa fa-anchor" href="#change-remarkcommand-to-throw-an-exception" onclick="event.stopPropagation()"></a></h2> <p>While we have successfully printed a message to <code class="hljs inline no-lang">ResultDisplay</code>, the command does not do what it is supposed to do. Let’s change the command to throw a <code class="hljs inline no-lang">CommandException</code> to accurately reflect that our command is still a work in progress.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/add-remark/RemarkClass.png" alt="The relationship between RemarkCommand and Command" width="" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <p>Following the convention in other commands, we add relevant messages as constants and use them.</p> <p><strong><code class="hljs inline no-lang">RemarkCommand.java</code>:</strong></p> <pre><code class="hljs java"><span>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String MESSAGE_USAGE = COMMAND_WORD
 </span><span>            + <span class="hljs-string">&quot;: Edits the remark of the person identified &quot;</span>
 </span><span>            + <span class="hljs-string">&quot;by the index number used in the last person listing. &quot;</span>
@@ -77,6 +99,28 @@
       15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
       14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
       5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
     </g>
 </svg>
 
@@ -142,6 +186,28 @@
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre><div class="card-container" data-v-4484e25a><div class="card expandable-card card-seamless border-0" data-v-4484e25a><div class="card-header header-toggle bg-transparent border-0" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><span class="glyphicon glyphicon-chevron-right" data-v-4484e25a></span></div><div class="header-wrapper-seamless header-wrapper card-title bg-transparent" data-v-4484e25a><!--[--><!--[--><p><span class="large"><span class="mkb-text-green"><span aria-hidden="true" class="fas fa-vial-circle-check"></span></span></span> Updating tests to match ...</p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-light" style="display:none;" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-outline-light seamless-button close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-light seamless-button popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-collapse" data-v-4484e25a><!----><hr style="" data-v-4484e25a></div><!----></div></div> <p></p> <p>Your code should look something like <a href="https://github.com/se-edu/addressbook-level3/commit/c423aae6e674e80461d21b1f6721556f817db892#diff-a8e35af8f9c251525063fae36c9852922a7e7195763018eacec60f3a4d87c594">this</a> after you are done.</p> <h3 id="parse-user-input">Parse user input<a class="fa fa-anchor" href="#parse-user-input" onclick="event.stopPropagation()"></a></h3> <p>Now let’s move on to writing a parser that will extract the index and remark from the input provided by the user.</p> <p>Create a <code class="hljs inline no-lang">RemarkCommandParser</code> class in the <code class="hljs inline no-lang">seedu.address.logic.parser</code> package. The class must extend the <code class="hljs inline no-lang">Parser</code> interface.</p> <span class="image-wrapper"><img src="/guides/tutorials/images/add-remark/ParserClass.png" alt="The relationship between Parser and RemarkCommandParser" width="" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <p>Thankfully, <code class="hljs inline no-lang">ArgumentTokenizer#tokenize()</code> makes it trivial to parse user input. Let’s take a look at the JavaDoc provided for the function to understand what it does.</p> <p><strong><code class="hljs inline no-lang">ArgumentTokenizer.java</code>:</strong></p> <pre><code class="hljs java"><span><span class="hljs-comment">/**</span>
 </span><span><span class="hljs-comment"> * Tokenizes an arguments string and returns an {<span class="hljs-doctag">@code</span> ArgumentMultimap}</span>
 </span><span><span class="hljs-comment"> * object that maps prefixes to their respective argument values. Only the</span>
@@ -167,6 +233,28 @@
       15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
       14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
       5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
     </g>
 </svg>
 
@@ -199,6 +287,28 @@
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre><p>This appears to be what we need to get a String of the remark. But what about the Index? Let&#39;s take a quick peek at existing <code class="hljs inline no-lang">Command</code> that uses an index to see how it is done.</p> <p><strong><code class="hljs inline no-lang">DeleteCommandParser.java</code>:</strong></p> <pre><code class="hljs java"><span>Index index = ParserUtil.parseIndex(args);
 </span><span><span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> DeleteCommand(index);
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
@@ -215,6 +325,28 @@
       15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
       14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
       5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
     </g>
 </svg>
 
@@ -256,6 +388,28 @@
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre><div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>Don’t forget to update <code class="hljs inline no-lang">AddressBookParser</code> to use our new <code class="hljs inline no-lang">RemarkCommandParser</code>!</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <div class="card-container" data-v-4484e25a><div class="card expandable-card card-seamless border-0" data-v-4484e25a><div class="card-header header-toggle bg-transparent border-0" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><span class="glyphicon glyphicon-chevron-right" data-v-4484e25a></span></div><div class="header-wrapper-seamless header-wrapper card-title bg-transparent" data-v-4484e25a><!--[--><!--[--><p><span class="large"><span class="mkb-text-green"><span aria-hidden="true" class="fas fa-vial-circle-check"></span></span></span> Updating tests to match ...</p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-light" style="display:none;" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-outline-light seamless-button close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-light seamless-button popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-collapse" data-v-4484e25a><!----><hr style="" data-v-4484e25a></div><!----></div></div> <p></p> <p>If you are stuck, check out the sample
 <a href="https://github.com/se-edu/addressbook-level3/commit/c423aae6e674e80461d21b1f6721556f817db892#diff-8bf239e8e9529369b577701303ddd96af93178b4ed6735f91c2d8488b20c6b4a">here</a>.</p> <h2 id="add-remark-to-the-model">Add <code class="hljs inline no-lang">Remark</code> to the model<a class="fa fa-anchor" href="#add-remark-to-the-model" onclick="event.stopPropagation()"></a></h2> <p>Now that we have all the information that we need, let’s lay the groundwork for propagating the remarks added into the in-memory storage of person data. We achieve that by working with the <code class="hljs inline no-lang">Person</code> model. Each field in a Person is implemented as a separate class (e.g. a <code class="hljs inline no-lang">Name</code> object represents the person’s name). That means we should add a <code class="hljs inline no-lang">Remark</code> class so that we can use a <code class="hljs inline no-lang">Remark</code> object to represent a remark given to a person.</p> <h3 id="add-a-new-remark-class">Add a new <code class="hljs inline no-lang">Remark</code> class<a class="fa fa-anchor" href="#add-a-new-remark-class" onclick="event.stopPropagation()"></a></h3> <p>Create a new <code class="hljs inline no-lang">Remark</code> in <code class="hljs inline no-lang">seedu.address.model.person</code>. Since a <code class="hljs inline no-lang">Remark</code> is a field that is similar to <code class="hljs inline no-lang">Address</code>, we can reuse a significant bit of code.</p> <p>A copy-paste and search-replace later, you should have something like <a href="https://github.com/se-edu/addressbook-level3/commit/6da0fc1cf53f8b2758e04c56c5217e6f7fb8d118#diff-41bb13c581e280c686198251ad6cc337cd5e27032772f06ed9bf7f1440995ece">this</a>. Note how <code class="hljs inline no-lang">Remark</code> has no constraints and thus does not require input
 validation.</p> <h3 id="make-use-of-remark">Make use of <code class="hljs inline no-lang">Remark</code><a class="fa fa-anchor" href="#make-use-of-remark" onclick="event.stopPropagation()"></a></h3> <p>Let’s change <code class="hljs inline no-lang">RemarkCommand</code> and <code class="hljs inline no-lang">RemarkCommandParser</code> to use the new <code class="hljs inline no-lang">Remark</code> class instead of plain <code class="hljs inline no-lang">String</code>. These should be relatively simple changes.</p> <h2 id="add-a-placeholder-element-for-remark-to-the-ui">Add a placeholder element for remark to the UI<a class="fa fa-anchor" href="#add-a-placeholder-element-for-remark-to-the-ui" onclick="event.stopPropagation()"></a></h2> <p>Without getting too deep into <code class="hljs inline no-lang">fxml</code>, let’s go on a 5-minute adventure to get some placeholder text to show up for each person.</p> <p>Simply add the following to <a href="https://github.com/se-edu/addressbook-level3/commit/826bab13348c7544ad0ed98c927baad4608a470a#diff-639834f1e05afe2276a86372adf0fe5f69314642c2d93cfa543d614ce5a76688"><code class="hljs inline no-lang">seedu.address.ui.PersonCard</code></a>.</p> <p><strong><code class="hljs inline no-lang">PersonCard.java</code>:</strong></p> <pre><code class="hljs java"><span><span class="hljs-meta">@FXML</span>
@@ -274,6 +428,28 @@ validation.</p> <h3 id="make-use-of-remark">Make use of <code class="hljs inline
       15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
       14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
       5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
     </g>
 </svg>
 
@@ -299,6 +475,28 @@ validation.</p> <h3 id="make-use-of-remark">Make use of <code class="hljs inline
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre><p>That’s it! Fire up the application again and you should see something like this:</p> <p><a href="/guides/tutorials/images/add-remark/$Remark.png" target="_self"><img src="/guides/tutorials/images/add-remark/$Remark.png" alt="$remark shows up in each entry" class="img-fluid"></a></p> <h2 id="modify-person-to-support-a-remark-field">Modify <code class="hljs inline no-lang">Person</code> to support a <code class="hljs inline no-lang">Remark</code> field<a class="fa fa-anchor" href="#modify-person-to-support-a-remark-field" onclick="event.stopPropagation()"></a></h2> <p>Since <code class="hljs inline no-lang">PersonCard</code> displays data from a <code class="hljs inline no-lang">Person</code>, we need to update <code class="hljs inline no-lang">Person</code> to get our <code class="hljs inline no-lang">Remark</code> displayed!</p> <h3 id="modify-person">Modify <code class="hljs inline no-lang">Person</code><a class="fa fa-anchor" href="#modify-person" onclick="event.stopPropagation()"></a></h3> <p>We change the constructor of <code class="hljs inline no-lang">Person</code> to take a <code class="hljs inline no-lang">Remark</code>. We will also need to define new fields and accessors accordingly to store our new addition.</p> <h3 id="update-other-usages-of-person">Update other usages of <code class="hljs inline no-lang">Person</code><a class="fa fa-anchor" href="#update-other-usages-of-person" onclick="event.stopPropagation()"></a></h3> <p>Unfortunately, a change to <code class="hljs inline no-lang">Person</code> will cause other commands to break, you will have to modify these commands to use the updated <code class="hljs inline no-lang">Person</code>!</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-success" style="" data-v-19514615><!--[--><i class="fas fa-lightbulb" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-success vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>Use the <code class="hljs inline no-lang">Find Usages</code> feature in IntelliJ IDEA on the <code class="hljs inline no-lang">Person</code> class to find these commands.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <div class="card-container" data-v-4484e25a><div class="card expandable-card card-seamless border-0" data-v-4484e25a><div class="card-header header-toggle bg-transparent border-0" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><span class="glyphicon glyphicon-chevron-right" data-v-4484e25a></span></div><div class="header-wrapper-seamless header-wrapper card-title bg-transparent" data-v-4484e25a><!--[--><!--[--><p><span class="large"><span class="mkb-text-green"><span aria-hidden="true" class="fas fa-vial-circle-check"></span></span></span> Updating tests to match ...</p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-light" style="display:none;" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-outline-light seamless-button close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-light seamless-button popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-collapse" data-v-4484e25a><!----><hr style="" data-v-4484e25a></div><!----></div></div> <p></p> <p>Refer to <a href="https://github.com/se-edu/addressbook-level3/commit/d1007fe97fb4eadf640ed0a1ce67694b90a5a480">this commit</a> and check that you have got everything in order!</p> <h2 id="updating-storage">Updating Storage<a class="fa fa-anchor" href="#updating-storage" onclick="event.stopPropagation()"></a></h2> <p>AddressBook stores data by serializing <code class="hljs inline no-lang">JsonAdaptedPerson</code> into <code class="hljs inline no-lang">json</code> with the help of an external library — Jackson. Let’s update <code class="hljs inline no-lang">JsonAdaptedPerson</code> to work with our new <code class="hljs inline no-lang">Person</code>!</p> <p>While the changes to code may be minimal, the test data will have to be updated as well.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-warning vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>You must delete AddressBook’s storage file located at <code class="hljs inline no-lang">/data/addressbook.json</code> before running it! Not doing so will cause AddressBook to default to an empty address book!</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <div class="card-container" data-v-4484e25a><div class="card expandable-card card-seamless border-0" data-v-4484e25a><div class="card-header header-toggle bg-transparent border-0" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><span class="glyphicon glyphicon-chevron-right" data-v-4484e25a></span></div><div class="header-wrapper-seamless header-wrapper card-title bg-transparent" data-v-4484e25a><!--[--><!--[--><p><span class="large"><span class="mkb-text-green"><span aria-hidden="true" class="fas fa-vial-circle-check"></span></span></span> Updating tests to match ...</p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-light" style="display:none;" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-outline-light seamless-button close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-light seamless-button popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-collapse" data-v-4484e25a><!----><hr style="" data-v-4484e25a></div><!----></div></div> <p></p> <p>Check out <a href="https://github.com/se-edu/addressbook-level3/commit/8ae9e458fed30aeef4cc7c28a2503881f1ff5322">this commit</a>
 to see what the changes entail.</p> <h2 id="finalizing-the-ui">Finalizing the UI<a class="fa fa-anchor" href="#finalizing-the-ui" onclick="event.stopPropagation()"></a></h2> <p>Now that we have finalized the <code class="hljs inline no-lang">Person</code> class and its dependencies, we can now bind the <code class="hljs inline no-lang">Remark</code> field to the UI.</p> <p>Just add <a href="https://github.com/se-edu/addressbook-level3/commit/a24fd5447a99806dd3a9419084cafdf27a29b613">this one line of code!</a></p> <p><strong><code class="hljs inline no-lang">PersonCard.java</code>:</strong></p> <pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PersonCard</span><span class="hljs-params">(Person person, <span class="hljs-keyword">int</span> displayedIndex)</span> </span>{
 </span><span>    <span class="hljs-comment">//...</span>
@@ -318,6 +516,28 @@ to see what the changes entail.</p> <h2 id="finalizing-the-ui">Finalizing the UI
       15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
       14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
       5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
     </g>
 </svg>
 
@@ -374,8 +594,30 @@ to see what the changes entail.</p> <h2 id="finalizing-the-ui">Finalizing the UI
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre><span class="image-wrapper"><img src="/guides/tutorials/images/add-remark/RemarkComplete.png" width="" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <div class="card-container" data-v-4484e25a><div class="card expandable-card card-seamless border-0" data-v-4484e25a><div class="card-header header-toggle bg-transparent border-0" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><span class="glyphicon glyphicon-chevron-right" data-v-4484e25a></span></div><div class="header-wrapper-seamless header-wrapper card-title bg-transparent" data-v-4484e25a><!--[--><!--[--><p><span class="large"><span class="mkb-text-green"><span aria-hidden="true" class="fas fa-vial-circle-check"></span></span></span> Updating tests to match ...</p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-light" style="display:none;" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-outline-light seamless-button close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-light seamless-button popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-collapse" data-v-4484e25a><!----><hr style="" data-v-4484e25a></div><!----></div></div> <p></p> <p><a href="/guides/tutorials/ab3TracingCode.html"><span aria-hidden="true" class="fas fa-arrow-left"></span> Previous</a> | <a href="/guides/tutorials/ab3.html"><span aria-hidden="true" class="fas fa-arrow-up"></span> <strong>ToC</strong></a> | <span class="badge rounded-pill bg-primary"><strong><span class="large">What&#39;s next?</span></strong></span> <a href="/guides/tutorials/ab3RemovingFields.html"><span aria-hidden="true" class="fas fa-arrow-right"></span> <strong>Removing Fields</strong></a></p> <hr> <p><strong>Authors:</strong></p> <ul><li>Initial Version: Jeffry Lum</li> <li>Contributors:
-<ul><li>Rui Shan Teo (@ruishanteo): Added more explanations for writing tests</li></ul></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#ab3-tutorial-adding-a-command">AB3 Tutorial: Adding a Command‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#create-a-new-remark-command">Create a new remark command‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#hook-remarkcommand-into-the-application">Hook RemarkCommand into the application‎</a> <a class="nav-link py-1" href="#run-the-application">Run the application‎</a></nav> <a class="nav-link py-1" href="#change-remarkcommand-to-throw-an-exception">Change RemarkCommand to throw an exception‎</a> <a class="nav-link py-1" href="#enhancing-remarkcommand">Enhancing RemarkCommand‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#make-the-command-accept-parameters">Make the command accept parameters‎</a> <a class="nav-link py-1" href="#parse-user-input">Parse user input‎</a></nav> <a class="nav-link py-1" href="#add-remark-to-the-model">Add Remark to the model‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#add-a-new-remark-class">Add a new Remark class‎</a> <a class="nav-link py-1" href="#make-use-of-remark">Make use of Remark‎</a></nav> <a class="nav-link py-1" href="#add-a-placeholder-element-for-remark-to-the-ui">Add a placeholder element for remark to the UI‎</a> <a class="nav-link py-1" href="#modify-person-to-support-a-remark-field">Modify Person to support a Remark field‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#modify-person">Modify Person‎</a> <a class="nav-link py-1" href="#update-other-usages-of-person">Update other usages of Person‎</a></nav> <a class="nav-link py-1" href="#updating-storage">Updating Storage‎</a> <a class="nav-link py-1" href="#finalizing-the-ui">Finalizing the UI‎</a> <a class="nav-link py-1" href="#putting-everything-together">Putting everything together‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#update-remarkcommand-and-remarkcommandparser">Update RemarkCommand and RemarkCommandParser‎</a></nav></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Sun, 8 Feb 2026, 22:48:04 GMT+8]</small></div></footer><!--]--></div>
+<ul><li>Rui Shan Teo (@ruishanteo): Added more explanations for writing tests</li></ul></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#ab3-tutorial-adding-a-command">AB3 Tutorial: Adding a Command‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#create-a-new-remark-command">Create a new remark command‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#hook-remarkcommand-into-the-application">Hook RemarkCommand into the application‎</a> <a class="nav-link py-1" href="#run-the-application">Run the application‎</a></nav> <a class="nav-link py-1" href="#change-remarkcommand-to-throw-an-exception">Change RemarkCommand to throw an exception‎</a> <a class="nav-link py-1" href="#enhancing-remarkcommand">Enhancing RemarkCommand‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#make-the-command-accept-parameters">Make the command accept parameters‎</a> <a class="nav-link py-1" href="#parse-user-input">Parse user input‎</a></nav> <a class="nav-link py-1" href="#add-remark-to-the-model">Add Remark to the model‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#add-a-new-remark-class">Add a new Remark class‎</a> <a class="nav-link py-1" href="#make-use-of-remark">Make use of Remark‎</a></nav> <a class="nav-link py-1" href="#add-a-placeholder-element-for-remark-to-the-ui">Add a placeholder element for remark to the UI‎</a> <a class="nav-link py-1" href="#modify-person-to-support-a-remark-field">Modify Person to support a Remark field‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#modify-person">Modify Person‎</a> <a class="nav-link py-1" href="#update-other-usages-of-person">Update other usages of Person‎</a></nav> <a class="nav-link py-1" href="#updating-storage">Updating Storage‎</a> <a class="nav-link py-1" href="#finalizing-the-ui">Finalizing the UI‎</a> <a class="nav-link py-1" href="#putting-everything-together">Putting everything together‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#update-remarkcommand-and-remarkcommandparser">Update RemarkCommand and RemarkCommandParser‎</a></nav></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Tue, 10 Feb 2026, 20:38:52 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
 <script src="/guides/markbind/js/vue.global.prod.min.js"></script>
@@ -429,6 +671,20 @@ to see what the changes entail.</p> <h2 id="finalizing-the-ui">Finalizing the UI
 `;
             tooltipText.innerText  = `Copy`;
         }, 3000);
+    }
+    </script>
+    <script>
+    function toggleCodeBlockWrap(element) {
+      const pre = element.parentElement.parentElement;
+      const tooltipText = element.querySelector(".tooltiptext");
+      const classList = pre.querySelector('code').classList; 
+      if (classList.contains('wrap')) {
+          classList.remove('wrap');
+          tooltipText.innerText  = `Wrap Text`;
+      } else {
+          classList.add('wrap')
+          tooltipText.innerText  = `Unwrap Text`;
+      }
     }
     </script>
 </html>

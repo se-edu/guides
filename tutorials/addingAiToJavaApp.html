@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 6.2.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Adding AI features to a Java App</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+  <link rel="stylesheet" href="/guides/css/main.css">
+<link rel="icon" href="/guides/favicon.ico"></head>
+<script>
+  const baseUrl = '/guides'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100"  data-code-theme="light">
+<div id="app"><!--[--><header sticky><div data-v-26aac3dc><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-26aac3dc><div class="container-fluid" data-v-26aac3dc><div class="navbar-left" data-v-26aac3dc><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-26aac3dc><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-26aac3dc><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><ul class="navbar-nav navbar-right" data-v-26aac3dc><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-00e26d0a><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-00e26d0a><div class="form-control placeholder-div-hidden" data-v-00e26d0a>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-00e26d0a><!--[--><!--]--></ul></div></form></li><!--]--></ul></div></nav><div style="display:none;" class="lower-navbar-container" data-v-26aac3dc><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><div><div class="alert box-container border-warning alert-border-left" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><!----><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>This is a WIP community resource, containing contribution from community members.</strong></p> <ul><li>If you notice any bugs or suggestions for improvements, please report at <a href="https://github.com/se-edu/guides/issues">https://github.com/se-edu/guides/issues</a></li> <li>You are welcome to contribute by sending a PRs to <a href="https://github.com/se-edu/guides/pulls">https://github.com/se-edu/guides/pulls</a> too.</li></ul><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></div> <h1 id="adding-ai-features-to-a-java-app">Adding AI features to a Java App<a class="fa fa-anchor" href="#adding-ai-features-to-a-java-app" onclick="event.stopPropagation()"></a></h1> <div id="body"><p><strong>Goal:</strong> Learn how to integrate an LLM into a Java project, understand the agentic workflow architecture, and implement an AI-powered Help command.</p> <h2 id="prerequisites">Prerequisites<a class="fa fa-anchor" href="#prerequisites" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Gradle-based Java Project:</strong> A Java project set up with Gradle as the build tool. In this tutorial we assume you have a simple command-line Java application, but the concepts can be applied to any Java app.</li> <li><strong>LLM Access:</strong> Obtain an API key for an LLM service (e.g., Groq).
+<ul><li>If you don&#39;t have an API key for a hosted LLM, you can sign up at <a href="https://console.groq.com/">Groq</a> (free-tier hosted models) and get your API key.<br>
+If you use a different provider later, only the model wiring changes; the agent flow stays the same.</li> <li>Set the API key as an environment variable named <code class="hljs inline no-lang">LLM_API_KEY</code> on your system, so that it can be accessed in your Java code.
+<ul><li><span aria-hidden="true" class="fab fa-windows"></span> You can set environment variables via the System Properties → Environment Variables menu.</li> <li><span aria-hidden="true" class="fab fa-apple"></span>/<span aria-hidden="true" class="fab fa-linux"></span> You can add <code class="hljs inline no-lang">export LLM_API_KEY=your_api_key_here</code> to your shell profile (e.g., <code class="hljs inline no-lang">~/.bashrc</code>, <code class="hljs inline no-lang">~/.zshrc</code>).</li></ul></li></ul></li></ul> <h2 id="step-1-set-up-llm-integration">Step 1: Set up LLM integration<a class="fa fa-anchor" href="#step-1-set-up-llm-integration" onclick="event.stopPropagation()"></a></h2> <p>To integrate LLMs to your Java app, we will use <a href="https://langchain4j.dev/">Langchain4j</a>, a popular Java library for working with LLMs and building AI applications.</p> <p>First, add the following dependencies to your Gradle build file:</p> <pre><code class="hljs gradle"><span>implementation <span class="hljs-string">&#39;dev.langchain4j:langchain4j-open-ai:1.10.0&#39;</span>
+</span><span>implementation <span class="hljs-string">&#39;dev.langchain4j:langchain4j:1.10.0&#39;</span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><p>Next, create a small test method (or a quick scratch class) to prove the LLM integration works:</p> <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> dev.langchain4j.model.chat.ChatModel;
+</span><span><span class="hljs-keyword">import</span> dev.langchain4j.model.openai.OpenAiChatModel;
+</span><span>
+</span><span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AiTest</span> </span>{
+</span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+</span><span>        ChatModel model = OpenAiChatModel.builder()
+</span><span>            .apiKey(System.getenv(<span class="hljs-string">&quot;LLM_API_KEY&quot;</span>))
+</span><span>            .baseUrl(<span class="hljs-string">&quot;https://api.groq.com/openai/v1&quot;</span>)
+</span><span>            .modelName(<span class="hljs-string">&quot;llama-3.3-70b-versatile&quot;</span>) <span class="hljs-comment">// or another Groq model</span>
+</span><span>            .build();
+</span><span>        String reply = model.generate(<span class="hljs-string">&quot;Say hello in one sentence.&quot;</span>);
+</span><span>        System.out.println(reply);
+</span><span>    }
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><h2 id="step-2-add-a-method-to-send-a-prompt-to-the-llm">Step 2: Add a method to send a prompt to the LLM<a class="fa fa-anchor" href="#step-2-add-a-method-to-send-a-prompt-to-the-llm" onclick="event.stopPropagation()"></a></h2> <p>Now, let&#39;s encapsulate the LLM call in a method that takes a prompt string and returns the LLM response.</p> <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> dev.langchain4j.model.chat.ChatModel;
+</span><span><span class="hljs-keyword">import</span> dev.langchain4j.model.openai.OpenAiChatModel;
+</span><span>
+</span><span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AiHelper</span></span>
+</span><span><span class="hljs-class">    <span class="hljs-title">private</span> <span class="hljs-title">final</span> <span class="hljs-title">ChatModel</span> <span class="hljs-title">model</span></span>;
+</span><span>
+</span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AiHelper</span><span class="hljs-params">()</span> </span>{
+</span><span>        <span class="hljs-keyword">this</span>.model = OpenAiChatModel.builder()
+</span><span>            .apiKey(System.getenv(<span class="hljs-string">&quot;LLM_API_KEY&quot;</span>))
+</span><span>            .baseUrl(<span class="hljs-string">&quot;https://api.groq.com/openai/v1&quot;</span>)
+</span><span>            .modelName(<span class="hljs-string">&quot;llama-3.3-70b-versatile&quot;</span>) <span class="hljs-comment">// or another Groq model</span>
+</span><span>            .build();
+</span><span>    }
+</span><span>
+</span><span>    <span class="hljs-function"><span class="hljs-keyword">public</span> ChatResponse <span class="hljs-title">getAiResponse</span><span class="hljs-params">(String systemPrompt, String userPrompt)</span> </span>{
+</span><span>        ChatRequest req = ChatRequest.builder()
+</span><span>                .messages(List.of(
+</span><span>                        SystemMessage.from(systemPrompt),
+</span><span>                        UserMessage.from(userPrompt)
+</span><span>                ))
+</span><span>                .build();
+</span><span>
+</span><span>        ChatResponse res = model.chat(req)
+</span><span>        <span class="hljs-keyword">return</span> res;
+</span><span>    }
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong class="text-info">What&#39;s in a Prompt?</strong> A prompt to an LLM typically consists of two parts:</p> <ol><li><strong>System Prompt</strong>: Instructions that define the LLM&#39;s role, behavior, and constraints. This sets the context for how the model should respond (e.g., <code class="hljs inline no-lang">You are a helpful assistant for a CLI app</code>).</li> <li><strong>User Prompt</strong>: The actual query or request from the user that needs to be answered (e.g., <code class="hljs inline no-lang">How do I add a task with a deadline?</code>).</li></ol><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="step-3-add-the-ability-to-query-the-app-s-ai">Step 3: Add the Ability to &#39;Query&#39; the App&#39;s AI<a class="fa fa-anchor" href="#step-3-add-the-ability-to-query-the-app-s-ai" onclick="event.stopPropagation()"></a></h2> <p>Suppose your app is a CLI-centric task management app which already supports the following CLI command (if it doesn&#39;t, you can apply this tutorial to another command or a feature your app has):</p> <blockquote><p><code class="hljs inline no-lang">help</code>: shows a list of commands with a brief description</p></blockquote> <p>Such a command is a good starting point since it is a read-only command that does not modify the app state.</p> <p>Now, let us add a method (to a suitable class) that takes a natural language query (e.g., &quot;is there a command to add priorities to tasks?&quot;) and returns an AI-generated natural language reply.</p> <pre><code class="hljs java"><span><span class="hljs-function">String <span class="hljs-title">askAiAboutFeature</span><span class="hljs-params">(String userPrompt, AiHelper aiHelper)</span> </span>{
+</span><span>    String systemPrompt = <span class="hljs-string">&quot;You are helping users of a CLI app. Answer the user&#39;s query about the features of the app, based on the app&#39;s commands given below. Limit your answer to one sentence.\n\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;1. todo &lt;description&gt; - Adds a todo task.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;2. deadline &lt;description&gt; /by &lt;date&gt; - Adds a task with a deadline.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;3. event &lt;description&gt; /at &lt;date&gt; - Adds an event task.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;4. list - Lists all tasks.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;5. done &lt;task_number&gt; - Marks a task as done.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;6. delete &lt;task_number&gt; - Deletes a task.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;7. help - Shows the help message.&quot;</span>;
+</span><span>
+</span><span>    <span class="hljs-keyword">return</span> aiHelper.getAiResponse(systemPrompt, userPrompt).getText();
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><p>Now, provide a way for users to call this method via the CLI, e.g., by adding a new command <code class="hljs inline no-lang">@ai &lt;query&gt;</code> that invokes the AI helper method. Here&#39;s an example interaction:</p> <blockquote><p>User: <code class="hljs inline no-lang">@ai is there a command to add priorities to tasks?</code>
+App: <code class="hljs inline no-lang">Currently, there is no in-built command to add priorities to tasks.</code></p></blockquote> <h2 id="step-4-add-the-ability-to-command-the-app-via-ai">Step 4: Add the Ability to &#39;Command&#39; the App via AI<a class="fa fa-anchor" href="#step-4-add-the-ability-to-command-the-app-via-ai" onclick="event.stopPropagation()"></a></h2> <p>Once you have the &#39;ask AI about features&#39; command working, you can move to get the AI to perform commands given by the user, for example, <code class="hljs inline no-lang">@ai add a task to buy groceries by tomorrow</code> could result in the app adding a new task <code class="hljs inline no-lang">buy groceries</code> with <code class="hljs inline no-lang">tomorrow</code> as the deadline.</p> <p>To implement this, you can modify the system prompt to instruct the LLM to generate a valid app command based on the user&#39;s natural language request. Then, parse the LLM&#39;s response to extract and execute the command.</p> <pre><code class="hljs java"><span><span class="hljs-function">String <span class="hljs-title">commandAiToPerform</span><span class="hljs-params">(String userPrompt, AiHelper aiHelper)</span> </span>{
+</span><span>    String systemPrompt = <span class="hljs-string">&quot;You are an assistant for a CLI task management app. Based on the user&#39;s request, generate a valid command that the app understands.&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;Only respond with the command, nothing else.\n\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;Available commands:\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;1. todo &lt;description&gt; - Adds a todo task.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;2. deadline &lt;description&gt; /by &lt;date&gt; - Adds a task with a deadline.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;3. event &lt;description&gt; /at &lt;date&gt; - Adds an event task.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;4. list - Lists all tasks.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;5. done &lt;task_number&gt; - Marks a task as done.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;6. delete &lt;task_number&gt; - Deletes a task.\n&quot;</span>
+</span><span>        + <span class="hljs-string">&quot;7. help - Shows the help message.&quot;</span>;
+</span><span>    String command = aiHelper.getAiResponse(systemPrompt, userPrompt).getText();
+</span><span>
+</span><span>    <span class="hljs-keyword">if</span> (isValidCommand(command)) {
+</span><span>        executeCommand(command);
+</span><span>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Command executed: &quot;</span> + command;
+</span><span>    } <span class="hljs-keyword">else</span> {
+</span><span>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Sorry, I couldn&#39;t understand the command.&quot;</span>;
+</span><span>    }
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><h2 id="step-5-expand-the-ai-capabilities">Step 5: Expand the AI Capabilities<a class="fa fa-anchor" href="#step-5-expand-the-ai-capabilities" onclick="event.stopPropagation()"></a></h2> <p>With the basic AI integration in place, you can expand the capabilities further, to handle more complex queries/command, provide contextual help, assist with error handling, etc.</p> <hr> <p><strong>Initial version</strong>: Aditya Misra (<a href="https://github.com/MadLamprey">@MadLamprey </a>)</p></div></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#adding-ai-features-to-a-java-app">Adding AI features to a Java App‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#prerequisites">Prerequisites‎</a> <a class="nav-link py-1" href="#step-1-set-up-llm-integration">Step 1: Set up LLM integration‎</a> <a class="nav-link py-1" href="#step-2-add-a-method-to-send-a-prompt-to-the-llm">Step 2: Add a method to send a prompt to the LLM‎</a> <a class="nav-link py-1" href="#step-3-add-the-ability-to-query-the-app-s-ai">Step 3: Add the Ability to &#39;Query&#39; the App&#39;s AI‎</a> <a class="nav-link py-1" href="#step-4-add-the-ability-to-command-the-app-via-ai">Step 4: Add the Ability to &#39;Command&#39; the App via AI‎</a> <a class="nav-link py-1" href="#step-5-expand-the-ai-capabilities">Step 5: Expand the AI Capabilities‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Tue, 10 Feb 2026, 20:38:52 GMT+8]</small></div></footer><!--]--></div>
+</body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
+<script src="/guides/markbind/js/polyfill.min.js"></script>
+<script src="/guides/markbind/js/vue.global.prod.min.js"></script>
+<script src="/guides/markbind/js/markbind.min.js"></script>
+<script src="addingAiToJavaApp.page-vue-render.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+        const copyButtonBody = element.querySelector('.function-btn-body');
+        const tooltipText = element.querySelector(".tooltiptext");
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+        copyButtonBody.innerHTML = `
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="2 2 22 22"
+  >
+    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875 
+    L 9 18.40625 L 9.71875 17.71875 L 20.71875 6.71875 Z"></path>
+  </svg>
+`;
+        console.log("Running tooltip");
+        tooltipText.innerText  = `Copied!`;
+        setTimeout(() => {
+            copyButtonBody.innerHTML = `
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "/>
+    </g>
+</svg>
+`;
+            tooltipText.innerText  = `Copy`;
+        }, 3000);
+    }
+    </script>
+    <script>
+    function toggleCodeBlockWrap(element) {
+      const pre = element.parentElement.parentElement;
+      const tooltipText = element.querySelector(".tooltiptext");
+      const classList = pre.querySelector('code').classList; 
+      if (classList.contains('wrap')) {
+          classList.remove('wrap');
+          tooltipText.innerText  = `Wrap Text`;
+      } else {
+          classList.add('wrap')
+          tooltipText.innerText  = `Unwrap Text`;
+      }
+    }
+    </script>
+</html>

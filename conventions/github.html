@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="MarkBind 6.2.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>GitHub conventions</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>GitHub conventions</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
@@ -46,11 +46,33 @@ If the PR is a partial fix, use <code class="hljs inline no-lang">Fixes part of 
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre></blockquote> <h3 id="pr-merge-commit">PR merge commit<a class="fa fa-anchor" href="#pr-merge-commit" onclick="event.stopPropagation()"></a></h3> <p><strong>When merging a PR branch to the main branch</strong>, use one of these formats for the subject line of the merge commit.</p> <ul><li><p>Option 1: <code class="hljs inline no-lang">Issue Title #IssueNumber (#PrNumber)</code><br>
 e.g. <code class="hljs inline no-lang">Error alert email has very long subject #5958 (#6580)</code></p></li> <li><p>Option 2: <code class="hljs inline no-lang">[#IssueNumber] Issue Title (#PrNumber)</code><br>
 e.g. <code class="hljs inline no-lang">[#5958] Error alert email has very long subject (#6580)</code></p></li> <li><p>Option 3: <code class="hljs inline no-lang">PR Title (#PrNumber)</code> (i.e., based on PR only, issue info omitted)<br>
 e.g. <code class="hljs inline no-lang">Error alert email has very long subject (#6580)</code></p></li></ul> <p>Pick one option and use it consistently in the entire code base.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>Rationale: This format allows easy traceability among a merge commit, the issue it fixes, and the PR that fixed it. Having the issue name tells us what the commit is about without having to look it up in GitHub issue tracker.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="issues">Issues<a class="fa fa-anchor" href="#issues" onclick="event.stopPropagation()"></a></h2> <ul><li><p><strong>Issue title should be concise yet descriptive.</strong> For example, instead of <code class="hljs inline no-lang">Newbie question, please help</code>, use <code class="hljs inline no-lang">How do I set up git to ignore test files?</code></p></li> <li><p><strong>Follow <span class="trigger" data-mb-component-type="tooltip" tabindex="0"><!----><!-- do not delete this comment, it is for the stray space issue (#2419)
- --><!----></span></strong> (<a href="https://github.com/MarkBind/markbind/issues/new">example</a>), if any.</p></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#github-conventions">GitHub conventions‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#prs">PRs‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#pr-name">PR name‎</a> <a class="nav-link py-1" href="#pr-description">PR description‎</a> <a class="nav-link py-1" href="#pr-merge-commit">PR merge commit‎</a></nav> <a class="nav-link py-1" href="#issues">Issues‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Sun, 8 Feb 2026, 22:48:04 GMT+8]</small></div></footer><!--]--></div>
+ --><!----></span></strong> (<a href="https://github.com/MarkBind/markbind/issues/new">example</a>), if any.</p></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#github-conventions">GitHub conventions‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#prs">PRs‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#pr-name">PR name‎</a> <a class="nav-link py-1" href="#pr-description">PR description‎</a> <a class="nav-link py-1" href="#pr-merge-commit">PR merge commit‎</a></nav> <a class="nav-link py-1" href="#issues">Issues‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Tue, 10 Feb 2026, 20:38:52 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
 <script src="/guides/markbind/js/vue.global.prod.min.js"></script>
@@ -104,6 +126,20 @@ e.g. <code class="hljs inline no-lang">Error alert email has very long subject (
 `;
             tooltipText.innerText  = `Copy`;
         }, 3000);
+    }
+    </script>
+    <script>
+    function toggleCodeBlockWrap(element) {
+      const pre = element.parentElement.parentElement;
+      const tooltipText = element.querySelector(".tooltiptext");
+      const classList = pre.querySelector('code').classList; 
+      if (classList.contains('wrap')) {
+          classList.remove('wrap');
+          tooltipText.innerText  = `Wrap Text`;
+      } else {
+          classList.add('wrap')
+          tooltipText.innerText  = `Unwrap Text`;
+      }
     }
     </script>
 </html>

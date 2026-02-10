@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="MarkBind 6.2.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>VS Code: Useful settings</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>VS Code: Useful settings</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
@@ -37,6 +37,28 @@ Visual Studio Code allows you to configure User and Workspace Settings. User Set
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre><p><a href="/guides/tutorials/images/vscode/rulers-80-120-example.png" target="_self"><img src="/guides/tutorials/images/vscode/rulers-80-120-example.png" alt class="img-fluid"></a></p> <h2 id="enabling-assertions">Enabling assertions<a class="fa fa-anchor" href="#enabling-assertions" onclick="event.stopPropagation()"></a></h2> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-warning vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>This tweak does not apply if you use Gradle to run code even within VS Code. In that case, refer to &#39;Enabling assertions&#39; sections of the <a href="/guides/tutorials/gradle.html#enabling-assertions"><em>Gradle tutorial</em></a>.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <p>VS Code can be configured to enable assertions automatically when running or debugging through VS Code’s UI or play button.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-warning vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>This tweak does not apply if you directly run the application by typing <code class="hljs inline no-lang">java ApplicationName.java</code> in the terminal.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <p>To enable assertions:</p> <ol><li>Add the following properties to your <code class="hljs inline no-lang">settings.json</code></li></ol> <pre><code class="hljs"><span>{
 </span><span>    // ...
 </span><span>    &quot;java.debug.settings.vmArgs&quot;: &quot;-ea&quot;
@@ -61,8 +83,30 @@ Visual Studio Code allows you to configure User and Workspace Settings. User Set
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre><h2 id="rename-symbol">Rename symbol<a class="fa fa-anchor" href="#rename-symbol" onclick="event.stopPropagation()"></a></h2> <p>Rename Symbol is a built-in feature by VS Code which works with extensions to let users safely change the name of a variable, method, class, or any other symbol across your entire project. When you rename a symbol, all references to it are updated automatically, reducing the chance of errors.</p> <p>To rename a symbol, use the <code class="hljs inline no-lang">F2</code> shortcut or right click on the symbol and select <code class="hljs inline no-lang">Reload Symbol</code>.</p> <p><a href="/guides/tutorials/images/vscode/rename-symbol.png" target="_self"><img src="/guides/tutorials/images/vscode/rename-symbol.png" alt class="img-fluid"></a></p> <h2 id="reload-window">Reload window<a class="fa fa-anchor" href="#reload-window" onclick="event.stopPropagation()"></a></h2> <p>Sometimes, when installing or uninstalling extensions, editing formatting, or building a project, the editor appears unresponsive or buggy, usually also causing intellisense to not work as intended.</p> <p>Developer: Reload Window is a command that does a soft restart of the editor window, without restarting the whole application. It</p> <ul><li>Closes and reopens the current editor window</li> <li>Re-runs the extension host process</li> <li>Reloads:
-<ul><li>All settings</li> <li>Extensions</li> <li>UI state</li> <li>Workspaces and files (while keeping open files intact)</li></ul></li> <li>Clears temporary memory/cache used by extensions and the editor</li></ul> <p>To run it:</p> <ol><li><p>Open Command Palette through <code class="hljs inline no-lang">Ctrl+Shift+P</code> (Windows), or <code class="hljs inline no-lang">Cmd+Shift+P</code> (macOS).</p></li> <li><p>Search for <code class="hljs inline no-lang">Developer: Reload Window</code> and hit <code class="hljs inline no-lang">Enter</code> (see screenshot below).</p> <p><a href="/guides/tutorials/images/vscode/reload-window.png" target="_self"><img src="/guides/tutorials/images/vscode/reload-window.png" alt class="img-fluid"></a></p></li></ol> <h2 id="editor-color-themes">Editor color themes<a class="fa fa-anchor" href="#editor-color-themes" onclick="event.stopPropagation()"></a></h2> <p>Go to <code class="hljs inline no-lang">File</code> → <code class="hljs inline no-lang">Preferences</code> → <code class="hljs inline no-lang">Themes</code> → <code class="hljs inline no-lang">Color Theme</code>.</p> <p><a href="/guides/tutorials/images/vscode/color-themes.png" target="_self"><img src="/guides/tutorials/images/vscode/color-themes.png" alt class="img-fluid"></a></p> <hr> <p><strong>Contributors</strong>: Tan Guan Qun (<a href="https://github.com/monobeartae">@monobeartae</a>)</p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#vs-code-useful-settings">VS Code: Useful settings‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#modifying-visual-studio-code-settings">Modifying Visual Studio Code Settings‎</a> <a class="nav-link py-1" href="#enabling-word-wrap">Enabling word wrap‎</a> <a class="nav-link py-1" href="#show-rulers">Show rulers‎</a> <a class="nav-link py-1" href="#enabling-assertions">Enabling assertions‎</a> <a class="nav-link py-1" href="#rename-symbol">Rename symbol‎</a> <a class="nav-link py-1" href="#reload-window">Reload window‎</a> <a class="nav-link py-1" href="#editor-color-themes">Editor color themes‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Sun, 8 Feb 2026, 22:48:04 GMT+8]</small></div></footer><!--]--></div>
+<ul><li>All settings</li> <li>Extensions</li> <li>UI state</li> <li>Workspaces and files (while keeping open files intact)</li></ul></li> <li>Clears temporary memory/cache used by extensions and the editor</li></ul> <p>To run it:</p> <ol><li><p>Open Command Palette through <code class="hljs inline no-lang">Ctrl+Shift+P</code> (Windows), or <code class="hljs inline no-lang">Cmd+Shift+P</code> (macOS).</p></li> <li><p>Search for <code class="hljs inline no-lang">Developer: Reload Window</code> and hit <code class="hljs inline no-lang">Enter</code> (see screenshot below).</p> <p><a href="/guides/tutorials/images/vscode/reload-window.png" target="_self"><img src="/guides/tutorials/images/vscode/reload-window.png" alt class="img-fluid"></a></p></li></ol> <h2 id="editor-color-themes">Editor color themes<a class="fa fa-anchor" href="#editor-color-themes" onclick="event.stopPropagation()"></a></h2> <p>Go to <code class="hljs inline no-lang">File</code> → <code class="hljs inline no-lang">Preferences</code> → <code class="hljs inline no-lang">Themes</code> → <code class="hljs inline no-lang">Color Theme</code>.</p> <p><a href="/guides/tutorials/images/vscode/color-themes.png" target="_self"><img src="/guides/tutorials/images/vscode/color-themes.png" alt class="img-fluid"></a></p> <hr> <p><strong>Contributors</strong>: Tan Guan Qun (<a href="https://github.com/monobeartae">@monobeartae</a>)</p></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#vs-code-useful-settings">VS Code: Useful settings‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#modifying-visual-studio-code-settings">Modifying Visual Studio Code Settings‎</a> <a class="nav-link py-1" href="#enabling-word-wrap">Enabling word wrap‎</a> <a class="nav-link py-1" href="#show-rulers">Show rulers‎</a> <a class="nav-link py-1" href="#enabling-assertions">Enabling assertions‎</a> <a class="nav-link py-1" href="#rename-symbol">Rename symbol‎</a> <a class="nav-link py-1" href="#reload-window">Reload window‎</a> <a class="nav-link py-1" href="#editor-color-themes">Editor color themes‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Tue, 10 Feb 2026, 20:38:52 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
 <script src="/guides/markbind/js/vue.global.prod.min.js"></script>
@@ -116,6 +160,20 @@ Visual Studio Code allows you to configure User and Workspace Settings. User Set
 `;
             tooltipText.innerText  = `Copy`;
         }, 3000);
+    }
+    </script>
+    <script>
+    function toggleCodeBlockWrap(element) {
+      const pre = element.parentElement.parentElement;
+      const tooltipText = element.querySelector(".tooltiptext");
+      const classList = pre.querySelector('code').classList; 
+      if (classList.contains('wrap')) {
+          classList.remove('wrap');
+          tooltipText.innerText  = `Wrap Text`;
+      } else {
+          classList.add('wrap')
+          tooltipText.innerText  = `Unwrap Text`;
+      }
     }
     </script>
 </html>

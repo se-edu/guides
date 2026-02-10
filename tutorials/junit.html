@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="MarkBind 6.2.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Using JUnit</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Using JUnit</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
@@ -50,6 +50,28 @@ For example,
 
     </div>
     </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
     </button></div></pre></div></div><p><strong>Next add the following JUnit dependencies</strong> to the <code class="hljs inline no-lang">dependencies</code> block, to tell which JUnit libraries to be used:</p> <div class="code-block"><div class="code-block-heading"><span>build.gradle</span></div><div class="code-block-content"><pre><code heading="build.gradle" class="hljs groovy"><span>dependencies {
 </span><span>    <span class="highlighted">testImplementation <span class="hljs-attr">group:</span> <span class="hljs-string">&#39;org.junit.jupiter&#39;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#39;junit-jupiter-api&#39;</span>, <span class="hljs-attr">version:</span> <span class="hljs-string">&#39;5.10.0&#39;</span></span>
 </span><span>    <span class="highlighted">testRuntimeOnly <span class="hljs-attr">group:</span> <span class="hljs-string">&#39;org.junit.jupiter&#39;</span>, <span class="hljs-attr">name:</span> <span class="hljs-string">&#39;junit-jupiter-engine&#39;</span>, <span class="hljs-attr">version:</span> <span class="hljs-string">&#39;5.10.0&#39;</span></span>
@@ -68,6 +90,28 @@ For example,
       15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
       14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
       5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
     </g>
 </svg>
 
@@ -100,6 +144,28 @@ For example,
       15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
       14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
       5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
     </g>
 </svg>
 
@@ -141,7 +207,29 @@ For example,
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <p><strong>Run tests</strong>, either using the Intellij UI (preferred -- this makes debugging failed test cases easier) or using Gradle itself, as explained in the section below.</p> <h2 id="running-tests">Running Tests<a class="fa fa-anchor" href="#running-tests" onclick="event.stopPropagation()"></a></h2> <p><strong><strong>In Intellij IDEA:</strong></strong></p> <ul><li>To run a specific JUnit test class (e.g., <code class="hljs inline no-lang">src/test/java/seedu/DukeTest.java</code>), right-click on the test class, and choose <span class="text-success"><span aria-hidden="true" class="fas fa-play"></span></span> <code class="hljs inline no-lang">Run {classname}</code>.</li></ul> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-success" style="" data-v-19514615><!--[--><i class="fas fa-lightbulb" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-success vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>If the above doesn&#39;t work, you may want to go to <code class="hljs inline no-lang">File</code> &gt; <code class="hljs inline no-lang">Settings</code> and change the<code class="hljs inline no-lang">Run tests using:</code> setting to <code class="hljs inline no-lang">Intellij IDEA</code> (instead of <code class="hljs inline no-lang">Gradle</code>), as shown below:</p> <div class="card-container" data-v-4484e25a><div class="card expandable-card" data-v-4484e25a><div class="card-header header-toggle bg-light" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><!----></div><div class="header-wrapper card-title bg-light" data-v-4484e25a><!--[--><!--[--><p>Expand to see screenshot ...</p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="display:none;" type="button" class="btn-outline-secondary close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-secondary popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-peek-collapsed card-collapse" data-v-4484e25a><div class="d-print-none card-body" data-v-4484e25a><!--[--><!--[--> <div class="annotate-image-wrapper"><img src="images/gradle/intellijRunTestsUsingIntellij.png" width="" height="" loading="eager" class="annotate-image"><div style="top:0;left:0;height:0;"><!--[--><div><!----><div class="annotate-point"><!----></div></div><!--]--></div></div><!--]--><!--]--><!----><div class="bottom-button-wrapper" data-v-4484e25a><button type="button" class="collapse-button btn btn-outline-secondary" style="" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button></div></div><hr style="display:none;" data-v-4484e25a></div><div class="peek-read-more glyphicon glyphicon-chevron-down" data-v-4484e25a></div></div></div><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <ul><li>To run all tests in a folder (e.g., <code class="hljs inline no-lang">src/test/java</code> folder), right-click on the folder, and choose <span class="text-success"><span aria-hidden="true" class="fas fa-play"></span></span> <code class="hljs inline no-lang">Run Tests in &#39;...&#39;</code>.</li> <li>Other supported IDEs (e.g., Eclipse, NetBeans, VS Code, etc.) have similar mechanisms.</li></ul> <p><strong><strong>Using Gradle:</strong></strong></p> <ul><li>To run all tests in the project, run the Gradle task <code class="hljs inline no-lang">test</code> (<a href="/guides/tutorials/gradle.html#running-gradle-tasks">more info on running Gradle tasks</a>)</li> <li>[If using Intellij UI to run the <code class="hljs inline no-lang">test</code> task] The location of the <code class="hljs inline no-lang">test</code> task in the Gradle task hierarchy is <code class="hljs inline no-lang">Tasks -&gt; verification -&gt; test</code> (see screenshot below).<br> <span class="image-wrapper"><img src="/guides/tutorials/images/junit/gradleTaskHierarchy.png" width="" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span></li></ul> <div id="other-ways-of-running-tests"><p><strong><strong>Other ways:</strong></strong></p> <ul><li>There is also <a href="https://junit.org/junit5/docs/current/user-guide/#running-tests-console-launcher">a way to run JUnit tests in the console (without Gradle or an IDE)</a>, which is not used as much as the above two methods.</li></ul></div> <div id="useful-test-cases"><h2 id="writing-useful-junit-tests">Writing Useful JUnit Tests<a class="fa fa-anchor" href="#writing-useful-junit-tests" onclick="event.stopPropagation()"></a></h2> <p>After you are able to run JUnit tests successfully using a dummy test class such as the above, you can add more tests and test classes as necessary.</p> <p>To learn how to write useful JUnit test cases, refer to <a href="https://se-education.org/se-book/cppToJava/junit/basic/index.html">this section</a> of our SE book. For a quick overview of more advanced JUnit features, refer to <a href="https://se-education.org/se-book/cppToJava/junit/intermediate/index.html">this section</a>.</p></div> <div id="troubleshooting-junit"><h2 id="troubleshooting-junit">Troubleshooting JUnit<a class="fa fa-anchor" href="#troubleshooting-junit" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Problem:</strong> Tests fail with at <code class="hljs inline no-lang">ClassNotFoundException</code> error, although the supposedly-missing class is present.<br> <strong>Solution:</strong> Ensure the path of source and test files does not have Unicode characters (e.g., Chinese characters). Gradle sometimes fail to find files in a path that has Unicode characters.</li></ul></div> <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2> <ul><li><a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5 User Guide</a></li> <li><a href="https://docs.gradle.org/current/userguide/java_testing.html#using_junit5">Gradle documentation for JUnit</a></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#using-junit">Using JUnit‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#conventions-to-follow">Conventions to Follow‎</a> <a class="nav-link py-1" href="#configuring-gradle-for-junit">Configuring Gradle for JUnit‎</a> <a class="nav-link py-1" href="#writing-the-first-junit-test">Writing the First JUnit Test‎</a> <a class="nav-link py-1" href="#running-tests">Running Tests‎</a> <a class="nav-link py-1" href="#writing-useful-junit-tests">Writing Useful JUnit Tests‎</a> <a class="nav-link py-1" href="#troubleshooting-junit">Troubleshooting JUnit‎</a> <a class="nav-link py-1" href="#resources">Resources‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Sun, 8 Feb 2026, 22:48:04 GMT+8]</small></div></footer><!--]--></div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre></div></div></div> <p><strong>Run tests</strong>, either using the Intellij UI (preferred -- this makes debugging failed test cases easier) or using Gradle itself, as explained in the section below.</p> <h2 id="running-tests">Running Tests<a class="fa fa-anchor" href="#running-tests" onclick="event.stopPropagation()"></a></h2> <p><strong><strong>In Intellij IDEA:</strong></strong></p> <ul><li>To run a specific JUnit test class (e.g., <code class="hljs inline no-lang">src/test/java/seedu/DukeTest.java</code>), right-click on the test class, and choose <span class="text-success"><span aria-hidden="true" class="fas fa-play"></span></span> <code class="hljs inline no-lang">Run {classname}</code>.</li></ul> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-success" style="" data-v-19514615><!--[--><i class="fas fa-lightbulb" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-success vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>If the above doesn&#39;t work, you may want to go to <code class="hljs inline no-lang">File</code> &gt; <code class="hljs inline no-lang">Settings</code> and change the<code class="hljs inline no-lang">Run tests using:</code> setting to <code class="hljs inline no-lang">Intellij IDEA</code> (instead of <code class="hljs inline no-lang">Gradle</code>), as shown below:</p> <div class="card-container" data-v-4484e25a><div class="card expandable-card" data-v-4484e25a><div class="card-header header-toggle bg-light" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><!----></div><div class="header-wrapper card-title bg-light" data-v-4484e25a><!--[--><!--[--><p>Expand to see screenshot ...</p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="display:none;" type="button" class="btn-outline-secondary close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-secondary popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-peek-collapsed card-collapse" data-v-4484e25a><div class="d-print-none card-body" data-v-4484e25a><!--[--><!--[--> <div class="annotate-image-wrapper"><img src="images/gradle/intellijRunTestsUsingIntellij.png" width="" height="" loading="eager" class="annotate-image"><div style="top:0;left:0;height:0;"><!--[--><div><!----><div class="annotate-point"><!----></div></div><!--]--></div></div><!--]--><!--]--><!----><div class="bottom-button-wrapper" data-v-4484e25a><button type="button" class="collapse-button btn btn-outline-secondary" style="" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button></div></div><hr style="display:none;" data-v-4484e25a></div><div class="peek-read-more glyphicon glyphicon-chevron-down" data-v-4484e25a></div></div></div><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <ul><li>To run all tests in a folder (e.g., <code class="hljs inline no-lang">src/test/java</code> folder), right-click on the folder, and choose <span class="text-success"><span aria-hidden="true" class="fas fa-play"></span></span> <code class="hljs inline no-lang">Run Tests in &#39;...&#39;</code>.</li> <li>Other supported IDEs (e.g., Eclipse, NetBeans, VS Code, etc.) have similar mechanisms.</li></ul> <p><strong><strong>Using Gradle:</strong></strong></p> <ul><li>To run all tests in the project, run the Gradle task <code class="hljs inline no-lang">test</code> (<a href="/guides/tutorials/gradle.html#running-gradle-tasks">more info on running Gradle tasks</a>)</li> <li>[If using Intellij UI to run the <code class="hljs inline no-lang">test</code> task] The location of the <code class="hljs inline no-lang">test</code> task in the Gradle task hierarchy is <code class="hljs inline no-lang">Tasks -&gt; verification -&gt; test</code> (see screenshot below).<br> <span class="image-wrapper"><img src="/guides/tutorials/images/junit/gradleTaskHierarchy.png" width="" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span></li></ul> <div id="other-ways-of-running-tests"><p><strong><strong>Other ways:</strong></strong></p> <ul><li>There is also <a href="https://junit.org/junit5/docs/current/user-guide/#running-tests-console-launcher">a way to run JUnit tests in the console (without Gradle or an IDE)</a>, which is not used as much as the above two methods.</li></ul></div> <div id="useful-test-cases"><h2 id="writing-useful-junit-tests">Writing Useful JUnit Tests<a class="fa fa-anchor" href="#writing-useful-junit-tests" onclick="event.stopPropagation()"></a></h2> <p>After you are able to run JUnit tests successfully using a dummy test class such as the above, you can add more tests and test classes as necessary.</p> <p>To learn how to write useful JUnit test cases, refer to <a href="https://se-education.org/se-book/cppToJava/junit/basic/index.html">this section</a> of our SE book. For a quick overview of more advanced JUnit features, refer to <a href="https://se-education.org/se-book/cppToJava/junit/intermediate/index.html">this section</a>.</p></div> <div id="troubleshooting-junit"><h2 id="troubleshooting-junit">Troubleshooting JUnit<a class="fa fa-anchor" href="#troubleshooting-junit" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Problem:</strong> Tests fail with at <code class="hljs inline no-lang">ClassNotFoundException</code> error, although the supposedly-missing class is present.<br> <strong>Solution:</strong> Ensure the path of source and test files does not have Unicode characters (e.g., Chinese characters). Gradle sometimes fail to find files in a path that has Unicode characters.</li></ul></div> <h2 id="resources">Resources<a class="fa fa-anchor" href="#resources" onclick="event.stopPropagation()"></a></h2> <ul><li><a href="https://junit.org/junit5/docs/current/user-guide/">JUnit 5 User Guide</a></li> <li><a href="https://docs.gradle.org/current/userguide/java_testing.html#using_junit5">Gradle documentation for JUnit</a></li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#using-junit">Using JUnit‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#conventions-to-follow">Conventions to Follow‎</a> <a class="nav-link py-1" href="#configuring-gradle-for-junit">Configuring Gradle for JUnit‎</a> <a class="nav-link py-1" href="#writing-the-first-junit-test">Writing the First JUnit Test‎</a> <a class="nav-link py-1" href="#running-tests">Running Tests‎</a> <a class="nav-link py-1" href="#writing-useful-junit-tests">Writing Useful JUnit Tests‎</a> <a class="nav-link py-1" href="#troubleshooting-junit">Troubleshooting JUnit‎</a> <a class="nav-link py-1" href="#resources">Resources‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Tue, 10 Feb 2026, 20:38:52 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
 <script src="/guides/markbind/js/vue.global.prod.min.js"></script>
@@ -195,6 +283,20 @@ For example,
 `;
             tooltipText.innerText  = `Copy`;
         }, 3000);
+    }
+    </script>
+    <script>
+    function toggleCodeBlockWrap(element) {
+      const pre = element.parentElement.parentElement;
+      const tooltipText = element.querySelector(".tooltiptext");
+      const classList = pre.querySelector('code').classList; 
+      if (classList.contains('wrap')) {
+          classList.remove('wrap');
+          tooltipText.innerText  = `Wrap Text`;
+      } else {
+          classList.add('wrap')
+          tooltipText.innerText  = `Unwrap Text`;
+      }
     }
     </script>
 </html>
