@@ -113,11 +113,13 @@ If you use a different provider later, only the model wiring changes; the agent 
 
     </div>
     </div>
-    </button></div></pre><h2 id="step-2-add-a-method-to-send-a-prompt-to-the-llm">Step 2: Add a method to send a prompt to the LLM<a class="fa fa-anchor" href="#step-2-add-a-method-to-send-a-prompt-to-the-llm" onclick="event.stopPropagation()"></a></h2> <p>Now, let&#39;s encapsulate the LLM call in a method that takes a prompt string and returns the LLM response.</p> <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> dev.langchain4j.data.message.SystemMessage;
+    </button></div></pre><h2 id="step-2-add-a-method-to-send-a-prompt-to-the-llm">Step 2: Add a method to send a prompt to the LLM<a class="fa fa-anchor" href="#step-2-add-a-method-to-send-a-prompt-to-the-llm" onclick="event.stopPropagation()"></a></h2> <p>Now, let&#39;s encapsulate the LLM call in a method that takes a prompt string and returns the LLM response.</p> <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> java.util.List;
+</span><span>
+</span><span><span class="hljs-keyword">import</span> dev.langchain4j.data.message.SystemMessage;
 </span><span><span class="hljs-keyword">import</span> dev.langchain4j.data.message.UserMessage;
 </span><span><span class="hljs-keyword">import</span> dev.langchain4j.model.chat.ChatModel;
 </span><span><span class="hljs-keyword">import</span> dev.langchain4j.model.chat.request.ChatRequest;
-</span><span><span class="hljs-keyword">import</span> dev.langchain4j.model.chat.request.ChatResponse;
+</span><span><span class="hljs-keyword">import</span> dev.langchain4j.model.chat.response.ChatResponse;
 </span><span><span class="hljs-keyword">import</span> dev.langchain4j.model.openai.OpenAiChatModel;
 </span><span>
 </span><span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AiHelper</span> </span>{
@@ -194,7 +196,7 @@ If you use a different provider later, only the model wiring changes; the agent 
 </span><span>        + <span class="hljs-string">&quot;6. delete &lt;task_number&gt; - Deletes a task.\n&quot;</span>
 </span><span>        + <span class="hljs-string">&quot;7. help - Shows the help message.&quot;</span>;
 </span><span>
-</span><span>    <span class="hljs-keyword">return</span> aiHelper.getAiResponse(systemPrompt, userPrompt).getText();
+</span><span>    <span class="hljs-keyword">return</span> aiHelper.getAiResponse(systemPrompt, userPrompt).aiMessage().text();
 </span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
@@ -249,7 +251,7 @@ App: <code class="hljs inline no-lang">Currently, there is no in-built command t
 </span><span>        + <span class="hljs-string">&quot;5. done &lt;task_number&gt; - Marks a task as done.\n&quot;</span>
 </span><span>        + <span class="hljs-string">&quot;6. delete &lt;task_number&gt; - Deletes a task.\n&quot;</span>
 </span><span>        + <span class="hljs-string">&quot;7. help - Shows the help message.&quot;</span>;
-</span><span>    String command = aiHelper.getAiResponse(systemPrompt, userPrompt).getText();
+</span><span>    String command = aiHelper.getAiResponse(systemPrompt, userPrompt).aiMessage().text();
 </span><span>
 </span><span>    <span class="hljs-keyword">if</span> (isValidCommand(command)) {
 </span><span>        executeCommand(command);
@@ -299,7 +301,7 @@ App: <code class="hljs inline no-lang">Currently, there is no in-built command t
 
     </div>
     </div>
-    </button></div></pre><h2 id="step-5-expand-the-ai-capabilities">Step 5: Expand the AI Capabilities<a class="fa fa-anchor" href="#step-5-expand-the-ai-capabilities" onclick="event.stopPropagation()"></a></h2> <p>With the basic AI integration in place, you can expand the capabilities further, to handle more complex queries/command, provide contextual help, assist with error handling, etc.</p> <hr> <p><strong>Initial version</strong>: Aditya Misra (<a href="https://github.com/MadLamprey">@MadLamprey </a>)</p></div></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#adding-ai-features-to-a-java-app">Adding AI features to a Java App‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#prerequisites">Prerequisites‎</a> <a class="nav-link py-1" href="#step-1-set-up-llm-integration">Step 1: Set up LLM integration‎</a> <a class="nav-link py-1" href="#step-2-add-a-method-to-send-a-prompt-to-the-llm">Step 2: Add a method to send a prompt to the LLM‎</a> <a class="nav-link py-1" href="#step-3-add-the-ability-to-query-the-app-s-ai">Step 3: Add the Ability to &#39;Query&#39; the App&#39;s AI‎</a> <a class="nav-link py-1" href="#step-4-add-the-ability-to-command-the-app-via-ai">Step 4: Add the Ability to &#39;Command&#39; the App via AI‎</a> <a class="nav-link py-1" href="#step-5-expand-the-ai-capabilities">Step 5: Expand the AI Capabilities‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Wed, 11 Feb 2026, 11:50:58 GMT+8]</small></div></footer><!--]--></div>
+    </button></div></pre><h2 id="step-5-expand-the-ai-capabilities">Step 5: Expand the AI Capabilities<a class="fa fa-anchor" href="#step-5-expand-the-ai-capabilities" onclick="event.stopPropagation()"></a></h2> <p>With the basic AI integration in place, you can expand the capabilities further, to handle more complex queries/command, provide contextual help, assist with error handling, etc.</p> <hr> <p><strong>Initial version</strong>: Aditya Misra (<a href="https://github.com/MadLamprey">@MadLamprey </a>)</p></div></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#adding-ai-features-to-a-java-app">Adding AI features to a Java App‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#prerequisites">Prerequisites‎</a> <a class="nav-link py-1" href="#step-1-set-up-llm-integration">Step 1: Set up LLM integration‎</a> <a class="nav-link py-1" href="#step-2-add-a-method-to-send-a-prompt-to-the-llm">Step 2: Add a method to send a prompt to the LLM‎</a> <a class="nav-link py-1" href="#step-3-add-the-ability-to-query-the-app-s-ai">Step 3: Add the Ability to &#39;Query&#39; the App&#39;s AI‎</a> <a class="nav-link py-1" href="#step-4-add-the-ability-to-command-the-app-via-ai">Step 4: Add the Ability to &#39;Command&#39; the App via AI‎</a> <a class="nav-link py-1" href="#step-5-expand-the-ai-capabilities">Step 5: Expand the AI Capabilities‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.2.0</a> on Wed, 11 Feb 2026, 14:23:17 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
 <script src="/guides/markbind/js/vue.global.prod.min.js"></script>
