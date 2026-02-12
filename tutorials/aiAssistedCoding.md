@@ -17,6 +17,8 @@
 * **Windsurf:** [Signing up]({{ baseUrl }}/tutorials/windsurfSignup.html) | [Use in Intellij]({{ baseUrl }}/tutorials/intellijWindsurf.html) | [Use in VS Code]({{ baseUrl }}/tutorials/vscWindsurf.html)
 * [**Gemini CLI**]({{ baseUrl }}/tutorials/geminiCli.md)
 * [**CodeRabbit**]({{ baseUrl }}/tutorials/codeRabbit.md)
+* **Using AI in your applications:**
+  * [Adding AI Features to a Java App]({{ baseUrl }}/tutorials/addingAiToJavaApp.html)
 
 </div>
 
