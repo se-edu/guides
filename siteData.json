@@ -325,15 +325,15 @@
     },
     {
       "src": "tutorials/addingAiToJavaApp.md",
-      "title": "Adding AI features to a Java App",
+      "title": "Adding AI Features to a Java App",
       "headings": {
-        "adding-ai-features-to-a-java-app": "Adding AI features to a Java App",
+        "adding-ai-features-to-a-java-app": "Adding AI Features to a Java App",
         "prerequisites": "Prerequisites",
         "step-1-set-up-llm-integration": "Step 1: Set up LLM integration",
         "step-2-add-a-method-to-send-a-prompt-to-the-llm": "Step 2: Add a method to send a prompt to the LLM",
         "step-3-add-the-ability-to-query-the-app-s-ai": "Step 3: Add the Ability to 'Query' the App's AI",
         "step-4-add-the-ability-to-command-the-app-via-ai": "Step 4: Add the Ability to 'Command' the App via AI",
-        "step-5-expand-the-ai-capabilities": "Step 5: Expand the AI Capabilities"
+        "step-5-next-steps": "Step 5: Next steps"
       },
       "headingKeywords": {}
     },
