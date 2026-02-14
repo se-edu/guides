@@ -8,13 +8,27 @@
 
 # {{ title }}
 
-This tutorial covers the basics of using VS Code’s JUnit.
+<box type="info" seamless>
+This tutorial will help you:
+- Set up JUnit support in a Gradle project using VS Code
+- Write and run your first JUnit test
+- Understand test folder structure and naming conventions
+- View test results and coverage using VS Code
+
+You should already be familiar with Java and Gradle basics before proceeding.
+</box>
 
 <!-- ======================================================== -->
 
 ## Prerequisites
 
 <include src="vscCreatingNewJavaProject.md#vsc-java-prereq" />
+<box type="tip" seamless>
+Ensure you have installed the following extensions in VS Code:
+- **Java Extension Pack** (includes Language Support, Debugger, Maven/Gradle tools)
+- **Test Runner for Java** (for the Testing Explorer and test UI support)
+</box>
+
 
 <include src="junit.md#junit-use-gradle" />
 
@@ -26,12 +40,39 @@ This tutorial assumes you are using Gradle to manage JUnit.
 
 <box type="tip" seamless>
 
-Restart VSCode after updating the `build.gradle` file, to ensure the changes take effect.
+Restart VSCode after updating the build.gradle file, to ensure the changes take effect.
+</box>
+<box type="info" seamless>
+ After restarting, check if the beaker **Testing** icon appears in the left sidebar of VS Code.
+This confirms JUnit is correctly configured and detected by the IDE.
 </box>
 
 <!-- ======================================================== -->
 
 <include src="junit.md#junit-conventions" />
+
+<!-- ======================================================== -->
+<box type="tip" seamless>
+Here’s what a typical Gradle Java project folder structure looks like:
+
+```text
+your-project/
+├── build.gradle
+├── settings.gradle
+└── src/
+    ├── main/
+    │   └── java/
+    │       └── YourMainClass.java
+    └── test/
+        └── java/
+            └── YourTestClass.java
+```
+
+* Place your actual application code in src/main/java/
+* Place your JUnit test files in src/test/java/
+</box>
+
+
 
 <!-- ======================================================== -->
 
@@ -51,8 +92,7 @@ Restart VSCode after updating the `build.gradle` file, to ensure the changes tak
 
 ****Using VS Code:****
 
-* Use the **green play button** next to the class or method to run tests.
-  ![VS Code Run Tests](images/vscJUnit/vscRunTest.png)
+Hover your mouse over the test method or class, then click the **green play button** (▶) that appears to run the test.  ![VS Code Run Tests](images/vscJUnit/vscRunTest.png)
 * The Testing Explorer is a tree view to show all the test cases in your workspace.
    Open the Testing Explorer by clicking the beaker icon in the left Activity Bar. You can run/debug tests and view their results from there as well.
    ![VS Code Testing Explorer](images/vscJUnit/vscTestingExplorer.png)
@@ -67,6 +107,8 @@ Restart VSCode after updating the `build.gradle` file, to ensure the changes tak
 <!-- ======================================================== -->
 
 <include src="junit.md#useful-test-cases" />
+To learn how to write good test cases, refer to [this section of the SE book](https://se-education.org/guides/tutorials/junit.html).
+
 
 <!-- ======================================================== -->
 
@@ -76,4 +118,4 @@ Restart VSCode after updating the `build.gradle` file, to ensure the changes tak
 
 ---
 
-**Contributors**: Song Yuexi ([@YosieSYX](https://github.com/YosieSYX))
+**Contributors**: Song Yuexi ([@YosieSYX](https://github.com/YosieSYX)), Arshin Sikka ([@arshinsikka](https://github.com/arshinsikka))
