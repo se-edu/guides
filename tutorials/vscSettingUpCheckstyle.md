@@ -18,7 +18,7 @@ Given below are the steps to set up a Checkstyle plugin in VS Code so that VS Co
 
 * **Verify prerequisites:** {{ step_numbers }}
   * Ensure you followed the section [Preparing VS Code for Java projects](vscPreparingForJava.md) above. In particular, please ensure that you have installed the [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack).
-  * The two Checkstyle config files (`checkstyle.xml` and `suppressions.xml`) should be in the `./config/checkstyle` directory, as mentioned [here](checkstyle.md). The files can be copied from `addressbook-level3`: [checkstyle.xml](https://github.com/nus-cs2103-AY2122S1/addressbook-level3/blob/master/config/checkstyle/checkstyle.xml) and [suppressions.xml](https://github.com/nus-cs2103-AY2122S1/addressbook-level3/blob/master/config/checkstyle/suppressions.xml)
+  * The two Checkstyle config files (`checkstyle.xml` and `suppressions.xml`) should be in the `./config/checkstyle` directory, as mentioned [here](checkstyle.md). The files can be copied from `addressbook-level3`: [checkstyle.xml](https://github.com/se-edu/addressbook-level3/blob/master/config/checkstyle/checkstyle.xml) and [suppressions.xml](https://github.com/se-edu/addressbook-level3/blob/master/config/checkstyle/suppressions.xml)
 * Open VS Code.
 * Download the [Checkstyle for Java](https://marketplace.visualstudio.com/items?itemName=shengchen.vscode-checkstyle) extension by author ShengChen using `Extensions` -> Search `Checkstyle for Java` -> Install (the first entry).<br>
    ![install checkstyle extension in VS Code](images/vscode/checkstyle-extension-install.png)
