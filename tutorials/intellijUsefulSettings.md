@@ -49,3 +49,20 @@ Simply go to the Project tool window, select `options` (the three dots), select 
 Now, whenever you select a file (e.g. by clicking on a method), the file will appear selected in the Project tool window, allowing you to quickly locate the file.<br>
 
 <pic src="images/intellij/selectedFileExample.png"></pic>
+
+<!-- ==================================================================================================== -->
+<div id="setting-env-variables">
+
+## Setting an environment variable
+
+To set an environment variables for a specific run configuration inside a project:
+
+1. Open your project in IntelliJ IDEA.
+1. Go to: `Run` → `Edit Configurations...`
+1. Select the run configuration you want (or create a new one using the `+` button).
+1. Locate the `Environment variables:` field.
+1. Add your variable by typing into the field `KEY_NAME=value`, separated by `;` if there are multiple variables.<br>
+   e.g., `DEBUG=0;LLM_API_KEY=abcdef12142`
+1. Click `OK`.
+
+</div>

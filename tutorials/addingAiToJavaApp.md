@@ -58,6 +58,11 @@ class AiTest {
 }
 ```
 
+<box type="warning" seamless>
+
+**Intellij IDEA users:** If the above code still cannot load the API key from the environment (reason: Intellij might fail to load environment variables under some circumstances), you can set `LLM_API_KEY` asan environment variable _inside_ the IDE using [this technique](intellijUsefulSettings.html?cv-highlight=setting-env-variables).
+</box>
+
 ## Step 2: Add a method to send a prompt to the LLM
 
 Now, let's encapsulate the LLM call in a method that takes a prompt string and returns the LLM response.
@@ -180,6 +185,6 @@ Before releasing the feature, you can consider further enhancements along the fo
 **Contributors**:
 
 * Initial version: Aditya Misra ([@MadLamprey](https://github.com/MadLamprey))<br>
-* Suggestions/feedback: [@FisherSkyi](https://github.com/FisherSkyi), [@grenn24](https://github.com/grenn24), [@hongxun03](https://github.com/hongxun03), [@iZUMi-kyouka](https://github.com/iZUMi-kyouka), [@joojaja](https://github.com/joojaja),[@jovnc](https://github.com/jovnc)
+* Suggestions/feedback: [@broccoli0616](https://github.com/broccoli0616), [@FisherSkyi](https://github.com/FisherSkyi), [@grenn24](https://github.com/grenn24), [@hongxun03](https://github.com/hongxun03), [@iZUMi-kyouka](https://github.com/iZUMi-kyouka), [@joojaja](https://github.com/joojaja),[@jovnc](https://github.com/jovnc)
 
 </div>
