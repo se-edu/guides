@@ -598,7 +598,8 @@
         "intellij-idea-useful-settings": "Intellij IDEA: Useful settings",
         "enabling-assertions": "Enabling assertions",
         "enabling-soft-wrapping": "Enabling soft wrapping",
-        "enabling-automatic-selection-of-open-file": "Enabling automatic selection of open file"
+        "enabling-automatic-selection-of-open-file": "Enabling automatic selection of open file",
+        "setting-an-environment-variable": "Setting an environment variable"
       },
       "headingKeywords": {}
     },
