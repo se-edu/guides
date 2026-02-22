@@ -75,6 +75,12 @@ First, add the Gradle wrapper files to the project. e.g., if they are in a separ
 1. Open/import the project again, as explained in scenario 1 above.
 
 </tab>
+<tab header="Using VS Code">
+
+You can refer to the guide <a href="vscImportingGradleProject.md" target="_blank">_VS Code - Importing a Gradle project_</a>.
+
+
+</tab>
 <tab header="Not using an IDE">
 
 No further actions required. You should be able to use Gradle via the command line now.
