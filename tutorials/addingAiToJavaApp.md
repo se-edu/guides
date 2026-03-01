@@ -60,7 +60,7 @@ class AiTest {
 
 <box type="warning" seamless>
 
-**Intellij IDEA users:** If the above code still cannot load the API key from the environment (reason: Intellij might fail to load environment variables under some circumstances), you can set `LLM_API_KEY` asan environment variable _inside_ the IDE using [this technique](intellijUsefulSettings.html?cv-highlight=setting-env-variables).
+**Intellij IDEA users:** If the above code still cannot load the API key from the environment (reason: Intellij might fail to load environment variables under some circumstances), you can set `LLM_API_KEY` as an environment variable _inside_ the IDE using [this technique](intellijUsefulSettings.html?cv-highlight=setting-env-variables).
 </box>
 
 ## Step 2: Add a method to send a prompt to the LLM
