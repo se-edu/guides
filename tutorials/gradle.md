@@ -53,6 +53,12 @@ Given below are three scenarios of adding the Gradle wrapper to a project. Choos
 <include src="intellijImportGradleProject.md#importing-gradle-project" />
 
 </tab>
+<tab header="Using VS Code">
+
+You can refer to the guide <a href="vscImportingGradleProject.md" target="_blank">_VS Code - Importing a Gradle project_</a>.
+
+
+</tab>
 <tab header="Not using an IDE">
 
 Run the `java -version` command in the same terminal you use for running Gradle commands, to ensure you are using the intended Java version for Gradle.
