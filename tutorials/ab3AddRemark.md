@@ -439,10 +439,12 @@ You must delete AddressBook’s storage file located at `/data/addressbook.json`
 ```java
     public static final Person ALICE = new PersonBuilder()
         .withName("Alice Pauline")
-        .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
+        .withAddress("123, Jurong West Ave 6, #08-111")
+        .withEmail("alice@example.com")
         .withPhone("94351253")
-        .withPhone("94351253").withRemark("She likes aardvarks.")
-        .withTags("friends").build();
+        .withRemark("She likes aardvarks.")
+        .withTags("friends")
+        .build();
 ```
 
 </panel>
