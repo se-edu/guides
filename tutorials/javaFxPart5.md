@@ -832,7 +832,7 @@ Stretching the background image according to window size.
 ```
 
 <video oncontextmenu="return false;" width="700px" autoplay muted loop>
-   <source src="videos/javafx/ResizeDemo.mp4" type="video/mp4">
+   <source src="videos/javafx/StretchDemo.mp4" type="video/mp4">
 </video>
 
 ### Repeat Image
