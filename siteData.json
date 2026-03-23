@@ -325,9 +325,9 @@
     },
     {
       "src": "tutorials/addingAiToJavaApp.md",
-      "title": "Adding AI Features to a Java App",
+      "title": "Adding AI Features to a Java App Using a Remote LLM",
       "headings": {
-        "adding-ai-features-to-a-java-app": "Adding AI Features to a Java App",
+        "adding-ai-features-to-a-java-app-using-a-remote-llm": "Adding AI Features to a Java App Using a Remote LLM",
         "prerequisites": "Prerequisites",
         "step-1-set-up-llm-integration": "Step 1: Set up LLM integration",
         "step-2-add-a-method-to-send-a-prompt-to-the-llm": "Step 2: Add a method to send a prompt to the LLM",
@@ -339,9 +339,9 @@
     },
     {
       "src": "tutorials/addingLocalAiToJavaApp.md",
-      "title": "Adding Local AI Features to a Java App",
+      "title": "Adding AI Features to a Java App Using a Local LLM",
       "headings": {
-        "adding-local-ai-features-to-a-java-app": "Adding Local AI Features to a Java App",
+        "adding-ai-features-to-a-java-app-using-a-local-llm": "Adding AI Features to a Java App Using a Local LLM",
         "architecture-overview": "Architecture Overview",
         "prerequisites": "Prerequisites",
         "step-1-start-the-llama-server-subprocess": "Step 1: Start the llama-server Subprocess",
