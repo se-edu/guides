@@ -338,6 +338,29 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/addingLocalAiToJavaApp.md",
+      "title": "Adding Local AI Features to a Java App",
+      "headings": {
+        "adding-local-ai-features-to-a-java-app": "Adding Local AI Features to a Java App",
+        "architecture-overview": "Architecture Overview",
+        "prerequisites": "Prerequisites",
+        "step-1-start-the-llama-server-subprocess": "Step 1: Start the llama-server Subprocess",
+        "finding-the-binary": "Finding the binary",
+        "resolving-the-model-file": "Resolving the model file",
+        "launching-the-process": "Launching the process",
+        "step-2-send-a-prompt-and-parse-the-response": "Step 2: Send a Prompt and Parse the Response",
+        "step-3-define-the-system-prompt-in-a-template-file": "Step 3: Define the System Prompt in a Template File",
+        "step-4-validate-and-normalise-the-llm-output": "Step 4: Validate and Normalise the LLM Output",
+        "step-5-wire-it-into-your-app": "Step 5: Wire It into Your App",
+        "initialise-on-a-background-thread": "Initialise on a background thread",
+        "the-fallback-flow": "The fallback flow",
+        "destructive-command-confirmation": "Destructive command confirmation",
+        "step-6-package-everything-into-a-fat-jar": "Step 6: Package Everything into a Fat JAR",
+        "step-7-next-steps": "Step 7: Next Steps"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/aiAssistedCoding.md",
       "title": "AI-Assisted Coding",
       "headings": {

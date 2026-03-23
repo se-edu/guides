@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="MarkBind 6.3.1">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>HTML coding standard</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Adding Local AI Features to a Java App</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
@@ -12,7 +12,23 @@
   const baseUrl = '/guides'
 </script>
 <body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100"  data-code-theme="light">
-<div id="app"><!--[--><header sticky><div data-v-26aac3dc><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-26aac3dc><div class="container-fluid" data-v-26aac3dc><div class="navbar-left" data-v-26aac3dc><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-26aac3dc><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-26aac3dc><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><ul class="navbar-nav navbar-right" data-v-26aac3dc><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-00e26d0a><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-00e26d0a><div class="form-control placeholder-div-hidden" data-v-00e26d0a>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-00e26d0a><!--[--><!--]--></ul></div></form></li><!--]--></ul></div></nav><div style="display:none;" class="lower-navbar-container" data-v-26aac3dc><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><h1 id="html-coding-standard">HTML coding standard<a class="fa fa-anchor" href="#html-coding-standard" onclick="event.stopPropagation()"></a></h1> <h2 id="document-properties">Document Properties<a class="fa fa-anchor" href="#document-properties" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Use the HTML5 Doctype and HTML5 features</strong></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<div id="app"><!--[--><header sticky><div data-v-26aac3dc><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-26aac3dc><div class="container-fluid" data-v-26aac3dc><div class="navbar-left" data-v-26aac3dc><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-26aac3dc><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-26aac3dc><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><ul class="navbar-nav navbar-right" data-v-26aac3dc><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-00e26d0a><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-00e26d0a><div class="form-control placeholder-div-hidden" data-v-00e26d0a>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-00e26d0a><!--[--><!--]--></ul></div></form></li><!--]--></ul></div></nav><div style="display:none;" class="lower-navbar-container" data-v-26aac3dc><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><div><div class="alert box-container border-warning alert-border-left" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><!----><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>This is a WIP community resource, containing contribution from community members.</strong></p> <ul><li>If you notice any bugs or suggestions for improvements, please report at <a href="https://github.com/se-edu/guides/issues">https://github.com/se-edu/guides/issues</a></li> <li>You are welcome to contribute by sending a PRs to <a href="https://github.com/se-edu/guides/pulls">https://github.com/se-edu/guides/pulls</a> too.</li></ul><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></div> <h1 id="adding-local-ai-features-to-a-java-app">Adding Local AI Features to a Java App<a class="fa fa-anchor" href="#adding-local-ai-features-to-a-java-app" onclick="event.stopPropagation()"></a></h1> <div id="body"><p><strong>Goal:</strong> Learn how to integrate a locally-running LLM into a Java project using <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> as an inference backend, understand the agentic workflow architecture, and implement AI-powered natural language input for your app.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong class="text-info">Local vs. hosted AI:</strong> Unlike the <a href="/guides/tutorials/addingAiToJavaApp.html">hosted AI approach</a> which calls an external API, this tutorial runs the model entirely on the user&#39;s machine. There is no API key to manage and the app works fully offline — at the cost of requiring <code class="hljs inline no-lang">llama-server</code> to be installed on the target machine.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="architecture-overview">Architecture Overview<a class="fa fa-anchor" href="#architecture-overview" onclick="event.stopPropagation()"></a></h2> <p>This approach runs inference via <strong>llama.cpp&#39;s <code class="hljs inline no-lang">llama-server</code></strong> as an external subprocess. Your app spawns the server on startup, then communicates with it over HTTP on <code class="hljs inline no-lang">localhost</code> using Java&#39;s built-in <code class="hljs inline no-lang">HttpClient</code> — no extra AI library dependencies needed.</p> <pre><code class="hljs"><span>User input
+</span><span>    │
+</span><span>    ▼
+</span><span>Parser.parse()  ──── success ──▶  execute command directly
+</span><span>    │ unknown command
+</span><span>    ▼
+</span><span>LlmInterpreter.interpret()
+</span><span>    │  builds prompt from template
+</span><span>    ▼
+</span><span>LlmServer.complete()  ──HTTP POST /completion──▶  llama-server subprocess
+</span><span>    │                                                      │
+</span><span>    │  ◀──────────────── raw text ──────────────────────────
+</span><span>    ▼
+</span><span>validateAndNormalise()
+</span><span>    │  strips preamble, checks known commands
+</span><span>    ▼
+</span><span>executeInterpreted()  ──▶  Parser.parse()  ──▶  execute
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -54,8 +70,8 @@
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <ul><li><strong>Do NOT include xml namespace in the document.</strong></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
-</div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/1999/xhtml&quot;</span>&gt;</span>
+    </button></div></pre><p>The key idea is that the LLM is only invoked as a <strong>fallback</strong> when the traditional parser cannot understand the input. This keeps exact commands fast and predictable, while natural language input is handled by the model.</p> <h2 id="prerequisites">Prerequisites<a class="fa fa-anchor" href="#prerequisites" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Gradle-based Java Project:</strong> A Java project set up with Gradle as the build tool. In this tutorial we assume you have a simple command-line Java application, but the concepts can be applied to any Java app.</li> <li><strong>Java 17+</strong> — verify with <code class="hljs inline no-lang">java -version</code>.</li> <li><strong>llama.cpp</strong> installed on your system — the <code class="hljs inline no-lang">llama-server</code> binary must be on your PATH or in a standard Homebrew location:</li></ul> <div class="indented-level1"><div class="card-container" data-v-4484e25a><div class="card expandable-card" data-v-4484e25a><div class="card-header header-toggle bg-light" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><!----></div><div class="header-wrapper card-title bg-light" data-v-4484e25a><!--[--><!--[--><p><strong>Installation instructions (macOS / Linux / Windows)</strong></p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-secondary" style="" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-outline-secondary close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-secondary popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-collapse" data-v-4484e25a><!----><hr style="display:none;" data-v-4484e25a></div><!----></div></div></div> <ul><li><strong>A GGUF model file</strong> — download a small, quantised model and place it in <code class="hljs inline no-lang">src/main/resources/models/</code>. A good starting point is <code class="hljs inline no-lang">Qwen3.5-0.8B-Q4_K_M.gguf</code>, which is fast on CPU:<pre><code class="hljs bash"><span>pip install huggingface_hub
+</span><span>huggingface-cli download Qwen/Qwen3.5-0.8B --local-dir ./src/main/resources/models
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -97,7 +113,12 @@
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <ul><li><strong>Character Encoding</strong>: All markup should be delivered via the following HTML element as UTF-8, as it is the most friendly for internationalization.</li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+    </button></div></pre></li></ul> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>No Ollama, no API key, no extra Gradle dependencies.</strong> <code class="hljs inline no-lang">llama-server</code> is a standalone binary and Java&#39;s <code class="hljs inline no-lang">java.net.http.HttpClient</code> (available since Java 11) handles the HTTP calls. The model file can be bundled into your fat JAR as a classpath resource so end-users do not need to download it separately.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="step-1-start-the-llama-server-subprocess">Step 1: Start the llama-server Subprocess<a class="fa fa-anchor" href="#step-1-start-the-llama-server-subprocess" onclick="event.stopPropagation()"></a></h2> <p>Create a class (e.g. <code class="hljs inline no-lang">LlmServer</code>) to manage the entire lifecycle of the <code class="hljs inline no-lang">llama-server</code> process.</p> <h3 id="finding-the-binary">Finding the binary<a class="fa fa-anchor" href="#finding-the-binary" onclick="event.stopPropagation()"></a></h3> <p>Probe a list of candidate paths in priority order so the app works across platforms without manual configuration:</p> <pre><code class="hljs java"><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String[] CANDIDATE_PATHS = {
+</span><span>    <span class="hljs-string">&quot;llama-server&quot;</span>,                       <span class="hljs-comment">// on PATH</span>
+</span><span>    <span class="hljs-string">&quot;/opt/homebrew/bin/llama-server&quot;</span>,     <span class="hljs-comment">// Homebrew Apple Silicon</span>
+</span><span>    <span class="hljs-string">&quot;/usr/local/bin/llama-server&quot;</span>,        <span class="hljs-comment">// Homebrew Intel</span>
+</span><span>    <span class="hljs-string">&quot;/usr/bin/llama-server&quot;</span>
+</span><span>};
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -139,7 +160,20 @@
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <ul><li><strong>Responsiveness</strong>: The following tag should be added in order to support mobile browsing.</li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    </button></div></pre><h3 id="resolving-the-model-file">Resolving the model file<a class="fa fa-anchor" href="#resolving-the-model-file" onclick="event.stopPropagation()"></a></h3> <p>When running from an exploded build the model is used directly from the classpath. Inside a fat JAR it is extracted to a local cache directory on first run:</p> <pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">private</span> File <span class="hljs-title">resolveModelFile</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+</span><span>    URL resourceUrl = LlmServer.class.getResource(MODEL_RESOURCE);
+</span><span>    <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;file&quot;</span>.equals(resourceUrl.getProtocol())) {
+</span><span>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> File(resourceUrl.toURI());   <span class="hljs-comment">// dev mode: use directly</span>
+</span><span>    }
+</span><span>    <span class="hljs-comment">// Fat-JAR: extract to local cache on first run</span>
+</span><span>    File dest = <span class="hljs-keyword">new</span> File(CACHE_DIR, CACHED_MODEL_NAME);
+</span><span>    <span class="hljs-keyword">if</span> (!dest.exists()) {
+</span><span>        <span class="hljs-keyword">try</span> (InputStream in = LlmServer.class.getResourceAsStream(MODEL_RESOURCE)) {
+</span><span>            Files.copy(in, dest.toPath(), StandardCopyOption.REPLACE_EXISTING);
+</span><span>        }
+</span><span>    }
+</span><span>    <span class="hljs-keyword">return</span> dest;
+</span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -181,24 +215,127 @@
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <ul><li><p><strong>Indentation</strong>: Indentation should be 2 spaces for html files. Spaces should be used instead of <code class="hljs inline no-lang">tab</code>.</p></li> <li><p><strong>Readability vs Compression</strong>: We prefer readability over file-size savings when it comes to maintaining existing files. Plenty of whitespace is encouraged, along with ASCII art, where appropriate. There is no need for any developer to purposefully compress HTML or CSS, nor obfuscate JavaScript.</p></li> <li><p><strong>Markup and inline styling</strong>: Markup defines the structure and outline of a document and offers a structured content. It is not intended to define the look and feel of the content on the page beyond rudimentary concepts such as headers, paragraphs, and lists. The presentation attributes of HTML have all been deprecated and style should be contained in style sheets. Inline styling should not be used, and should be minimized if its usage is really necessary.</p></li> <li><p><strong>General structure for HTML document</strong>:</p> <pre><code class="hljs html"><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;Content-Type&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;text/html; charset=UTF-8&quot;</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+    </button></div></pre><h3 id="launching-the-process">Launching the process<a class="fa fa-anchor" href="#launching-the-process" onclick="event.stopPropagation()"></a></h3> <pre><code class="hljs java"><span>ProcessBuilder pb = <span class="hljs-keyword">new</span> ProcessBuilder(
+</span><span>        binary,
+</span><span>        <span class="hljs-string">&quot;--model&quot;</span>, modelFile.getAbsolutePath(),
+</span><span>        <span class="hljs-string">&quot;--port&quot;</span>, String.valueOf(SERVER_PORT),
+</span><span>        <span class="hljs-string">&quot;--ctx-size&quot;</span>, <span class="hljs-string">&quot;2048&quot;</span>,
+</span><span>        <span class="hljs-string">&quot;--n-gpu-layers&quot;</span>, <span class="hljs-string">&quot;0&quot;</span>,       <span class="hljs-comment">// set &gt; 0 to use GPU</span>
+</span><span>        <span class="hljs-string">&quot;--threads&quot;</span>, String.valueOf(Runtime.getRuntime().availableProcessors() / <span class="hljs-number">2</span>),
+</span><span>        <span class="hljs-string">&quot;--no-webui&quot;</span>,
+</span><span>        <span class="hljs-string">&quot;--log-disable&quot;</span>
+</span><span>);
+</span><span>pb.redirectErrorStream(<span class="hljs-keyword">true</span>);
+</span><span>pb.redirectOutput(ProcessBuilder.Redirect.DISCARD);
+</span><span>serverProcess = pb.start();
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><p>After starting, poll <code class="hljs inline no-lang">GET /health</code> every 500 ms (up to 60 s) until the server responds with HTTP 200 before marking it ready.</p> <h2 id="step-2-send-a-prompt-and-parse-the-response">Step 2: Send a Prompt and Parse the Response<a class="fa fa-anchor" href="#step-2-send-a-prompt-and-parse-the-response" onclick="event.stopPropagation()"></a></h2> <p>Add a <code class="hljs inline no-lang">complete()</code> method that POSTs a JSON body to the <code class="hljs inline no-lang">/completion</code> endpoint and extracts the <code class="hljs inline no-lang">&quot;content&quot;</code> field from the response:</p> <pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">complete</span><span class="hljs-params">(String prompt, <span class="hljs-keyword">int</span> maxTokens)</span> </span>{
+</span><span>    String body = <span class="hljs-string">&quot;{&quot;</span>
+</span><span>            + <span class="hljs-string">&quot;\&quot;prompt\&quot;:\&quot;&quot;</span> + escapedPrompt + <span class="hljs-string">&quot;\&quot;,&quot;</span>
+</span><span>            + <span class="hljs-string">&quot;\&quot;n_predict\&quot;:&quot;</span> + maxTokens + <span class="hljs-string">&quot;,&quot;</span>
+</span><span>            + <span class="hljs-string">&quot;\&quot;temperature\&quot;:0.0,&quot;</span>
+</span><span>            + <span class="hljs-string">&quot;\&quot;stop\&quot;:[\&quot;\\n\&quot;,\&quot;&lt;|im_end|&gt;\&quot;,\&quot;User:\&quot;],&quot;</span>
+</span><span>            + <span class="hljs-string">&quot;\&quot;stream\&quot;:false&quot;</span>
+</span><span>            + <span class="hljs-string">&quot;}&quot;</span>;
 </span><span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>CS2103/T (Module website)<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+</span><span>    HttpRequest request = HttpRequest.newBuilder()
+</span><span>            .uri(<span class="hljs-keyword">new</span> URI(<span class="hljs-string">&quot;http://127.0.0.1:&quot;</span> + SERVER_PORT + <span class="hljs-string">&quot;/completion&quot;</span>))
+</span><span>            .header(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/json&quot;</span>)
+</span><span>            .timeout(Duration.ofSeconds(REQUEST_TIMEOUT_SECONDS))
+</span><span>            .POST(HttpRequest.BodyPublishers.ofString(body))
+</span><span>            .build();
 </span><span>
-</span><span>  <span class="hljs-comment">&lt;!-- Sample stylesheet inclusion --&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;styles/common.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-</span><span>  <span class="hljs-comment">&lt;!-- Body content goes here --&gt;</span>
+</span><span>    HttpResponse&lt;String&gt; response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+</span><span>    <span class="hljs-keyword">return</span> parseContent(response.body());   <span class="hljs-comment">// extracts &quot;content&quot; field via regex</span>
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong class="text-info">Why <code class="hljs inline no-lang">temperature=0.0</code> and <code class="hljs inline no-lang">stop</code> tokens?</strong> We want deterministic, single-line output. Setting <code class="hljs inline no-lang">temperature</code> to <code class="hljs inline no-lang">0.0</code> makes the model always pick the most likely token. The stop tokens (<code class="hljs inline no-lang">\n</code>, <code class="hljs inline no-lang">&lt;|im_end|&gt;</code>) cut off generation immediately after the first line, preventing the model from adding unwanted explanation.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="step-3-define-the-system-prompt-in-a-template-file">Step 3: Define the System Prompt in a Template File<a class="fa fa-anchor" href="#step-3-define-the-system-prompt-in-a-template-file" onclick="event.stopPropagation()"></a></h2> <p>Rather than hardcoding the prompt in Java, store it in a resource file (e.g. <code class="hljs inline no-lang">src/main/resources/nlp/prompt_template.txt</code>) and load it once at class-init time:</p> <pre><code class="hljs java"><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String PROMPT_TEMPLATE = loadPromptTemplate();
 </span><span>
-</span><span>  <span class="hljs-comment">&lt;!-- Sample javascript inclusion --&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/js/jquery-minified.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">loadPromptTemplate</span><span class="hljs-params">()</span> </span>{
+</span><span>    <span class="hljs-keyword">try</span> (InputStream is = LlmInterpreter.class.getResourceAsStream(<span class="hljs-string">&quot;/nlp/prompt_template.txt&quot;</span>)) {
+</span><span>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> String(is.readAllBytes(), StandardCharsets.UTF_8);
+</span><span>    }
+</span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -240,314 +377,33 @@
 
     </div>
     </div>
-    </button></div></pre></li></ul> <h2 id="tags">Tags<a class="fa fa-anchor" href="#tags" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>All HTML tags are to be closed properly.</strong></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Stuff<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Copy</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Wrap Text</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
-      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
-      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
-      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
-      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
-      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
-      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
-      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
-      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
-      5.1054688 z "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button></div></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
-</div> <div class="col"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Stuff
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>More Stuff
-</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Copy</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Wrap Text</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
-      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
-      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
-      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
-      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
-      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
-      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
-      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
-      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
-      5.1054688 z "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button></div></pre></div></div></div> <ul><li><strong>Do not use <code class="hljs inline no-lang">/&gt;</code> for <em>void</em> elements.</strong><br>
-Example of void elements are: <code class="hljs inline no-lang">br</code>, <code class="hljs inline no-lang">img</code>, <code class="hljs inline no-lang">link</code>, <code class="hljs inline no-lang">meta</code>.
-The full list of HTML void elements can be accessed <a href="http://www.w3.org/TR/html-markup/syntax.html#void-elements">here</a>.</li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;a&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;5px&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;10px&quot;</span>&gt;</span>
-</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Copy</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Wrap Text</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
-      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
-      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
-      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
-      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
-      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
-      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
-      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
-      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
-      5.1054688 z "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button></div></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
-</div> <div class="col"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;a&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;5px&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;10px&quot;</span> /&gt;</span>
-</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Copy</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Wrap Text</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
-      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
-      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
-      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
-      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
-      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
-      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
-      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
-      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
-      5.1054688 z "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button></div></pre></div></div></div> <ul><li><strong>Use lowercase for all attributes and tag names.</strong></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;frame&quot;</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Copy</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Wrap Text</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
-      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
-      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
-      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
-      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
-      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
-      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
-      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
-      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
-      5.1054688 z "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button></div></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
-</div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">DIV</span> <span class="hljs-attr">ID</span>=<span class="hljs-string">&quot;frame&quot;</span>&gt;</span>Test<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Copy</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Wrap Text</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
-      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
-      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
-      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
-      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
-      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
-      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
-      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
-      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
-      5.1054688 z "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button></div></pre></div></div></div> <h2 id="attributes">Attributes<a class="fa fa-anchor" href="#attributes" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Use <code class="hljs inline no-lang">attr=&quot;value&quot;</code> for attribute values.</strong></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;computer&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;some-input&quot;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;disabled&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>
-</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Copy</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
-      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
-      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
-      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
-      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
-      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
-      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
-    <div class="tooltip-container">
-    <span class="tooltiptext">Wrap Text</span>
-    <div class="function-btn-body">
-    
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
-    <g id="surface1">
-      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
-      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
-      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
-      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
-      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
-      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
-      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
-      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
-      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
-      5.1054688 z "></path>
-    </g>
-</svg>
-
-    </div>
-    </div>
-    </button></div></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
-</div> <div class="col"><pre><code class="hljs html"><span><span class="hljs-comment">&lt;!-- single/no quotes --&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">computer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#39;some-input&#39;</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&#39;disabled&#39;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">2</span>&gt;</span>
+    </button></div></pre><p>The template uses <strong>ChatML</strong> format (required by Qwen and many other open models) and instructs the model to output <em>only</em> a valid command string. Suppose your app is a CLI-centric task management app — the template would look like:</p> <pre><code class="hljs"><span>&lt;|im_start|&gt;system
+</span><span>You are a task manager assistant. Convert user input into ONE valid app command string.
 </span><span>
-</span><span><span class="hljs-comment">&lt;!-- specify boolean variables in the attributes --&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;computer&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;some-input&quot;</span> <span class="hljs-attr">disabled</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>
+</span><span>COMMANDS:
+</span><span>- todo &lt;description&gt;
+</span><span>- deadline &lt;description&gt; /by &lt;date&gt;
+</span><span>- event &lt;description&gt; /from &lt;date&gt; /to &lt;date&gt;
+</span><span>- list
+</span><span>- done &lt;task_number&gt;
+</span><span>- delete &lt;task_number&gt;
+</span><span>- help
+</span><span>
+</span><span>RULES:
+</span><span>1. Output ONLY the command string, no explanation.
+</span><span>2. For greetings or chitchat, output: CHAT: &lt;short friendly reply&gt;
+</span><span>3. If no command fits, output: UNKNOWN
+</span><span>
+</span><span>EXAMPLES:
+</span><span>remind me to buy groceries -&gt; todo buy groceries
+</span><span>remove task 3 -&gt; delete 3
+</span><span>what tasks do I have? -&gt; list
+</span><span>hello -&gt; CHAT: Hey there! Ready to tackle your to-do list?
+</span><span>&lt;|im_end|&gt;
+</span><span>&lt;|im_start|&gt;user
+</span><span>{USER_INPUT}
+</span><span>&lt;|im_end|&gt;
+</span><span>&lt;|im_start|&gt;assistant
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -589,7 +445,28 @@ The full list of HTML void elements can be accessed <a href="http://www.w3.org/T
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <h2 id="naming">Naming<a class="fa fa-anchor" href="#naming" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Classes: See <a href="/guides/conventions/css.html">CSS Style Guide</a>.</strong></li> <li><strong>IDs: lower-case, join-by-hyphen.</strong> e.g., <code class="hljs inline no-lang">header-content-week3</code></li></ul> <h2 id="indentation">Indentation<a class="fa fa-anchor" href="#indentation" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Indentation should be <mark>2 spaces</mark> for HTML files (not 4).</strong></li> <li><strong>Spaces should be used instead of <code class="hljs inline no-lang">tab</code>.</strong></li></ul> <h2 id="miscellaneous">Miscellaneous<a class="fa fa-anchor" href="#miscellaneous" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Follow this format for <code class="hljs inline no-lang">script</code> tags:</strong></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/js/jquery-minified.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    </button></div></pre><p>At runtime, replace <code class="hljs inline no-lang">{USER_INPUT}</code> with the actual user input before sending the prompt. Keeping the prompt in a text file (rather than Java source) makes it easy to iterate on without recompiling.</p> <h2 id="step-4-validate-and-normalise-the-llm-output">Step 4: Validate and Normalise the LLM Output<a class="fa fa-anchor" href="#step-4-validate-and-normalise-the-llm-output" onclick="event.stopPropagation()"></a></h2> <p>Small local models sometimes prepend preamble text (e.g., <code class="hljs inline no-lang">&quot;Sure! Here is the command: todo buy milk&quot;</code>). Add a <code class="hljs inline no-lang">validateAndNormalise()</code> method to handle this with a two-phase check:</p> <pre><code class="hljs java"><span><span class="hljs-function">String <span class="hljs-title">validateAndNormalise</span><span class="hljs-params">(String raw)</span> </span>{
+</span><span>    String cleaned = raw.replaceAll(<span class="hljs-string">&quot;^[&#39;\&quot;`]+|[&#39;\&quot;`]+$&quot;</span>, <span class="hljs-string">&quot;&quot;</span>).trim();
+</span><span>
+</span><span>    <span class="hljs-comment">// Pass-through for chat responses</span>
+</span><span>    <span class="hljs-keyword">if</span> (cleaned.regionMatches(<span class="hljs-keyword">true</span>, <span class="hljs-number">0</span>, <span class="hljs-string">&quot;CHAT:&quot;</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>)) {
+</span><span>        <span class="hljs-keyword">return</span> cleaned;
+</span><span>    }
+</span><span>
+</span><span>    <span class="hljs-comment">// Phase 1: first word is a known command — accept directly</span>
+</span><span>    String firstWord = cleaned.split(<span class="hljs-string">&quot;\\s+&quot;</span>)[<span class="hljs-number">0</span>].toLowerCase();
+</span><span>    <span class="hljs-keyword">if</span> (KNOWN_COMMANDS.contains(firstWord)) {
+</span><span>        <span class="hljs-keyword">return</span> cleaned;
+</span><span>    }
+</span><span>
+</span><span>    <span class="hljs-comment">// Phase 2: scan for a command word after preamble</span>
+</span><span>    Matcher matcher = COMMAND_SCAN_PATTERN.matcher(cleaned);
+</span><span>    <span class="hljs-keyword">if</span> (matcher.find()) {
+</span><span>        <span class="hljs-keyword">return</span> cleaned.substring(matcher.start(<span class="hljs-number">1</span>)).trim();
+</span><span>    }
+</span><span>
+</span><span>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;   <span class="hljs-comment">// unrecognised — caller shows fallback message</span>
+</span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -631,8 +508,16 @@ The full list of HTML void elements can be accessed <a href="http://www.w3.org/T
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
-</div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">language</span>=<span class="hljs-string">&quot;JavaScript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/js/jquery-minified.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    </button></div></pre><p><code class="hljs inline no-lang">KNOWN_COMMANDS</code> should mirror every command keyword your parser recognises (plus any short aliases), so the whitelist stays in sync with the rest of the app.</p> <h2 id="step-5-wire-it-into-your-app">Step 5: Wire It into Your App<a class="fa fa-anchor" href="#step-5-wire-it-into-your-app" onclick="event.stopPropagation()"></a></h2> <h3 id="initialise-on-a-background-thread">Initialise on a background thread<a class="fa fa-anchor" href="#initialise-on-a-background-thread" onclick="event.stopPropagation()"></a></h3> <p>Starting <code class="hljs inline no-lang">llama-server</code> can take a few seconds. Initialise it on a background thread so your app remains responsive:</p> <pre><code class="hljs java"><span>Thread llmInit = <span class="hljs-keyword">new</span> Thread(() -&gt; {
+</span><span>    LlmInterpreter.getInstance().init();  <span class="hljs-comment">// starts llama-server, blocks until ready</span>
+</span><span>    <span class="hljs-keyword">boolean</span> ready = LlmInterpreter.getInstance().isReady();
+</span><span>    <span class="hljs-comment">// notify the UI or log the status</span>
+</span><span>    System.out.println(ready
+</span><span>        ? <span class="hljs-string">&quot;Natural language mode ready.&quot;</span>
+</span><span>        : <span class="hljs-string">&quot;LLM unavailable — exact commands still work.&quot;</span>);
+</span><span>}, <span class="hljs-string">&quot;llm-init&quot;</span>);
+</span><span>llmInit.setDaemon(<span class="hljs-keyword">true</span>);
+</span><span>llmInit.start();
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -674,12 +559,20 @@ The full list of HTML void elements can be accessed <a href="http://www.w3.org/T
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <ul><li><strong>Do not have trailing whitespaces between opening and closing tags.</strong> However, line breaks and indentation are encouraged if it enhances readability.</li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Student Name<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
-</span><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-</span><span>sed do eiusmod tempor incididunt ut labore
-</span><span>et dolore magna aliqua. Ut enim ad minim veniam,
-</span><span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </button></div></pre><p>For JavaFX apps, wrap the call in a <code class="hljs inline no-lang">Task&lt;Void&gt;</code> and update the UI in <code class="hljs inline no-lang">setOnSucceeded</code> to stay on the JavaFX thread.</p> <h3 id="the-fallback-flow">The fallback flow<a class="fa fa-anchor" href="#the-fallback-flow" onclick="event.stopPropagation()"></a></h3> <p>When the user submits input, try the traditional parser first. Only fall back to the LLM if the command is not recognised:</p> <pre><code class="hljs java"><span><span class="hljs-comment">// Try exact command parsing first — no LLM involvement</span>
+</span><span><span class="hljs-keyword">try</span> {
+</span><span>    String response = app.handleCommand(input);
+</span><span>    display(response);
+</span><span>    <span class="hljs-keyword">return</span>;
+</span><span>} <span class="hljs-keyword">catch</span> (UnknownCommandException ignored) {
+</span><span>    <span class="hljs-comment">// fall through to LLM</span>
+</span><span>}
+</span><span>
+</span><span><span class="hljs-comment">// LLM fallback — run off the main thread to avoid blocking</span>
+</span><span><span class="hljs-keyword">new</span> Thread(() -&gt; {
+</span><span>    String interpreted = LlmInterpreter.getInstance().interpret(input);
+</span><span>    handleLlmResult(interpreted);
+</span><span>}, <span class="hljs-string">&quot;llm-interpret&quot;</span>).start();
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -721,8 +614,11 @@ The full list of HTML void elements can be accessed <a href="http://www.w3.org/T
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
-</div> <div class="col"><pre><code class="hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Student Name <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    </button></div></pre><h3 id="destructive-command-confirmation">Destructive command confirmation<a class="fa fa-anchor" href="#destructive-command-confirmation" onclick="event.stopPropagation()"></a></h3> <p>For commands that modify or delete data (e.g. <code class="hljs inline no-lang">delete</code>, <code class="hljs inline no-lang">clear</code>), consider asking the user to confirm before executing the AI-generated command:</p> <pre><code class="hljs java"><span><span class="hljs-keyword">if</span> (isDestructive(candidate)) {
+</span><span>    pendingCommand = candidate;
+</span><span>    display(<span class="hljs-string">&quot;I interpreted that as: \&quot;&quot;</span> + candidate + <span class="hljs-string">&quot;\&quot;\n&quot;</span>
+</span><span>          + <span class="hljs-string">&quot;Type yes to confirm, or anything else to cancel.&quot;</span>);
+</span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -764,7 +660,16 @@ The full list of HTML void elements can be accessed <a href="http://www.w3.org/T
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <ul><li><p><strong>Include <code class="hljs inline no-lang">rel=&quot;noopener noreferrer&quot;</code> when using <code class="hljs inline no-lang">target=&quot;_blank&quot;</code> in links.</strong></p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p>RATIONALE: Leaving this out would enable attackers to get hold of <code class="hljs inline no-lang">window.opener</code> object, which can be used to redirect to a malicious link. [<a href="https://medium.com/@jitbit/target-blank-the-most-underestimated-vulnerability-ever-96e328301f4c">Source</a>]</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></li></ul> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:green;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-up"></span> Good</strong></span></span></div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;noopener noreferrer&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://example.com&quot;</span>&gt;</span>Example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    </button></div></pre><h2 id="step-6-package-everything-into-a-fat-jar">Step 6: Package Everything into a Fat JAR<a class="fa fa-anchor" href="#step-6-package-everything-into-a-fat-jar" onclick="event.stopPropagation()"></a></h2> <p>Place the model file in <code class="hljs inline no-lang">src/main/resources/models/</code> so Gradle includes it in the fat JAR automatically. Use the <a href="https://github.com/johnrengelman/shadow">Shadow plugin</a>:</p> <pre><code class="hljs gradle"><span>plugins {
+</span><span>    id <span class="hljs-string">&#39;application&#39;</span>
+</span><span>    id <span class="hljs-string">&#39;com.github.johnrengelman.shadow&#39;</span> version <span class="hljs-string">&#39;7.1.2&#39;</span>
+</span><span>}
+</span><span>
+</span><span>shadowJar {
+</span><span>    archiveBaseName = <span class="hljs-string">&quot;myapp&quot;</span>
+</span><span>    archiveClassifier = <span class="hljs-keyword">null</span>
+</span><span>    mergeServiceFiles()
+</span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -806,8 +711,7 @@ The full list of HTML void elements can be accessed <a href="http://www.w3.org/T
 
     </div>
     </div>
-    </button></div></pre></div></div></div> <div class="container ml-3"><div class="row"><div class="col-sm-auto"><span style="color:red;"><span><strong><span aria-hidden="true" class="fas fa-thumbs-down"></span> Bad</strong></span></span>  
-</div> <div class="col"><pre><code class="no-line-numbers hljs html"><span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://example.com&quot;</span>&gt;</span>Example.com<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    </button></div></pre><p>Build it:</p> <pre><code class="hljs bash"><span>./gradlew shadowJar
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
     <span class="tooltiptext">Copy</span>
@@ -849,12 +753,12 @@ The full list of HTML void elements can be accessed <a href="http://www.w3.org/T
 
     </div>
     </div>
-    </button></div></pre></div></div></div></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#html-coding-standard">HTML coding standard‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#document-properties">Document Properties‎</a> <a class="nav-link py-1" href="#tags">Tags‎</a> <a class="nav-link py-1" href="#attributes">Attributes‎</a> <a class="nav-link py-1" href="#naming">Naming‎</a> <a class="nav-link py-1" href="#indentation">Indentation‎</a> <a class="nav-link py-1" href="#miscellaneous">Miscellaneous‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.3.1</a> on Tue, 24 Mar 2026, 1:53:28 GMT+8]</small></div></footer><!--]--></div>
+    </button></div></pre><p>The resulting JAR is self-contained. On first run, <code class="hljs inline no-lang">LlmServer</code> extracts the model to a local cache directory automatically — no manual setup required by the user beyond having <code class="hljs inline no-lang">llama-server</code> installed.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><code class="hljs inline no-lang">llama-server</code> itself must still be installed on the target machine. Only the model weights are bundled in the JAR; the inference binary is a system dependency.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="step-7-next-steps">Step 7: Next Steps<a class="fa fa-anchor" href="#step-7-next-steps" onclick="event.stopPropagation()"></a></h2> <p>With the basic local AI integration in place, you can expand the capabilities further along the following directions:</p> <ul><li><strong>Graceful degradation:</strong> Check <code class="hljs inline no-lang">LlmInterpreter.isReady()</code> at startup. If <code class="hljs inline no-lang">llama-server</code> is missing or the model fails to load, the app should still work with exact commands — consider showing a visible status indicator in the UI.</li> <li><strong>Inform users about the dependency:</strong> Document the <code class="hljs inline no-lang">llama-server</code> requirement clearly, and detect and report it gracefully in-app if it is missing.</li> <li><strong>Timeout tuning:</strong> Adjust the inference timeout based on your target hardware. Slower machines (e.g., no GPU) may need a longer timeout.</li> <li><strong>Swap models:</strong> Change the model resource path and update the prompt template&#39;s format and examples to match a different GGUF model. Larger models give better accuracy at the cost of startup time and memory usage.</li> <li><strong>Prompt tuning:</strong> Test with varied inputs and expand the <code class="hljs inline no-lang">EXAMPLES</code> section of your template to cover edge cases specific to your command set.</li> <li><strong>GPU acceleration:</strong> Set <code class="hljs inline no-lang">--n-gpu-layers</code> to a positive number when launching <code class="hljs inline no-lang">llama-server</code> to offload layers to the GPU for faster inference on supported hardware.</li></ul></div> <hr> <p><strong>Contributors</strong>:</p> <ul><li>Initial version: Chen Yizhong (<a href="https://github.com/yizhong187">@yizhong187</a>), Aditya Misra (<a href="https://github.com/MadLamprey">@MadLamprey</a>)</li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#adding-local-ai-features-to-a-java-app">Adding Local AI Features to a Java App‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#architecture-overview">Architecture Overview‎</a> <a class="nav-link py-1" href="#prerequisites">Prerequisites‎</a> <a class="nav-link py-1" href="#step-1-start-the-llama-server-subprocess">Step 1: Start the llama-server Subprocess‎</a> <a class="nav-link py-1" href="#step-2-send-a-prompt-and-parse-the-response">Step 2: Send a Prompt and Parse the Response‎</a> <a class="nav-link py-1" href="#step-3-define-the-system-prompt-in-a-template-file">Step 3: Define the System Prompt in a Template File‎</a> <a class="nav-link py-1" href="#step-4-validate-and-normalise-the-llm-output">Step 4: Validate and Normalise the LLM Output‎</a> <a class="nav-link py-1" href="#step-5-wire-it-into-your-app">Step 5: Wire It into Your App‎</a> <a class="nav-link py-1" href="#step-6-package-everything-into-a-fat-jar">Step 6: Package Everything into a Fat JAR‎</a> <a class="nav-link py-1" href="#step-7-next-steps">Step 7: Next Steps‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.3.1</a> on Tue, 24 Mar 2026, 1:53:28 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
 <script src="/guides/markbind/js/vue.global.prod.min.js"></script>
 <script src="/guides/markbind/js/markbind.min.js"></script>
-<script src="html.page-vue-render.js"></script>
+<script src="addingLocalAiToJavaApp.page-vue-render.js"></script>
 <script>
   MarkBind.setupWithSearch()
 </script>
