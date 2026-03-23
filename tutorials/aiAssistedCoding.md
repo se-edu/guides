@@ -19,6 +19,7 @@
 * [**CodeRabbit**]({{ baseUrl }}/tutorials/codeRabbit.md)
 * **Using AI in your applications:**
   * [Adding AI Features to a Java App]({{ baseUrl }}/tutorials/addingAiToJavaApp.html)
+  * [Adding Local AI Features to a Java App]({{ baseUrl }}/tutorials/addingLocalAiToJavaApp.html)
 
 </div>
 
