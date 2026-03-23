@@ -1,4 +1,4 @@
-{% set title="Adding AI Features to a Java App" %}
+{% set title="Adding AI Features to a Java App Using a Remote LLM" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2

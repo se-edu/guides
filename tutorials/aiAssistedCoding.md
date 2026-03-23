@@ -18,7 +18,8 @@
 * [**Gemini CLI**]({{ baseUrl }}/tutorials/geminiCli.md)
 * [**CodeRabbit**]({{ baseUrl }}/tutorials/codeRabbit.md)
 * **Using AI in your applications:**
-  * [Adding AI Features to a Java App]({{ baseUrl }}/tutorials/addingAiToJavaApp.html)
+  * [Adding AI Features to a Java App Using a Remote LLM]({{ baseUrl }}/tutorials/addingAiToJavaApp.html)
+  * [Adding AI Features to a Java App Using a Local LLM]({{ baseUrl }}/tutorials/addingLocalAiToJavaApp.html)
 
 </div>
 
