@@ -38,10 +38,15 @@ After installing the `plantuml4idea` plugin, simply create or open any `.puml` f
 
 Any changes you make in editor pane on the left will be reflected in the preview pane on the right. However, do take note that these changes *will not* be reflected in your actual documentation until you export the diagram.
 
+<box type="warning" seamless>
+
+**If the preview shows an error message about the `dot executable` not being found**, you may need to [install the Graphviz library manually](https://graphviz.org/download/).
+</box>
+
 ****Saving the Diagram as an image****
 
 * **When using MarkBind** as the site generation tool:
-  * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you. Refer to [this section of the MarkBind User Guide](https://markbind.org/userGuide/components/imagesAndDiagrams.html#plantuml-diagrams) for more details.
+  * MarkBind has built-in support for PlantUML. The diagram will be generated and saved as an image automatically. No additional work needed from you. Refer to [this section of the MarkBind User Guide](https://markbind.org/userGuide/components/i magesAndDiagrams.html#plantuml-diagrams) for more details.
 * **When using Jekyll** as the site generation tool:
   * The `plantuml4idea` plugin allows you to save individual diagrams to a location of your choosing. Click the `Save Current Diagram Only` button and choose the location to export the image file.
   * You will have to `git add` any new diagrams generated!
