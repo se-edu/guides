@@ -20,27 +20,33 @@
 
 ## Architecture Overview
 
-This approach runs inference via **llama.cpp's `llama-server`** as an external subprocess. Your app spawns the server on startup, then communicates with it over HTTP on `localhost` using Java's built-in `HttpClient` — no extra AI library dependencies needed.
+The completed integration follows this flow:
 
-```
-User input
-    │
-    ▼
-Parser.parse()  ──── success ──▶  execute command directly
-    │ unknown command
-    ▼
-LlmInterpreter.interpret()
-    │  builds prompt from template
-    ▼
-LlmServer.complete()  ──HTTP POST /completion──▶  llama-server subprocess
-    │                                                      │
-    │  ◀──────────────── raw text ──────────────────────────
-    ▼
-validateAndNormalise()
-    │  strips preamble, checks known commands
-    ▼
-executeInterpreted()  ──▶  Parser.parse()  ──▶  execute
-```
+<puml>
+@startuml
+skinparam DefaultFontName Arial
+skinparam activityFontSize 13
+skinparam shadowing false
+
+start
+:User input;
+:Parser.parse();
+if (Command recognised?) then (yes)
+else (no)
+  :LlmInterpreter.interpret();
+  note right: builds prompt from template
+  :LlmServer.complete()\n<i>HTTP POST /completion → llama-server</i>;
+  :validateAndNormalise();
+  if (Valid command?) then (yes)
+  else (no)
+    :Show fallback message;
+    stop
+  endif
+endif
+:Execute command;
+stop
+@enduml
+</puml>
 
 The key idea is that the LLM is only invoked as a **fallback** when the traditional parser cannot understand the input. This keeps exact commands fast and predictable, while natural language input is handled by the model.
 
@@ -98,9 +104,64 @@ You should see a version string. If this command is not found, check that the bi
 
 </box>
 
-## Step 1: Start the llama-server Subprocess
+## Step 1: Make Your First Call to the Local LLM
 
-Create a class (e.g. `LlmServer`) to manage the entire lifecycle of the `llama-server` process.
+Before building any lifecycle management, verify that the end-to-end path works: start the server manually from the terminal, then call it from Java.
+
+**Start llama-server from your terminal:**
+```bash
+llama-server --model src/main/resources/models/Qwen3.5-0.8B-Q4_K_M.gguf \
+             --port 8080 --ctx-size 2048 --no-webui --log-disable
+```
+
+Wait a few seconds until the server prints that it is listening (a line containing `llama server listening`).
+
+**Add a `complete()` method** that POSTs a JSON body to the `/completion` endpoint and extracts the `"content"` field from the response:
+
+```java
+private static final int SERVER_PORT = 8080;
+private static final int REQUEST_TIMEOUT_SECONDS = 30;
+private final HttpClient httpClient = HttpClient.newHttpClient();
+
+public String complete(String prompt, int maxTokens) throws Exception {
+    String escapedPrompt = prompt.replace("\\", "\\\\").replace("\"", "\\\"")
+                                 .replace("\n", "\\n").replace("\r", "\\r");
+    String body = "{"
+            + "\"prompt\":\"" + escapedPrompt + "\","
+            + "\"n_predict\":" + maxTokens + ","
+            + "\"temperature\":0.0,"
+            + "\"stop\":[\"\\n\",\"<|im_end|>\",\"User:\"],"
+            + "\"stream\":false"
+            + "}";
+
+    HttpRequest request = HttpRequest.newBuilder()
+            .uri(new URI("http://127.0.0.1:" + SERVER_PORT + "/completion"))
+            .header("Content-Type", "application/json")
+            .timeout(Duration.ofSeconds(REQUEST_TIMEOUT_SECONDS))
+            .POST(HttpRequest.BodyPublishers.ofString(body))
+            .build();
+
+    HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+    return parseContent(response.body());
+}
+
+private String parseContent(String json) {
+    Matcher m = Pattern.compile("\"content\"\\s*:\\s*\"((?:[^\"\\\\]|\\\\.)*)\"").matcher(json);
+    return m.find() ? m.group(1) : "";
+}
+```
+
+**Test it** with a quick main method or scratch class — call `complete("hello", 50)` with the server still running and verify you get a response back.
+
+<box type="info" seamless>
+
+**Why `temperature=0.0` and `stop` tokens?**{.text-info} We want deterministic, single-line output. Setting `temperature` to `0.0` makes the model always pick the most likely token. The stop tokens (`\n`, `<|im_end|>`) cut off generation immediately after the first line, preventing the model from adding unwanted explanation.
+
+</box>
+
+## Step 2: Automate Server Lifecycle
+
+Now that the call works, create an `LlmServer` class that manages the entire lifecycle of the `llama-server` process so the app no longer needs it started manually. Move the `complete()` method from Step 1 into this class.
 
 ### Finding the binary
 
@@ -156,39 +217,11 @@ serverProcess = pb.start();
 
 After starting, poll `GET /health` every 500 ms (up to 60 s) until the server responds with HTTP 200 before marking it ready.
 
-## Step 2: Send a Prompt and Parse the Response
+## Step 3: Build the Interpreter Layer
 
-Add a `complete()` method that POSTs a JSON body to the `/completion` endpoint and extracts the `"content"` field from the response:
+With the server managed automatically, add an `LlmInterpreter` class that converts natural language input into app commands.
 
-```java
-public String complete(String prompt, int maxTokens) {
-    String body = "{"
-            + "\"prompt\":\"" + escapedPrompt + "\","
-            + "\"n_predict\":" + maxTokens + ","
-            + "\"temperature\":0.0,"
-            + "\"stop\":[\"\\n\",\"<|im_end|>\",\"User:\"],"
-            + "\"stream\":false"
-            + "}";
-
-    HttpRequest request = HttpRequest.newBuilder()
-            .uri(new URI("http://127.0.0.1:" + SERVER_PORT + "/completion"))
-            .header("Content-Type", "application/json")
-            .timeout(Duration.ofSeconds(REQUEST_TIMEOUT_SECONDS))
-            .POST(HttpRequest.BodyPublishers.ofString(body))
-            .build();
-
-    HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-    return parseContent(response.body());   // extracts "content" field via regex
-}
-```
-
-<box type="info" seamless>
-
-**Why `temperature=0.0` and `stop` tokens?**{.text-info} We want deterministic, single-line output. Setting `temperature` to `0.0` makes the model always pick the most likely token. The stop tokens (`\n`, `<|im_end|>`) cut off generation immediately after the first line, preventing the model from adding unwanted explanation.
-
-</box>
-
-## Step 3: Define the System Prompt in a Template File
+### Define the system prompt in a template file
 
 Rather than hardcoding the prompt in Java, store it in a resource file (e.g. `src/main/resources/nlp/prompt_template.txt`) and load it once at class-init time:
 
@@ -236,7 +269,7 @@ hello -> CHAT: Hey there! Ready to tackle your to-do list?
 
 At runtime, replace `{USER_INPUT}` with the actual user input before sending the prompt. Keeping the prompt in a text file (rather than Java source) makes it easy to iterate on without recompiling.
 
-## Step 4: Validate and Normalise the LLM Output
+### Validate and normalise the output
 
 Small local models sometimes prepend preamble text (e.g., `"Sure! Here is the command: todo buy milk"`). Add a `validateAndNormalise()` method to handle this with a two-phase check:
 
@@ -267,7 +300,7 @@ String validateAndNormalise(String raw) {
 
 `KNOWN_COMMANDS` should mirror every command keyword your parser recognises (plus any short aliases), so the whitelist stays in sync with the rest of the app.
 
-## Step 5: Wire It into Your App
+## Step 4: Wire It into Your App
 
 ### Initialise on a background thread
 
@@ -321,7 +354,7 @@ if (isDestructive(candidate)) {
 }
 ```
 
-## Step 6: Package Everything into a Fat JAR
+## Step 5: Package Everything into a Fat JAR
 
 Place the model file in `src/main/resources/models/` so Gradle includes it in the fat JAR automatically. Use the [Shadow plugin](https://github.com/johnrengelman/shadow):
 
@@ -352,7 +385,7 @@ The resulting JAR is self-contained. On first run, `LlmServer` extracts the mode
 
 </box>
 
-## Step 7: Next Steps
+## Step 6: Next Steps
 
 With the basic local AI integration in place, you can expand the capabilities further along the following directions:
 
