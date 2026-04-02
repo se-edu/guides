@@ -121,7 +121,7 @@ llama-server --model src/main/resources/models/Qwen3.5-0.8B-Q4_K_M.gguf \
 
 Wait a few seconds until the server prints that it is listening (a line containing `llama server listening`).
 
-**Add a `complete()` method** that POSTs a JSON body to the `/completion` endpoint and extracts the `"content"` field from the response:
+**Add a `complete()` method** that builds a JSON request body and POST it to the `/completion` endpoint:
 
 ```java
 private static final int SERVER_PORT = 8080;
@@ -129,16 +129,19 @@ private static final int REQUEST_TIMEOUT_SECONDS = 30;
 private final HttpClient httpClient = HttpClient.newHttpClient();
 
 public String complete(String prompt, int maxTokens) throws Exception {
+    // Escape special characters so the prompt is safe to embed in a JSON string.
+    // For example, a double-quote in the prompt would break the JSON syntax without this.
     String escapedPrompt = prompt.replace("\\", "\\\\").replace("\"", "\\\"")
                                  .replace("\n", "\\n").replace("\r", "\\r");
-    String body = "{"
-            + "\"prompt\":\"" + escapedPrompt + "\","
-            + "\"n_predict\":" + maxTokens + ","
-            + "\"temperature\":0.0,"
-            + "\"stop\":[\"\\n\",\"<|im_end|>\",\"User:\"],"
-            + "\"stream\":false"
-            + "}";
 
+    // Build the JSON request body. String.format substitutes %s and %d with
+    // the actual values, keeping the template readable.
+    String body = String.format(
+            "{\"prompt\":\"%s\",\"n_predict\":%d,\"temperature\":0.0," +
+            "\"stop\":[\"\\n\",\"<|im_end|>\",\"User:\"],\"stream\":false}",
+            escapedPrompt, maxTokens);
+
+    // Send the request using Java's built-in HTTP client (available since Java 11).
     HttpRequest request = HttpRequest.newBuilder()
             .uri(new URI("http://127.0.0.1:" + SERVER_PORT + "/completion"))
             .header("Content-Type", "application/json")
@@ -149,14 +152,91 @@ public String complete(String prompt, int maxTokens) throws Exception {
     HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     return parseContent(response.body());
 }
+```
 
+`complete()` hands the raw response body off to `parseContent()`, which pulls out the single field we care about:
+
+```java
 private String parseContent(String json) {
-    Matcher m = Pattern.compile("\"content\"\\s*:\\s*\"((?:[^\"\\\\]|\\\\.)*)\"").matcher(json);
-    return m.find() ? m.group(1) : "";
+    // Locate the "content" key and find the opening quote of its value.
+    String key = "\"content\":\"";
+    int valueStart = json.indexOf(key);
+    if (valueStart == -1) return "";
+    valueStart += key.length();         // advance past the key to the value itself
+    int valueEnd = json.indexOf("\"", valueStart);  // find the closing quote
+    return json.substring(valueStart, valueEnd);
 }
 ```
 
 **Test it** with a quick main method or scratch class — call `complete("hello", 50)` with the server still running and verify you get a response back.
+
+<panel header="**What does the `/completion` request and response look like, and why build and parse by hand?**">
+
+**The request body**
+
+`complete()` sends a POST to `/completion` with a JSON body. The fields we set are:
+
+```json
+{
+  "prompt": "your prompt here",
+  "n_predict": 50,
+  "temperature": 0.0,
+  "stop": ["\n", "<|im_end|>", "User:"],
+  "stream": false
+}
+```
+
+The server accepts many more optional fields, but these are the only ones we need. We build this string manually using `String.format` rather than a JSON library — more on that below.
+
+**The response body**
+
+The server replies with a large JSON object, but our code only needs one field out of it:
+
+```json
+{
+  "content": "the generated text here",
+  "stop": true,
+  "stopped_eos": true,
+  "stopped_limit": false,
+  "stopped_word": false,
+  "stopping_word": "",
+  "tokens_evaluated": 42,
+  "tokens_predicted": 7,
+  "truncated": false,
+  "timings": { ... },
+  "generation_settings": { ... }
+}
+```
+
+`parseContent` discards everything except `"content"`, which holds the raw generated text.
+
+> **Limitation — quoted content:** `parseContent` finds the end of the value by scanning for the next `"` character. This works fine for plain text, but if the model generates output containing a quotation mark — e.g. `He said "hello"` — the parser will stop early and return a truncated string. The response actually arrives with the quote escaped as `\"`, so a more robust parser would need to skip over `\"` pairs rather than stopping at the first bare `"` it encounters.
+>
+> **Challenge:** Can you modify `parseContent` to handle escaped quotes correctly? Think about how you would distinguish a `\"` (an escaped quote inside the value) from a plain `"` (the closing delimiter).
+
+**Why not just use a JSON library?**
+
+Libraries like Jackson or Gson would handle both building and parsing — `complete()` and `parseContent` would each shrink to a line or two:
+
+```java
+// With Jackson:
+String body = new ObjectMapper().writeValueAsString(Map.of(
+        "prompt", prompt, "n_predict", maxTokens,
+        "temperature", 0.0, "stop", List.of("\n", "<|im_end|>", "User:"), "stream", false));
+// ...
+return new ObjectMapper().readTree(json).get("content").asText();
+
+// With Gson:
+String body = new Gson().toJson(Map.of(...));
+// ...
+return JsonParser.parseString(json).getAsJsonObject().get("content").getAsString();
+```
+
+We deliberately avoid adding that dependency here, since pulling in a library just to talk to one endpoint feels like overkill. The hand-rolled approach keeps the project's dependency footprint at zero.
+
+That said, if your project already uses Jackson or Gson for other purposes, or if the request/response shapes become more complex, switching to a proper JSON library is the right call.
+
+</panel>
 
 <box type="info" seamless>
 
