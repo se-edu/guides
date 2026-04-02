@@ -8,80 +8,85 @@
 
 # {{ title }}
 
-GitHub Copilot is an AI-powered coding assistant that integrates smoothly with IntelliJ IDEA. While Copilot is developed by GitHub (a Microsoft-owned company) and initially optimized for VS Code, it also offers robust support for JetBrains IDEs through an official plugin, ensuring a seamless coding experience across different development environments.
+GitHub Copilot is an AI-powered code assistant that helps you write, test, and refactor code faster in IntelliJ IDEA.
 
+<!-- Do not duplicate generic setup; link to shared prerequisites instead -->
 <include src="copilotGithub.md#prereq" />
-
-## Installing GitHub Copilot in IntelliJ IDEA
-
-* **Updating Visual Studio Code** {{ step_numbers }}
-  * Open IntelliJ IDEA.
-  * Go to `File` → `Settings` → `Appearance & Behavior` → `System Settings` → `Updates` → `Check for Updates…`.
-  * If updates are available, click `Update and Restart`.
-  * Confirm the update in the pop-up window.
-  * After the update is installed, restart IntelliJ IDEA.
-* **Install the [Extension Pack for GitHub Copilot](https://plugins.jetbrains.com/plugin/17718-github-copilot)**, to enable support for AI autocompletion.
-  * Open IntelliJ IDEA.
-  * Go to `File` → `Settings` → `Plugins` → `Marketplace`.
-  * Search for "GitHub Copilot".
-  * Click `Install` on the plugin developed by **GitHub**.<br>
-    <pic src="images/intellijCopilot/copilotPlugin.png" width="400" />
-  * Restart IntelliJ by clicking `Restart IDE` → `Restart`.
-
-## Signing in to GitHub Copilot
-
-* **Verify Prerequisites** {{ step_numbers }}
-  * Ensure you followed the section [Installing GitHub Copilot in IntelliJ IDEA](#installing-github-copilot-in-intellij-idea) above.
-* **Sign in to GitHub Copilot**
-  * Open IntelliJ IDEA.
-  * Click the GitHub Copilot icon in the right-hand sidebar.<br>
-    <pic src="images/intellijCopilot/copilotLogin.png" width="400" />
-  * Click `Sign in to GitHub`.
-  * In the pop-up, click `Copy and Open`.
-  * You'll be redirected to the GitHub login page. Log in or select the account linked to GitHub Education.
-  * Paste the copied code `Ctrl+V`, click `Continue`, then `Authorize GitHub Copilot Plugin`.
-  * GitHub Copilot will now be signed in within IntelliJ.
-* **Verifying the installation of GitHub Copilot**
-  * Create a scratch file via `File` → `New` → `Scratch File` → `Java`.
-  * On line 3, type `/` and a suggestion should appear automatically.<br>
-    <pic src="images/intellijCopilot/copilotSuggestion.png" width="600" />
-
-## Using GitHub Copilot in IntelliJ IDEA
-
-### Basic Code Completion
-
-  * In a Java file, type a comment like `// print Hello World` inside the main method.
-    ```java
-    public class Main {
-        public static void main(String[] args) {
-            // print Hello World
-        }
-    }
-    ```
-  * GitHub Copilot will automatically suggest code to complete or implement the comment.<br>
-    <pic src="images/intellijCopilot/copilotBasicCompletion.png" width="400" />
-  * Press `Tab` to accept the suggestion, or continue typing to refine it.
-  <box type="tip" seamless>
-    The more descriptive your comment or method signatures, the better Copilot can understand what you want to implement.
-    </box>
-
-### Copilot Chat
-
-  * Click the **Copilot Chat** icon in the right-hand sidebar.
-  * Ask something like: "Write a main method that calculates the factorial of N".
-  * GitHub Copilot will generate a response in the chat window.<br>
-    <pic src="images/intellijCopilot/copilotChat.png" width="400" />
-  * You can directly insert or copy code chunks using the buttons in the top right corner.
-  * From left to right: Copy to clipboard, Insert at cursor.
-
-### Copilot Inline Chat
-
-  * Go to the line or section where you want to ask Copilot for assistance.
-  * * Use the inline chat feature using the shortcut {{ icon_windows }}/{{ icon_linux}} `Shift+Ctrl+I` | {{ icon_apple }} `Shift+Ctrl+G`.
-  * Type your request such as "Add a print log here" and press `Enter`.
-  * You can insert the generated lines of code by hovering over the code block and clicking on `Insert Code Block at Cursor`.<br>
-    <pic src="images/intellijCopilot/copilotInline.png" width="600" />
 
 ---
 
-**Contributors**: Norbert Loh ([@NorbertLoh ](https://github.com/NorbertLoh ))
+## 1. Installing GitHub Copilot Plugin in IntelliJ IDEA
+
+1. Open IntelliJ IDEA.  
+2. On Mac: **IntelliJ IDEA > Preferences**. On Windows/Linux: **File > Settings**.  
+3. Select **Plugins > Marketplace**.  
+4. Search for **GitHub Copilot**.  
+<img src="images/intellijcopilot/intellij-search-copilot.png" alt="Search GitHub Copilot Plugin" width="60%" />
+5. Click **Install**, then **Restart IDE** when prompted.
+
+
+---
+
+## 2. Signing In to GitHub
+
+1. After restart, open **Settings > Languages & Frameworks > GitHub Copilot**.  
+2. Under **Authentication**, click **Manage GitHub Accounts**.  
+3. Sign in via your browser and authorize Copilot.  
+4. Your GitHub username should appear in the **Preferred GitHub account** dropdown.
+
+<img src="images/intellijcopilot/intellij-copilot-settings.png" alt="Copilot Settings in IntelliJ" width="60%" />
+
+
+---
+
+## 3. Verifying Copilot in Action
+
+1. Create or open a Java file, e.g., `CopilotTest.java`.  
+2. Inside a `main` method, type:
+
+```java
+// print Hello World
+```
+
+3. Wait 2–3 seconds — a gray suggestion appears (see below).
+4. Press **Tab** to accept the suggestion.
+
+<img src="images/intellijcopilot/copilot-suggestion-visible.png" alt="Copilot Suggestion Appears" width="60%" />
+
+<box type="tip" seamless>
+Copilot works best with clear, descriptive comments.
+</box>
+
+---
+
+## 4. Using Copilot Chat *(if available)*
+
+> Copilot Chat may be in beta or limited in IntelliJ.
+
+1. Go to **View > Tool Windows > Copilot Chat**.  
+2. Ask a question, e.g.:
+
+```java
+Write a function to reverse a string in Java.
+```
+
+3. Review the response and insert code as needed.
+
+<img src="images/intellijcopilot/copilot-chat-window.png" alt="Copilot Chat Window" width="60%" />
+
+---
+
+## 5. Troubleshooting
+
+<box type="tip" seamless>
+**Common Issues & Fixes**  
+
+- **No suggestions** → Ensure the plugin is enabled and you’re signed in.  
+- **No Copilot panel** → Restart IntelliJ or reinstall the plugin.  
+- **Unsupported file type** → Use `.java` or other supported languages.  
+- **Authentication errors** → Re-authorize in **Settings > GitHub Copilot**.  
+</box>
+
+---
+
+**Contributors**: Arshin Sikka ([@arshinsikka](https://github.com/arshinsikka))
