@@ -70,7 +70,7 @@ You should see a version string. If this command is not found, check that the bi
 
 <box type="info" seamless>
 
-**No Ollama, no API key, no extra Gradle dependencies.** `llama-server` is a standalone binary and Java's `java.net.http.HttpClient` (available since Java 11) handles the HTTP calls. The model file can be bundled into your fat JAR as a classpath resource so end-users do not need to download it separately.
+**No Ollama, no API key.** `llama-server` is a standalone binary and Java's `java.net.http.HttpClient` (available since Java 11) handles the HTTP calls. The model file can be bundled into your fat JAR as a classpath resource so end-users do not need to download it separately.
 
 </box>
 
@@ -121,7 +121,12 @@ llama-server --model src/main/resources/models/Qwen3.5-0.8B-Q4_K_M.gguf \
 
 Wait a few seconds until the server prints that it is listening (a line containing `llama server listening`).
 
-**Add a `complete()` method** that POSTs a JSON body to the `/completion` endpoint and extracts the `"content"` field from the response:
+**Add a `complete()` method** that builds a JSON request body and POSTs it to the `/completion` endpoint, and a `parseContent()` helper that extracts the generated text from the response:
+
+<tabs>
+  <tab header="Hand-rolled">
+
+No extra dependencies needed — uses only Java's standard library.
 
 ```java
 private static final int SERVER_PORT = 8080;
@@ -129,15 +134,75 @@ private static final int REQUEST_TIMEOUT_SECONDS = 30;
 private final HttpClient httpClient = HttpClient.newHttpClient();
 
 public String complete(String prompt, int maxTokens) throws Exception {
+    // Escape special characters so the prompt is safe to embed in a JSON string.
+    // For example, a double-quote in the prompt would break the JSON syntax without this.
     String escapedPrompt = prompt.replace("\\", "\\\\").replace("\"", "\\\"")
                                  .replace("\n", "\\n").replace("\r", "\\r");
-    String body = "{"
-            + "\"prompt\":\"" + escapedPrompt + "\","
-            + "\"n_predict\":" + maxTokens + ","
-            + "\"temperature\":0.0,"
-            + "\"stop\":[\"\\n\",\"<|im_end|>\",\"User:\"],"
-            + "\"stream\":false"
-            + "}";
+
+    // Build the JSON request body. String.format substitutes %s and %d with
+    // the actual values, keeping the template readable.
+    String body = String.format(
+            "{\"prompt\":\"%s\",\"n_predict\":%d,\"temperature\":0.0," +
+            "\"stop\":[\"\\n\",\"<|im_end|>\",\"User:\"],\"stream\":false}",
+            escapedPrompt, maxTokens);
+
+    // Send the request using Java's built-in HTTP client (available since Java 11).
+    HttpRequest request = HttpRequest.newBuilder()
+            .uri(new URI("http://127.0.0.1:" + SERVER_PORT + "/completion"))
+            .header("Content-Type", "application/json")
+            .timeout(Duration.ofSeconds(REQUEST_TIMEOUT_SECONDS))
+            .POST(HttpRequest.BodyPublishers.ofString(body))
+            .build();
+
+    HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+    return parseContent(response.body());
+}
+```
+
+```java
+private String parseContent(String json) {
+    // Locate the "content" key and find the opening quote of its value.
+    String key = "\"content\":\"";
+    int valueStart = json.indexOf(key);
+    if (valueStart == -1) return "";
+    valueStart += key.length();         // advance past the key to the value itself
+    int valueEnd = json.indexOf("\"", valueStart);  // find the closing quote
+    return json.substring(valueStart, valueEnd);
+}
+```
+
+  </tab>
+  <tab header="Using Jackson">
+
+[Jackson](https://github.com/FasterXML/jackson) is the same library used in AB3. If your project already includes it, no new dependency is needed. Otherwise, add `jackson-databind` to your `build.gradle`:
+
+```groovy
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.7.0'
+    // ... other dependencies
+}
+```
+
+Jackson handles all JSON escaping and serialisation automatically, so both methods become much simpler:
+
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.List;
+import java.util.Map;
+
+private static final int SERVER_PORT = 8080;
+private static final int REQUEST_TIMEOUT_SECONDS = 30;
+private final HttpClient httpClient = HttpClient.newHttpClient();
+private static final ObjectMapper MAPPER = new ObjectMapper();
+
+public String complete(String prompt, int maxTokens) throws Exception {
+    // Jackson serialises the Map to JSON, handling all escaping automatically.
+    String body = MAPPER.writeValueAsString(Map.of(
+            "prompt", prompt,
+            "n_predict", maxTokens,
+            "temperature", 0.0,
+            "stop", List.of("\n", "<|im_end|>", "User:"),
+            "stream", false));
 
     HttpRequest request = HttpRequest.newBuilder()
             .uri(new URI("http://127.0.0.1:" + SERVER_PORT + "/completion"))
@@ -149,14 +214,66 @@ public String complete(String prompt, int maxTokens) throws Exception {
     HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     return parseContent(response.body());
 }
+```
 
-private String parseContent(String json) {
-    Matcher m = Pattern.compile("\"content\"\\s*:\\s*\"((?:[^\"\\\\]|\\\\.)*)\"").matcher(json);
-    return m.find() ? m.group(1) : "";
+```java
+private String parseContent(String json) throws Exception {
+    return MAPPER.readTree(json).get("content").asText();
 }
 ```
 
+`readTree` fully parses the JSON tree, so `asText()` correctly handles escaped characters in the content string — no manual escaping or quote-scanning needed.
+
+  </tab>
+</tabs>
+
 **Test it** with a quick main method or scratch class — call `complete("hello", 50)` with the server still running and verify you get a response back.
+
+<panel header="**What does the `/completion` request and response look like?**">
+
+**The request body**
+
+`complete()` sends a POST to `/completion` with a JSON body. The fields we set are:
+
+```json
+{
+  "prompt": "your prompt here",
+  "n_predict": 50,
+  "temperature": 0.0,
+  "stop": ["\n", "<|im_end|>", "User:"],
+  "stream": false
+}
+```
+
+The server accepts many more optional fields, but these are the only ones we need.
+
+**The response body**
+
+The server replies with a large JSON object, but our code only needs one field out of it:
+
+```json
+{
+  "content": "the generated text here",
+  "stop": true,
+  "stopped_eos": true,
+  "stopped_limit": false,
+  "stopped_word": false,
+  "stopping_word": "",
+  "tokens_evaluated": 42,
+  "tokens_predicted": 7,
+  "truncated": false,
+  "timings": { ... },
+  "generation_settings": { ... }
+}
+```
+
+`parseContent` discards everything except `"content"`, which holds the raw generated text.
+
+> **Limitation (hand-rolled only) — quoted content:** The hand-rolled `parseContent` finds the end of the value by scanning for the next `"` character. This works fine for plain text, but if the model generates output containing a quotation mark — e.g. `He said "hello"` — the parser will stop early and return a truncated string. The response actually arrives with the quote escaped as `\"`, so a more robust parser would need to skip over `\"` pairs rather than stopping at the first bare `"` it encounters. The Jackson approach handles this correctly.
+>
+> **Challenge:** Can you modify the hand-rolled `parseContent` to handle escaped quotes correctly? Think about how you would distinguish a `\"` (an escaped quote inside the value) from a plain `"` (the closing delimiter).
+
+</panel>
 
 <box type="info" seamless>
 
