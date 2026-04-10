@@ -1,18 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html data-dark-mode="false" data-code-theme="light">
 <head>
+    <script src="/guides/markbind/js/theme-manager.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="MarkBind 6.3.1">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Adding AI Features to a Java App Using a Local LLM</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css"><link rel="stylesheet" href="/guides/markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    <meta name="generator" content="MarkBind 7.0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><title>Adding AI Features to a Java App Using a Local LLM</title> <link rel="stylesheet" href="/guides/markbind/css/bootstrap.min.css"> <link rel="stylesheet" href="/guides/markbind/fontawesome/css/all.min.css"> <link rel="stylesheet" href="/guides/markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    
+    
+    <link rel="stylesheet" id="markbind-highlight-light" href="/guides/markbind/css/codeblock-light.min.css">
+    <link rel="stylesheet" id="markbind-highlight-dark" href="/guides/markbind/css/codeblock-dark.min.css">
+    <script src="/guides/markbind/js/code-theme.js"></script><link rel="stylesheet" href="/guides/markbind/css/markbind.min.css"><link rel="stylesheet" href="/guides/plugins/codeBlockCopyButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/codeBlockWrapButtons/codeBlockButtons.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/guides/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
     
   <link rel="stylesheet" href="/guides/css/main.css">
 <link rel="icon" href="/guides/favicon.ico"></head>
 <script>
   const baseUrl = '/guides'
 </script>
-<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100"  data-code-theme="light">
-<div id="app"><!--[--><header sticky><div data-v-26aac3dc><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-26aac3dc><div class="container-fluid" data-v-26aac3dc><div class="navbar-left" data-v-26aac3dc><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-26aac3dc><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-26aac3dc><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><ul class="navbar-nav navbar-right" data-v-26aac3dc><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-00e26d0a><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-00e26d0a><div class="form-control placeholder-div-hidden" data-v-00e26d0a>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-00e26d0a><!--[--><!--]--></ul></div></form></li><!--]--></ul></div></nav><div style="display:none;" class="lower-navbar-container" data-v-26aac3dc><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><div><div class="alert box-container border-warning alert-border-left" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-19514615><!--[--><i class="fas fa-exclamation" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><!----><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>This is a WIP community resource, containing contribution from community members.</strong></p> <ul><li>If you notice any bugs or suggestions for improvements, please report at <a href="https://github.com/se-edu/guides/issues">https://github.com/se-edu/guides/issues</a></li> <li>You are welcome to contribute by sending a PRs to <a href="https://github.com/se-edu/guides/pulls">https://github.com/se-edu/guides/pulls</a> too.</li></ul><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></div> <h1 id="adding-ai-features-to-a-java-app-using-a-local-llm">Adding AI Features to a Java App Using a Local LLM<a class="fa fa-anchor" href="#adding-ai-features-to-a-java-app-using-a-local-llm" onclick="event.stopPropagation()"></a></h1> <div id="body"><p><strong>Goal:</strong> Learn how to integrate a locally-running LLM into a Java project using <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> as an inference backend, understand the agentic workflow architecture, and implement AI-powered natural language input for your app.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong class="text-info">Local vs. hosted AI:</strong> Unlike the <a href="/guides/tutorials/addingAiToJavaApp.html">hosted AI approach</a> which calls an external API, this tutorial runs the model entirely on the user&#39;s machine. There is no API key to manage and the app works fully offline — at the cost of requiring <code class="hljs inline no-lang">llama-server</code> to be installed on the target machine.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="prerequisites">Prerequisites<a class="fa fa-anchor" href="#prerequisites" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Gradle-based Java Project:</strong> A Java project set up with Gradle as the build tool. In this tutorial we assume you have a simple command-line Java application, but the concepts can be applied to any Java app.</li> <li><strong>Java 17+</strong> — verify with <code class="hljs inline no-lang">java -version</code>.</li> <li><strong>llama.cpp</strong> installed on your system — the <code class="hljs inline no-lang">llama-server</code> binary must be on your PATH or in a standard Homebrew location:</li></ul> <div class="indented-level1"><div class="card-container" data-v-4484e25a><div class="card expandable-card" data-v-4484e25a><div class="card-header header-toggle bg-light" data-v-4484e25a><div class="caret-wrapper" data-v-4484e25a><!----></div><div class="header-wrapper card-title bg-light" data-v-4484e25a><!--[--><!--[--><p><strong>Installation instructions (macOS / Linux / Windows)</strong></p><!--]--><!--]--></div><div class="button-wrapper" data-v-4484e25a><!--[--><button type="button" class="collapse-button btn btn-outline-secondary" style="" data-v-4484e25a><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-outline-secondary close-button btn" data-v-4484e25a><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-4484e25a></span></button><button style="display:none;" type="button" class="btn-outline-secondary popup-button btn" data-v-4484e25a><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-4484e25a></span></button><!--]--></div></div><div class="card-collapse" data-v-4484e25a><!----><hr style="display:none;" data-v-4484e25a></div><!----></div></div></div> <ul><li><strong>A GGUF model file</strong> — download a small, quantised model and place it in <code class="hljs inline no-lang">src/main/resources/models/</code>. A good starting point is <code class="hljs inline no-lang">Qwen3.5-0.8B-Q4_K_M.gguf</code>, which is fast on CPU:<pre><code class="hljs bash"><span>pip install huggingface_hub
+<body 
+   data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100"  
+  data-code-theme="light">
+<div id="app"><!--[--><header sticky><div data-v-94b60ff6><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-94b60ff6><div class="container-fluid" data-v-94b60ff6><div class="navbar-left" data-v-94b60ff6><!--[--><a href="https://se-education.org" title="SE-EDU" class="navbar-brand"><span><span aria-hidden="true" class="fas fa-chevron-circle-left"></span> <strong><strong>SE-EDU</strong></strong></span></a><!--]--></div><div class="navbar-default" data-v-94b60ff6><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-94b60ff6><!--[--> <li><a href="/guides/index.html" class="nav-link"><span><strong>Home</strong></span></a></li> <li><a href="/guides/about.html" class="nav-link"><span><strong>About</strong></span></a></li> <li><a href="https://github.com/se-edu/guides" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li> <!--]--></ul></div><div class="navbar-right" data-v-94b60ff6><ul class="navbar-nav" data-v-94b60ff6><!--[--><li class="nav-link"><form class="navbar-form"><div style="position:relative;" class="dropdown" data-v-103d5c4e><!--[--><input value="" data-bs-toggle="dropdown" type="text" class="form-control" placeholder="Search this site" autocomplete="off" data-v-103d5c4e><div class="form-control placeholder-div-hidden" data-v-103d5c4e>Search this site</div><!--]--><ul class="dropdown-menu search-dropdown-menu dropdown-menu-hidden dropdown-menu-end" data-v-103d5c4e><!--[--><!--]--></ul></div></form></li><!--]--></ul><!----></div></div></nav><div style="display:none;" class="lower-navbar-container" data-v-94b60ff6><!--[--><!----><!----><!--]--></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><h1 id="guides-for-se-student-projects"><span class="text-dark"><strong><strong>Guides for SE student projects »</strong></strong></span><a class="fa fa-anchor" href="#guides-for-se-student-projects" onclick="event.stopPropagation()"></a></h1> <p><div><div class="alert box-container border-warning alert-border-left" style="" data-v-2c3d295c><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-2c3d295c><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-2c3d295c><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-warning" style="" data-v-2c3d295c><!--[--><i class="fas fa-exclamation" data-v-2c3d295c></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><!----><!-- Content wrapper --><div class="contents" style="" data-v-2c3d295c><!--[--><p><strong>This is a WIP community resource, containing contribution from community members.</strong></p> <ul><li>If you notice any bugs or suggestions for improvements, please report at <a href="https://github.com/se-edu/guides/issues">https://github.com/se-edu/guides/issues</a></li> <li>You are welcome to contribute by sending a PRs to <a href="https://github.com/se-edu/guides/pulls">https://github.com/se-edu/guides/pulls</a> too.</li></ul><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div></div> <h1 id="adding-ai-features-to-a-java-app-using-a-local-llm">Adding AI Features to a Java App Using a Local LLM<a class="fa fa-anchor" href="#adding-ai-features-to-a-java-app-using-a-local-llm" onclick="event.stopPropagation()"></a></h1> <div id="body"><p><strong>Goal:</strong> Learn how to integrate a locally-running LLM into a Java project using <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> as an inference backend, understand the agentic workflow architecture, and implement AI-powered natural language input for your app.</p> <div class="alert box-container seamless" style="" data-v-2c3d295c><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-2c3d295c><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-2c3d295c><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-2c3d295c><!--[--><i class="fas fa-info" data-v-2c3d295c></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-2c3d295c></div><!-- Content wrapper --><div class="contents" style="" data-v-2c3d295c><!--[--><p><strong class="text-info">Local vs. hosted AI:</strong> Unlike the <a href="/guides/tutorials/addingAiToJavaApp.html">hosted AI approach</a> which calls an external API, this tutorial runs the model entirely on the user&#39;s machine. There is no API key to manage and the app works fully offline — at the cost of requiring <code class="hljs inline no-lang">llama-server</code> to be installed on the target machine.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="prerequisites">Prerequisites<a class="fa fa-anchor" href="#prerequisites" onclick="event.stopPropagation()"></a></h2> <ul><li><strong>Gradle-based Java Project:</strong> A Java project set up with Gradle as the build tool. In this tutorial we assume you have a simple command-line Java application, but the concepts can be applied to any Java app.</li> <li><strong>Java 17+</strong> — verify with <code class="hljs inline no-lang">java -version</code>.</li> <li><strong>llama.cpp</strong> installed on your system — the <code class="hljs inline no-lang">llama-server</code> binary must be on your PATH or in a standard Homebrew location:</li></ul> <div class="indented-level2"><div class="printable-tabs" data-v-ec59eecc><!-- Nav tabs --><ul class="nav-tabs nav nav-tabs d-print-none" role="tablist" data-v-ec59eecc><!--[--><!--]--></ul><div class="tab-content" data-v-ec59eecc><!--[--><div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-deda655c><div class="nav-tabs printable-tab-header" data-v-deda655c><div class="nav-link active" data-v-deda655c><!--[--><span aria-hidden="true" class="fab fa-windows"></span> Windows<!--]--></div></div><!--[--> <ol><li>Download the latest release zip from the <a href="https://github.com/ggerganov/llama.cpp/releases">llama.cpp releases page</a>. Look for a filename like <code class="hljs inline no-lang">llama-b&lt;version&gt;-bin-win-avx2-x64.zip</code>.</li> <li>Extract the zip to a permanent folder, e.g. <code class="hljs inline no-lang">C:\llama.cpp</code>.</li> <li>Add that folder to your <code class="hljs inline no-lang">PATH</code>:
+<ul><li>Click the search bar at the bottom of the screen and type <strong>&quot;Control Panel&quot;</strong>, then open it.</li> <li>Click <strong>System and Security</strong>, then <strong>System</strong>.</li> <li>Click <strong>Advanced System Settings</strong> (under &quot;Related links&quot;).</li> <li>Click <strong>Environment Variables…</strong> at the bottom of the dialog.</li> <li>Under <strong>User variables</strong>, select <strong>Path</strong> and click <strong>Edit…</strong>.</li> <li>Click <strong>New</strong> and enter the folder path, e.g. <code class="hljs inline no-lang">C:\llama.cpp</code>.</li> <li>Click <strong>OK</strong> on all three dialogs to save.</li></ul></li> <li>Open a <strong>new</strong> Command Prompt or terminal window (existing ones won&#39;t see the updated <code class="hljs inline no-lang">PATH</code>).</li></ol> <p><strong>Verify the installation:</strong></p> <pre><code class="hljs bash"><span>llama-server --version
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><p>You should see a version string. If this command is not found, check that the binary is on your <code class="hljs inline no-lang">PATH</code>.</p><!--]--><hr data-v-deda655c></div> <div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-deda655c><div class="nav-tabs printable-tab-header" data-v-deda655c><div class="nav-link active" data-v-deda655c><!--[--><span aria-hidden="true" class="fab fa-apple"></span> MacOS<!--]--></div></div><!--[--> <pre><code class="hljs bash"><span>brew install llama.cpp
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><!--]--><hr data-v-deda655c></div> <div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-deda655c><div class="nav-tabs printable-tab-header" data-v-deda655c><div class="nav-link active" data-v-deda655c><!--[--><span aria-hidden="true" class="fab fa-linux"></span> Linux<!--]--></div></div><!--[--> <pre><code class="hljs bash"><span>sudo apt update &amp;&amp; sudo apt install llama-cpp
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><!--]--><hr data-v-deda655c></div><!--]--></div></div></div> <ul><li><strong>A GGUF model file</strong> — download a small, quantised model and place it in <code class="hljs inline no-lang">src/main/resources/models/</code>. A good starting point is <code class="hljs inline no-lang">Qwen3.5-0.8B-Q4_K_M.gguf</code>, which is fast on CPU:<pre><code class="hljs bash"><span>pip install huggingface_hub
 </span><span>huggingface-cli download Qwen/Qwen3.5-0.8B --local-dir ./src/main/resources/models
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
@@ -55,7 +190,7 @@
 
     </div>
     </div>
-    </button></div></pre></li></ul> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong>No Ollama, no API key, no extra Gradle dependencies.</strong> <code class="hljs inline no-lang">llama-server</code> is a standalone binary and Java&#39;s <code class="hljs inline no-lang">java.net.http.HttpClient</code> (available since Java 11) handles the HTTP calls. The model file can be bundled into your fat JAR as a classpath resource so end-users do not need to download it separately.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="workflow">Workflow<a class="fa fa-anchor" href="#workflow" onclick="event.stopPropagation()"></a></h2> <p>The intended high-level workflow for the application is follows:</p> <span class="image-wrapper"><img src="/guides/909526edc6199b9b02d9ee3ce353e89e.png" width="" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <p>The key idea is that the LLM is only invoked as a <strong>fallback</strong> when the traditional parser cannot understand the user command. This keeps exact commands fast and predictable, while natural language input is handled by the LLM.</p> <h2 id="step-1-make-your-first-call-to-the-local-llm">Step 1: Make Your First Call to the Local LLM<a class="fa fa-anchor" href="#step-1-make-your-first-call-to-the-local-llm" onclick="event.stopPropagation()"></a></h2> <p>Before implementing the full workflow, let us first verify that your code can communicate with the server: start the server manually from the terminal, then call it from Java.</p> <p><strong>Start llama-server from your terminal:</strong></p> <pre><code class="hljs bash"><span>llama-server --model src/main/resources/models/Qwen3.5-0.8B-Q4_K_M.gguf \
+    </button></div></pre></li></ul> <div class="alert box-container seamless" style="" data-v-2c3d295c><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-2c3d295c><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-2c3d295c><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-2c3d295c><!--[--><i class="fas fa-info" data-v-2c3d295c></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-2c3d295c></div><!-- Content wrapper --><div class="contents" style="" data-v-2c3d295c><!--[--><p><strong>No Ollama, no API key.</strong> <code class="hljs inline no-lang">llama-server</code> is a standalone binary and Java&#39;s <code class="hljs inline no-lang">java.net.http.HttpClient</code> (available since Java 11) handles the HTTP calls. The model file can be bundled into your fat JAR as a classpath resource so end-users do not need to download it separately.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="workflow">Workflow<a class="fa fa-anchor" href="#workflow" onclick="event.stopPropagation()"></a></h2> <p>The intended high-level workflow for the application is follows:</p> <span class="image-wrapper"><img src="/guides/909526edc6199b9b02d9ee3ce353e89e.png" width="" height="" loading="eager" class="img-fluid rounded"><span class="image-caption"><!--[--><!--]--></span></span> <p>The key idea is that the LLM is only invoked as a <strong>fallback</strong> when the traditional parser cannot understand the user command. This keeps exact commands fast and predictable, while natural language input is handled by the LLM.</p> <h2 id="step-1-make-your-first-call-to-the-local-llm">Step 1: Make Your First Call to the Local LLM<a class="fa fa-anchor" href="#step-1-make-your-first-call-to-the-local-llm" onclick="event.stopPropagation()"></a></h2> <p>Before implementing the full workflow, let us first verify that your code can communicate with the server: start the server manually from the terminal, then call it from Java.</p> <p><strong>Start llama-server from your terminal:</strong></p> <pre><code class="hljs bash"><span>llama-server --model src/main/resources/models/Qwen3.5-0.8B-Q4_K_M.gguf \
 </span><span>             --port 8080 --ctx-size 2048 --no-webui --log-disable
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
@@ -98,35 +233,9 @@
 
     </div>
     </div>
-    </button></div></pre><p>Wait a few seconds until the server prints that it is listening (a line containing <code class="hljs inline no-lang">llama server listening</code>).</p> <p><strong>Add a <code class="hljs inline no-lang">complete()</code> method</strong> that POSTs a JSON body to the <code class="hljs inline no-lang">/completion</code> endpoint and extracts the <code class="hljs inline no-lang">&quot;content&quot;</code> field from the response:</p> <pre><code class="hljs java"><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> SERVER_PORT = <span class="hljs-number">8080</span>;
-</span><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> REQUEST_TIMEOUT_SECONDS = <span class="hljs-number">30</span>;
-</span><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> HttpClient httpClient = HttpClient.newHttpClient();
-</span><span>
-</span><span><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">complete</span><span class="hljs-params">(String prompt, <span class="hljs-keyword">int</span> maxTokens)</span> <span class="hljs-keyword">throws</span> Exception </span>{
-</span><span>    String escapedPrompt = prompt.replace(<span class="hljs-string">&quot;\\&quot;</span>, <span class="hljs-string">&quot;\\\\&quot;</span>).replace(<span class="hljs-string">&quot;\&quot;&quot;</span>, <span class="hljs-string">&quot;\\\&quot;&quot;</span>)
-</span><span>                                 .replace(<span class="hljs-string">&quot;\n&quot;</span>, <span class="hljs-string">&quot;\\n&quot;</span>).replace(<span class="hljs-string">&quot;\r&quot;</span>, <span class="hljs-string">&quot;\\r&quot;</span>);
-</span><span>    String body = <span class="hljs-string">&quot;{&quot;</span>
-</span><span>            + <span class="hljs-string">&quot;\&quot;prompt\&quot;:\&quot;&quot;</span> + escapedPrompt + <span class="hljs-string">&quot;\&quot;,&quot;</span>
-</span><span>            + <span class="hljs-string">&quot;\&quot;n_predict\&quot;:&quot;</span> + maxTokens + <span class="hljs-string">&quot;,&quot;</span>
-</span><span>            + <span class="hljs-string">&quot;\&quot;temperature\&quot;:0.0,&quot;</span>
-</span><span>            + <span class="hljs-string">&quot;\&quot;stop\&quot;:[\&quot;\\n\&quot;,\&quot;&lt;|im_end|&gt;\&quot;,\&quot;User:\&quot;],&quot;</span>
-</span><span>            + <span class="hljs-string">&quot;\&quot;stream\&quot;:false&quot;</span>
-</span><span>            + <span class="hljs-string">&quot;}&quot;</span>;
-</span><span>
-</span><span>    HttpRequest request = HttpRequest.newBuilder()
-</span><span>            .uri(<span class="hljs-keyword">new</span> URI(<span class="hljs-string">&quot;http://127.0.0.1:&quot;</span> + SERVER_PORT + <span class="hljs-string">&quot;/completion&quot;</span>))
-</span><span>            .header(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/json&quot;</span>)
-</span><span>            .timeout(Duration.ofSeconds(REQUEST_TIMEOUT_SECONDS))
-</span><span>            .POST(HttpRequest.BodyPublishers.ofString(body))
-</span><span>            .build();
-</span><span>
-</span><span>    HttpResponse&lt;String&gt; response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-</span><span>    <span class="hljs-keyword">return</span> parseContent(response.body());
-</span><span>}
-</span><span>
-</span><span><span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">parseContent</span><span class="hljs-params">(String json)</span> </span>{
-</span><span>    Matcher m = Pattern.compile(<span class="hljs-string">&quot;\&quot;content\&quot;\\s*:\\s*\&quot;((?:[^\&quot;\\\\]|\\\\.)*)\&quot;&quot;</span>).matcher(json);
-</span><span>    <span class="hljs-keyword">return</span> m.find() ? m.group(<span class="hljs-number">1</span>) : <span class="hljs-string">&quot;&quot;</span>;
+    </button></div></pre><p>Wait a few seconds until the server prints that it is listening (a line containing <code class="hljs inline no-lang">llama server listening</code>).</p> <p><strong>Add a <code class="hljs inline no-lang">complete()</code> method</strong> that builds a JSON request body and POSTs it to the <code class="hljs inline no-lang">/completion</code> endpoint, and a <code class="hljs inline no-lang">parseContent()</code> helper that extracts the generated text from the response:</p> <div class="printable-tabs" data-v-ec59eecc><!-- Nav tabs --><ul class="nav-tabs nav nav-tabs d-print-none" role="tablist" data-v-ec59eecc><!--[--><!--]--></ul><div class="tab-content" data-v-ec59eecc><!--[--><div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-deda655c><div class="nav-tabs printable-tab-header" data-v-deda655c><div class="nav-link active" data-v-deda655c><!--[-->Using Jackson (an external library)<!--]--></div></div><!--[--> <p><a href="https://github.com/FasterXML/jackson">Jackson</a> is the same library used in AB3. If your project already includes it, no new dependency is needed. Otherwise, add <code class="hljs inline no-lang">jackson-databind</code> to your <code class="hljs inline no-lang">build.gradle</code>:</p> <pre><code class="hljs groovy"><span>dependencies {
+</span><span>    implementation <span class="hljs-string">&#39;com.fasterxml.jackson.core:jackson-databind:2.7.0&#39;</span>
+</span><span>    <span class="hljs-comment">// ... other dependencies</span>
 </span><span>}
 </span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
     <div class="tooltip-container">
@@ -169,7 +278,239 @@
 
     </div>
     </div>
-    </button></div></pre><p><strong>Test it</strong> with a quick main method or scratch class — call <code class="hljs inline no-lang">complete(&quot;hello&quot;, 50)</code> with the server still running and verify you get a response back.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><strong class="text-info">Why <code class="hljs inline no-lang">temperature=0.0</code> and <code class="hljs inline no-lang">stop</code> tokens?</strong> We want deterministic, single-line output. Setting <code class="hljs inline no-lang">temperature</code> to <code class="hljs inline no-lang">0.0</code> makes the model always pick the most likely token. The stop tokens (<code class="hljs inline no-lang">\n</code>, <code class="hljs inline no-lang">&lt;|im_end|&gt;</code>) cut off generation immediately after the first line, preventing the model from adding unwanted explanation.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="step-2-automate-server-lifecycle">Step 2: Automate Server Lifecycle<a class="fa fa-anchor" href="#step-2-automate-server-lifecycle" onclick="event.stopPropagation()"></a></h2> <p>Now that the call works, create an <code class="hljs inline no-lang">LlmServer</code> class that manages the entire lifecycle of the <code class="hljs inline no-lang">llama-server</code> process so the app no longer needs it started manually. Move the <code class="hljs inline no-lang">complete()</code> method from Step 1 into this class.</p> <h3 id="finding-the-binary">Finding the binary<a class="fa fa-anchor" href="#finding-the-binary" onclick="event.stopPropagation()"></a></h3> <p>Probe a list of candidate paths in priority order so the app works across platforms without manual configuration:</p> <pre><code class="hljs java"><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String[] CANDIDATE_PATHS = {
+    </button></div></pre><p>Jackson handles all JSON escaping and serialisation automatically, so both methods become much simpler:</p> <pre><code class="hljs java"><span><span class="hljs-keyword">import</span> com.fasterxml.jackson.databind.ObjectMapper;
+</span><span><span class="hljs-keyword">import</span> java.util.List;
+</span><span><span class="hljs-keyword">import</span> java.util.Map;
+</span><span>
+</span><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> SERVER_PORT = <span class="hljs-number">8080</span>;
+</span><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> REQUEST_TIMEOUT_SECONDS = <span class="hljs-number">30</span>;
+</span><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> HttpClient httpClient = HttpClient.newHttpClient();
+</span><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> ObjectMapper MAPPER = <span class="hljs-keyword">new</span> ObjectMapper();
+</span><span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">complete</span><span class="hljs-params">(String prompt, <span class="hljs-keyword">int</span> maxTokens)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+</span><span>    <span class="hljs-comment">// Jackson serialises the Map to JSON, handling all escaping automatically.</span>
+</span><span>    String body = MAPPER.writeValueAsString(Map.of(
+</span><span>            <span class="hljs-string">&quot;prompt&quot;</span>, prompt,
+</span><span>            <span class="hljs-string">&quot;n_predict&quot;</span>, maxTokens,
+</span><span>            <span class="hljs-string">&quot;temperature&quot;</span>, <span class="hljs-number">0.0</span>,
+</span><span>            <span class="hljs-string">&quot;stop&quot;</span>, List.of(<span class="hljs-string">&quot;\n&quot;</span>, <span class="hljs-string">&quot;&lt;|im_end|&gt;&quot;</span>, <span class="hljs-string">&quot;User:&quot;</span>),
+</span><span>            <span class="hljs-string">&quot;stream&quot;</span>, <span class="hljs-keyword">false</span>));
+</span><span>
+</span><span>    HttpRequest request = HttpRequest.newBuilder()
+</span><span>            .uri(<span class="hljs-keyword">new</span> URI(<span class="hljs-string">&quot;http://127.0.0.1:&quot;</span> + SERVER_PORT + <span class="hljs-string">&quot;/completion&quot;</span>))
+</span><span>            .header(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/json&quot;</span>)
+</span><span>            .timeout(Duration.ofSeconds(REQUEST_TIMEOUT_SECONDS))
+</span><span>            .POST(HttpRequest.BodyPublishers.ofString(body))
+</span><span>            .build();
+</span><span>
+</span><span>    HttpResponse&lt;String&gt; response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+</span><span>    <span class="hljs-keyword">return</span> parseContent(response.body());
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">parseContent</span><span class="hljs-params">(String json)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+</span><span>    <span class="hljs-keyword">return</span> MAPPER.readTree(json).get(<span class="hljs-string">&quot;content&quot;</span>).asText();
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><p><code class="hljs inline no-lang">readTree</code> fully parses the JSON tree, so <code class="hljs inline no-lang">asText()</code> correctly handles escaped characters in the content string — no manual escaping or quote-scanning needed.</p><!--]--><hr data-v-deda655c></div> <div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-deda655c><div class="nav-tabs printable-tab-header" data-v-deda655c><div class="nav-link active" data-v-deda655c><!--[-->Hand-rolled (i.e., without using any external library)<!--]--></div></div><!--[--> <p>No extra dependencies needed — uses only Java&#39;s standard library.</p> <pre><code class="hljs java"><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> SERVER_PORT = <span class="hljs-number">8080</span>;
+</span><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> REQUEST_TIMEOUT_SECONDS = <span class="hljs-number">30</span>;
+</span><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> HttpClient httpClient = HttpClient.newHttpClient();
+</span><span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">complete</span><span class="hljs-params">(String prompt, <span class="hljs-keyword">int</span> maxTokens)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+</span><span>    <span class="hljs-comment">// Escape special characters so the prompt is safe to embed in a JSON string.</span>
+</span><span>    <span class="hljs-comment">// For example, a double-quote in the prompt would break the JSON syntax without this.</span>
+</span><span>    String escapedPrompt = prompt.replace(<span class="hljs-string">&quot;\\&quot;</span>, <span class="hljs-string">&quot;\\\\&quot;</span>).replace(<span class="hljs-string">&quot;\&quot;&quot;</span>, <span class="hljs-string">&quot;\\\&quot;&quot;</span>)
+</span><span>                                 .replace(<span class="hljs-string">&quot;\n&quot;</span>, <span class="hljs-string">&quot;\\n&quot;</span>).replace(<span class="hljs-string">&quot;\r&quot;</span>, <span class="hljs-string">&quot;\\r&quot;</span>);
+</span><span>
+</span><span>    <span class="hljs-comment">// Build the JSON request body. String.format substitutes %s and %d with</span>
+</span><span>    <span class="hljs-comment">// the actual values, keeping the template readable.</span>
+</span><span>    String body = String.format(
+</span><span>            <span class="hljs-string">&quot;{\&quot;prompt\&quot;:\&quot;%s\&quot;,\&quot;n_predict\&quot;:%d,\&quot;temperature\&quot;:0.0,&quot;</span> +
+</span><span>            <span class="hljs-string">&quot;\&quot;stop\&quot;:[\&quot;\\n\&quot;,\&quot;&lt;|im_end|&gt;\&quot;,\&quot;User:\&quot;],\&quot;stream\&quot;:false}&quot;</span>,
+</span><span>            escapedPrompt, maxTokens);
+</span><span>
+</span><span>    <span class="hljs-comment">// Send the request using Java&#39;s built-in HTTP client (available since Java 11).</span>
+</span><span>    HttpRequest request = HttpRequest.newBuilder()
+</span><span>            .uri(<span class="hljs-keyword">new</span> URI(<span class="hljs-string">&quot;http://127.0.0.1:&quot;</span> + SERVER_PORT + <span class="hljs-string">&quot;/completion&quot;</span>))
+</span><span>            .header(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;application/json&quot;</span>)
+</span><span>            .timeout(Duration.ofSeconds(REQUEST_TIMEOUT_SECONDS))
+</span><span>            .POST(HttpRequest.BodyPublishers.ofString(body))
+</span><span>            .build();
+</span><span>
+</span><span>    HttpResponse&lt;String&gt; response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+</span><span>    <span class="hljs-keyword">return</span> parseContent(response.body());
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><pre><code class="hljs java"><span><span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">parseContent</span><span class="hljs-params">(String json)</span> </span>{
+</span><span>    <span class="hljs-comment">// Locate the &quot;content&quot; key and find the opening quote of its value.</span>
+</span><span>    String key = <span class="hljs-string">&quot;\&quot;content\&quot;:\&quot;&quot;</span>;
+</span><span>    <span class="hljs-keyword">int</span> valueStart = json.indexOf(key);
+</span><span>    <span class="hljs-keyword">if</span> (valueStart == -<span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;
+</span><span>    valueStart += key.length();         <span class="hljs-comment">// advance past the key to the value itself</span>
+</span><span>    <span class="hljs-keyword">int</span> valueEnd = json.indexOf(<span class="hljs-string">&quot;\&quot;&quot;</span>, valueStart);  <span class="hljs-comment">// find the closing quote</span>
+</span><span>    <span class="hljs-keyword">return</span> json.substring(valueStart, valueEnd);
+</span><span>}
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn d-print-none">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Copy</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button><button onclick="toggleCodeBlockWrap(this)" class="function-btn d-print-none wrap-button">
+    <div class="tooltip-container">
+    <span class="tooltiptext">Wrap Text</span>
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path id="path17964" d="M 1.109375 0 L 1.109375 2.5351562 L 2.0410156 2.5351562 L
+      2.0410156 0.93164062 L 4.8203125 0.93164062 L 4.8203125 9.3222656 L 3.4746094
+      9.3222656 L 3.4746094 10.144531 L 8.8027344 10.144531 L 8.8027344 9.3222656 L
+      7.4492188 9.3222656 L 7.4492188 0.93164062 L 10.25 0.93164062 L 10.25 2.5351562 L
+      11.166016 2.5351562 L 11.166016 0 L 1.109375 0 z M 10.84375 5.1054688 L 10.84375
+      6.6074219 C 12.268027 6.6074219 13.40625 7.7456444 13.40625 9.1699219 C 13.40625
+      10.185673 12.827237 11.055036 11.978516 11.470703 L 11.978516 9.5175781 L 7.1386719
+      12.3125 L 11.978516 15.105469 L 11.978516 13.072266 C 13.66701 12.577757 14.910156
+      11.012746 14.910156 9.1699219 C 14.910156 6.9333638 13.080308 5.1054688 10.84375
+      5.1054688 z "></path>
+    </g>
+</svg>
+
+    </div>
+    </div>
+    </button></div></pre><!--]--><hr data-v-deda655c></div><!--]--></div></div> <p><strong>Test it</strong> with a quick main method or scratch class — call <code class="hljs inline no-lang">complete(&quot;hello&quot;, 50)</code> with the server still running and verify you get a response back.</p> <div class="card-container" data-v-6471bad4><div class="card expandable-card" data-v-6471bad4><div class="card-header header-toggle bg-body-tertiary" data-v-6471bad4><div class="caret-wrapper" data-v-6471bad4><!----></div><div class="header-wrapper card-title bg-body-tertiary text-body" data-v-6471bad4><!--[--><!--[--><p><strong>What does the <code class="hljs inline no-lang">/completion</code> request and response look like?</strong></p><!--]--><!--]--></div><div class="button-wrapper" data-v-6471bad4><!--[--><button type="button" class="collapse-button btn btn-panel" style="" data-v-6471bad4><span class="collapse-icon glyphicon glyphicon-menu-down" aria-hidden="true"></span></button><button style="" type="button" class="btn-panel close-button btn" data-v-6471bad4><span class="glyphicon glyphicon-remove" aria-hidden="true" data-v-6471bad4></span></button><button style="display:none;" type="button" class="btn-panel popup-button btn" data-v-6471bad4><span class="glyphicon glyphicon-new-window" aria-hidden="true" data-v-6471bad4></span></button><!--]--></div></div><div class="card-collapse" data-v-6471bad4><!----><hr style="display:none;" data-v-6471bad4></div><!----></div></div> <div class="alert box-container seamless" style="" data-v-2c3d295c><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-2c3d295c><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-2c3d295c><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-2c3d295c><!--[--><i class="fas fa-info" data-v-2c3d295c></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-2c3d295c></div><!-- Content wrapper --><div class="contents" style="" data-v-2c3d295c><!--[--><p><strong class="text-info">Why <code class="hljs inline no-lang">temperature=0.0</code> and <code class="hljs inline no-lang">stop</code> tokens?</strong> We want deterministic, single-line output. Setting <code class="hljs inline no-lang">temperature</code> to <code class="hljs inline no-lang">0.0</code> makes the model always pick the most likely token. The stop tokens (<code class="hljs inline no-lang">\n</code>, <code class="hljs inline no-lang">&lt;|im_end|&gt;</code>) cut off generation immediately after the first line, preventing the model from adding unwanted explanation.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="step-2-automate-server-lifecycle">Step 2: Automate Server Lifecycle<a class="fa fa-anchor" href="#step-2-automate-server-lifecycle" onclick="event.stopPropagation()"></a></h2> <p>Now that the call works, create an <code class="hljs inline no-lang">LlmServer</code> class that manages the entire lifecycle of the <code class="hljs inline no-lang">llama-server</code> process so the app no longer needs it started manually. Move the <code class="hljs inline no-lang">complete()</code> method from Step 1 into this class.</p> <h3 id="finding-the-binary">Finding the binary<a class="fa fa-anchor" href="#finding-the-binary" onclick="event.stopPropagation()"></a></h3> <p>Probe a list of candidate paths in priority order so the app works across platforms without manual configuration:</p> <pre><code class="hljs java"><span><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String[] CANDIDATE_PATHS = {
 </span><span>    <span class="hljs-string">&quot;llama-server&quot;</span>,                       <span class="hljs-comment">// on PATH</span>
 </span><span>    <span class="hljs-string">&quot;/opt/homebrew/bin/llama-server&quot;</span>,     <span class="hljs-comment">// Homebrew Apple Silicon</span>
 </span><span>    <span class="hljs-string">&quot;/usr/local/bin/llama-server&quot;</span>,        <span class="hljs-comment">// Homebrew Intel</span>
@@ -749,7 +1090,7 @@
 
     </div>
     </div>
-    </button></div></pre><p>The resulting JAR is self-contained. On first run, <code class="hljs inline no-lang">LlmServer</code> extracts the model to a local cache directory automatically — no manual setup required by the user beyond having <code class="hljs inline no-lang">llama-server</code> installed.</p> <div class="alert box-container seamless" style="" data-v-19514615><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-19514615><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-19514615><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-19514615><!--[--><i class="fas fa-info" data-v-19514615></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-19514615></div><!-- Content wrapper --><div class="contents" style="" data-v-19514615><!--[--><p><code class="hljs inline no-lang">llama-server</code> itself must still be installed on the target machine. Only the model weights are bundled in the JAR; the inference binary is a system dependency.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="step-6-next-steps">Step 6: Next Steps<a class="fa fa-anchor" href="#step-6-next-steps" onclick="event.stopPropagation()"></a></h2> <p>With the basic local AI integration in place, you can expand the capabilities further along the following directions:</p> <ul><li><strong>Graceful degradation:</strong> Check <code class="hljs inline no-lang">LlmInterpreter.isReady()</code> at startup. If <code class="hljs inline no-lang">llama-server</code> is missing or the model fails to load, the app should still work with exact commands — consider showing a visible status indicator in the UI.</li> <li><strong>Inform users about the dependency:</strong> Document the <code class="hljs inline no-lang">llama-server</code> requirement clearly, and detect and report it gracefully in-app if it is missing.</li> <li><strong>Timeout tuning:</strong> Adjust the inference timeout based on your target hardware. Slower machines (e.g., no GPU) may need a longer timeout.</li> <li><strong>Swap models:</strong> Change the model resource path and update the prompt template&#39;s format and examples to match a different GGUF model. Larger models give better accuracy at the cost of startup time and memory usage.</li> <li><strong>Prompt tuning:</strong> Test with varied inputs and expand the <code class="hljs inline no-lang">EXAMPLES</code> section of your template to cover edge cases specific to your command set.</li> <li><strong>GPU acceleration:</strong> Set <code class="hljs inline no-lang">--n-gpu-layers</code> to a positive number when launching <code class="hljs inline no-lang">llama-server</code> to offload layers to the GPU for faster inference on supported hardware.</li></ul></div> <hr> <p><strong>Contributors</strong>:</p> <ul><li>Initial version: Chen Yizhong (<a href="https://github.com/yizhong187">@yizhong187</a>), Aditya Misra (<a href="https://github.com/MadLamprey">@MadLamprey</a>)</li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#adding-ai-features-to-a-java-app-using-a-local-llm">Adding AI Features to a Java App Using a Local LLM‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#prerequisites">Prerequisites‎</a> <a class="nav-link py-1" href="#workflow">Workflow‎</a> <a class="nav-link py-1" href="#step-1-make-your-first-call-to-the-local-llm">Step 1: Make Your First Call to the Local LLM‎</a> <a class="nav-link py-1" href="#step-2-automate-server-lifecycle">Step 2: Automate Server Lifecycle‎</a> <a class="nav-link py-1" href="#step-3-build-the-interpreter-layer">Step 3: Build the Interpreter Layer‎</a> <a class="nav-link py-1" href="#step-4-wire-it-into-your-app">Step 4: Wire It into Your App‎</a> <a class="nav-link py-1" href="#step-5-package-everything-into-a-fat-jar">Step 5: Package Everything into a Fat JAR‎</a> <a class="nav-link py-1" href="#step-6-next-steps">Step 6: Next Steps‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 6.3.1</a> on Wed, 1 Apr 2026, 1:59:47 GMT+8]</small></div></footer><!--]--></div>
+    </button></div></pre><p>The resulting JAR is self-contained. On first run, <code class="hljs inline no-lang">LlmServer</code> extracts the model to a local cache directory automatically — no manual setup required by the user beyond having <code class="hljs inline no-lang">llama-server</code> installed.</p> <div class="alert box-container seamless" style="" data-v-2c3d295c><!--Icon and vertical divider for seamless header box--><!----><div class="header-and-body" data-v-2c3d295c><!-- Header wrapper, not rendered if there is no header attribute --><!----><!-- Body wrapper --><div class="box-body-wrapper" data-v-2c3d295c><!-- icon on the left, not shown if there is a header --><div class="icon-wrapper text-info" style="" data-v-2c3d295c><!--[--><i class="fas fa-info" data-v-2c3d295c></i><!--]--></div><!-- Icon -- content divider for seamless boxes without the header attribute --><div class="alert-info vertical-divider" aria-hidden="true" data-v-2c3d295c></div><!-- Content wrapper --><div class="contents" style="" data-v-2c3d295c><!--[--><p><code class="hljs inline no-lang">llama-server</code> itself must still be installed on the target machine. Only the model weights are bundled in the JAR; the inference binary is a system dependency.</p><!--]--></div><!-- dismiss button on the right, not shown if there is a header --><!----></div></div></div> <h2 id="step-6-next-steps">Step 6: Next Steps<a class="fa fa-anchor" href="#step-6-next-steps" onclick="event.stopPropagation()"></a></h2> <p>With the basic local AI integration in place, you can expand the capabilities further along the following directions:</p> <ul><li><strong>Graceful degradation:</strong> Check <code class="hljs inline no-lang">LlmInterpreter.isReady()</code> at startup. If <code class="hljs inline no-lang">llama-server</code> is missing or the model fails to load, the app should still work with exact commands — consider showing a visible status indicator in the UI.</li> <li><strong>Inform users about the dependency:</strong> Document the <code class="hljs inline no-lang">llama-server</code> requirement clearly, and detect and report it gracefully in-app if it is missing.</li> <li><strong>Timeout tuning:</strong> Adjust the inference timeout based on your target hardware. Slower machines (e.g., no GPU) may need a longer timeout.</li> <li><strong>Swap models:</strong> Change the model resource path and update the prompt template&#39;s format and examples to match a different GGUF model. Larger models give better accuracy at the cost of startup time and memory usage.</li> <li><strong>Prompt tuning:</strong> Test with varied inputs and expand the <code class="hljs inline no-lang">EXAMPLES</code> section of your template to cover edge cases specific to your command set.</li> <li><strong>GPU acceleration:</strong> Set <code class="hljs inline no-lang">--n-gpu-layers</code> to a positive number when launching <code class="hljs inline no-lang">llama-server</code> to offload layers to the GPU for faster inference on supported hardware.</li></ul></div> <hr> <p><strong>Contributors</strong>:</p> <ul><li>Initial version: Chen Yizhong (<a href="https://github.com/yizhong187">@yizhong187</a>), Aditya Misra (<a href="https://github.com/MadLamprey">@MadLamprey</a>)</li></ul></p></div> <nav id="page-nav" class="fixed-header-padding" data-v-6b1b63d2><!--[--><div class="nav-component slim-scroll"><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-6b1b63d2><!--[--><a class="nav-link py-1" href="#adding-ai-features-to-a-java-app-using-a-local-llm">Adding AI Features to a Java App Using a Local LLM‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap"><a class="nav-link py-1" href="#prerequisites">Prerequisites‎</a> <a class="nav-link py-1" href="#workflow">Workflow‎</a> <a class="nav-link py-1" href="#step-1-make-your-first-call-to-the-local-llm">Step 1: Make Your First Call to the Local LLM‎</a> <a class="nav-link py-1" href="#step-2-automate-server-lifecycle">Step 2: Automate Server Lifecycle‎</a> <a class="nav-link py-1" href="#step-3-build-the-interpreter-layer">Step 3: Build the Interpreter Layer‎</a> <a class="nav-link py-1" href="#step-4-wire-it-into-your-app">Step 4: Wire It into Your App‎</a> <a class="nav-link py-1" href="#step-5-package-everything-into-a-fat-jar">Step 5: Package Everything into a Fat JAR‎</a> <a class="nav-link py-1" href="#step-6-next-steps">Step 6: Next Steps‎</a></nav><!--]--><!--v-if--></nav></div><!--]--><!--v-if--></nav> <div class="scroll-top-button fa-lg d-print-none" style="display:none;bottom:2%;right:2%;position:fixed;" aria-hidden="true"><!--[--><i class="fas fa-arrow-circle-up"></i><!--]--></div></div> <footer><div class="text-center"><small>[Powered by <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 7.0.0</a> on Sat, 11 Apr 2026, 1:16:08 GMT+8]</small></div></footer><!--]--></div>
 </body><script src="/guides/markbind/js/bootstrap-utility.min.js"></script>
 <script src="/guides/markbind/js/polyfill.min.js"></script>
 <script src="/guides/markbind/js/vue.global.prod.min.js"></script>
@@ -780,7 +1121,7 @@
     height="18"
     viewBox="2 2 22 22"
   >
-    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875 
+    <path d="M 19.28125 5.28125 L 9 15.5625 L 4.71875 11.28125 L 3.28125 12.71875 L 8.28125 17.71875
     L 9 18.40625 L 9.71875 17.71875 L 20.71875 6.71875 Z"></path>
   </svg>
 `;
@@ -809,7 +1150,7 @@
     function toggleCodeBlockWrap(element) {
       const pre = element.parentElement.parentElement;
       const tooltipText = element.querySelector(".tooltiptext");
-      const classList = pre.querySelector('code').classList; 
+      const classList = pre.querySelector('code').classList;
       if (classList.contains('wrap')) {
           classList.remove('wrap');
           tooltipText.innerText  = `Wrap Text`;
@@ -820,4 +1161,5 @@
     }
     </script>
     <script src="https://unpkg.com/@custardui/custardui" data-base-url="/guides"></script>
+    <script src="/guides/markbind/js/pagefind-lazyloader.js"></script>
 </html>
