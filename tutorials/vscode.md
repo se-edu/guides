@@ -20,6 +20,7 @@ This guide is for those who prefer to use [Visual Studio Code](https://code.visu
 * Configuring the Code Style: [Basic]({{ baseUrl }}/tutorials/vscCodeStyle.md) | [Advanced]({{ baseUrl }}/tutorials/vscCodeStyleAdvanced.md)
 * [Code Navigation]({{ baseUrl }}/tutorials/vscCodeNavigation.md)
 * [Refactoring Code]({{ baseUrl }}/tutorials/vscRefactoring.md)
+* [Productivity Shortcuts]({{ baseUrl }}/tutorials/vscProductivityShortcuts.md)
 * [Using the Debugger]({{ baseUrl }}/tutorials/vscDebugger.md)
 * [Using JUnit]({{ baseUrl }}/tutorials/vscJUnitTesting.md)
 * [Useful Settings]({{ baseUrl }}/tutorials/vscUsefulSettings.md)
