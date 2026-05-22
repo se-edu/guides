@@ -107,7 +107,7 @@ npm install markbind-cli@latest --save-dev
 
 ## Updating documents
 
-MarkBind is a superset of Markdown. Refer the [MarkBind UG: Authoring Contents](https://markbind.org/userGuide/authoringContents.html) for more details on the syntax. Given below is the recommended workflow for any non-trivial changes to this docs site.
+MarkBind is a superset of Markdown. Refer to the [MarkBind UG: Authoring Contents](https://markbind.org/userGuide/authoringContents.html) for more details on the syntax. Given below is the recommended workflow for any non-trivial changes to this docs site.
 
 1. Install MarkBind (as described in the [section above](#installing-markbind)), if you haven't done so already.
 1. Open a terminal and navigate to the `[project root]/docs` folder.
