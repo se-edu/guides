@@ -192,7 +192,7 @@ Note: you can use `CommandTestUtil.java` to include constant test values for gre
 
 ```java
     public static final String VALID_REMARK_AMY = "Like skiing.";
-    public static final String VALID_REMARK_BOB = "Favourite pastime: Eating";
+    public static final String VALID_REMARK_BOB = "Favorite pastime: Eating";
 ```
 
 Additionally, we can add tests for the `equals` method for various inputs, like objects of the different values or types.
