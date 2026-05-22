@@ -138,7 +138,7 @@ dependencies {
 }
 ```
 
-Jackson handles all JSON escaping and serialisation automatically, so both methods become much simpler:
+Jackson handles all JSON escaping and serialization automatically, so both methods become much simpler:
 
 ```java
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -151,7 +151,7 @@ private final HttpClient httpClient = HttpClient.newHttpClient();
 private static final ObjectMapper MAPPER = new ObjectMapper();
 
 public String complete(String prompt, int maxTokens) throws Exception {
-    // Jackson serialises the Map to JSON, handling all escaping automatically.
+    // Jackson serializes the Map to JSON, handling all escaping automatically.
     String body = MAPPER.writeValueAsString(Map.of(
             "prompt", prompt,
             "n_predict", maxTokens,
