@@ -34,7 +34,7 @@ Reviewing PRs is not just about the code or the tools, **the way you phrase your
   %%e.g., _hey, I like how clean this bit of code is_ :+1:%%
 * **Say please, but don't say _please_**. Beware of overusing 'please' as it can be interpreted as a condescending tone. For example, someone can interpret `Please use better variable names` as `Please for the love of God can you use better variable names?`. Instead, you can say `Perhaps a more intuitive variable name here?` which doesn't run any risk of misinterpretation.
 * **No need to repeat the same comment _many_ times**. It's not the job of the reviewer to clean up after a sloppy author. If you notice the same problem in multiple places, after commenting on a few of them, you can simply say `... I noticed the same issue in several other places too`.
-* **Remember the _other_ readers**. PR comments can be read by people other than the reviewer and the author e.g., future programmers. Use regular English and avoid slang, colloquialisms, cultural references etc.
+* **Remember the _other_ readers**. PR comments can be read by people other than the reviewer and the author e.g., future programmers. Use regular English and avoid slang, colloquialisms, cultural references, etc.
 
 ****Further readings****:
 * Read the blog post [**10 tips for reviewing code you don’t like**](https://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like/) - by David Lloyd (a Red Hat developer).
