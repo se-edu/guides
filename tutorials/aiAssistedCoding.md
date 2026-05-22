@@ -62,7 +62,7 @@ Examples:
 
 ### B4: Generate Whole Apps
 
-AI tools (the so called 'vibe coding tools') can create an entire application (e.g., Web apps, mobile apps) based on prompts.
+AI tools (the so-called 'vibe coding tools') can create an entire application (e.g., web apps, mobile apps) based on prompts.
 
 Examples:
 
