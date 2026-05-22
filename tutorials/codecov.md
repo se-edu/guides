@@ -14,7 +14,7 @@
 
 Scenario: You have forked a project that already had support for using Codecov in the GitHub Actions CI pipeline. Now you want to set up your fork to work with Codecov as well.
 
-Given below are the steps for achieving the above, recommended to be done by someone who has admin access to the GitHub organization that contains the fork.
+Here are the steps. They should be carried out by someone with admin access to the GitHub organization that contains the fork.
 
 1. [**Sign up for a Codecov account**](https://app.codecov.io/signup/) using your GitHub account.
 1. **Install the Codecov integration on GitHub:**:
