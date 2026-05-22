@@ -15,7 +15,7 @@
 **[MarkBind](https://markbind.org) is a tool for generating static websites from markdown-like text**, particularly suitable for text-heavy websites such as software project documentation.
 </div>
 
-Given below are some information useful for when you want to update documentation in a project that uses MarkBind.
+Given below is some information that may be useful when you want to update documentation in a project that uses MarkBind.
 
 <!-- --------------------------------------------------------------------------------------------------- -->
 
