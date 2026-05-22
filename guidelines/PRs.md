@@ -71,7 +71,7 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
 
 {{ step(0.2, '') }} **Clone the fork to your computer.**
 
-{{ step(0.3, '') }} **Set up the dev environment as described in the project docs.** Confirm the set up is correct.
+{{ step(0.3, '') }} **Set up the dev environment as described in the project docs.** Confirm the setup is correct.
 </div>
 
 {{ step(1) }} **Create a branch from the `master` branch**, following the naming convention given.
