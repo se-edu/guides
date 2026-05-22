@@ -58,9 +58,9 @@
 **Option 3:**
 
 1. [Open the Windows Credential Manager](https://support.microsoft.com/en-gb/windows/accessing-credential-manager-1b5c916a-6a16-889f-8581-fc16e8165ac0).
-2. For each credential related to GitHub (if the name mentions GitHub) in `Web Credentials` or `Windows Credentials` categories,<br>
+2. For each credential related to GitHub (if the name mentions GitHub) in the `Web Credentials` or `Windows Credentials` categories,<br>
    (a) edit it and replace the password field with a GitHub PAT.<br>
-   (b) If the above didn't work, delete those credential altogether and try Option 1 or 2 again.
+   (b) If the above didn't work, delete those credentials altogether and try Option 1 or 2 again.
 
 ### On a Mac
 
