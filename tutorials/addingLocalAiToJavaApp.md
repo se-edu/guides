@@ -91,7 +91,7 @@ skinparam shadowing false
 start
 :User types command;
 :Parse user command;
-if () then ([Command recognised?])
+if () then ([Command recognized?])
 else ([No])
   :Build prompt asking LLM to interpret command;
   :Send prompt to LLM;
@@ -420,11 +420,11 @@ String validateAndNormalise(String raw) {
         return cleaned.substring(matcher.start(1)).trim();
     }
 
-    return null;   // unrecognised — caller shows fallback message
+    return null;   // unrecognized — caller shows fallback message
 }
 ```
 
-`KNOWN_COMMANDS` should mirror every command keyword your parser recognises (plus any short aliases), so the whitelist stays in sync with the rest of the app.
+`KNOWN_COMMANDS` should mirror every command keyword your parser recognizes (plus any short aliases), so the whitelist stays in sync with the rest of the app.
 
 ## Step 4: Wire It into Your App
 
@@ -449,7 +449,7 @@ For JavaFX apps, wrap the call in a `Task<Void>` and update the UI in `setOnSucc
 
 ### The fallback flow
 
-When the user submits input, try the traditional parser first. Only fall back to the LLM if the command is not recognised:
+When the user submits input, try the traditional parser first. Only fall back to the LLM if the command is not recognized:
 
 ```java
 // Try exact command parsing first — no LLM involvement
