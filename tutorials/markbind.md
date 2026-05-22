@@ -44,7 +44,7 @@ MarkBind is a superset of Markdown. Refer to the [MarkBind user guide](https://m
 
 <box type="warning" seamless>
 
-While _live preview_ can pick up most changes, it may not be able to pick up certain changes (e.g., changes to files in the `_markbind` folder or changes to nunjucks macros). Furthermore, some syntax errors in your code can cause the live preview to crash. In those cases, just stop the server (<kbd>Ctrl</kbd>+<kbd>C</kbd> on Windows) and start it again.
+While _live preview_ can pick up most changes, it may miss certain ones (e.g., changes to files in the `_markbind` folder or changes to nunjucks macros). Furthermore, some syntax errors in your code can cause the live preview to crash. In those cases, just stop the server (<kbd>Ctrl</kbd>+<kbd>C</kbd> on Windows) and start it again.
 </box>
 
 ## Automating PR previews, deployments

@@ -17,7 +17,7 @@ Reviewing PRs is not just about the code or the tools, **the way you phrase your
 
 ## Best practices for reviewers
 
-* **Add specific comments at relevant places of the code**, rather than give one overall comment for the entire PR.
+* **Add specific comments at relevant places of the code**, rather than giving one overall comment for the entire PR.
   * It is typical for the comment to be added right below the code line it refers to.<br>
     It is possible to [mark multiple lines](https://twitter.com/natfriedman/status/1179097330097643521) as linked to the comment too.
   * You can use Markdown (specifically, [GitHub-Flavored Markdown](https://guides.github.com/features/mastering-markdown/)) in your comments.
