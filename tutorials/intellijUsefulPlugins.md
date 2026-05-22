@@ -114,7 +114,7 @@ Whenever you perform an action using the mouse, **Key Promoter X** will:
 
 * Learn IntelliJ shortcuts **organically** while coding
 * Improve productivity by **reducing mouse dependency**
-* **Customise** shortcuts tailored to your workflow
+* **Customize** shortcuts tailored to your workflow
 
 
 --------------------------------------------------------------------------------
