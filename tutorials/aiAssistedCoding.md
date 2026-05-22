@@ -40,7 +40,7 @@ Examples: Ask an LLM such as ChatGPT,
 
 ### B2: Use IDE-Integrations as an Auto-Completion Tool
 
-AI Tools that has IDE integrations can work as an 'auto-complete on steroids', suggesting snippets of code that you can insert at the current cursor position. Some can go further in this direction.
+AI tools that have IDE integrations can work as an 'auto-complete on steroids', suggesting snippets of code that you can insert at the current cursor position. Some can go further in this direction.
 
 Examples:
   * when you write a header comment for a method, the tool generates the method
