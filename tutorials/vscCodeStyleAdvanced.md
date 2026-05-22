@@ -10,7 +10,7 @@
 
 While the Visual Studio Code Editor has configurable general settings for indent size, trailing whitespaces, and more, Visual Studio Code does not come with a built-in formatter for all languages. Instead, it relies on language-specific extensions to provide formatting functionality.
 
-For this tutorial, we will be using the Eclipse Java Formatter. This is included in the Red Hat Java Language Support extension, which you should already have installed if you followed [VS Code - Preparing for Java Projects Tutorial](vscPreparingForJava.md) tutorial.
+For this tutorial, we will use the Eclipse Java Formatter. It is included in the Red Hat Java Language Support extension, which you should already have installed if you followed the [VS Code - Preparing for Java Projects](vscPreparingForJava.md) tutorial.
 
 ## Set up Eclipse Java Formatter
 
