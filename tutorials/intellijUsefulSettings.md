@@ -42,7 +42,7 @@ Read [this](https://www.jetbrains.com/idea/guide/tips/enable-soft-wrap/) to find
 
 When working with a large repository, it can become quite tricky to keep track of files and where they are located. For example, you may be jumping across a few files while searching for a particular method or class and when you finally reach that class, you do not know which folder/subfolder it is located under! IntelliJ provides a setting that causes opened files to automatically show up in the Project tool window (on the left side of the IDE).
 
-Simply go to the Project tool window, select `options` (the three dots), select `behaviour`, then click `Always Select Opened File`.<br>
+Simply go to the Project tool window, select `options` (the three dots), select `behavior`, then click `Always Select Opened File`.<br>
 
 <pic src="images/intellij/alwaysSelectOpenedFile.png"></pic>
 
