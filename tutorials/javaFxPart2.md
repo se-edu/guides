@@ -42,7 +42,7 @@ But how do we get the exact layout we want in the UI? JavaFX provides that funct
 
 <box type="tip" seamless>
 
-A comprehensive list of layouts and how they behave is available here from the [official documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html).
+See the [official documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html) for a comprehensive list of layouts and how they behave.
 </box>
 
 One way to obtain the layout in the mockup is as follows:
