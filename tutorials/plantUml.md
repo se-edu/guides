@@ -34,7 +34,7 @@
 
 ### Maintaining consistency in formatting
 
-It is highly recommended to consistently color your UML diagrams as an visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.
+It is highly recommended to consistently color your UML diagrams as a visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.
 
 For example, you can create a `Style.puml` with the contents:
 
