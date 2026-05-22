@@ -82,7 +82,7 @@ The [_markbind/tweaking the page structure_](https://markbind.org/userGuide/twea
 
 ## Installing MarkBind
 
-For any non-trivial site updates, you would want to edit the source files locally, and preview the generated site first (to ensure the edits produces the intended outcome), before publishing the changes. For that, you need to install MarkBind in your computer. Given below are the steps, which assumes you already have the source files for a MarkBind-compatible Website e.g., [AB3](https://github.com/se-edu/addressbook-level3).
+For any non-trivial site update, edit the source files locally and preview the generated site before publishing the changes. To do that, install MarkBind on your computer. The steps below assume you already have the source files for a MarkBind-compatible website such as [AB3](https://github.com/se-edu/addressbook-level3).
 
 1. Ensure you have Java 8 or higher installed
 1. Install [Node.js](https://nodejs.org) 16 or higher
