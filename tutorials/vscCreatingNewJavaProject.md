@@ -144,7 +144,7 @@ To view and modify project settings:
 
 ### Using `.vscode/settings.json`
 
-You can also configure project settings by creating a `.vscode/settings.json` file in the root directory, if it does not exist:
+You can also configure project settings by creating a `.vscode/settings.json` file in the root directory if one does not already exist:
 
 1. In the project root directory, create a folder named `.vscode`.
 1. Inside the `.vscode` folder, create a file named `settings.json`. This file will store the project's VS Code configuration settings.
