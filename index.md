@@ -7,7 +7,7 @@
 
 <div class="lead">
 
-This website contains a collection of tutorials, standards, guides, best practices etc. useful for SE students.
+This website contains a collection of tutorials, standards, guides, best practices, etc., useful for SE students.
 </div>
 
 ## {{ thumbnail(":fas-chalkboard-teacher:") }} Tutorials
