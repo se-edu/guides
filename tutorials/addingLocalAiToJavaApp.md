@@ -428,9 +428,9 @@ String validateAndNormalise(String raw) {
 
 ## Step 4: Wire It into Your App
 
-### Initialise on a background thread
+### Initialize on a background thread
 
-Starting `llama-server` can take a few seconds. Initialise it on a background thread so your app remains responsive:
+Starting `llama-server` can take a few seconds. Initialize it on a background thread so your app remains responsive:
 
 ```java
 Thread llmInit = new Thread(() -> {
