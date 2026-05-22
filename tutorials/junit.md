@@ -12,7 +12,7 @@
 
 <div id="junit-use-gradle">
 
-As JUnit is a third-party library, you need to add support to it specifically in your project. Given below is how you can do that using the <tooltip content="a build tool and a dependency management tool">Gradle</tooltip>. While it is possible to add JUnit to your project without Gradle, **we strongly recommend using Gradle** as it can make things easier in the long run.<br>
+As JUnit is a third-party library, you need to add support for it in your project. Here is how you can do that using <tooltip content="a build tool and a dependency management tool">Gradle</tooltip>. While it is possible to add JUnit to your project without Gradle, **we strongly recommend using Gradle** as it can make things easier in the long run.<br>
 If you have not done that yet, follow the [_Gradle Tutorial_](gradle.html) to add Gradle support to the project first.
 </div>
 
