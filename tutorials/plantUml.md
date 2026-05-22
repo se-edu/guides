@@ -258,7 +258,7 @@ Explicitly define all symbols to avoid any potential layout mishaps.
 
 ### Using reference frames
 
-Reference frames in PlantUML sequence diagrams let you **group and reuse sequences** of interactions, improving readability and reducing repetition in complex scenarios. They also **reduce complexity**, making the overall interaction flow easier to manage and understand.
+Reference frames in PlantUML sequence diagrams let you **group and reuse sequences** of interactions, improving readability and reducing repetition in complex scenarios.
 
 Refer to the following example:
 ```
