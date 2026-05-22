@@ -42,7 +42,7 @@ You can also select other options based on your preference.
 
 Word Wrap Options
 
-| Value | Behaviour |
+| Value | Behavior |
 | --- | --- |
 |"off" | No wrapping. Lines extend horizontally beyond the viewport. You'll need to scroll sideways. |
 | "on" | Wrap at the viewport width. Long lines automatically wrap based on the visible editor area. |
