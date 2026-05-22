@@ -32,7 +32,7 @@ Given below are some information useful for when you want to update documentatio
 MarkBind is a superset of Markdown. Refer to the [MarkBind user guide](https://markbind.org/userGuide/gettingStarted.html) for more details.
 </box>
 
-**First, start the _live preview_**: Unless it is a trivial change, you would want to see how your change to the documentation source files will reflect in the generated website. You can use the MarkBind _live preview_ mode to preview the generated website as you update the source file. To start the live preview mode,
+**First, start the _live preview_**: Unless the change is trivial, preview how your edits will appear in the generated website. Use MarkBind _live preview_ mode to see updates as you edit the source file. To start the live preview mode,
 1. Open a command prompt.
 1. Navigate to the _documentation root_ (in most projects, the documentation root is `[project root]/docs` -- if you are not sure, look for the folder containing the `site.json` file).
 1. Run the `markbind serve` command. That will open the generated website in your default browser.
