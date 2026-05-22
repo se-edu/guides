@@ -17,7 +17,7 @@ Scenario: You have forked a project that already had support for using Codecov i
 Here are the steps. They should be carried out by someone with admin access to the GitHub organization that contains the fork.
 
 1. [**Sign up for a Codecov account**](https://app.codecov.io/signup/) using your GitHub account.
-1. **Install the Codecov integration on GitHub:**:
+1. **Install the Codecov integration on GitHub:**
    * Go to [this page](https://github.com/apps/codecov) and click on the green <button type="button" class="btn btn-success btn-sm">Install</button> button.{{ abcd_numbers }}
    * In the next page, select your GitHub organization
    * In the next page, choose the `Only select repositories` and choose your repo (you can also use the `All repositories` option instead). After that, click the <button type="button" class="btn btn-success btn-sm">Install</button>.<br>
