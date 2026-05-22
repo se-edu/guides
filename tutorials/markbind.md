@@ -29,7 +29,7 @@ Given below are some information useful for when you want to update documentatio
 
 <box type="info" seamless>
 
-MarkBind is a superset of Markdown. Refer the [MarkBind user guide](https://markbind.org/userGuide/gettingStarted.html) for more details.
+MarkBind is a superset of Markdown. Refer to the [MarkBind user guide](https://markbind.org/userGuide/gettingStarted.html) for more details.
 </box>
 
 **First, start the _live preview_**: Unless it is a trivial change, you would want to see how your change to the documentation source files will reflect in the generated website. You can use the MarkBind _live preview_ mode to preview the generated website as you update the source file. To start the live preview mode,
