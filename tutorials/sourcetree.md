@@ -66,7 +66,7 @@
 
 Here are two options for connecting Sourcetree with your GitHub account. Both require creating a Personal Access Token (PAT) at some point. When you create a PAT, we recommend that you ==tick both `repo` and `workflow` checkboxes==.
 
-* **Option 1:** Try the stepts given in this YouTube guide from Nick Graham:
+* **Option 1:** Try the steps given in this YouTube guide from Nick Graham:
 
   @[youtube](otRHRPnHDeI)
 
