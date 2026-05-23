@@ -12,7 +12,7 @@
 **[Jekyll](https://jekyllrb.com/) is a popular tool for generating static websites from markdown-like text**.
 </div>
 
-Given below are some information useful for when you want to update documentation in a project that uses Jekyll.
+Here is some useful information for updating documentation in a project that uses Jekyll.
 
 <!-- ==================================================================================================== -->
 
