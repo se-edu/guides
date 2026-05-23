@@ -10,7 +10,7 @@
 
 ## A: Tools and Resources
 
-**Resources we have created to help with the AI-assisted coding** are given below:
+**Resources we have created for AI-assisted coding** are given below:
 <div id="ai-assisted-coding-sub-topics">
 
 * **Copilot:** [Signing up]({{ baseUrl }}/tutorials/copilotSignup.html) | [Use with GitHub]({{ baseUrl }}/tutorials/copilotGithub.html) | [Use in IntelliJ]({{ baseUrl }}/tutorials/intellijCopilot.html) | [Use in VS Code]({{ baseUrl }}/tutorials/vscCopilot.html)
@@ -93,9 +93,9 @@ Garbage in, garbage out. The quality of an LLM's output is directly tied to the 
     Expected Output:
     ```json
     {
-        name: 'John Doe',
-        contact_number: 87654321,
-        year_of_study: 2
+        "name": "John Doe",
+        "contact_number": 87654321,
+        "year_of_study": 2
     }
     ```
 * **Prompt with Simplicity and Clarity:** Your prompts should be concise and easy to understand. A good rule of thumb is: if the prompt is confusing to you, it will be confusing to the model.
@@ -106,7 +106,7 @@ Garbage in, garbage out. The quality of an LLM's output is directly tied to the 
   * **#g#DO##:** "Generate a public Java class named Car. The class should include private string fields for make, model, and a private int field for year. Include a constructor to initialize all fields and public getter methods for each field."
 * **Use Instructions Over Constraints:** Tell the model what to *do* rather than what *not* to do. Positive instructions are generally more effective and less ambiguous.
   * **#r#DO NOT##:** "Write a Java method that filters a list of integers to get only the even numbers. Do not use a for-loop or an if-statement."
-  * **#g#DO##:** "Write a Java method that filters a list of integers to get only the even numbers. Use the Java Stream API ."
+  * **#g#DO##:** "Write a Java method that filters a list of integers to get only the even numbers. Use the Java Stream API."
 
 ### C3. Understand AI's Limitations
 
