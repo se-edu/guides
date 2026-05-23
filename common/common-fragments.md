@@ -11,7 +11,7 @@
 
 **This is a WIP community resource, containing contributions from community members.**
 
-* If you notice any bugs or suggestions for improvements, please report at https://github.com/se-edu/guides/issues
+* If you notice any bugs or have suggestions for improvements, please report at https://github.com/se-edu/guides/issues
 * You are welcome to contribute by sending a PR to https://github.com/se-edu/guides/pulls too.
 </box>
 </div>
