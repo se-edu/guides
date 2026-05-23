@@ -26,7 +26,7 @@ This page is aimed at students who are beginning to use AI tools in a lightweigh
 </div>
 
 
-## B: Approaches to Using AI Use in Coding
+## B: Approaches to Using AI in Coding
 
 ### B1. Gradually Increasing AI's Autonomy
 
