@@ -538,7 +538,7 @@ Every class should be part of some package.
 
 **{{ icon_level_advanced }} Put related classes in a single package.**
 
-Package together the classes that are related. For example in Java, the classes related to file writing is grouped in the package `java.io` and the classes which handle lists, maps etc are grouped in `java.util` package.
+Package together the classes that are related. For example, in Java, the classes related to file writing are grouped in the package `java.io`, and the classes that handle lists, maps, etc. are grouped in the `java.util` package.
 
 </div>
 <div tags="level--intermediate">
