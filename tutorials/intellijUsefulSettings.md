@@ -30,7 +30,7 @@ While it is common to enforce a maximum line length for code written in some lan
 
 <pic src="images/intellij/softWraps-before.png"></pic>
 
-Luckily, **you can use the 'soft wrap' feature of Intellij to get the editor window to put <tooltip content="they are called 'soft' because the line break is for displaying purposes only -- it will not appear in the saved code">_soft_</tooltip> line breaks in the content so that horizontal scrolling is no longer required**. Here is how the same code from the above example looks after enabling the soft-wraps feature (notice how the whole text is visible now, due to the soft line breaks added by the editor):
+Luckily, **you can use the 'soft wrap' feature of IntelliJ to make the editor wrap content using <tooltip content="they are called 'soft' because the line breaks are for display purposes only; they will not appear in the saved code">_soft_</tooltip> line breaks, so horizontal scrolling is no longer required**. Here is how the same code from the above example looks after enabling the soft-wraps feature (notice how the whole text is visible now, due to the soft line breaks added by the editor):
 
 <pic src="images/intellij/softWraps-after.png"></pic>
 
