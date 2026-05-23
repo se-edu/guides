@@ -77,7 +77,7 @@ It gives two methods. Recommended to try method 2 first.
 
 <box header="Caching GitHub credentials" type="tip" seamless>
 
-If you are prompted to enter GitHub credentials everytime you connect to GitHub using Sourcetree, you can cache GitHub credentials by following the guide given [here](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git?platform=mac) (recommended: use the Git Credentials Manager option, not the GitHub CLI option).
+If you are prompted to enter GitHub credentials every time you connect to GitHub using Sourcetree, you can cache GitHub credentials by following the guide given [here](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git?platform=mac) (recommended: use the Git Credentials Manager option, not the GitHub CLI option).
 </box>
 <!-- ==================================================================================================== -->
 
