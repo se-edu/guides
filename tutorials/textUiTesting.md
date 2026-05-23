@@ -109,7 +109,7 @@ The purpose of testing as explained in the previous section is to confirm there 
 **Option 2:** This is a more practical shortcut.
 1. Run the test as per normal after updating the code. The test will fail because the new program behavior is different from the one given in the `EXPECTED.TXT`.
 1. Use a diff tool to compare the `ACTUAL.TXT` against the `EXPECTED.TXT`.<br>
-   {{ icon_tip }} [Intellij IDEA can compare two files](https://www.jetbrains.com/help/idea/comparing-files-and-folders.html). There are stand-alone tools for comparing files too e.g., WinDiff, WinMerge
+   {{ icon_tip }} [Intellij IDEA can compare two files](https://www.jetbrains.com/help/idea/comparing-files-and-folders.html). There are stand-alone tools for comparing files too, e.g., WinDiff and WinMerge.
 1. Confirm the differences indicate the behavior has changed as you intended. If the differences are not as intended, your code is buggy; fix the code and repeat from step 1.
 1. Copy over the content of the `ACTUAL.TXT` to `EXPECTED.TXT` i.e., we accept that the current actual behavior should be the new _expected_ behavior. Rerun the test to confirm that it passes this time.
 
