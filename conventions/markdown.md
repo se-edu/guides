@@ -86,7 +86,7 @@ Content of the paragraph.
 {% endcall %}
 
 
-* **Use generic numbering for ordered lists.** i.e., use `1.` for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.
+* **Use generic numbering for ordered lists.** i.e., using `1.` for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.
 
   <box type="info" seamless>
 
