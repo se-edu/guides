@@ -14,7 +14,7 @@
 * **If submitting a PR for an existing issue,**
   * It's best for first-time contributors to start by fixing an issue specifically labeled for first-timers e.g., `d.FirstTimers`, `good first issue`.
   * It's best to post in the issue to ask if it is OK for you to submit a PR for that issue and wait for approval.
-  * Check the issue discussion thread to see if there are <tooltip content="Some activity during last seven days">_active_</tooltip> PRs for that issue. You can offer to PR for an issue that has <tooltip content="i.e., there is a PRs submitted for that issue but the PR author seems to have stopped working on it">_stalled_ PRs</tooltip>.
+  * Check the issue discussion thread to see if there are <tooltip content="Some activity during the last seven days">_active_</tooltip> PRs for that issue. You can offer to submit a PR for an issue that has <tooltip content="i.e., a PR has been submitted for that issue, but the PR author seems to have stopped working on it">_stalled_ PRs</tooltip>.
 * **If the issue list does not contain what you want to work on,** post an issue first and wait for it to be acknowledged. Otherwise you could end up fixing something that does not need fixing.
 
 <!-- ==================================================================================================== -->
