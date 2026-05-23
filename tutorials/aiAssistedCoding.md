@@ -62,15 +62,19 @@ Examples:
 * GitHub has a [Copilot coding agent](https://docs.github.com/en/copilot/concepts/coding-agent/coding-agent) that can create a pull request based on a natural language prompt
 
 
-### B4: Generate Whole Apps
+### B4: Vibe-Coding Whole Apps
 
-AI tools (the so-called 'vibe coding tools') can create an entire application (e.g., web apps, mobile apps) based on prompts.
+**AI tools (the so-called 'vibe coding tools') can create or prototype an entire application (e.g., web apps, mobile apps) based on prompts.** These tools can be useful for exploring ideas quickly, but students may not always be familiar with the frameworks, libraries, and design choices used in the generated app.
 
 Examples:
 
-* [Replit Ghostwriter](https://replit.com/learn/intro-to-ghostwriter)
-* [v0.dev](https://v0.app/docs/introduction)
-* Google AI Studio
+* [Replit Agent](https://docs.replit.com/references/agent/overview), which can build and deploy apps from plain-language prompts
+* [v0](https://v0.app/docs/quickstart), which can generate web apps from natural-language prompts and iterate on them through conversation
+* [Google AI Studio](https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/), which can build web apps and, as of Google I/O 2026, native Android apps from prompts
+
+**For students, a safer default is to treat the generated app as a functional prototype rather than as the final implementation.** Use it to explore requirements, UI flows, data models, and edge cases. Then rebuild the application in a more controlled way using tools and design choices you understand, so that the final code remains explainable, maintainable, and useful for learning.
+
+**If you continue from the generated code, do so only when you understand the tool stack well enough** to review, test, maintain, and explain the code.
 
 ## C: Best Practices for AI-Assisted Coding
 
