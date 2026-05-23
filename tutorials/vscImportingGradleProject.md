@@ -62,7 +62,7 @@ Check that the JDK version matches the one required for your project, as specifi
 
 You may also need to verify and configure the Gradle Build Server to use the correct JVM.
 
-1. Open the project's `.vscode/settings.json` file. Create the file if it does not exists yet.
+1. Open the project's `.vscode/settings.json` file. Create the file if it does not exist yet.
     * To configure the following settings globally, open VS Code's `settings.json` file instead. You can find it by opening the Command Palette ({{ icon_windows }}/{{ icon_linux}} `Ctrl+Shift+P` | {{ icon_apple }} `Cmd+Shift+P`), then typing `Preferences: Open User Settings (JSON)`.
 1. Add or modify the following settings to configure the JVM for Gradle. Here's an example for Mac (Replace the JDK name and path as necessary):
     ```json { heading="settings.json" }
