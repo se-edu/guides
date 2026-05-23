@@ -135,6 +135,21 @@ Examples:
 
 **If you continue from the generated code, do so only when you understand the tool stack well enough** to review, test, maintain, and explain the code.
 
+### B3: Using Spec-Driven Development
+
+**Spec-driven development uses AI tools to turn a clear specification into an implementation plan and then into code.** Instead of prompting the AI to "build the feature" immediately, you first work with it to clarify requirements, acceptance criteria, design decisions, and implementation tasks.
+
+Examples:
+
+* [GitHub Spec Kit](https://github.github.com/spec-kit/), which provides a spec-driven workflow that can be used with AI coding agents such as Copilot, Gemini, Codex, Claude, and others
+* [Kiro specs](https://kiro.dev/docs/specs/), which organize development work into requirements, design, and task files before implementation
+
+**For students, this approach can be useful because it slows the work down in a productive way.** Before code is generated, you have a chance to inspect the problem statement, refine ambiguous requirements, think through the design, and identify tests. This can make the AI-assisted work more instructive than simply asking for code directly.
+
+**The specification is not automatically correct.** Review the generated requirements, design notes, and task breakdown carefully. If the spec is vague, over-engineered, or based on a misunderstanding, the resulting code is likely to inherit those problems.
+
+**Use spec-driven development iteratively, not as a waterfall process.** Specify a minimal version of the product or one feature in detail, implement and review that slice, then repeat. Trying to specify an entire product and generate the complete application in one shot can produce a large amount of code that is difficult for a student to understand, test, and maintain.
+
 ## C: Using AI Responsibly in Coursework
 
 It is possible to use AI tools not only as coding assistants, but also as opportunities to practice ethical judgment and critical thinking. Always follow the AI-use policy of the course you are taking, document AI assistance when required, and critically evaluate outputs before adopting them into your work.
