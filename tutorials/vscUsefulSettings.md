@@ -97,7 +97,7 @@ To enable assertions:
 
 Rename Symbol is a built-in feature by VS Code which works with extensions to let users safely change the name of a variable, method, class, or any other symbol across your entire project. When you rename a symbol, all references to it are updated automatically, reducing the chance of errors.
 
-To rename a symbol, use the `F2` shortcut or right click on the symbol and select `Reload Symbol`.
+To rename a symbol, use the `F2` shortcut or right-click the symbol and select `Rename Symbol`.
 
 ![](images/vscode/rename-symbol.png)
 
