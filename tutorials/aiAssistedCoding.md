@@ -47,7 +47,7 @@ Examples:
   * write header comments for a method you have implemented
   * generate test cases for a method/class
 
-Example: GitHub Copilot plugins for Intellij and VSCode
+Example: GitHub Copilot plugins for IntelliJ and VS Code
 
 
 ### B3: Collaborate with an AI Coding Agent
