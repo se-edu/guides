@@ -1,7 +1,7 @@
 {% set title="AI-Assisted Coding" %}
 <frontmatter>
   title: "{{ title }}"
-  pageNav: 2
+  pageNav: 4
 </frontmatter>
 
 <include src="../common/common-fragments.md#wip-warning" />
@@ -26,43 +26,102 @@ This page is aimed at students who are beginning to use AI tools in a lightweigh
 </div>
 
 
-## B: Ideas for Using AI Tools in Coding
+## B: Approaches to Using AI Use in Coding
 
-### B1: Asking an LLM
+### B1. Gradually Increasing AI's Autonomy
 
-AI tools such as large language models (LLMs) can act as conversational partners for coding tasks. You can ask them questions, provide code snippets, and request feedback or improvements.
+AI tools can be used with different levels of autonomy. As a student, it is usually better to progress gradually: start by using AI to support your learning, then move to more autonomous tools only when you can still understand, review, test, and explain the result.
 
-Examples: Ask an LLM such as ChatGPT,
+At every level, treat the AI as a collaborator, not a replacement. It can accelerate your work, but you are ultimately responsible for understanding, validating, testing, and explaining the final result.
 
-* Here is a piece of code that I wrote. How can I improve it?
-* Take this code and tweak it so that the output is sorted alphabetically.
-* Here is an error message. What does it mean? How should I fix it?
-* This method is supposed to sort the output in ascending order but the actual output is in descending order. Why? How do I fix it?
+#### Level-0: AI as a Helpful Tutor
 
+At this level, AI is used to explain concepts rather than produce task-specific code. The AI does not see your codebase unless you manually describe or paste relevant details, and you still do the implementation yourself.
 
-### B2: Use IDE-Integrations as an Auto-Completion Tool
+In practice, you can use the chat interface of an AI tool (e.g., [ChatGPT](https://chatgpt.com/), [Claude](https://claude.ai/), [Gemini](https://gemini.google.com/), or [Microsoft Copilot](https://copilot.microsoft.com/)) to ask AI questions. Some example questions:
 
-AI tools that have IDE integrations can work as an 'auto-complete on steroids', suggesting snippets of code that you can insert at the current cursor position. Some can go further in this direction.
+* What does this error message mean?
+* What is a null pointer exception?
+* How do I remove `null` values from a Java list?
+* Can you explain this concept using a small example?
 
-Examples:
-  * when you write a header comment for a method, the tool generates the method
-  * write header comments for a method you have implemented
-  * generate test cases for a method/class
+This level can be especially useful when you are learning a new concept or tool, because the AI can give explanations, examples, and alternative ways of thinking about the topic without taking over the coding task.
 
-Example: GitHub Copilot plugins for IntelliJ and VS Code
+Guidelines:
 
-
-### B3: Collaborate with an AI Coding Agent
-
-It is possible to make your codebase visible to an Agentic AI tool, and get it to act like a team member who performs coding tasks.
-
-Examples:
-
-* GitHub has a [Copilot code review](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review) feature that gets Copilot to review PRs
-* GitHub has a [Copilot coding agent](https://docs.github.com/en/copilot/concepts/coding-agent/coding-agent) that can create a pull request based on a natural language prompt
+* Ask for explanations, examples, analogies, and common mistakes.
+* Ask the AI to quiz you or check your understanding after it explains a concept.
+* Avoid pasting full assignment tasks and asking for complete solutions.
+* If the AI gives code, treat it as an example to study, not as code to submit without understanding.
 
 
-### B4: Vibe-Coding Whole Apps
+#### Level-1: AI as an Inline Coding Assistant
+
+At this level, AI helps with small, bounded changes based on a selected snippet, current file, terminal output, or pasted context. You choose the context, request the change, and decide whether and how to integrate the result.
+
+In practice, you normally use an IDE extension provided by an AI coding tool (e.g., Claude Code, Codex, Gemini, GitHub Copilot) to communicate with the AI tool more easily about the code. For example, you can select the relevant part of the code in the IDE, and use the interface provided by the IDE extension to ask the AI to make a specific change. Some examples of requests:
+
+* simplify a selected method
+* explain a confusing code snippet
+* suggest a small refactoring
+* generate unit tests for a method
+* add comments to code you have already written
+
+Unlike Level 0, the AI now sees part of the actual task context. That means some of the code may be written or rewritten by AI, so you must be able to read, explain, and validate the change before using it.
+
+Guidelines:
+
+* Keep the request small: one method, error, refactoring, test case, or design question at a time.
+* Give the relevant code, expected behavior, actual behavior, and the kind of help you want.
+* Ask the AI to explain the reasoning behind its suggestion.
+* Review the diff carefully before accepting the change.
+* Run tests and add relevant new tests, especially for edge cases.
+
+Example prompt patterns:
+
+* **Debug an error:** "I ran `./gradlew test` and got the stack trace below. Explain the most likely cause, point to the relevant line, and suggest a minimal fix. Do not rewrite unrelated code."
+* **Generate tests:** "Given this `Parser#parse(String input)` method and its JavaDoc, list important equivalence partitions and boundary cases. Then generate JUnit 5 tests for the three highest-risk cases."
+* **Review a change:** "Review this diff for regressions, missing tests, weak error handling, and violations of the existing coding style. Give findings with file and line references."
+* **Refactor safely:** "Suggest a refactoring that reduces duplication in these two methods without changing the public API or observable behavior. Explain how I can verify the refactor with tests."
+* **Compare design options:** "Compare these two designs using coupling, cohesion, testability, and ease of future extension. Recommend one for a small student project and explain the trade-offs."
+
+
+#### Level-2: AI as a Supervised Coding Agent
+
+At this level, you work with an AI agent interactively to plan, edit multiple files, run commands, observe results, and iterate toward a specific goal. The AI may do much of the mechanical work, but you supervise it closely at each step.
+
+In practice, you might ask an agent to add a small feature, review its plan, approve or reject edits, run tests through the agent, and ask follow-up questions when the output is unclear. This is similar to supervising a more knowledgeable assistant through a project task. The tools used commonly are either IDE extensions of AI coding tools or AI coding tools that works as standalone apps (CLI version or desktop version).
+
+This level works best when the repository gives the agent clear instructions, such as `AGENTS.md`, `CLAUDE.md`, or tool-specific project guidance. You should still have enough knowledge to perform the task yourself, because careful supervision requires understanding the goal, the code, and the risks.
+
+Guidelines:
+
+1. **Start with a small task:** Ask for help on one bug, feature, refactoring, or design question at a time.
+1. **Ask for a plan first:** Before accepting code, ask the AI to explain the intended change and the reasoning behind it.
+1. **Work on a branch:** Keep AI-assisted changes separate from your main working version until you have reviewed them.
+1. **Review every change:** Read the diff carefully. Make sure you understand what changed, why it changed, and whether it matches the task.
+1. **Ask follow-up questions:** If any part of the output is unclear, ask the AI to explain the code, alternatives, trade-offs, or possible edge cases.
+1. **Run tests and add tests:** Run the existing tests, add relevant new tests, and check edge cases manually when needed.
+1. **Commit only what you understand:** Do not submit or merge AI-generated code that you cannot explain and maintain yourself.
+
+#### Level-3: AI as an Asynchronous Task Agent
+
+At this level, you specify the desired outcome rather than the detailed steps. The agent works in the background, edits code, runs tests, and returns a reviewable artifact such as a pull request or patch.
+
+For example, you might assign a GitHub issue to a coding agent (either running through an AI harness in your computer, or in a remote environment such as GitHub) and later review the pull request (or the diff) it creates. This enables more autonomous and parallel work, but it also increases the review burden.
+
+The student still owns acceptance of the final work. To use this level responsibly, you need strong code review, testing, and integration skills, because you may be approving code that you did not personally write.
+
+Guidelines:
+
+* Give a clear, bounded task and include relevant project constraints.
+* Require a reviewable artifact, such as a pull request, patch, or detailed change summary.
+* Review the code yourself instead of relying only on the agent's summary.
+* Check whether the tests are sufficient, not merely whether they pass.
+* Be ready to reject the output or ask for revisions if the implementation is hard to understand, weakly tested, or inconsistent with the project.
+
+
+### B2: Vibe-Coding Whole Apps
 
 **AI tools (the so-called 'vibe coding tools') can create or prototype an entire application (e.g., web apps, mobile apps) based on prompts.** These tools can be useful for exploring ideas quickly, but students may not always be familiar with the frameworks, libraries, and design choices used in the generated app.
 
@@ -76,59 +135,7 @@ Examples:
 
 **If you continue from the generated code, do so only when you understand the tool stack well enough** to review, test, maintain, and explain the code.
 
-## C: Best Practices for AI-Assisted Coding
-
-To effectively leverage AI in your workflow, it's crucial to adopt a set of best practices. The following tips are non-exhaustive, and should be kept in mind regardless of which AI model you use.
-
-### C1. Use a Safe AI-Assisted Workflow
-
-If you are new to using AI for coding tasks, keep the work small, reviewable, and instructive. A safe workflow could look like this:
-
-1. **Start with a small task:** Ask for help on one bug, method, test case, refactoring, or design question at a time.
-1. **Ask for a plan first:** Before accepting code, ask the AI to explain the intended change and the reasoning behind it.
-1. **Work on a branch:** Keep AI-assisted changes separate from your main working version until you have reviewed them.
-1. **Review every change:** Read the diff carefully. Make sure you understand what changed, why it changed, and whether it matches the task.
-1. **Ask follow-up questions:** If any part of the output is unclear, ask the AI to explain the code, alternatives, trade-offs, or possible edge cases.
-1. **Run tests and add tests:** Run the existing tests, add relevant new tests, and check edge cases manually when needed.
-1. **Commit only what you understand:** Do not submit or merge AI-generated code that you cannot explain and maintain yourself.
-
-### C2. Treat the AI as a Collaborator, Not a Replacement
-
-Think of an AI coding assistant as a junior developer or a pair programmer. It can accelerate your work, but **you are ultimately the one in charge** of the final product.
-
-AI tools are powerful, but they don't *understand* code in the way a human does. They are prediction engines. It is your responsibility to review, validate, and test any code generated by an AI to ensure it is efficient, secure, and correct.
-
-Use AI to handle repetitive tasks, generate boilerplate code, brainstorm solutions, and get you unstuck. This frees you up to focus on the more complex, architectural aspects of software development. Don't let it become a crutch that hinders your own learning and skill development.
-
-### C3. Prompt the AI to Support Your Learning
-
-Garbage in, garbage out. The quality of an LLM's output is directly tied to the quality of your input. For software engineering tasks, a good prompt usually gives the AI the relevant code, the expected behavior, the actual behavior, and the kind of help you want. As a student, you should also prompt the AI in ways that help you understand the reasoning behind its output, so that the interaction becomes part of your learning process.
-
-Here are some prompt patterns that are useful for common student project tasks:
-
-* **Debug an error:** Give the error message, the command you ran, and the relevant code.
-  * **#r#DO NOT##:** "My program crashed. Fix it."
-  * **#g#DO##:** "I ran `./gradlew test` and got the stack trace below. Explain the most likely cause, point to the relevant line, and suggest a minimal fix. Do not rewrite unrelated code."
-* **Generate tests:** Describe the method's contract and ask for edge cases before asking for code.
-  * **#r#DO NOT##:** "Write tests for this class."
-  * **#g#DO##:** "Given this `Parser#parse(String input)` method and its JavaDoc, list important equivalence partitions and boundary cases. Then generate JUnit 5 tests for the three highest-risk cases."
-* **Review a change:** Ask the AI to look for specific software engineering concerns.
-  * **#r#DO NOT##:** "Is this pull request good?"
-  * **#g#DO##:** "Review this diff for regressions, missing tests, weak error handling, and violations of the existing coding style. Give findings with file and line references."
-* **Refactor safely:** State what behavior must stay unchanged.
-  * **#r#DO NOT##:** "Make this code cleaner."
-  * **#g#DO##:** "Suggest a refactoring that reduces duplication in these two methods without changing the public API or observable behavior. Explain how I can verify the refactor with tests."
-* **Compare design options:** Ask for trade-offs, not just a single answer.
-  * **#r#DO NOT##:** "Which design is better?"
-  * **#g#DO##:** "Compare these two designs using coupling, cohesion, testability, and ease of future extension. Recommend one for a small student project and explain the trade-offs."
-
-### C4. Understand AI's Limitations
-
-Never trust AI-generated code blindly. Models can be confidently wrong, introduce subtle bugs, or generate code with security flaws.
-
-  * **Test Extensively:** Just because code looks correct and runs without errors doesn't mean it's bug-free or handles all edge cases. Write and run unit tests, integration tests, and performance tests to validate the functionality and robustness of any AI-generated code before integrating it into your projects.
-
-## D: Using AI Responsibly in Coursework
+## C: Using AI Responsibly in Coursework
 
 It is possible to use AI tools not only as coding assistants, but also as opportunities to practice ethical judgment and critical thinking. Always follow the AI-use policy of the course you are taking, document AI assistance when required, and critically evaluate outputs before adopting them into your work.
 
