@@ -36,7 +36,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
   * Click on the GitHub Copilot icon at the top.<br>
     <pic src="images/vscCopilotSetup/copilotLogin.png" width="800" />
   * Click `Sign in` in the pop-up.
-  * You will be redirected to GitHub login page, where you can login or select the account linked to GitHub Education.
+  * You will be redirected to the GitHub login page, where you can log in or select the account linked to GitHub Education.
   * It should prompt you with `Open Visual Studio Code?` and click `Open Visual Studio Code`.
   * Once signed in, the GitHub Copilot icon will now say "Toggle Chat" when hovered over.
   * Clicking on the GitHub Copilot icon will open the Copilot chat window.
