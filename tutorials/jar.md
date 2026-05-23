@@ -52,7 +52,7 @@ plugins {
   // other plugins
 }
 ```
-Second, ensure the following property is configured correctly, so that Shadow know which class is the entry point to the application:
+Second, ensure the following property is configured correctly, so that Shadow knows which class is the entry point to the application:
 ```groovy{heading="build.gradle"}
 mainClass.set("seedu.duke.Main")
 ```
