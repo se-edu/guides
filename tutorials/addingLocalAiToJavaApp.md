@@ -49,7 +49,7 @@ llama-server --version
 ```
 You should see a version string. If this command is not found, check that the binary is on your `PATH`.
   </tab>
-  <tab header=":fab-apple: MacOS">
+  <tab header=":fab-apple: macOS">
 
 ```bash
 brew install llama.cpp

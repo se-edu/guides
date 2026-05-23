@@ -47,7 +47,7 @@ git config --global credential.helper manager-core
 ```
 
   </tab>
-  <tab header=":fab-apple: MacOS">
+  <tab header=":fab-apple: macOS">
 
 macOS uses the Keychain by default, so your PAT is stored automatically after the first use. No further action needed.
   </tab>
@@ -169,7 +169,7 @@ Paste the output into GitHub → Settings → SSH and GPG Keys.
 ssh -T git@github.com
 ```
   </tab>
-  <tab header=":fab-apple: MacOS">
+  <tab header=":fab-apple: macOS">
 
 
 ##### 1. Check for Existing SSH Keys
