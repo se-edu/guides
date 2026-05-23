@@ -208,7 +208,7 @@ Run the **`run`** task to launch the main class of the application.<br>
 
 ### Cleaning the project
 
-Run the **`clean`** to delete the files created during the previous build tasks (e.g. files in the `build` folder).<br>
+Run the **`clean`** task to delete the files created during the previous build tasks (e.g. files in the `build` folder).<br>
   e.g. `./gradlew clean`
 
 <box type="tip" seamless>
