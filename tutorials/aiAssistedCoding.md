@@ -112,17 +112,17 @@ Never trust AI-generated code blindly. Models can be confidently wrong, introduc
 
   * **Test Extensively:** Just because code looks correct and runs without errors doesn't mean it's bug-free or handles all edge cases. Write and run unit tests, integration tests, and performance tests to validate the functionality and robustness of any AI-generated code before integrating it into your projects.
 
-## D: Ethical Use of AI
+## D: Using AI Responsibly in Coursework
 
-It is possible to use AI tools not only as coding assistants, but also as opportunities to practice ethical judgment and critical thinking. Always document when you use AI tools, and critically evaluate outputs before adopting them into your work.
+It is possible to use AI tools not only as coding assistants, but also as opportunities to practice ethical judgment and critical thinking. Always follow the AI-use policy of the course you are taking, document AI assistance when required, and critically evaluate outputs before adopting them into your work.
 
-Examples:
+Keep these points in mind:
 
-* It is possible to paste in code from another source and ask the AI to rewrite or optimize it, but you should clearly acknowledge the source and reflect on whether you are learning or simply copying.
-* It is possible to generate a function or algorithm using AI, but you should carefully check for bugs, inefficiencies, and security issues before integrating it, and document AI assistance if required.
-* It is possible to ask AI to produce unit tests or documentation, but you should ensure the outputs meet course standards and revise them to demonstrate your own understanding.
-* It is possible to compare AI-generated code with your own solution to learn about trade-offs in readability, maintainability, and performance, but the final submission should represent your own reasoning.
-* It is possible to rely on AI for productivity, but you should balance this with independent coding practice to avoid over-reliance.
+* **Respect course policies:** Some courses allow AI for explanation, debugging, or feedback, but restrict generated code in submissions. When in doubt, ask the teaching team before using AI on assessed work.
+* **Protect private information:** Do not paste private repository code, assignment solutions, hidden tests, API keys, tokens, credentials, personal data, or confidential project material into external AI tools unless you have permission to do so.
+* **Acknowledge sources and assistance:** If you paste in code from another source and ask AI to rewrite or optimize it, clearly acknowledge the original source and the AI assistance if your course requires it.
+* **Maintain your own understanding:** It is possible to generate a function, algorithm, unit tests, or documentation using AI, but you should be able to explain and justify the final version yourself.
+* **Use AI for learning, not bypassing learning:** It is possible to use AI for productivity, but you should balance this with independent learning to avoid over-reliance on AI. For example, you can write your own code first and compare it with an AI-generated code to learn about alternatives and trade-offs, rather than simply offload the task to AI.
 
 ---
 
