@@ -19,6 +19,13 @@
       "headingKeywords": {}
     },
     {
+      "src": "agents.md",
+      "headings": {
+        "agents-notes": "Agents Notes"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "common/common-fragments.md",
       "headings": {},
       "headingKeywords": {}
@@ -353,7 +360,7 @@
         "define-the-system-prompt-in-a-template-file": "Define the system prompt in a template file",
         "validate-and-normalise-the-output": "Validate and normalise the output",
         "step-4-wire-it-into-your-app": "Step 4: Wire It into Your App",
-        "initialise-on-a-background-thread": "Initialise on a background thread",
+        "initialize-on-a-background-thread": "Initialize on a background thread",
         "the-fallback-flow": "The fallback flow",
         "destructive-command-confirmation": "Destructive command confirmation",
         "step-5-package-everything-into-a-fat-jar": "Step 5: Package Everything into a Fat JAR",
@@ -576,9 +583,9 @@
     },
     {
       "src": "tutorials/intellijProductivityShortcuts.md",
-      "title": "Intellij IDEA: Productvity shortcuts",
+      "title": "IntelliJ IDEA: Productivity shortcuts",
       "headings": {
-        "intellij-idea-productvity-shortcuts": "Intellij IDEA: Productvity shortcuts"
+        "intellij-idea-productivity-shortcuts": "IntelliJ IDEA: Productivity shortcuts"
       },
       "headingKeywords": {}
     },
