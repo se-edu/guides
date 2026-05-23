@@ -25,7 +25,7 @@ Tasks can be composed of, or dependent on, other tasks.
 
 1. **Properties** change the behavior of tasks. For instance, when using the `application` plugin, we should use the `mainClassName` (or `mainClass`) property to tell Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much you need to configure if you follow the recommended directory structure.
 
-**Even if you are not using Intellij, ==a quick watch of the following video is strongly recommended==** before proceeding with the rest of this tutorial, if you are new to Gradle. The video will help you grasp how Gradle fits into the big picture of a project, and how it looks like to be using it.
+**Even if you are not using Intellij, ==a quick watch of the following video is strongly recommended==** before proceeding with the rest of this tutorial, if you are new to Gradle. The video will help you grasp how Gradle fits into the big picture of a project, and what it looks like to use it.
 
 <panel peek no-close no-switch>
 <div slot="header"><md><span class="text-danger">:fab-youtube:</span> VIDEO: Working with Gradle</md></div>
