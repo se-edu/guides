@@ -7,7 +7,7 @@
 
 <div class="lead">
 
-**[Netlify](https://www.netlify.com/) is an automated hosting platform for deploying websites.** Its [_deploy previews_](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) feature is particularly useful for <tooltip content="i.e., how would the final output of the documentation will change if the PR is merged">previewing documentation changes in a PR</tooltip>.
+**[Netlify](https://www.netlify.com/) is an automated hosting platform for deploying websites.** Its [_deploy previews_](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/) feature is particularly useful for <tooltip content="i.e., how the final output of the documentation would change if the PR is merged">previewing documentation changes in a PR</tooltip>.
 </div>
 
 The sections below explains how to use Netlify in a project.
