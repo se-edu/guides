@@ -10,7 +10,7 @@
 Checkstyle is a static analysis tool that can check Java code against a set of style rules.
 </div>
 
-Given below are some instructions on how to use Checkstyle for some common project tasks.
+Here are some instructions on using Checkstyle for common project tasks.
 
 <!-- ==================================================================================================== -->
 
