@@ -108,7 +108,7 @@ Guidelines:
 
 At this level, you specify the desired outcome rather than the detailed steps. The agent works in the background, edits code, runs tests, and returns a reviewable artifact such as a pull request or patch.
 
-For example, you might assign a GitHub issue to a coding agent (either running through an AI harness in your computer, or in a remote environment such as GitHub) and later review the pull request (or the diff) it creates. This enables more autonomous and parallel work, but it also increases the review burden.
+For example, you might assign a GitHub issue to a coding agent (either running through an AI harness on your computer or in a remote environment such as GitHub) and later review the pull request (or the diff) it creates. This enables more autonomous and parallel work, but it also increases the review burden.
 
 The student still owns acceptance of the final work. To use this level responsibly, you need strong code review, testing, and integration skills, because you may be approving code that you did not personally write.
 
