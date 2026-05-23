@@ -22,7 +22,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
 * **Install the [Extension Pack for GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and the [Extension Pack for GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) extension**, to enable support for AI autocompletion.
   * Click on both of the extension links above.
   * Click on the `Install` button on the page that opens.
-  * It should prompt you with `Open Visual Studio Code?` and click `Open Visual Studio Code`.
+  * When prompted with `Open Visual Studio Code?`, click `Open Visual Studio Code`.
   * You will be redirected to the extension page in Visual Studio Code.
   * Click on `Install` to install the extension.
   * Make sure to install the [Extension Pack for GitHub Copilot Chat](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) as well with the same steps above.
@@ -37,7 +37,7 @@ GitHub Copilot is an AI Tool that is well-integrated with VS Code, because both 
     <pic src="images/vscCopilotSetup/copilotLogin.png" width="800" />
   * Click `Sign in` in the pop-up.
   * You will be redirected to the GitHub login page, where you can log in or select the account linked to GitHub Education.
-  * It should prompt you with `Open Visual Studio Code?` and click `Open Visual Studio Code`.
+  * When prompted with `Open Visual Studio Code?`, click `Open Visual Studio Code`.
   * Once signed in, the GitHub Copilot icon will now say "Toggle Chat" when hovered over.
   * Clicking on the GitHub Copilot icon will open the Copilot chat window.
 * **Verifying the installation of GitHub Copilot**
