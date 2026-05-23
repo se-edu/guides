@@ -106,7 +106,7 @@ To make formatting more convenient, you can enable formatting every time you sav
 
 ## More advanced settings
 
-The tweaks given above are limited to functionality provided by VSCode’s Editor. More configurations can be done through the extension’s formatter, and can be found [here](vscCodeStyleAdvanced.md).
+The tweaks given above are limited to functionality provided by VS Code’s editor. More configurations can be done through the extension’s formatter, and can be found [here](vscCodeStyleAdvanced.md).
 
 ## More useful settings
 
