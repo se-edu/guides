@@ -104,7 +104,7 @@ The purpose of testing as explained in the previous section is to confirm there 
 **Option 1:** This is the ideal but more tedious approach.
 1. Determine how the expected behavior _should_ change due to your update to the code.
 1. Update the `EXPECTED.TXT` file accordingly.
-1. Run the test to confirm the actual behavior is same as the _updated_ expected behavior.
+1. Run the test to confirm the actual behavior is the same as the _updated_ expected behavior.
 
 **Option 2:** This is a more practical shortcut.
 1. Run the test as per normal after updating the code. The test will fail because the new program behavior is different from the one given in the `EXPECTED.TXT`.
