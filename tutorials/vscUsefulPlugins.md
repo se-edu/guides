@@ -66,7 +66,7 @@ The sections below explain how to install PlantUML. For more tips on **using Pla
 
 1. Install Graphviz (for best compatibility to render diagrams)
    * **Windows:** download from [Graphviz](https://graphviz.org/download/) and add it to `PATH`
-   * **MacOS:** `brew install graphviz`
+   * **macOS:** `brew install graphviz`
    * **Linux:** `sudo apt install graphviz`
 
 2. Configure PlantUML in VS Code
