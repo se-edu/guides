@@ -80,7 +80,19 @@ Examples:
 
 To effectively leverage AI in your workflow, it's crucial to adopt a set of best practices. The following tips are non-exhaustive, and should be kept in mind regardless of which AI model you use.
 
-### C1. Treat the AI as a Collaborator, Not a Replacement
+### C1. Use a Safe AI-Assisted Workflow
+
+If you are new to using AI for coding tasks, keep the work small, reviewable, and instructive. A safe workflow could look like this:
+
+1. **Start with a small task:** Ask for help on one bug, method, test case, refactoring, or design question at a time.
+1. **Ask for a plan first:** Before accepting code, ask the AI to explain the intended change and the reasoning behind it.
+1. **Work on a branch:** Keep AI-assisted changes separate from your main working version until you have reviewed them.
+1. **Review every change:** Read the diff carefully. Make sure you understand what changed, why it changed, and whether it matches the task.
+1. **Ask follow-up questions:** If any part of the output is unclear, ask the AI to explain the code, alternatives, trade-offs, or possible edge cases.
+1. **Run tests and add tests:** Run the existing tests, add relevant new tests, and check edge cases manually when needed.
+1. **Commit only what you understand:** Do not submit or merge AI-generated code that you cannot explain and maintain yourself.
+
+### C2. Treat the AI as a Collaborator, Not a Replacement
 
 Think of an AI coding assistant as a junior developer or a pair programmer. It can accelerate your work, but **you are ultimately the one in charge** of the final product.
 
@@ -88,7 +100,7 @@ AI tools are powerful, but they don't *understand* code in the way a human does.
 
 Use AI to handle repetitive tasks, generate boilerplate code, brainstorm solutions, and get you unstuck. This frees you up to focus on the more complex, architectural aspects of software development. Don't let it become a crutch that hinders your own learning and skill development.
 
-### C2. Prompt Engineering
+### C3. Prompt the AI to Support Your Learning
 
 Garbage in, garbage out. The quality of an LLM's output is directly tied to the quality of your input. For software engineering tasks, a good prompt usually gives the AI the relevant code, the expected behavior, the actual behavior, and the kind of help you want. As a student, you should also prompt the AI in ways that help you understand the reasoning behind its output, so that the interaction becomes part of your learning process.
 
@@ -110,7 +122,7 @@ Here are some prompt patterns that are useful for common student project tasks:
   * **#r#DO NOT##:** "Which design is better?"
   * **#g#DO##:** "Compare these two designs using coupling, cohesion, testability, and ease of future extension. Recommend one for a small student project and explain the trade-offs."
 
-### C3. Understand AI's Limitations
+### C4. Understand AI's Limitations
 
 Never trust AI-generated code blindly. Models can be confidently wrong, introduce subtle bugs, or generate code with security flaws.
 
