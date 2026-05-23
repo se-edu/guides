@@ -90,7 +90,7 @@ Example prompt patterns:
 
 At this level, you work with an AI agent interactively to plan, edit multiple files, run commands, observe results, and iterate toward a specific goal. The AI may do much of the mechanical work, but you supervise it closely at each step.
 
-In practice, you might ask an agent to add a small feature, review its plan, approve or reject edits, run tests through the agent, and ask follow-up questions when the output is unclear. This is similar to supervising a more knowledgeable assistant through a project task. The tools used commonly are either IDE extensions of AI coding tools or AI coding tools that works as standalone apps (CLI version or desktop version).
+In practice, you might ask an agent to add a small feature, review its plan, approve or reject edits, run tests through the agent, and ask follow-up questions when the output is unclear. This is similar to supervising a more knowledgeable assistant through a project task. Commonly used tools are either IDE extensions of AI coding tools or AI coding tools that work as standalone apps (CLI or desktop versions).
 
 This level works best when the repository gives the agent clear instructions, such as `AGENTS.md`, `CLAUDE.md`, or tool-specific project guidance. You should still have enough knowledge to perform the task yourself, because careful supervision requires understanding the goal, the code, and the risks.
 
