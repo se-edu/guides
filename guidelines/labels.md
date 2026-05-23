@@ -133,7 +133,7 @@ Label |Description
 ------|-----------
 `t-CSS` |CSS, Bootstrap
 `t-HTML` |HTML, Browsers
-`t-JS` |Javascript, JQuery
+`t-JS` |JavaScript, jQuery
 `t-JSTL` |JSTL, JSP, Servlets
 
 <!-- ------------------------------------------------------------------------------------------------------ -->
