@@ -99,7 +99,7 @@ Here are the steps to set it up for a project.
 
 ## Updating tests as the program evolves
 
-The purpose of testing as explained in the previous section is to confirm there are no <tooltip content="i.e., _unintentional_ behavior changes">_regressions_</tooltip>. However, we often update the behavior of the program intentionally e.g., enhance an existing feature. Let's look at how to update our test set up in those cases.
+The purpose of testing as explained in the previous section is to confirm there are no <tooltip content="i.e., _unintentional_ behavior changes">_regressions_</tooltip>. However, we often update the behavior of the program intentionally e.g., enhance an existing feature. Let's look at how to update our test setup in those cases.
 
 **Option 1:** This is the ideal but more tedious approach.
 1. Determine how the expected behavior _should_ change due to your update to the code.
