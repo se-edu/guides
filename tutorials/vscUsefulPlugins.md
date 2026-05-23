@@ -74,7 +74,7 @@ The sections below explain how to install PlantUML. For more tips on **using Pla
    * Search for "PlantUML"
    * Set the path to `java` (if not auto-detected):
       * **Windows** `plantuml.java: "C:\\Program Files\\Java\\jdk-11\\bin\\java.exe"` 
-      * **Linux/MacOS** `plantuml.java: "/usr/bin/java"` 
+      * **Linux/macOS** `plantuml.java: "/usr/bin/java"` 
    * (Optional) Set PlantUML Server (if not using local rendering):
 `Add plantuml.server: "https://www.plantuml.com/plantuml"`
 </div>
