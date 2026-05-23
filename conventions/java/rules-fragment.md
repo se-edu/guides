@@ -597,7 +597,7 @@ import java.util.*;
   </div>
 </div>
 
-%%{{ icon_info }} Rationale: Importing classes explicitly gives an excellent documentation value for the class at hand and makes the class easier to comprehend and maintain. Appropriate tools should be used in order to always keep the import list minimal and up to date. IDE's can be configured to do this easily.%%
+%%{{ icon_info }} Rationale: Importing classes explicitly gives an excellent documentation value for the class at hand and makes the class easier to comprehend and maintain. Appropriate tools should be used in order to always keep the import list minimal and up to date. IDEs can be configured to do this easily.%%
 
 <div tags="level--advanced">
 
