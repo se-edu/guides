@@ -51,7 +51,7 @@
    * Preferred Protocol: `HTTPS`
    * Authentication: `OAuth`
 1. Click on the `Refresh OAuth token` button.<br>
-   If a Browser Window pops up and asks you to log in to GitHub and to authorize Sourcetree accessing your GitHub account, do so.
+   If a browser window pops up and asks you to log in to GitHub and to authorize Sourcetree to access your GitHub account, do so.
 1. Now, your Sourcetree should be able to push code to a GitHub repo that you have write permission to.
 
 
