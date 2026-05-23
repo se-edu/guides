@@ -78,7 +78,7 @@ When merging branch, the aim is to keep the version history neat so that it is e
 
 * **Use a _merge commit_** if the commits are well-organized, and the branch tackles only one task. In this case the commit message of the merge commit should explain the full task.
 
-* **Use a _rebase-merge_** if the commits are well-organized and each commit is an independent task (as opposed to steps or a bigger tasks).
+* **Use a _rebase-merge_** if the commits are well-organized and each commit is an independent task (as opposed to steps or a bigger task).
 
 * **In other cases**, consider reorganizing/splitting the branch to match one of the above.
 </span>
