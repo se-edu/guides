@@ -8,4 +8,4 @@
 
 # {{ title }}
 
-CodeRabbit can review the Code in a GitHub repository. See [here](https://docs.coderabbit.ai/platforms/github-com) for more information.
+CodeRabbit can review the code in a GitHub repository. See [here](https://docs.coderabbit.ai/platforms/github-com) for more information.
