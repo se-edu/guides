@@ -161,7 +161,7 @@ plugins {
 }
 ```
 
-You can follow the links in the list above to find what tasks are provided by a plugin and how to configure it. For example, `run` is a task provided by the Application plugin, and you can set the `mainClassName` (`mainClass` in some versions) property, to indicate which class should be used as the as the entry point of the application:
+You can follow the links in the list above to find what tasks are provided by a plugin and how to configure it. For example, `run` is a task provided by the Application plugin, and you can set the `mainClassName` (`mainClass` in some versions) property to indicate which class should be used as the entry point of the application:
 
 ```groovy{heading="build.gradle"}
 application {
