@@ -116,7 +116,7 @@ The purpose of testing as explained in the previous section is to confirm there 
 ## Troubleshooting
 
 * **Problem**: The `ACTUAL.TXT` and `EXPECTED.TXT` look exactly the same but the test fails.<br>
-**Explanation**: The likely cause that the line endings are different (not visible to the naked eye) because the two files were created in two different operating systems.<br>
+**Explanation**: The likely cause is that the line endings are different (not visible to the naked eye) because the two files were created in two different operating systems.<br>
 **Solution**: You can use the `dos2unix` utility (available in git-bash and *nix operating systems) to convert a file to Unix format.
 
 --------------------------------------------------------------------------------
