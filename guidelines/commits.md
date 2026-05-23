@@ -15,7 +15,7 @@
 Commits in a branch or a PR are said to be _well-organized_ if they have the following qualities:
 
 * **Each commit contains a single logical change, and this change must stand on its own.** i.e. each commit has a single responsibility, and that responsibility must be fully carried out.<br>
-  For example, if the commit message says `Move delete() from Person class to Address class`, the commit cannot contain the addition of `delete()` to `Address` class only; it should also contain the deletion of `delete()` from the `Person` class for it to be a _complete_ implementation what is stated in the commit message.
+  For example, if the commit message says `Move delete() from Person class to Address class`, the commit cannot contain the addition of `delete()` to `Address` class only; it should also contain the deletion of `delete()` from the `Person` class for it to be a _complete_ implementation of what is stated in the commit message.
 
 * **Each commit has a _well-written_ commit message** i.e., it follows [these guidelines](../conventions/git.html).
 
