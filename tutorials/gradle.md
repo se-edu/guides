@@ -250,7 +250,7 @@ See our [JAR tutorial](jar.html) to find more about creating JAR files using Gra
 
 There is no need to run these Gradle tasks manually as they are called automatically by other relevant Gradle tasks.
 
-* **`compileJava`**: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes.
+* **`compileJava`**: Checks whether the project has the required dependencies to compile and run the main program, and downloads any missing dependencies before compiling the classes.
 * **`compileTestJava`**: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes.
 
 <!-- ==================================================================================================== -->
