@@ -184,7 +184,7 @@ C -right[hidden]- D
 </tbody>
 </table>
 
-**Another technique you can use to influence the layout is to reorder definitions.** The layout engine will attempt to order objects in the order in which they are defined. If there is no formal definition, the objects is taken to be declared upon its first usage.
+**Another technique you can use to influence the layout is to reorder definitions.** The layout engine will attempt to order objects in the order in which they are defined. If there is no formal definition, the object is taken to be declared upon its first usage.
 
 <table>
 <caption>Table: Definition ordering and outcomes</caption>
