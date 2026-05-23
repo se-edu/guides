@@ -8,6 +8,8 @@
 
 # {{ title }}
 
+This page is aimed at students who are beginning to use AI tools in a lightweight manner in coding projects. The examples and advice below are intended to help you use AI in a formative and instructive way: not simply to get the task done with minimal effort, but to understand the AI's suggestions, evaluate them critically, and improve your own software engineering skills.
+
 ## A: Tools and Resources
 
 **Resources we have created for AI-assisted coding** are given below:
@@ -84,29 +86,25 @@ Use AI to handle repetitive tasks, generate boilerplate code, brainstorm solutio
 
 ### C2. Prompt Engineering
 
-Garbage in, garbage out. The quality of an LLM's output is directly tied to the quality of your input. Crafting effective prompts is the single most important skill for working with LLMs. [This whitepaper](https://www.kaggle.com/whitepaper-prompt-engineering) by Lee Boonstra (Software Engineer Tech Lead @ Google) outlines several key techniques:
+Garbage in, garbage out. The quality of an LLM's output is directly tied to the quality of your input. For software engineering tasks, a good prompt usually gives the AI the relevant code, the expected behavior, the actual behavior, and the kind of help you want. As a student, you should also prompt the AI in ways that help you understand the reasoning behind its output, so that the interaction becomes part of your learning process.
 
-* **Provide Examples (One-shot & Few-shot Prompting):** This is described as "the most important best practice" (p. 54). Giving the model examples of what you want helps it understand your desired output structure, style, and pattern.
-  * **#r#DO NOT##:** "Parse these contacts to JSON."
-  * **#g#DO##:** "Parse these contacts to JSON in the following format:<br>
-    Example Input: `Name: John Doe, Contact Number: 87654321, Year of Study: 2`<br>
-    Expected Output:
-    ```json
-    {
-        "name": "John Doe",
-        "contact_number": 87654321,
-        "year_of_study": 2
-    }
-    ```
-* **Prompt with Simplicity and Clarity:** Your prompts should be concise and easy to understand. A good rule of thumb is: if the prompt is confusing to you, it will be confusing to the model.
-  * **#r#DO NOT##:** "I'm building a user registration system for my app and I'm stuck. I need to check if the email address a user provides is valid, but I don't know the rules for a valid email. Can you help me write some Java code for this?"
-  * **#g#DO##:** "Provide a Java method that uses regex to validate an email address format. The method should accept a String and return a boolean."
-* **Be Specific About the Output:** The more specific you are, the better the result. Instead of a generic request, provide details about the desired format, style, and content.
-  * **#r#DO NOT##:** "Generate a Java class for a car."
-  * **#g#DO##:** "Generate a public Java class named Car. The class should include private string fields for make, model, and a private int field for year. Include a constructor to initialize all fields and public getter methods for each field."
-* **Use Instructions Over Constraints:** Tell the model what to *do* rather than what *not* to do. Positive instructions are generally more effective and less ambiguous.
-  * **#r#DO NOT##:** "Write a Java method that filters a list of integers to get only the even numbers. Do not use a for-loop or an if-statement."
-  * **#g#DO##:** "Write a Java method that filters a list of integers to get only the even numbers. Use the Java Stream API."
+Here are some prompt patterns that are useful for common student project tasks:
+
+* **Debug an error:** Give the error message, the command you ran, and the relevant code.
+  * **#r#DO NOT##:** "My program crashed. Fix it."
+  * **#g#DO##:** "I ran `./gradlew test` and got the stack trace below. Explain the most likely cause, point to the relevant line, and suggest a minimal fix. Do not rewrite unrelated code."
+* **Generate tests:** Describe the method's contract and ask for edge cases before asking for code.
+  * **#r#DO NOT##:** "Write tests for this class."
+  * **#g#DO##:** "Given this `Parser#parse(String input)` method and its JavaDoc, list important equivalence partitions and boundary cases. Then generate JUnit 5 tests for the three highest-risk cases."
+* **Review a change:** Ask the AI to look for specific software engineering concerns.
+  * **#r#DO NOT##:** "Is this pull request good?"
+  * **#g#DO##:** "Review this diff for regressions, missing tests, weak error handling, and violations of the existing coding style. Give findings with file and line references."
+* **Refactor safely:** State what behavior must stay unchanged.
+  * **#r#DO NOT##:** "Make this code cleaner."
+  * **#g#DO##:** "Suggest a refactoring that reduces duplication in these two methods without changing the public API or observable behavior. Explain how I can verify the refactor with tests."
+* **Compare design options:** Ask for trade-offs, not just a single answer.
+  * **#r#DO NOT##:** "Which design is better?"
+  * **#g#DO##:** "Compare these two designs using coupling, cohesion, testability, and ease of future extension. Recommend one for a small student project and explain the trade-offs."
 
 ### C3. Understand AI's Limitations
 
