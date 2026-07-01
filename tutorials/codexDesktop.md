@@ -19,7 +19,7 @@ For more details, refer to the official [Codex app guide](https://developers.ope
 * **Download Codex**
   * Go to the official [Codex app page](https://developers.openai.com/codex/app).
   * Download the installer for your operating system.
-  <pic src="images/codex/codexDownload.png" width="600" />
+    <pic src="images/codex/codexDownload.png" width="600" />
   * After downloading, open the installer and follow the installation instructions for your operating system.
 
 ## Signing in to Codex
@@ -41,7 +41,6 @@ For more details, refer to the official [Codex app guide](https://developers.ope
 
 * **Open the project picker**
   * In the Codex app, start from the empty workspace screen and click **Choose project**.
-    <pic src="images/codex/codexStartScreen.png" width="900" />
   * Choose **+ New project**, select **Use an existing folder** to open a project that already exists on your computer.
     <pic src="images/codex/codexNewProjectMenu.png" width="850" />
   * Select the folder that contains your project.
@@ -54,7 +53,7 @@ For more details, refer to the official [Codex app guide](https://developers.ope
 ### Basic Usage Examples with AB3
 
 * **Use Codex for small, reviewable tasks**
-  * Start with a small change that you can easily verify. 
+  * Start with a small change that you can easily verify.
   * For example, you can ask something like `add green borders for each contact card`
   * Codex will summarize the files it changed. Click **Review** to inspect the diff before accepting the change.
     <pic src="images/codex/codexAb3SmallCssChange.png" width="850" />
@@ -62,7 +61,7 @@ For more details, refer to the official [Codex app guide](https://developers.ope
     <pic src="images/codex/codexAb3ReviewDiff.png" width="900" />
     <box type="tip" seamless>
       Avoid asking Codex to implement a large feature all at once as it may lead to hallucinations.
-      </box>
+    </box>
 
 ### Where to Go Next
 
@@ -74,3 +73,7 @@ After you are comfortable with the basic workflow, feel free to explore the Code
 * **[Review](https://developers.openai.com/codex/app/review)**: Learn how to inspect code changes before accepting or committing them.
 * **[Worktrees](https://developers.openai.com/codex/app/worktrees)**: Learn how to try changes in an isolated Git worktree instead of your main project folder.
 * **[Automations](https://developers.openai.com/codex/app/automations)**: Learn how Codex can run recurring checks or follow-up tasks.
+
+----------
+
+**Contributors**: Hwang Jihun ([@hwangjihun](https://github.com/hwangjihun))
