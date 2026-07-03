@@ -15,8 +15,7 @@
 
 1. Download Sourcetree from [their website](https://www.sourcetreeapp.com/) and run it.
 1. When prompted to `Login to your Atlassian account`, you can try to skip that step. If the installer doesn't allow skipping, you can create an Atlassian account as directed.
-1. In the next step, you will be prompted to `Connect an Account`. ==Choose to skip== (we'll be connecting Sourcetree to GitHub later).
-1. In the `Pick tools to download and install`, you will be asked to choose whether to install Git and <tooltip content="another revision control software similar to Git">Mercurial</tooltip>. Unselect Mercurial. Assuming you have installed Git already, when prompted, choose to use the system Git instead of the Git that comes with Sourcetree.
+1. In the `Pick tools to download and install`, you will be asked to choose whether to install Git and <tooltip content="another revision control software similar to Git">Mercurial</tooltip>. Unselect Mercurial. If prompted, choose to use the system Git (assuming you have installed Git already) instead of the Git that comes with Sourcetree.
 1. If prompted to set up an SSL key, click `No` unless you are already familiar with SSL key usage.
 1. Next, connect Sourcetree to your GitHub account as explained below.
 
@@ -29,7 +28,7 @@
 **Option 1:** This is the recommended option, as it caters for both basic and advanced usage.
 
 1. Create a _classic_ (not fine-grained) GitHub Personal Access Token (PAT), by following the instructions [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic).<br>
-   When asked to select the scope of the PAT, you can choose the `repo` option and the `workflow` option.
+   When asked to select the scope of the PAT, you can choose the `repo`,`workflow`, and `user` options.
 1. In the Sourcetree, choose `Tools` -> `Options` -> `Authentication`
 1. If any GitHub authentication methods are shown in that dialog, delete them.
 1. Click on `Add`, to add an authentication method.
