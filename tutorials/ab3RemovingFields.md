@@ -39,7 +39,7 @@ Choose to `View Usages` and you should be presented with a list of `Safe Delete 
 
 <pic src="images/remove/SafeDeleteConflicts.png" />
 
-Remove usages of `Address` by performing `Safe Delete`s on each entry i.e., double-click on the entry (which takes you to the code in concern, right-click on that entity, and choose `Refactor` -> `Safe delete` as before). You will need to exercise discretion when removing usages of `Address`. Functions like `ParserUtil#parseAddress()` can be safely removed but its usages must be removed as well. Other usages like in `EditPersonDescriptor` may require more careful inspection.
+Remove usages of `Address` by performing `Safe Delete`s on each entry, i.e., double-click the entry (which takes you to the relevant code), right-click that entity, and choose `Refactor` -> `Safe delete` as before. You will need to exercise discretion when removing usages of `Address`. Functions like `ParserUtil#parseAddress()` can be safely removed but its usages must be removed as well. Other usages like in `EditPersonDescriptor` may require more careful inspection.
 
 Let’s try removing references to `Address` in `EditPersonDescriptor`.
 

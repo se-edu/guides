@@ -99,14 +99,14 @@ To apply the format settings made in the above sections to a file, right click w
 To make formatting more convenient, you can enable formatting every time you save the file, and also automatically format pasted code.
 
 1. Open Settings by going to `File` → `Preferences` → `Settings` (Windows), or `Code` → `Preferences` → `Settings` (macOS)
-1. Go to `Text Editor` → `Formatting` and enable `Format On Paste` and/or `Format On Save` to automatically format code that is pasted, and to format the document everytime you save respectively (see screenshot below).
+1. Go to `Text Editor` → `Formatting` and enable `Format On Paste` and/or `Format On Save` to automatically format code that is pasted, and to format the document every time you save respectively (see screenshot below).
 
     ![](images/vscode/settings-format-on-save-on-paste.png)
 
 
 ## More advanced settings
 
-The tweaks given above are limited to functionality provided by VSCode’s Editor. More configurations can be done through the extension’s formatter, and can be found [here](vscCodeStyleAdvanced.md).
+The tweaks given above are limited to functionality provided by VS Code’s editor. More configurations can be done through the extension’s formatter, and can be found [here](vscCodeStyleAdvanced.md).
 
 ## More useful settings
 

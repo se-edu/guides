@@ -192,7 +192,7 @@ Note: you can use `CommandTestUtil.java` to include constant test values for gre
 
 ```java
     public static final String VALID_REMARK_AMY = "Like skiing.";
-    public static final String VALID_REMARK_BOB = "Favourite pastime: Eating";
+    public static final String VALID_REMARK_BOB = "Favorite pastime: Eating";
 ```
 
 Additionally, we can add tests for the `equals` method for various inputs, like objects of the different values or types.
@@ -439,10 +439,12 @@ You must delete AddressBook’s storage file located at `/data/addressbook.json`
 ```java
     public static final Person ALICE = new PersonBuilder()
         .withName("Alice Pauline")
-        .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
+        .withAddress("123, Jurong West Ave 6, #08-111")
+        .withEmail("alice@example.com")
         .withPhone("94351253")
-        .withPhone("94351253").withRemark("She likes aardvarks.")
-        .withTags("friends").build();
+        .withRemark("She likes aardvarks.")
+        .withTags("friends")
+        .build();
 ```
 
 </panel>

@@ -16,15 +16,15 @@ From the mockup above, can you identify the controls that we will need to use?  
 
 Mockup | Control
 ------ | :---: |
-![ImageView](images/javafx/MockupImageView.png) | ImageView
-![Label](images/javafx/MockupLabel.png) | Label
-![Button](images/javafx/MockupButton.png) | Button
-![TextField](images/javafx/MockupTextField.png) | TextField
+<img src="images/javafx/MockupImageView.png" />| ImageView
+<img src="images/javafx/MockupLabel.png" />| Label
+<img src="images/javafx/MockupButton.png" />| Button
+<img src="images/javafx/MockupTextField.png" />| TextField
 <img src="images/javafx/MockupScrollPane.png" width="300" /> | ScrollPane | ScrollPane
 
 <box type="info" seamless>
 
- You may be wondering why a `ScrollPane` is a `Control` and not a `Pane`, as its name suggests. `ScrollPane` extends the `Control` class in JavaFX because it represents a UI "widget" that the user directly interacts with (such as `Label`, `Button`, and `TextField`), whereas a `Pane` is a mere container that holds other components. Of course, a `ScrollPane` has the functionality of a container, allowing it to show a <tooltip content="gives a rectangular view into a larger content which exceeds the available screen/stage area">viewport</tooltip> of its content. `ScrollPane` contains one node, whereas a `Pane` can contain multiple nodes.
+ You may be wondering why a `ScrollPane` is a `Control` and not a `Pane`, as its name suggests. `ScrollPane` extends the `Control` class in JavaFX because it represents a UI "widget" that the user directly interacts with (such as `Label`, `Button`, and `TextField`), whereas a `Pane` is a mere container that holds other components. Of course, a `ScrollPane` has the functionality of a container, allowing it to show a <tooltip content="provides a rectangular view into content that exceeds the available screen or stage area">viewport</tooltip> of its content. `ScrollPane` contains one node, whereas a `Pane` can contain multiple nodes.
 </box>
 
 ## Designing the Layout
@@ -42,7 +42,7 @@ But how do we get the exact layout we want in the UI? JavaFX provides that funct
 
 <box type="tip" seamless>
 
-A comprehensive list of layouts and how they behave is available here from the [official documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html).
+See the [official documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html) for a comprehensive list of layouts and how they behave.
 </box>
 
 One way to obtain the layout in the mockup is as follows:
@@ -161,8 +161,8 @@ For this tutorial, we have two images `DaUser.png` and `DaDuke.png` to represent
 
 Image|Filename
 ---|---
-![DaDuke](images/javafx/DaUser.png) | `DaUser.png`
-![DaUser](images/javafx/DaDuke.png) | `DaDuke.png`
+<img src="images/javafx/DaUser.png" /> | `DaUser.png`
+<img src="images/javafx/DaDuke.png" /> | `DaDuke.png`
 
 Then, create a sample `DialogBox` with a simple message.
 
@@ -201,7 +201,7 @@ That is not what we were expecting, as the elements are not in the layout we wan
 
 ## Styling the Controls
 
-Almost every JavaFX object offer properties that you can set to customize its look and feel. For example, the `Stage` allows you to set its preferred size and title. Again, refer to the official [JavaFX documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html) for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:
+Almost every JavaFX object offers properties that you can set to customize its look and feel. For example, the `Stage` allows you to set its preferred size and title. Again, refer to the official [JavaFX documentation](https://openjfx.io/javadoc/17/javafx.graphics/javafx/scene/layout/package-summary.html) for a comprehensive list of properties that you can modify. Here’s how you can get the application to look like the mockup:
 
 Add the following code to the bottom of the `start` method. You'll have to add `import javafx.scene.layout.Region;` to the imports too:
 

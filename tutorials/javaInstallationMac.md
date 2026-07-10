@@ -52,7 +52,7 @@ This guide explains how to install the {{ jdk_popover}} (specifically, **==[Java
    ```
    <box type="tip" seamless>
 
-   To find where the currently-active JDK is located, you can run the `which java` command (it is typically somewhere inside `~/.sdkman/candidates/java/` folder).
+   To find where the currently active JDK is located, you can run the `which java` command (it is typically somewhere inside the `~/.sdkman/candidates/java/` folder).
    ```bash
    which java
 

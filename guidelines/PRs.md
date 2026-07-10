@@ -12,9 +12,9 @@
 ## Selecting what to work on
 
 * **If submitting a PR for an existing issue,**
-  * It's best for first time contributors to start by fixing an issue specifically labelled for first timers e.g., `d.FirstTimers`, `good first issue`.
+  * It's best for first-time contributors to start by fixing an issue specifically labeled for first-timers e.g., `d.FirstTimers`, `good first issue`.
   * It's best to post in the issue to ask if it is OK for you to submit a PR for that issue and wait for approval.
-  * Check the issue discussion thread to see if there are <tooltip content="Some activity during last seven days">_active_</tooltip> PRs for that issue. You can offer to PR for an issue that has _stalled_ PRs i.e., there is a PRs submitted for that issue but the PR author seems to have stopped working on it.
+  * Check the issue discussion thread to see if there are <tooltip content="Some activity during the last seven days">_active_</tooltip> PRs for that issue. You can offer to submit a PR for an issue that has <tooltip content="i.e., a PR has been submitted for that issue, but the PR author seems to have stopped working on it">_stalled_ PRs</tooltip>.
 * **If the issue list does not contain what you want to work on,** post an issue first and wait for it to be acknowledged. Otherwise you could end up fixing something that does not need fixing.
 
 <!-- ==================================================================================================== -->
@@ -26,7 +26,7 @@
 **General rule: try to keep PRs as small as possible** because smaller PRs get merged faster.
 
 **A PR should contain a _single_, _standalone_, and _complete_ change to the code base**, unless in exceptional cases where the PR is part of a bigger change.
-* _Single_ means a PR **should not try to fix more than one fix**, unless there are multiple things that _must_ be done together or not at all.
+* _Single_ means a PR **should not try to fix more than one thing**, unless there are multiple things that _must_ be done together or not at all.
 
   <box type="wrong" icon=":fas-exclamation-circle:" seamless>
 
@@ -71,7 +71,7 @@ When submitting PRs, follow [the forking workflow](https://se-education.org/se-b
 
 {{ step(0.2, '') }} **Clone the fork to your computer.**
 
-{{ step(0.3, '') }} **Set up the dev environment as described in the project docs.** Confirm the set up is correct.
+{{ step(0.3, '') }} **Set up the dev environment as described in the project docs.** Confirm the setup is correct.
 </div>
 
 {{ step(1) }} **Create a branch from the `master` branch**, following the naming convention given.

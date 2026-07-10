@@ -14,9 +14,9 @@ Sections below explain how to use that technique in a small project.
 
 ## Setting up
 
-Given below are the steps to set it up for a project.
+Here are the steps to set it up for a project.
 
-1. Create a folder to hold the relevant files e.g., `[project root]\text-ui-test`
+1. Create a folder to hold the relevant files e.g., `[project root]/text-ui-test`
 1. Add a `runtest.bat` (if you are on Windows) or `runtest.sh` (if you are on a *nix OS) into the folder, containing the script below.<br>
 
    <tabs>
@@ -99,24 +99,24 @@ Given below are the steps to set it up for a project.
 
 ## Updating tests as the program evolves
 
-The purpose of testing as explained in the previous section is to confirm there are no <tooltip content="i.e., _unintentional_ behavior changes">_regressions_</tooltip>. However, we often update the behavior of the program intentionally e.g., enhance an existing feature. Let's look at how to update our test set up in those cases.
+The purpose of testing as explained in the previous section is to confirm there are no <tooltip content="i.e., _unintentional_ behavior changes">_regressions_</tooltip>. However, we often update the behavior of the program intentionally e.g., enhance an existing feature. Let's look at how to update our test setup in those cases.
 
 **Option 1:** This is the ideal but more tedious approach.
 1. Determine how the expected behavior _should_ change due to your update to the code.
 1. Update the `EXPECTED.TXT` file accordingly.
-1. Run the test to confirm the actual behavior is same as the _updated_ expected behavior.
+1. Run the test to confirm the actual behavior is the same as the _updated_ expected behavior.
 
 **Option 2:** This is a more practical shortcut.
 1. Run the test as per normal after updating the code. The test will fail because the new program behavior is different from the one given in the `EXPECTED.TXT`.
 1. Use a diff tool to compare the `ACTUAL.TXT` against the `EXPECTED.TXT`.<br>
-   {{ icon_tip }} [Intellij IDEA can compare two files](https://www.jetbrains.com/help/idea/comparing-files-and-folders.html). There are stand-alone tools for comparing files too e.g., WinDiff, WinMerge
+   {{ icon_tip }} [Intellij IDEA can compare two files](https://www.jetbrains.com/help/idea/comparing-files-and-folders.html). There are stand-alone tools for comparing files too, e.g., WinDiff and WinMerge.
 1. Confirm the differences indicate the behavior has changed as you intended. If the differences are not as intended, your code is buggy; fix the code and repeat from step 1.
 1. Copy over the content of the `ACTUAL.TXT` to `EXPECTED.TXT` i.e., we accept that the current actual behavior should be the new _expected_ behavior. Rerun the test to confirm that it passes this time.
 
 ## Troubleshooting
 
-* **Problem**: The `ACTUAL.TXT` and `EXPECTED.TXT` looks exactly the same but the test fails.<br>
-**Explanation**: The likely cause that the line endings are different (not visible to the naked eye) because the two files were created in two different operating systems.<br>
+* **Problem**: The `ACTUAL.TXT` and `EXPECTED.TXT` look exactly the same but the test fails.<br>
+**Explanation**: The likely cause is that the line endings are different (not visible to the naked eye) because the two files were created in two different operating systems.<br>
 **Solution**: You can use the `dos2unix` utility (available in git-bash and *nix operating systems) to convert a file to Unix format.
 
 --------------------------------------------------------------------------------

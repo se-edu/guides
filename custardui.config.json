@@ -1,0 +1,13 @@
+{
+  "config": {
+    "placeholders": [
+      { "name": "username", "settingsLabel": "Your GitHub Username", "settingsHint": "e.g., JohnDoe" }
+    ]
+  },
+  "storageKey": "se-edu-guides",
+  "baseUrl": "/guides",
+  "settings": {
+    "enabled": false
+  },
+  "showUrl": false
+}

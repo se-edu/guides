@@ -30,7 +30,7 @@ While it is common to enforce a maximum line length for code written in some lan
 
 <pic src="images/intellij/softWraps-before.png"></pic>
 
-Luckily, **you can use the 'soft wrap' feature of Intellij to get the editor window to put <tooltip content="they are called 'soft' because the line break is for displaying purposes only -- it will not appear in the saved code">_soft_</tooltip> line breaks in the content so that horizontal scrolling is no longer required**. Here is how the same code from the above example looks after enabling the soft-wraps feature (notice how the whole text is visible now, due to the soft line breaks added by the editor):
+Luckily, **you can use the 'soft wrap' feature of IntelliJ to make the editor wrap content using <tooltip content="they are called 'soft' because the line breaks are for display purposes only; they will not appear in the saved code">_soft_</tooltip> line breaks, so horizontal scrolling is no longer required**. Here is how the same code from the above example looks after enabling the soft-wraps feature (notice how the whole text is visible now, due to the soft line breaks added by the editor):
 
 <pic src="images/intellij/softWraps-after.png"></pic>
 
@@ -42,10 +42,27 @@ Read [this](https://www.jetbrains.com/idea/guide/tips/enable-soft-wrap/) to find
 
 When working with a large repository, it can become quite tricky to keep track of files and where they are located. For example, you may be jumping across a few files while searching for a particular method or class and when you finally reach that class, you do not know which folder/subfolder it is located under! IntelliJ provides a setting that causes opened files to automatically show up in the Project tool window (on the left side of the IDE).
 
-Simply go to the Project tool window, select `options` (the three dots), select `behaviour`, then click `Always Select Opened File`.<br>
+Simply go to the Project tool window, select `options` (the three dots), select `behavior`, then click `Always Select Opened File`.<br>
 
 <pic src="images/intellij/alwaysSelectOpenedFile.png"></pic>
 
 Now, whenever you select a file (e.g. by clicking on a method), the file will appear selected in the Project tool window, allowing you to quickly locate the file.<br>
 
 <pic src="images/intellij/selectedFileExample.png"></pic>
+
+<!-- ==================================================================================================== -->
+<div id="setting-env-variables">
+
+## Setting an environment variable
+
+To set an environment variables for a specific run configuration inside a project:
+
+1. Open your project in IntelliJ IDEA.
+1. Go to: `Run` → `Edit Configurations...`
+1. Select the run configuration you want (or create a new one using the `+` button).
+1. Locate the `Environment variables:` field.
+1. Add your variable by typing into the field `KEY_NAME=value`, separated by `;` if there are multiple variables.<br>
+   e.g., `DEBUG=0;LLM_API_KEY=abcdef12142`
+1. Click `OK`.
+
+</div>

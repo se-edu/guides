@@ -59,7 +59,7 @@ After executing the command, you will see a dropdown of VS Code walkthroughs. Yo
 
 ![VS Code Command Palette: Walkthrough Dropdown](images/vscodeJavaSetup/VSCodeWalkthroughDropdown.png)
 
-You can also refer to the [official VS Code Getting Started guide](https://code.visualstudio.com/docs/getstarted/getting-started) for a comprehensive tutorial.
+You can also see the [official VS Code Getting Started guide](https://code.visualstudio.com/docs/getstarted/getting-started) for a fuller tutorial.
 </box>
 
 ## Install the Extension Pack for Java

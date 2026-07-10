@@ -17,7 +17,7 @@ Reviewing PRs is not just about the code or the tools, **the way you phrase your
 
 ## Best practices for reviewers
 
-* **Add specific comments at relevant places of the code**, rather than give one overall comment for the entire PR.
+* **Add specific comments at relevant places of the code**, rather than giving one overall comment for the entire PR.
   * It is typical for the comment to be added right below the code line it refers to.<br>
     It is possible to [mark multiple lines](https://twitter.com/natfriedman/status/1179097330097643521) as linked to the comment too.
   * You can use Markdown (specifically, [GitHub-Flavored Markdown](https://guides.github.com/features/mastering-markdown/)) in your comments.
@@ -33,8 +33,8 @@ Reviewing PRs is not just about the code or the tools, **the way you phrase your
 * **Feel free to compliment the author when appropriate** instead of focusing on negative things only.<br>
   %%e.g., _hey, I like how clean this bit of code is_ :+1:%%
 * **Say please, but don't say _please_**. Beware of overusing 'please' as it can be interpreted as a condescending tone. For example, someone can interpret `Please use better variable names` as `Please for the love of God can you use better variable names?`. Instead, you can say `Perhaps a more intuitive variable name here?` which doesn't run any risk of misinterpretation.
-* **No need to repeat the same comment _many_ times**. It's not the job of the reviewer to clean up after a sloppy author. If you notice the same problem in multiple places, after commenting an a few of them, you can simply say `... I noticed the same issue in several other places too`.
-* **Remember the _other_ readers**. PR comments can be read by people other than the reviewer and the author e.g., future programmers. Use regular English and avoid slang, colloquialisms, cultural references etc.
+* **No need to repeat the same comment _many_ times**. It's not the job of the reviewer to clean up after a sloppy author. If you notice the same problem in multiple places, after commenting on a few of them, you can simply say `... I noticed the same issue in several other places too`.
+* **Remember the _other_ readers**. PR comments can be read by people other than the reviewer and the author e.g., future programmers. Use regular English and avoid slang, colloquialisms, cultural references, etc.
 
 ****Further readings****:
 * Read the blog post [**10 tips for reviewing code you don’t like**](https://developers.redhat.com/blog/2019/07/08/10-tips-for-reviewing-code-you-dont-like/) - by David Lloyd (a Red Hat developer).

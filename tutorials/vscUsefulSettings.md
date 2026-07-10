@@ -42,7 +42,7 @@ You can also select other options based on your preference.
 
 Word Wrap Options
 
-| Value | Behaviour |
+| Value | Behavior |
 | --- | --- |
 |"off" | No wrapping. Lines extend horizontally beyond the viewport. You'll need to scroll sideways. |
 | "on" | Wrap at the viewport width. Long lines automatically wrap based on the visible editor area. |
@@ -97,7 +97,7 @@ To enable assertions:
 
 Rename Symbol is a built-in feature by VS Code which works with extensions to let users safely change the name of a variable, method, class, or any other symbol across your entire project. When you rename a symbol, all references to it are updated automatically, reducing the chance of errors.
 
-To rename a symbol, use the `F2` shortcut or right click on the symbol and select `Reload Symbol`.
+To rename a symbol, use the `F2` shortcut or right-click the symbol and select `Rename Symbol`.
 
 ![](images/vscode/rename-symbol.png)
 

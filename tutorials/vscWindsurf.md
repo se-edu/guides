@@ -18,7 +18,7 @@
 * **Install the [Extension Pack for Windsurf](https://marketplace.visualstudio.com/items?itemName=Codeium.codeium)** {{ step_numbers }}
   * Click on the extension link above.
   * Click the `Install` button on the page that opens.
-  * It should prompt you with `Open Visual Studio Code?` and click `Open Visual Studio Code`.
+  * When prompted with `Open Visual Studio Code?`, click `Open Visual Studio Code`.
   * You will be redirected to the extension page in Visual Studio Code.
   * Click on `Install` to install the extension.
 * **Sign in to Windsurf**
@@ -26,7 +26,7 @@
     <pic src="images/vscWindsurf/login.png" width="400" />
   * A browser pop-up will appear asking you to sign in. Click `Allow` → `Open`.
   * Log in to your Windsurf account if needed.
-  * It should prompt you with `Open Visual Studio Code?` and click `Open Visual Studio Code`.
+  * When prompted with `Open Visual Studio Code?`, click `Open Visual Studio Code`.
   * You will be redirected to VS Code. When asked "Allow 'Windsurf Plugin (formerly Codeium): AI Coding Autocomplete and Chat for Python, JavaScript, TypeScript, and more' extension to open this URI?", click `Open`.
   * If you see the pop-up "Welcome back to Windsurf, ...", you have successfully logged in.
   

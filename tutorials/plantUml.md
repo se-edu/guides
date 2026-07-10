@@ -34,7 +34,7 @@
 
 ### Maintaining consistency in formatting
 
-It is highly recommended to consistently color your UML diagrams as an visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.
+It is highly recommended to consistently color your UML diagrams as a visual aid. You can achieve this by creating a dictionary of colors and import it like CSS.
 
 For example, you can create a `Style.puml` with the contents:
 
@@ -184,7 +184,7 @@ C -right[hidden]- D
 </tbody>
 </table>
 
-**Another technique you can use to influence the layout is to reorder definitions.** The layout engine will attempt to order objects in the order in which they are defined. If there is no formal definition, the objects is taken to be declared upon its first usage.
+**Another technique you can use to influence the layout is to reorder definitions.** The layout engine will attempt to order objects in the order in which they are defined. If there is no formal definition, the object is taken to be declared upon its first usage.
 
 <table>
 <caption>Table: Definition ordering and outcomes</caption>
@@ -258,7 +258,7 @@ Explicitly define all symbols to avoid any potential layout mishaps.
 
 ### Using reference frames
 
-Reference frames in PlantUML sequence diagrams allow you to **group and reuse sequences** of interactions, which helps improve readability and reduce repetition in complex scenarios. By encapsulating sequences into reference frames, you can also **reduce complexity**, making it easier to manage and understand the overall flow of interactions within your diagrams.
+Reference frames in PlantUML sequence diagrams let you **group and reuse sequences** of interactions, improving readability and reducing repetition in complex scenarios.
 
 Refer to the following example:
 ```

@@ -10,7 +10,7 @@
 
 While the Visual Studio Code Editor has configurable general settings for indent size, trailing whitespaces, and more, Visual Studio Code does not come with a built-in formatter for all languages. Instead, it relies on language-specific extensions to provide formatting functionality.
 
-For this tutorial, we will be using the Eclipse Java Formatter. This is included in the Red Hat Java Language Support extension, which you should already have installed if you followed [VS Code - Preparing for Java Projects Tutorial](vscPreparingForJava.md) tutorial.
+For this tutorial, we will use the Eclipse Java Formatter. It is included in the Red Hat Java Language Support extension, which you should already have installed if you followed the [VS Code - Preparing for Java Projects](vscPreparingForJava.md) tutorial.
 
 ## Set up Eclipse Java Formatter
 
@@ -154,7 +154,7 @@ To apply the format settings made in the above sections to a file, right click w
 To make formatting more convenient, you can enable formatting every time you save the file, and also automatically format pasted code.
 
 1. Open Settings by going to `File` → `Preferences` → `Settings` (Windows), or `Code` → `Preferences` → `Settings` (macOS)
-1. Go to `Text Editor` → `Formatting` and enable `Format On Paste` and/or `Format On Save` to automatically format code that is pasted, and to format the document everytime you save respectively (see screenshot below).
+1. Go to `Text Editor` → `Formatting` and enable `Format On Paste` and/or `Format On Save` to automatically format code that is pasted, and to format the document every time you save respectively (see screenshot below).
 
     ![](images/vscode/settings-format-on-save-on-paste.png)
 

@@ -52,7 +52,7 @@ Rationale: Duplicating issue title in PR title is for easy tracing between PRs a
 
 * **Follow <tooltip content="when you submit a PR, GitHub will present you with some boilerplate content to tell you what details to include">the PR template</tooltip>** ([example](https://github.com/TEAMMATES/teammates/edit/master/.github/PULL_REQUEST_TEMPLATE.md)), if any.
 
-* **Use the [`Fixes` keyword annotations](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue) in the PR description** so that the related issue can auto-closed when the PR is merged.
+* **Use the [`Fixes` keyword annotations](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue) in the PR description** so that the related issue can be automatically closed when the PR is merged.
   e.g., `Fixes #1234`<br>
  If the PR is a partial fix, use `Fixes part of #1234`.
 

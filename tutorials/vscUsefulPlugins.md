@@ -66,7 +66,7 @@ The sections below explain how to install PlantUML. For more tips on **using Pla
 
 1. Install Graphviz (for best compatibility to render diagrams)
    * **Windows:** download from [Graphviz](https://graphviz.org/download/) and add it to `PATH`
-   * **MacOS:** `brew install graphviz`
+   * **macOS:** `brew install graphviz`
    * **Linux:** `sudo apt install graphviz`
 
 2. Configure PlantUML in VS Code
@@ -74,7 +74,7 @@ The sections below explain how to install PlantUML. For more tips on **using Pla
    * Search for "PlantUML"
    * Set the path to `java` (if not auto-detected):
       * **Windows** `plantuml.java: "C:\\Program Files\\Java\\jdk-11\\bin\\java.exe"` 
-      * **Linux/MacOS** `plantuml.java: "/usr/bin/java"` 
+      * **Linux/macOS** `plantuml.java: "/usr/bin/java"` 
    * (Optional) Set PlantUML Server (if not using local rendering):
 `Add plantuml.server: "https://www.plantuml.com/plantuml"`
 </div>

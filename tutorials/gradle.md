@@ -23,9 +23,9 @@ You use a _build file_ (named `build.gradle`) to describe how Gradle should beha
 1. **Tasks** are reusable blocks of logic. For example, the task `clean` simply deletes the project build directory.
 Tasks can be composed of, or dependent on, other tasks.
 
-1. **Properties** change the behavior of tasks. For instance, when using the `application` plugin, we should use the `mainClassName` (or `mainClass`) property to tell Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much to you need to configure if you follow the recommended directory structure.
+1. **Properties** change the behavior of tasks. For instance, when using the `application` plugin, we should use the `mainClassName` (or `mainClass`) property to tell Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much you need to configure if you follow the recommended directory structure.
 
-**Even if you are not using Intellij, ==a quick watch of the following video is strongly recommended==** before proceeding with the rest of this tutorial, if you are new to Gradle. The video will help you grasp how Gradle fits into the big picture of a project, and how it looks like to be using it.
+**Even if you are not using Intellij, ==a quick watch of the following video is strongly recommended==** before proceeding with the rest of this tutorial, if you are new to Gradle. The video will help you grasp how Gradle fits into the big picture of a project, and what it looks like to use it.
 
 <panel peek no-close no-switch>
 <div slot="header"><md><span class="text-danger">:fab-youtube:</span> VIDEO: Working with Gradle</md></div>
@@ -53,6 +53,12 @@ Given below are three scenarios of adding the Gradle wrapper to a project. Choos
 <include src="intellijImportGradleProject.md#importing-gradle-project" />
 
 </tab>
+<tab header="Using VS Code">
+
+You can refer to the guide <a href="vscImportingGradleProject.md" target="_blank">_VS Code - Importing a Gradle project_</a>.
+
+
+</tab>
 <tab header="Not using an IDE">
 
 Run the `java -version` command in the same terminal you use for running Gradle commands, to ensure you are using the intended Java version for Gradle.
@@ -71,8 +77,14 @@ First, add the Gradle wrapper files to the project. e.g., if they are in a separ
 
 1. Close the IDEA project if it is open.
 1. Delete the `.idea` folder.<br>
-   {{ icon_info }} Note that some operating systems hides folders/files starting with `.` by default. If you can't see the `.idea` folder, you might need to configure the OS to 'un-hide' those files/folders.
+   {{ icon_info }} Note that some operating systems hide folders/files starting with `.` by default. If you can't see the `.idea` folder, you might need to configure the OS to 'un-hide' those files/folders.
 1. Open/import the project again, as explained in scenario 1 above.
+
+</tab>
+<tab header="Using VS Code">
+
+You can refer to the guide <a href="vscImportingGradleProject.md" target="_blank">_VS Code - Importing a Gradle project_</a>.
+
 
 </tab>
 <tab header="Not using an IDE">
@@ -149,7 +161,7 @@ plugins {
 }
 ```
 
-You can follow the links in the list above to find what tasks are provided by a plugin and how to configure it. For example, `run` is a task provided by the Application plugin, and you can set the `mainClassName` (`mainClass` in some versions) property, to indicate which class should be used as the as the entry point of the application:
+You can follow the links in the list above to find what tasks are provided by a plugin and how to configure it. For example, `run` is a task provided by the Application plugin, and you can set the `mainClassName` (`mainClass` in some versions) property to indicate which class should be used as the entry point of the application:
 
 ```groovy{heading="build.gradle"}
 application {
@@ -178,7 +190,7 @@ repositories {
 
 * if you are using an IDE: Use the IDE UI to reload dependencies based on the updated file. For example, if using Intellij  IDEA, you can click the <img src="images/gradle/RefreshGradleIcon.png" /> icon in the Gradle tool window to reload the file.<br>
   For good measure, you can restart the IDE too.
-* if not using an IDE: Run `.\gradlew clean build` to rebuild everything based on the updated file.
+* if not using an IDE: Run `./gradlew clean build` to rebuild everything based on the updated file.
 </box>
 <!-- ==================================================================================================== -->
 
@@ -196,12 +208,12 @@ Run the **`run`** task to launch the main class of the application.<br>
 
 ### Cleaning the project
 
-Run the **`clean`** to delete the files created during the previous build tasks (e.g. files in the `build` folder).<br>
+Run the **`clean`** task to delete the files created during the previous build tasks (e.g. files in the `build` folder).<br>
   e.g. `./gradlew clean`
 
 <box type="tip" seamless>
 
-**You can use `clean` to prevent Gradle from skipping tasks**: When running a Gradle task, Gradle will try to figure out if the task needs running at all. If Gradle determines that the output of the task will be same as the previous time, it will not run the task. For example, it will not build the JAR file again if the relevant source files have not changed since the last time the JAR file was built. If you want to force Gradle to run a task, you can combine that task with `clean` (e.g., `./gradlew clean shadowJar`). Once the build files have been `clean` ed, Gradle has no way to determine if the output will be same as before, and it will have no choice but to execute the task.
+**You can use `clean` to prevent Gradle from skipping tasks**: When running a Gradle task, Gradle will try to figure out if the task needs running at all. If Gradle determines that the output of the task will be the same as the previous time, it will not run the task. For example, it will not build the JAR file again if the relevant source files have not changed since the last time the JAR file was built. If you want to force Gradle to run a task, you can combine that task with `clean` (e.g., `./gradlew clean shadowJar`). Once the build files have been `clean` ed, Gradle has no way to determine if the output will be same as before, and it will have no choice but to execute the task.
 
 </box>
 
@@ -238,7 +250,7 @@ See our [JAR tutorial](jar.html) to find more about creating JAR files using Gra
 
 There is no need to run these Gradle tasks manually as they are called automatically by other relevant Gradle tasks.
 
-* **`compileJava`**: Checks whether the project has the required dependencies to compile and run the main program, and download any missing dependencies before compiling the classes.
+* **`compileJava`**: Checks whether the project has the required dependencies to compile and run the main program, and downloads any missing dependencies before compiling the classes.
 * **`compileTestJava`**: Checks whether the project has the required dependencies to perform testing, and download any missing dependencies before compiling the test classes.
 
 <!-- ==================================================================================================== -->

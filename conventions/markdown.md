@@ -14,7 +14,7 @@ title: "Markdown coding standard"
   RATIONALE: Minor deviations from the markdown syntax are sometimes forgiven by GitHub markdown rendering but may not be forgiven by [GitHub Pages html rendering](https://github.blog/2016-12-09-publishing-with-github-pages-now-as-easy-as-1-2-3/).
   </box>
 
-* **Do not wrap lines at a specific length.** Coding standards for other languages typically specify a maximum length for a statement. However, Markdown is used to write natural language content which should not be chopped into a sentence fragments.
+* **Do not wrap lines at a specific length.** Coding standards for other languages typically specify a maximum length for a statement. However, Markdown is used to write natural language content that should not be chopped into sentence fragments.
 
   <box type="info" seamless>
 
@@ -86,7 +86,7 @@ Content of the paragraph.
 {% endcall %}
 
 
-* **Use generic numbering for ordered lists.** i.e., use `1.` for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.
+* **Use generic numbering for ordered lists.** i.e., using `1.` for every item in an ordered list can make it easy to insert more items later. Generic numbers are converted to the correct numbers by GitHub markdown renderer.
 
   <box type="info" seamless>
 

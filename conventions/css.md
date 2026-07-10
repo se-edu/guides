@@ -160,8 +160,8 @@ for any topics not covered in this document.
 
 * When adding classes to style elements in the page, follow the following steps:
   * Try and style the entire component using Bootstrap.
-  * For any additional css, if the component is used in many places create a functional name for the class.
-  * If the component does not have any recurring function, utilise the generic classes to achieve the styling.
+  * For any additional CSS, if the component is used in many places, create a functional name for the class.
+  * If the component does not have any recurring function, utilize the generic classes to achieve the styling.
   * *Exception:* If a particular element requires too many generic classes ( > 5) create a functional class name for it.
 
 <!-- --------------------------------------------------------------------------------------------------------- -->

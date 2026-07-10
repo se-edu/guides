@@ -33,7 +33,7 @@ If you have not enabled Copilot in your GitHub account, follow the guide in the 
 1. Use the Attach button to link the relevant repository and provide more context to Copilot.
 1. Describe your issue and ask Copilot to generate a checklist. For example: `Fix the bug where the UI overflows when the number is too long, and include a checklist to ensure the bug is resolved.`<br>
    <pic src="images/githubCopilot/issueChat.png" width="400" />
-1. Copilot will generate a structured issue, including a description, steps to reproduce, expected behaviour, and a checklist.<br>
+1. Copilot will generate a structured issue, including a description, steps to reproduce, expected behavior, and a checklist.<br>
    <pic src="images/githubCopilot/generatedIssue.png" width="400" />
 1. Click on `Create` to submit the issue.
    <box type="tip" seamless>

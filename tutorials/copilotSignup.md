@@ -10,7 +10,7 @@
 
 <div id="body">
 
-**GitHub Copilot is an account-linked service that sits on top of your GitHub account.** You need to enable it (via subscription or educational benefits) to use it. Given below are the steps:
+**GitHub Copilot is an account-linked service that sits on top of your GitHub account.** To use it, you need to enable it through a subscription or educational benefits. Here are the steps:
 
 * Sign up for a GitHub Account, if you don't have one yet.
 * **Fill in your billing information** {{ step_numbers }}

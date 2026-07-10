@@ -14,10 +14,10 @@
 
 Scenario: You have forked a project that already had support for using Codecov in the GitHub Actions CI pipeline. Now you want to set up your fork to work with Codecov as well.
 
-Given below are the steps for achieving the above, recommended to be done by someone who has admin access to the GitHub organization that contains the fork.
+Here are the steps. They should be carried out by someone with admin access to the GitHub organization that contains the fork.
 
 1. [**Sign up for a Codecov account**](https://app.codecov.io/signup/) using your GitHub account.
-1. **Install the Codecov integration on GitHub:**:
+1. **Install the Codecov integration on GitHub:**
    * Go to [this page](https://github.com/apps/codecov) and click on the green <button type="button" class="btn btn-success btn-sm">Install</button> button.{{ abcd_numbers }}
    * In the next page, select your GitHub organization
    * In the next page, choose the `Only select repositories` and choose your repo (you can also use the `All repositories` option instead). After that, click the <button type="button" class="btn btn-success btn-sm">Install</button>.<br>
@@ -31,7 +31,7 @@ Given below are the steps for achieving the above, recommended to be done by som
      * But you still need to do `Step 2: Select an upload token to add as a secret on GitHub`. In that step, choose the `Repository Token` option
      * Proceed to `Step 3: add token as repository secret`, and configure the `CODECOV_TOKEN` secret as instructed there.
      * You can skip steps 4 and 5.
-1. **Check for coverage status:** Go to your repo and re-run the most recent CI run (<trigger trigger="click" for="modal:codecode-noCiRuns">What to do if there are no CI runs in the repo?</trigger>). If you set up Codecov correctly, this CI run should upload the coverage data to Codecov. Go back to [your Codecov home page](https://app.codecov.io/gh), choose the org from the dropdown and ==click on the repo name== (ignore the `no data` label, if any). In the next page, you should see the code coverage details. Here is an example:
+1. **Check for coverage status:** Go to your repo and re-run the most recent CI run (<trigger trigger="click" for="modal:codecode-noCiRuns">What to do if there are no CI runs in the repo?</trigger>). If you set up Codecov correctly, this CI run should upload the coverage data to Codecov. Go back to [your Codecov home page](https://app.codecov.io/gh), choose the org from the dropdown, and ==click the repo name== (ignore the `no data` label, if any). In the next page, you should see the code coverage details. Here is an example:
    <pic src="images/codecov/coverage-example.png"/>
 1. **Display the Codecov badge:** If your fork has a badge showing the Codecov status (e.g, ![codecov](https://codecov.io/gh/se-edu/addressbook-level3/branch/master/graph/badge.svg)), get the Markdown code for the Codecov badge provided in `https://app.codecov.io/gh/{YOUR_ORG}/{YOUR_FORK}/config/badge` (e.g., `https://app.codecov.io/gh/se-edu/addressbook-level3/config/badge`) and update the appropriate page in your fork.
 

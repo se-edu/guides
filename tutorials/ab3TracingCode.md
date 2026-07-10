@@ -57,7 +57,7 @@ In our case, it's natural that we start tracing the code at the point where the 
 <a-point x="19%" y="37%" content="This is where the UI processes the user input." opacity="0.3" size="40" color="yellow"/>
 </annotate>
 
-However, the execution path through a GUI is often somewhat obscure due to various <popover content="**More on _event-driven mechanisms_**: Unlike command-line programs, GUI applications respond to user actions (like clicks and keystrokes) and other events, triggering various event _listeners_ and _handlers_. This non-linear flow of control can make it difficult to trace and debug the sequence of operations, as the program reacts dynamically to different events, creating an obscure execution path.">*event-driven mechanisms*</popover>  used by GUI frameworks. Therefore, let us skip that part of the execution path for now, and put the breakpoint where the `UI` transfers control to the `Logic` component.
+However, the execution path through a GUI is often somewhat obscure due to various <popover content="**More on _event-driven mechanisms_**: Unlike command-line programs, GUI applications respond to user actions (like clicks and keystrokes) and other events, triggering various event _listeners_ and _handlers_. This non-linear flow of control can make the sequence of operations difficult to trace and debug, as the program reacts dynamically to different events.">*event-driven mechanisms*</popover>  used by GUI frameworks. Therefore, let us skip that part of the execution path for now, and put the breakpoint where the `UI` transfers control to the `Logic` component.
 
 <annotate src="https://se-education.org/addressbook-level3/images/ArchitectureSequenceDiagram.png" width="550">
 <a-point x="43%" y="40%" content="This is where the`UI` component yields control to the `Logic` component through a method named `execute`." opacity="0.3" size="40" color="yellow"/>
@@ -237,7 +237,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
    * it uses the `setPerson()` method (defined in the interface `Model` and implemented in `ModelManager` as per the usual pattern) to update the person data.
    * it uses the `updateFilteredPersonList` method to ask the `Model` to populate the 'filtered list' with _all_ persons.<br>
      FYI, The 'filtered list' is the list of persons resulting from the most recent operation that will be shown to the user immediately after. For the `edit` command, we populate it with all the persons so that the user can see the edited person along with all other persons. If this was a `find` command, we would be setting that list to contain the search results instead.<br>
-     To provide some context, given below is the class diagram of the `Model` component. See if you can figure out where the 'filtered list' of persons is being tracked.<br>
+     For context, here is the class diagram of the `Model` component. See if you can figure out where the 'filtered list' of persons is tracked.<br>
      <pic src="https://se-education.org/addressbook-level3/images/ModelClassDiagram.png" width="450" /><br>
    * {{ dg_ref }} This is a good time to read through the [**_Model component_** section of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#model-component)
 
