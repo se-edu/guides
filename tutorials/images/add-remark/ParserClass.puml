@@ -6,9 +6,9 @@ Class "<<interface>>\nParser" as Parser
 Class RemarkCommandParser {
   +parse(): RemarkCommand
 }
-Class ParserException
+Class ParseException
 
 RemarkCommandParser .up.|> Parser
-Parser .right.> ParserException: throws >
-RemarkCommandParser .right.> ParserException: throws >
+Parser .right.> ParseException: throws >
+RemarkCommandParser .right.> ParseException: throws >
 @enduml
