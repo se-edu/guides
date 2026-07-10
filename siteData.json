@@ -412,6 +412,20 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/codexDesktop.md",
+      "title": "Using the Codex Desktop App",
+      "headings": {
+        "using-the-codex-desktop-app": "Using the Codex Desktop App",
+        "installing-codex": "Installing Codex",
+        "signing-in-to-codex": "Signing in to Codex",
+        "getting-started-with-codex": "Getting Started with Codex",
+        "importing-a-project": "Importing a Project",
+        "basic-usage-examples": "Basic Usage Examples",
+        "where-to-go-next": "Where to Go Next"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/copilotGithub.md",
       "title": "AI-Assisted Coding: Using Copilot in GitHub",
       "headings": {
