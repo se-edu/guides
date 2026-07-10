@@ -768,9 +768,9 @@
     },
     {
       "src": "tutorials/javaInstallationLinux.md",
-      "title": "Java 17 Installation Guide for Linux Users",
+      "title": "Java 25 Installation Guide for Linux Users",
       "headings": {
-        "java-17-installation-guide-for-linux-users": "Java 17 Installation Guide for Linux Users",
+        "java-25-installation-guide-for-linux-users": "Java 25 Installation Guide for Linux Users",
         "installation": "Installation",
         "switching-between-java-versions": "Switching between Java versions"
       },
@@ -778,9 +778,9 @@
     },
     {
       "src": "tutorials/javaInstallationMac.md",
-      "title": "Java 17 Installation Guide for Mac Users",
+      "title": "Java 25 Installation Guide for Mac Users",
       "headings": {
-        "java-17-installation-guide-for-mac-users": "Java 17 Installation Guide for Mac Users",
+        "java-25-installation-guide-for-mac-users": "Java 25 Installation Guide for Mac Users",
         "installation": "Installation",
         "switching-between-java-versions": "Switching between Java versions"
       },
@@ -788,9 +788,9 @@
     },
     {
       "src": "tutorials/javaInstallationWindows.md",
-      "title": "Java 17 Installation Guide for Windows Users",
+      "title": "Java 25 Installation Guide for Windows Users",
       "headings": {
-        "java-17-installation-guide-for-windows-users": "Java 17 Installation Guide for Windows Users",
+        "java-25-installation-guide-for-windows-users": "Java 25 Installation Guide for Windows Users",
         "installation": "Installation",
         "switching-between-java-versions": "Switching between Java versions"
       },
