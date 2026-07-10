@@ -15,6 +15,7 @@ This page is aimed at students who are beginning to use AI tools in a lightweigh
 **Resources we have created for AI-assisted coding** are given below:
 <div id="ai-assisted-coding-sub-topics">
 
+* **Codex:** [Using the desktop app]({{ baseUrl }}/tutorials/codexDesktop.html) 
 * **Copilot:** [Signing up]({{ baseUrl }}/tutorials/copilotSignup.html) | [Use with GitHub]({{ baseUrl }}/tutorials/copilotGithub.html) | [Use in IntelliJ]({{ baseUrl }}/tutorials/intellijCopilot.html) | [Use in VS Code]({{ baseUrl }}/tutorials/vscCopilot.html)
 * **Windsurf:** [Signing up]({{ baseUrl }}/tutorials/windsurfSignup.html) | [Use in IntelliJ]({{ baseUrl }}/tutorials/intellijWindsurf.html) | [Use in VS Code]({{ baseUrl }}/tutorials/vscWindsurf.html)
 * [**Gemini CLI**]({{ baseUrl }}/tutorials/geminiCli.md)
