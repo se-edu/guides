@@ -1,4 +1,4 @@
-{% set title="Java 17 Installation Guide for Windows Users" %}
+{% set title="Java " + java_version + " Installation Guide for Windows Users" %}
 <frontmatter>
 title: "{{ title }}"
 pageNav: 2
@@ -6,13 +6,13 @@ pageNav: 2
 
 # {{ title }}
 
-This guide explains how to install the **==[Oracle Java 17 {{ jdk_popover }}](https://www.oracle.com/java/technologies/downloads/#java17)== on Windows**.
+This guide explains how to install the **==[Oracle Java {{ java_version}} {{ jdk_popover }}](https://www.oracle.com/java/technologies/downloads/#java{{ java_version }})== on Windows**.
 
 ## Installation
 
 * **Download JDK** {{ step_numbers }}
-   * Go to the Oracle download site [here](https://www.oracle.com/java/technologies/downloads/#java17).{{ abcd_numbers }}
-   * Choose **JDK 17** &rarr; **Windows**.
+   * Go to the Oracle download site [here](https://www.oracle.com/java/technologies/downloads/#java{{ java_version }}).{{ abcd_numbers }}
+   * Choose **JDK {{ java_version }}** &rarr; **Windows**.
    * Download the **x64 Installer**:
    <pic src="images/javaInstallationWindows/java_installer_windows.png" width="800">
    
@@ -20,16 +20,16 @@ This guide explains how to install the **==[Oracle Java 17 {{ jdk_popover }}](ht
 
    Go ahead and sign in if you are prompted by Oracle, or register an account if you haven't done so.
 
-   **Alternatively, you may also download the JDK 17 x64 installer from another provider** that does not require you to sign up. Examples:
+   **Alternatively, you may also download the JDK {{ java_version}} x64 installer from another provider** that does not require you to sign up. Examples:
 
-   * [**Amazon**](https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/downloads-list.html)<br>
+   * [**Amazon**](https://docs.aws.amazon.com/corretto/latest/corretto-{{ java_version }}-ug/downloads-list.html)<br>
    * [**Microsoft**](https://learn.microsoft.com/en-my/java/openjdk/download)<br>
-   * [**Temurin**](https://adoptium.net/temurin/releases/?version=17)<br>
+   * [**Temurin**](https://adoptium.net/temurin/releases/?version={{ java_version }})<br>
    </box>
 
 * **Install JDK**
    * Run the downloaded installer and follow the instructions to complete the installation. {{ abcd_numbers }}
-   * Suppose the JDK was installed in the directory `C:\Program Files\Java\jdk-17` (this is the default location for **Oracle**, please check the installation directory within the installer for other distributors).
+   * Suppose the JDK was installed in the directory `C:\Program Files\Java\jdk-{{ java_version }}` (this is the default location for **Oracle**, please check the installation directory within the installer for other distributors).
    <br>
    <br>
 
@@ -55,7 +55,7 @@ This guide explains how to install the **==[Oracle Java 17 {{ jdk_popover }}](ht
    1. Scroll through the "System variables" section to find the `Path` variable, select it and click `Edit`.<br>
      <img src="images/javaInstallationWindows/edit_path_button.png" style="padding: 10px;">
    1. In the `Edit Environment Variable` window, you will see a list of paths. These paths represent directories your system searches to find executables like Java.
-      * To prioritize a different Java version: Find the path to your desired Java installation (e.g., `C:\Program Files\Java\jdk-17\bin`) and move it to the top of the list.<br>
+      * To prioritize a different Java version: Find the path to your desired Java installation (e.g., `C:\Program Files\Java\jdk-{{ java_version }}\bin`) and move it to the top of the list.<br>
         <img src="images/javaInstallationWindows/move_path_button.png" style="padding: 10px;">
       * To add a new Java version: Click "New" and add the path to the bin folder of the Java version you want to use (e.g., `C:\Program Files\Java\jdk-11\bin`).<br>
         <img src="images/javaInstallationWindows/new_path_button.png" style="padding: 10px;">

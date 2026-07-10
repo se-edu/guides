@@ -23,7 +23,7 @@
 ## Prerequisites
 
 * **Gradle-based Java Project:** A Java project set up with Gradle as the build tool. In this tutorial we assume you have a simple command-line Java application, but the concepts can be applied to any Java app.
-* **Java 17+** — verify with `java -version`.
+* **Java {{ java_version }}+** — verify with `java -version`.
 * **llama.cpp** installed on your system — the `llama-server` binary must be on your PATH or in a standard Homebrew location:
 
 <div class="indented-level2">
@@ -212,7 +212,7 @@ public String complete(String prompt, int maxTokens) throws Exception {
 
     HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
     return parseContent(response.body());
-}
+}}
 ```
 
 ```java

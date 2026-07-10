@@ -1,4 +1,4 @@
-{% set title="Java 17 Installation Guide for Mac Users" %}
+{% set title="Java " + java_version + " Installation Guide for Mac Users" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
@@ -6,7 +6,7 @@
 
 # {{ title }}
 
-This guide explains how to install the {{ jdk_popover}} (specifically, **==[Java 17 JDK+FX Azul distribution](https://www.azul.com/downloads/?version=java-17-lts&os=macos&package=jdk-fx#zulu)==) on macOS using SDKMAN**.
+This guide explains how to install the {{ jdk_popover}} (specifically, **==[Java {{ java_version }} JDK+FX Azul distribution](https://www.azul.com/downloads/?version=java-{{ java_version }}-lts&os=macos&package=jdk-fx#zulu)==) on macOS using SDKMAN**.
 
 **Why this specific version of JDK?**
 
@@ -32,13 +32,13 @@ This guide explains how to install the {{ jdk_popover}} (specifically, **==[Java
      sdk version
      ```
 * **Install JDK using SDKMAN**
-   * Install the Java 17 JDK FX version (codename Zulu) by running:{{ abcd_numbers }}
+   * Install the Java {{ java_version}} JDK FX version (codename Zulu) by running:{{ abcd_numbers }}
      ```bash
-     sdk install java 17.0.14.fx-zulu
+     sdk install java {{ java_version_mac }}
      ```
    * This version should be automatically set as the default, but if it is not, set it as the default by running:
      ```bash
-     sdk default java 17.0.14.fx-zulu
+     sdk default java {{ java_version_mac }}
      ```
    <box type="tip" seamless>
 
@@ -46,7 +46,7 @@ This guide explains how to install the {{ jdk_popover}} (specifically, **==[Java
      Remedy: Run the `sdk flush` command to purge the previous incomplete installation.
    </box>
 
-* **Verify installation** by running the following command. You should see the version information for Java 17.0.14.fx-zulu.
+* **Verify installation** by running the following command. You should see the version information for Java {{ java_version_mac }}.
    ```bash
    java -version
    ```

@@ -69,8 +69,8 @@ You may also need to verify and configure the Gradle Build Server to use the cor
     {
       "java.configuration.runtimes": [
         {
-          "name": "JavaSE-17",
-          "path": "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+          "name": "JavaSE-{{ java_version }}",
+          "path": "/Library/Java/JavaVirtualMachines/zulu-{{ java_version }}.jdk/Contents/Home"
         }
       ],
       "java.import.gradle.java.home": "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"

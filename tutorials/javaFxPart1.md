@@ -17,9 +17,9 @@ Let's get started!
 
 ## Setting up the project
 
-1. Ensure you are using JDK 17. **Mac users need to use [this precise distribution of the JDK 17](javaInstallationMac.html)** which comes bundled with JavaFX support.
+1. Ensure you are using JDK {{ java_version }}. **Mac users need to use [this precise distribution of the JDK {{ java_version }}](javaInstallationMac.html)** which comes bundled with JavaFX support.
 1. Fork [this starter repo](https://github.com/se-edu/javafx-tutorial), and clone it onto your computer.
-1. Open the project in your favorite code editor. If you are using an IDE, configure it to use the JDK 17 ([how to configure JDK in Intellij IDEA](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk)).
+1. Open the project in your favorite code editor. If you are using an IDE, configure it to use the JDK {{ java_version}} ([how to configure JDK in Intellij IDEA](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk)).
 
     <box type="tip" seamless>
 

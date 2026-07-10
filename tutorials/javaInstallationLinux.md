@@ -1,4 +1,4 @@
-{% set title="Java 17 Installation Guide for Linux Users" %}
+{% set title="Java " + java_version + " Installation Guide for Linux Users" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
@@ -6,7 +6,7 @@
 
 # {{ title }}
 
-This guide explains how to install the {{ jdk_popover }} (specifically, **==[OpenJDK Java 17](https://openjdk-sources.osci.io/openjdk17/)==**) on Linux using the command line. This guide was created using Ubuntu 22.04 but the steps for other Debian based Linux distros should be similar.
+This guide explains how to install the {{ jdk_popover }} (specifically, **==[OpenJDK Java {{ java_version }}](https://openjdk-sources.osci.io/openjdk{{ java_version }}/)==**) on Linux using the command line. This guide was created using Ubuntu 22.04 but the steps for other Debian based Linux distros should be similar.
 This guide assumes you have superuser access.
 
 
@@ -19,9 +19,9 @@ This guide assumes you have superuser access.
      ```
      Enter your password if prompted.
 * **Install JDK**
-   * Install the Java 17 OpenJDK version by running:
+   * Install the Java {{ java_version}} OpenJDK version by running:
      ```bash
-     sudo apt install openjdk-17-jdk 
+     sudo apt install openjdk-{{ java_version }}-jdk
      ```
      Note that the default installation location is usually `/usr/lib/jvm/`.
 * **Verify Installation**
