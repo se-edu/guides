@@ -31,9 +31,8 @@ It’s especially useful for simplifying large, complex methods by breaking them
 * Select the code you want to extract.
 * Click the **light bulb** icon in the gutter to view available refactorings.
 
-<video autoplay muted loop playsinline width="640" height="360" controls>
-  <source src="https://code.visualstudio.com/assets/docs/java/java-refactoring/refactor.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+<video oncontextmenu="return false;" width="700px" autoplay muted loop>
+<source src="videos/javafx/vscRefactor.mp4" type="video/mp4">
 </video>
 
 ---
@@ -45,6 +44,11 @@ Renaming allows you to change the name of a class, method, variable, or other sy
 * Select the symbol you want to rename.
 * Right-click and choose `Rename Symbol` or simply press `F2`.
 * Type the new name in the inline input box that appears.
+
+
+<video oncontextmenu="return false;" width="700px" autoplay muted loop>
+<source src="videos/javafx/vscRename.mp4" type="video/mp4">
+</video>
 
 For more refactoring actions, refer to [here](https://code.visualstudio.com/docs/java/java-refactoring#_refactoring).
 
