@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Issue Replacement Review</title>
+  <style>
+:root {
+  color-scheme: light;
+  --bg: #f5f6f8;
+  --panel: #ffffff;
+  --text: #20242a;
+  --muted: #68707c;
+  --line: #d9dee7;
+  --line-soft: #eef1f5;
+  --old-bg: #fff0f0;
+  --old-text: #8f1d1d;
+  --new-bg: #ebf8ef;
+  --new-text: #17643a;
+  --mark-old: #ffd7d7;
+  --mark-new: #bfedcc;
+  --accent-bg: #eef4fb;
+  --accent-text: #245377;
+  --code-bg: #fafbfc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 22px 48px;
+}
+
+header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.summary {
+  margin-top: 5px;
+  color: var(--muted);
+}
+
+.toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+button {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button[aria-pressed="true"] {
+  border-color: #87acd4;
+  background: #edf5ff;
+  color: #174b80;
+}
+
+.issue-list {
+  display: grid;
+  gap: 14px;
+}
+
+.issue {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 1px 2px rgb(20 25 35 / 5%);
+}
+
+.issue-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--line-soft);
+  background: #fbfcfe;
+}
+
+.index {
+  min-width: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.title {
+  min-width: 0;
+  font-weight: 700;
+}
+
+.path {
+  margin-top: 2px;
+  overflow: hidden;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent-text);
+  padding: 3px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.issue-body {
+  padding: 16px;
+}
+
+.comment {
+  display: flex;
+  gap: 9px;
+  align-items: baseline;
+  margin-bottom: 12px;
+  color: #343a42;
+}
+
+.comment-label {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #f0f2f5;
+  color: #515a66;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.comment-text {
+  min-width: 0;
+}
+
+.unified {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--code-bg);
+}
+
+.diff-line {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  min-height: 24px;
+  border-top: 1px solid #f1f3f6;
+  font: 13px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.diff-line:first-child {
+  border-top: 0;
+}
+
+.diff-line.hidden-unchanged {
+  display: none;
+}
+
+.sign {
+  user-select: none;
+  border-right: 1px solid var(--line-soft);
+  color: var(--muted);
+  text-align: center;
+}
+
+.diff-line.minus {
+  background: var(--old-bg);
+}
+
+.diff-line.minus .sign,
+.diff-line.minus .content {
+  color: var(--old-text);
+}
+
+.diff-line.plus {
+  background: var(--new-bg);
+}
+
+.diff-line.plus .sign,
+.diff-line.plus .content {
+  color: var(--new-text);
+}
+
+.content {
+  min-width: 0;
+  padding: 2px 9px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+del,
+ins {
+  border-radius: 3px;
+  padding: 0 1px;
+  text-decoration: none;
+}
+
+del {
+  background: var(--mark-old);
+  color: var(--old-text);
+}
+
+ins {
+  background: var(--mark-new);
+  color: var(--new-text);
+}
+
+@media (max-width: 760px) {
+  header,
+  .issue-header {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    align-items: start;
+  }
+
+  .toolbar {
+    justify-content: flex-start;
+  }
+}
+</style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Issue Replacement Review</h1>
+        <div class="summary">6 suggested replacements from issues_found.py</div>
+      </div>
+      <div class="toolbar" aria-label="Display controls">
+        
+        <button type="button" id="expandAll">Expand All</button>
+        <button type="button" id="collapseAll">Collapse All</button>
+      </div>
+    </header>
+
+    <section class="issue-list">
+      <article class="issue">
+        <div class="issue-header">
+          <div class="index">1</div>
+          <div class="title">
+            Fix terminal shortcut markup
+            <div class="path">tutorials/vscProductivityShortcuts.md</div>
+          </div>
+          <div class="badge">1 line</div>
+        </div>
+        <div class="issue-body">
+          <div class="comment"><span class="comment-label">markup issue</span><span class="comment-text">Uses matching double-backtick code spans for the shortcut that contains a backtick.</span></div>
+          <details open>
+            <summary>Unified diff</summary>
+            <div class="unified">
+              <div class="diff-line minus">
+                <div class="sign">-</div>
+                <div class="content">* Keyboard shortcut: {{icon_windows}}/{{icon_linux}} ` Ctrl+` `` | {{icon_apple}} `` Ctrl+` `` (macOS uses `Control`, not `Cmd`, for this one)</div>
+              </div>
+              <div class="diff-line plus">
+                <div class="sign">+</div>
+                <div class="content">* Keyboard shortcut: {{icon_windows}}/{{icon_linux}} <ins>`</ins>` Ctrl+` `` | {{icon_apple}} `` Ctrl+` `` (macOS uses `Control`, not `Cmd`, for this one)</div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+      <article class="issue">
+        <div class="issue-header">
+          <div class="index">2</div>
+          <div class="title">
+            Clarify column selection description
+            <div class="path">tutorials/vscProductivityShortcuts.md</div>
+          </div>
+          <div class="badge">1 line</div>
+        </div>
+        <div class="issue-body">
+          <div class="comment"><span class="comment-label">grammar issue</span><span class="comment-text">Replaces a dangling modifier with a complete sentence.</span></div>
+          <details open>
+            <summary>Unified diff</summary>
+            <div class="unified">
+              <div class="diff-line minus">
+                <div class="sign">-</div>
+                <div class="content">Select text vertically instead of line by line<del>,</del> especially useful for editing tables, columns, or aligned code.</div>
+              </div>
+              <div class="diff-line plus">
+                <div class="sign">+</div>
+                <div class="content">Select text vertically instead of line by line<ins>. This is</ins> especially useful for editing tables, columns, or aligned code.</div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+      <article class="issue">
+        <div class="issue-header">
+          <div class="index">3</div>
+          <div class="title">
+            Clarify comment toggle description
+            <div class="path">tutorials/vscProductivityShortcuts.md</div>
+          </div>
+          <div class="badge">1 line</div>
+        </div>
+        <div class="issue-body">
+          <div class="comment"><span class="comment-label">grammar issue</span><span class="comment-text">Replaces a comma splice-like fragment with a complete sentence.</span></div>
+          <details open>
+            <summary>Unified diff</summary>
+            <div class="unified">
+              <div class="diff-line minus">
+                <div class="sign">-</div>
+                <div class="content">Comment or uncomment code without retyping<del>,</del> handy for debugging or testing different code paths.</div>
+              </div>
+              <div class="diff-line plus">
+                <div class="sign">+</div>
+                <div class="content">Comment or uncomment code without retyping<ins>. This is</ins> handy for debugging or testing different code paths.</div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+      <article class="issue">
+        <div class="issue-header">
+          <div class="index">4</div>
+          <div class="title">
+            Use US spelling for maximize
+            <div class="path">tutorials/vscProductivityShortcuts.md</div>
+          </div>
+          <div class="badge">1 line</div>
+        </div>
+        <div class="issue-body">
+          <div class="comment"><span class="comment-label">spelling issue</span><span class="comment-text">Uses US spelling for consistency with the tutorial style.</span></div>
+          <details open>
+            <summary>Unified diff</summary>
+            <div class="unified">
+              <div class="diff-line minus">
+                <div class="sign">-</div>
+                <div class="content">You can adjust your VS Code layout quickly to maximi<del>s</del>e focus or view multiple panels at once.</div>
+              </div>
+              <div class="diff-line plus">
+                <div class="sign">+</div>
+                <div class="content">You can adjust your VS Code layout quickly to maximi<ins>z</ins>e focus or view multiple panels at once.</div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+      <article class="issue">
+        <div class="issue-header">
+          <div class="index">5</div>
+          <div class="title">
+            Clarify workspace layout tip
+            <div class="path">tutorials/vscProductivityShortcuts.md</div>
+          </div>
+          <div class="badge">1 line</div>
+        </div>
+        <div class="issue-body">
+          <div class="comment"><span class="comment-label">phrasing issue</span><span class="comment-text">&#x27;more screen space&#x27; is clearer than &#x27;full screen space&#x27; here.</span></div>
+          <details open>
+            <summary>Unified diff</summary>
+            <div class="unified">
+              <div class="diff-line minus">
+                <div class="sign">-</div>
+                <div class="content">Hide panels when you need <del>full</del> screen space, then bring them back when debugging or managing files.</div>
+              </div>
+              <div class="diff-line plus">
+                <div class="sign">+</div>
+                <div class="content">Hide panels when you need <ins>more</ins> screen space, then bring them back when debugging or managing files.</div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+      <article class="issue">
+        <div class="issue-header">
+          <div class="index">6</div>
+          <div class="title">
+            Remove redundant image wording
+            <div class="path">tutorials/vscProductivityShortcuts.md</div>
+          </div>
+          <div class="badge">1 line</div>
+        </div>
+        <div class="issue-body">
+          <div class="comment"><span class="comment-label">verbosity issue</span><span class="comment-text">GIFs are images, so the separate mention is redundant.</span></div>
+          <details open>
+            <summary>Unified diff</summary>
+            <div class="unified">
+              <div class="diff-line minus">
+                <div class="sign">-</div>
+                <div class="content">All information<del>, GIFs,</del> and images on this page are adapted from the official [Visual Studio Code – Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) documentation.</div>
+              </div>
+              <div class="diff-line plus">
+                <div class="sign">+</div>
+                <div class="content">All information and images on this page are adapted from the official [Visual Studio Code – Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) documentation.</div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script>
+const toggleUnchanged = document.getElementById("toggleUnchanged");
+const setUnchangedVisibility = () => {
+  if (!toggleUnchanged) {
+    return;
+  }
+  const show = toggleUnchanged.getAttribute("aria-pressed") === "true";
+  document.querySelectorAll(".diff-line.same").forEach((line) => {
+    line.classList.toggle("hidden-unchanged", !show);
+  });
+};
+
+if (toggleUnchanged) {
+  toggleUnchanged.addEventListener("click", () => {
+    const pressed = toggleUnchanged.getAttribute("aria-pressed") === "true";
+    toggleUnchanged.setAttribute("aria-pressed", String(!pressed));
+    toggleUnchanged.textContent = pressed ? "Show Unchanged Lines" : "Hide Unchanged Lines";
+    setUnchangedVisibility();
+  });
+}
+
+document.getElementById("expandAll").addEventListener("click", () => {
+  document.querySelectorAll("details").forEach((item) => { item.open = true; });
+});
+
+document.getElementById("collapseAll").addEventListener("click", () => {
+  document.querySelectorAll("details").forEach((item) => { item.open = false; });
+});
+
+setUnchangedVisibility();
+</script>
+</body>
+</html>

@@ -1,18 +1,26 @@
 ISSUES_FOUND = [
-    ('Unlike IDE plugins such as Copilot or Windsurf, the Codex desktop app works as a standalone app. The IDE you use does not matter; what matters is that Codex can access the project folder and the project can be built/tested locally.',
-     'Unlike IDE plugins such as Copilot or Windsurf, the Codex desktop app works as a standalone app. The IDE you use does not matter; what matters is that Codex can access the project folder and the project can be built and tested locally.',
-     'tutorials/codexDesktop.md',
-     'Use clearer build-and-test wording'),  # [phrasing issue] Replaces slash wording with clearer prose.
-    ('  * Choose `+ New project`, select `Use an existing folder` to open a project that already exists on your computer.',
-     '  * Choose `+ New project`, then select `Use an existing folder` to open a project that already exists on your computer.',
-     'tutorials/codexDesktop.md',
-     'Clarify project import step'),  # [grammar issue] Adds a connector between two actions.
-    ('      For a project using Git, it is important to select the repository root and not the inner folders like src.',
-     '      For a project using Git, it is important to select the repository root and not inner folders such as `src`.',
-     'tutorials/codexDesktop.md',
-     'Clarify Git root selection tip'),  # [phrasing issue] Makes the example folder reference clearer and preserves code formatting.
-    ('**Using Codex for small, reviewable tasks** such as tweaking a UI component or refactoring a code fragment.',
-     '**Use Codex for small, reviewable tasks**, such as tweaking a UI component or refactoring a code fragment.',
-     'tutorials/codexDesktop.md',
-     'Make usage example sentence grammatical'),  # [grammar issue] Turns a sentence fragment into a complete imperative sentence.
+    ('* Keyboard shortcut: {{icon_windows}}/{{icon_linux}} ` Ctrl+` `` | {{icon_apple}} `` Ctrl+` `` (macOS uses `Control`, not `Cmd`, for this one)',
+     '* Keyboard shortcut: {{icon_windows}}/{{icon_linux}} `` Ctrl+` `` | {{icon_apple}} `` Ctrl+` `` (macOS uses `Control`, not `Cmd`, for this one)',
+     'tutorials/vscProductivityShortcuts.md',
+     'Fix terminal shortcut markup'),  # [markup issue] Uses matching double-backtick code spans for the shortcut that contains a backtick.
+    ('Select text vertically instead of line by line, especially useful for editing tables, columns, or aligned code.',
+     'Select text vertically instead of line by line. This is especially useful for editing tables, columns, or aligned code.',
+     'tutorials/vscProductivityShortcuts.md',
+     'Clarify column selection description'),  # [grammar issue] Replaces a dangling modifier with a complete sentence.
+    ('Comment or uncomment code without retyping, handy for debugging or testing different code paths.',
+     'Comment or uncomment code without retyping. This is handy for debugging or testing different code paths.',
+     'tutorials/vscProductivityShortcuts.md',
+     'Clarify comment toggle description'),  # [grammar issue] Replaces a comma splice-like fragment with a complete sentence.
+    ('You can adjust your VS Code layout quickly to maximise focus or view multiple panels at once.',
+     'You can adjust your VS Code layout quickly to maximize focus or view multiple panels at once.',
+     'tutorials/vscProductivityShortcuts.md',
+     'Use US spelling for maximize'),  # [spelling issue] Uses US spelling for consistency with the tutorial style.
+    ('Hide panels when you need full screen space, then bring them back when debugging or managing files.',
+     'Hide panels when you need more screen space, then bring them back when debugging or managing files.',
+     'tutorials/vscProductivityShortcuts.md',
+     'Clarify workspace layout tip'),  # [phrasing issue] 'more screen space' is clearer than 'full screen space' here.
+    ('All information, GIFs, and images on this page are adapted from the official [Visual Studio Code – Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) documentation.',
+     'All information and images on this page are adapted from the official [Visual Studio Code – Tips and Tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks) documentation.',
+     'tutorials/vscProductivityShortcuts.md',
+     'Remove redundant image wording'),  # [verbosity issue] GIFs are images, so the separate mention is redundant.
 ]

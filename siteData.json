@@ -1081,6 +1081,28 @@
       "headingKeywords": {}
     },
     {
+      "src": "tutorials/vscProductivityShortcuts.md",
+      "title": "VS Code - Productivity Shortcuts",
+      "headings": {
+        "vs-code-productivity-shortcuts": "VS Code - Productivity Shortcuts",
+        "command-palette": "Command Palette",
+        "multi-cursor-editing": "Multi-cursor Editing",
+        "integrated-terminal": "Integrated Terminal",
+        "faster-editing-and-refactoring": "Faster Editing and Refactoring",
+        "rename-symbol": "Rename Symbol",
+        "column-box-selection": "Column (Box) Selection",
+        "copy-or-move-lines": "Copy or Move Lines",
+        "trim-trailing-whitespace": "Trim Trailing Whitespace",
+        "format-code": "Format Code",
+        "toggle-comments": "Toggle Comments",
+        "workspace-management": "Workspace Management",
+        "code-navigation": "Code Navigation",
+        "navigating-errors-and-warnings": "Navigating Errors and Warnings",
+        "markdown-preview": "Markdown Preview"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "tutorials/vscRefactoring.md",
       "title": "VS Code - Refactoring",
       "headings": {
