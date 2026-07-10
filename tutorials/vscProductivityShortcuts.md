@@ -42,7 +42,7 @@ The **Integrated Terminal** lets you run command-line tools directly inside VS C
 
 ![Integrated terminal](https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/integrated_terminal.png)
 
-* Keyboard shortcut: `⌃``
+* Keyboard shortcut: {{icon_windows}}/{{icon_linux}} `` Ctrl+` `` | {{icon_apple}} `` Ctrl+` `` (macOS uses `Control`, not `Cmd`, for this one)
 * Alternatively, {{icon_windows}}/{{icon_linux}} `Ctrl+J` | {{icon_apple}} `Cmd+J`
     to open or hide the bottom panel, then select the **Terminal** tab if it isn’t active.
 
@@ -74,6 +74,21 @@ Remove unnecessary spaces at the end of lines to keep your files tidy.
 * Keyboard shortcut: {{icon_windows}}/{{icon_linux}} `Ctrl+K Ctrl+X` | {{icon_apple}} `Cmd+K Cmd+X`
 ![Trim trailing whitespace](https://code.visualstudio.com/assets/docs/getstarted/tips-and-tricks/trim_whitespace.gif)
 
+### Format Code
+Automatically fix indentation and spacing so your code stays consistent and readable.
+* **Format Selection:** {{icon_windows}}/{{icon_linux}} `Ctrl+K Ctrl+F` | {{icon_apple}} `Cmd+K Cmd+F`
+* **Format Document:** {{icon_windows}}/{{icon_linux}} `Shift+Alt+F` | {{icon_apple}} `Shift+Option+F`
+
+<box type="info" seamless>
+
+To configure formatting rules or format automatically on save, see the [VS Code: Configuring the code style](vscCodeStyle.md) guide.
+</box>
+
+### Toggle Comments
+Comment or uncomment code without retyping, handy for debugging or testing different code paths.
+* **Toggle Line Comment:** {{icon_windows}}/{{icon_linux}} `Ctrl+/` | {{icon_apple}} `Cmd+/`
+* **Toggle Block Comment:** {{icon_windows}}/{{icon_linux}} `Shift+Alt+A` | {{icon_apple}} `Shift+Option+A`
+
 ### Workspace Management
 You can adjust your VS Code layout quickly to maximise focus or view multiple panels at once.
 
@@ -82,6 +97,17 @@ You can adjust your VS Code layout quickly to maximise focus or view multiple pa
 
 <box type="tip" seamless>
 Hide panels when you need full screen space, then bring them back when debugging or managing files.
+</box>
+
+## Code Navigation
+
+Jump directly to where a symbol is defined to trace how different parts of a larger codebase connect.
+
+* **Go to Definition:** `F12`, or {{icon_windows}}/{{icon_linux}} `Ctrl+Click` | {{icon_apple}} `Cmd+Click`
+
+<box type="tip" seamless>
+
+For more navigation features such as Peek Definition and Go to Super Implementation, see the [VS Code - Code Navigation](vscCodeNavigation.md) guide.
 </box>
 
 ## Navigating Errors and Warnings
