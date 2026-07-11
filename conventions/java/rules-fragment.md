@@ -409,26 +409,24 @@ do {
 </div>
 
 
-**{{ icon_level_basic }} The _switch_ statement should have the following form:** ==Note there is no indentation for `case` clauses.==<br>
-{{ icon_tip }} Configure your IDE to follow this style instead.
+**{{ icon_level_basic }} The _switch_ statement should have the following form:**
 
 ```java
 switch (condition) {
-case ABC:
-    statements;
-    // Fallthrough
-case DEF:
-    statements;
-    break;
-case XYZ:
-    statements;
-    break;
-default:
-    statements;
-    break;
+    case ABC:
+        statements;
+        // Fallthrough
+    case DEF:
+        statements;
+        break;
+    case XYZ:
+        statements;
+        break;
+    default:
+        statements;
+        break;
 }
 ```
-Lambda-style `switch` statements/expressions can have indented `case` blocks (as shown below):
 ```java
 switch (condition) {
     case ABC -> method("1");
