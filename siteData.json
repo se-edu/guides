@@ -413,13 +413,14 @@
     },
     {
       "src": "tutorials/codexDesktop.md",
-      "title": "Using the Codex Desktop App",
+      "title": "Using Codex in the ChatGPT Desktop App",
       "headings": {
-        "using-the-codex-desktop-app": "Using the Codex Desktop App",
-        "installing-codex": "Installing Codex",
+        "using-codex-in-the-chatgpt-desktop-app": "Using Codex in the ChatGPT Desktop App",
+        "installing-chatgpt-desktop": "Installing ChatGPT Desktop",
         "signing-in-to-codex": "Signing in to Codex",
         "getting-started-with-codex": "Getting Started with Codex",
         "importing-a-project": "Importing a Project",
+        "basic-configuration": "Basic Configuration",
         "basic-usage-examples": "Basic Usage Examples",
         "where-to-go-next": "Where to Go Next"
       },
