@@ -23,7 +23,7 @@ You use a _build file_ (named `build.gradle`) to describe how Gradle should beha
 1. **Tasks** are reusable blocks of logic. For example, the task `clean` simply deletes the project build directory.
 Tasks can be composed of, or dependent on, other tasks.
 
-1. **Properties** change the behavior of tasks. For instance, when using the `application` plugin, we should use the `mainClassName` (or `mainClass`) property to tell Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much you need to configure if you follow the recommended directory structure.
+1. **Properties** change the behavior of tasks. For instance, when using the `application` plugin, we should use the `mainClass` property to tell Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much you need to configure if you follow the recommended directory structure.
 
 **Even if you are not using Intellij, ==a quick watch of the following video is strongly recommended==** before proceeding with the rest of this tutorial, if you are new to Gradle. The video will help you grasp how Gradle fits into the big picture of a project, and what it looks like to use it.
 
@@ -145,7 +145,7 @@ More info on specific plugins:
 * [Java](https://docs.gradle.org/current/userguide/java_plugin.html#java_plugin) -- a built-in plugin that adds Java compilation along with testing and bundling capabilities to a project.<br>
   [Application](https://docs.gradle.org/current/userguide/application_plugin.html#application_plugin) -- a built-in plugin for creating an executable JVM application.
 * [Checkstyle](https://docs.gradle.org/current/userguide/checkstyle_plugin.html#checkstyle_plugin) -- a built-in plugin for using Checkstyle in a project.
-* [Shadow](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow) -- a third-party plugin for creating <trigger trigger="click" for="modal:gradleTutorial-fatJar">fat/uber JARs</trigger>.
+* [Shadow](https://plugins.gradle.org/plugin/com.gradleup.shadow) -- a third-party plugin for creating <trigger trigger="click" for="modal:gradleTutorial-fatJar">fat/uber JARs</trigger>.
 
 <modal large header="Fat/Uber JAR files" id="modal:gradleTutorial-fatJar">
   <include src="jar-fatJar-fragment.md"/>
@@ -157,15 +157,15 @@ plugins {
     id 'java'
     id 'application'
     id 'checkstyle'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'com.gradleup.shadow' version '9.5.1'
 }
 ```
 
-You can follow the links in the list above to find what tasks are provided by a plugin and how to configure it. For example, `run` is a task provided by the Application plugin, and you can set the `mainClassName` (`mainClass` in some versions) property to indicate which class should be used as the entry point of the application:
+You can follow the links in the list above to find what tasks are provided by a plugin and how to configure it. For example, `run` is a task provided by the Application plugin, and you can set the `mainClass` property to indicate which class should be used as the entry point of the application:
 
 ```groovy{heading="build.gradle"}
 application {
-    mainClass.set("seedu.duke.Main")
+    mainClass = 'seedu.duke.Duke'
 }
 ```
 
