@@ -72,10 +72,13 @@ plugins {
 
 **Next add the following JUnit dependencies** to the `dependencies` block, to tell which JUnit libraries to be used:
 
-```groovy {highlight-lines="2-3", heading="build.gradle"}
+```groovy {highlight-lines="2-6", heading="build.gradle"}
 dependencies {
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.0'
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.10.0'
+    String jUnitVersion = '5.14.4'
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${jUnitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${jUnitVersion}"
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.14.4'
 }
 ```
 
@@ -86,12 +89,12 @@ test {
     useJUnitPlatform()
 
     testLogging {
-        events "passed", "skipped", "failed"
+        events 'passed', 'skipped', 'failed'
 
-        showExceptions true
-        exceptionFormat "full"
-        showCauses true
-        showStackTraces true
+        showExceptions = true
+        exceptionFormat = 'full'
+        showCauses = true
+        showStackTraces = true
         showStandardStreams = false
     }
 }

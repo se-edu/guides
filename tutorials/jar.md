@@ -48,13 +48,17 @@ To use the Shadow plugin, first ensure the following plugins are listed in your 
 ```groovy{heading="build.gradle"}
 plugins {
   id 'java'
-  id 'com.github.johnrengelman.shadow' version '7.1.2'
+  id 'application'
+  id 'com.gradleup.shadow' version '9.5.1'
   // other plugins
 }
 ```
 Second, ensure the following property is configured correctly, so that Shadow knows which class is the entry point to the application:
+
 ```groovy{heading="build.gradle"}
-mainClass.set("seedu.duke.Main")
+application {
+    mainClass = 'seedu.duke.Duke'
+}
 ```
 
 The task **`shadowJar`** (e.g., running the command `gradlew shadowJar` or `gradlew clean shadowJar`) creates a JAR file with the name in the format of `{archiveBaseName}-{archiveVersion}.jar` and puts it in the `build/libs` folder. This output file name/location can be tweaked further using the properties `destinationDir`, `archiveBaseName`, `archiveVersion` in the `build.gradle` file. e.g.,
@@ -92,5 +96,5 @@ But if you use JavaFX, you need to package the JavaFX libraries into a fat JAR f
 ## Resources
 
 * [Oracle's tutorial on JAR files](https://docs.oracle.com/javase/tutorial/deployment/jar/basicsindex.html)
-* [Gradle documentation for the Shadow plugin](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow)
-* [Shadow plugin homepage](https://imperceptiblethoughts.com/shadow/introduction/)
+* [Gradle documentation for the Shadow plugin](https://plugins.gradle.org/plugin/com.gradleup.shadow)
+* [Shadow plugin homepage](https://gradleup.com/shadow/)

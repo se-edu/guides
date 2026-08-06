@@ -482,17 +482,16 @@ if (isDestructive(candidate)) {
 
 ## Step 5: Package Everything into a Fat JAR
 
-Place the model file in `src/main/resources/models/` so Gradle includes it in the fat JAR automatically. Use the [Shadow plugin](https://github.com/johnrengelman/shadow):
+Place the model file in `src/main/resources/models/` so Gradle includes it in the fat JAR automatically. Use the [Shadow plugin](https://gradleup.com/shadow/):
 
 ```gradle
 plugins {
     id 'application'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'com.gradleup.shadow' version '9.5.1'
 }
 
 shadowJar {
-    archiveBaseName = "myapp"
-    archiveClassifier = null
+    archiveFileName = 'myapp.jar'
     mergeServiceFiles()
 }
 ```

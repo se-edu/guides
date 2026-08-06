@@ -73,7 +73,7 @@ You may also need to verify and configure the Gradle Build Server to use the cor
           "path": "/Library/Java/JavaVirtualMachines/zulu-{{ java_version }}.jdk/Contents/Home"
         }
       ],
-      "java.import.gradle.java.home": "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home"
+      "java.import.gradle.java.home": "/Library/Java/JavaVirtualMachines/zulu-{{ java_version }}.jdk/Contents/Home"
     }
     ```
 
