@@ -34,7 +34,9 @@ For official details beyond this short setup guide, refer to the [ChatGPT deskto
 
 ## Getting Started with Codex
 
-### Importing a Project
+<div id="section-creating-a-project">
+
+### Creating a Project
 
 * **Open the project picker**
   * Once you are in Codex, use the left menu to select ``New chat``. From the empty workspace screen, click on the folder icon `Choose project`.
@@ -46,6 +48,7 @@ For official details beyond this short setup guide, refer to the [ChatGPT deskto
     <box type="tip" seamless>
       For a project using Git, it is important to select the repository root and not inner folders such as `src`.
     </box>
+</div>
 
 ### Basic Configuration
 
