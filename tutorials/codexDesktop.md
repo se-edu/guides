@@ -34,7 +34,7 @@ For official details beyond this short setup guide, refer to the [ChatGPT deskto
 
 ## Getting Started with Codex
 
-### Importing a Project 
+### Importing a Project
 
 * **Open the project picker**
   * Once you are in Codex, use the left menu to select ``New chat``. From the empty workspace screen, click on the folder icon `Choose project`. 
