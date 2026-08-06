@@ -25,22 +25,23 @@ For official details beyond this short setup guide, refer to the [ChatGPT deskto
 
 1. **Open the ChatGPT desktop app**
 2. **Sign in**
-   * `Sign in with ChatGPT` if you are using a school-provided or subscription-based plan.<br>
-     `Sign in with another way` only if you are using an API key. {{ abcd_numbers }}
+   * `Continue to sign in` if you are using a school-provided or subscription-based plan.<br>
+     `Sign in another way` only if you are using an API key. {{ abcd_numbers }}
    * Follow the sign-in flow shown in the app.
-   * Codex will now be ready to use on your computer.
+   * The ChatGPT desktop app will now be ready to use.
 3. **Select Codex**
    * Use the top-left menu to switch from `ChatGPT` to `Codex`.
 
 ## Getting Started with Codex
 
-### Importing a Project
+### Importing a Project 
 
 * **Open the project picker**
-  * In the ChatGPT desktop app, switch to the Codex view. From the empty workspace screen, click `Choose project`.
-  * Choose `+ New project`, then click on ``Add folders Codex can read and edit`` to select your project.
+  * Once you are in Codex, use the left menu to select ``New chat``. From the empty workspace screen, click on the folder icon `Choose project`. 
+  * If this is not your first time using Codex, it will mostly likely be a folder icon with the **latest project that you have interacted** with. You can click on it as usual to create a new project.
+  * Choose `+ New project`, then click on ``Add folders Codex can read and edit`` to select your project. 
     <pic src="images/codex/codexNewProjectMenu.png" width="850" />
-  * Select the folder that contains your project and click `Create project`.
+  * When you are creating a new project, `Project name` is optional. You can just select the folder that contains your project and click `Create project`. 
     <box type="tip" seamless>
       For a project using Git, it is important to select the repository root and not inner folders such as `src`.
     </box>
