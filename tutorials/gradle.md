@@ -171,7 +171,7 @@ application {
 
 **Gradle can automate the management of dependencies to third-party libraries** too. You just need to add the dependency into the `build.gradle` file and Gradle will do the rest. For example, to add the Natty (a third-party library used for parsing natural language dates e.g., `today`), you simply have to add the following line to the `dependencies` section of the `build.gradle` file.
 ```groovy{heading="build.gradle"}
-implementation group: 'com.joestelmach', name: 'natty', version: '0.13'
+implementation 'com.joestelmach:natty:0.13'
 ```
 
 Tip: Most third-party libraries specify how to add it as a Gradle dependency ([example](https://mvnrepository.com/artifact/com.joestelmach/natty/0.13)).
