@@ -9,13 +9,6 @@ IntelliJ’s default style is mostly compliant with [ours](../conventions/java/)
 
 **Legend**: {{ icon_level_basic }} basic tweak | {{ icon_level_intermediate }} intermediate tweak | {{ icon_level_advanced }} advanced tweak
 
-## Tweak: `switch-case` style {{ icon_level_basic }}
-
-1. Go to `File` → `Settings…` (Windows/Linux), or `IntelliJ IDEA` → `Settings…` (macOS).
-1. Click on `Editor` → `Code style`→ `Java` (see the screenshot below).<br>
-   ![](images/intellij/codeStyle-switch.png)
-1. Click on the `Wrapping and Braces` tab and un-tick the `Indent 'case' branches` option (as shown in the screenshot above).
-
 
 ## Tweak: `import` order {{ icon_level_intermediate }}
 

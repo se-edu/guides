@@ -58,20 +58,6 @@ This can also be done through modifying `.vscode/settings.json`:
     }
     ```
 
-## Tweak: Switch-case indent
-
-To format switch-case statements based on coding standards, add the following settings to `eclipse-java-formatter.xml` within the profile tag.
-```
-<!-- ... -->
-<profile kind="CodeFormatterProfile" name="SE-EDU" version="12">
-    <!-- ... -->
-    <setting id="org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_switch" value="false"/>
-    <setting id="org.eclipse.jdt.core.formatter.indent_switchstatements_compare_to_cases" value="true"/>
-    <!-- ... -->
-</profile>
-<!-- ... -->
-```
-
 ## Tweak: Line limit
 
 To enforce line length to be max 120 characters based on coding standards, add the following settings to `eclipse-java-formatter.xml`.
