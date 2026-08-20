@@ -521,7 +521,6 @@
       "title": "Intellij IDEA: Configuring the code style",
       "headings": {
         "intellij-idea-configuring-the-code-style": "Intellij IDEA: Configuring the code style",
-        "tweak-switch-case-style": "Tweak: switch-case style ",
         "tweak-import-order": "Tweak: import order ",
         "tweak-auto-remove-trailing-spaces": "Tweak: Auto-remove trailing spaces ",
         "more-useful-settings": "More useful settings "
@@ -944,7 +943,6 @@
       "headings": {
         "vs-code-configuring-the-code-style-advanced": "VS Code: Configuring the code style: Advanced",
         "set-up-eclipse-java-formatter": "Set up Eclipse Java Formatter",
-        "tweak-switch-case-indent": "Tweak: Switch-case indent",
         "tweak-line-limit": "Tweak: Line limit",
         "tweak-indent-size-tab-spaces": "Tweak: Indent size/Tab spaces",
         "tweak-add-newline-n-to-end-of-file": "Tweak: Add newline (\\n) to end of file",
