@@ -3,7 +3,8 @@
   "titlePrefix": "",
   "timeZone": "Asia/Singapore",
   "style": {
-    "codeTheme": "light"
+    "codeTheme": "light",
+    "darkMode": true
   },
   "ignore": [
     "_markbind/layouts/*",
