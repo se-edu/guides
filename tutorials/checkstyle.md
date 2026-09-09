@@ -52,7 +52,7 @@ plugins {
 }
 
 checkstyle {
-    toolVersion = '11.0.0'
+    toolVersion = '14.1.0'
 }
 ```
 
