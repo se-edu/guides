@@ -1,4 +1,4 @@
-{% set title = "Intellij IDEA: Code navigation" %}
+{% set title = "IntelliJ IDEA: Code navigation" %}
 <frontmatter>
   title: "{{ title }}"
 </frontmatter>

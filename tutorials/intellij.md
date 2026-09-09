@@ -1,4 +1,4 @@
-{% set title="Intellij - Community Resources" %}
+{% set title="IntelliJ - Community Resources" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
@@ -8,7 +8,7 @@
 
 # {{ title }}
 
-This guide is for those who use [Intellij IDEA](https://www.jetbrains.com/idea/) for their Java projects.
+This guide is for those who use [IntelliJ IDEA](https://www.jetbrains.com/idea/) for their Java projects.
 
 <div id="idea-sub-topics">
 

@@ -136,7 +136,7 @@ public class DukeTest {
 
 </div>
 
-**Run tests**, either using the Intellij UI (preferred -- this makes debugging failed test cases easier) or using Gradle itself, as explained in the section below.
+**Run tests**, either using the IntelliJ UI (preferred -- this makes debugging failed test cases easier) or using Gradle itself, as explained in the section below.
 
 <!-- ======================================================== -->
 
@@ -144,18 +144,18 @@ public class DukeTest {
 
 {% set play_button = '<span class="text-success">:fas-play:</span>' %}
 
-****In Intellij IDEA:****
+****In IntelliJ IDEA:****
 
 * To run a specific JUnit test class (e.g., `src/test/java/seedu/DukeTest.java`), right-click on the test class, and choose {{ play_button }} `Run {classname}`.
 
 <box type="tip" seamless>
 
-If the above doesn't work, you may want to go to `File` > `Settings` and change the`Run tests using:` setting to `Intellij IDEA` (instead of `Gradle`), as shown below:
+If the above doesn't work, you may want to go to `File` > `Settings` and change the`Run tests using:` setting to `IntelliJ IDEA` (instead of `Gradle`), as shown below:
 
 <panel header="Expand to see screenshot ..." peek no-close no-switch>
 
-<annotate src="images/gradle/intellijRunTestsUsingIntellij.png">
-<a-point x="59%" y="69%"><md><span style="background-color: white;" class="text-danger p-0 opacity-100"><small><small>&nbsp;&nbsp;&nbsp;Intellij IDEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></small></span></md></a-point>
+<annotate src="images/gradle/intellijRunTestsUsingIntelliJ.png">
+<a-point x="59%" y="69%"><md><span style="background-color: white;" class="text-danger p-0 opacity-100"><small><small>&nbsp;&nbsp;&nbsp;IntelliJ IDEA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small></small></span></md></a-point>
 </annotate>
 
 </panel>
@@ -167,7 +167,7 @@ If the above doesn't work, you may want to go to `File` > `Settings` and change 
 ****Using Gradle:****
 
 * To run all tests in the project, run the Gradle task `test` ([more info on running Gradle tasks](gradle.md#running-gradle-tasks))
-* [If using Intellij UI to run the `test` task] The location of the `test` task in the Gradle task hierarchy is `Tasks -> verification -> test` (see screenshot below).<br>
+* [If using IntelliJ UI to run the `test` task] The location of the `test` task in the Gradle task hierarchy is `Tasks -> verification -> test` (see screenshot below).<br>
     <pic src="images/junit/gradleTaskHierarchy.png" />
 
 <div id="other-ways-of-running-tests">

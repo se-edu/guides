@@ -1,4 +1,4 @@
-{% set title="Intellij IDEA: Using the debugger" %}
+{% set title="IntelliJ IDEA: Using the debugger" %}
 ---
 title: "{{ title }}"
 pageNav: 3
@@ -6,7 +6,7 @@ pageNav: 3
 
 {% from 'scripts/macros.njk' import show_docs_page_link, show_screenshot, show_youtube_video_segment with context %}
 {% set video_id = "1bCgzjatcr4" %}
-{% set credit = "Intellij Docs" %}
+{% set credit = "IntelliJ Docs" %}
 
 
 {% macro show_screenshot(src, credit="Intelli") %}
@@ -20,7 +20,7 @@ pageNav: 3
 {% macro show_intellij_page(src) %}
 <box type="info" icon=":fas-book:" seamless>
 
-More info from Intellij is <a href="{{ src }}" target="_blank">here</a>.
+More info from IntelliJ is <a href="{{ src }}" target="_blank">here</a>.
 </box>
 {% endmacro %}
 
@@ -28,7 +28,7 @@ More info from Intellij is <a href="{{ src }}" target="_blank">here</a>.
 
 # {{ title }}
 
-This tutorial covers basics of the Intellij IDEA's debugging features.
+This tutorial covers basics of the IntelliJ IDEA's debugging features.
 
 * **If you are new to using an IDE-based debugger**, we recommend that you watch the following video (from LaunchCode) which gives a pretty good explanation of how to use the IntelliJ IDEA debugger.
 
@@ -67,7 +67,7 @@ To remove the breakpoint, click the red dot again.
 
 ## Running the code in 'debugger mode'
 
-**Purpose:** To get Intellij to run the code in the debugger mode, so that the debugger can direct the execution flow as needed by the debugging.
+**Purpose:** To get IntelliJ to run the code in the debugger mode, so that the debugger can direct the execution flow as needed by the debugging.
 
 **How:** There are several ways. One of them is to click the {{ icon_run_green }}  icon in the gutter near the class with the `main()` method and select `Debug`.
 
@@ -125,7 +125,7 @@ To remove the breakpoint, click the red dot again.
 
 <box type="tip" id="choosing-which-method-to-step-into" seamless>
 
-When trying to step into a statement such as `storage.saveAddressBook(model.getAddressBook())` which contains multiple method calls, Intellij will let you choose (by clicking) which one you want to step into.
+When trying to step into a statement such as `storage.saveAddressBook(model.getAddressBook())` which contains multiple method calls, IntelliJ will let you choose (by clicking) which one you want to step into.
 </box>
 
 {{ show_docs_page_link("https://www.jetbrains.com/help/idea/stepping-through-the-program.html#step-into", credit) }}

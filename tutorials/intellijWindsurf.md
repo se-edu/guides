@@ -1,4 +1,4 @@
-{% set title="Intellij IDEA: Using Windsurf" %}
+{% set title="IntelliJ IDEA: Using Windsurf" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
@@ -30,7 +30,7 @@
   * You can close the web page and proceed back to IntelliJ IDEA.
   * Windsurf will now be signed in within IntelliJ IDEA.
 
-## Using Windsurf in Intellij IDEA
+## Using Windsurf in IntelliJ IDEA
 
 <include src="windsurfContent.md#basic-code-completion-id" var-imgurl="images/intellijWindsurf/windsurfCodeCompletion.png" />
 

@@ -1,8 +1,8 @@
 <frontmatter>
-  title: "Intellij IDEA: Importing a Gradle project"
+  title: "IntelliJ IDEA: Importing a Gradle project"
 </frontmatter>
 
-# Intellij IDEA: Importing a Gradle project
+# IntelliJ IDEA: Importing a Gradle project
 
 <div id="importing-gradle-project">
 
@@ -17,7 +17,7 @@ IntelliJ IDEA has the Gradle plugin installed by default.  If you have disabled 
   If your project involves GUI programming, similarly ensure the JavaFX plugin has not been disabled.
 </box>
 
-1. Open Intellij.
+1. Open IntelliJ.
 1. If you are in the welcome screen, Click `Open`. Otherwise, click `File` -> `Open`.<br>
    i. Select the project directory, and click `OK`.<br>
    ii. If there are any further prompts, accept the defaults but do ensure that the selected version of `Gradle JVM` matches the JDK being used for the project.
@@ -29,13 +29,13 @@ IntelliJ IDEA has the Gradle plugin installed by default.  If you have disabled 
    (b) Confirm the correct JVM is used for Gradle, as given in the panel below:
 
 <div class="indented-level1">
-<panel header="Intellij: Setting the JVM for Gradle" peek>
+<panel header="IntelliJ: Setting the JVM for Gradle" peek>
 
 Go to `File` -> `Settings` and ensure the `Gradle JVM` is set as `Project SDK ...`, so that Gradle will use the same JDK used by the project.
 
 <pic src="images/gradle/intellijSetGradleJvm.png" />
 
-Also take note of the `Build and run using:` and `Run tests using:` settings. They are useful if you want to control whether you want Intellij to use Gradle to build/run/test your project.
+Also take note of the `Build and run using:` and `Run tests using:` settings. They are useful if you want to control whether you want IntelliJ to use Gradle to build/run/test your project.
 </panel>
 </div>
 </div>

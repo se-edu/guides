@@ -1,8 +1,8 @@
 <frontmatter>
-  title: "Intellij IDEA: Configuring the JDK"
+  title: "IntelliJ IDEA: Configuring the JDK"
 </frontmatter>
 
-# Intellij IDEA: Configuring the JDK
+# IntelliJ IDEA: Configuring the JDK
 
 <box type="info" seamless>
 

@@ -25,7 +25,7 @@ Tasks can be composed of, or dependent on, other tasks.
 
 1. **Properties** change the behavior of tasks. For instance, when using the `application` plugin, we should use the `mainClass` property to tell Gradle which class is the entry point to your application. As Gradle favors [_convention over configuration_](https://en.wikipedia.org/wiki/Convention_over_configuration), there is not much you need to configure if you follow the recommended directory structure.
 
-**Even if you are not using Intellij, ==a quick watch of the following video is strongly recommended==** before proceeding with the rest of this tutorial, if you are new to Gradle. The video will help you grasp how Gradle fits into the big picture of a project, and what it looks like to use it.
+**Even if you are not using IntelliJ, ==a quick watch of the following video is strongly recommended==** before proceeding with the rest of this tutorial, if you are new to Gradle. The video will help you grasp how Gradle fits into the big picture of a project, and what it looks like to use it.
 
 <panel peek no-close no-switch>
 <div slot="header"><md><span class="text-danger">:fab-youtube:</span> VIDEO: Working with Gradle</md></div>
@@ -47,7 +47,7 @@ Given below are three scenarios of adding the Gradle wrapper to a project. Choos
 ****Scenario 1:**** You are setting up a project that already has Gradle wrapper files.
 
 <tabs>
-<tab header="Using Intellij">
+<tab header="Using IntelliJ">
 <div class="ml-3">
 
 <include src="intellijImportGradleProject.md#importing-gradle-project" />
@@ -73,7 +73,7 @@ No further action required. You should be able to use Gradle via the command lin
 First, add the Gradle wrapper files to the project. e.g., if they are in a separate branch, merge that branch.
 
 <tabs>
-<tab header="Using Intellij">
+<tab header="Using IntelliJ">
 
 1. Close the IDEA project if it is open.
 1. Delete the `.idea` folder.<br>
@@ -102,15 +102,15 @@ No further actions required. You should be able to use Gradle via the command li
 ## Running Gradle tasks
 
 <tabs>
-<tab header="Using Intellij">
+<tab header="Using IntelliJ">
 
-There are several ways to run a Gradle task in Intellij. Examples:
+There are several ways to run a Gradle task in IntelliJ. Examples:
 * Locate the task in the Gradle toolbar, and double-click it.
 * Hit `Ctrl` key twice (to bring up the command runner), and type `gradlew` followed by tasks to run e.g., `gradlew clean test`.
 
-See [this video](https://www.youtube.com/watch?v=6V6G3RyxEMk#t=13m44s) for more ways to run Gradle tasks inside Intellij.
+See [this video](https://www.youtube.com/watch?v=6V6G3RyxEMk#t=13m44s) for more ways to run Gradle tasks inside IntelliJ.
 
-Alternatively, you can run Gradle tasks using the command line (even if you are using Intellij). Follow the instructions in the `Using the terminal` tab above.
+Alternatively, you can run Gradle tasks using the command line (even if you are using IntelliJ). Follow the instructions in the `Using the terminal` tab above.
 
 <box type="tip" seamless>
 
@@ -118,11 +118,11 @@ If the Gradle tasks don't appear in the Gradle window, click the 'refresh' butto
 </box>
 <box type="tip" seamless>
 
-Intellij uses Gradle to run your application by default. If you would like to run the project in the normal way, go to `File` > `Settings` and change the following settings:
+IntelliJ uses Gradle to run your application by default. If you would like to run the project in the normal way, go to `File` > `Settings` and change the following settings:
 
 <panel header="Expand to see screenshot ..." peek no-close no-switch>
 
-![change Intellij settings to not use Gradle](images/gradle/intellijRunUsingGradle.png)
+![change IntelliJ settings to not use Gradle](images/gradle/intellijRunUsingGradle.png)
 </panel>
 </box>
 
@@ -188,7 +188,7 @@ repositories {
 
 **After updating the `build.gradle` file,**
 
-* if you are using an IDE: Use the IDE UI to reload dependencies based on the updated file. For example, if using Intellij  IDEA, you can click the <img src="images/gradle/RefreshGradleIcon.png" /> icon in the Gradle tool window to reload the file.<br>
+* if you are using an IDE: Use the IDE UI to reload dependencies based on the updated file. For example, if using IntelliJ  IDEA, you can click the <img src="images/gradle/RefreshGradleIcon.png" /> icon in the Gradle tool window to reload the file.<br>
   For good measure, you can restart the IDE too.
 * if not using an IDE: Run `./gradlew clean build` to rebuild everything based on the updated file.
 </box>

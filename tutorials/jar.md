@@ -75,9 +75,9 @@ shadowJar {
 {{ embed("Tutorials → JavaFX Tutorial Part 1 → If you are using Gradle", "javaFxPart1.md#javafx-gradle") }}
 
 </tab>
-<tab header="With Intellij IDEA">
+<tab header="With IntelliJ IDEA">
 
-**{{ icon_video }} Creating a JAR file in Intellij** - A video by Artur Spirin:
+**{{ icon_video }} Creating a JAR file in IntelliJ** - A video by Artur Spirin:
 
 @[youtube](3Xo6zSBgdgk)
 

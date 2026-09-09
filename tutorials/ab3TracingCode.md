@@ -36,16 +36,16 @@ Note how the diagram shows only the execution flows _between_ the main component
 Before we proceed, ensure that you have done the following:
 1. **Learn the AB3 architecture**: As we go through this tutorial, we will be referring you to read corresponding sections of the AB3 Developer Guide, so that you can mentally connect the code you encounter with corresponding design descriptions. Given below is the first of such DG cross-references that you need to read.<br>
    {{ dg_ref }} Read the [**_Architecture_ section** of the DG](https://se-education.org/addressbook-level3/DeveloperGuide.html#architecture) (no need to read the other sections yet).
-1. **Set up your AB3 project** (i.e., the one you cloned to your computer) in Intellij IDEA, and confirm the setup is correct by doing the following two checks:
+1. **Set up your AB3 project** (i.e., the one you cloned to your computer) in IntelliJ IDEA %%(this guide is written for IntelliJ IDEA but you may use other IDEs as well)%%, and confirm the setup is correct by doing the following two checks:
    * Run `./gradlew run` -- AB3 app should launch, and you should be able to interact with it.<br>
      If this step doesn't go as expected, ensure the default Java version is set correctly, as given in [here](javaInstallation.html). {texts="['2.1', '2.2', '2.3']"}
-   * Run AB3 using Intellij UI (i.e., use the {{ icon_run_green }} button to run `src\main\java\seedu\address\Main.java`) and ensure the app launches.<br>
-     If the first check worked but this check doesn't, ensure you have set Intellij to use the correct JDK version (more info: [here](intellijJdk.md)).
+   * Run AB3 using IntelliJ UI (i.e., use the {{ icon_run_green }} button to run `src\main\java\seedu\address\Main.java`) and ensure the app launches.<br>
+     If the first check worked but this check doesn't, ensure you have set IntelliJ to use the correct JDK version (more info: [here](intellijJdk.md)).
 1. **Learn basic debugging features of your choice of IDE**:
-   * For IntelliJ IDEA, follow the tutorial [here](intellijDebugger.md)
-   * For Visual Studio Code, follow the tutorial [here](vscDebugger.md)
+   * For IntelliJ IDEA, follow the tutorial [here](intellijDebugger.md).
+   * For Visual Studio Code, follow the tutorial [here](vscDebugger.md).
    * If you are using another IDE, refer to its official documentation for equivalent debugging features.
-   * If you are not using an IDE, we'll let you figure out how to achieve the same using your coding toolchain.
+   * If you are not using an IDE, figure out how to achieve the same using your coding toolchain.
 
 ## Setting a breakpoint
 
@@ -71,7 +71,7 @@ Searching through the code base for an `execute()` method that belongs to the `L
 
 <box type="tip" seamless>
 
-**Intellij Tip:** The ['**Search Everywhere**' feature](https://www.jetbrains.com/help/idea/searching-everywhere.html) can be used here. In particular, the '**Find Symbol**' ('Symbol' here refers to methods, variables, classes etc.) variant of that feature is quite useful here as we are looking for a _method_ named `execute`, not simply the text `execute`.
+**IntelliJ Tip:** The ['**Search Everywhere**' feature](https://www.jetbrains.com/help/idea/searching-everywhere.html) can be used here. In particular, the '**Find Symbol**' ('Symbol' here refers to methods, variables, classes etc.) variant of that feature is quite useful here as we are looking for a _method_ named `execute`, not simply the text `execute`.
 </box>
 
 A quick look at the `seedu.address.logic.Logic` (an extract given below) confirms that this indeed might be what we’re looking for.
@@ -99,7 +99,7 @@ Next, let's find out which statement(s) in the `UI` code is calling this method,
 
 <box type="tip" seamless>
 
-**Intellij Tip:** The ['**Find Usages**' feature](https://www.jetbrains.com/help/idea/find-highlight-usages.html#find-usages) can find from which parts of the code a class/method/variable is being used.
+**IntelliJ Tip:** The ['**Find Usages**' feature](https://www.jetbrains.com/help/idea/find-highlight-usages.html#find-usages) can find from which parts of the code a class/method/variable is being used.
 </box>
 
 <pic src="images/tracing/FindUsages.png" />
@@ -109,7 +109,7 @@ Bingo\! `MainWindow#executeCommand()` seems to be exactly what we’re looking f
 Now let’s set the breakpoint. First, double-click the item to reach the corresponding code. Once there, set a breakpoint, as shown below.
  ![LeftGutter](images/tracing/LeftGutter.png)
 
-{{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Setting breakpoints**", "intellijDebugger.md#intellij-debugger-setting-breakpoints", indent=0) }}
+{{ embed("[Refresher] IntelliJ IDEA: Using the debugger -> **Setting breakpoints**", "intellijDebugger.md#intellij-debugger-setting-breakpoints", indent=0) }}
 
 ## Tracing the execution path
 
@@ -121,20 +121,20 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 </box>
 
 1. To start the debugging session, simply `Run` \> `Debug Main`
-   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Running the code in debugger mode**", "intellijDebugger.md#intellij-debugger-mode", indent=1) }}
+   {{ embed("[Refresher] IntelliJ IDEA: Using the debugger -> **Running the code in debugger mode**", "intellijDebugger.md#intellij-debugger-mode", indent=1) }}
 
 2. When the GUI appears, enter `edit 1 n/Alice Yeoh` into the command box and press <kbd>Enter</kbd>.
 
 3. The Debugger tool window should show up and show something like this:<br>
    ![DebuggerStep1](images/tracing/DebuggerStep1.png)
-   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Examining the state of the suspended program**", "intellijDebugger.md#intellij-debugger-examining-state", indent=1) }}
+   {{ embed("[Refresher] IntelliJ IDEA: Using the debugger -> **Examining the state of the suspended program**", "intellijDebugger.md#intellij-debugger-examining-state", indent=1) }}
 
 4. Use the _Show execution point_ feature to jump to the line of code that we stopped at (which should be
    `CommandResult commandResult = logic.execute(commandText);`{.java}, as that is where we put the breakpoint).
-   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Show execution point**", "intellijDebugger.md#show-execution-point", indent=1) }}
+   {{ embed("[Refresher] IntelliJ IDEA: Using the debugger -> **Show execution point**", "intellijDebugger.md#show-execution-point", indent=1) }}
 
 5. We are interested in the `logic.execute(commandText)` portion of that line so let’s _Step in_ into that method call:<br>
-   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Stepping into a method**", "intellijDebugger.md#intellij-debugger-step-into", indent=1) }}
+   {{ embed("[Refresher] IntelliJ IDEA: Using the debugger -> **Stepping into a method**", "intellijDebugger.md#intellij-debugger-step-into", indent=1) }}
 
 6. We end up in `LogicManager#execute()` (not `Logic#execute` -- but this is expected because we know the `execute()` method in the `Logic` interface is actually implemented by the `LogicManager` class). Let’s take a look at the body of the method. Given below is the same code, with additional explanatory comments.
 
@@ -171,7 +171,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 7. `LogicManager#execute()` appears to delegate most of the heavy lifting to other components. Let’s take a closer look at each one.
 
 8. _Step over_ the logging code since it is of no interest to us now.
-   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Stepping through the code**", "intellijDebugger.md#intellij-debugger-step-through", indent=1) }}
+   {{ embed("[Refresher] IntelliJ IDEA: Using the debugger -> **Stepping through the code**", "intellijDebugger.md#intellij-debugger-step-through", indent=1) }}
 
 9. _Step into_ the line where user input is parsed from a String to a Command, which should bring you to the `AddressBookParser#parseCommand()` method (partial code given below):
    ```java
@@ -200,8 +200,8 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 
 <box type="tip" seamless>
 
-**Intellij Tip:** Sometimes, you might end up stepping into functions that are not of interest. Simply use the `step out` button to get out of them!
-   {{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Stepping out of a method**", "intellijDebugger.md#intellij-debugger-step-out", indent=1) }}
+**IntelliJ Tip:** Sometimes, you might end up stepping into functions that are not of interest. Simply use the `step out` button to get out of them!
+   {{ embed("[Refresher] IntelliJ IDEA: Using the debugger -> **Stepping out of a method**", "intellijDebugger.md#intellij-debugger-step-out", indent=1) }}
 </box>
 
 14. Stepping through the method shows that it calls `ArgumentTokenizer#tokenize()` and `ParserUtil#parseIndex()` to obtain the arguments and index required.
@@ -255,7 +255,7 @@ Recall from the User Guide that the `edit` command has the format: `edit INDEX [
 
 <box type="tip" header="If the statement has multiple method calls, how to step into a specific method"seamless>
 
-{{ embed("[Refresher] Intellij IDEA: Using the debugger -> **Choosing which method to step into**", "intellijDebugger.md#choosing-which-method-to-step-into", indent=1) }}
+{{ embed("[Refresher] IntelliJ IDEA: Using the debugger -> **Choosing which method to step into**", "intellijDebugger.md#choosing-which-method-to-step-into", indent=1) }}
 </box>
 
 23. As you step through the code inside the `Storage` component, you will eventually arrive at the `JsonAddressBookStorage#saveAddressBook()` method which calls the `JsonSerializableAddressBook` constructor, to create an object that can be _serialized_ (i.e., stored in storage medium) in JSON format. That constructor is given below (with added line breaks for easier readability):

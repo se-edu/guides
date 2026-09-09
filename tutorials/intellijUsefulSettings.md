@@ -1,4 +1,4 @@
-{% set title="Intellij IDEA: Useful settings" %}
+{% set title="IntelliJ IDEA: Useful settings" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2
@@ -12,7 +12,7 @@
 
 <box type="warning" seamless>
 
-This tweak does not apply if you use Gradle to run code even within Intellij. In that case, refer to 'Enabling assertions' sections of the [_Gradle tutorial_](gradle.html#enabling-assertions).
+This tweak does not apply if you use Gradle to run code even within IntelliJ. In that case, refer to 'Enabling assertions' sections of the [_Gradle tutorial_](gradle.html#enabling-assertions).
 </box>
 
 1. Choose `Run` → `Edit Configurations...`.

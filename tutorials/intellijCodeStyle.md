@@ -1,9 +1,9 @@
 <frontmatter>
-  title: "Intellij IDEA: Configuring the code style"
+  title: "IntelliJ IDEA: Configuring the code style"
   pageNav: 2
 </frontmatter>
 
-# Intellij IDEA: Configuring the code style
+# IntelliJ IDEA: Configuring the code style
 
 IntelliJ’s default style is mostly compliant with [ours](../conventions/java/) but it uses a different import order from ours; hence, some tweaks are needed.
 
@@ -22,7 +22,7 @@ IntelliJ’s default style is mostly compliant with [ours](../conventions/java/)
 
 ## Tweak: Auto-remove trailing spaces {{ icon_level_intermediate }}
 
-You can configure Intellij to automatically strip trailing white space in code lines, as follows:
+You can configure IntelliJ to automatically strip trailing white space in code lines, as follows:
 1. Go to `Settings`.
 1. On the left side of the dialog, click on `Editor` -> `General`.
 1. On the right side, scroll to the `On Save` section.

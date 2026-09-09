@@ -1,4 +1,4 @@
-{% set title="Intellij IDEA: Using GitHub Copilot" %}
+{% set title="IntelliJ IDEA: Using GitHub Copilot" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 2

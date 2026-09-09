@@ -68,7 +68,7 @@ For example, you can run `gradlew checkstyleMain checkstyleTest` to verify that 
 
 <include src="checkstyle.md#config-prereq" />
 
-Given below are the steps to install the Checkstyle-IDEA plugin so that Intellij can alert you about code style problems as you write code.
+Given below are the steps to install the Checkstyle-IDEA plugin so that IntelliJ can alert you about code style problems as you write code.
 
 1. Install the Checkstyle-IDEA plugin as follows:
    1. `File` \> `Settings` (Windows/Linux), or `IntelliJ IDEA` \> `Settings…​` (macOS)

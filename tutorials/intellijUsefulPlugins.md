@@ -1,4 +1,4 @@
-{% set title="Intellij IDEA: Useful Plugins" %}
+{% set title="IntelliJ IDEA: Useful Plugins" %}
 <frontmatter>
   title: "{{ title }}"
   pageNav: 3
