@@ -10,6 +10,7 @@
     "_markbind/layouts/*",
     "_markbind/logs/*",
     "_site/*",
+    "_temp/*",
     "site.json",
     "*.md",
     "*.njk",
