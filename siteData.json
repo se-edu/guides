@@ -502,25 +502,25 @@
     },
     {
       "src": "tutorials/intellij.md",
-      "title": "Intellij - Community Resources",
+      "title": "IntelliJ - Community Resources",
       "headings": {
-        "intellij-community-resources": "Intellij - Community Resources"
+        "intellij-community-resources": "IntelliJ - Community Resources"
       },
       "headingKeywords": {}
     },
     {
       "src": "tutorials/intellijCodeNavigation.md",
-      "title": "Intellij IDEA: Code navigation",
+      "title": "IntelliJ IDEA: Code navigation",
       "headings": {
-        "intellij-idea-code-navigation": "Intellij IDEA: Code navigation"
+        "intellij-idea-code-navigation": "IntelliJ IDEA: Code navigation"
       },
       "headingKeywords": {}
     },
     {
       "src": "tutorials/intellijCodeStyle.md",
-      "title": "Intellij IDEA: Configuring the code style",
+      "title": "IntelliJ IDEA: Configuring the code style",
       "headings": {
-        "intellij-idea-configuring-the-code-style": "Intellij IDEA: Configuring the code style",
+        "intellij-idea-configuring-the-code-style": "IntelliJ IDEA: Configuring the code style",
         "tweak-import-order": "Tweak: import order ",
         "tweak-auto-remove-trailing-spaces": "Tweak: Auto-remove trailing spaces ",
         "more-useful-settings": "More useful settings "
@@ -529,9 +529,9 @@
     },
     {
       "src": "tutorials/intellijCopilot.md",
-      "title": "Intellij IDEA: Using GitHub Copilot",
+      "title": "IntelliJ IDEA: Using GitHub Copilot",
       "headings": {
-        "intellij-idea-using-github-copilot": "Intellij IDEA: Using GitHub Copilot",
+        "intellij-idea-using-github-copilot": "IntelliJ IDEA: Using GitHub Copilot",
         "pre-requisites": "Pre-requisites",
         "installing-github-copilot-in-intellij-idea": "Installing GitHub Copilot in IntelliJ IDEA",
         "signing-in-to-github-copilot": "Signing in to GitHub Copilot",
@@ -544,9 +544,9 @@
     },
     {
       "src": "tutorials/intellijDebugger.md",
-      "title": "Intellij IDEA: Using the debugger",
+      "title": "IntelliJ IDEA: Using the debugger",
       "headings": {
-        "intellij-idea-using-the-debugger": "Intellij IDEA: Using the debugger",
+        "intellij-idea-using-the-debugger": "IntelliJ IDEA: Using the debugger",
         "setting-breakpoints": "Setting breakpoints",
         "running-the-code-in-debugger-mode": "Running the code in 'debugger mode'",
         "examining-the-state-of-the-suspended-program": "Examining the state of the suspended program",
@@ -561,9 +561,9 @@
     },
     {
       "src": "tutorials/intellijImportGradleProject.md",
-      "title": "Intellij IDEA: Importing a Gradle project",
+      "title": "IntelliJ IDEA: Importing a Gradle project",
       "headings": {
-        "intellij-idea-importing-a-gradle-project": "Intellij IDEA: Importing a Gradle project"
+        "intellij-idea-importing-a-gradle-project": "IntelliJ IDEA: Importing a Gradle project"
       },
       "headingKeywords": {}
     },
@@ -584,9 +584,9 @@
     },
     {
       "src": "tutorials/intellijJdk.md",
-      "title": "Intellij IDEA: Configuring the JDK",
+      "title": "IntelliJ IDEA: Configuring the JDK",
       "headings": {
-        "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
+        "intellij-idea-configuring-the-jdk": "IntelliJ IDEA: Configuring the JDK"
       },
       "headingKeywords": {}
     },
@@ -600,25 +600,25 @@
     },
     {
       "src": "tutorials/intellijProjectSetup.md",
-      "title": "Intellij IDEA: Configuring the JDK",
+      "title": "IntelliJ IDEA: Configuring the JDK",
       "headings": {
-        "intellij-idea-configuring-the-jdk": "Intellij IDEA: Configuring the JDK"
+        "intellij-idea-configuring-the-jdk": "IntelliJ IDEA: Configuring the JDK"
       },
       "headingKeywords": {}
     },
     {
       "src": "tutorials/intellijRefactoring.md",
-      "title": "Intellij IDEA: Refactoring",
+      "title": "IntelliJ IDEA: Refactoring",
       "headings": {
-        "intellij-idea-refactoring": "Intellij IDEA: Refactoring"
+        "intellij-idea-refactoring": "IntelliJ IDEA: Refactoring"
       },
       "headingKeywords": {}
     },
     {
       "src": "tutorials/intellijUsefulPlugins.md",
-      "title": "Intellij IDEA: Useful Plugins",
+      "title": "IntelliJ IDEA: Useful Plugins",
       "headings": {
-        "intellij-idea-useful-plugins": "Intellij IDEA: Useful Plugins",
+        "intellij-idea-useful-plugins": "IntelliJ IDEA: Useful Plugins",
         "plantuml": "PlantUML",
         "setting-up-plantuml-in-intellij-idea": "Setting up PlantUML in IntelliJ IDEA",
         "working-with-plantuml-in-intellij-idea": "Working with PlantUML in IntelliJ IDEA",
@@ -633,9 +633,9 @@
     },
     {
       "src": "tutorials/intellijUsefulSettings.md",
-      "title": "Intellij IDEA: Useful settings",
+      "title": "IntelliJ IDEA: Useful settings",
       "headings": {
-        "intellij-idea-useful-settings": "Intellij IDEA: Useful settings",
+        "intellij-idea-useful-settings": "IntelliJ IDEA: Useful settings",
         "enabling-assertions": "Enabling assertions",
         "enabling-soft-wrapping": "Enabling soft wrapping",
         "enabling-automatic-selection-of-open-file": "Enabling automatic selection of open file",
@@ -645,12 +645,12 @@
     },
     {
       "src": "tutorials/intellijWindsurf.md",
-      "title": "Intellij IDEA: Using Windsurf",
+      "title": "IntelliJ IDEA: Using Windsurf",
       "headings": {
-        "intellij-idea-using-windsurf": "Intellij IDEA: Using Windsurf",
+        "intellij-idea-using-windsurf": "IntelliJ IDEA: Using Windsurf",
         "pre-requisites": "Pre-requisites",
         "setting-up": "Setting Up",
-        "using-windsurf-in-intellij-idea": "Using Windsurf in Intellij IDEA",
+        "using-windsurf-in-intellij-idea": "Using Windsurf in IntelliJ IDEA",
         "basic-code-completion": "Basic Code Completion",
         "windsurf-chat": "Windsurf Chat",
         "windsurf-inline-chat": "Windsurf Inline Chat",
