@@ -18,6 +18,11 @@ This guide assumes you have superuser access.
      sudo apt update && sudo apt upgrade
      ```
      Enter your password if prompted.
+     <box type="info" seamless>
+
+     If the above command fails because the JDK is not found, you can try sdkman route instead, as given [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).<br>
+     Note: You may need to run `sudo apt install zip unzip curl` first (if these utilities are not present in your computer).
+     </box>
 * **Install JDK**
    * Install the Java {{ java_version}} OpenJDK version by running:
      ```bash
